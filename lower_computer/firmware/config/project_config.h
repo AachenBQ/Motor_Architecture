@@ -9,8 +9,18 @@
 #define MOTOR_REAL_HARDWARE_ENABLED 0
 #endif
 
+/*
+ * Build and link the SimpleFOC core plus TC375 adapter classes. This can be
+ * enabled for compile/smoke tests while MOTOR_REAL_HARDWARE_ENABLED remains 0.
+ */
+#ifndef MOTOR_USE_SIMPLEFOC
+#define MOTOR_USE_SIMPLEFOC 0
+#endif
+
 #define MOTOR_DEVICE_ID                 1U
-#define MOTOR_CONTROL_ISR_HZ            20000U
+#define MOTOR_ADC_TRIGGER_HZ            10000U
+#define MOTOR_PWM_FREQUENCY_HZ          MOTOR_ADC_TRIGGER_HZ
+#define MOTOR_CONTROL_ISR_HZ            MOTOR_ADC_TRIGGER_HZ
 #define MOTOR_OUTER_LOOP_HZ             1000U
 #define MOTOR_TELEMETRY_HZ              100U
 #define MOTOR_HEARTBEAT_DEFAULT_MS      750U

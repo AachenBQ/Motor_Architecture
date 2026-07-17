@@ -1,0 +1,12 @@
+{
+	"group"					: "project-initializer",
+	"name"					: "tricore-tc3xx",
+	"releaseTimestamp"		: 1749130650,
+	"version"				: 17,
+	"versionName"			: "1.16",
+	"versionCompatibility"	: [],
+	"info"					: {
+		"illd_version"		: "1.0.1.20.0",
+		"release_reason"	: "Update iLLDs to version 1.0.1.20.0"
+	}
+}

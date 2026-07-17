@@ -4,6 +4,10 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef enum
 {
     MOTOR_MODE_TORQUE = 0,
@@ -152,5 +156,9 @@ void MotorControl_ExportPersistentConfig(
 bool MotorControl_ImportPersistentConfig(
     MotorControl *motor,
     const MotorPersistentConfig *config);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

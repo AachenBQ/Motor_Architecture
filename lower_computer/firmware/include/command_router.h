@@ -7,6 +7,10 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef bool (*CommandRouterTransmit)(
     const uint8_t *data,
     uint16_t length,
@@ -32,5 +36,9 @@ void CommandRouter_Init(
     CommandRouterTransmit transmit);
 void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request);
 void CommandRouter_SendTelemetry(CommandRouter *router, uint8_t sequence);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

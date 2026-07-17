@@ -5,6 +5,10 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define NATIVE_PROTOCOL_VERSION 0x02U
 #define NATIVE_PROTOCOL_MAX_PAYLOAD 2048U
 #define NATIVE_PROTOCOL_MAX_FRAME (9U + NATIVE_PROTOCOL_MAX_PAYLOAD + 2U)
@@ -82,5 +86,9 @@ size_t NativeProtocol_Encode(
     const NativeFrame *frame,
     uint8_t *destination,
     size_t capacity);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

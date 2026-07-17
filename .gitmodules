@@ -1,0 +1,6 @@
+[submodule "lower_computer/third_party/FreeRTOS-Kernel"]
+	path = lower_computer/third_party/FreeRTOS-Kernel
+	url = https://github.com/FreeRTOS/FreeRTOS-Kernel.git
+[submodule "lower_computer/third_party/Arduino-FOC"]
+	path = lower_computer/third_party/Arduino-FOC
+	url = https://github.com/simplefoc/Arduino-FOC.git

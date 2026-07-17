@@ -5,6 +5,10 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct
 {
     float phase_a;
@@ -47,5 +51,8 @@ bool Tc375Hal_LoadCalibration(void *data, size_t size);
 bool Tc375Hal_LoadConfiguration(void *data, size_t size);
 bool Tc375Hal_SaveConfiguration(const void *data, size_t size);
 
+#ifdef __cplusplus
+}
 #endif
 
+#endif

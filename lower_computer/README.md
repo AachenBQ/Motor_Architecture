@@ -25,6 +25,7 @@ lower_computer/
   firmware/       FreeRTOS 应用、协议、状态机、HAL 和 SimpleFOC 适配入口
   protocol/       与上位机共享的协议定义
   docs/           固件架构和硬件接口文档
+  third_party/    FreeRTOS、SimpleFOC 和 Infineon TC37A iLLD
 ```
 
 当前尚未确定电机、功率板、编码器和最终编译工具链，因此
