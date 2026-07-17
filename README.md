@@ -21,4 +21,3 @@ python -m motor_control
 ```
 
 Windows 也可以直接双击 `upper_computer/run.bat`。
-# Motor_Architecture
