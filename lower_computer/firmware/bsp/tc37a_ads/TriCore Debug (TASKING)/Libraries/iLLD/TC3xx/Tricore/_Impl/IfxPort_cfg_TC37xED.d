@@ -1,4 +1,4 @@
 IfxPort_cfg_TC37xED.o :	../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxPort_cfg_TC37xED.c
 ../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxPort_cfg_TC37xED.c :
-IfxPort_cfg_TC37xED.o :	"C:\\Users\\bowen\\AURIX-v1.10.16-workspace\\aurix_TC375L\\Configurations\Ifx_Cfg.h"
-"C:\\Users\\bowen\\AURIX-v1.10.16-workspace\\aurix_TC375L\\Configurations\Ifx_Cfg.h" :
+IfxPort_cfg_TC37xED.o :	"D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\Configurations\Ifx_Cfg.h"
+"D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\Configurations\Ifx_Cfg.h" :

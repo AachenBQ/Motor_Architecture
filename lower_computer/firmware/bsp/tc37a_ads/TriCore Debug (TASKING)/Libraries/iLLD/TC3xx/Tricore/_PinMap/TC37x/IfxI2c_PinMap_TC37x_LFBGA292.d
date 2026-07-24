@@ -1,4 +1,4 @@
 IfxI2c_PinMap_TC37x_LFBGA292.o :	../Libraries/iLLD/TC3xx/Tricore/_PinMap/TC37x/IfxI2c_PinMap_TC37x_LFBGA292.c
 ../Libraries/iLLD/TC3xx/Tricore/_PinMap/TC37x/IfxI2c_PinMap_TC37x_LFBGA292.c :
-IfxI2c_PinMap_TC37x_LFBGA292.o :	"C:\\Users\\bowen\\AURIX-v1.10.16-workspace\\aurix_TC375L\\Configurations\Ifx_Cfg.h"
-"C:\\Users\\bowen\\AURIX-v1.10.16-workspace\\aurix_TC375L\\Configurations\Ifx_Cfg.h" :
+IfxI2c_PinMap_TC37x_LFBGA292.o :	"D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\Configurations\Ifx_Cfg.h"
+"D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\Configurations\Ifx_Cfg.h" :

@@ -20,6 +20,24 @@ static Tc375BldcDriver g_driver;
 static Tc375CurrentSense g_current_sense;
 static Tc375Encoder g_sensor;
 static bool g_simplefoc_bound;
+static bool g_simplefoc_open_loop;
+
+static float ClampPositive(float value, float fallback)
+{
+    return value > 0.0F ? value : fallback;
+}
+
+static float ClampVoltageLimit(float voltage_limit_v, float bus_voltage_v)
+{
+    float limit = ClampPositive(voltage_limit_v, bus_voltage_v * 0.1F);
+
+    if (limit > bus_voltage_v)
+    {
+        limit = bus_voltage_v;
+    }
+
+    return limit;
+}
 
 static void ConfigureSimpleFoc(const MotorControl *motor)
 {
@@ -167,6 +185,82 @@ bool SimpleFocTc375_RunCalibration(unsigned int calibration_type)
 
 void SimpleFocTc375_ForceSafeState(void)
 {
+    Tc375Hal_SetPhaseDuty(0.0F, 0.0F, 0.0F);
     Tc375Hal_SetPwmEnabled(false);
     Tc375Hal_SetGateEnabled(false);
+}
+
+bool SimpleFocTc375_OpenLoopInit(float bus_voltage_v, float voltage_limit_v)
+{
+#if MOTOR_USE_SIMPLEFOC
+    float bus_voltage = ClampPositive(bus_voltage_v, MOTOR_DEFAULT_BUS_MAX_V);
+    float voltage_limit = ClampVoltageLimit(voltage_limit_v, bus_voltage);
+
+    SimpleFocTc375_ForceSafeState();
+
+    if (!Tc375Hal_MotorPeripheralsInit())
+    {
+        return false;
+    }
+
+    g_driver.voltage_power_supply = bus_voltage;
+    g_driver.voltage_limit = voltage_limit;
+
+    g_foc_motor.controller = MotionControlType::velocity_openloop;
+    g_foc_motor.torque_controller = TorqueControlType::voltage;
+    g_foc_motor.foc_modulation = FOCModulationType::SinePWM;
+    g_foc_motor.voltage_limit = voltage_limit;
+    g_foc_motor.current_limit = MOTOR_DEFAULT_CURRENT_LIMIT_A;
+    g_foc_motor.velocity_limit = MOTOR_DEFAULT_SPEED_LIMIT_RAD_S;
+    g_foc_motor.linkDriver(&g_driver);
+
+    g_simplefoc_bound = true;
+    g_simplefoc_open_loop = false;
+
+    if (!g_driver.init() || !g_foc_motor.init())
+    {
+        SimpleFocTc375_ForceSafeState();
+        return false;
+    }
+
+    g_simplefoc_open_loop = true;
+    return true;
+#else
+    (void)bus_voltage_v;
+    (void)voltage_limit_v;
+    SimpleFocTc375_ForceSafeState();
+    return false;
+#endif
+}
+
+void SimpleFocTc375_OpenLoopStep(float target_velocity_rad_s)
+{
+#if MOTOR_USE_SIMPLEFOC
+    if (!g_simplefoc_open_loop || !g_simplefoc_bound)
+    {
+        return;
+    }
+
+    if (Tc375Hal_ReadActiveFaults() != 0U)
+    {
+        SimpleFocTc375_OpenLoopStop();
+        return;
+    }
+
+    g_foc_motor.move(target_velocity_rad_s);
+#else
+    (void)target_velocity_rad_s;
+#endif
+}
+
+void SimpleFocTc375_OpenLoopStop(void)
+{
+#if MOTOR_USE_SIMPLEFOC
+    if (g_simplefoc_bound)
+    {
+        g_foc_motor.disable();
+    }
+    g_simplefoc_open_loop = false;
+#endif
+    SimpleFocTc375_ForceSafeState();
 }

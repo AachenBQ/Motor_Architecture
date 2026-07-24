@@ -18,6 +18,9 @@ void SimpleFocTc375_AdcPwmIsr(MotorControl *motor);
 void SimpleFocTc375_OuterLoop(MotorControl *motor);
 bool SimpleFocTc375_RunCalibration(unsigned int calibration_type);
 void SimpleFocTc375_ForceSafeState(void);
+bool SimpleFocTc375_OpenLoopInit(float bus_voltage_v, float voltage_limit_v);
+void SimpleFocTc375_OpenLoopStep(float target_velocity_rad_s);
+void SimpleFocTc375_OpenLoopStop(void);
 
 #ifdef __cplusplus
 }

@@ -1,4 +1,4 @@
 IfxMtu_cfg_TC33x.o :	../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxMtu_cfg_TC33x.c
 ../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxMtu_cfg_TC33x.c :
-IfxMtu_cfg_TC33x.o :	"C:\\Users\\bowen\\AURIX-v1.10.16-workspace\\aurix_TC375L\\Configurations\Ifx_Cfg.h"
-"C:\\Users\\bowen\\AURIX-v1.10.16-workspace\\aurix_TC375L\\Configurations\Ifx_Cfg.h" :
+IfxMtu_cfg_TC33x.o :	"D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\Configurations\Ifx_Cfg.h"
+"D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\Configurations\Ifx_Cfg.h" :

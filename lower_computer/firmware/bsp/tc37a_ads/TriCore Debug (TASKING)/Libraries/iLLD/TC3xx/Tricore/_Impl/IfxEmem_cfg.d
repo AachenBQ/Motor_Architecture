@@ -1,4 +1,4 @@
 IfxEmem_cfg.o :	../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxEmem_cfg.c
 ../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxEmem_cfg.c :
-IfxEmem_cfg.o :	"C:\\Users\\bowen\\AURIX-v1.10.16-workspace\\aurix_TC375L\\Configurations\Ifx_Cfg.h"
-"C:\\Users\\bowen\\AURIX-v1.10.16-workspace\\aurix_TC375L\\Configurations\Ifx_Cfg.h" :
+IfxEmem_cfg.o :	"D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\Configurations\Ifx_Cfg.h"
+"D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\Configurations\Ifx_Cfg.h" :

@@ -80,7 +80,7 @@ flowchart LR
 
 GTM 需要承担两个角色：
 
-- PWM 生成：驱动三相逆变器，最终根据功率板选择 3-PWM 或 6-PWM。
+- PWM 生成：按 DRV8313 入口生成三路 3-PWM，相当于 U/V/W 三相高边输入占空比。
 - ADC trigger：在 PWM 周期内的稳定采样窗口触发 EVADC。
 
 建议：
@@ -93,9 +93,9 @@ GTM 需要承担两个角色：
 
 需要冻结的硬件参数：
 
-- PWM 模式：3-PWM 还是 6-PWM。
-- PWM 引脚和互补输出引脚。
-- gate driver dead time 要求。
+- PWM 模式：DRV8313 3-PWM 单输入模型。
+- PWM 引脚：U/V/W 分别映射到 P02.0/P02.1/P02.2；不使用 GTM 互补输出引脚。
+- gate driver dead time 要求：由 DRV8313 硬件内部逻辑负责，MCU 不插入 DTM dead-time。
 - 最小有效脉宽和最大 duty 限制。
 - trigger 到 ADC sample-and-hold 的延迟。
 
@@ -240,7 +240,8 @@ ADC/FOC ISR 内禁止：
 ### Phase B：PWM safe waveform
 
 - gate 仍 off。
-- 输出 PWM 到 MCU 引脚，用示波器确认频率、中心对齐、死区和 trigger 位置。
+- 输出 PWM 到 MCU 引脚，用示波器确认频率、中心对齐、U/V/W 相序和 trigger 位置。
+- DRV8313 模式下 MCU 只输出三路 PWM 输入，不检查 MCU 低边互补和 DTM dead-time。
 - 确认 ADC trigger 不落在 PWM 边沿附近。
 
 ### Phase C：低压开环
@@ -258,36 +259,61 @@ ADC/FOC ISR 内禁止：
 
 ## 12. 需要新增或落地的代码模块
 
-当前采用 ADS 标准工程作为 BSP 基线：`Libraries/` 保持 Infineon iLLD/Infra/Service 原样，`Configurations/` 保持 ADS 生成配置，项目自有底层代码放到 `Application/board/`。这样 PWM/ADC/安全逻辑属于 board-level BSP，而不是 iLLD vendor 代码。
+当前采用 ADS 标准工程作为 BSP 基线：`Libraries/` 保持 Infineon iLLD/Infra/Service 原样，`Configurations/` 保持 ADS 生成配置，用户已在 ADS 中验证过的底层入口保持在 `firmware/bsp/tc37a_ads/` 工程根目录。PWM、DRV8313、EVADC、安全逻辑属于项目 BSP，不属于 iLLD vendor 代码。
 
-建议落地方式：
+当前落地方式：
 
 ```text
 firmware/bsp/tc37a_ads/
-  .ads/
-  .settings/
   Configurations/
   Libraries/
   Lcf_*.lsl
-  Application/
-    board/
-      board_gtm_pwm.c/.h
-      board_gtm_pwm_pins.h
-      board_evadc.c/.h          # 下一步落地
-      board_multicore.c/.h      # 下一步落地
-      board_safety.c/.h         # 下一步落地
-      board_hal_illd.c          # 后续对接 tc375_hal.h
+  Cpu0_Main.c
+  Cpu1_Main.c
+  Cpu2_Main.c
+  GTM_ATOM_3_Phase_Inverter_PWM.c/.h
+  DRV8313_handle.c/.h
+  tc375_hal_ads.c              # 对接 tc375_hal.h 的 ADS/iLLD HAL
 ```
 
-已恢复 `board_gtm_pwm` 作为板级 GTM/ATOM PWM wrapper：默认 10 kHz、中心对齐、三组互补通道、1 us rising/falling dead-time、shadow update，同步 duty 更新接口为 `BoardGtmPwm_setDutyPercent()`。真实输出引脚默认关闭；只有确认 TC375 板级 pin map 后，才在 `board_gtm_pwm_pins.h` 打开 `BOARD_GTM_PWM_ENABLE_OUTPUT_PINS` 并选择/新增对应映射。
+### 12.1 DRV8313 PWM 约定
+
+DRV8313 入口采用 3PWM 单输入模型：每相只送入一个 PWM，硬件内部产生互补低边逻辑。因此 `GtmAtom3phInv_setDuty(dutyU, dutyV, dutyW)` 的 duty 表示对应相的高边/PWM 输入占空比，单位为 `%`，范围由宏 `GTM_ATOM_3PH_INV_DUTY_MIN_PERCENT` 和 `GTM_ATOM_3PH_INV_DUTY_MAX_PERCENT` 限幅。当前默认 `0..100%`。
+
+当前相序约定：
+
+| API 相位 | GTM 通道 | 输出 pin | 语义 |
+|---|---:|---|---|
+| U | ATOM1 CH0 | P02.0 / TOUT0 | DRV8313 U 相 PWM 输入，高边导通比例 |
+| V | ATOM1 CH1 | P02.1 / TOUT1 | DRV8313 V 相 PWM 输入，高边导通比例 |
+| W | ATOM1 CH2 | P02.2 / TOUT2 | DRV8313 W 相 PWM 输入，高边导通比例 |
+
+不再配置 GTM complementary pin，也不再由 iLLD DTM 插入死区。互补低边和保护时序由 DRV8313 硬件负责。FOC 适配层传入的是 `0..1` duty，`tc375_hal_ads.c` 转成 `0..100%` 后调用 BSP。
+
+### 12.2 PWM 更新策略
+
+当前 `GtmAtom3phInv_setDuty()` 使用 `IfxGtm_Pwm_updateChannelsDutyImmediate()`，这是开环 bring-up 阶段的临时策略，便于示波器和低压相序测试快速看到响应。进入闭环 FOC、电流采样同步和真实负载测试前，应切换到同步 shadow update，在 PWM 周期边界统一更新三相 duty，避免半周期内更新造成毛刺或采样相位漂移。
+
+### 12.3 SimpleFOC 开环测试入口
+
+SimpleFOC 保持在 `firmware/simplefoc_port/`，通过 C 边界隔离 C++ 库对象。当前新增开环入口：
+
+```c
+bool SimpleFocTc375_OpenLoopInit(float bus_voltage_v, float voltage_limit_v);
+void SimpleFocTc375_OpenLoopStep(float target_velocity_rad_s);
+void SimpleFocTc375_OpenLoopStop(void);
+```
+
+开环测试采用 `velocity_openloop + voltage` 模式，不绑定编码器和电流采样，也不调用 `initFOC()`。ADS 的 `Cpu0_Main.c` 默认仍保持安全零 duty；需要测试时再打开 `BSP_SIMPLEFOC_OPEN_LOOP_TEST=1`，并在确认低压限流、电机固定、安全停机路径和相序后，才允许 `MOTOR_REAL_HARDWARE_ENABLED=1` 输出真实 PWM。
 
 优先实现顺序：
 
 1. ADS 工程基线校验：确认芯片型号、链接脚本、启动文件、iLLD 版本和 include path。
-2. GTM PWM/timing：保留 `board_gtm_pwm`，先跑 10 kHz timing，保持 gate/PWM 功率输出安全关闭。
-3. EVADC：接入 6 路同步采样、固定 result register、valid/overrun 检查和 raw frame。
-4. Multicore：Core 0/1/2 启动、ready handshake、共享 buffer 和 mailbox。
-5. Safety/HAL：fault latch、gate off、deadline miss，并把现有 `tc375_hal.h` 接到真实 iLLD 实现。
+2. GTM PWM/timing：保持 DRV8313 3PWM 单输入模型，先跑 20 kHz 中心对齐 PWM 和安全零 duty。
+3. SimpleFOC 低压开环：小 `voltage_limit`、小速度，验证 U/V/W 相序、电机旋转方向和 fault 关断。
+4. EVADC：接入 6 路同步采样、固定 result register、valid/overrun 检查和 raw frame。
+5. Multicore：Core 0/1/2 启动、ready handshake、共享 buffer 和 mailbox。
+6. Safety/HAL：fault latch、gate off、deadline miss，并把 `tc375_hal.h` 中 ADC、编码器、ASCLIN、Flash 接到真实 iLLD 实现。
 
 ## 13. 测试和验收
 

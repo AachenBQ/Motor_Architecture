@@ -4,12 +4,33 @@
 
 #include "tc375_hal.h"
 
-static float ClampDuty(float voltage, float supply)
+static float ClampDuty(float voltage, float supply, float voltage_limit)
 {
     if (supply <= 0.0F)
     {
         return 0.0F;
     }
+
+    if (voltage_limit < 0.0F)
+    {
+        voltage_limit = 0.0F;
+    }
+
+    if (voltage_limit > supply)
+    {
+        voltage_limit = supply;
+    }
+
+    if (voltage < 0.0F)
+    {
+        voltage = 0.0F;
+    }
+
+    if (voltage > voltage_limit)
+    {
+        voltage = voltage_limit;
+    }
+
     float duty = voltage / supply;
     if (duty < 0.0F)
     {
@@ -53,9 +74,9 @@ void Tc375BldcDriver::disable()
 
 void Tc375BldcDriver::setPwm(float ua, float ub, float uc)
 {
-    dc_a = ClampDuty(ua, voltage_power_supply);
-    dc_b = ClampDuty(ub, voltage_power_supply);
-    dc_c = ClampDuty(uc, voltage_power_supply);
+    dc_a = ClampDuty(ua, voltage_power_supply, voltage_limit);
+    dc_b = ClampDuty(ub, voltage_power_supply, voltage_limit);
+    dc_c = ClampDuty(uc, voltage_power_supply, voltage_limit);
 #if MOTOR_REAL_HARDWARE_ENABLED
     Tc375Hal_SetPhaseDuty(dc_a, dc_b, dc_c);
 #else
