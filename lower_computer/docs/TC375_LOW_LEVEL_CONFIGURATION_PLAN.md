@@ -229,9 +229,9 @@ ADC/FOC ISR 内禁止：
 
 ## 11. Bring-Up 阶段
 
-### Phase A：无功率输出 ADC bring-up
+### Phase A：控制板通信与 ADC bring-up
 
-- `MOTOR_REAL_HARDWARE_ENABLED=0`。
+- `MOTOR_CONTROL_HARDWARE_ENABLED=0`，`MOTOR_POWER_STAGE_ENABLED=0`。
 - gate off。
 - GTM 只输出 ADC trigger，不打开实际 PWM gate。
 - 采集 6 路 raw ADC，检查 10 kHz sequence 是否连续。
@@ -239,6 +239,7 @@ ADC/FOC ISR 内禁止：
 
 ### Phase B：PWM safe waveform
 
+- `MOTOR_CONTROL_HARDWARE_ENABLED=1`，`MOTOR_POWER_STAGE_ENABLED=0`。
 - gate 仍 off。
 - 输出 PWM 到 MCU 引脚，用示波器确认频率、中心对齐、U/V/W 相序和 trigger 位置。
 - DRV8313 模式下 MCU 只输出三路 PWM 输入，不检查 MCU 低边互补和 DTM dead-time。
@@ -284,9 +285,9 @@ DRV8313 入口采用 3PWM 单输入模型：每相只送入一个 PWM，硬件�
 
 | API 相位 | GTM 通道 | 输出 pin | 语义 |
 |---|---:|---|---|
-| U | ATOM1 CH0 | P02.0 / TOUT0 | DRV8313 U 相 PWM 输入，高边导通比例 |
-| V | ATOM1 CH1 | P02.1 / TOUT1 | DRV8313 V 相 PWM 输入，高边导通比例 |
-| W | ATOM1 CH2 | P02.2 / TOUT2 | DRV8313 W 相 PWM 输入，高边导通比例 |
+| U | ATOM1 CH0 | P00.0 / TOUT9 | DRV8313 U 相 PWM 输入，高边导通比例 |
+| V | ATOM1 CH1 | P00.2 / TOUT11 | DRV8313 V 相 PWM 输入，高边导通比例 |
+| W | ATOM1 CH2 | P00.3 / TOUT12 | DRV8313 W 相 PWM 输入，高边导通比例 |
 
 不再配置 GTM complementary pin，也不再由 iLLD DTM 插入死区。互补低边和保护时序由 DRV8313 硬件负责。FOC 适配层传入的是 `0..1` duty，`tc375_hal_ads.c` 转成 `0..100%` 后调用 BSP。
 
@@ -304,7 +305,12 @@ void SimpleFocTc375_OpenLoopStep(float target_velocity_rad_s);
 void SimpleFocTc375_OpenLoopStop(void);
 ```
 
-开环测试采用 `velocity_openloop + voltage` 模式，不绑定编码器和电流采样，也不调用 `initFOC()`。ADS 的 `Cpu0_Main.c` 默认仍保持安全零 duty；需要测试时再打开 `BSP_SIMPLEFOC_OPEN_LOOP_TEST=1`，并在确认低压限流、电机固定、安全停机路径和相序后，才允许 `MOTOR_REAL_HARDWARE_ENABLED=1` 输出真实 PWM。
+开环测试采用 `velocity_openloop + voltage` 模式，不绑定编码器和电流采样，
+也不调用 `initFOC()`。启动由协议 v2 的 `START_OPEN_LOOP` 完成，不再修改
+`Cpu0_Main.c` 测试宏。控制板示波器阶段保持
+`MOTOR_CONTROL_HARDWARE_ENABLED=1`、`MOTOR_POWER_STAGE_ENABLED=0`；确认低压
+限流、电机固定、安全停机路径、采样和相序后，才评审是否把
+`MOTOR_POWER_STAGE_ENABLED` 改为 `1`。
 
 优先实现顺序：
 

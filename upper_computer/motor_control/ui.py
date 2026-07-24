@@ -18,6 +18,9 @@ from .protocol import (
     Frame,
     FrameParser,
     MODE_LABELS,
+    OPEN_LOOP_BACKEND_LABELS,
+    OpenLoopBackend,
+    OpenLoopConfig,
     PID_LOOP_LABELS,
     PidLoop,
     bytes_to_hex,
@@ -28,10 +31,13 @@ from .protocol import (
     pack_heartbeat,
     pack_limits,
     pack_mode,
+    pack_open_loop_config,
     pack_pid,
     pack_target,
     pack_telemetry_profile,
     unpack_limits,
+    unpack_build_config,
+    unpack_open_loop_config,
     unpack_telemetry_profile,
     unpack_telemetry,
 )
@@ -57,6 +63,9 @@ COLORS = {
 
 
 MODE_FROM_LABEL = {label: mode for mode, label in MODE_LABELS.items()}
+OPEN_LOOP_BACKEND_FROM_LABEL = {
+    label: backend for backend, label in OPEN_LOOP_BACKEND_LABELS.items()
+}
 PID_LOOP_FROM_LABEL = {label: loop for loop, label in PID_LOOP_LABELS.items()}
 PID_DEFAULT_VALUES = {
     PidLoop.CURRENT: (0.80, 0.12, 0.01),
@@ -313,6 +322,23 @@ class MotorStudioApp:
         self._last_parser_crc_errors = 0
         self._alarm_keys = set()  # type: Set[str]
         self._last_value_refresh = 0.0
+        self._last_telemetry_at = 0.0
+        self._connected_at = 0.0
+        self._protocol_response_at = 0.0
+        self._telemetry_watchdog_armed_at = 0.0
+        self._no_response_reported = False
+        self._no_telemetry_reported = False
+        self._software_protection_latched = False
+        self._shutdown_pending = False
+        self._pending_open_loop_start = None  # type: Optional[OpenLoopConfig]
+        self._build_control_hardware_enabled = None  # type: Optional[bool]
+        self._build_power_stage_enabled = None  # type: Optional[bool]
+        self._build_simplefoc_enabled = None  # type: Optional[bool]
+        self._build_config_query_generation = 0
+        self._build_config_query_attempt = 0
+        self._build_config_query_started_at = 0.0
+        self._device_firmware_version = None  # type: Optional[Tuple[int, int, int]]
+        self._device_build_id = ""
         self.pid_values = {
             (motor_id, loop): values
             for motor_id in range(1, self.motor_count + 1)
@@ -332,9 +358,34 @@ class MotorStudioApp:
             "temperature": tk.StringVar(master=root, value="80"),
         }
         self.telemetry_rate_var = tk.StringVar(master=root, value="20")
+        self.open_loop_backend_var = tk.StringVar(
+            master=root,
+            value=OPEN_LOOP_BACKEND_LABELS[OpenLoopBackend.SIMPLEFOC],
+        )
+        self.open_loop_vars = {
+            "pole_pairs": tk.StringVar(master=root, value="7"),
+            "bus_voltage": tk.StringVar(master=root, value="24"),
+            "voltage_limit": tk.StringVar(master=root, value="2"),
+            "target_velocity": tk.StringVar(master=root, value="5"),
+            "acceleration": tk.StringVar(master=root, value="10"),
+            "update_period": tk.StringVar(master=root, value="10"),
+            "startup_delay": tk.StringVar(master=root, value="500"),
+            "max_runtime": tk.StringVar(master=root, value="30000"),
+        }
+        self.auto_protection_var = tk.BooleanVar(master=root, value=True)
+        self.protection_response_var = tk.StringVar(
+            master=root, value="快速停止"
+        )
+        self.telemetry_timeout_var = tk.StringVar(master=root, value="1000")
+        self.heartbeat_lease_var = tk.StringVar(master=root, value="750")
         self.config_status_var = tk.StringVar(master=root, value="尚未读取设备配置")
         self.backend_info_var = tk.StringVar(master=root, value="控制后端：未读取")
         self.diagnostics_var = tk.StringVar(master=root, value="诊断信息：未读取")
+        self.build_config_var = tk.StringVar(master=root, value="固件宏：未读取")
+        self.hardware_layer_var = tk.StringVar(
+            master=root,
+            value="连接层级：控制硬件未确认｜功率硬件未确认",
+        )
 
         self._configure_theme()
         self._build_ui()
@@ -580,7 +631,7 @@ class MotorStudioApp:
         ).pack(side=tk.LEFT, padx=(6, 8))
         self.connect_button = ttk.Button(
             connection,
-            text="连接串口",
+            text="连接控制硬件",
             style="Accent.TButton",
             command=self._toggle_serial_connection,
         )
@@ -747,7 +798,7 @@ class MotorStudioApp:
         mode_combo = ttk.Combobox(
             target_box,
             textvariable=self.control_mode,
-            values=("转矩", "速度", "位置"),
+            values=("转矩", "速度", "位置", "开环速度"),
             state="readonly",
             width=12,
         )
@@ -781,6 +832,20 @@ class MotorStudioApp:
             enable_row,
             text="失能",
             command=lambda: self._send_enable(False),
+        ).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(3, 0))
+        stop_row = ttk.Frame(target_box, style="Panel.TFrame")
+        stop_row.grid(
+            row=4, column=0, columnspan=2, sticky="ew", pady=(6, 0)
+        )
+        ttk.Button(
+            stop_row,
+            text="受控停止",
+            command=self._controlled_stop,
+        ).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 3))
+        ttk.Button(
+            stop_row,
+            text="快速停止",
+            command=self._quick_stop,
         ).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(3, 0))
 
         pid_box = ttk.LabelFrame(panel, text=" PID 参数 ", padding=9)
@@ -881,14 +946,58 @@ class MotorStudioApp:
         window = tk.Toplevel(self.root)
         self.config_window = window
         window.title("TC375 设备配置")
-        window.geometry("570x650")
-        window.minsize(540, 610)
+        window.geometry("780x720")
+        window.minsize(700, 560)
         window.configure(background=COLORS["bg"])
         window.transient(self.root)
         window.protocol("WM_DELETE_WINDOW", self._close_device_config)
 
-        body = ttk.Frame(window, style="Panel.TFrame", padding=16)
-        body.pack(fill=tk.BOTH, expand=True)
+        scroll_host = ttk.Frame(window, style="Panel.TFrame")
+        scroll_host.pack(fill=tk.BOTH, expand=True)
+
+        scroll_canvas = tk.Canvas(
+            scroll_host,
+            background=COLORS["panel"],
+            highlightthickness=0,
+            borderwidth=0,
+        )
+        scroll_bar = ttk.Scrollbar(
+            scroll_host,
+            orient=tk.VERTICAL,
+            command=scroll_canvas.yview,
+        )
+        scroll_canvas.configure(yscrollcommand=scroll_bar.set)
+        scroll_bar.pack(side=tk.RIGHT, fill=tk.Y)
+        scroll_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        body = ttk.Frame(scroll_canvas, style="Panel.TFrame", padding=16)
+        body_window = scroll_canvas.create_window(
+            (0, 0),
+            window=body,
+            anchor=tk.NW,
+        )
+
+        def update_scroll_region(_event=None) -> None:
+            scroll_canvas.configure(scrollregion=scroll_canvas.bbox("all"))
+
+        def fit_body_width(event: tk.Event) -> None:
+            scroll_canvas.itemconfigure(body_window, width=event.width)
+
+        def scroll_with_wheel(event: tk.Event) -> str:
+            delta = getattr(event, "delta", 0)
+            if delta:
+                steps = -1 if delta > 0 else 1
+            else:
+                steps = -1 if getattr(event, "num", 0) == 4 else 1
+            scroll_canvas.yview_scroll(steps, "units")
+            return "break"
+
+        body.bind("<Configure>", update_scroll_region)
+        scroll_canvas.bind("<Configure>", fit_body_width)
+        window.bind("<MouseWheel>", scroll_with_wheel)
+        window.bind("<Button-4>", scroll_with_wheel)
+        window.bind("<Button-5>", scroll_with_wheel)
+
         body.columnconfigure(0, weight=1)
         ttk.Label(
             body,
@@ -932,8 +1041,97 @@ class MotorStudioApp:
                 style="PanelMuted.TLabel",
             ).grid(row=row, column=2, sticky=tk.W, pady=3)
 
+        open_loop_box = ttk.LabelFrame(
+            body, text=" 开环调试参数（停止状态下应用） ", padding=11
+        )
+        open_loop_box.grid(row=3, column=0, sticky="ew", pady=(10, 0))
+        open_loop_box.columnconfigure(1, weight=1)
+        open_loop_box.columnconfigure(4, weight=1)
+        ttk.Label(
+            open_loop_box, text="实现方式", style="Panel.TLabel"
+        ).grid(row=0, column=0, sticky=tk.W, pady=3)
+        ttk.Combobox(
+            open_loop_box,
+            textvariable=self.open_loop_backend_var,
+            values=tuple(OPEN_LOOP_BACKEND_FROM_LABEL),
+            state="readonly",
+        ).grid(
+            row=0, column=1, columnspan=4, sticky="ew", padx=(8, 8), pady=3
+        )
+        open_loop_specs = (
+            (
+                ("极对数", "pole_pairs", "pairs"),
+                ("母线电压", "bus_voltage", "V"),
+            ),
+            (
+                ("电压限幅", "voltage_limit", "V"),
+                ("初始速度", "target_velocity", "rad/s"),
+            ),
+            (
+                ("加速度", "acceleration", "rad/s²"),
+                ("更新周期", "update_period", "ms"),
+            ),
+            (
+                ("启动延时", "startup_delay", "ms"),
+                ("最长运行", "max_runtime", "ms"),
+            ),
+        )
+        for row, pair in enumerate(open_loop_specs, start=1):
+            for index, (label, key, unit) in enumerate(pair):
+                offset = index * 3
+                ttk.Label(
+                    open_loop_box, text=label, style="Panel.TLabel"
+                ).grid(row=row, column=offset, sticky=tk.W, pady=3)
+                ttk.Entry(
+                    open_loop_box,
+                    textvariable=self.open_loop_vars[key],
+                    width=12,
+                ).grid(
+                    row=row,
+                    column=offset + 1,
+                    sticky="ew",
+                    padx=(8, 5),
+                    pady=3,
+                )
+                ttk.Label(
+                    open_loop_box,
+                    text=unit,
+                    style="PanelMuted.TLabel",
+                ).grid(row=row, column=offset + 2, sticky=tk.W, pady=3)
+        open_loop_actions = ttk.Frame(
+            open_loop_box, style="Panel.TFrame"
+        )
+        open_loop_actions.grid(
+            row=5, column=0, columnspan=6, sticky="ew", pady=(7, 0)
+        )
+        ttk.Button(
+            open_loop_actions,
+            text="读取开环参数",
+            command=self._read_open_loop_config,
+        ).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 3))
+        ttk.Button(
+            open_loop_actions,
+            text="应用开环参数",
+            style="Accent.TButton",
+            command=self._apply_open_loop_config,
+        ).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=3)
+        ttk.Button(
+            open_loop_actions,
+            text="启动开环",
+            style="Success.TButton",
+            command=self._start_open_loop,
+        ).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(3, 0))
+        ttk.Label(
+            open_loop_box,
+            text=(
+                "运行中仅允许通过右侧“开环速度”目标实时调速；"
+                "提高电压限幅前请先停止。"
+            ),
+            style="PanelMuted.TLabel",
+        ).grid(row=6, column=0, columnspan=6, sticky=tk.W, pady=(7, 0))
+
         telemetry_box = ttk.LabelFrame(body, text=" 遥测配置 ", padding=11)
-        telemetry_box.grid(row=3, column=0, sticky="ew", pady=(10, 0))
+        telemetry_box.grid(row=4, column=0, sticky="ew", pady=(10, 0))
         telemetry_box.columnconfigure(1, weight=1)
         ttk.Label(
             telemetry_box,
@@ -957,25 +1155,85 @@ class MotorStudioApp:
             style="PanelMuted.TLabel",
         ).grid(row=1, column=0, columnspan=3, sticky=tk.W, pady=(7, 0))
 
+        protection_box = ttk.LabelFrame(
+            body, text=" 上位机软件保护 ", padding=11
+        )
+        protection_box.grid(row=5, column=0, sticky="ew", pady=(10, 0))
+        protection_box.columnconfigure(2, weight=1)
+        ttk.Checkbutton(
+            protection_box,
+            text="启用阈值与遥测超时自动停止",
+            variable=self.auto_protection_var,
+        ).grid(row=0, column=0, columnspan=3, sticky=tk.W)
+        ttk.Label(
+            protection_box, text="保护响应", style="Panel.TLabel"
+        ).grid(row=1, column=0, sticky=tk.W, pady=(7, 0))
+        ttk.Combobox(
+            protection_box,
+            textvariable=self.protection_response_var,
+            values=("受控停止", "快速停止", "紧急停止"),
+            state="readonly",
+            width=11,
+        ).grid(row=1, column=1, sticky=tk.W, padx=(8, 18), pady=(7, 0))
+        ttk.Label(
+            protection_box, text="遥测超时", style="Panel.TLabel"
+        ).grid(row=1, column=2, sticky=tk.E, pady=(7, 0))
+        ttk.Entry(
+            protection_box,
+            textvariable=self.telemetry_timeout_var,
+            width=8,
+        ).grid(row=1, column=3, padx=(8, 4), pady=(7, 0))
+        ttk.Label(
+            protection_box, text="ms", style="PanelMuted.TLabel"
+        ).grid(row=1, column=4, sticky=tk.W, pady=(7, 0))
+        ttk.Label(
+            protection_box, text="心跳租约", style="Panel.TLabel"
+        ).grid(row=2, column=2, sticky=tk.E, pady=(7, 0))
+        ttk.Entry(
+            protection_box,
+            textvariable=self.heartbeat_lease_var,
+            width=8,
+        ).grid(row=2, column=3, padx=(8, 4), pady=(7, 0))
+        ttk.Label(
+            protection_box, text="ms", style="PanelMuted.TLabel"
+        ).grid(row=2, column=4, sticky=tk.W, pady=(7, 0))
+        ttk.Button(
+            protection_box,
+            text="应用软件保护",
+            command=self._apply_software_protection,
+        ).grid(row=2, column=0, columnspan=2, sticky="ew", pady=(7, 0))
+
         info_box = ttk.LabelFrame(body, text=" 设备信息 ", padding=11)
-        info_box.grid(row=4, column=0, sticky="ew", pady=(10, 0))
+        info_box.grid(row=6, column=0, sticky="ew", pady=(10, 0))
+        ttk.Label(
+            info_box,
+            textvariable=self.hardware_layer_var,
+            style="Panel.TLabel",
+        ).pack(anchor=tk.W)
         ttk.Label(
             info_box,
             textvariable=self.backend_info_var,
             style="Panel.TLabel",
-        ).pack(anchor=tk.W)
+        ).pack(anchor=tk.W, pady=(5, 0))
         ttk.Label(
             info_box,
             textvariable=self.diagnostics_var,
             style="PanelMuted.TLabel",
         ).pack(anchor=tk.W, pady=(5, 0))
+        ttk.Label(
+            info_box,
+            textvariable=self.build_config_var,
+            style="PanelMuted.TLabel",
+            wraplength=700,
+        ).pack(anchor=tk.W, pady=(5, 0))
 
         actions = ttk.Frame(body, style="Panel.TFrame")
-        actions.grid(row=5, column=0, sticky="ew", pady=(12, 0))
+        actions.grid(row=7, column=0, sticky="ew", pady=(12, 0))
         for column in range(3):
             actions.columnconfigure(column, weight=1)
         action_specs = (
-            ("读取设备", self._read_device_config, "TButton"),
+            ("读取全部", self._read_device_config, "TButton"),
+            ("检测固件 / 硬件", self._query_build_config, "TButton"),
             ("应用限值", self._apply_limits, "Accent.TButton"),
             ("应用遥测", self._apply_telemetry_profile, "Accent.TButton"),
             ("保存到 Flash", self._save_config, "Success.TButton"),
@@ -1000,13 +1258,13 @@ class MotorStudioApp:
             body,
             textvariable=self.config_status_var,
             style="PanelMuted.TLabel",
-            wraplength=520,
-        ).grid(row=6, column=0, sticky="ew", pady=(12, 0))
+            wraplength=700,
+        ).grid(row=8, column=0, sticky="ew", pady=(12, 0))
         ttk.Button(
             body,
             text="关闭",
             command=self._close_device_config,
-        ).grid(row=7, column=0, sticky="ew", pady=(12, 0))
+        ).grid(row=9, column=0, sticky="ew", pady=(12, 0))
 
     def _close_device_config(self) -> None:
         if self.config_window is not None:
@@ -1023,11 +1281,290 @@ class MotorStudioApp:
         if not self.link.connected:
             self._set_config_status("请先连接串口或启动仿真设备。")
             return
-        self._send_frame(Command.GET_LIMITS, b"\x01", 1)
-        self._send_frame(Command.GET_TELEMETRY_PROFILE, b"", 1)
-        self._query_backend()
-        self._query_diagnostics()
-        self._set_config_status("正在读取限值、控制后端和诊断信息…")
+        self._query_build_config()
+        queries = (
+            (Command.GET_LIMITS, b"\x01"),
+            (Command.GET_TELEMETRY_PROFILE, b""),
+            (Command.GET_OPEN_LOOP_CONFIG, b"\x01"),
+            (Command.GET_BACKEND_INFO, b""),
+            (Command.GET_DIAGNOSTICS, b""),
+        )
+        for index, (command, payload) in enumerate(queries):
+            self.root.after(
+                60 * (index + 1),
+                lambda cmd=command, data=payload: self._send_if_connected(
+                    cmd, data, 1
+                ),
+            )
+        self._set_config_status(
+            "正在读取限值、开环参数、固件宏和诊断信息…"
+        )
+
+    def _send_if_connected(
+        self,
+        command: Union[Command, int],
+        payload: bytes = b"",
+        device: int = 0,
+    ) -> None:
+        if self.link.connected:
+            self._send_frame(command, payload, device)
+
+    def _query_build_config(self, retry: bool = False) -> None:
+        if not self.link.connected:
+            if not retry:
+                self._set_config_status("请先连接串口或启动仿真设备。")
+            return
+        if retry:
+            self._build_config_query_attempt += 1
+        else:
+            self._build_config_query_generation += 1
+            self._build_config_query_attempt = 1
+            self._build_config_query_started_at = time.monotonic()
+            self._build_control_hardware_enabled = None
+            self._build_power_stage_enabled = None
+            self._build_simplefoc_enabled = None
+            self.hardware_layer_var.set(
+                "连接层级：正在确认控制硬件与功率硬件…"
+            )
+            self.build_config_var.set("固件宏：正在读取命令 0x29…")
+        generation = self._build_config_query_generation
+        if self._send_frame(Command.GET_BUILD_CONFIG, b"", 1):
+            self._set_config_status(
+                "正在等待设备确认固件宏（0x29，第 {} 次）…".format(
+                    self._build_config_query_attempt
+                )
+            )
+            self.root.after(
+                700,
+                lambda token=generation: self._check_build_config_reply(
+                    token
+                ),
+            )
+
+    def _check_build_config_reply(self, generation: int) -> None:
+        if (
+            generation != self._build_config_query_generation
+            or not self.link.connected
+            or self._build_config_query_started_at == 0.0
+        ):
+            return
+        if self._build_config_query_attempt < 2:
+            self._append_log(
+                "未收到命令 0x29 的确认，正在自动重试一次。", "warn"
+            )
+            self._query_build_config(retry=True)
+            return
+        protocol_alive = (
+            self._protocol_response_at
+            > self._build_config_query_started_at
+        )
+        if protocol_alive:
+            if (
+                self._device_firmware_version is not None
+                and self._device_firmware_version < (0, 3, 0)
+            ):
+                message = (
+                    "板上当前运行 FW {}（build={}），不是支持 0x29 的 "
+                    "FW 0.3.0 / CFG29；请重新 Download 最新 ELF 并 Resume。"
+                ).format(
+                    ".".join(
+                        str(value)
+                        for value in self._device_firmware_version
+                    ),
+                    self._device_build_id or "未知",
+                )
+            else:
+                message = (
+                    "串口有其他协议响应，但设备未回复 0x29；"
+                    "请重新 Download 最新 open_loop_test.elf 并 Resume。"
+                )
+        else:
+            message = (
+                "设备未回复 0x29，且查询期间没有任何协议响应；"
+                "请确认 CPU 处于 Run、波特率为 115200，并检查 TX/RX/GND。"
+            )
+        self._build_config_query_started_at = 0.0
+        self.hardware_layer_var.set(
+            "连接层级：未确认，禁止启动开环输出"
+        )
+        self.build_config_var.set("固件宏：读取失败（命令 0x29 无确认）")
+        self._set_config_status(message)
+        self.status_message.configure(text=message)
+        self._append_log(message, "error")
+
+    def _read_open_loop_config(self) -> None:
+        if self._send_frame(
+            Command.GET_OPEN_LOOP_CONFIG, b"\x01", 1
+        ):
+            self._set_config_status("正在读取设备开环参数…")
+
+    def _open_loop_config_from_ui(self) -> OpenLoopConfig:
+        try:
+            backend = OPEN_LOOP_BACKEND_FROM_LABEL[
+                self.open_loop_backend_var.get()
+            ]
+            pole_pairs = int(self.open_loop_vars["pole_pairs"].get())
+            bus_voltage = float(
+                self.open_loop_vars["bus_voltage"].get()
+            )
+            voltage_limit = float(
+                self.open_loop_vars["voltage_limit"].get()
+            )
+            target_velocity = float(
+                self.open_loop_vars["target_velocity"].get()
+            )
+            acceleration = float(
+                self.open_loop_vars["acceleration"].get()
+            )
+            update_period = int(
+                self.open_loop_vars["update_period"].get()
+            )
+            startup_delay = int(
+                self.open_loop_vars["startup_delay"].get()
+            )
+            max_runtime = int(
+                self.open_loop_vars["max_runtime"].get()
+            )
+        except (KeyError, ValueError):
+            raise ValueError("所有开环参数都必须是有效数字")
+        if bus_voltage > 60.0:
+            raise ValueError("母线电压不能超过固件硬上限 60 V")
+        if voltage_limit > 6.0:
+            raise ValueError("开环电压限幅不能超过固件硬上限 6 V")
+        if abs(target_velocity) > 100.0:
+            raise ValueError("开环速度绝对值不能超过固件硬上限 100 rad/s")
+        return OpenLoopConfig(
+            1,
+            backend,
+            pole_pairs,
+            0,
+            bus_voltage,
+            voltage_limit,
+            target_velocity,
+            acceleration,
+            update_period,
+            startup_delay,
+            max_runtime,
+        )
+
+    def _apply_open_loop_config(self) -> None:
+        try:
+            config = self._open_loop_config_from_ui()
+            payload = pack_open_loop_config(config)
+        except ValueError as exc:
+            messagebox.showerror("开环配置错误", str(exc))
+            return
+        if self._send_frame(
+            Command.SET_OPEN_LOOP_CONFIG, payload, 1
+        ):
+            self._set_config_status(
+                "已发送开环参数；设备只会在停止状态下接受。"
+            )
+
+    def _start_open_loop(self) -> None:
+        try:
+            config = self._open_loop_config_from_ui()
+            payload = pack_open_loop_config(config)
+        except ValueError as exc:
+            messagebox.showerror("开环配置错误", str(exc))
+            return
+        if self._software_protection_latched:
+            messagebox.showerror(
+                "保护已锁定",
+                "上位机软件保护已触发。请先排除原因并点击“清除故障”。",
+            )
+            return
+        if self._build_control_hardware_enabled is None:
+            messagebox.showerror(
+                "尚未确认硬件分层",
+                "请先点击“读取设备”，确认控制硬件、功率级和 SimpleFOC 编译状态。",
+            )
+            return
+        if not self._build_control_hardware_enabled:
+            messagebox.showerror(
+                "PWM 输出已锁定",
+                "当前固件未启用控制硬件输出，不能在 MCU 引脚产生 PWM。",
+            )
+            return
+        if (
+            config.backend == OpenLoopBackend.SIMPLEFOC
+            and not self._build_simplefoc_enabled
+        ):
+            messagebox.showerror(
+                "SimpleFOC 未启用",
+                "当前固件没有编译 SimpleFOC，请重新构建并烧录后再启动。",
+            )
+            return
+        if self._build_power_stage_enabled:
+            safety_text = (
+                "功率级已由固件允许：电机可能立即转动。请确认电机已卸载、"
+                "直流电源已限流、物理急停可用，且 nFAULT 已验证。"
+            )
+            stage_text = "功率级：已允许（真实功率输出）"
+        else:
+            safety_text = (
+                "当前为控制板 PWM 检查模式：DRV8313 nSLEEP/nRESET 将保持关闭。"
+                "请保持功率板或母线电源断开，仅在 MCU PWM 引脚上测量。"
+            )
+            stage_text = "功率级：编译期锁定（仅 MCU PWM）"
+        confirmed = messagebox.askyesno(
+            "确认启动开环",
+            (
+                "{}\n\n实现：{}\n{}\n母线参数：{:g} V\n电压限幅：{:g} V\n"
+                "目标速度：{:g} rad/s\n最长运行：{:.1f} s\n\n"
+                "是否继续？"
+            ).format(
+                safety_text,
+                OPEN_LOOP_BACKEND_LABELS[config.backend],
+                stage_text,
+                config.bus_voltage_v,
+                config.voltage_limit_v,
+                config.target_velocity_rad_s,
+                config.max_runtime_ms / 1000.0,
+            ),
+            parent=self.config_window,
+        )
+        if not confirmed:
+            return
+        if self._send_frame(
+            Command.SET_OPEN_LOOP_CONFIG,
+            payload,
+            1,
+        ):
+            self._pending_open_loop_start = config
+            self._set_config_status(
+                "正在先应用开环参数；设备确认后将发送启动命令…"
+            )
+
+    def _apply_software_protection(self) -> None:
+        try:
+            timeout_ms = int(self.telemetry_timeout_var.get())
+            lease_ms = int(self.heartbeat_lease_var.get())
+            if not 300 <= lease_ms <= 5000:
+                raise ValueError("心跳租约必须在 300..5000 ms 范围内")
+            if not 500 <= timeout_ms <= 10000:
+                raise ValueError("遥测超时必须在 500..10000 ms 范围内")
+            limits = {
+                key: float(variable.get())
+                for key, variable in self.limit_vars.items()
+            }
+        except ValueError as exc:
+            messagebox.showerror("保护配置错误", str(exc))
+            return
+        self.heartbeat_lease_ms = lease_ms
+        self.alarms.configure(
+            limits["current"],
+            limits["temperature"],
+            limits["bus_min"],
+            limits["bus_max"],
+        )
+        self._set_config_status(
+            "软件保护已应用：{}，遥测超时 {} ms，心跳租约 {} ms。".format(
+                self.protection_response_var.get(),
+                timeout_ms,
+                lease_ms,
+            )
+        )
 
     def _apply_limits(self) -> None:
         try:
@@ -1067,6 +1604,12 @@ class MotorStudioApp:
             values["temperature"],
         )
         if self._send_frame(Command.SET_LIMITS, payload, 1):
+            self.alarms.configure(
+                values["current"],
+                values["temperature"],
+                values["bus_min"],
+                values["bus_max"],
+            )
             self._set_config_status("已发送限值配置，等待设备确认…")
 
     def _apply_telemetry_profile(self) -> None:
@@ -1321,7 +1864,7 @@ class MotorStudioApp:
 
     def _toggle_serial_connection(self) -> None:
         if self.link.connected or self.link.running:
-            self.link.disconnect()
+            self._safe_disconnect()
             return
         port = self.port_var.get().strip()
         if not port:
@@ -1336,13 +1879,29 @@ class MotorStudioApp:
 
     def _toggle_simulator(self) -> None:
         if self.link.connected or self.link.running:
-            self.link.disconnect()
+            self._safe_disconnect()
             return
         try:
             self.link.connect_simulator(self.motor_count)
             self._set_pending_state("正在启动仿真设备…")
         except RuntimeError as exc:
             messagebox.showerror("启动失败", str(exc))
+
+    def _safe_disconnect(self) -> None:
+        if not self.link.connected:
+            self.link.disconnect()
+            return
+        self._software_protection_latched = True
+        self._send_frame(
+            Command.QUICK_STOP,
+            b"\x01",
+            1,
+            quiet=True,
+        )
+        self.status_message.configure(
+            text="正在快速停止电机并断开连接…"
+        )
+        self.root.after(120, self.link.disconnect)
 
     def _set_pending_state(self, message: str) -> None:
         self.connection_status.configure(
@@ -1352,11 +1911,20 @@ class MotorStudioApp:
         self.sim_button.configure(text="停止")
 
     def _set_connection_state(self, connected: bool, detail: str) -> None:
+        if not connected:
+            self._build_control_hardware_enabled = None
+            self._build_power_stage_enabled = None
+            self._build_simplefoc_enabled = None
+            self.hardware_layer_var.set(
+                "连接层级：控制硬件未连接｜功率硬件未确认"
+            )
         self.connection_status.configure(
             text=f"● {detail}",
             foreground=COLORS["success"] if connected else COLORS["muted"],
         )
-        self.connect_button.configure(text="断开" if connected else "连接串口")
+        self.connect_button.configure(
+            text="断开" if connected else "连接控制硬件"
+        )
         self.sim_button.configure(
             text="停止仿真" if connected and self.link.mode == "simulator" else "启动仿真"
         )
@@ -1403,6 +1971,7 @@ class MotorStudioApp:
             "转矩": "N·m",
             "速度": "rad/s",
             "位置": "rad",
+            "开环速度": "rad/s",
         }.get(self.control_mode.get(), "")
         self.target_label.configure(text=f"目标值（{unit}）")
 
@@ -1435,6 +2004,12 @@ class MotorStudioApp:
         return True
 
     def _send_enable(self, enabled: bool) -> None:
+        if enabled and self._software_protection_latched:
+            messagebox.showerror(
+                "保护已锁定",
+                "软件保护已触发，排除原因并清除故障后才能再次使能。",
+            )
+            return
         motor_id = self._selected_motor_id()
         if self._send_frame(
             Command.SET_ENABLE, pack_enable(motor_id, enabled), motor_id
@@ -1450,10 +2025,15 @@ class MotorStudioApp:
         except (ValueError, KeyError):
             messagebox.showerror("参数错误", "目标值必须是有效数字。")
             return
-        if self._send_frame(
-            Command.SET_MODE, pack_mode(motor_id, mode), motor_id
-        ) and self._send_frame(
-            Command.SET_TARGET, pack_target(motor_id, mode, target), motor_id
+        mode_sent = True
+        if mode != ControlMode.OPEN_LOOP_SPEED:
+            mode_sent = self._send_frame(
+                Command.SET_MODE, pack_mode(motor_id, mode), motor_id
+            )
+        if mode_sent and self._send_frame(
+            Command.SET_TARGET,
+            pack_target(motor_id, mode, target),
+            motor_id,
         ):
             self.status_message.configure(
                 text=f"已发送 M{motor_id} {MODE_LABELS[mode]}目标 {target:g}"
@@ -1508,13 +2088,66 @@ class MotorStudioApp:
     def _heartbeat_tick(self) -> None:
         try:
             if self.link.connected:
-                host_time_ms = int(time.monotonic() * 1000) & 0xFFFFFFFF
-                self._send_frame(
-                    Command.HEARTBEAT,
-                    pack_heartbeat(host_time_ms, self.heartbeat_lease_ms),
-                    1,
-                    quiet=True,
+                now = time.monotonic()
+                try:
+                    telemetry_timeout_ms = int(
+                        self.telemetry_timeout_var.get()
+                    )
+                except ValueError:
+                    telemetry_timeout_ms = 1000
+                telemetry_reference = max(
+                    self._last_telemetry_at,
+                    self._telemetry_watchdog_armed_at,
                 )
+                if (
+                    self.auto_protection_var.get()
+                    and not self._software_protection_latched
+                    and self._telemetry_watchdog_armed_at > 0.0
+                    and telemetry_reference > 0.0
+                    and (now - telemetry_reference) * 1000.0
+                    > telemetry_timeout_ms
+                ):
+                    self._trigger_software_protection(
+                        "遥测超过 {} ms 未更新".format(
+                            telemetry_timeout_ms
+                        )
+                    )
+                elif (
+                    self._protocol_response_at == 0.0
+                    and self._connected_at > 0.0
+                    and not self._no_response_reported
+                    and (now - self._connected_at) * 1000.0
+                    > telemetry_timeout_ms
+                ):
+                    self._no_response_reported = True
+                    message = (
+                        "串口已打开，但设备未返回 V2 协议数据；"
+                        "请检查固件、波特率和 TX/RX 接线。"
+                    )
+                    self.status_message.configure(text=message)
+                    self._append_log(message, "warn")
+                elif (
+                    self._protocol_response_at > 0.0
+                    and self._last_telemetry_at == 0.0
+                    and not self._no_telemetry_reported
+                    and (now - self._connected_at) * 1000.0
+                    > telemetry_timeout_ms
+                ):
+                    self._no_telemetry_reported = True
+                    message = "设备已有协议响应，但尚未收到遥测帧。"
+                    self.status_message.configure(text=message)
+                    self._append_log(message, "warn")
+                if not self._software_protection_latched:
+                    host_time_ms = int(now * 1000) & 0xFFFFFFFF
+                    self._send_frame(
+                        Command.HEARTBEAT,
+                        pack_heartbeat(
+                            host_time_ms,
+                            self.heartbeat_lease_ms,
+                        ),
+                        1,
+                        quiet=True,
+                    )
         finally:
             self.root.after(250, self._heartbeat_tick)
 
@@ -1529,9 +2162,56 @@ class MotorStudioApp:
             )
 
     def _emergency_stop(self) -> None:
+        self._software_protection_latched = True
         if self._send_frame(Command.EMERGENCY_STOP, b"\xFF", 0xFF):
             self.status_message.configure(text="已发送电机紧急停止指令")
             self._append_log("紧急停止指令已发送（广播）", "error")
+
+    def _controlled_stop(self) -> None:
+        motor_id = self._selected_motor_id()
+        if self._send_frame(
+            Command.CONTROLLED_STOP, bytes((motor_id,)), motor_id
+        ):
+            self.status_message.configure(text="已发送受控减速停止指令")
+            self._append_log("受控停止：按配置加速度降至零", "warn")
+
+    def _quick_stop(self) -> None:
+        motor_id = self._selected_motor_id()
+        if self._send_frame(
+            Command.QUICK_STOP, bytes((motor_id,)), motor_id
+        ):
+            self.status_message.configure(text="已发送快速停止指令")
+            self._append_log("快速停止：立即撤销输出", "warn")
+
+    def _trigger_software_protection(self, reason: str) -> None:
+        if self._software_protection_latched:
+            return
+        self._software_protection_latched = True
+        response = self.protection_response_var.get()
+        if response == "紧急停止":
+            command = Command.EMERGENCY_STOP
+            payload = b"\xFF"
+            device = 0xFF
+        elif response == "受控停止":
+            command = Command.CONTROLLED_STOP
+            payload = b"\x01"
+            device = 1
+        else:
+            command = Command.QUICK_STOP
+            payload = b"\x01"
+            device = 1
+        self._send_frame(command, payload, device)
+        self.status_message.configure(text="软件保护已触发：{}".format(reason))
+        self._set_config_status(
+            "软件保护已锁定并执行{}：{}。排除原因后清除故障。".format(
+                response,
+                reason,
+            )
+        )
+        self._append_log(
+            "软件保护触发（{}）：{}".format(response, reason),
+            "error",
+        )
 
     def _send_raw(self) -> None:
         if not self.link.connected:
@@ -1550,12 +2230,57 @@ class MotorStudioApp:
             for event in self.link.poll():
                 if event.kind == "connected":
                     self.parser.reset()
+                    self._connected_at = time.monotonic()
+                    self._last_telemetry_at = 0.0
+                    self._protocol_response_at = 0.0
+                    self._telemetry_watchdog_armed_at = 0.0
+                    self._no_response_reported = False
+                    self._no_telemetry_reported = False
+                    self._software_protection_latched = False
+                    self._pending_open_loop_start = None
+                    self._build_config_query_generation += 1
+                    self._build_config_query_started_at = 0.0
+                    self._build_control_hardware_enabled = None
+                    self._build_power_stage_enabled = None
+                    self._build_simplefoc_enabled = None
+                    self._device_firmware_version = None
+                    self._device_build_id = ""
+                    self.hardware_layer_var.set(
+                        "连接层级：控制硬件未确认｜功率硬件未确认"
+                    )
+                    self.build_config_var.set("固件宏：未读取")
+                    self.alarms.clear()
+                    self._set_alarm_display()
                     self._set_connection_state(True, str(event.data))
                     self.status_message.configure(text=f"已连接：{event.data}")
                     self._append_log(f"连接成功：{event.data}", "ok")
                     self._query_device_info()
-                    self._query_capabilities()
+                    self.root.after(
+                        60,
+                        lambda: self._send_if_connected(
+                            Command.GET_CAPABILITIES, b"", 1
+                        ),
+                    )
+                    self.root.after(120, self._query_build_config)
                 elif event.kind == "disconnected":
+                    self._connected_at = 0.0
+                    self._last_telemetry_at = 0.0
+                    self._protocol_response_at = 0.0
+                    self._telemetry_watchdog_armed_at = 0.0
+                    self._no_response_reported = False
+                    self._no_telemetry_reported = False
+                    self._pending_open_loop_start = None
+                    self._build_config_query_generation += 1
+                    self._build_config_query_started_at = 0.0
+                    self._build_control_hardware_enabled = None
+                    self._build_power_stage_enabled = None
+                    self._build_simplefoc_enabled = None
+                    self._device_firmware_version = None
+                    self._device_build_id = ""
+                    self.hardware_layer_var.set(
+                        "连接层级：控制硬件未确认｜功率硬件未确认"
+                    )
+                    self.build_config_var.set("固件宏：未读取")
                     self._set_connection_state(False, "未连接")
                     self.status_message.configure(text="连接已断开")
                     self._append_log("连接已断开", "muted")
@@ -1588,6 +2313,8 @@ class MotorStudioApp:
             self.root.after(20, self._poll_link)
 
     def _handle_frame(self, frame: Frame) -> None:
+        self._protocol_response_at = time.monotonic()
+        self._no_response_reported = False
         if frame.command == Command.TELEMETRY:
             try:
                 telemetry = unpack_telemetry(frame.payload)
@@ -1595,10 +2322,20 @@ class MotorStudioApp:
                 self._append_log(f"遥测解析失败：{exc}", "error")
                 return
             self.history.append_telemetry(telemetry)
+            self._last_telemetry_at = time.monotonic()
+            if self._telemetry_watchdog_armed_at == 0.0:
+                self._telemetry_watchdog_armed_at = (
+                    self._last_telemetry_at
+                )
+            self._no_telemetry_reported = False
             self.recorder.write(telemetry)
             raised, cleared = self.alarms.evaluate(telemetry)
             for alarm in raised:
                 self._append_log(f"告警：{alarm.message}", "error")
+            if raised and self.auto_protection_var.get():
+                self._trigger_software_protection(
+                    "；".join(alarm.message for alarm in raised)
+                )
             for alarm in cleared:
                 self._append_log(f"恢复：{alarm.message.split('：')[0]}", "ok")
             if raised or cleared:
@@ -1634,11 +2371,25 @@ class MotorStudioApp:
                     Command.SET_TELEMETRY_PROFILE,
                     Command.GET_BACKEND_INFO,
                     Command.GET_TELEMETRY_PROFILE,
+                    Command.SET_OPEN_LOOP_CONFIG,
+                    Command.GET_OPEN_LOOP_CONFIG,
+                    Command.START_OPEN_LOOP,
+                    Command.GET_BUILD_CONFIG,
                 )
                 if status != 0 and original in configuration_commands:
-                    self._set_config_status(
-                        f"设备拒绝配置命令 0x{original:02X}，错误码 {status}。"
-                    )
+                    if original == Command.SET_OPEN_LOOP_CONFIG:
+                        self._pending_open_loop_start = None
+                    if original == Command.GET_BUILD_CONFIG:
+                        self._build_config_query_generation += 1
+                        self._build_config_query_started_at = 0.0
+                        self._set_config_status(
+                            "设备拒绝命令 0x29（错误码 {}）；"
+                            "请 Clean 后烧录最新固件。".format(status)
+                        )
+                    else:
+                        self._set_config_status(
+                            f"设备拒绝配置命令 0x{original:02X}，错误码 {status}。"
+                        )
                 if original == Command.PING and detail:
                     message += f"  device={detail.decode('ascii', errors='replace')}"
                 elif original == Command.GET_DEVICE_INFO and len(detail) == 33:
@@ -1658,6 +2409,12 @@ class MotorStudioApp:
                     build_name = build_id.rstrip(b"\x00").decode(
                         "ascii", errors="replace"
                     )
+                    self._device_firmware_version = (
+                        fw_major,
+                        fw_minor,
+                        fw_patch,
+                    )
+                    self._device_build_id = build_name
                     message += (
                         f"  {device_name} FW {fw_major}.{fw_minor}.{fw_patch} "
                         f"HW {hw_major}.{hw_minor} SN={serial_number:08X} "
@@ -1695,6 +2452,12 @@ class MotorStudioApp:
                     )
                     for key, value in zip(value_keys, values[1:]):
                         self.limit_vars[key].set(f"{value:g}")
+                    self.alarms.configure(
+                        values[1],
+                        values[8],
+                        values[6],
+                        values[7],
+                    )
                     message += (
                         f"  I≤{values[1]:g} A, T≤{values[2]:g} N·m, "
                         f"ω≤{values[3]:g} rad/s, Temp≤{values[8]:g} °C"
@@ -1749,6 +2512,182 @@ class MotorStudioApp:
                         f"  rate={rate_hz} Hz mask=0x{signal_mask:08X}"
                     )
                     self._set_config_status("设备遥测配置已读取并显示。")
+                elif (
+                    original == Command.GET_OPEN_LOOP_CONFIG
+                    and status == 0
+                ):
+                    try:
+                        config = unpack_open_loop_config(detail)
+                    except ValueError as exc:
+                        self._set_config_status(str(exc))
+                    else:
+                        self.open_loop_backend_var.set(
+                            OPEN_LOOP_BACKEND_LABELS[config.backend]
+                        )
+                        open_loop_values = {
+                            "pole_pairs": config.pole_pairs,
+                            "bus_voltage": config.bus_voltage_v,
+                            "voltage_limit": config.voltage_limit_v,
+                            "target_velocity":
+                                config.target_velocity_rad_s,
+                            "acceleration": config.acceleration_rad_s2,
+                            "update_period": config.update_period_ms,
+                            "startup_delay": config.startup_delay_ms,
+                            "max_runtime": config.max_runtime_ms,
+                        }
+                        for key, value in open_loop_values.items():
+                            self.open_loop_vars[key].set(
+                                "{:g}".format(value)
+                            )
+                        message += (
+                            "  backend={} Ubus={:g} V Ulimit={:g} V "
+                            "target={:g} rad/s"
+                        ).format(
+                            OPEN_LOOP_BACKEND_LABELS[config.backend],
+                            config.bus_voltage_v,
+                            config.voltage_limit_v,
+                            config.target_velocity_rad_s,
+                        )
+                        self._set_config_status(
+                            "设备开环参数已读取并显示。"
+                        )
+                elif (
+                    original == Command.GET_BUILD_CONFIG
+                    and status == 0
+                ):
+                    self._build_config_query_generation += 1
+                    self._build_config_query_started_at = 0.0
+                    try:
+                        values = unpack_build_config(detail)
+                    except ValueError as exc:
+                        self._set_config_status(str(exc))
+                    else:
+                        (
+                            device_id,
+                            control_hardware_enabled,
+                            power_stage_enabled,
+                            simplefoc_enabled,
+                            default_pole_pairs,
+                            adc_hz,
+                            pwm_hz,
+                            isr_hz,
+                            outer_hz,
+                            default_telemetry_hz,
+                            heartbeat_default_ms,
+                            heartbeat_min_ms,
+                            heartbeat_max_ms,
+                            torque_constant,
+                        ) = values
+                        self._build_control_hardware_enabled = bool(
+                            control_hardware_enabled
+                        )
+                        self._build_power_stage_enabled = bool(
+                            power_stage_enabled
+                        )
+                        self._build_simplefoc_enabled = bool(
+                            simplefoc_enabled
+                        )
+                        if not control_hardware_enabled:
+                            layer_text = (
+                                "连接层级：控制器通信已连接，但 MCU PWM 被固件锁定｜"
+                                "功率硬件被锁定"
+                            )
+                        elif power_stage_enabled:
+                            layer_text = (
+                                "连接层级：控制硬件已允许｜功率级已允许"
+                                "（真实电机可能动作）"
+                            )
+                        else:
+                            layer_text = (
+                                "连接层级：控制硬件已允许（仅 MCU PWM）｜"
+                                "功率硬件被固件锁定"
+                            )
+                        self.hardware_layer_var.set(layer_text)
+                        self.build_config_var.set(
+                            (
+                                "固件宏：DEVICE={}｜CONTROL_HW={}｜POWER_STAGE={}｜"
+                                "SIMPLEFOC={}｜"
+                                "PP={}｜ADC/PWM/ISR={}/{}/{} Hz｜"
+                                "OUTER={} Hz｜TELEM={} Hz｜HB={}"
+                                " ({}..{}) ms｜Kt={:g} N·m/A"
+                            ).format(
+                                device_id,
+                                control_hardware_enabled,
+                                power_stage_enabled,
+                                simplefoc_enabled,
+                                default_pole_pairs,
+                                adc_hz,
+                                pwm_hz,
+                                isr_hz,
+                                outer_hz,
+                                default_telemetry_hz,
+                                heartbeat_default_ms,
+                                heartbeat_min_ms,
+                                heartbeat_max_ms,
+                                torque_constant,
+                            )
+                        )
+                        message += (
+                            "  control_hw={} power_stage={} simplefoc={} pwm={} Hz"
+                        ).format(
+                            control_hardware_enabled,
+                            power_stage_enabled,
+                            simplefoc_enabled,
+                            pwm_hz,
+                        )
+                elif (
+                    original == Command.SET_OPEN_LOOP_CONFIG
+                    and status == 0
+                ):
+                    pending = self._pending_open_loop_start
+                    if pending is not None:
+                        self._pending_open_loop_start = None
+                        if self._send_frame(
+                            Command.START_OPEN_LOOP, b"\x01", 1
+                        ):
+                            self.control_mode.set(
+                                MODE_LABELS[
+                                    ControlMode.OPEN_LOOP_SPEED
+                                ]
+                            )
+                            self.target_value.set(
+                                "{:g}".format(
+                                    pending.target_velocity_rad_s
+                                )
+                            )
+                            self._update_target_unit()
+                            self._set_config_status(
+                                "参数已确认，正在执行开环安全启动…"
+                            )
+                    else:
+                        self._set_config_status(
+                            "开环参数已应用；运行中只允许修改目标速度。"
+                        )
+                elif (
+                    original == Command.START_OPEN_LOOP
+                    and status == 0
+                ):
+                    self._telemetry_watchdog_armed_at = time.monotonic()
+                    self._set_config_status(
+                        "开环已启动；可发送开环速度目标，停止按钮始终有效。"
+                    )
+                    self.status_message.configure(text="设备已进入开环运行")
+                elif original == Command.SET_ENABLE and status == 0:
+                    self._telemetry_watchdog_armed_at = time.monotonic()
+                elif original == Command.CONTROLLED_STOP and status == 0:
+                    self.status_message.configure(text="设备正在受控减速停止")
+                elif original == Command.QUICK_STOP and status == 0:
+                    self._telemetry_watchdog_armed_at = 0.0
+                    self.status_message.configure(text="设备已快速停止")
+                elif original == Command.EMERGENCY_STOP and status == 0:
+                    self._telemetry_watchdog_armed_at = 0.0
+                    self.status_message.configure(text="设备已进入急停状态")
+                elif original == Command.CLEAR_FAULT and status == 0:
+                    self._software_protection_latched = False
+                    self._last_telemetry_at = time.monotonic()
+                    self.alarms.clear()
+                    self._set_alarm_display()
+                    self.status_message.configure(text="故障与软件保护锁定已清除")
                 elif original == Command.SET_LIMITS and status == 0:
                     self._set_config_status(
                         "安全限值已应用到运行参数；如需掉电保存，请点击“保存到 Flash”。"
@@ -1910,7 +2849,26 @@ class MotorStudioApp:
         self.log_text.configure(state=tk.DISABLED)
 
     def _on_close(self) -> None:
+        if self._shutdown_pending:
+            return
+        self._shutdown_pending = True
         self.recorder.stop()
+        if self.link.connected:
+            self._software_protection_latched = True
+            self._send_frame(
+                Command.EMERGENCY_STOP,
+                b"\xFF",
+                0xFF,
+                quiet=True,
+            )
+            self.status_message.configure(
+                text="正在发送急停并关闭软件…"
+            )
+            self.root.after(120, self._finalize_close)
+            return
+        self._finalize_close()
+
+    def _finalize_close(self) -> None:
         self.link.close()
         self.root.destroy()
 

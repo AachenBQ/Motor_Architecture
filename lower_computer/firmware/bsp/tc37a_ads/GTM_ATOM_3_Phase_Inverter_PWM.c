@@ -33,21 +33,22 @@
 #include "IfxGtm_Pwm.h"
 #include "IfxPort.h"
 #include "IfxPort_Pinmap.h"
+#include "project_config.h"
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
 /*********************************************************************************************************************/
 #define NUM_OF_CHANNELS         (3)                                    /* Number of DRV8313 PWM input channels       */
-#define PWM_FREQUENCY           (20.0E3)                               /* PWM frequency in [Hz]                      */
+#define PWM_FREQUENCY           ((float32)MOTOR_PWM_FREQUENCY_HZ)      /* PWM frequency in [Hz]                      */
 #define ISR_PRIORITY_ATOM       (20)                                   /* Interrupt priority number                  */
 
-#define PHASE_U_HS              &IfxGtm_ATOM1_0_TOUT0_P02_0_OUT        /* Pin which will be driven by the PWM, P02.0 */
-#define PHASE_V_HS              &IfxGtm_ATOM1_1_TOUT1_P02_1_OUT        /* Pin which will be driven by the PWM, P02.1 */
-#define PHASE_W_HS              &IfxGtm_ATOM1_2_TOUT2_P02_2_OUT        /* Pin which will be driven by the PWM, P02.2 */
+#define PHASE_U_HS              &IfxGtm_ATOM1_0_TOUT9_P00_0_OUT         /* Phase U PWM: P00.0 */
+#define PHASE_V_HS              &IfxGtm_ATOM1_1_TOUT11_P00_2_OUT        /* Phase V PWM: P00.2 */
+#define PHASE_W_HS              &IfxGtm_ATOM1_2_TOUT12_P00_3_OUT        /* Phase W PWM: P00.3 */
 
-#define PHASE_U_DUTY            (50.0f)                                /* Initial PWM duty cycle of phase U in [%]   */
-#define PHASE_V_DUTY            (50.0f)                                /* Initial PWM duty cycle of phase V in [%]   */
-#define PHASE_W_DUTY            (50.0f)                                /* Initial PWM duty cycle of phase W in [%]   */
+#define PHASE_U_DUTY            (0.0f)                                /* Initial PWM duty cycle of phase U in [%]   */
+#define PHASE_V_DUTY            (0.0f)                                /* Initial PWM duty cycle of phase V in [%]   */
+#define PHASE_W_DUTY            (0.0f)                                /* Initial PWM duty cycle of phase W in [%]   */
 
 #define LED                     &MODULE_P13, 0       /* LED which will be toggled in Interrupt Service Routine (ISR) */
 
@@ -154,6 +155,7 @@ void initGtmAtom3phInv(void)
 
     interruptConfig.mode          = IfxGtm_IrqMode_pulseNotify;  /* IRQ mode of interrupt                            */
     interruptConfig.isrProvider   = IfxSrc_Tos_cpu0;             /* Type of Service                                  */
+
     interruptConfig.priority      = ISR_PRIORITY_ATOM;           /* Interrupt priority                               */
     /* Connect callback function for period event interrupt */
     interruptConfig.periodEvent   = IfxGtm_periodEventFunction;
@@ -247,5 +249,5 @@ void GtmAtom3phInv_setDuty(float dutyU,
 
 void GtmAtom3phInv_setSafeDuty(void)
 {
-    GtmAtom3phInv_setDuty(50.0f, 50.0f, 50.0f);
+    GtmAtom3phInv_setDuty(0.0f, 0.0f, 0.0f);
 }

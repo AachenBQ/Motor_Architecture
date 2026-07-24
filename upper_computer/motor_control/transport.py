@@ -13,14 +13,18 @@ from .protocol import (
     ControlMode,
     Frame,
     FrameParser,
+    OpenLoopBackend,
+    OpenLoopConfig,
     PidLoop,
     Telemetry,
     VERSION,
     encode_frame,
     pack_telemetry,
+    pack_open_loop_config,
     unpack_enable,
     unpack_pid,
     unpack_target,
+    unpack_open_loop_config,
 )
 
 
@@ -53,6 +57,10 @@ class _MotorState:
         "last_heartbeat",
         "lease_ms",
         "limits",
+        "open_loop_config",
+        "open_loop_active",
+        "open_loop_velocity",
+        "open_loop_started",
     )
 
     def __init__(self):
@@ -75,6 +83,22 @@ class _MotorState:
         self.last_heartbeat = time.monotonic()
         self.lease_ms = 750
         self.limits = (20.0, 2.0, 100.0, -1000.0, 1000.0, 18.0, 60.0, 80.0)
+        self.open_loop_config = OpenLoopConfig(
+            1,
+            OpenLoopBackend.SIMPLEFOC,
+            7,
+            0,
+            24.0,
+            2.0,
+            5.0,
+            10.0,
+            10,
+            500,
+            30000,
+        )
+        self.open_loop_active = False
+        self.open_loop_velocity = 0.0
+        self.open_loop_started = 0.0
 
 
 class ControllerLink:
@@ -248,6 +272,8 @@ class ControllerLink:
                     if not heartbeat_valid and motor.enabled:
                         motor.enabled = False
                         motor.target = 0.0
+                        motor.open_loop_active = False
+                        motor.open_loop_velocity = 0.0
                         motor.faults |= 1 << 8
                     motor.status = 0
                     if motor.enabled:
@@ -258,6 +284,8 @@ class ControllerLink:
                         motor.status |= 1 << 3
                     if heartbeat_valid:
                         motor.status |= 1 << 4
+                    if motor.open_loop_active:
+                        motor.status |= 1 << 5
                     motor.status |= 1 << 7
                     self._update_motor(motor_id, motor, dt, now, rng)
 
@@ -305,7 +333,22 @@ class ControllerLink:
     ) -> None:
         target_speed = 0.0
         if motor.enabled:
-            if motor.mode is ControlMode.SPEED:
+            if motor.mode is ControlMode.OPEN_LOOP_SPEED:
+                elapsed_ms = (now - motor.open_loop_started) * 1000.0
+                if elapsed_ms >= motor.open_loop_config.max_runtime_ms:
+                    motor.enabled = False
+                    motor.open_loop_active = False
+                    motor.target = 0.0
+                    motor.open_loop_velocity = 0.0
+                elif elapsed_ms >= motor.open_loop_config.startup_delay_ms:
+                    maximum_step = (
+                        motor.open_loop_config.acceleration_rad_s2 * dt
+                    )
+                    difference = motor.target - motor.open_loop_velocity
+                    difference = max(-maximum_step, min(maximum_step, difference))
+                    motor.open_loop_velocity += difference
+                    target_speed = motor.open_loop_velocity
+            elif motor.mode is ControlMode.SPEED:
                 target_speed = motor.target
             elif motor.mode is ControlMode.TORQUE:
                 target_speed = motor.target * 30.0
@@ -349,8 +392,11 @@ class ControllerLink:
                     b"SIM00001",
                 )
             elif command is Command.GET_CAPABILITIES:
-                feature_flags = (1 << 0) | (1 << 2) | (1 << 3) | (1 << 4)
-                detail = struct.pack("<BBBIH", 1, 0x01, 0x07, feature_flags, 1000)
+                feature_flags = (
+                    (1 << 0) | (1 << 2) | (1 << 3) |
+                    (1 << 4) | (1 << 5)
+                )
+                detail = struct.pack("<BBBIH", 1, 0x01, 0x0F, feature_flags, 1000)
             elif command is Command.HEARTBEAT:
                 _, lease_ms = struct.unpack("<IH", frame.payload)
                 if not 300 <= lease_ms <= 5000:
@@ -365,14 +411,32 @@ class ControllerLink:
                         motor.enabled = False
                         motor.target = 0.0
                 else:
-                    motors[motor_id].enabled = enabled
+                    motor = motors[motor_id]
+                    if enabled and motor.mode is ControlMode.OPEN_LOOP_SPEED:
+                        raise ValueError("open loop requires START_OPEN_LOOP")
+                    motor.enabled = enabled
+                    if not enabled:
+                        motor.target = 0.0
+                        motor.open_loop_active = False
+                        motor.open_loop_velocity = 0.0
             elif command is Command.SET_MODE:
                 motor_id, mode = struct.unpack("<BB", frame.payload)
+                if ControlMode(mode) is ControlMode.OPEN_LOOP_SPEED:
+                    raise ValueError("open loop requires START_OPEN_LOOP")
                 motors[motor_id].mode = ControlMode(mode)
             elif command is Command.SET_TARGET:
                 motor_id, mode, target = unpack_target(frame.payload)
+                if (
+                    mode is ControlMode.OPEN_LOOP_SPEED
+                    and not motors[motor_id].open_loop_active
+                ):
+                    raise ValueError("open loop is not running")
                 motors[motor_id].mode = mode
                 motors[motor_id].target = float(target)
+                if mode is ControlMode.OPEN_LOOP_SPEED:
+                    motors[motor_id].open_loop_config.target_velocity_rad_s = (
+                        float(target)
+                    )
             elif command is Command.SET_PID:
                 motor_id, loop, kp, ki, kd = unpack_pid(frame.payload)
                 motors[motor_id].pid_values[loop] = (kp, ki, kd)
@@ -397,6 +461,12 @@ class ControllerLink:
                     or limits[5] <= 0.0
                     or limits[5] >= limits[6]
                     or limits[7] <= 0.0
+                    or abs(
+                        motor.open_loop_config.target_velocity_rad_s
+                    ) > limits[2]
+                    or not limits[5]
+                    <= motor.open_loop_config.bus_voltage_v
+                    <= limits[6]
                 ):
                     raise ValueError("invalid limits")
                 motor.limits = limits
@@ -410,6 +480,7 @@ class ControllerLink:
                     "limits": motors[1].limits,
                     "pid_values": dict(motors[1].pid_values),
                     "telemetry_rate_hz": simulator_config["telemetry_rate_hz"],
+                    "open_loop_config": motors[1].open_loop_config,
                 }
             elif command is Command.RESTORE_DEFAULTS:
                 if any(motor.enabled for motor in motors.values()):
@@ -430,18 +501,35 @@ class ControllerLink:
                         60.0,
                         80.0,
                     )
+                    motor.open_loop_config = OpenLoopConfig(
+                        1,
+                        OpenLoopBackend.SIMPLEFOC,
+                        7,
+                        0,
+                        24.0,
+                        2.0,
+                        5.0,
+                        10.0,
+                        10,
+                        500,
+                        30000,
+                    )
                 simulator_config["telemetry_rate_hz"] = 20
                 simulator_config["signal_mask"] = 0x1F
             elif command in (Command.CONTROLLED_STOP, Command.QUICK_STOP):
                 motor_id = frame.payload[0]
                 motors[motor_id].target = 0.0
                 motors[motor_id].enabled = False
+                motors[motor_id].open_loop_active = False
+                motors[motor_id].open_loop_velocity = 0.0
             elif command is Command.EMERGENCY_STOP:
                 selected = frame.payload[0] if frame.payload else 0xFF
                 for motor_id, motor in motors.items():
                     if selected in (0xFF, motor_id):
                         motor.enabled = False
                         motor.target = 0.0
+                        motor.open_loop_active = False
+                        motor.open_loop_velocity = 0.0
             elif command is Command.GET_PID:
                 motor_id = frame.payload[0]
                 loop = PidLoop(
@@ -475,6 +563,59 @@ class ControllerLink:
                 )
             elif command is Command.GET_BACKEND_INFO:
                 detail = struct.pack("<BB", 0, 1)
+            elif command is Command.SET_OPEN_LOOP_CONFIG:
+                config = unpack_open_loop_config(frame.payload)
+                motor = motors[config.motor_id]
+                if motor.enabled or motor.open_loop_active:
+                    raise ValueError("open-loop config cannot change while running")
+                if (
+                    config.bus_voltage_v > 60.0
+                    or config.voltage_limit_v > 6.0
+                    or abs(config.target_velocity_rad_s) > 100.0
+                    or abs(config.target_velocity_rad_s) > motor.limits[2]
+                    or not motor.limits[5]
+                    <= config.bus_voltage_v
+                    <= motor.limits[6]
+                ):
+                    raise ValueError("open-loop config exceeds safety limits")
+                motor.open_loop_config = config
+            elif command is Command.GET_OPEN_LOOP_CONFIG:
+                motor_id = frame.payload[0]
+                detail = pack_open_loop_config(
+                    motors[motor_id].open_loop_config
+                )
+            elif command is Command.START_OPEN_LOOP:
+                motor_id = frame.payload[0]
+                motor = motors[motor_id]
+                heartbeat_valid = (
+                    time.monotonic() - motor.last_heartbeat
+                ) * 1000.0 <= motor.lease_ms
+                if motor.faults or not heartbeat_valid or motor.enabled:
+                    raise ValueError("open-loop start interlock failed")
+                motor.mode = ControlMode.OPEN_LOOP_SPEED
+                motor.target = motor.open_loop_config.target_velocity_rad_s
+                motor.open_loop_velocity = 0.0
+                motor.open_loop_started = time.monotonic()
+                motor.open_loop_active = True
+                motor.enabled = True
+            elif command is Command.GET_BUILD_CONFIG:
+                detail = struct.pack(
+                    "<BBBBBIIIIHHHHf",
+                    1,
+                    1,
+                    0,
+                    1,
+                    7,
+                    10000,
+                    20000,
+                    10000,
+                    1000,
+                    100,
+                    750,
+                    300,
+                    5000,
+                    0.10,
+                )
             else:
                 status = 1
         except (ValueError, KeyError, struct.error, IndexError):

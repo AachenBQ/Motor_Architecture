@@ -21,6 +21,10 @@ void Tc375HalStub_SetEncoderSample(
 void Tc375HalStub_SetActiveFaults(uint32_t faults);
 bool Tc375HalStub_GateEnabled(void);
 bool Tc375HalStub_PwmEnabled(void);
+void Tc375HalStub_GetPhaseDuty(
+    float *phase_a,
+    float *phase_b,
+    float *phase_c);
 
 #ifdef __cplusplus
 }

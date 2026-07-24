@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc21420a --dep-file=Libraries/iLLD/TC3xx/Tricore/_Impl/IfxQspi_cfg.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o Libraries/iLLD/TC3xx/Tricore/_Impl/IfxQspi_cfg.src ../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxQspi_cfg.c"
+	.compiler_invocation	"ctc -f cc51520a --dep-file=Libraries/iLLD/TC3xx/Tricore/_Impl/IfxQspi_cfg.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 -o Libraries/iLLD/TC3xx/Tricore/_Impl/IfxQspi_cfg.src ../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxQspi_cfg.c"
 	.compiler_name		"ctc"
 	;source	'../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxQspi_cfg.c'
 
@@ -19,7 +19,7 @@ IfxQspi_cfg_indexMap:	.type	object
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
 .L3:
-	.word	7101
+	.word	7103
 	.half	3
 	.word	.L4
 	.byte	4
@@ -27,1046 +27,1046 @@ IfxQspi_cfg_indexMap:	.type	object
 	.byte	1
 	.byte	'../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxQspi_cfg.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
 	.word	.L5
 	.byte	2
 	.byte	'short int',0,2,5,3
 	.byte	'__wchar_t',0,1,1,1
-	.word	244
+	.word	246
 	.byte	2
 	.byte	'unsigned int',0,4,7,3
 	.byte	'__size_t',0,1,1,1
-	.word	275
+	.word	277
 	.byte	2
 	.byte	'int',0,4,5,3
 	.byte	'__ptrdiff_t',0,1,1,1
-	.word	308
+	.word	310
 	.byte	4,1,5
-	.word	335
+	.word	337
 	.byte	3
 	.byte	'__codeptr',0,1,1,1
-	.word	337
+	.word	339
 	.byte	2
 	.byte	'unsigned short int',0,2,7,3
 	.byte	'uint16',0,2,112,29
-	.word	360
+	.word	362
 	.byte	2
 	.byte	'unsigned long int',0,4,7,3
 	.byte	'uint32',0,2,116,29
-	.word	397
+	.word	399
 	.byte	3
 	.byte	'sint16',0,2,129,1,29
-	.word	244
+	.word	246
 	.byte	2
 	.byte	'long int',0,4,5,3
 	.byte	'sint32',0,2,134,1,29
-	.word	449
+	.word	451
 	.byte	2
 	.byte	'long long int',0,8,5,3
 	.byte	'sint64',0,2,141,1,29
-	.word	477
+	.word	479
 	.byte	2
 	.byte	'float',0,4,4,3
 	.byte	'float32',0,2,170,1,29
-	.word	510
+	.word	512
 	.byte	6
 	.byte	'void',0,5
-	.word	536
+	.word	538
 	.byte	3
 	.byte	'pvoid',0,3,54,28
-	.word	542
+	.word	544
 	.byte	7
-	.word	536
+	.word	538
 	.byte	5
-	.word	561
+	.word	563
 	.byte	8,3,132,1,9,8,9
 	.byte	'module',0
-	.word	566
+	.word	568
 	.byte	4,2,35,0,9
 	.byte	'index',0
-	.word	449
+	.word	451
 	.byte	4,2,35,4,0,3
 	.byte	'IfxModule_IndexMap',0,3,136,1,3
-	.word	571
+	.word	573
 	.byte	2
 	.byte	'unsigned char',0,1,8,3
 	.byte	'Ifx_UReg_8Bit',0,4,97,24
-	.word	637
+	.word	639
 	.byte	3
 	.byte	'Ifx_UReg_32Bit',0,4,99,24
-	.word	275
+	.word	277
 	.byte	3
 	.byte	'Ifx_SReg_32Bit',0,4,102,24
-	.word	308
+	.word	310
 	.byte	10
 	.byte	'_Ifx_QSPI_ACCEN0_Bits',0,5,71,16,4,11
 	.byte	'EN0',0,1
-	.word	637
+	.word	639
 	.byte	1,7,2,35,0,11
 	.byte	'EN1',0,1
-	.word	637
+	.word	639
 	.byte	1,6,2,35,0,11
 	.byte	'EN2',0,1
-	.word	637
+	.word	639
 	.byte	1,5,2,35,0,11
 	.byte	'EN3',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,0,11
 	.byte	'EN4',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,0,11
 	.byte	'EN5',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,0,11
 	.byte	'EN6',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,0,11
 	.byte	'EN7',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,0,11
 	.byte	'EN8',0,1
-	.word	637
+	.word	639
 	.byte	1,7,2,35,1,11
 	.byte	'EN9',0,1
-	.word	637
+	.word	639
 	.byte	1,6,2,35,1,11
 	.byte	'EN10',0,1
-	.word	637
+	.word	639
 	.byte	1,5,2,35,1,11
 	.byte	'EN11',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,1,11
 	.byte	'EN12',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,1,11
 	.byte	'EN13',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,1,11
 	.byte	'EN14',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,1,11
 	.byte	'EN15',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,1,11
 	.byte	'EN16',0,1
-	.word	637
+	.word	639
 	.byte	1,7,2,35,2,11
 	.byte	'EN17',0,1
-	.word	637
+	.word	639
 	.byte	1,6,2,35,2,11
 	.byte	'EN18',0,1
-	.word	637
+	.word	639
 	.byte	1,5,2,35,2,11
 	.byte	'EN19',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,2,11
 	.byte	'EN20',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,2,11
 	.byte	'EN21',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,2,11
 	.byte	'EN22',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,2,11
 	.byte	'EN23',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,2,11
 	.byte	'EN24',0,1
-	.word	637
+	.word	639
 	.byte	1,7,2,35,3,11
 	.byte	'EN25',0,1
-	.word	637
+	.word	639
 	.byte	1,6,2,35,3,11
 	.byte	'EN26',0,1
-	.word	637
+	.word	639
 	.byte	1,5,2,35,3,11
 	.byte	'EN27',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,3,11
 	.byte	'EN28',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,3,11
 	.byte	'EN29',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,3,11
 	.byte	'EN30',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,3,11
 	.byte	'EN31',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,3,0,3
 	.byte	'Ifx_QSPI_ACCEN0_Bits',0,5,105,3
-	.word	722
+	.word	724
 	.byte	10
 	.byte	'_Ifx_QSPI_ACCEN1_Bits',0,5,108,16,4,11
 	.byte	'reserved_0',0,4
-	.word	275
+	.word	277
 	.byte	32,0,2,35,0,0,3
 	.byte	'Ifx_QSPI_ACCEN1_Bits',0,5,111,3
-	.word	1281
+	.word	1283
 	.byte	10
 	.byte	'_Ifx_QSPI_BACON_Bits',0,5,114,16,4,11
 	.byte	'LAST',0,1
-	.word	637
+	.word	639
 	.byte	1,7,2,35,0,11
 	.byte	'IPRE',0,1
-	.word	637
+	.word	639
 	.byte	3,4,2,35,0,11
 	.byte	'IDLE',0,1
-	.word	637
+	.word	639
 	.byte	3,1,2,35,0,11
 	.byte	'LPRE',0,2
-	.word	360
+	.word	362
 	.byte	3,6,2,35,0,11
 	.byte	'LEAD',0,1
-	.word	637
+	.word	639
 	.byte	3,3,2,35,1,11
 	.byte	'TPRE',0,1
-	.word	637
+	.word	639
 	.byte	3,0,2,35,1,11
 	.byte	'TRAIL',0,1
-	.word	637
+	.word	639
 	.byte	3,5,2,35,2,11
 	.byte	'PARTYP',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,2,11
 	.byte	'UINT',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,2,11
 	.byte	'MSB',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,2,11
 	.byte	'BYTE',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,2,11
 	.byte	'DL',0,2
-	.word	360
+	.word	362
 	.byte	5,4,2,35,2,11
 	.byte	'CS',0,1
-	.word	637
+	.word	639
 	.byte	4,0,2,35,3,0,3
 	.byte	'Ifx_QSPI_BACON_Bits',0,5,129,1,3
-	.word	1360
+	.word	1362
 	.byte	10
 	.byte	'_Ifx_QSPI_BACONENTRY_Bits',0,5,132,1,16,4,11
 	.byte	'E',0,4
-	.word	275
+	.word	277
 	.byte	32,0,2,35,0,0,3
 	.byte	'Ifx_QSPI_BACONENTRY_Bits',0,5,135,1,3
-	.word	1622
+	.word	1624
 	.byte	10
 	.byte	'_Ifx_QSPI_CAPCON_Bits',0,5,138,1,16,4,11
 	.byte	'CAP',0,2
-	.word	360
+	.word	362
 	.byte	15,1,2,35,0,11
 	.byte	'OVF',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,1,11
 	.byte	'EDGECON',0,1
-	.word	637
+	.word	639
 	.byte	2,6,2,35,2,11
 	.byte	'INS',0,1
-	.word	637
+	.word	639
 	.byte	2,4,2,35,2,11
 	.byte	'EN',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,2,11
 	.byte	'reserved_21',0,2
-	.word	360
+	.word	362
 	.byte	7,4,2,35,2,11
 	.byte	'CAPC',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,3,11
 	.byte	'CAPS',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,3,11
 	.byte	'CAPF',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,3,11
 	.byte	'CAPSEL',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,3,0,3
 	.byte	'Ifx_QSPI_CAPCON_Bits',0,5,150,1,3
-	.word	1702
+	.word	1704
 	.byte	10
 	.byte	'_Ifx_QSPI_CLC_Bits',0,5,153,1,16,4,11
 	.byte	'DISR',0,1
-	.word	637
+	.word	639
 	.byte	1,7,2,35,0,11
 	.byte	'DISS',0,1
-	.word	637
+	.word	639
 	.byte	1,6,2,35,0,11
 	.byte	'reserved_2',0,1
-	.word	637
+	.word	639
 	.byte	1,5,2,35,0,11
 	.byte	'EDIS',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,0,11
 	.byte	'reserved_4',0,4
-	.word	275
+	.word	277
 	.byte	28,0,2,35,0,0,3
 	.byte	'Ifx_QSPI_CLC_Bits',0,5,160,1,3
-	.word	1928
+	.word	1930
 	.byte	10
 	.byte	'_Ifx_QSPI_DATAENTRY_Bits',0,5,163,1,16,4,11
 	.byte	'E',0,4
-	.word	275
+	.word	277
 	.byte	32,0,2,35,0,0,3
 	.byte	'Ifx_QSPI_DATAENTRY_Bits',0,5,166,1,3
-	.word	2073
+	.word	2075
 	.byte	10
 	.byte	'_Ifx_QSPI_ECON_Bits',0,5,169,1,16,4,11
 	.byte	'Q',0,1
-	.word	637
+	.word	639
 	.byte	6,2,2,35,0,11
 	.byte	'A',0,1
-	.word	637
+	.word	639
 	.byte	2,0,2,35,0,11
 	.byte	'B',0,1
-	.word	637
+	.word	639
 	.byte	2,6,2,35,1,11
 	.byte	'C',0,1
-	.word	637
+	.word	639
 	.byte	2,4,2,35,1,11
 	.byte	'CPH',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,1,11
 	.byte	'CPOL',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,1,11
 	.byte	'PAREN',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,1,11
 	.byte	'reserved_15',0,4
-	.word	275
+	.word	277
 	.byte	15,2,2,35,0,11
 	.byte	'BE',0,1
-	.word	637
+	.word	639
 	.byte	2,0,2,35,3,0,3
 	.byte	'Ifx_QSPI_ECON_Bits',0,5,180,1,3
-	.word	2151
+	.word	2153
 	.byte	10
 	.byte	'_Ifx_QSPI_FLAGSCLEAR_Bits',0,5,183,1,16,4,11
 	.byte	'ERRORCLEARS',0,2
-	.word	360
+	.word	362
 	.byte	9,7,2,35,0,11
 	.byte	'TXC',0,1
-	.word	637
+	.word	639
 	.byte	1,6,2,35,1,11
 	.byte	'RXC',0,1
-	.word	637
+	.word	639
 	.byte	1,5,2,35,1,11
 	.byte	'PT1C',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,1,11
 	.byte	'PT2C',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,1,11
 	.byte	'reserved_13',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,1,11
 	.byte	'reserved_14',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,1,11
 	.byte	'USRC',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,1,11
 	.byte	'reserved_16',0,2
-	.word	360
+	.word	362
 	.byte	16,0,2,35,2,0,3
 	.byte	'Ifx_QSPI_FLAGSCLEAR_Bits',0,5,194,1,3
-	.word	2343
+	.word	2345
 	.byte	10
 	.byte	'_Ifx_QSPI_GLOBALCON_Bits',0,5,197,1,16,4,11
 	.byte	'TQ',0,1
-	.word	637
+	.word	639
 	.byte	8,0,2,35,0,11
 	.byte	'reserved_8',0,1
-	.word	637
+	.word	639
 	.byte	1,7,2,35,1,11
 	.byte	'SI',0,1
-	.word	637
+	.word	639
 	.byte	1,6,2,35,1,11
 	.byte	'EXPECT',0,1
-	.word	637
+	.word	639
 	.byte	4,2,2,35,1,11
 	.byte	'LB',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,1,11
 	.byte	'DEL0',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,1,11
 	.byte	'STROBE',0,1
-	.word	637
+	.word	639
 	.byte	5,3,2,35,2,11
 	.byte	'SRF',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,2,11
 	.byte	'STIP',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,2,11
 	.byte	'reserved_23',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,2,11
 	.byte	'EN',0,1
-	.word	637
+	.word	639
 	.byte	1,7,2,35,3,11
 	.byte	'MS',0,1
-	.word	637
+	.word	639
 	.byte	2,5,2,35,3,11
 	.byte	'AREN',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,3,11
 	.byte	'reserved_28',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,3,11
 	.byte	'CLKSEL',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,3,11
 	.byte	'RESETS',0,1
-	.word	637
+	.word	639
 	.byte	2,0,2,35,3,0,3
 	.byte	'Ifx_QSPI_GLOBALCON_Bits',0,5,215,1,3
-	.word	2580
+	.word	2582
 	.byte	10
 	.byte	'_Ifx_QSPI_GLOBALCON1_Bits',0,5,218,1,16,4,11
 	.byte	'ERRORENS',0,2
-	.word	360
+	.word	362
 	.byte	9,7,2,35,0,11
 	.byte	'TXEN',0,1
-	.word	637
+	.word	639
 	.byte	1,6,2,35,1,11
 	.byte	'RXEN',0,1
-	.word	637
+	.word	639
 	.byte	1,5,2,35,1,11
 	.byte	'PT1EN',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,1,11
 	.byte	'PT2EN',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,1,11
 	.byte	'reserved_13',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,1,11
 	.byte	'reserved_14',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,1,11
 	.byte	'USREN',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,1,11
 	.byte	'TXFIFOINT',0,1
-	.word	637
+	.word	639
 	.byte	2,6,2,35,2,11
 	.byte	'RXFIFOINT',0,1
-	.word	637
+	.word	639
 	.byte	2,4,2,35,2,11
 	.byte	'PT1',0,1
-	.word	637
+	.word	639
 	.byte	3,1,2,35,2,11
 	.byte	'PT2',0,2
-	.word	360
+	.word	362
 	.byte	3,6,2,35,2,11
 	.byte	'TXFM',0,1
-	.word	637
+	.word	639
 	.byte	2,4,2,35,3,11
 	.byte	'RXFM',0,1
-	.word	637
+	.word	639
 	.byte	2,2,2,35,3,11
 	.byte	'reserved_30',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,3,11
 	.byte	'reserved_31',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,3,0,3
 	.byte	'Ifx_QSPI_GLOBALCON1_Bits',0,5,236,1,3
-	.word	2918
+	.word	2920
 	.byte	10
 	.byte	'_Ifx_QSPI_ID_Bits',0,5,239,1,16,4,11
 	.byte	'MODREV',0,1
-	.word	637
+	.word	639
 	.byte	8,0,2,35,0,11
 	.byte	'MODTYPE',0,1
-	.word	637
+	.word	639
 	.byte	8,0,2,35,1,11
 	.byte	'MODNUMBER',0,2
-	.word	360
+	.word	362
 	.byte	16,0,2,35,2,0,3
 	.byte	'Ifx_QSPI_ID_Bits',0,5,244,1,3
-	.word	3284
+	.word	3286
 	.byte	10
 	.byte	'_Ifx_QSPI_KRST0_Bits',0,5,247,1,16,4,11
 	.byte	'RST',0,1
-	.word	637
+	.word	639
 	.byte	1,7,2,35,0,11
 	.byte	'RSTSTAT',0,1
-	.word	637
+	.word	639
 	.byte	1,6,2,35,0,11
 	.byte	'reserved_2',0,4
-	.word	275
+	.word	277
 	.byte	30,0,2,35,0,0,3
 	.byte	'Ifx_QSPI_KRST0_Bits',0,5,252,1,3
-	.word	3393
+	.word	3395
 	.byte	10
 	.byte	'_Ifx_QSPI_KRST1_Bits',0,5,255,1,16,4,11
 	.byte	'RST',0,1
-	.word	637
+	.word	639
 	.byte	1,7,2,35,0,11
 	.byte	'reserved_1',0,4
-	.word	275
+	.word	277
 	.byte	31,0,2,35,0,0,3
 	.byte	'Ifx_QSPI_KRST1_Bits',0,5,131,2,3
-	.word	3506
+	.word	3508
 	.byte	10
 	.byte	'_Ifx_QSPI_KRSTCLR_Bits',0,5,134,2,16,4,11
 	.byte	'CLR',0,1
-	.word	637
+	.word	639
 	.byte	1,7,2,35,0,11
 	.byte	'reserved_1',0,4
-	.word	275
+	.word	277
 	.byte	31,0,2,35,0,0,3
 	.byte	'Ifx_QSPI_KRSTCLR_Bits',0,5,138,2,3
-	.word	3600
+	.word	3602
 	.byte	10
 	.byte	'_Ifx_QSPI_MC_Bits',0,5,141,2,16,4,11
 	.byte	'MCOUNT',0,2
-	.word	360
+	.word	362
 	.byte	13,3,2,35,0,11
 	.byte	'reserved_13',0,1
-	.word	637
+	.word	639
 	.byte	3,0,2,35,1,11
 	.byte	'CURRENT',0,2
-	.word	360
+	.word	362
 	.byte	13,3,2,35,2,11
 	.byte	'reserved_29',0,1
-	.word	637
+	.word	639
 	.byte	3,0,2,35,3,0,3
 	.byte	'Ifx_QSPI_MC_Bits',0,5,147,2,3
-	.word	3698
+	.word	3700
 	.byte	10
 	.byte	'_Ifx_QSPI_MCCON_Bits',0,5,150,2,16,4,11
 	.byte	'TPRE2',0,1
-	.word	637
+	.word	639
 	.byte	3,5,2,35,0,11
 	.byte	'TRAIL2',0,1
-	.word	637
+	.word	639
 	.byte	3,2,2,35,0,11
 	.byte	'reserved_6',0,2
-	.word	360
+	.word	362
 	.byte	10,0,2,35,0,11
 	.byte	'IBLEN',0,1
-	.word	637
+	.word	639
 	.byte	1,7,2,35,2,11
 	.byte	'IBLF',0,1
-	.word	637
+	.word	639
 	.byte	1,6,2,35,2,11
 	.byte	'IBLC',0,1
-	.word	637
+	.word	639
 	.byte	1,5,2,35,2,11
 	.byte	'IBLS',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,2,11
 	.byte	'IALEN',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,2,11
 	.byte	'IALF',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,2,11
 	.byte	'IALC',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,2,11
 	.byte	'IALS',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,2,11
 	.byte	'reserved_24',0,1
-	.word	637
+	.word	639
 	.byte	6,2,2,35,3,11
 	.byte	'T2EN',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,3,11
 	.byte	'MCEN',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,3,0,3
 	.byte	'Ifx_QSPI_MCCON_Bits',0,5,166,2,3
-	.word	3832
+	.word	3834
 	.byte	10
 	.byte	'_Ifx_QSPI_MIXENTRY_Bits',0,5,169,2,16,4,11
 	.byte	'E',0,4
-	.word	275
+	.word	277
 	.byte	32,0,2,35,0,0,3
 	.byte	'Ifx_QSPI_MIXENTRY_Bits',0,5,172,2,3
-	.word	4131
+	.word	4133
 	.byte	10
 	.byte	'_Ifx_QSPI_OCS_Bits',0,5,175,2,16,4,11
 	.byte	'reserved_0',0,1
-	.word	637
+	.word	639
 	.byte	4,4,2,35,0,11
 	.byte	'reserved_4',0,4
-	.word	275
+	.word	277
 	.byte	20,8,2,35,0,11
 	.byte	'SUS',0,1
-	.word	637
+	.word	639
 	.byte	4,4,2,35,3,11
 	.byte	'SUS_P',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,3,11
 	.byte	'SUSSTA',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,3,11
 	.byte	'reserved_30',0,1
-	.word	637
+	.word	639
 	.byte	2,0,2,35,3,0,3
 	.byte	'Ifx_QSPI_OCS_Bits',0,5,183,2,3
-	.word	4207
+	.word	4209
 	.byte	10
 	.byte	'_Ifx_QSPI_PISEL_Bits',0,5,186,2,16,4,11
 	.byte	'MRIS',0,1
-	.word	637
+	.word	639
 	.byte	3,5,2,35,0,11
 	.byte	'reserved_3',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,0,11
 	.byte	'SRIS',0,1
-	.word	637
+	.word	639
 	.byte	3,1,2,35,0,11
 	.byte	'reserved_7',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,0,11
 	.byte	'SCIS',0,1
-	.word	637
+	.word	639
 	.byte	3,5,2,35,1,11
 	.byte	'reserved_11',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,1,11
 	.byte	'SLSIS',0,1
-	.word	637
+	.word	639
 	.byte	3,1,2,35,1,11
 	.byte	'reserved_15',0,4
-	.word	275
+	.word	277
 	.byte	17,0,2,35,0,0,3
 	.byte	'Ifx_QSPI_PISEL_Bits',0,5,196,2,3
-	.word	4377
+	.word	4379
 	.byte	10
 	.byte	'_Ifx_QSPI_RXEXIT_Bits',0,5,199,2,16,4,11
 	.byte	'E',0,4
-	.word	275
+	.word	277
 	.byte	32,0,2,35,0,0,3
 	.byte	'Ifx_QSPI_RXEXIT_Bits',0,5,202,2,3
-	.word	4589
+	.word	4591
 	.byte	10
 	.byte	'_Ifx_QSPI_RXEXITD_Bits',0,5,205,2,16,4,11
 	.byte	'E',0,4
-	.word	275
+	.word	277
 	.byte	32,0,2,35,0,0,3
 	.byte	'Ifx_QSPI_RXEXITD_Bits',0,5,208,2,3
-	.word	4661
+	.word	4663
 	.byte	10
 	.byte	'_Ifx_QSPI_SSOC_Bits',0,5,211,2,16,4,11
 	.byte	'AOL',0,2
-	.word	360
+	.word	362
 	.byte	16,0,2,35,0,11
 	.byte	'OEN',0,2
-	.word	360
+	.word	362
 	.byte	16,0,2,35,2,0,3
 	.byte	'Ifx_QSPI_SSOC_Bits',0,5,215,2,3
-	.word	4735
+	.word	4737
 	.byte	10
 	.byte	'_Ifx_QSPI_STATUS_Bits',0,5,218,2,16,4,11
 	.byte	'ERRORFLAGS',0,2
-	.word	360
+	.word	362
 	.byte	9,7,2,35,0,11
 	.byte	'TXF',0,1
-	.word	637
+	.word	639
 	.byte	1,6,2,35,1,11
 	.byte	'RXF',0,1
-	.word	637
+	.word	639
 	.byte	1,5,2,35,1,11
 	.byte	'PT1F',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,1,11
 	.byte	'PT2F',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,1,11
 	.byte	'reserved_13',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,1,11
 	.byte	'reserved_14',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,1,11
 	.byte	'USRF',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,1,11
 	.byte	'TXFIFOLEVEL',0,1
-	.word	637
+	.word	639
 	.byte	3,5,2,35,2,11
 	.byte	'RXFIFOLEVEL',0,1
-	.word	637
+	.word	639
 	.byte	3,2,2,35,2,11
 	.byte	'SLAVESEL',0,2
-	.word	360
+	.word	362
 	.byte	4,6,2,35,2,11
 	.byte	'RPV',0,1
-	.word	637
+	.word	639
 	.byte	1,5,2,35,3,11
 	.byte	'TPV',0,1
-	.word	637
+	.word	639
 	.byte	1,4,2,35,3,11
 	.byte	'PHASE',0,1
-	.word	637
+	.word	639
 	.byte	4,0,2,35,3,0,3
 	.byte	'Ifx_QSPI_STATUS_Bits',0,5,234,2,3
-	.word	4820
+	.word	4822
 	.byte	10
 	.byte	'_Ifx_QSPI_STATUS1_Bits',0,5,237,2,16,4,11
 	.byte	'BITCOUNT',0,1
-	.word	637
+	.word	639
 	.byte	8,0,2,35,0,11
 	.byte	'reserved_8',0,4
-	.word	275
+	.word	277
 	.byte	20,4,2,35,0,11
 	.byte	'BRDEN',0,1
-	.word	637
+	.word	639
 	.byte	1,3,2,35,3,11
 	.byte	'BRD',0,1
-	.word	637
+	.word	639
 	.byte	1,2,2,35,3,11
 	.byte	'SPDEN',0,1
-	.word	637
+	.word	639
 	.byte	1,1,2,35,3,11
 	.byte	'SPD',0,1
-	.word	637
+	.word	639
 	.byte	1,0,2,35,3,0,3
 	.byte	'Ifx_QSPI_STATUS1_Bits',0,5,245,2,3
-	.word	5138
+	.word	5140
 	.byte	10
 	.byte	'_Ifx_QSPI_XXLCON_Bits',0,5,248,2,16,4,11
 	.byte	'XDL',0,2
-	.word	360
+	.word	362
 	.byte	16,0,2,35,0,11
 	.byte	'BYTECOUNT',0,2
-	.word	360
+	.word	362
 	.byte	16,0,2,35,2,0,3
 	.byte	'Ifx_QSPI_XXLCON_Bits',0,5,252,2,3
-	.word	5305
+	.word	5307
 	.byte	12,5,132,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	722
+	.word	724
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_ACCEN0',0,5,137,3,3
-	.word	5400
+	.word	5402
 	.byte	12,5,140,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	1281
+	.word	1283
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_ACCEN1',0,5,145,3,3
-	.word	5465
+	.word	5467
 	.byte	12,5,148,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	1360
+	.word	1362
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_BACON',0,5,153,3,3
-	.word	5530
+	.word	5532
 	.byte	12,5,156,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	1622
+	.word	1624
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_BACONENTRY',0,5,161,3,3
-	.word	5594
+	.word	5596
 	.byte	12,5,164,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	1702
+	.word	1704
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_CAPCON',0,5,169,3,3
-	.word	5663
+	.word	5665
 	.byte	12,5,172,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	1928
+	.word	1930
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_CLC',0,5,177,3,3
-	.word	5728
+	.word	5730
 	.byte	12,5,180,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	2073
+	.word	2075
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_DATAENTRY',0,5,185,3,3
-	.word	5790
+	.word	5792
 	.byte	12,5,188,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	2151
+	.word	2153
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_ECON',0,5,193,3,3
-	.word	5858
+	.word	5860
 	.byte	12,5,196,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	2343
+	.word	2345
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_FLAGSCLEAR',0,5,201,3,3
-	.word	5921
+	.word	5923
 	.byte	12,5,204,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	2580
+	.word	2582
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_GLOBALCON',0,5,209,3,3
-	.word	5990
+	.word	5992
 	.byte	12,5,212,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	2918
+	.word	2920
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_GLOBALCON1',0,5,217,3,3
-	.word	6058
+	.word	6060
 	.byte	12,5,220,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	3284
+	.word	3286
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_ID',0,5,225,3,3
-	.word	6127
+	.word	6129
 	.byte	12,5,228,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	3393
+	.word	3395
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_KRST0',0,5,233,3,3
-	.word	6188
+	.word	6190
 	.byte	12,5,236,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	3506
+	.word	3508
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_KRST1',0,5,241,3,3
-	.word	6252
+	.word	6254
 	.byte	12,5,244,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	3600
+	.word	3602
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_KRSTCLR',0,5,249,3,3
-	.word	6316
+	.word	6318
 	.byte	12,5,252,3,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	3698
+	.word	3700
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_MC',0,5,129,4,3
-	.word	6382
+	.word	6384
 	.byte	12,5,132,4,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	3832
+	.word	3834
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_MCCON',0,5,137,4,3
-	.word	6443
+	.word	6445
 	.byte	12,5,140,4,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4131
+	.word	4133
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_MIXENTRY',0,5,145,4,3
-	.word	6507
+	.word	6509
 	.byte	12,5,148,4,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4207
+	.word	4209
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_OCS',0,5,153,4,3
-	.word	6574
+	.word	6576
 	.byte	12,5,156,4,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4377
+	.word	4379
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_PISEL',0,5,161,4,3
-	.word	6636
+	.word	6638
 	.byte	12,5,164,4,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4589
+	.word	4591
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_RXEXIT',0,5,169,4,3
-	.word	6700
+	.word	6702
 	.byte	12,5,172,4,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4661
+	.word	4663
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_RXEXITD',0,5,177,4,3
-	.word	6765
+	.word	6767
 	.byte	12,5,180,4,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4735
+	.word	4737
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_SSOC',0,5,185,4,3
-	.word	6831
+	.word	6833
 	.byte	12,5,188,4,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4820
+	.word	4822
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_STATUS',0,5,193,4,3
-	.word	6894
+	.word	6896
 	.byte	12,5,196,4,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	5138
+	.word	5140
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_STATUS1',0,5,201,4,3
-	.word	6959
+	.word	6961
 	.byte	12,5,204,4,9,4,9
 	.byte	'U',0
-	.word	275
+	.word	277
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	308
+	.word	310
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	5305
+	.word	5307
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_QSPI_XXLCON',0,5,209,4,3
-	.word	7025
+	.word	7027
 	.byte	13,40
-	.word	571
+	.word	573
 	.byte	14,4,0
 .L8:
 	.byte	15
-	.word	7090
+	.word	7092
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
@@ -1085,12 +1085,12 @@ IfxQspi_cfg_indexMap:	.type	object
 	.word	.L12-.L11
 .L11:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
-	.byte	'D:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x',0
+	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x',0
 	.byte	0
 	.byte	'../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxQspi_cfg.c',0,0,0,0
-	.byte	'D:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\Cpu\\Std\\Platform_Types.h',0
+	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\Cpu\\Std\\Platform_Types.h',0
 	.byte	0,0,0
-	.byte	'D:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\Cpu\\Std\\Ifx_Types.h',0
+	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\Cpu\\Std\\Ifx_Types.h',0
 	.byte	0,0,0
 	.byte	'Ifx_TypesReg.h',0,1,0,0
 	.byte	'IfxQspi_regdef.h',0,1,0,0,0
@@ -1099,13 +1099,13 @@ IfxQspi_cfg_indexMap:	.type	object
 	.sdecl	'.debug_info',debug,cluster('IfxQspi_cfg_indexMap')
 	.sect	'.debug_info'
 .L6:
-	.word	278
+	.word	280
 	.half	3
 	.word	.L7
 	.byte	4,1
 	.byte	'../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxQspi_cfg.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1,2
 	.word	.L2
 	.byte	3

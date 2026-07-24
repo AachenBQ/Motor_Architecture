@@ -12,6 +12,9 @@ typedef struct
 static uint32_t g_time_us;
 static bool g_gate_enabled;
 static bool g_pwm_enabled;
+static float g_phase_duty_a;
+static float g_phase_duty_b;
+static float g_phase_duty_c;
 static uint32_t g_active_faults;
 static Tc375PhaseCurrents g_phase_currents;
 static Tc375EncoderSample g_encoder_sample;
@@ -25,6 +28,9 @@ void Tc375HalStub_Reset(void)
     g_time_us = 0U;
     g_gate_enabled = false;
     g_pwm_enabled = false;
+    g_phase_duty_a = 0.0F;
+    g_phase_duty_b = 0.0F;
+    g_phase_duty_c = 0.0F;
     g_active_faults = 0U;
     g_phase_currents = (Tc375PhaseCurrents){0.0F, 0.0F, 0.0F, false};
     g_encoder_sample =
@@ -69,6 +75,16 @@ bool Tc375HalStub_GateEnabled(void)
 bool Tc375HalStub_PwmEnabled(void)
 {
     return g_pwm_enabled;
+}
+
+void Tc375HalStub_GetPhaseDuty(
+    float *phase_a,
+    float *phase_b,
+    float *phase_c)
+{
+    *phase_a = g_phase_duty_a;
+    *phase_b = g_phase_duty_b;
+    *phase_c = g_phase_duty_c;
 }
 
 bool Tc375Hal_BoardInit(void)
@@ -136,9 +152,9 @@ float Tc375Hal_ReadPowerTemperature(void)
 
 void Tc375Hal_SetPhaseDuty(float phase_a, float phase_b, float phase_c)
 {
-    (void)phase_a;
-    (void)phase_b;
-    (void)phase_c;
+    g_phase_duty_a = phase_a;
+    g_phase_duty_b = phase_b;
+    g_phase_duty_c = phase_c;
 }
 
 void Tc375Hal_SetPwmEnabled(bool enabled)

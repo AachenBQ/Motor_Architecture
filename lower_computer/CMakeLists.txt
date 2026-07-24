@@ -80,6 +80,7 @@ target_compile_definitions(simplefoc_core
 )
 
 add_library(lower_firmware_host STATIC
+    firmware/app/cooperative_app.c
     firmware/app/freertos_app.c
     firmware/simplefoc_port/simplefoc_tc375_port.cpp
     firmware/simplefoc_port/tc375_simplefoc_adapters.cpp
@@ -96,7 +97,8 @@ target_include_directories(lower_firmware_host
 )
 target_compile_definitions(lower_firmware_host
     PUBLIC
-        MOTOR_REAL_HARDWARE_ENABLED=0
+        MOTOR_CONTROL_HARDWARE_ENABLED=1
+        MOTOR_POWER_STAGE_ENABLED=0
         MOTOR_USE_SIMPLEFOC=1
 )
 target_link_libraries(lower_firmware_host

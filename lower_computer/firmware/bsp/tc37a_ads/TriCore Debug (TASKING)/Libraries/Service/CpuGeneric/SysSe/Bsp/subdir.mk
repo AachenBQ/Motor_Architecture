@@ -22,11 +22,11 @@ OBJS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 "Libraries/Service/CpuGeneric/SysSe/Bsp/Assert.src":"../Libraries/Service/CpuGeneric/SysSe/Bsp/Assert.c" "Libraries/Service/CpuGeneric/SysSe/Bsp/subdir.mk"
-	cctc -cs --dep-file="$*.d" --misrac-version=2004 "-fD:/Violin_demo/Motor_Architecture/lower_computer/firmware/bsp/tc37a_ads/TriCore Debug (TASKING)/TASKING_C_C___Compiler-Include_paths__-I_.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "$@" "$<"
+	cctc -cs --dep-file="$*.d" --misrac-version=2012 "-fC:/Users/BQ/Documents/motor_control/lower_computer/firmware/bsp/tc37a_ads/TriCore Debug (TASKING)/TASKING_C_C___Compiler-Include_paths__-I_.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "$@" "$<"
 "Libraries/Service/CpuGeneric/SysSe/Bsp/Assert.o":"Libraries/Service/CpuGeneric/SysSe/Bsp/Assert.src" "Libraries/Service/CpuGeneric/SysSe/Bsp/subdir.mk"
 	astc -Og -Os --no-warnings= --error-limit=42 -o  "$@" "$<"
 "Libraries/Service/CpuGeneric/SysSe/Bsp/Bsp.src":"../Libraries/Service/CpuGeneric/SysSe/Bsp/Bsp.c" "Libraries/Service/CpuGeneric/SysSe/Bsp/subdir.mk"
-	cctc -cs --dep-file="$*.d" --misrac-version=2004 "-fD:/Violin_demo/Motor_Architecture/lower_computer/firmware/bsp/tc37a_ads/TriCore Debug (TASKING)/TASKING_C_C___Compiler-Include_paths__-I_.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "$@" "$<"
+	cctc -cs --dep-file="$*.d" --misrac-version=2012 "-fC:/Users/BQ/Documents/motor_control/lower_computer/firmware/bsp/tc37a_ads/TriCore Debug (TASKING)/TASKING_C_C___Compiler-Include_paths__-I_.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "$@" "$<"
 "Libraries/Service/CpuGeneric/SysSe/Bsp/Bsp.o":"Libraries/Service/CpuGeneric/SysSe/Bsp/Bsp.src" "Libraries/Service/CpuGeneric/SysSe/Bsp/subdir.mk"
 	astc -Og -Os --no-warnings= --error-limit=42 -o  "$@" "$<"
 

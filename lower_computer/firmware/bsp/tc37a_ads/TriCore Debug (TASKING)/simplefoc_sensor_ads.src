@@ -1,0 +1,1603 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc81128c -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 --no-warnings -o simplefoc_sensor_ads.src cc81128a.ic"
+	.compiler_name		"ctc"
+	;source	'../simplefoc_sensor_ads.cpp'
+
+	
+$TC162
+	
+	.sdecl	'.text.Sensor._ZN6Sensor18getMechanicalAngleEv',code,cluster('_ZN6Sensor18getMechanicalAngleEv')
+	.sect	'.text.Sensor._ZN6Sensor18getMechanicalAngleEv'
+	.align	2
+	
+	.global	_ZN6Sensor18getMechanicalAngleEv
+; Function _ZN6Sensor18getMechanicalAngleEv
+.L23:
+_ZN6Sensor18getMechanicalAngleEv:	.type	func
+	ld.w	d2,[a4]12
+.L154:
+	j	.L2
+.L2:
+	ret
+.L89:
+	
+___ZN6Sensor18getMechanicalAngleEv_function_end:
+	.size	_ZN6Sensor18getMechanicalAngleEv,___ZN6Sensor18getMechanicalAngleEv_function_end-_ZN6Sensor18getMechanicalAngleEv
+.L46:
+	; End of function
+	
+	.sdecl	'.text.Sensor._ZN6Sensor8getAngleEv',code,cluster('_ZN6Sensor8getAngleEv')
+	.sect	'.text.Sensor._ZN6Sensor8getAngleEv'
+	.align	2
+	
+	.global	_ZN6Sensor8getAngleEv
+; Function _ZN6Sensor8getAngleEv
+.L25:
+_ZN6Sensor8getAngleEv:	.type	func
+	ld.w	d15,[a4]28
+.L159:
+	itof	d0,d15
+.L160:
+	mov	d1,#4059
+	addih	d1,d1,#16585
+.L161:
+	ld.w	d15,[a4]12
+.L162:
+	madd.f	d2,d15,d0,d1
+.L163:
+	j	.L3
+.L3:
+	ret
+.L92:
+	
+___ZN6Sensor8getAngleEv_function_end:
+	.size	_ZN6Sensor8getAngleEv,___ZN6Sensor8getAngleEv_function_end-_ZN6Sensor8getAngleEv
+.L51:
+	; End of function
+	
+	.sdecl	'.text.Sensor._ZN6Sensor15getPreciseAngleEv',code,cluster('_ZN6Sensor15getPreciseAngleEv')
+	.sect	'.text.Sensor._ZN6Sensor15getPreciseAngleEv'
+	.align	2
+	
+	.global	_ZN6Sensor15getPreciseAngleEv
+; Function _ZN6Sensor15getPreciseAngleEv
+.L27:
+_ZN6Sensor15getPreciseAngleEv:	.type	func
+	ld.w	d15,[a4]28
+.L168:
+	itof	d0,d15
+.L169:
+	mov	d1,#4059
+	addih	d1,d1,#16585
+.L170:
+	ld.w	d15,[a4]12
+.L171:
+	madd.f	d2,d15,d0,d1
+.L172:
+	j	.L4
+.L4:
+	ret
+.L95:
+	
+___ZN6Sensor15getPreciseAngleEv_function_end:
+	.size	_ZN6Sensor15getPreciseAngleEv,___ZN6Sensor15getPreciseAngleEv_function_end-_ZN6Sensor15getPreciseAngleEv
+.L56:
+	; End of function
+	
+	.sdecl	'.text.Sensor._ZN6Sensor11getVelocityEv',code,cluster('_ZN6Sensor11getVelocityEv')
+	.sect	'.text.Sensor._ZN6Sensor11getVelocityEv'
+	.align	2
+	
+	.global	_ZN6Sensor11getVelocityEv
+; Function _ZN6Sensor11getVelocityEv
+.L29:
+_ZN6Sensor11getVelocityEv:	.type	func
+	ld.w	d15,[a4]16
+.L177:
+	ld.w	d0,[a4]24
+.L178:
+	sub	d15,d0
+.L179:
+	itof	d15,d15
+.L180:
+	mov	d0,#14269
+	addih	d0,d0,#13702
+.L181:
+	mul.f	d2,d15,d0
+.L123:
+	mov	d15,#0
+.L182:
+	cmp.f	d15,d2,d15
+	extr.u	d15,d15,#0,#1
+.L183:
+	jeq	d15,#0,.L5
+.L184:
+	ld.w	d15,[a4]12
+.L185:
+	st.w	[a4]20,d15
+.L186:
+	ld.w	d15,[a4]28
+.L187:
+	st.w	[a4]32,d15
+.L188:
+	ld.w	d15,[a4]16
+.L189:
+	st.w	[a4]24,d15
+.L190:
+	ld.w	d2,[a4]8
+.L124:
+	j	.L6
+.L5:
+	ld.w	d15,[a4]4
+.L191:
+	cmp.f	d15,d2,d15
+	extr.u	d15,d15,#0,#1
+.L192:
+	jeq	d15,#0,.L7
+.L193:
+	ld.w	d2,[a4]8
+.L125:
+	j	.L8
+.L7:
+	ld.w	d15,[a4]28
+.L194:
+	ld.w	d0,[a4]32
+.L195:
+	jne	d15,d0,.L9
+.L196:
+	ld.w	d0,[a4]12
+.L127:
+	ld.w	d15,[a4]20
+.L128:
+	j	.L10
+.L9:
+	ld.w	d15,[a4]28
+.L197:
+	itof	d0,d15
+.L198:
+	mov	d1,#4059
+	addih	d1,d1,#16585
+.L199:
+	ld.w	d15,[a4]12
+.L200:
+	madd.f	d0,d15,d0,d1
+.L129:
+	ld.w	d15,[a4]32
+.L201:
+	itof	d1,d15
+.L202:
+	mov	d3,#4059
+	addih	d3,d3,#16585
+.L203:
+	ld.w	d15,[a4]20
+.L204:
+	madd.f	d15,d15,d1,d3
+.L10:
+	sub.f	d0,d0,d15
+.L130:
+	insert	d15,d0,#0,#31,#1
+.L131:
+	mov.u	d1,#52343
+	addih	d1,d1,#12843
+.L205:
+	cmp.f	d15,d15,d1
+	extr.u	d15,d15,#2,#1
+.L206:
+	jeq	d15,#0,.L11
+.L207:
+	div.f	d15,d0,d2
+.L208:
+	st.w	[a4]8,d15
+.L209:
+	ld.w	d15,[a4]12
+.L210:
+	st.w	[a4]20,d15
+.L211:
+	ld.w	d15,[a4]28
+.L212:
+	st.w	[a4]32,d15
+.L213:
+	ld.w	d15,[a4]16
+.L214:
+	st.w	[a4]24,d15
+.L11:
+	ld.w	d2,[a4]8
+.L126:
+	j	.L12
+.L12:
+.L8:
+.L6:
+	ret
+.L98:
+	
+___ZN6Sensor11getVelocityEv_function_end:
+	.size	_ZN6Sensor11getVelocityEv,___ZN6Sensor11getVelocityEv_function_end-_ZN6Sensor11getVelocityEv
+.L61:
+	; End of function
+	
+	.sdecl	'.text.Sensor._ZN6Sensor16getFullRotationsEv',code,cluster('_ZN6Sensor16getFullRotationsEv')
+	.sect	'.text.Sensor._ZN6Sensor16getFullRotationsEv'
+	.align	2
+	
+	.global	_ZN6Sensor16getFullRotationsEv
+; Function _ZN6Sensor16getFullRotationsEv
+.L31:
+_ZN6Sensor16getFullRotationsEv:	.type	func
+	ld.w	d2,[a4]28
+.L219:
+	j	.L13
+.L13:
+	ret
+.L106:
+	
+___ZN6Sensor16getFullRotationsEv_function_end:
+	.size	_ZN6Sensor16getFullRotationsEv,___ZN6Sensor16getFullRotationsEv_function_end-_ZN6Sensor16getFullRotationsEv
+.L66:
+	; End of function
+	
+	.sdecl	'.text.Sensor._ZN6Sensor6updateEv',code,cluster('_ZN6Sensor6updateEv')
+	.sect	'.text.Sensor._ZN6Sensor6updateEv'
+	.align	2
+	
+	.global	_ZN6Sensor6updateEv
+; Function _ZN6Sensor6updateEv
+.L33:
+_ZN6Sensor6updateEv:	.type	func
+	mov.aa	a15,a4
+.L133:
+	ld.a	a2,[a15]
+.L224:
+	ld.w	d15,[a2]28
+.L225:
+	mov.a	a2,d15
+.L226:
+	mov.aa	a4,a15
+	calli	a2
+.L132:
+	mov	d8,d2
+.L135:
+	mov	d0,#0
+.L227:
+	cmp.f	d0,d8,d0
+	extr.u	d15,d0,#0,#1
+.L228:
+	jeq	d15,#0,.L14
+.L229:
+	j	.L15
+.L14:
+	call	_Z7_microsv
+.L134:
+	st.w	[a15]16,d2
+.L230:
+	ld.w	d15,[a15]12
+.L231:
+	sub.f	d0,d8,d15
+.L136:
+	mov	d1,#0
+.L232:
+	cmp.f	d15,d0,d1
+	jnz.t	d15:0,.L16
+.L233:
+	mov	d15,d0
+.L234:
+	j	.L17
+.L16:
+	insn.t	d15,d0:31,d0:31
+.L17:
+	mov.u	d1,#55676
+	addih	d1,d1,#16544
+.L235:
+	cmp.f	d15,d15,d1
+	extr.u	d15,d15,#2,#1
+.L236:
+	jeq	d15,#0,.L18
+.L237:
+	mov	d15,#0
+.L238:
+	cmp.f	d15,d0,d15
+	jnz.t	d15:2,.L19
+.L239:
+	mov	d0,#1
+.L137:
+	j	.L20
+.L19:
+	mov	d0,#-1
+.L20:
+	ld.w	d15,[a15]28
+.L240:
+	add	d15,d0
+	st.w	[a15]28,d15
+.L18:
+	st.w	[a15]12,d8
+.L15:
+	ret
+.L109:
+	
+___ZN6Sensor6updateEv_function_end:
+	.size	_ZN6Sensor6updateEv,___ZN6Sensor6updateEv_function_end-_ZN6Sensor6updateEv
+.L71:
+	; End of function
+	
+	.sdecl	'.text.Sensor._ZN6Sensor11needsSearchEv',code,cluster('_ZN6Sensor11needsSearchEv')
+	.sect	'.text.Sensor._ZN6Sensor11needsSearchEv'
+	.align	2
+	
+	.global	_ZN6Sensor11needsSearchEv
+; Function _ZN6Sensor11needsSearchEv
+.L35:
+_ZN6Sensor11needsSearchEv:	.type	func
+	mov	d2,#0
+.L245:
+	j	.L21
+.L21:
+	ret
+.L114:
+	
+___ZN6Sensor11needsSearchEv_function_end:
+	.size	_ZN6Sensor11needsSearchEv,___ZN6Sensor11needsSearchEv_function_end-_ZN6Sensor11needsSearchEv
+.L76:
+	; End of function
+	
+	.sdecl	'.text.Sensor._ZN6Sensor4initEv',code,cluster('_ZN6Sensor4initEv')
+	.sect	'.text.Sensor._ZN6Sensor4initEv'
+	.align	2
+	
+	.global	_ZN6Sensor4initEv
+; Function _ZN6Sensor4initEv
+.L37:
+_ZN6Sensor4initEv:	.type	func
+	mov.aa	a12,a4
+.L139:
+	ld.a	a15,[a12]
+.L250:
+	ld.w	d15,[a15]28
+.L251:
+	mov.a	a2,d15
+.L252:
+	mov.aa	a4,a12
+	calli	a2
+.L138:
+	mov	d4,#1
+	call	_Z17delayMicrosecondsj
+.L253:
+	ld.a	a15,[a12]
+.L254:
+	ld.w	d15,[a15]28
+.L255:
+	mov.a	a15,d15
+.L256:
+	mov.aa	a4,a12
+.L140:
+	calli	a15
+.L141:
+	st.w	[a12]20,d2
+.L257:
+	call	_Z7_microsv
+.L258:
+	st.w	[a12]24,d2
+.L259:
+	mov	d4,#1
+	call	_Z5delaym
+.L260:
+	ld.a	a15,[a12]
+.L261:
+	ld.w	d15,[a15]28
+.L262:
+	mov.a	a15,d15
+.L263:
+	mov.aa	a4,a12
+.L142:
+	calli	a15
+.L143:
+	mov	d4,#1
+	call	_Z17delayMicrosecondsj
+.L264:
+	ld.a	a15,[a12]
+.L265:
+	ld.w	d15,[a15]28
+.L266:
+	mov.a	a15,d15
+.L267:
+	mov.aa	a4,a12
+.L144:
+	calli	a15
+.L145:
+	st.w	[a12]12,d2
+.L268:
+	call	_Z7_microsv
+.L269:
+	st.w	[a12]16,d2
+.L270:
+	ret
+.L117:
+	
+___ZN6Sensor4initEv_function_end:
+	.size	_ZN6Sensor4initEv,___ZN6Sensor4initEv_function_end-_ZN6Sensor4initEv
+.L81:
+	; End of function
+	
+	.sdecl	'.rodata.Sensor._ZTV6Sensor',data,rom,cluster('_ZTV6Sensor')
+	.sect	'.rodata.Sensor._ZTV6Sensor'
+	.global	_ZTV6Sensor
+	.align	2
+_ZTV6Sensor:	.type	object
+	.size	_ZTV6Sensor,44
+	.space	4
+	.word	_ZTI6Sensor,_ZN6Sensor18getMechanicalAngleEv,_ZN6Sensor8getAngleEv,_ZN6Sensor15getPreciseAngleEv,_ZN6Sensor11getVelocityEv,_ZN6Sensor16getFullRotationsEv,_ZN6Sensor6updateEv,_ZN6Sensor11needsSearchEv
+	.word	__cxa_pure_virtual,_ZN6Sensor4initEv
+	.sdecl	'.rodata.Sensor._ZTI6Sensor',data,rom,cluster('_ZTI6Sensor')
+	.sect	'.rodata.Sensor._ZTI6Sensor'
+	.global	_ZTI6Sensor
+	.align	4
+_ZTI6Sensor:	.type	object
+	.size	_ZTI6Sensor,8
+	.word	_ZTVN10__cxxabiv117__class_type_infoE+8,_ZTS6Sensor
+	.sdecl	'.rodata.Sensor._ZTS6Sensor',data,rom,cluster('_ZTS6Sensor')
+	.sect	'.rodata.Sensor._ZTS6Sensor'
+	.global	_ZTS6Sensor
+_ZTS6Sensor:	.type	object
+	.size	_ZTS6Sensor,8
+	.byte	54,83,101,110
+	.byte	115,111,114
+	.space	1
+	.calls	'__INDIRECT__','__cxa_pure_virtual'
+	.calls	'__INDIRECT__','_ZN6Sensor18getMechanicalAngleEv'
+	.calls	'__INDIRECT__','_ZN6Sensor8getAngleEv'
+	.calls	'__INDIRECT__','_ZN6Sensor15getPreciseAngleEv'
+	.calls	'__INDIRECT__','_ZN6Sensor11getVelocityEv'
+	.calls	'__INDIRECT__','_ZN6Sensor16getFullRotationsEv'
+	.calls	'__INDIRECT__','_ZN6Sensor6updateEv'
+	.calls	'__INDIRECT__','_ZN6Sensor11needsSearchEv'
+	.calls	'__INDIRECT__','_ZN6Sensor4initEv'
+	.calls	'_ZN6Sensor6updateEv','__INDIRECT__'
+	.calls	'_ZN6Sensor6updateEv','_Z7_microsv'
+	.calls	'_ZN6Sensor4initEv','__INDIRECT__'
+	.calls	'_ZN6Sensor4initEv','_Z17delayMicrosecondsj'
+	.calls	'_ZN6Sensor4initEv','_Z7_microsv'
+	.calls	'_ZN6Sensor4initEv','_Z5delaym'
+	.calls	'_ZN6Sensor18getMechanicalAngleEv','',0
+	.calls	'_ZN6Sensor8getAngleEv','',0
+	.calls	'_ZN6Sensor15getPreciseAngleEv','',0
+	.calls	'_ZN6Sensor11getVelocityEv','',0
+	.calls	'_ZN6Sensor16getFullRotationsEv','',0
+	.calls	'_ZN6Sensor6updateEv','',0
+	.calls	'_ZN6Sensor11needsSearchEv','',0
+	.extern	_Z5delaym
+	.extern	_Z17delayMicrosecondsj
+	.extern	_Z7_microsv
+	.extern	__cxa_pure_virtual
+	.weak	_ZTV6Sensor
+	.weak	_ZTI6Sensor
+	.extern	_ZTVN10__cxxabiv117__class_type_infoE
+	.weak	_ZTS6Sensor
+	.extern	__INDIRECT__
+	.calls	'_ZN6Sensor4initEv','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L39:
+	.word	967
+	.half	3
+	.word	.L40
+	.byte	4
+.L38:
+	.byte	1
+	.byte	'../simplefoc_sensor_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L41
+.L88:
+	.byte	2
+	.byte	'float',0,4,4,3
+	.byte	'__fabsf',0
+	.word	222
+	.byte	1,1,1,1,4
+	.byte	'f',0
+	.word	222
+	.byte	0,2
+	.byte	'unsigned long int',0,4,7,5
+	.byte	'_Z5delaym',0,1,92,13,1,1,1,1,6
+	.byte	'ms',0,1,92,37
+	.word	256
+	.byte	0,2
+	.byte	'unsigned int',0,4,7,5
+	.byte	'_Z17delayMicrosecondsj',0,1,93,13,1,1,1,1,6
+	.byte	'us',0,1,93,45
+	.word	307
+	.byte	0,7
+	.byte	'_Z7_microsv',0,2,19,22
+	.word	256
+	.byte	1,1,1,1,8
+	.byte	'__cxa_pure_virtual',0,2,19,53,1,1,1
+.L105:
+	.byte	2
+	.byte	'int',0,4,5,9
+	.word	416
+	.byte	10
+	.word	423
+	.byte	2
+	.byte	'long int',0,4,5,11
+	.byte	'Sensor',0,3,44,8,36,12
+	.byte	'__vptr',0
+	.word	428
+	.byte	4,2,35,0,12
+	.byte	'min_elapsed_time',0
+	.word	222
+	.byte	4,2,35,4,12
+	.byte	'velocity',0
+	.word	222
+	.byte	4,2,35,8,12
+	.byte	'angle_prev',0
+	.word	222
+	.byte	4,2,35,12,12
+	.byte	'angle_prev_ts',0
+	.word	433
+	.byte	4,2,35,16,12
+	.byte	'vel_angle_prev',0
+	.word	222
+	.byte	4,2,35,20,12
+	.byte	'vel_angle_prev_ts',0
+	.word	433
+	.byte	4,2,35,24,12
+	.byte	'full_rotations',0
+	.word	416
+	.byte	4,2,35,28,12
+	.byte	'vel_full_rotations',0
+	.word	416
+	.byte	4,2,35,32,0,10
+	.word	445
+.L90:
+	.byte	9
+	.word	664
+.L93:
+	.byte	9
+	.word	664
+.L96:
+	.byte	9
+	.word	664
+.L99:
+	.byte	9
+	.word	664
+.L107:
+	.byte	9
+	.word	664
+.L110:
+	.byte	9
+	.word	664
+.L115:
+	.byte	9
+	.word	664
+.L118:
+	.byte	9
+	.word	664
+	.byte	8
+	.byte	'__INDIRECT__',0,4,1,1,1,1,1,13,1,10
+	.word	729
+	.byte	14
+	.byte	'__codeptr',0,4,1,1
+	.word	731
+	.byte	14
+	.byte	'int32_t',0,5,253,1,20
+	.word	416
+	.byte	15,44
+	.word	416
+	.byte	16,10,0
+.L120:
+	.byte	9
+	.word	771
+	.byte	2
+	.byte	'char',0,1,6,9
+	.word	785
+	.byte	10
+	.word	793
+	.byte	11
+	.byte	'__type_info',0,3,44,23,8,12
+	.byte	'__vptr',0
+	.word	428
+	.byte	4,2,35,0,12
+	.byte	'__name',0
+	.word	798
+	.byte	4,2,35,4,0,11
+	.byte	'__class_type_info',0,3,44,85,8,12
+	.byte	'base',0
+	.word	803
+	.byte	8,2,35,0,0
+.L121:
+	.byte	9
+	.word	853
+	.byte	17
+	.word	416
+	.byte	18,0,9
+	.word	896
+	.byte	19
+	.byte	'_ZTVN10__cxxabiv117__class_type_infoE',0,6,65,69
+	.word	903
+	.byte	1,1,15,8
+	.word	785
+	.byte	16,7,0
+.L122:
+	.byte	9
+	.word	956
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L40:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,46,1,3,8,73,19,54,15,39,12
+	.byte	63,12,60,12,0,0,4,5,0,3,8,73,19,0,0,5,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,6,5,0,3,8
+	.byte	58,15,59,15,57,15,73,19,0,0,7,46,0,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,8,46,0,3,8
+	.byte	58,15,59,15,57,15,54,15,63,12,60,12,0,0,9,38,0,73,19,0,0,10,15,0,73,19,0,0,11,19,1,3,8,58,15,59,15,57
+	.byte	15,11,15,0,0,12,13,0,3,8,73,19,11,15,56,9,0,0,13,21,0,54,15,0,0,14,22,0,3,8,58,15,59,15,57,15,73,19,0
+	.byte	0,15,1,1,11,15,73,19,0,0,16,33,0,47,15,0,0,17,1,1,73,19,0,0,18,33,0,0,0,19,52,0,3,8,58,15,59,15,57,15
+	.byte	73,19,63,12,60,12,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L41:
+	.word	.L147-.L146
+.L146:
+	.half	3
+	.word	.L149-.L148
+.L148:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Infineon\\AURIX-Studio-1.10.32\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\',0,0
+	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\../../simplefoc_port/arduino_compat/Arduino.h',0
+	.byte	0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/../time_utils.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.h',0,0,0,0
+	.byte	'../simplefoc_sensor_ads.cpp',0,0,0,0
+	.byte	'stdint.h',0,1,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0,0,0,0,0
+.L149:
+.L147:
+	.sdecl	'.debug_info',debug,cluster('_ZN6Sensor18getMechanicalAngleEv')
+	.sect	'.debug_info'
+.L42:
+	.word	354
+	.half	3
+	.word	.L43
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L45,.L44
+	.byte	2
+	.word	.L38
+	.byte	3
+	.byte	'_ZN6Sensor18getMechanicalAngleEv',0,1,73,7
+	.word	.L88
+	.byte	1,1,1
+	.word	.L23,.L89,.L22
+	.byte	4
+	.byte	'this',0,1,73,62
+	.word	.L90,.L91
+	.byte	5
+	.word	.L23,.L89
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN6Sensor18getMechanicalAngleEv')
+	.sect	'.debug_abbrev'
+.L43:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN6Sensor18getMechanicalAngleEv')
+	.sect	'.debug_line'
+.L44:
+	.word	.L151-.L150
+.L150:
+	.half	3
+	.word	.L153-.L152
+.L152:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0,0,0,0,0
+.L153:
+	.byte	5,12,7,0,5,2
+	.word	.L23
+	.byte	3,201,0,1,5,1,9
+	.half	.L154-.L23
+	.byte	1,9
+	.half	.L2-.L154
+	.byte	3,1,1,7,9
+	.half	.L46-.L2
+	.byte	0,1,1
+.L151:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN6Sensor18getMechanicalAngleEv')
+	.sect	'.debug_ranges'
+.L45:
+	.word	-1,.L23,0,.L46-.L23,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN6Sensor8getAngleEv')
+	.sect	'.debug_info'
+.L47:
+	.word	343
+	.half	3
+	.word	.L48
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L50,.L49
+	.byte	2
+	.word	.L38
+	.byte	3
+	.byte	'_ZN6Sensor8getAngleEv',0,1,79,7
+	.word	.L88
+	.byte	1,1,1
+	.word	.L25,.L92,.L24
+	.byte	4
+	.byte	'this',0,1,79,51
+	.word	.L93,.L94
+	.byte	5
+	.word	.L25,.L92
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN6Sensor8getAngleEv')
+	.sect	'.debug_abbrev'
+.L48:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN6Sensor8getAngleEv')
+	.sect	'.debug_line'
+.L49:
+	.word	.L156-.L155
+.L155:
+	.half	3
+	.word	.L158-.L157
+.L157:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0,0,0,0,0
+.L158:
+	.byte	5,22,7,0,5,2
+	.word	.L25
+	.byte	3,207,0,1,5,10,9
+	.half	.L159-.L25
+	.byte	1,5,44,9
+	.half	.L160-.L159
+	.byte	1,5,66,9
+	.half	.L161-.L160
+	.byte	1,5,59,9
+	.half	.L162-.L161
+	.byte	1,5,1,9
+	.half	.L163-.L162
+	.byte	1,9
+	.half	.L3-.L163
+	.byte	3,1,1,7,9
+	.half	.L51-.L3
+	.byte	0,1,1
+.L156:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN6Sensor8getAngleEv')
+	.sect	'.debug_ranges'
+.L50:
+	.word	-1,.L25,0,.L51-.L25,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN6Sensor15getPreciseAngleEv')
+	.sect	'.debug_info'
+.L52:
+	.word	351
+	.half	3
+	.word	.L53
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L55,.L54
+	.byte	2
+	.word	.L38
+	.byte	3
+	.byte	'_ZN6Sensor15getPreciseAngleEv',0,1,85,8
+	.word	.L88
+	.byte	1,1,1
+	.word	.L27,.L95,.L26
+	.byte	4
+	.byte	'this',0,1,85,60
+	.word	.L96,.L97
+	.byte	5
+	.word	.L27,.L95
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN6Sensor15getPreciseAngleEv')
+	.sect	'.debug_abbrev'
+.L53:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN6Sensor15getPreciseAngleEv')
+	.sect	'.debug_line'
+.L54:
+	.word	.L165-.L164
+.L164:
+	.half	3
+	.word	.L167-.L166
+.L166:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0,0,0,0,0
+.L167:
+	.byte	5,23,7,0,5,2
+	.word	.L27
+	.byte	3,213,0,1,5,10,9
+	.half	.L168-.L27
+	.byte	1,5,45,9
+	.half	.L169-.L168
+	.byte	1,5,82,9
+	.half	.L170-.L169
+	.byte	1,5,66,9
+	.half	.L171-.L170
+	.byte	1,5,1,9
+	.half	.L172-.L171
+	.byte	1,9
+	.half	.L4-.L172
+	.byte	3,1,1,7,9
+	.half	.L56-.L4
+	.byte	0,1,1
+.L165:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN6Sensor15getPreciseAngleEv')
+	.sect	'.debug_ranges'
+.L55:
+	.word	-1,.L27,0,.L56-.L27,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN6Sensor11getVelocityEv')
+	.sect	'.debug_info'
+.L57:
+	.word	476
+	.half	3
+	.word	.L58
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L60,.L59
+	.byte	2
+	.word	.L38
+	.byte	3
+	.byte	'_ZN6Sensor11getVelocityEv',0,1,20,7
+	.word	.L88
+	.byte	1,1,1
+	.word	.L29,.L98,.L28
+	.byte	4
+	.byte	'this',0,1,20,55
+	.word	.L99,.L100
+	.byte	5
+	.word	.L29,.L98
+	.byte	6
+	.byte	'__5217_11_Ts',0,1,23,12
+	.word	.L88,.L101
+	.byte	6
+	.byte	'__5226_11_current_angle',0,1,32,12
+	.word	.L88,.L102
+	.byte	6
+	.byte	'__5227_11_prev_angle',0,1,33,12
+	.word	.L88,.L103
+	.byte	6
+	.byte	'__5237_17_delta_angle',0,1,43,12
+	.word	.L88,.L104
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN6Sensor11getVelocityEv')
+	.sect	'.debug_abbrev'
+.L58:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN6Sensor11getVelocityEv')
+	.sect	'.debug_line'
+.L59:
+	.word	.L174-.L173
+.L173:
+	.half	3
+	.word	.L176-.L175
+.L175:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0,0,0,0,0
+.L176:
+	.byte	5,31,7,0,5,2
+	.word	.L29
+	.byte	3,22,1,5,55,9
+	.half	.L177-.L29
+	.byte	1,5,48,9
+	.half	.L178-.L177
+	.byte	1,5,18,9
+	.half	.L179-.L178
+	.byte	1,5,81,9
+	.half	.L180-.L179
+	.byte	1,5,78,9
+	.half	.L181-.L180
+	.byte	1,5,21,9
+	.half	.L123-.L181
+	.byte	3,1,1,5,18,9
+	.half	.L182-.L123
+	.byte	1,5,1,9
+	.half	.L183-.L182
+	.byte	1,5,31,7,9
+	.half	.L184-.L183
+	.byte	3,1,1,5,24,9
+	.half	.L185-.L184
+	.byte	1,5,35,9
+	.half	.L186-.L185
+	.byte	3,1,1,5,28,9
+	.half	.L187-.L186
+	.byte	1,5,34,9
+	.half	.L188-.L187
+	.byte	3,1,1,5,27,9
+	.half	.L189-.L188
+	.byte	1,5,12,9
+	.half	.L190-.L189
+	.byte	3,1,1,5,1,9
+	.half	.L124-.L190
+	.byte	1,5,25,9
+	.half	.L5-.L124
+	.byte	3,2,1,5,18,9
+	.half	.L191-.L5
+	.byte	1,5,1,9
+	.half	.L192-.L191
+	.byte	1,5,59,7,9
+	.half	.L193-.L192
+	.byte	1,5,48,9
+	.half	.L125-.L193
+	.byte	1,5,10,9
+	.half	.L7-.L125
+	.byte	3,6,1,5,36,9
+	.half	.L194-.L7
+	.byte	1,5,1,9
+	.half	.L195-.L194
+	.byte	1,5,32,7,9
+	.half	.L196-.L195
+	.byte	3,1,1,5,29,9
+	.half	.L127-.L196
+	.byte	3,1,1,5,45,9
+	.half	.L128-.L127
+	.byte	3,127,1,5,42,9
+	.half	.L9-.L128
+	.byte	3,3,1,5,30,9
+	.half	.L197-.L9
+	.byte	1,5,64,9
+	.half	.L198-.L197
+	.byte	1,5,86,9
+	.half	.L199-.L198
+	.byte	1,5,79,9
+	.half	.L200-.L199
+	.byte	1,5,39,9
+	.half	.L129-.L200
+	.byte	3,1,1,5,27,9
+	.half	.L201-.L129
+	.byte	1,5,65,9
+	.half	.L202-.L201
+	.byte	1,5,87,9
+	.half	.L203-.L202
+	.byte	1,5,80,9
+	.half	.L204-.L203
+	.byte	1,5,50,9
+	.half	.L10-.L204
+	.byte	3,2,1,5,13,9
+	.half	.L130-.L10
+	.byte	3,3,1,5,41,9
+	.half	.L131-.L130
+	.byte	1,5,38,9
+	.half	.L205-.L131
+	.byte	1,5,1,9
+	.half	.L206-.L205
+	.byte	1,5,43,7,9
+	.half	.L207-.L206
+	.byte	3,1,1,5,18,9
+	.half	.L208-.L207
+	.byte	1,5,31,9
+	.half	.L209-.L208
+	.byte	3,2,1,5,24,9
+	.half	.L210-.L209
+	.byte	1,5,35,9
+	.half	.L211-.L210
+	.byte	3,1,1,5,28,9
+	.half	.L212-.L211
+	.byte	1,5,34,9
+	.half	.L213-.L212
+	.byte	3,1,1,5,27,9
+	.half	.L214-.L213
+	.byte	1,5,12,9
+	.half	.L11-.L214
+	.byte	3,3,1,5,1,9
+	.half	.L126-.L11
+	.byte	1,9
+	.half	.L6-.L126
+	.byte	3,1,1,7,9
+	.half	.L61-.L6
+	.byte	0,1,1
+.L174:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN6Sensor11getVelocityEv')
+	.sect	'.debug_ranges'
+.L60:
+	.word	-1,.L29,0,.L61-.L29,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN6Sensor16getFullRotationsEv')
+	.sect	'.debug_info'
+.L62:
+	.word	352
+	.half	3
+	.word	.L63
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L65,.L64
+	.byte	2
+	.word	.L38
+	.byte	3
+	.byte	'_ZN6Sensor16getFullRotationsEv',0,1,91,9
+	.word	.L105
+	.byte	1,1,1
+	.word	.L31,.L106,.L30
+	.byte	4
+	.byte	'this',0,1,91,62
+	.word	.L107,.L108
+	.byte	5
+	.word	.L31,.L106
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN6Sensor16getFullRotationsEv')
+	.sect	'.debug_abbrev'
+.L63:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN6Sensor16getFullRotationsEv')
+	.sect	'.debug_line'
+.L64:
+	.word	.L216-.L215
+.L215:
+	.half	3
+	.word	.L218-.L217
+.L217:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0,0,0,0,0
+.L218:
+	.byte	5,12,7,0,5,2
+	.word	.L31
+	.byte	3,219,0,1,5,1,9
+	.half	.L219-.L31
+	.byte	1,9
+	.half	.L13-.L219
+	.byte	3,1,1,7,9
+	.half	.L66-.L13
+	.byte	0,1,1
+.L216:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN6Sensor16getFullRotationsEv')
+	.sect	'.debug_ranges'
+.L65:
+	.word	-1,.L31,0,.L66-.L31,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN6Sensor6updateEv')
+	.sect	'.debug_info'
+.L67:
+	.word	394
+	.half	3
+	.word	.L68
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L70,.L69
+	.byte	2
+	.word	.L38
+	.byte	3
+	.byte	'_ZN6Sensor6updateEv',0,1,7,6,1,1,1
+	.word	.L33,.L109,.L32
+	.byte	4
+	.byte	'this',0,1,7,48
+	.word	.L110,.L111
+	.byte	5
+	.word	.L33,.L109
+	.byte	6
+	.byte	'__5202_11_val',0,1,8,12
+	.word	.L88,.L112
+	.byte	6
+	.byte	'__5206_11_d_angle',0,1,12,12
+	.word	.L88,.L113
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN6Sensor6updateEv')
+	.sect	'.debug_abbrev'
+.L68:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN6Sensor6updateEv')
+	.sect	'.debug_line'
+.L69:
+	.word	.L221-.L220
+.L220:
+	.half	3
+	.word	.L223-.L222
+.L222:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0,0,0,0,0
+.L223:
+	.byte	5,6,7,0,5,2
+	.word	.L33
+	.byte	3,6,1,5,60,9
+	.half	.L133-.L33
+	.byte	3,1,1,5,53,9
+	.half	.L224-.L133
+	.byte	1,5,19,9
+	.half	.L225-.L224
+	.byte	1,5,77,9
+	.half	.L226-.L225
+	.byte	1,5,15,9
+	.half	.L132-.L226
+	.byte	1,5,22,9
+	.half	.L135-.L132
+	.byte	3,1,1,5,19,9
+	.half	.L227-.L135
+	.byte	1,5,1,9
+	.half	.L228-.L227
+	.byte	1,7,9
+	.half	.L229-.L228
+	.byte	3,1,1,5,44,9
+	.half	.L14-.L229
+	.byte	3,1,1,5,23,9
+	.half	.L134-.L14
+	.byte	1,5,43,9
+	.half	.L230-.L134
+	.byte	3,1,1,5,36,9
+	.half	.L231-.L230
+	.byte	1,5,28,9
+	.half	.L136-.L231
+	.byte	3,2,1,5,6,9
+	.half	.L232-.L136
+	.byte	1,5,35,9
+	.half	.L233-.L232
+	.byte	1,5,58,9
+	.half	.L234-.L233
+	.byte	1,5,38,9
+	.half	.L16-.L234
+	.byte	1,5,82,9
+	.half	.L17-.L16
+	.byte	1,5,79,9
+	.half	.L235-.L17
+	.byte	1,5,1,9
+	.half	.L236-.L235
+	.byte	1,5,148,1,7,9
+	.half	.L237-.L236
+	.byte	1,5,126,9
+	.half	.L238-.L237
+	.byte	1,5,155,1,9
+	.half	.L239-.L238
+	.byte	1,5,162,1,9
+	.half	.L137-.L239
+	.byte	1,5,155,1,9
+	.half	.L19-.L137
+	.byte	1,5,104,9
+	.half	.L20-.L19
+	.byte	1,5,122,9
+	.half	.L240-.L20
+	.byte	1,5,20,9
+	.half	.L18-.L240
+	.byte	3,1,1,5,1,9
+	.half	.L15-.L18
+	.byte	3,1,1,7,9
+	.half	.L71-.L15
+	.byte	0,1,1
+.L221:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN6Sensor6updateEv')
+	.sect	'.debug_ranges'
+.L70:
+	.word	-1,.L33,0,.L71-.L33,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN6Sensor11needsSearchEv')
+	.sect	'.debug_info'
+.L72:
+	.word	347
+	.half	3
+	.word	.L73
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L75,.L74
+	.byte	2
+	.word	.L38
+	.byte	3
+	.byte	'_ZN6Sensor11needsSearchEv',0,1,97,5
+	.word	.L105
+	.byte	1,1,1
+	.word	.L35,.L114,.L34
+	.byte	4
+	.byte	'this',0,1,97,53
+	.word	.L115,.L116
+	.byte	5
+	.word	.L35,.L114
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN6Sensor11needsSearchEv')
+	.sect	'.debug_abbrev'
+.L73:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN6Sensor11needsSearchEv')
+	.sect	'.debug_line'
+.L74:
+	.word	.L242-.L241
+.L241:
+	.half	3
+	.word	.L244-.L243
+.L243:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0,0,0,0,0
+.L244:
+	.byte	5,8,7,0,5,2
+	.word	.L35
+	.byte	3,225,0,1,5,1,9
+	.half	.L245-.L35
+	.byte	1,9
+	.half	.L21-.L245
+	.byte	3,1,1,7,9
+	.half	.L76-.L21
+	.byte	0,1,1
+.L242:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN6Sensor11needsSearchEv')
+	.sect	'.debug_ranges'
+.L75:
+	.word	-1,.L35,0,.L76-.L35,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN6Sensor4initEv')
+	.sect	'.debug_info'
+.L77:
+	.word	335
+	.half	3
+	.word	.L78
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L80,.L79
+	.byte	2
+	.word	.L38
+	.byte	3
+	.byte	'_ZN6Sensor4initEv',0,1,59,6,1,1,1
+	.word	.L37,.L117,.L36
+	.byte	4
+	.byte	'this',0,1,59,46
+	.word	.L118,.L119
+	.byte	5
+	.word	.L37,.L117
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN6Sensor4initEv')
+	.sect	'.debug_abbrev'
+.L78:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN6Sensor4initEv')
+	.sect	'.debug_line'
+.L79:
+	.word	.L247-.L246
+.L246:
+	.half	3
+	.word	.L249-.L248
+.L248:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.cpp',0,0,0,0,0
+.L249:
+	.byte	5,6,7,0,5,2
+	.word	.L37
+	.byte	3,58,1,5,43,9
+	.half	.L139-.L37
+	.byte	3,2,1,5,36,9
+	.half	.L250-.L139
+	.byte	1,5,2,9
+	.half	.L251-.L250
+	.byte	1,5,60,9
+	.half	.L252-.L251
+	.byte	1,5,24,9
+	.half	.L138-.L252
+	.byte	3,1,1,5,69,9
+	.half	.L253-.L138
+	.byte	3,1,1,5,62,9
+	.half	.L254-.L253
+	.byte	1,5,28,9
+	.half	.L255-.L254
+	.byte	1,5,86,9
+	.half	.L256-.L255
+	.byte	1,5,24,9
+	.half	.L141-.L256
+	.byte	1,5,48,9
+	.half	.L257-.L141
+	.byte	3,1,1,5,27,9
+	.half	.L258-.L257
+	.byte	1,5,11,9
+	.half	.L259-.L258
+	.byte	3,1,1,5,43,9
+	.half	.L260-.L259
+	.byte	3,1,1,5,36,9
+	.half	.L261-.L260
+	.byte	1,5,2,9
+	.half	.L262-.L261
+	.byte	1,5,60,9
+	.half	.L263-.L262
+	.byte	1,5,24,9
+	.half	.L143-.L263
+	.byte	3,1,1,5,65,9
+	.half	.L264-.L143
+	.byte	3,1,1,5,58,9
+	.half	.L265-.L264
+	.byte	1,5,24,9
+	.half	.L266-.L265
+	.byte	1,5,82,9
+	.half	.L267-.L266
+	.byte	1,5,20,9
+	.half	.L145-.L267
+	.byte	1,5,44,9
+	.half	.L268-.L145
+	.byte	3,1,1,5,23,9
+	.half	.L269-.L268
+	.byte	1,5,1,9
+	.half	.L270-.L269
+	.byte	3,1,1,7,9
+	.half	.L81-.L270
+	.byte	0,1,1
+.L247:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN6Sensor4initEv')
+	.sect	'.debug_ranges'
+.L80:
+	.word	-1,.L37,0,.L81-.L37,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZTV6Sensor')
+	.sect	'.debug_info'
+.L82:
+	.word	247
+	.half	3
+	.word	.L83
+	.byte	4,1
+	.byte	'../simplefoc_sensor_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L38
+	.byte	3
+	.byte	'_ZTV6Sensor',0,6,69,11
+	.word	.L120
+	.byte	1,5,3
+	.word	_ZTV6Sensor
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZTV6Sensor')
+	.sect	'.debug_abbrev'
+.L83:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZTI6Sensor')
+	.sect	'.debug_info'
+.L84:
+	.word	247
+	.half	3
+	.word	.L85
+	.byte	4,1
+	.byte	'../simplefoc_sensor_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L38
+	.byte	3
+	.byte	'_ZTI6Sensor',0,6,71,32
+	.word	.L121
+	.byte	1,5,3
+	.word	_ZTI6Sensor
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZTI6Sensor')
+	.sect	'.debug_abbrev'
+.L85:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZTS6Sensor')
+	.sect	'.debug_info'
+.L86:
+	.word	247
+	.half	3
+	.word	.L87
+	.byte	4,1
+	.byte	'../simplefoc_sensor_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L38
+	.byte	3
+	.byte	'_ZTS6Sensor',0,6,71,118
+	.word	.L122
+	.byte	1,5,3
+	.word	_ZTS6Sensor
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZTS6Sensor')
+	.sect	'.debug_abbrev'
+.L87:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN6Sensor11getVelocityEv')
+	.sect	'.debug_loc'
+.L28:
+	.word	-1,.L29,0,.L98-.L29
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L101:
+	.word	-1,.L29,.L123-.L29,.L124-.L29
+	.half	1
+	.byte	82
+	.word	.L5-.L29,.L125-.L29
+	.half	1
+	.byte	82
+	.word	.L7-.L29,.L126-.L29
+	.half	1
+	.byte	82
+	.word	0,0
+.L102:
+	.word	-1,.L29,.L127-.L29,.L9-.L29
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L129-.L29,.L130-.L29
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L103:
+	.word	-1,.L29,.L128-.L29,.L9-.L29
+	.half	1
+	.byte	95
+	.word	.L10-.L29,.L131-.L29
+	.half	1
+	.byte	95
+	.word	0,0
+.L104:
+	.word	-1,.L29,.L130-.L29,.L6-.L29
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L100:
+	.word	-1,.L29,0,.L98-.L29
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN6Sensor11needsSearchEv')
+	.sect	'.debug_loc'
+.L34:
+	.word	-1,.L35,0,.L114-.L35
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L116:
+	.word	-1,.L35,0,.L114-.L35
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN6Sensor15getPreciseAngleEv')
+	.sect	'.debug_loc'
+.L26:
+	.word	-1,.L27,0,.L95-.L27
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L97:
+	.word	-1,.L27,0,.L95-.L27
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN6Sensor16getFullRotationsEv')
+	.sect	'.debug_loc'
+.L30:
+	.word	-1,.L31,0,.L106-.L31
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L108:
+	.word	-1,.L31,0,.L106-.L31
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN6Sensor18getMechanicalAngleEv')
+	.sect	'.debug_loc'
+.L22:
+	.word	-1,.L23,0,.L89-.L23
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L91:
+	.word	-1,.L23,0,.L89-.L23
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN6Sensor4initEv')
+	.sect	'.debug_loc'
+.L36:
+	.word	-1,.L37,0,.L117-.L37
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L119:
+	.word	-1,.L37,0,.L138-.L37
+	.half	1
+	.byte	100
+	.word	.L139-.L37,.L117-.L37
+	.half	1
+	.byte	108
+	.word	.L140-.L37,.L141-.L37
+	.half	1
+	.byte	100
+	.word	.L142-.L37,.L143-.L37
+	.half	1
+	.byte	100
+	.word	.L144-.L37,.L145-.L37
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN6Sensor6updateEv')
+	.sect	'.debug_loc'
+.L32:
+	.word	-1,.L33,0,.L109-.L33
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L112:
+	.word	-1,.L33,.L132-.L33,.L134-.L33
+	.half	1
+	.byte	82
+	.word	.L135-.L33,.L109-.L33
+	.half	1
+	.byte	88
+	.word	0,0
+.L113:
+	.word	-1,.L33,.L136-.L33,.L137-.L33
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L19-.L33,.L20-.L33
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L111:
+	.word	-1,.L33,0,.L132-.L33
+	.half	1
+	.byte	100
+	.word	.L133-.L33,.L109-.L33
+	.half	1
+	.byte	111
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN6Sensor8getAngleEv')
+	.sect	'.debug_loc'
+.L24:
+	.word	-1,.L25,0,.L92-.L25
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L94:
+	.word	-1,.L25,0,.L92-.L25
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L271:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('_ZN6Sensor18getMechanicalAngleEv')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L271,.L23,.L89-.L23
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN6Sensor8getAngleEv')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L271,.L25,.L92-.L25
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN6Sensor15getPreciseAngleEv')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L271,.L27,.L95-.L27
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN6Sensor11getVelocityEv')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L271,.L29,.L98-.L29
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN6Sensor16getFullRotationsEv')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L271,.L31,.L106-.L31
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN6Sensor6updateEv')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L271,.L33,.L109-.L33
+	.sdecl	'.debug_frame',debug,cluster('_ZN6Sensor11needsSearchEv')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L271,.L35,.L114-.L35
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('_ZN6Sensor4initEv')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L271,.L37,.L117-.L37
+	; Module end

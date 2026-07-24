@@ -1,0 +1,3886 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc80116c -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 --no-warnings -o simplefoc_bldc_motor_ads.src cc80116a.ic"
+	.compiler_name		"ctc"
+	;source	'../simplefoc_bldc_motor_ads.cpp'
+
+	
+$TC162
+	
+	.sdecl	'.text.BLDCMotor._ZN9BLDCMotorC1Eiffff',code,cluster('_ZN9BLDCMotorC1Eiffff')
+	.sect	'.text.BLDCMotor._ZN9BLDCMotorC1Eiffff'
+	.align	2
+	
+	.global	_ZN9BLDCMotorC1Eiffff
+; Function _ZN9BLDCMotorC1Eiffff
+.L58:
+_ZN9BLDCMotorC1Eiffff:	.type	func
+	mov.aa	a15,a4
+.L184:
+	mov	d15,d4
+.L185:
+	mov	e8,d6,d5
+	mov	d12,d7
+.L187:
+	ld.w	d10,[a10]
+.L291:
+	mov.aa	a4,a15
+	call	_ZN8FOCMotorC2Ev
+.L183:
+	movh.a	a2,#@his(_ZTV9BLDCMotor)
+	lea	a2,[a2]@los(_ZTV9BLDCMotor)
+.L292:
+	lea	a2,[a2]8
+.L293:
+	st.a	[a15],a2
+.L294:
+	st.w	[a15]92,d15
+.L188:
+	st.w	[a15]88,d8
+.L189:
+	st.w	[a15]96,d9
+.L190:
+	mov	d11,d12
+.L191:
+	st.d	[a15]104,e10
+.L295:
+	st.w	[a15]100,d12
+.L296:
+	mov	d15,#0
+.L186:
+	st.b	[a15]128,d15
+.L297:
+	ret
+.L127:
+	
+___ZN9BLDCMotorC1Eiffff_function_end:
+	.size	_ZN9BLDCMotorC1Eiffff,___ZN9BLDCMotorC1Eiffff_function_end-_ZN9BLDCMotorC1Eiffff
+.L81:
+	; End of function
+	
+	.sdecl	'.text.BLDCMotor._ZN9BLDCMotorC2Eiffff',code,cluster('_ZN9BLDCMotorC2Eiffff')
+	.sect	'.text.BLDCMotor._ZN9BLDCMotorC2Eiffff'
+	.align	2
+	
+	.global	_ZN9BLDCMotorC2Eiffff
+; Function _ZN9BLDCMotorC2Eiffff
+.L60:
+_ZN9BLDCMotorC2Eiffff:	.type	func
+	sub.a	a10,#8
+.L193:
+	ld.w	d15,[a10]8
+.L195:
+	st.w	[a10],d15
+.L302:
+	call	_ZN9BLDCMotorC1Eiffff
+.L194:
+	ret
+.L137:
+	
+___ZN9BLDCMotorC2Eiffff_function_end:
+	.size	_ZN9BLDCMotorC2Eiffff,___ZN9BLDCMotorC2Eiffff_function_end-_ZN9BLDCMotorC2Eiffff
+.L86:
+	; End of function
+	
+	.sdecl	'.text.BLDCMotor._ZN9BLDCMotor10linkDriverEP10BLDCDriver',code,cluster('_ZN9BLDCMotor10linkDriverEP10BLDCDriver')
+	.sect	'.text.BLDCMotor._ZN9BLDCMotor10linkDriverEP10BLDCDriver'
+	.align	2
+	
+	.global	_ZN9BLDCMotor10linkDriverEP10BLDCDriver
+; Function _ZN9BLDCMotor10linkDriverEP10BLDCDriver
+.L62:
+_ZN9BLDCMotor10linkDriverEP10BLDCDriver:	.type	func
+	st.a	[a4]448,a5
+.L307:
+	ret
+.L145:
+	
+___ZN9BLDCMotor10linkDriverEP10BLDCDriver_function_end:
+	.size	_ZN9BLDCMotor10linkDriverEP10BLDCDriver,___ZN9BLDCMotor10linkDriverEP10BLDCDriver_function_end-_ZN9BLDCMotor10linkDriverEP10BLDCDriver
+.L91:
+	; End of function
+	
+	.sdecl	'.text.BLDCMotor._ZN9BLDCMotor4initEv',code,cluster('_ZN9BLDCMotor4initEv')
+	.sect	'.text.BLDCMotor._ZN9BLDCMotor4initEv'
+	.align	2
+	
+	.global	_ZN9BLDCMotor4initEv
+; Function _ZN9BLDCMotor4initEv
+.L64:
+_ZN9BLDCMotor4initEv:	.type	func
+	mov.aa	a12,a4
+.L197:
+	ld.w	d15,[a12]448
+.L312:
+	jeq	d15,#0,.L2
+.L313:
+	ld.a	a15,[a12]448
+.L314:
+	ld.b	d15,[a15]16
+.L315:
+	jne	d15,#0,.L3
+.L2:
+	mov	d15,#15
+.L316:
+	st.b	[a12]125,d15
+.L4:
+	mov	d2,#0
+.L317:
+	j	.L5
+.L3:
+	mov	d15,#1
+.L318:
+	st.b	[a12]125,d15
+.L6:
+	ld.w	d0,[a12]112
+.L319:
+	ld.a	a15,[a12]448
+.L320:
+	ld.w	d15,[a15]12
+.L321:
+	cmp.f	d15,d0,d15
+	extr.u	d15,d15,#2,#1
+.L322:
+	jeq	d15,#0,.L7
+.L323:
+	ld.a	a15,[a12]448
+.L324:
+	ld.w	d15,[a15]12
+.L325:
+	st.w	[a12]112,d15
+.L7:
+	ld.w	d15,[a12]80
+.L326:
+	ld.w	d0,[a12]112
+.L327:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#2,#1
+.L328:
+	jeq	d15,#0,.L8
+.L329:
+	ld.w	d15,[a12]112
+.L330:
+	st.w	[a12]80,d15
+.L8:
+	ld.w	d4,[a12]116
+	mov.aa	a4,a12
+	call	_ZN8FOCMotor18updateCurrentLimitEf
+.L196:
+	ld.w	d4,[a12]112
+	mov.aa	a4,a12
+.L198:
+	call	_ZN8FOCMotor18updateVoltageLimitEf
+.L199:
+	ld.w	d4,[a12]120
+	mov.aa	a4,a12
+.L200:
+	call	_ZN8FOCMotor19updateVelocityLimitEf
+.L201:
+	ld.w	d15,[a12]100
+.L331:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L332:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+.L333:
+	jeq	d15,#0,.L9
+.L334:
+	ld.w	d15,[a12]108
+.L335:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L336:
+	cmp.f	d15,d15,d0
+	jz.t	d15:1,.L10
+.L153:
+	ld.w	d0,[a12]100
+.L337:
+	ld.w	d15,[a12]100
+.L338:
+	mov	d1,d15
+.L203:
+	st.d	[a12]104,e0
+.L10:
+.L9:
+	ld.w	d15,[a12]388
+.L339:
+	jne	d15,#0,.L11
+.L340:
+	ld.bu	d15,[a12]129
+.L341:
+	jeq	d15,#4,.L12
+.L342:
+	ld.bu	d15,[a12]129
+.L343:
+	jne	d15,#3,.L13
+.L12:
+	ld.b	d15,[a12]372
+.L344:
+	jne	d15,#0,.L14
+.L345:
+	mov	d15,#1
+.L346:
+	st.b	[a12]372,d15
+.L14:
+.L13:
+.L11:
+	mov	d4,#500
+	call	_Z6_delaym
+.L15:
+	ld.a	a15,[a12]
+.L347:
+	ld.w	d15,[a15]8
+.L348:
+	mov.a	a15,d15
+.L349:
+	mov.aa	a4,a12
+.L204:
+	calli	a15
+.L205:
+	mov	d4,#500
+	call	_Z6_delaym
+.L350:
+	mov	d15,#2
+.L351:
+	st.b	[a12]125,d15
+.L352:
+	mov	d2,#1
+.L353:
+	j	.L16
+.L16:
+.L5:
+	ret
+.L150:
+	
+___ZN9BLDCMotor4initEv_function_end:
+	.size	_ZN9BLDCMotor4initEv,___ZN9BLDCMotor4initEv_function_end-_ZN9BLDCMotor4initEv
+.L96:
+	; End of function
+	
+	.sdecl	'.text.BLDCMotor._ZN9BLDCMotor7disableEv',code,cluster('_ZN9BLDCMotor7disableEv')
+	.sect	'.text.BLDCMotor._ZN9BLDCMotor7disableEv'
+	.align	2
+	
+	.global	_ZN9BLDCMotor7disableEv
+; Function _ZN9BLDCMotor7disableEv
+.L66:
+_ZN9BLDCMotor7disableEv:	.type	func
+	mov.aa	a12,a4
+.L207:
+	ld.w	d15,[a12]392
+.L358:
+	jeq	d15,#0,.L17
+.L359:
+	ld.a	a15,[a12]392
+.L360:
+	ld.a	a15,[a15]
+.L361:
+	ld.w	d15,[a15]20
+.L362:
+	mov.a	a15,d15
+.L363:
+	ld.a	a4,[a12]392
+.L206:
+	calli	a15
+.L17:
+	ld.a	a15,[a12]448
+.L364:
+	ld.a	a15,[a15]
+.L365:
+	ld.w	d15,[a15]16
+.L366:
+	mov.a	a15,d15
+.L367:
+	ld.a	a4,[a12]448
+.L368:
+	mov	d4,#0
+.L369:
+	mov	d5,#0
+.L370:
+	mov	d6,#0
+	calli	a15
+.L371:
+	ld.a	a15,[a12]448
+.L372:
+	ld.a	a15,[a15]
+.L373:
+	ld.w	d15,[a15]8
+.L374:
+	mov.a	a15,d15
+.L375:
+	ld.a	a4,[a12]448
+.L376:
+	calli	a15
+.L377:
+	mov	d15,#0
+.L378:
+	st.b	[a12]124,d15
+.L379:
+	ret
+.L154:
+	
+___ZN9BLDCMotor7disableEv_function_end:
+	.size	_ZN9BLDCMotor7disableEv,___ZN9BLDCMotor7disableEv_function_end-_ZN9BLDCMotor7disableEv
+.L101:
+	; End of function
+	
+	.sdecl	'.text.BLDCMotor._ZN9BLDCMotor6enableEv',code,cluster('_ZN9BLDCMotor6enableEv')
+	.sect	'.text.BLDCMotor._ZN9BLDCMotor6enableEv'
+	.align	2
+	
+	.global	_ZN9BLDCMotor6enableEv
+; Function _ZN9BLDCMotor6enableEv
+.L68:
+_ZN9BLDCMotor6enableEv:	.type	func
+	mov.aa	a12,a4
+.L209:
+	ld.a	a15,[a12]448
+.L384:
+	ld.a	a15,[a15]
+.L385:
+	ld.w	d15,[a15]4
+.L386:
+	mov.a	a15,d15
+.L387:
+	ld.a	a4,[a12]448
+.L208:
+	calli	a15
+.L388:
+	ld.a	a15,[a12]448
+.L389:
+	ld.a	a15,[a15]
+.L390:
+	ld.w	d15,[a15]16
+.L391:
+	mov.a	a15,d15
+.L392:
+	ld.a	a4,[a12]448
+.L393:
+	mov	d4,#0
+.L394:
+	mov	d5,#0
+.L395:
+	mov	d6,#0
+	calli	a15
+.L396:
+	ld.w	d15,[a12]392
+.L397:
+	jeq	d15,#0,.L18
+.L398:
+	ld.a	a15,[a12]392
+.L399:
+	ld.a	a15,[a15]
+.L400:
+	ld.w	d15,[a15]16
+.L401:
+	mov.a	a15,d15
+.L402:
+	ld.a	a4,[a12]392
+	calli	a15
+.L18:
+	lea	a4,[a12]244
+	call	_ZN13PIDController5resetEv
+.L403:
+	lea	a4,[a12]284
+	call	_ZN13PIDController5resetEv
+.L404:
+	lea	a4,[a12]132
+	call	_ZN13PIDController5resetEv
+.L405:
+	lea	a4,[a12]172
+	call	_ZN13PIDController5resetEv
+.L406:
+	mov	d15,#1
+.L407:
+	st.b	[a12]124,d15
+.L408:
+	ret
+.L157:
+	
+___ZN9BLDCMotor6enableEv_function_end:
+	.size	_ZN9BLDCMotor6enableEv,___ZN9BLDCMotor6enableEv_function_end-_ZN9BLDCMotor6enableEv
+.L106:
+	; End of function
+	
+	.sdecl	'.text.BLDCMotor._ZN9BLDCMotor15setPhaseVoltageEfff',code,cluster('_ZN9BLDCMotor15setPhaseVoltageEfff')
+	.sect	'.text.BLDCMotor._ZN9BLDCMotor15setPhaseVoltageEfff'
+	.align	2
+	
+	.global	_ZN9BLDCMotor15setPhaseVoltageEfff
+; Function _ZN9BLDCMotor15setPhaseVoltageEfff
+.L70:
+_ZN9BLDCMotor15setPhaseVoltageEfff:	.type	func
+	sub.a	a10,#8
+.L210:
+	mov.aa	a12,a4
+.L213:
+	mov	e8,d5,d4
+.L413:
+	ld.bu	d0,[a12]126
+.L414:
+	mov	d15,#0
+	jeq	d15,d0,.L19
+.L415:
+	mov	d15,#1
+	jeq	d15,d0,.L20
+.L416:
+	mov	d15,#2
+	jeq	d15,d0,.L21
+.L417:
+	mov	d15,#3
+	jeq	d15,d0,.L22
+	j	.L23
+.L21:
+	mov	d15,#2706
+	addih	d15,d15,#16134
+.L418:
+	add.f	d4,d6,d15
+.L211:
+	call	_Z15_normalizeAnglef
+.L212:
+	mov	d15,#4059
+	addih	d15,d15,#16585
+.L419:
+	div.f	d15,d2,d15
+.L420:
+	movh	d0,#16576
+.L421:
+	mul.f	d15,d15,d0
+.L422:
+	ftoiz	d1,d15
+.L214:
+	ld.b	d15,[a12]127
+.L423:
+	jeq	d15,#0,.L24
+.L424:
+	ld.a	a15,[a12]448
+.L425:
+	ld.w	d15,[a15]12
+.L426:
+	movh	d0,#16384
+.L427:
+	div.f	d0,d15,d0
+.L428:
+	j	.L25
+.L24:
+	mov	d0,d8
+.L25:
+	mul	d15,d1,#12
+.L429:
+	movh.a	a2,#@his(trap_120_map)
+	lea	a2,[a2]@los(trap_120_map)
+.L430:
+	addsc.a	a2,a2,d15,#0
+.L431:
+	ld.w	d15,[a2]
+.L432:
+	jne	d15,#0,.L26
+.L433:
+	st.w	[a12]436,d0
+.L434:
+	mul	d15,d1,#12
+.L435:
+	movh.a	a15,#@his(trap_120_map)
+	lea	a15,[a15]@los(trap_120_map)
+.L436:
+	addsc.a	a15,a15,d15,#0
+.L437:
+	ld.w	d15,[a15]4
+.L438:
+	itof	d15,d15
+.L216:
+	madd.f	d15,d0,d15,d8
+.L217:
+	st.w	[a12]440,d15
+.L439:
+	mul	d15,d1,#12
+.L440:
+	movh.a	a15,#@his(trap_120_map)
+	lea	a15,[a15]@los(trap_120_map)
+.L441:
+	addsc.a	a15,a15,d15,#0
+.L442:
+	ld.w	d15,[a15]8
+.L443:
+	itof	d15,d15
+.L218:
+	madd.f	d15,d0,d15,d8
+.L219:
+	st.w	[a12]444,d15
+.L444:
+	ld.a	a15,[a12]448
+.L445:
+	ld.a	a15,[a15]
+.L446:
+	ld.w	d15,[a15]20
+.L447:
+	mov.a	a15,d15
+.L448:
+	ld.a	a4,[a12]448
+.L449:
+	mov	d4,#0
+.L450:
+	mov	d5,#1
+.L451:
+	mov	d6,#1
+	calli	a15
+.L215:
+	j	.L27
+.L26:
+	mul	d15,d1,#12
+.L452:
+	movh.a	a15,#@his(trap_120_map)
+	lea	a15,[a15]@los(trap_120_map)
+.L453:
+	addsc.a	a15,a15,d15,#0
+.L454:
+	ld.w	d15,[a15]4
+.L455:
+	jne	d15,#0,.L28
+.L456:
+	mul	d15,d1,#12
+.L457:
+	movh.a	a15,#@his(trap_120_map)
+	lea	a15,[a15]@los(trap_120_map)
+.L458:
+	addsc.a	a15,a15,d15,#0
+.L459:
+	ld.w	d15,[a15]
+.L460:
+	itof	d15,d15
+.L221:
+	madd.f	d15,d0,d15,d8
+.L222:
+	st.w	[a12]436,d15
+.L461:
+	st.w	[a12]440,d0
+.L462:
+	mul	d15,d1,#12
+.L463:
+	movh.a	a15,#@his(trap_120_map)
+	lea	a15,[a15]@los(trap_120_map)
+.L464:
+	addsc.a	a15,a15,d15,#0
+.L465:
+	ld.w	d15,[a15]8
+.L466:
+	itof	d15,d15
+.L223:
+	madd.f	d15,d0,d15,d8
+.L224:
+	st.w	[a12]444,d15
+.L467:
+	ld.a	a15,[a12]448
+.L468:
+	ld.a	a15,[a15]
+.L469:
+	ld.w	d15,[a15]20
+.L470:
+	mov.a	a15,d15
+.L471:
+	ld.a	a4,[a12]448
+.L472:
+	mov	d4,#1
+.L473:
+	mov	d5,#0
+.L474:
+	mov	d6,#1
+	calli	a15
+.L220:
+	j	.L29
+.L28:
+	mul	d15,d1,#12
+.L475:
+	movh.a	a15,#@his(trap_120_map)
+	lea	a15,[a15]@los(trap_120_map)
+.L476:
+	addsc.a	a15,a15,d15,#0
+.L477:
+	ld.w	d15,[a15]
+.L478:
+	itof	d15,d15
+.L225:
+	madd.f	d15,d0,d15,d8
+.L226:
+	st.w	[a12]436,d15
+.L479:
+	mul	d15,d1,#12
+.L480:
+	movh.a	a15,#@his(trap_120_map)
+	lea	a15,[a15]@los(trap_120_map)
+.L481:
+	addsc.a	a15,a15,d15,#0
+.L482:
+	ld.w	d15,[a15]4
+.L483:
+	itof	d15,d15
+.L227:
+	madd.f	d15,d0,d15,d8
+.L228:
+	st.w	[a12]440,d15
+.L484:
+	st.w	[a12]444,d0
+.L485:
+	ld.a	a15,[a12]448
+.L486:
+	ld.a	a15,[a15]
+.L487:
+	ld.w	d15,[a15]20
+.L488:
+	mov.a	a15,d15
+.L489:
+	ld.a	a4,[a12]448
+.L490:
+	mov	d4,#1
+.L491:
+	mov	d5,#1
+.L492:
+	mov	d6,#0
+	calli	a15
+.L29:
+.L27:
+	j	.L30
+.L22:
+	mov	d15,#2706
+	addih	d15,d15,#16134
+.L493:
+	add.f	d4,d6,d15
+.L229:
+	call	_Z15_normalizeAnglef
+.L230:
+	mov	d15,#4059
+	addih	d15,d15,#16585
+.L494:
+	div.f	d15,d2,d15
+.L495:
+	movh	d0,#16704
+.L496:
+	mul.f	d15,d15,d0
+.L497:
+	ftoiz	d1,d15
+.L231:
+	ld.b	d15,[a12]127
+.L498:
+	jeq	d15,#0,.L31
+.L499:
+	ld.a	a15,[a12]448
+.L500:
+	ld.w	d15,[a15]12
+.L501:
+	movh	d0,#16384
+.L502:
+	div.f	d0,d15,d0
+.L503:
+	j	.L32
+.L31:
+	mov	d0,d8
+.L32:
+	mul	d15,d1,#12
+.L504:
+	movh.a	a15,#@his(trap_150_map)
+	lea	a15,[a15]@los(trap_150_map)
+.L505:
+	addsc.a	a15,a15,d15,#0
+.L506:
+	ld.w	d15,[a15]
+.L507:
+	jne	d15,#0,.L33
+.L508:
+	st.w	[a12]436,d0
+.L509:
+	mul	d15,d1,#12
+.L510:
+	movh.a	a15,#@his(trap_150_map)
+	lea	a15,[a15]@los(trap_150_map)
+.L511:
+	addsc.a	a15,a15,d15,#0
+.L512:
+	ld.w	d15,[a15]4
+.L513:
+	itof	d15,d15
+.L233:
+	madd.f	d15,d0,d15,d8
+.L234:
+	st.w	[a12]440,d15
+.L514:
+	mul	d15,d1,#12
+.L515:
+	movh.a	a15,#@his(trap_150_map)
+	lea	a15,[a15]@los(trap_150_map)
+.L516:
+	addsc.a	a15,a15,d15,#0
+.L517:
+	ld.w	d15,[a15]8
+.L518:
+	itof	d15,d15
+.L235:
+	madd.f	d15,d0,d15,d8
+.L236:
+	st.w	[a12]444,d15
+.L519:
+	ld.a	a15,[a12]448
+.L520:
+	ld.a	a15,[a15]
+.L521:
+	ld.w	d15,[a15]20
+.L522:
+	mov.a	a15,d15
+.L523:
+	ld.a	a4,[a12]448
+.L524:
+	mov	d4,#0
+.L525:
+	mov	d5,#1
+.L526:
+	mov	d6,#1
+	calli	a15
+.L232:
+	j	.L34
+.L33:
+	mul	d15,d1,#12
+.L527:
+	movh.a	a15,#@his(trap_150_map)
+	lea	a15,[a15]@los(trap_150_map)
+.L528:
+	addsc.a	a15,a15,d15,#0
+.L529:
+	ld.w	d15,[a15]4
+.L530:
+	jne	d15,#0,.L35
+.L531:
+	mul	d15,d1,#12
+.L532:
+	movh.a	a15,#@his(trap_150_map)
+	lea	a15,[a15]@los(trap_150_map)
+.L533:
+	addsc.a	a15,a15,d15,#0
+.L534:
+	ld.w	d15,[a15]
+.L535:
+	itof	d15,d15
+.L238:
+	madd.f	d15,d0,d15,d8
+.L239:
+	st.w	[a12]436,d15
+.L536:
+	st.w	[a12]440,d0
+.L537:
+	mul	d15,d1,#12
+.L538:
+	movh.a	a15,#@his(trap_150_map)
+	lea	a15,[a15]@los(trap_150_map)
+.L539:
+	addsc.a	a15,a15,d15,#0
+.L540:
+	ld.w	d15,[a15]8
+.L541:
+	itof	d15,d15
+.L240:
+	madd.f	d15,d0,d15,d8
+.L241:
+	st.w	[a12]444,d15
+.L542:
+	ld.a	a15,[a12]448
+.L543:
+	ld.a	a15,[a15]
+.L544:
+	ld.w	d15,[a15]20
+.L545:
+	mov.a	a15,d15
+.L546:
+	ld.a	a4,[a12]448
+.L547:
+	mov	d4,#1
+.L548:
+	mov	d5,#0
+.L549:
+	mov	d6,#1
+	calli	a15
+.L237:
+	j	.L36
+.L35:
+	mul	d15,d1,#12
+.L550:
+	movh.a	a15,#@his(trap_150_map)
+	lea	a15,[a15]@los(trap_150_map)
+.L551:
+	addsc.a	a15,a15,d15,#0
+.L552:
+	ld.w	d15,[a15]8
+.L553:
+	jne	d15,#0,.L37
+.L554:
+	mul	d15,d1,#12
+.L555:
+	movh.a	a15,#@his(trap_150_map)
+	lea	a15,[a15]@los(trap_150_map)
+.L556:
+	addsc.a	a15,a15,d15,#0
+.L557:
+	ld.w	d15,[a15]
+.L558:
+	itof	d15,d15
+.L243:
+	madd.f	d15,d0,d15,d8
+.L244:
+	st.w	[a12]436,d15
+.L559:
+	mul	d15,d1,#12
+.L560:
+	movh.a	a15,#@his(trap_150_map)
+	lea	a15,[a15]@los(trap_150_map)
+.L561:
+	addsc.a	a15,a15,d15,#0
+.L562:
+	ld.w	d15,[a15]4
+.L563:
+	itof	d15,d15
+.L245:
+	madd.f	d15,d0,d15,d8
+.L246:
+	st.w	[a12]440,d15
+.L564:
+	st.w	[a12]444,d0
+.L565:
+	ld.a	a15,[a12]448
+.L566:
+	ld.a	a15,[a15]
+.L567:
+	ld.w	d15,[a15]20
+.L568:
+	mov.a	a15,d15
+.L569:
+	ld.a	a4,[a12]448
+.L570:
+	mov	d4,#1
+.L571:
+	mov	d5,#1
+.L572:
+	mov	d6,#0
+	calli	a15
+.L242:
+	j	.L38
+.L37:
+	mul	d15,d1,#12
+.L573:
+	movh.a	a15,#@his(trap_150_map)
+	lea	a15,[a15]@los(trap_150_map)
+.L574:
+	addsc.a	a15,a15,d15,#0
+.L575:
+	ld.w	d15,[a15]
+.L576:
+	itof	d15,d15
+.L247:
+	madd.f	d15,d0,d15,d8
+.L248:
+	st.w	[a12]436,d15
+.L577:
+	mul	d15,d1,#12
+.L578:
+	movh.a	a15,#@his(trap_150_map)
+	lea	a15,[a15]@los(trap_150_map)
+.L579:
+	addsc.a	a15,a15,d15,#0
+.L580:
+	ld.w	d15,[a15]4
+.L581:
+	itof	d15,d15
+.L249:
+	madd.f	d15,d0,d15,d8
+.L250:
+	st.w	[a12]440,d15
+.L582:
+	mul	d15,d1,#12
+.L583:
+	movh.a	a15,#@his(trap_150_map)
+	lea	a15,[a15]@los(trap_150_map)
+.L584:
+	addsc.a	a15,a15,d15,#0
+.L585:
+	ld.w	d15,[a15]8
+.L586:
+	itof	d15,d15
+.L251:
+	madd.f	d15,d0,d15,d8
+.L252:
+	st.w	[a12]444,d15
+.L587:
+	ld.a	a15,[a12]448
+.L588:
+	ld.a	a15,[a15]
+.L589:
+	ld.w	d15,[a15]20
+.L590:
+	mov.a	a15,d15
+.L591:
+	ld.a	a4,[a12]448
+.L592:
+	mov	d4,#1
+.L593:
+	mov	d5,#1
+.L594:
+	mov	d6,#1
+	calli	a15
+.L38:
+.L36:
+.L34:
+	j	.L39
+.L19:
+.L20:
+	lea	a4,[a10]4
+.L255:
+	lea	a5,[a10]0
+	mov	d4,d6
+.L253:
+	call	_Z7_sincosfPfS_
+.L254:
+	ld.w	d15,[a10]
+.L256:
+	mul.f	d0,d15,d9
+.L257:
+	ld.w	d15,[a10]4
+.L258:
+	msub.f	d15,d0,d15,d8
+.L259:
+	st.w	[a12]56,d15
+.L595:
+	ld.w	d15,[a10]4
+.L596:
+	ld.w	d0,[a10]
+.L260:
+	mul.f	d0,d0,d8
+.L261:
+	madd.f	d15,d0,d15,d9
+.L262:
+	st.w	[a12]60,d15
+.L597:
+	ld.w	d15,[a12]56
+.L598:
+	st.w	[a12]436,d15
+.L599:
+	ld.w	d0,[a12]56
+.L600:
+	movh	d1,#48896
+.L601:
+	ld.w	d15,[a12]60
+.L602:
+	mov.u	d2,#46039
+	addih	d2,d2,#16221
+.L603:
+	mul.f	d15,d15,d2
+.L604:
+	madd.f	d15,d15,d0,d1
+.L605:
+	st.w	[a12]440,d15
+.L606:
+	ld.w	d15,[a12]56
+.L607:
+	movh	d0,#48896
+.L608:
+	mul.f	d0,d15,d0
+.L609:
+	ld.w	d15,[a12]60
+.L610:
+	mov.u	d1,#46039
+	addih	d1,d1,#16221
+.L611:
+	msub.f	d15,d0,d15,d1
+.L612:
+	st.w	[a12]444,d15
+.L613:
+	ld.b	d15,[a12]127
+.L614:
+	jeq	d15,#0,.L40
+.L615:
+	ld.a	a15,[a12]448
+.L616:
+	ld.w	d15,[a15]12
+.L617:
+	movh	d0,#16384
+.L618:
+	div.f	d4,d15,d0
+.L263:
+	ld.bu	d15,[a12]126
+.L619:
+	jne	d15,#1,.L41
+.L170:
+	ld.w	d0,[a12]436
+.L265:
+	ld.w	d1,[a12]440
+.L268:
+	ld.w	d2,[a12]444
+.L271:
+	cmp.f	d15,d1,d2
+	jnz.t	d15:0,.L42
+.L620:
+	j	.L43
+.L42:
+	mov	d2,d1
+.L43:
+	cmp.f	d15,d0,d2
+	jnz.t	d15:0,.L44
+.L621:
+	j	.L45
+.L44:
+	mov	d2,d0
+.L45:
+	ld.w	d0,[a12]436
+.L266:
+	ld.w	d1,[a12]440
+.L269:
+	ld.w	d3,[a12]444
+.L274:
+	cmp.f	d15,d1,d3
+	jnz.t	d15:2,.L46
+.L622:
+	j	.L47
+.L46:
+	mov	d3,d1
+.L47:
+	cmp.f	d15,d0,d3
+	jnz.t	d15:2,.L48
+.L623:
+	j	.L49
+.L48:
+	mov	d3,d0
+.L49:
+	add.f	d15,d3,d2
+.L275:
+	movh	d0,#16384
+.L272:
+	div.f	d15,d15,d0
+.L624:
+	sub.f	d4,d4,d15
+.L41:
+	ld.w	d15,[a12]436
+.L625:
+	add.f	d15,d15,d4
+	st.w	[a12]436,d15
+.L626:
+	ld.w	d15,[a12]440
+.L627:
+	add.f	d15,d15,d4
+	st.w	[a12]440,d15
+.L628:
+	ld.w	d15,[a12]444
+.L629:
+	add.f	d15,d15,d4
+	st.w	[a12]444,d15
+.L630:
+	j	.L50
+.L40:
+	ld.w	d0,[a12]436
+.L277:
+	ld.w	d1,[a12]440
+.L279:
+	ld.w	d2,[a12]444
+.L281:
+	cmp.f	d15,d1,d2
+	jnz.t	d15:0,.L51
+.L631:
+	j	.L52
+.L51:
+	mov	d2,d1
+.L52:
+	cmp.f	d15,d0,d2
+	jnz.t	d15:0,.L53
+.L632:
+	j	.L54
+.L53:
+	mov	d2,d0
+.L54:
+	ld.w	d15,[a12]436
+.L633:
+	sub.f	d15,d15,d2
+	st.w	[a12]436,d15
+.L634:
+	ld.w	d15,[a12]440
+.L635:
+	sub.f	d15,d15,d2
+	st.w	[a12]440,d15
+.L636:
+	ld.w	d15,[a12]444
+.L637:
+	sub.f	d15,d15,d2
+	st.w	[a12]444,d15
+.L50:
+	j	.L55
+.L23:
+.L30:
+.L39:
+.L55:
+	ld.a	a15,[a12]448
+.L638:
+	ld.a	a15,[a15]
+.L639:
+	ld.w	d15,[a15]16
+.L640:
+	mov.a	a15,d15
+.L641:
+	ld.a	a4,[a12]448
+.L642:
+	ld.w	d4,[a12]436
+.L643:
+	ld.w	d5,[a12]440
+.L644:
+	ld.w	d6,[a12]444
+	calli	a15
+.L645:
+	ret
+.L160:
+	
+___ZN9BLDCMotor15setPhaseVoltageEfff_function_end:
+	.size	_ZN9BLDCMotor15setPhaseVoltageEfff,___ZN9BLDCMotor15setPhaseVoltageEfff_function_end-_ZN9BLDCMotor15setPhaseVoltageEfff
+.L111:
+	; End of function
+	
+	.sdecl	'.text.BLDCMotor._ZN9BLDCMotor12estimateBEMFEf',code,cluster('_ZN9BLDCMotor12estimateBEMFEf')
+	.sect	'.text.BLDCMotor._ZN9BLDCMotor12estimateBEMFEf'
+	.align	2
+	
+	.global	_ZN9BLDCMotor12estimateBEMFEf
+; Function _ZN9BLDCMotor12estimateBEMFEf
+.L72:
+_ZN9BLDCMotor12estimateBEMFEf:	.type	func
+	ld.w	d15,[a4]96
+.L650:
+	mov.u	d0,#46039
+	addih	d0,d0,#16349
+.L651:
+	mul.f	d15,d15,d0
+.L652:
+	div.f	d15,d4,d15
+.L653:
+	mov	d0,#30544
+	addih	d0,d0,#15830
+.L654:
+	div.f	d2,d15,d0
+.L655:
+	j	.L56
+.L56:
+	ret
+.L174:
+	
+___ZN9BLDCMotor12estimateBEMFEf_function_end:
+	.size	_ZN9BLDCMotor12estimateBEMFEf,___ZN9BLDCMotor12estimateBEMFEf_function_end-_ZN9BLDCMotor12estimateBEMFEf
+.L116:
+	; End of function
+	
+	.sdecl	'.rodata.BLDCMotor._ZTV9BLDCMotor',data,rom,cluster('_ZTV9BLDCMotor')
+	.sect	'.rodata.BLDCMotor._ZTV9BLDCMotor'
+	.global	_ZTV9BLDCMotor
+	.align	2
+_ZTV9BLDCMotor:	.type	object
+	.size	_ZTV9BLDCMotor,44
+	.space	4
+	.word	_ZTI9BLDCMotor,_ZN9BLDCMotor4initEv,_ZN9BLDCMotor7disableEv,_ZN9BLDCMotor6enableEv,_ZN9BLDCMotor15setPhaseVoltageEfff,_ZN9BLDCMotor12estimateBEMFEf,_ZN8FOCMotor7initFOCEv,_ZN8FOCMotor7loopFOCEv
+	.word	_ZN8FOCMotor4moveEf,_ZN9BLDCMotor10linkDriverEP10BLDCDriver
+	.sdecl	'.data.BLDCMotor.trap_120_map',data,cluster('trap_120_map')
+	.sect	'.data.BLDCMotor.trap_120_map'
+	.global	trap_120_map
+	.align	2
+trap_120_map:	.type	object
+	.size	trap_120_map,72
+	.space	4
+	.word	1,-1,-1,1
+	.space	4
+	.word	-1
+	.space	4
+	.word	1
+	.space	4
+	.word	-1,1,1,-1
+	.space	4
+	.word	1
+	.space	4
+	.word	-1
+	.sdecl	'.data.BLDCMotor.trap_150_map',data,cluster('trap_150_map')
+	.sect	'.data.BLDCMotor.trap_150_map'
+	.global	trap_150_map
+	.align	2
+trap_150_map:	.type	object
+	.size	trap_150_map,144
+	.space	4
+	.word	1,-1,-1,1
+	.word	-1,-1,1
+	.space	4
+	.word	-1,1,1,-1
+	.space	4
+	.word	1,-1,-1,1
+	.space	4
+	.word	-1,1,1,-1
+	.word	1,1,-1
+	.space	4
+	.word	1,-1,-1,1
+	.space	4
+	.word	-1,1,1,-1
+	.sdecl	'.rodata.BLDCMotor._ZTI9BLDCMotor',data,rom,cluster('_ZTI9BLDCMotor')
+	.sect	'.rodata.BLDCMotor._ZTI9BLDCMotor'
+	.global	_ZTI9BLDCMotor
+	.align	4
+_ZTI9BLDCMotor:	.type	object
+	.size	_ZTI9BLDCMotor,12
+	.word	_ZTVN10__cxxabiv120__si_class_type_infoE+8,_ZTS9BLDCMotor,_ZTI8FOCMotor
+	.sdecl	'.rodata.BLDCMotor._ZTS9BLDCMotor',data,rom,cluster('_ZTS9BLDCMotor')
+	.sect	'.rodata.BLDCMotor._ZTS9BLDCMotor'
+	.global	_ZTS9BLDCMotor
+_ZTS9BLDCMotor:	.type	object
+	.size	_ZTS9BLDCMotor,11
+	.byte	57,66,76,68,67,77,111,116
+	.byte	111,114
+	.space	1
+	.calls	'__INDIRECT__','_ZN8FOCMotor7initFOCEv'
+	.calls	'__INDIRECT__','_ZN8FOCMotor7loopFOCEv'
+	.calls	'__INDIRECT__','_ZN8FOCMotor4moveEf'
+	.calls	'__INDIRECT__','_ZN9BLDCMotor10linkDriverEP10BLDCDriver'
+	.calls	'__INDIRECT__','_ZN9BLDCMotor4initEv'
+	.calls	'__INDIRECT__','_ZN9BLDCMotor7disableEv'
+	.calls	'__INDIRECT__','_ZN9BLDCMotor6enableEv'
+	.calls	'__INDIRECT__','_ZN9BLDCMotor15setPhaseVoltageEfff'
+	.calls	'__INDIRECT__','_ZN9BLDCMotor12estimateBEMFEf'
+	.calls	'_ZN9BLDCMotorC1Eiffff','_ZN8FOCMotorC2Ev'
+	.calls	'_ZN9BLDCMotorC2Eiffff','_ZN9BLDCMotorC1Eiffff'
+	.calls	'_ZN9BLDCMotor4initEv','_ZN8FOCMotor18updateCurrentLimitEf'
+	.calls	'_ZN9BLDCMotor4initEv','_ZN8FOCMotor18updateVoltageLimitEf'
+	.calls	'_ZN9BLDCMotor4initEv','_ZN8FOCMotor19updateVelocityLimitEf'
+	.calls	'_ZN9BLDCMotor4initEv','_Z6_delaym'
+	.calls	'_ZN9BLDCMotor4initEv','__INDIRECT__'
+	.calls	'_ZN9BLDCMotor7disableEv','__INDIRECT__'
+	.calls	'_ZN9BLDCMotor6enableEv','__INDIRECT__'
+	.calls	'_ZN9BLDCMotor6enableEv','_ZN13PIDController5resetEv'
+	.calls	'_ZN9BLDCMotor15setPhaseVoltageEfff','_Z15_normalizeAnglef'
+	.calls	'_ZN9BLDCMotor15setPhaseVoltageEfff','__INDIRECT__'
+	.calls	'_ZN9BLDCMotor15setPhaseVoltageEfff','_Z7_sincosfPfS_'
+	.calls	'_ZN9BLDCMotorC1Eiffff','',0
+	.calls	'_ZN9BLDCMotorC2Eiffff','',8
+	.calls	'_ZN9BLDCMotor10linkDriverEP10BLDCDriver','',0
+	.calls	'_ZN9BLDCMotor4initEv','',0
+	.calls	'_ZN9BLDCMotor7disableEv','',0
+	.calls	'_ZN9BLDCMotor6enableEv','',0
+	.calls	'_ZN9BLDCMotor15setPhaseVoltageEfff','',8
+	.extern	_Z7_sincosfPfS_
+	.extern	_Z15_normalizeAnglef
+	.extern	_Z6_delaym
+	.extern	_ZN13PIDController5resetEv
+	.extern	_ZN8FOCMotorC2Ev
+	.extern	_ZN8FOCMotor7initFOCEv
+	.extern	_ZN8FOCMotor7loopFOCEv
+	.extern	_ZN8FOCMotor4moveEf
+	.extern	_ZN8FOCMotor19updateVelocityLimitEf
+	.extern	_ZN8FOCMotor18updateCurrentLimitEf
+	.extern	_ZN8FOCMotor18updateVoltageLimitEf
+	.weak	_ZTV9BLDCMotor
+	.weak	_ZTI9BLDCMotor
+	.extern	_ZTI8FOCMotor
+	.extern	_ZTVN10__cxxabiv120__si_class_type_infoE
+	.weak	_ZTS9BLDCMotor
+	.extern	__INDIRECT__
+	.calls	'_ZN9BLDCMotor12estimateBEMFEf','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L74:
+	.word	4152
+	.half	3
+	.word	.L75
+	.byte	4
+.L73:
+	.byte	1
+	.byte	'../simplefoc_bldc_motor_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L76
+.L132:
+	.byte	2
+	.byte	'float',0,4,4,3
+	.word	226
+	.byte	4
+	.byte	'_Z7_sincosfPfS_',0,1,93,13,1,1,1,1,5
+	.byte	'a',0,1,93,35
+	.word	226
+	.byte	5
+	.byte	's',0,1,93,45
+	.word	235
+	.byte	5
+	.byte	'c',0,1,93,55
+	.word	235
+	.byte	0,6
+	.byte	'_Z15_normalizeAnglef',0,1,105,14
+	.word	226
+	.byte	1,1,1,1,5
+	.byte	'angle',0,1,105,41
+	.word	226
+	.byte	0,2
+	.byte	'unsigned long int',0,4,7,4
+	.byte	'_Z6_delaym',0,2,13,13,1,1,1,1,5
+	.byte	'ms',0,2,13,38
+	.word	343
+	.byte	0,7
+	.byte	'PIDController',0,3,11,8,40,8
+	.byte	'P',0
+	.word	226
+	.byte	4,2,35,0,8
+	.byte	'I',0
+	.word	226
+	.byte	4,2,35,4,8
+	.byte	'D',0
+	.word	226
+	.byte	4,2,35,8,8
+	.byte	'output_ramp',0
+	.word	226
+	.byte	4,2,35,12,8
+	.byte	'limit',0
+	.word	226
+	.byte	4,2,35,16,8
+	.byte	'Ts',0
+	.word	226
+	.byte	4,2,35,20,8
+	.byte	'error_prev',0
+	.word	226
+	.byte	4,2,35,24,8
+	.byte	'output_prev',0
+	.word	226
+	.byte	4,2,35,28,8
+	.byte	'integral_prev',0
+	.word	226
+	.byte	4,2,35,32,8
+	.byte	'timestamp_prev',0
+	.word	343
+	.byte	4,2,35,36,0,3
+	.word	395
+	.byte	9
+	.word	584
+	.byte	4
+	.byte	'_ZN13PIDController5resetEv',0,3,32,13,1,1,1,1,10,3,32,61
+	.word	589
+	.byte	0
+.L130:
+	.byte	2
+	.byte	'int',0,4,5,9
+	.word	638
+	.byte	3
+	.word	645
+	.byte	7
+	.byte	'DQ_s',0,1,43,8,8,8
+	.byte	'd',0
+	.word	226
+	.byte	4,2,35,0,8
+	.byte	'q',0
+	.word	226
+	.byte	4,2,35,4,0,2
+	.byte	'char',0,1,6,2
+	.byte	'unsigned char',0,1,8,7
+	.byte	'LowPassFilter',0,5,11,8,16,8
+	.byte	'Tf',0
+	.word	226
+	.byte	4,2,35,0,8
+	.byte	'Ts',0
+	.word	226
+	.byte	4,2,35,4,8
+	.byte	'timestamp_prev',0
+	.word	343
+	.byte	4,2,35,8,8
+	.byte	'y_prev',0
+	.word	226
+	.byte	4,2,35,12,0,2
+	.byte	'unsigned int',0,4,7,2
+	.byte	'char',0,1,6,11
+	.byte	'Sensor',0,6,44,8,1,3
+	.word	821
+	.byte	2
+	.byte	'long int',0,4,5,12
+	.byte	'void',0,3
+	.word	850
+	.byte	7
+	.byte	'FOCDriver',0,8,25,8,28,8
+	.byte	'__vptr',0
+	.word	650
+	.byte	4,2,35,0,8
+	.byte	'pwm_frequency',0
+	.word	838
+	.byte	4,2,35,4,8
+	.byte	'voltage_power_supply',0
+	.word	226
+	.byte	4,2,35,8,8
+	.byte	'voltage_limit',0
+	.word	226
+	.byte	4,2,35,12,8
+	.byte	'initialized',0
+	.word	813
+	.byte	1,2,35,16,8
+	.byte	'params',0
+	.word	856
+	.byte	4,2,35,20,8
+	.byte	'enable_active_high',0
+	.word	813
+	.byte	1,2,35,24,0,3
+	.word	861
+	.byte	13
+	.byte	'DriverType',0,8,15,6,1,14
+	.byte	'UnknownDriver',0,0,14
+	.byte	'BLDC',0,1,14
+	.byte	'Stepper',0,2,14
+	.byte	'Hybrid',0,3,0,7
+	.byte	'CurrentSense',0,7,14,8,60,8
+	.byte	'__vptr',0
+	.word	650
+	.byte	4,2,35,0,8
+	.byte	'skip_align',0
+	.word	813
+	.byte	1,2,35,4,8
+	.byte	'driver',0
+	.word	1034
+	.byte	4,2,35,8,8
+	.byte	'initialized',0
+	.word	813
+	.byte	1,2,35,12,8
+	.byte	'params',0
+	.word	856
+	.byte	4,2,35,16,8
+	.byte	'driver_type',0
+	.word	1039
+	.byte	1,2,35,20,8
+	.byte	'gain_a',0
+	.word	226
+	.byte	4,2,35,22,8
+	.byte	'gain_b',0
+	.word	226
+	.byte	4,2,35,26,8
+	.byte	'gain_c',0
+	.word	226
+	.byte	4,2,35,30,8
+	.byte	'offset_ia',0
+	.word	226
+	.byte	4,2,35,34,8
+	.byte	'offset_ib',0
+	.word	226
+	.byte	4,2,35,38,8
+	.byte	'offset_ic',0
+	.word	226
+	.byte	4,2,35,42,8
+	.byte	'pinA',0
+	.word	638
+	.byte	4,2,35,46,8
+	.byte	'pinB',0
+	.word	638
+	.byte	4,2,35,50,8
+	.byte	'pinC',0
+	.word	638
+	.byte	4,2,35,54,0,3
+	.word	1098
+	.byte	11
+	.byte	'Print',0,9,61,8,1,3
+	.word	1379
+	.byte	15
+	.word	226
+	.byte	1,1,16
+	.word	.L282-.L74
+	.byte	0,3
+	.word	1395
+	.byte	7
+	.byte	'FOCMotor',0,4,97,8,180,3,8
+	.byte	'__vptr',0
+	.word	650
+	.byte	4,2,35,0,8
+	.byte	'target',0
+	.word	226
+	.byte	4,2,35,4,8
+	.byte	'feed_forward_velocity',0
+	.word	226
+	.byte	4,2,35,8,8
+	.byte	'shaft_angle',0
+	.word	226
+	.byte	4,2,35,12,8
+	.byte	'electrical_angle',0
+	.word	226
+	.byte	4,2,35,16,8
+	.byte	'shaft_velocity',0
+	.word	226
+	.byte	4,2,35,20,8
+	.byte	'current_sp',0
+	.word	226
+	.byte	4,2,35,24,8
+	.byte	'shaft_velocity_sp',0
+	.word	226
+	.byte	4,2,35,28,8
+	.byte	'shaft_angle_sp',0
+	.word	226
+	.byte	4,2,35,32,8
+	.byte	'voltage',0
+	.word	655
+	.byte	8,2,35,36,8
+	.byte	'current',0
+	.word	655
+	.byte	8,2,35,44,8
+	.byte	'voltage_bemf',0
+	.word	226
+	.byte	4,2,35,52,8
+	.byte	'Ualpha',0
+	.word	226
+	.byte	4,2,35,56,8
+	.byte	'Ubeta',0
+	.word	226
+	.byte	4,2,35,60,8
+	.byte	'feed_forward_current',0
+	.word	655
+	.byte	8,2,35,64,8
+	.byte	'feed_forward_voltage',0
+	.word	655
+	.byte	8,2,35,72,8
+	.byte	'voltage_sensor_align',0
+	.word	226
+	.byte	4,2,35,80,8
+	.byte	'velocity_index_search',0
+	.word	226
+	.byte	4,2,35,84,8
+	.byte	'phase_resistance',0
+	.word	226
+	.byte	4,2,35,88,8
+	.byte	'pole_pairs',0
+	.word	638
+	.byte	4,2,35,92,8
+	.byte	'KV_rating',0
+	.word	226
+	.byte	4,2,35,96,8
+	.byte	'phase_inductance',0
+	.word	226
+	.byte	4,2,35,100,8
+	.byte	'axis_inductance',0
+	.word	655
+	.byte	8,2,35,104,8
+	.byte	'voltage_limit',0
+	.word	226
+	.byte	4,2,35,112,8
+	.byte	'current_limit',0
+	.word	226
+	.byte	4,2,35,116,8
+	.byte	'velocity_limit',0
+	.word	226
+	.byte	4,2,35,120,8
+	.byte	'enabled',0
+	.word	688
+	.byte	1,2,35,124,8
+	.byte	'motor_status',0
+	.word	696
+	.byte	1,2,35,125,8
+	.byte	'foc_modulation',0
+	.word	696
+	.byte	1,2,35,126,8
+	.byte	'modulation_centered',0
+	.word	688
+	.byte	1,2,35,127,8
+	.byte	'torque_controller',0
+	.word	696
+	.byte	1,3,35,128,1,8
+	.byte	'controller',0
+	.word	696
+	.byte	1,3,35,129,1,8
+	.byte	'PID_current_q',0
+	.word	395
+	.byte	40,3,35,132,1,8
+	.byte	'PID_current_d',0
+	.word	395
+	.byte	40,3,35,172,1,8
+	.byte	'LPF_current_q',0
+	.word	713
+	.byte	16,3,35,212,1,8
+	.byte	'LPF_current_d',0
+	.word	713
+	.byte	16,3,35,228,1,8
+	.byte	'PID_velocity',0
+	.word	395
+	.byte	40,3,35,244,1,8
+	.byte	'P_angle',0
+	.word	395
+	.byte	40,3,35,156,2,8
+	.byte	'LPF_velocity',0
+	.word	713
+	.byte	16,3,35,196,2,8
+	.byte	'LPF_angle',0
+	.word	713
+	.byte	16,3,35,212,2,8
+	.byte	'motion_downsample',0
+	.word	797
+	.byte	4,3,35,228,2,8
+	.byte	'motion_cnt',0
+	.word	797
+	.byte	4,3,35,232,2,8
+	.byte	'sensor_offset',0
+	.word	226
+	.byte	4,3,35,236,2,8
+	.byte	'zero_electric_angle',0
+	.word	226
+	.byte	4,3,35,240,2,8
+	.byte	'sensor_direction',0
+	.word	688
+	.byte	1,3,35,244,2,8
+	.byte	'pp_check_result',0
+	.word	813
+	.byte	1,3,35,245,2,8
+	.byte	'monitor_downsample',0
+	.word	797
+	.byte	4,3,35,246,2,8
+	.byte	'monitor_start_char',0
+	.word	813
+	.byte	1,3,35,250,2,8
+	.byte	'monitor_end_char',0
+	.word	813
+	.byte	1,3,35,251,2,8
+	.byte	'monitor_separator',0
+	.word	813
+	.byte	1,3,35,252,2,8
+	.byte	'monitor_decimals',0
+	.word	797
+	.byte	4,3,35,254,2,8
+	.byte	'monitor_variables',0
+	.word	696
+	.byte	1,3,35,130,3,8
+	.byte	'sensor',0
+	.word	833
+	.byte	4,3,35,132,3,8
+	.byte	'current_sense',0
+	.word	1374
+	.byte	4,3,35,136,3,8
+	.byte	'monitor_port',0
+	.word	1390
+	.byte	4,3,35,140,3,8
+	.byte	'loopfoc_time_us',0
+	.word	797
+	.byte	4,3,35,144,3,8
+	.byte	'move_time_us',0
+	.word	797
+	.byte	4,3,35,148,3,8
+	.byte	'last_loopfoc_timestamp_us',0
+	.word	797
+	.byte	4,3,35,152,3,8
+	.byte	'last_loopfoc_time_us',0
+	.word	797
+	.byte	4,3,35,156,3,8
+	.byte	'last_move_timestamp_us',0
+	.word	797
+	.byte	4,3,35,160,3,8
+	.byte	'last_move_time_us',0
+	.word	797
+	.byte	4,3,35,164,3,8
+	.byte	'monitor_cnt',0
+	.word	797
+	.byte	4,3,35,168,3,8
+	.byte	'open_loop_timestamp',0
+	.word	797
+	.byte	4,3,35,172,3,8
+	.byte	'customMotionControlCallback',0
+	.word	1408
+	.byte	4,3,35,176,3,0
+.L282:
+	.byte	3
+	.word	1413
+	.byte	9
+	.word	3004
+	.byte	4
+	.byte	'_ZN8FOCMotorC2Ev',0,4,103,67,1,1,1,1,10,4,103,100
+	.word	3009
+	.byte	0,9
+	.word	3004
+	.byte	6
+	.byte	'_ZN8FOCMotor7initFOCEv',0,4,140,1,12
+	.word	638
+	.byte	1,1,1,1,10,4,140,1,51
+	.word	3048
+	.byte	0,9
+	.word	3004
+	.byte	4
+	.byte	'_ZN8FOCMotor7loopFOCEv',0,4,148,1,13,1,1,1,1,10,4,148,1,52
+	.word	3099
+	.byte	0,9
+	.word	3004
+	.byte	4
+	.byte	'_ZN8FOCMotor4moveEf',0,4,158,1,13,1,1,1,1,10,4,158,1,49
+	.word	3146
+	.byte	5
+	.byte	'target',0,4,158,1,63
+	.word	226
+	.byte	0,9
+	.word	3004
+	.byte	4
+	.byte	'_ZN8FOCMotor19updateVelocityLimitEf',0,4,191,2,13,1,1,1,1,10,4,191,2,65
+	.word	3206
+	.byte	5
+	.byte	'new_velocity_limit',0,4,191,2,79
+	.word	226
+	.byte	0,9
+	.word	3004
+	.byte	4
+	.byte	'_ZN8FOCMotor18updateCurrentLimitEf',0,4,200,2,13,1,1,1,1,10,4,200,2,64
+	.word	3294
+	.byte	5
+	.byte	'new_current_limit',0,4,200,2,78
+	.word	226
+	.byte	0,9
+	.word	3004
+	.byte	4
+	.byte	'_ZN8FOCMotor18updateVoltageLimitEf',0,4,211,2,13,1,1,1,1,10,4,211,2,64
+	.word	3380
+	.byte	5
+	.byte	'new_voltage_limit',0,4,211,2,78
+	.word	226
+	.byte	0,7
+	.byte	'BLDCDriver',0,11,7,8,40,8
+	.byte	'__b_9FOCDriver',0
+	.word	861
+	.byte	28,2,35,0,8
+	.byte	'dc_a',0
+	.word	226
+	.byte	4,2,35,28,8
+	.byte	'dc_b',0
+	.word	226
+	.byte	4,2,35,32,8
+	.byte	'dc_c',0
+	.word	226
+	.byte	4,2,35,36,0
+.L148:
+	.byte	3
+	.word	3466
+	.byte	7
+	.byte	'BLDCMotor',0,10,16,8,196,3,8
+	.byte	'__b_8FOCMotor',0
+	.word	1413
+	.byte	180,3,2,35,0,8
+	.byte	'Ua',0
+	.word	226
+	.byte	4,3,35,180,3,8
+	.byte	'Ub',0
+	.word	226
+	.byte	4,3,35,184,3,8
+	.byte	'Uc',0
+	.word	226
+	.byte	4,3,35,188,3,8
+	.byte	'driver',0
+	.word	3549
+	.byte	4,3,35,192,3,0,3
+	.word	3554
+.L128:
+	.byte	9
+	.word	3651
+.L138:
+	.byte	9
+	.word	3651
+.L146:
+	.byte	9
+	.word	3651
+.L151:
+	.byte	9
+	.word	3651
+.L155:
+	.byte	9
+	.word	3651
+.L158:
+	.byte	9
+	.word	3651
+.L161:
+	.byte	9
+	.word	3651
+.L175:
+	.byte	9
+	.word	3651
+	.byte	17
+	.byte	'__INDIRECT__',0,12,1,1,1,1,1,18,1,3
+	.word	3716
+	.byte	19
+	.byte	'__codeptr',0,12,1,1
+	.word	3718
+	.byte	19
+	.byte	'int8_t',0,13,241,1,21
+	.word	688
+	.byte	19
+	.byte	'uint8_t',0,13,242,1,23
+	.word	696
+	.byte	19
+	.byte	'uint32_t',0,13,254,1,18
+	.word	797
+	.byte	19
+	.byte	'DQVoltage_s',0,1,50,21
+	.word	655
+	.byte	19
+	.byte	'DQCurrent_s',0,1,52,21
+	.word	655
+	.byte	20,44
+	.word	638
+	.byte	21,10,0
+.L178:
+	.byte	9
+	.word	3832
+	.byte	20,12
+	.word	638
+	.byte	21,2,0
+.L179:
+	.byte	20,72
+	.word	3846
+	.byte	21,5,0
+.L180:
+	.byte	20,144,1
+	.word	3846
+	.byte	21,11,0,9
+	.word	813
+	.byte	3
+	.word	3874
+	.byte	7
+	.byte	'__type_info',0,10,16,26,8,8
+	.byte	'__vptr',0
+	.word	650
+	.byte	4,2,35,0,8
+	.byte	'__name',0
+	.word	3879
+	.byte	4,2,35,4,0,7
+	.byte	'__class_type_info',0,10,16,88,8,8
+	.byte	'base',0
+	.word	3884
+	.byte	8,2,35,0,0,9
+	.word	3934
+	.byte	3
+	.word	3972
+	.byte	7
+	.byte	'__si_class_type_info',0,10,16,142,1,12,8
+	.byte	'base',0
+	.word	3934
+	.byte	8,2,35,0,8
+	.byte	'base_type',0
+	.word	3977
+	.byte	4,2,35,8,0
+.L181:
+	.byte	9
+	.word	3982
+	.byte	9
+	.word	3934
+	.byte	22
+	.byte	'_ZTI8FOCMotor',0,14,21,96
+	.word	4048
+	.byte	1,1,23
+	.word	638
+	.byte	24,0,9
+	.word	4077
+	.byte	22
+	.byte	'_ZTVN10__cxxabiv120__si_class_type_infoE',0,14,21,128,1
+	.word	4084
+	.byte	1,1,20,11
+	.word	813
+	.byte	21,10,0
+.L182:
+	.byte	9
+	.word	4141
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L75:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,15,0,73,19,0,0,4,46,1,3,8,58
+	.byte	15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,46,1,3,8,58,15,59,15
+	.byte	57,15,73,19,54,15,39,12,63,12,60,12,0,0,7,19,1,3,8,58,15,59,15,57,15,11,15,0,0,8,13,0,3,8,73,19,11,15
+	.byte	56,9,0,0,9,38,0,73,19,0,0,10,5,0,58,15,59,15,57,15,73,19,0,0,11,19,0,3,8,58,15,59,15,57,15,60,12,0,0,12
+	.byte	59,0,3,8,0,0,13,4,1,3,8,58,15,59,15,57,15,11,15,0,0,14,40,0,3,8,28,13,0,0,15,21,1,73,19,54,15,39,12,0
+	.byte	0,16,5,0,73,19,0,0,17,46,0,3,8,58,15,59,15,57,15,54,15,63,12,60,12,0,0,18,21,0,54,15,0,0,19,22,0,3,8,58
+	.byte	15,59,15,57,15,73,19,0,0,20,1,1,11,15,73,19,0,0,21,33,0,47,15,0,0,22,52,0,3,8,58,15,59,15,57,15,73,19
+	.byte	63,12,60,12,0,0,23,1,1,73,19,0,0,24,33,0,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L76:
+	.word	.L284-.L283
+.L283:
+	.half	3
+	.word	.L286-.L285
+.L285:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Infineon\\AURIX-Studio-1.10.32\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\',0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/../foc_utils.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/../time_utils.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/../pid.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/FOCMotor.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/../lowpass_filter.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/Sensor.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/FOCDriver.h',0,0,0,0
+	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\../../simplefoc_port/arduino_compat/Arduino.h',0
+	.byte	0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/BLDCDriver.h',0,0,0,0
+	.byte	'../simplefoc_bldc_motor_ads.cpp',0,0,0,0
+	.byte	'stdint.h',0,1,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0,0,0,0,0
+.L286:
+.L284:
+	.sdecl	'.debug_info',debug,cluster('_ZN9BLDCMotorC1Eiffff')
+	.sect	'.debug_info'
+.L77:
+	.word	452
+	.half	3
+	.word	.L78
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L80,.L79
+	.byte	2
+	.word	.L73
+	.byte	3
+	.byte	'_ZN9BLDCMotorC1Eiffff',0,1,39,6,1,1,1
+	.word	.L58,.L127,.L57
+	.byte	4
+	.byte	'this',0,1,39,53
+	.word	.L128,.L129
+	.byte	4
+	.byte	'__6280_26_pp',0,1,39,64
+	.word	.L130,.L131
+	.byte	4
+	.byte	'__6280_36__R',0,1,39,85
+	.word	.L132,.L133
+	.byte	4
+	.byte	'__6280_46__KV',0,1,39,106
+	.word	.L132,.L134
+	.byte	4
+	.byte	'__6280_57__Lq',0,1,39,128,1
+	.word	.L132,.L135
+	.byte	4
+	.byte	'__6280_68__Ld',0,1,39,150,1
+	.word	.L132,.L136
+	.byte	5
+	.word	.L58,.L127
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN9BLDCMotorC1Eiffff')
+	.sect	'.debug_abbrev'
+.L78:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN9BLDCMotorC1Eiffff')
+	.sect	'.debug_line'
+.L79:
+	.word	.L288-.L287
+.L287:
+	.half	3
+	.word	.L290-.L289
+.L289:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0,0,0,0,0
+.L290:
+	.byte	5,6,7,0,5,2
+	.word	.L58
+	.byte	3,38,1,5,50,9
+	.half	.L291-.L58
+	.byte	3,2,1,5,104,9
+	.half	.L183-.L291
+	.byte	1,5,119,9
+	.half	.L292-.L183
+	.byte	1,5,101,9
+	.half	.L293-.L292
+	.byte	1,5,36,9
+	.half	.L294-.L293
+	.byte	3,2,1,5,42,9
+	.half	.L188-.L294
+	.byte	3,2,1,5,35,9
+	.half	.L189-.L188
+	.byte	3,3,1,5,84,9
+	.half	.L190-.L189
+	.byte	3,2,1,5,41,9
+	.half	.L191-.L190
+	.byte	1,5,42,9
+	.half	.L295-.L191
+	.byte	3,1,1,5,45,9
+	.half	.L296-.L295
+	.byte	3,3,1,5,43,9
+	.half	.L186-.L296
+	.byte	1,5,1,9
+	.half	.L297-.L186
+	.byte	3,1,1,7,9
+	.half	.L81-.L297
+	.byte	0,1,1
+.L288:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN9BLDCMotorC1Eiffff')
+	.sect	'.debug_ranges'
+.L80:
+	.word	-1,.L58,0,.L81-.L58,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN9BLDCMotorC2Eiffff')
+	.sect	'.debug_info'
+.L82:
+	.word	407
+	.half	3
+	.word	.L83
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L85,.L84
+	.byte	2
+	.word	.L73
+	.byte	3
+	.byte	'_ZN9BLDCMotorC2Eiffff',0,1,55,8,1,1,1
+	.word	.L60,.L137,.L59
+	.byte	4
+	.byte	'this',0,1,55,55
+	.word	.L138,.L139
+	.byte	4
+	.byte	'__T2',0,1,55,66
+	.word	.L130,.L140
+	.byte	4
+	.byte	'__T3',0,1,55,79
+	.word	.L132,.L141
+	.byte	4
+	.byte	'__T4',0,1,55,92
+	.word	.L132,.L142
+	.byte	4
+	.byte	'__T5',0,1,55,105
+	.word	.L132,.L143
+	.byte	4
+	.byte	'__T6',0,1,55,118
+	.word	.L132,.L144
+	.byte	5
+	.word	.L60,.L137
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN9BLDCMotorC2Eiffff')
+	.sect	'.debug_abbrev'
+.L83:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN9BLDCMotorC2Eiffff')
+	.sect	'.debug_line'
+.L84:
+	.word	.L299-.L298
+.L298:
+	.half	3
+	.word	.L301-.L300
+.L300:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0,0,0,0,0
+.L301:
+	.byte	5,8,7,0,5,2
+	.word	.L60
+	.byte	3,54,1,5,179,1,9
+	.half	.L195-.L60
+	.byte	1,5,173,1,9
+	.half	.L302-.L195
+	.byte	1,5,187,1,9
+	.half	.L194-.L302
+	.byte	1,7,9
+	.half	.L86-.L194
+	.byte	0,1,1
+.L299:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN9BLDCMotorC2Eiffff')
+	.sect	'.debug_ranges'
+.L85:
+	.word	-1,.L60,0,.L86-.L60,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN9BLDCMotor10linkDriverEP10BLDCDriver')
+	.sect	'.debug_info'
+.L87:
+	.word	370
+	.half	3
+	.word	.L88
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L90,.L89
+	.byte	2
+	.word	.L73
+	.byte	3
+	.byte	'_ZN9BLDCMotor10linkDriverEP10BLDCDriver',0,1,61,6,1,1,1
+	.word	.L62,.L145,.L61
+	.byte	4
+	.byte	'this',0,1,61,71
+	.word	.L146,.L147
+	.byte	4
+	.byte	'__6302_40__driver',0,1,61,97
+	.word	.L148,.L149
+	.byte	5
+	.word	.L62,.L145
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN9BLDCMotor10linkDriverEP10BLDCDriver')
+	.sect	'.debug_abbrev'
+.L88:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN9BLDCMotor10linkDriverEP10BLDCDriver')
+	.sect	'.debug_line'
+.L89:
+	.word	.L304-.L303
+.L303:
+	.half	3
+	.word	.L306-.L305
+.L305:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0,0,0,0,0
+.L306:
+	.byte	5,16,7,0,5,2
+	.word	.L62
+	.byte	3,61,1,5,1,9
+	.half	.L307-.L62
+	.byte	3,1,1,7,9
+	.half	.L91-.L307
+	.byte	0,1,1
+.L304:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN9BLDCMotor10linkDriverEP10BLDCDriver')
+	.sect	'.debug_ranges'
+.L90:
+	.word	-1,.L62,0,.L91-.L62,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN9BLDCMotor4initEv')
+	.sect	'.debug_info'
+.L92:
+	.word	335
+	.half	3
+	.word	.L93
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L95,.L94
+	.byte	2
+	.word	.L73
+	.byte	3
+	.byte	'_ZN9BLDCMotor4initEv',0,1,66,5
+	.word	.L130
+	.byte	1,1,1
+	.word	.L64,.L150,.L63
+	.byte	4
+	.byte	'this',0,1,66,51
+	.word	.L151,.L152
+	.byte	5
+	.word	.L64,.L150
+	.byte	6
+	.word	.L153,.L9
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN9BLDCMotor4initEv')
+	.sect	'.debug_abbrev'
+.L93:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN9BLDCMotor4initEv')
+	.sect	'.debug_line'
+.L94:
+	.word	.L309-.L308
+.L308:
+	.half	3
+	.word	.L311-.L310
+.L310:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0,0,0,0,0
+.L311:
+	.byte	5,5,7,0,5,2
+	.word	.L64
+	.byte	3,193,0,1,5,12,9
+	.half	.L197-.L64
+	.byte	3,1,1,5,7,9
+	.half	.L312-.L197
+	.byte	1,5,35,7,9
+	.half	.L313-.L312
+	.byte	1,5,61,9
+	.half	.L314-.L313
+	.byte	1,5,28,9
+	.half	.L315-.L314
+	.byte	1,5,40,7,9
+	.half	.L2-.L315
+	.byte	3,1,1,5,38,9
+	.half	.L316-.L2
+	.byte	1,5,8,9
+	.half	.L4-.L316
+	.byte	3,2,1,5,1,9
+	.half	.L317-.L4
+	.byte	1,5,40,9
+	.half	.L3-.L317
+	.byte	3,2,1,5,38,9
+	.half	.L318-.L3
+	.byte	1,5,27,9
+	.half	.L6-.L318
+	.byte	3,4,1,5,52,9
+	.half	.L319-.L6
+	.byte	1,5,78,9
+	.half	.L320-.L319
+	.byte	1,5,43,9
+	.half	.L321-.L320
+	.byte	1,5,1,9
+	.half	.L322-.L321
+	.byte	1,5,144,1,7,9
+	.half	.L323-.L322
+	.byte	1,5,170,1,9
+	.half	.L324-.L323
+	.byte	1,5,135,1,9
+	.half	.L325-.L324
+	.byte	1,5,27,9
+	.half	.L7-.L325
+	.byte	3,2,1,5,74,9
+	.half	.L326-.L7
+	.byte	1,5,50,9
+	.half	.L327-.L326
+	.byte	1,5,1,9
+	.half	.L328-.L327
+	.byte	1,5,162,1,7,9
+	.half	.L329-.L328
+	.byte	1,5,138,1,9
+	.half	.L330-.L329
+	.byte	1,5,84,9
+	.half	.L8-.L330
+	.byte	3,3,1,9
+	.half	.L196-.L8
+	.byte	3,1,1,5,85,9
+	.half	.L199-.L196
+	.byte	3,1,1,5,28,9
+	.half	.L201-.L199
+	.byte	3,2,1,5,51,9
+	.half	.L331-.L201
+	.byte	1,5,47,9
+	.half	.L332-.L331
+	.byte	1,5,5,9
+	.half	.L333-.L332
+	.byte	1,5,109,7,9
+	.half	.L334-.L333
+	.byte	1,5,117,9
+	.half	.L335-.L334
+	.byte	1,5,68,9
+	.half	.L336-.L335
+	.byte	1,5,78,9
+	.half	.L153-.L336
+	.byte	3,2,1,5,135,1,9
+	.half	.L337-.L153
+	.byte	1,5,111,9
+	.half	.L338-.L337
+	.byte	1,5,41,9
+	.half	.L203-.L338
+	.byte	1,5,28,9
+	.half	.L9-.L203
+	.byte	3,5,1,5,6,9
+	.half	.L339-.L9
+	.byte	1,5,35,7,9
+	.half	.L340-.L339
+	.byte	3,1,1,5,6,9
+	.half	.L341-.L340
+	.byte	1,5,87,7,9
+	.half	.L342-.L341
+	.byte	1,5,101,9
+	.half	.L343-.L342
+	.byte	1,5,140,1,7,9
+	.half	.L12-.L343
+	.byte	1,5,160,1,9
+	.half	.L344-.L12
+	.byte	1,5,44,7,9
+	.half	.L345-.L344
+	.byte	3,3,1,5,42,9
+	.half	.L346-.L345
+	.byte	1,5,12,9
+	.half	.L11-.L346
+	.byte	3,4,1,5,62,9
+	.half	.L15-.L11
+	.byte	3,3,1,5,38,9
+	.half	.L347-.L15
+	.byte	1,5,2,9
+	.half	.L348-.L347
+	.byte	1,5,78,9
+	.half	.L349-.L348
+	.byte	1,5,12,9
+	.half	.L205-.L349
+	.byte	3,1,1,5,40,9
+	.half	.L350-.L205
+	.byte	3,1,1,5,38,9
+	.half	.L351-.L350
+	.byte	1,5,8,9
+	.half	.L352-.L351
+	.byte	3,1,1,5,1,9
+	.half	.L353-.L352
+	.byte	1,9
+	.half	.L5-.L353
+	.byte	3,1,1,7,9
+	.half	.L96-.L5
+	.byte	0,1,1
+.L309:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN9BLDCMotor4initEv')
+	.sect	'.debug_ranges'
+.L95:
+	.word	-1,.L64,0,.L96-.L64,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN9BLDCMotor7disableEv')
+	.sect	'.debug_info'
+.L97:
+	.word	324
+	.half	3
+	.word	.L98
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L100,.L99
+	.byte	2
+	.word	.L73
+	.byte	3
+	.byte	'_ZN9BLDCMotor7disableEv',0,1,111,6,1,1,1
+	.word	.L66,.L154,.L65
+	.byte	4
+	.byte	'this',0,1,111,55
+	.word	.L155,.L156
+	.byte	5
+	.word	.L66,.L154
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN9BLDCMotor7disableEv')
+	.sect	'.debug_abbrev'
+.L98:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN9BLDCMotor7disableEv')
+	.sect	'.debug_line'
+.L99:
+	.word	.L355-.L354
+.L354:
+	.half	3
+	.word	.L357-.L356
+.L356:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0,0,0,0,0
+.L357:
+	.byte	5,6,7,0,5,2
+	.word	.L66
+	.byte	3,238,0,1,5,26,9
+	.half	.L207-.L66
+	.byte	3,3,1,5,1,9
+	.half	.L358-.L207
+	.byte	1,5,109,7,9
+	.half	.L359-.L358
+	.byte	1,5,124,9
+	.half	.L360-.L359
+	.byte	1,5,84,9
+	.half	.L361-.L360
+	.byte	1,5,45,9
+	.half	.L362-.L361
+	.byte	1,5,163,1,9
+	.half	.L363-.L362
+	.byte	1,5,78,9
+	.half	.L17-.L363
+	.byte	3,2,1,5,104,9
+	.half	.L364-.L17
+	.byte	1,5,69,9
+	.half	.L365-.L364
+	.byte	1,5,2,9
+	.half	.L366-.L365
+	.byte	1,5,125,9
+	.half	.L367-.L366
+	.byte	1,5,137,1,9
+	.half	.L368-.L367
+	.byte	1,5,145,1,9
+	.half	.L369-.L368
+	.byte	1,5,153,1,9
+	.half	.L370-.L369
+	.byte	1,5,47,9
+	.half	.L371-.L370
+	.byte	3,2,1,5,73,9
+	.half	.L372-.L371
+	.byte	1,5,38,9
+	.half	.L373-.L372
+	.byte	1,5,2,9
+	.half	.L374-.L373
+	.byte	1,5,97,9
+	.half	.L375-.L374
+	.byte	1,5,106,9
+	.half	.L376-.L375
+	.byte	1,5,36,9
+	.half	.L377-.L376
+	.byte	3,2,1,5,33,9
+	.half	.L378-.L377
+	.byte	1,5,1,9
+	.half	.L379-.L378
+	.byte	3,1,1,7,9
+	.half	.L101-.L379
+	.byte	0,1,1
+.L355:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN9BLDCMotor7disableEv')
+	.sect	'.debug_ranges'
+.L100:
+	.word	-1,.L66,0,.L101-.L66,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN9BLDCMotor6enableEv')
+	.sect	'.debug_info'
+.L102:
+	.word	323
+	.half	3
+	.word	.L103
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L105,.L104
+	.byte	2
+	.word	.L73
+	.byte	3
+	.byte	'_ZN9BLDCMotor6enableEv',0,1,123,6,1,1,1
+	.word	.L68,.L157,.L67
+	.byte	4
+	.byte	'this',0,1,123,54
+	.word	.L158,.L159
+	.byte	5
+	.word	.L68,.L157
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN9BLDCMotor6enableEv')
+	.sect	'.debug_abbrev'
+.L103:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN9BLDCMotor6enableEv')
+	.sect	'.debug_line'
+.L104:
+	.word	.L381-.L380
+.L380:
+	.half	3
+	.word	.L383-.L382
+.L382:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0,0,0,0,0
+.L383:
+	.byte	5,6,7,0,5,2
+	.word	.L68
+	.byte	3,250,0,1,5,47,9
+	.half	.L209-.L68
+	.byte	3,3,1,5,73,9
+	.half	.L384-.L209
+	.byte	1,5,38,9
+	.half	.L385-.L384
+	.byte	1,5,2,9
+	.half	.L386-.L385
+	.byte	1,5,97,9
+	.half	.L387-.L386
+	.byte	1,5,106,9
+	.half	.L208-.L387
+	.byte	1,5,78,9
+	.half	.L388-.L208
+	.byte	3,2,1,5,104,9
+	.half	.L389-.L388
+	.byte	1,5,69,9
+	.half	.L390-.L389
+	.byte	1,5,2,9
+	.half	.L391-.L390
+	.byte	1,5,125,9
+	.half	.L392-.L391
+	.byte	1,5,137,1,9
+	.half	.L393-.L392
+	.byte	1,5,145,1,9
+	.half	.L394-.L393
+	.byte	1,5,153,1,9
+	.half	.L395-.L394
+	.byte	1,5,26,9
+	.half	.L396-.L395
+	.byte	3,2,1,5,1,9
+	.half	.L397-.L396
+	.byte	1,5,109,7,9
+	.half	.L398-.L397
+	.byte	1,5,124,9
+	.half	.L399-.L398
+	.byte	1,5,84,9
+	.half	.L400-.L399
+	.byte	1,5,45,9
+	.half	.L401-.L400
+	.byte	1,5,163,1,9
+	.half	.L402-.L401
+	.byte	1,5,52,9
+	.half	.L18-.L402
+	.byte	3,2,1,9
+	.half	.L403-.L18
+	.byte	3,1,1,9
+	.half	.L404-.L403
+	.byte	3,1,1,9
+	.half	.L405-.L404
+	.byte	3,1,1,5,36,9
+	.half	.L406-.L405
+	.byte	3,2,1,5,33,9
+	.half	.L407-.L406
+	.byte	1,5,1,9
+	.half	.L408-.L407
+	.byte	3,1,1,7,9
+	.half	.L106-.L408
+	.byte	0,1,1
+.L381:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN9BLDCMotor6enableEv')
+	.sect	'.debug_ranges'
+.L105:
+	.word	-1,.L68,0,.L106-.L68,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN9BLDCMotor15setPhaseVoltageEfff')
+	.sect	'.debug_info'
+.L107:
+	.word	637
+	.half	3
+	.word	.L108
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L110,.L109
+	.byte	2
+	.word	.L73
+	.byte	3
+	.byte	'_ZN9BLDCMotor15setPhaseVoltageEfff',0,1,153,1,6,1,1,1
+	.word	.L70,.L160,.L69
+	.byte	4
+	.byte	'this',0,1,153,1,66
+	.word	.L161,.L162
+	.byte	4
+	.byte	'__6394_39_Uq',0,1,153,1,79
+	.word	.L132,.L163
+	.byte	4
+	.byte	'__6394_49_Ud',0,1,153,1,100
+	.word	.L132,.L164
+	.byte	4
+	.byte	'__6394_59_angle_el',0,1,153,1,121
+	.word	.L132,.L165
+	.byte	5
+	.word	.L70,.L160
+	.byte	6
+	.byte	'__6396_9_center',0,1,155,1,12
+	.word	.L132,.L166
+	.byte	6
+	.byte	'__6397_7_sector',0,1,156,1,10
+	.word	.L130,.L167
+	.byte	6
+	.byte	'__6398_9__ca',0,1,157,1,12
+	.word	.L132,.L168
+	.byte	6
+	.byte	'__6398_13__sa',0,1,157,1,37
+	.word	.L132,.L169
+	.byte	5
+	.word	.L170,.L41
+	.byte	6
+	.byte	'__6493_17_Umin',0,1,252,1,12
+	.word	.L132,.L171
+	.byte	6
+	.byte	'__6494_17_Umax',0,1,253,1,12
+	.word	.L132,.L172
+	.byte	0,5
+	.word	.L40,.L50
+	.byte	6
+	.byte	'__6501_15_Umin',0,1,132,2,12
+	.word	.L132,.L173
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN9BLDCMotor15setPhaseVoltageEfff')
+	.sect	'.debug_abbrev'
+.L108:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN9BLDCMotor15setPhaseVoltageEfff')
+	.sect	'.debug_line'
+.L109:
+	.word	.L410-.L409
+.L409:
+	.half	3
+	.word	.L412-.L411
+.L411:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0,0,0,0,0
+.L412:
+	.byte	5,6,7,0,5,2
+	.word	.L70
+	.byte	3,152,1,1,5,36,9
+	.half	.L413-.L70
+	.byte	3,6,1,5,6,9
+	.half	.L414-.L413
+	.byte	3,63,1,9
+	.half	.L415-.L414
+	.byte	3,1,1,9
+	.half	.L416-.L415
+	.byte	3,66,1,9
+	.half	.L417-.L416
+	.byte	3,28,1,5,81,9
+	.half	.L21-.L417
+	.byte	3,103,1,5,78,9
+	.half	.L418-.L21
+	.byte	1,5,102,9
+	.half	.L212-.L418
+	.byte	1,5,99,9
+	.half	.L419-.L212
+	.byte	1,5,27,9
+	.half	.L420-.L419
+	.byte	1,5,33,9
+	.half	.L421-.L420
+	.byte	1,5,20,9
+	.half	.L422-.L421
+	.byte	1,5,42,9
+	.half	.L214-.L422
+	.byte	3,4,1,5,20,9
+	.half	.L423-.L214
+	.byte	1,5,74,7,9
+	.half	.L424-.L423
+	.byte	1,5,100,9
+	.half	.L425-.L424
+	.byte	1,5,119,9
+	.half	.L426-.L425
+	.byte	1,5,116,9
+	.half	.L427-.L426
+	.byte	1,5,126,9
+	.half	.L428-.L427
+	.byte	1,5,64,9
+	.half	.L24-.L428
+	.byte	1,5,22,9
+	.half	.L25-.L24
+	.byte	3,2,1,5,9,9
+	.half	.L429-.L25
+	.byte	1,5,22,9
+	.half	.L430-.L429
+	.byte	1,5,41,9
+	.half	.L431-.L430
+	.byte	1,5,1,9
+	.half	.L432-.L431
+	.byte	1,5,12,7,9
+	.half	.L433-.L432
+	.byte	3,1,1,5,41,9
+	.half	.L434-.L433
+	.byte	3,1,1,5,28,9
+	.half	.L435-.L434
+	.byte	1,5,41,9
+	.half	.L436-.L435
+	.byte	1,5,60,9
+	.half	.L437-.L436
+	.byte	1,5,17,9
+	.half	.L438-.L437
+	.byte	1,5,82,9
+	.half	.L216-.L438
+	.byte	1,5,12,9
+	.half	.L217-.L216
+	.byte	1,5,41,9
+	.half	.L439-.L217
+	.byte	3,1,1,5,28,9
+	.half	.L440-.L439
+	.byte	1,5,41,9
+	.half	.L441-.L440
+	.byte	1,5,60,9
+	.half	.L442-.L441
+	.byte	1,5,17,9
+	.half	.L443-.L442
+	.byte	1,5,82,9
+	.half	.L218-.L443
+	.byte	1,5,12,9
+	.half	.L219-.L218
+	.byte	1,5,102,9
+	.half	.L444-.L219
+	.byte	3,1,1,5,128,1,9
+	.half	.L445-.L444
+	.byte	1,5,93,9
+	.half	.L446-.L445
+	.byte	1,5,2,9
+	.half	.L447-.L446
+	.byte	1,5,149,1,9
+	.half	.L448-.L447
+	.byte	1,5,160,1,9
+	.half	.L449-.L448
+	.byte	1,5,171,1,9
+	.half	.L450-.L449
+	.byte	1,5,181,1,9
+	.half	.L451-.L450
+	.byte	1,5,29,9
+	.half	.L215-.L451
+	.byte	3,125,1,5,32,9
+	.half	.L26-.L215
+	.byte	3,4,1,5,19,9
+	.half	.L452-.L26
+	.byte	1,5,32,9
+	.half	.L453-.L452
+	.byte	1,5,51,9
+	.half	.L454-.L453
+	.byte	1,5,11,9
+	.half	.L455-.L454
+	.byte	1,5,41,7,9
+	.half	.L456-.L455
+	.byte	3,1,1,5,28,9
+	.half	.L457-.L456
+	.byte	1,5,41,9
+	.half	.L458-.L457
+	.byte	1,5,60,9
+	.half	.L459-.L458
+	.byte	1,5,17,9
+	.half	.L460-.L459
+	.byte	1,5,82,9
+	.half	.L221-.L460
+	.byte	1,5,12,9
+	.half	.L222-.L221
+	.byte	1,9
+	.half	.L461-.L222
+	.byte	3,1,1,5,41,9
+	.half	.L462-.L461
+	.byte	3,1,1,5,28,9
+	.half	.L463-.L462
+	.byte	1,5,41,9
+	.half	.L464-.L463
+	.byte	1,5,60,9
+	.half	.L465-.L464
+	.byte	1,5,17,9
+	.half	.L466-.L465
+	.byte	1,5,82,9
+	.half	.L223-.L466
+	.byte	1,5,12,9
+	.half	.L224-.L223
+	.byte	1,5,102,9
+	.half	.L467-.L224
+	.byte	3,1,1,5,128,1,9
+	.half	.L468-.L467
+	.byte	1,5,93,9
+	.half	.L469-.L468
+	.byte	1,5,2,9
+	.half	.L470-.L469
+	.byte	1,5,149,1,9
+	.half	.L471-.L470
+	.byte	1,5,160,1,9
+	.half	.L472-.L471
+	.byte	1,5,170,1,9
+	.half	.L473-.L472
+	.byte	1,5,181,1,9
+	.half	.L474-.L473
+	.byte	1,5,100,9
+	.half	.L220-.L474
+	.byte	3,125,1,5,41,9
+	.half	.L28-.L220
+	.byte	3,5,1,5,28,9
+	.half	.L475-.L28
+	.byte	1,5,41,9
+	.half	.L476-.L475
+	.byte	1,5,60,9
+	.half	.L477-.L476
+	.byte	1,5,17,9
+	.half	.L478-.L477
+	.byte	1,5,82,9
+	.half	.L225-.L478
+	.byte	1,5,12,9
+	.half	.L226-.L225
+	.byte	1,5,41,9
+	.half	.L479-.L226
+	.byte	3,1,1,5,28,9
+	.half	.L480-.L479
+	.byte	1,5,41,9
+	.half	.L481-.L480
+	.byte	1,5,60,9
+	.half	.L482-.L481
+	.byte	1,5,17,9
+	.half	.L483-.L482
+	.byte	1,5,82,9
+	.half	.L227-.L483
+	.byte	1,5,12,9
+	.half	.L228-.L227
+	.byte	1,9
+	.half	.L484-.L228
+	.byte	3,1,1,5,102,9
+	.half	.L485-.L484
+	.byte	3,1,1,5,128,1,9
+	.half	.L486-.L485
+	.byte	1,5,93,9
+	.half	.L487-.L486
+	.byte	1,5,2,9
+	.half	.L488-.L487
+	.byte	1,5,149,1,9
+	.half	.L489-.L488
+	.byte	1,5,160,1,9
+	.half	.L490-.L489
+	.byte	1,5,170,1,9
+	.half	.L491-.L490
+	.byte	1,5,180,1,9
+	.half	.L492-.L491
+	.byte	1,5,1,9
+	.half	.L27-.L492
+	.byte	3,3,1,5,82,9
+	.half	.L22-.L27
+	.byte	3,5,1,5,79,9
+	.half	.L493-.L22
+	.byte	1,5,103,9
+	.half	.L230-.L493
+	.byte	1,5,100,9
+	.half	.L494-.L230
+	.byte	1,5,27,9
+	.half	.L495-.L494
+	.byte	1,5,34,9
+	.half	.L496-.L495
+	.byte	1,5,20,9
+	.half	.L497-.L496
+	.byte	1,5,42,9
+	.half	.L231-.L497
+	.byte	3,4,1,5,20,9
+	.half	.L498-.L231
+	.byte	1,5,74,7,9
+	.half	.L499-.L498
+	.byte	1,5,100,9
+	.half	.L500-.L499
+	.byte	1,5,119,9
+	.half	.L501-.L500
+	.byte	1,5,116,9
+	.half	.L502-.L501
+	.byte	1,5,126,9
+	.half	.L503-.L502
+	.byte	1,5,64,9
+	.half	.L31-.L503
+	.byte	1,5,22,9
+	.half	.L32-.L31
+	.byte	3,2,1,5,9,9
+	.half	.L504-.L32
+	.byte	1,5,22,9
+	.half	.L505-.L504
+	.byte	1,5,41,9
+	.half	.L506-.L505
+	.byte	1,5,1,9
+	.half	.L507-.L506
+	.byte	1,5,12,7,9
+	.half	.L508-.L507
+	.byte	3,1,1,5,41,9
+	.half	.L509-.L508
+	.byte	3,1,1,5,28,9
+	.half	.L510-.L509
+	.byte	1,5,41,9
+	.half	.L511-.L510
+	.byte	1,5,60,9
+	.half	.L512-.L511
+	.byte	1,5,17,9
+	.half	.L513-.L512
+	.byte	1,5,82,9
+	.half	.L233-.L513
+	.byte	1,5,12,9
+	.half	.L234-.L233
+	.byte	1,5,41,9
+	.half	.L514-.L234
+	.byte	3,1,1,5,28,9
+	.half	.L515-.L514
+	.byte	1,5,41,9
+	.half	.L516-.L515
+	.byte	1,5,60,9
+	.half	.L517-.L516
+	.byte	1,5,17,9
+	.half	.L518-.L517
+	.byte	1,5,82,9
+	.half	.L235-.L518
+	.byte	1,5,12,9
+	.half	.L236-.L235
+	.byte	1,5,102,9
+	.half	.L519-.L236
+	.byte	3,1,1,5,128,1,9
+	.half	.L520-.L519
+	.byte	1,5,93,9
+	.half	.L521-.L520
+	.byte	1,5,2,9
+	.half	.L522-.L521
+	.byte	1,5,149,1,9
+	.half	.L523-.L522
+	.byte	1,5,160,1,9
+	.half	.L524-.L523
+	.byte	1,5,171,1,9
+	.half	.L525-.L524
+	.byte	1,5,181,1,9
+	.half	.L526-.L525
+	.byte	1,5,29,9
+	.half	.L232-.L526
+	.byte	3,125,1,5,32,9
+	.half	.L33-.L232
+	.byte	3,4,1,5,19,9
+	.half	.L527-.L33
+	.byte	1,5,32,9
+	.half	.L528-.L527
+	.byte	1,5,51,9
+	.half	.L529-.L528
+	.byte	1,5,11,9
+	.half	.L530-.L529
+	.byte	1,5,41,7,9
+	.half	.L531-.L530
+	.byte	3,1,1,5,28,9
+	.half	.L532-.L531
+	.byte	1,5,41,9
+	.half	.L533-.L532
+	.byte	1,5,60,9
+	.half	.L534-.L533
+	.byte	1,5,17,9
+	.half	.L535-.L534
+	.byte	1,5,82,9
+	.half	.L238-.L535
+	.byte	1,5,12,9
+	.half	.L239-.L238
+	.byte	1,9
+	.half	.L536-.L239
+	.byte	3,1,1,5,41,9
+	.half	.L537-.L536
+	.byte	3,1,1,5,28,9
+	.half	.L538-.L537
+	.byte	1,5,41,9
+	.half	.L539-.L538
+	.byte	1,5,60,9
+	.half	.L540-.L539
+	.byte	1,5,17,9
+	.half	.L541-.L540
+	.byte	1,5,82,9
+	.half	.L240-.L541
+	.byte	1,5,12,9
+	.half	.L241-.L240
+	.byte	1,5,102,9
+	.half	.L542-.L241
+	.byte	3,1,1,5,128,1,9
+	.half	.L543-.L542
+	.byte	1,5,93,9
+	.half	.L544-.L543
+	.byte	1,5,2,9
+	.half	.L545-.L544
+	.byte	1,5,149,1,9
+	.half	.L546-.L545
+	.byte	1,5,160,1,9
+	.half	.L547-.L546
+	.byte	1,5,170,1,9
+	.half	.L548-.L547
+	.byte	1,5,181,1,9
+	.half	.L549-.L548
+	.byte	1,5,100,9
+	.half	.L237-.L549
+	.byte	3,125,1,5,32,9
+	.half	.L35-.L237
+	.byte	3,4,1,5,19,9
+	.half	.L550-.L35
+	.byte	1,5,32,9
+	.half	.L551-.L550
+	.byte	1,5,51,9
+	.half	.L552-.L551
+	.byte	1,5,11,9
+	.half	.L553-.L552
+	.byte	1,5,41,7,9
+	.half	.L554-.L553
+	.byte	3,1,1,5,28,9
+	.half	.L555-.L554
+	.byte	1,5,41,9
+	.half	.L556-.L555
+	.byte	1,5,60,9
+	.half	.L557-.L556
+	.byte	1,5,17,9
+	.half	.L558-.L557
+	.byte	1,5,82,9
+	.half	.L243-.L558
+	.byte	1,5,12,9
+	.half	.L244-.L243
+	.byte	1,5,41,9
+	.half	.L559-.L244
+	.byte	3,1,1,5,28,9
+	.half	.L560-.L559
+	.byte	1,5,41,9
+	.half	.L561-.L560
+	.byte	1,5,60,9
+	.half	.L562-.L561
+	.byte	1,5,17,9
+	.half	.L563-.L562
+	.byte	1,5,82,9
+	.half	.L245-.L563
+	.byte	1,5,12,9
+	.half	.L246-.L245
+	.byte	1,9
+	.half	.L564-.L246
+	.byte	3,1,1,5,102,9
+	.half	.L565-.L564
+	.byte	3,1,1,5,128,1,9
+	.half	.L566-.L565
+	.byte	1,5,93,9
+	.half	.L567-.L566
+	.byte	1,5,2,9
+	.half	.L568-.L567
+	.byte	1,5,149,1,9
+	.half	.L569-.L568
+	.byte	1,5,160,1,9
+	.half	.L570-.L569
+	.byte	1,5,170,1,9
+	.half	.L571-.L570
+	.byte	1,5,180,1,9
+	.half	.L572-.L571
+	.byte	1,5,100,9
+	.half	.L242-.L572
+	.byte	3,125,1,5,41,9
+	.half	.L37-.L242
+	.byte	3,5,1,5,28,9
+	.half	.L573-.L37
+	.byte	1,5,41,9
+	.half	.L574-.L573
+	.byte	1,5,60,9
+	.half	.L575-.L574
+	.byte	1,5,17,9
+	.half	.L576-.L575
+	.byte	1,5,82,9
+	.half	.L247-.L576
+	.byte	1,5,12,9
+	.half	.L248-.L247
+	.byte	1,5,41,9
+	.half	.L577-.L248
+	.byte	3,1,1,5,28,9
+	.half	.L578-.L577
+	.byte	1,5,41,9
+	.half	.L579-.L578
+	.byte	1,5,60,9
+	.half	.L580-.L579
+	.byte	1,5,17,9
+	.half	.L581-.L580
+	.byte	1,5,82,9
+	.half	.L249-.L581
+	.byte	1,5,12,9
+	.half	.L250-.L249
+	.byte	1,5,41,9
+	.half	.L582-.L250
+	.byte	3,1,1,5,28,9
+	.half	.L583-.L582
+	.byte	1,5,41,9
+	.half	.L584-.L583
+	.byte	1,5,60,9
+	.half	.L585-.L584
+	.byte	1,5,17,9
+	.half	.L586-.L585
+	.byte	1,5,82,9
+	.half	.L251-.L586
+	.byte	1,5,12,9
+	.half	.L252-.L251
+	.byte	1,5,102,9
+	.half	.L587-.L252
+	.byte	3,1,1,5,128,1,9
+	.half	.L588-.L587
+	.byte	1,5,93,9
+	.half	.L589-.L588
+	.byte	1,5,2,9
+	.half	.L590-.L589
+	.byte	1,5,149,1,9
+	.half	.L591-.L590
+	.byte	1,5,160,1,9
+	.half	.L592-.L591
+	.byte	1,5,170,1,9
+	.half	.L593-.L592
+	.byte	1,5,180,1,9
+	.half	.L594-.L593
+	.byte	1,5,1,9
+	.half	.L34-.L594
+	.byte	3,3,1,5,39,9
+	.half	.L20-.L34
+	.byte	3,7,1,5,57,9
+	.half	.L255-.L20
+	.byte	1,5,36,9
+	.half	.L254-.L255
+	.byte	3,3,1,5,49,9
+	.half	.L256-.L254
+	.byte	1,5,68,9
+	.half	.L257-.L256
+	.byte	1,5,65,9
+	.half	.L258-.L257
+	.byte	1,5,32,9
+	.half	.L259-.L258
+	.byte	1,5,35,9
+	.half	.L595-.L259
+	.byte	3,1,1,5,68,9
+	.half	.L596-.L595
+	.byte	1,5,81,9
+	.half	.L260-.L596
+	.byte	1,5,65,9
+	.half	.L261-.L260
+	.byte	1,5,31,9
+	.half	.L262-.L261
+	.byte	1,5,36,9
+	.half	.L597-.L262
+	.byte	3,3,1,5,12,9
+	.half	.L598-.L597
+	.byte	1,5,48,9
+	.half	.L599-.L598
+	.byte	3,1,1,5,17,9
+	.half	.L600-.L599
+	.byte	1,5,101,9
+	.half	.L601-.L600
+	.byte	1,5,62,9
+	.half	.L602-.L601
+	.byte	1,5,77,9
+	.half	.L603-.L602
+	.byte	1,5,58,9
+	.half	.L604-.L603
+	.byte	1,5,12,9
+	.half	.L605-.L604
+	.byte	1,5,48,9
+	.half	.L606-.L605
+	.byte	3,1,1,5,17,9
+	.half	.L607-.L606
+	.byte	1,5,48,9
+	.half	.L608-.L607
+	.byte	1,5,101,9
+	.half	.L609-.L608
+	.byte	1,5,62,9
+	.half	.L610-.L609
+	.byte	1,5,58,9
+	.half	.L611-.L610
+	.byte	1,5,12,9
+	.half	.L612-.L611
+	.byte	1,5,26,9
+	.half	.L613-.L612
+	.byte	3,10,1,5,1,9
+	.half	.L614-.L613
+	.byte	1,5,27,7,9
+	.half	.L615-.L614
+	.byte	3,1,1,5,53,9
+	.half	.L616-.L615
+	.byte	1,5,72,9
+	.half	.L617-.L616
+	.byte	1,5,69,9
+	.half	.L618-.L617
+	.byte	1,5,33,9
+	.half	.L263-.L618
+	.byte	3,1,1,5,1,9
+	.half	.L619-.L263
+	.byte	1,5,34,7,9
+	.half	.L170-.L619
+	.byte	3,4,1,5,67,9
+	.half	.L265-.L170
+	.byte	1,5,90,9
+	.half	.L268-.L265
+	.byte	1,5,101,9
+	.half	.L271-.L268
+	.byte	1,5,123,9
+	.half	.L620-.L271
+	.byte	1,5,116,9
+	.half	.L42-.L620
+	.byte	1,5,138,1,9
+	.half	.L43-.L42
+	.byte	1,5,162,1,9
+	.half	.L621-.L43
+	.byte	1,5,154,1,9
+	.half	.L44-.L621
+	.byte	1,5,34,9
+	.half	.L45-.L44
+	.byte	3,1,1,5,67,9
+	.half	.L266-.L45
+	.byte	1,5,90,9
+	.half	.L269-.L266
+	.byte	1,5,101,9
+	.half	.L274-.L269
+	.byte	1,5,125,9
+	.half	.L622-.L274
+	.byte	1,5,117,9
+	.half	.L46-.L622
+	.byte	1,5,140,1,9
+	.half	.L47-.L46
+	.byte	1,5,163,1,9
+	.half	.L623-.L47
+	.byte	1,5,155,1,9
+	.half	.L48-.L623
+	.byte	1,5,37,9
+	.half	.L49-.L48
+	.byte	3,1,1,5,58,9
+	.half	.L275-.L49
+	.byte	1,5,55,9
+	.half	.L272-.L275
+	.byte	1,5,17,9
+	.half	.L624-.L272
+	.byte	1,5,6,9
+	.half	.L41-.L624
+	.byte	3,2,1,5,12,9
+	.half	.L625-.L41
+	.byte	1,5,6,9
+	.half	.L626-.L625
+	.byte	3,1,1,5,12,9
+	.half	.L627-.L626
+	.byte	1,5,6,9
+	.half	.L628-.L627
+	.byte	3,1,1,5,12,9
+	.half	.L629-.L628
+	.byte	1,5,30,9
+	.half	.L630-.L629
+	.byte	3,126,1,5,61,9
+	.half	.L40-.L630
+	.byte	3,4,1,5,95,9
+	.half	.L277-.L40
+	.byte	1,5,118,9
+	.half	.L279-.L277
+	.byte	1,5,129,1,9
+	.half	.L281-.L279
+	.byte	1,5,153,1,9
+	.half	.L631-.L281
+	.byte	1,5,145,1,9
+	.half	.L51-.L631
+	.byte	1,5,168,1,9
+	.half	.L52-.L51
+	.byte	1,5,192,1,9
+	.half	.L632-.L52
+	.byte	1,5,184,1,9
+	.half	.L53-.L632
+	.byte	1,5,6,9
+	.half	.L54-.L53
+	.byte	3,1,1,5,12,9
+	.half	.L633-.L54
+	.byte	1,5,6,9
+	.half	.L634-.L633
+	.byte	3,1,1,5,12,9
+	.half	.L635-.L634
+	.byte	1,5,6,9
+	.half	.L636-.L635
+	.byte	3,1,1,5,12,9
+	.half	.L637-.L636
+	.byte	1,5,1,9
+	.half	.L50-.L637
+	.byte	3,2,1,5,78,9
+	.half	.L55-.L50
+	.byte	3,4,1,5,104,9
+	.half	.L638-.L55
+	.byte	1,5,69,9
+	.half	.L639-.L638
+	.byte	1,5,2,9
+	.half	.L640-.L639
+	.byte	1,5,125,9
+	.half	.L641-.L640
+	.byte	1,5,141,1,9
+	.half	.L642-.L641
+	.byte	1,5,153,1,9
+	.half	.L643-.L642
+	.byte	1,5,165,1,9
+	.half	.L644-.L643
+	.byte	1,5,1,9
+	.half	.L645-.L644
+	.byte	3,1,1,7,9
+	.half	.L111-.L645
+	.byte	0,1,1
+.L410:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN9BLDCMotor15setPhaseVoltageEfff')
+	.sect	'.debug_ranges'
+.L110:
+	.word	-1,.L70,0,.L111-.L70,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN9BLDCMotor12estimateBEMFEf')
+	.sect	'.debug_info'
+.L112:
+	.word	363
+	.half	3
+	.word	.L113
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L115,.L114
+	.byte	2
+	.word	.L73
+	.byte	3
+	.byte	'_ZN9BLDCMotor12estimateBEMFEf',0,1,144,1,7
+	.word	.L132
+	.byte	1,1,1
+	.word	.L72,.L174,.L71
+	.byte	4
+	.byte	'this',0,1,144,1,62
+	.word	.L175,.L176
+	.byte	4
+	.byte	'__6385_37_vel',0,1,144,1,75
+	.word	.L132,.L177
+	.byte	5
+	.word	.L72,.L174
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN9BLDCMotor12estimateBEMFEf')
+	.sect	'.debug_abbrev'
+.L113:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN9BLDCMotor12estimateBEMFEf')
+	.sect	'.debug_line'
+.L114:
+	.word	.L647-.L646
+.L646:
+	.half	3
+	.word	.L649-.L648
+.L648:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/BLDCMotor.cpp',0,0,0,0,0
+.L649:
+	.byte	5,48,7,0,5,2
+	.word	.L72
+	.byte	3,146,1,1,5,63,9
+	.half	.L650-.L72
+	.byte	1,5,60,9
+	.half	.L651-.L650
+	.byte	1,5,23,9
+	.half	.L652-.L651
+	.byte	1,5,82,9
+	.half	.L653-.L652
+	.byte	1,5,79,9
+	.half	.L654-.L653
+	.byte	1,5,1,9
+	.half	.L655-.L654
+	.byte	1,9
+	.half	.L56-.L655
+	.byte	3,1,1,7,9
+	.half	.L116-.L56
+	.byte	0,1,1
+.L647:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN9BLDCMotor12estimateBEMFEf')
+	.sect	'.debug_ranges'
+.L115:
+	.word	-1,.L72,0,.L116-.L72,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZTV9BLDCMotor')
+	.sect	'.debug_info'
+.L117:
+	.word	254
+	.half	3
+	.word	.L118
+	.byte	4,1
+	.byte	'../simplefoc_bldc_motor_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L73
+	.byte	3
+	.byte	'_ZTV9BLDCMotor',0,14,25,11
+	.word	.L178
+	.byte	1,5,3
+	.word	_ZTV9BLDCMotor
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZTV9BLDCMotor')
+	.sect	'.debug_abbrev'
+.L118:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('trap_120_map')
+	.sect	'.debug_info'
+.L119:
+	.word	252
+	.half	3
+	.word	.L120
+	.byte	4,1
+	.byte	'../simplefoc_bldc_motor_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L73
+	.byte	3
+	.byte	'trap_120_map',0,14,7,5
+	.word	.L179
+	.byte	1,5,3
+	.word	trap_120_map
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('trap_120_map')
+	.sect	'.debug_abbrev'
+.L120:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('trap_150_map')
+	.sect	'.debug_info'
+.L121:
+	.word	252
+	.half	3
+	.word	.L122
+	.byte	4,1
+	.byte	'../simplefoc_bldc_motor_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L73
+	.byte	3
+	.byte	'trap_150_map',0,14,18,5
+	.word	.L180
+	.byte	1,5,3
+	.word	trap_150_map
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('trap_150_map')
+	.sect	'.debug_abbrev'
+.L122:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZTI9BLDCMotor')
+	.sect	'.debug_info'
+.L123:
+	.word	254
+	.half	3
+	.word	.L124
+	.byte	4,1
+	.byte	'../simplefoc_bldc_motor_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L73
+	.byte	3
+	.byte	'_ZTI9BLDCMotor',0,14,20,35
+	.word	.L181
+	.byte	1,5,3
+	.word	_ZTI9BLDCMotor
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZTI9BLDCMotor')
+	.sect	'.debug_abbrev'
+.L124:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZTS9BLDCMotor')
+	.sect	'.debug_info'
+.L125:
+	.word	255
+	.half	3
+	.word	.L126
+	.byte	4,1
+	.byte	'../simplefoc_bldc_motor_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L73
+	.byte	3
+	.byte	'_ZTS9BLDCMotor',0,14,20,149,1
+	.word	.L182
+	.byte	1,5,3
+	.word	_ZTS9BLDCMotor
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZTS9BLDCMotor')
+	.sect	'.debug_abbrev'
+.L126:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN9BLDCMotor10linkDriverEP10BLDCDriver')
+	.sect	'.debug_loc'
+.L61:
+	.word	-1,.L62,0,.L145-.L62
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L149:
+	.word	-1,.L62,0,.L145-.L62
+	.half	1
+	.byte	101
+	.word	0,0
+.L147:
+	.word	-1,.L62,0,.L145-.L62
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN9BLDCMotor12estimateBEMFEf')
+	.sect	'.debug_loc'
+.L71:
+	.word	-1,.L72,0,.L174-.L72
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L177:
+	.word	-1,.L72,0,.L174-.L72
+	.half	1
+	.byte	84
+	.word	0,0
+.L176:
+	.word	-1,.L72,0,.L174-.L72
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN9BLDCMotor15setPhaseVoltageEfff')
+	.sect	'.debug_loc'
+.L69:
+	.word	-1,.L70,0,.L210-.L70
+	.half	2
+	.byte	138,0
+	.word	.L210-.L70,.L160-.L70
+	.half	2
+	.byte	138,8
+	.word	.L160-.L70,.L160-.L70
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L163:
+	.word	-1,.L70,0,.L211-.L70
+	.half	1
+	.byte	84
+	.word	.L24-.L70,.L25-.L70
+	.half	1
+	.byte	88
+	.word	.L216-.L70,.L217-.L70
+	.half	1
+	.byte	88
+	.word	.L218-.L70,.L219-.L70
+	.half	1
+	.byte	88
+	.word	.L221-.L70,.L222-.L70
+	.half	1
+	.byte	88
+	.word	.L223-.L70,.L224-.L70
+	.half	1
+	.byte	88
+	.word	.L225-.L70,.L226-.L70
+	.half	1
+	.byte	88
+	.word	.L227-.L70,.L228-.L70
+	.half	1
+	.byte	88
+	.word	.L22-.L70,.L229-.L70
+	.half	1
+	.byte	84
+	.word	.L31-.L70,.L32-.L70
+	.half	1
+	.byte	88
+	.word	.L233-.L70,.L234-.L70
+	.half	1
+	.byte	88
+	.word	.L235-.L70,.L236-.L70
+	.half	1
+	.byte	88
+	.word	.L238-.L70,.L239-.L70
+	.half	1
+	.byte	88
+	.word	.L240-.L70,.L241-.L70
+	.half	1
+	.byte	88
+	.word	.L243-.L70,.L244-.L70
+	.half	1
+	.byte	88
+	.word	.L245-.L70,.L246-.L70
+	.half	1
+	.byte	88
+	.word	.L247-.L70,.L248-.L70
+	.half	1
+	.byte	88
+	.word	.L249-.L70,.L250-.L70
+	.half	1
+	.byte	88
+	.word	.L251-.L70,.L252-.L70
+	.half	1
+	.byte	88
+	.word	.L20-.L70,.L253-.L70
+	.half	1
+	.byte	84
+	.word	.L258-.L70,.L259-.L70
+	.half	1
+	.byte	88
+	.word	.L260-.L70,.L261-.L70
+	.half	1
+	.byte	88
+	.word	0,0
+.L164:
+	.word	-1,.L70,0,.L212-.L70
+	.half	1
+	.byte	85
+	.word	.L22-.L70,.L230-.L70
+	.half	1
+	.byte	85
+	.word	.L20-.L70,.L254-.L70
+	.half	1
+	.byte	85
+	.word	.L256-.L70,.L257-.L70
+	.half	1
+	.byte	89
+	.word	.L261-.L70,.L262-.L70
+	.half	1
+	.byte	89
+	.word	0,0
+.L165:
+	.word	-1,.L70,0,.L212-.L70
+	.half	1
+	.byte	86
+	.word	.L22-.L70,.L230-.L70
+	.half	1
+	.byte	86
+	.word	.L20-.L70,.L254-.L70
+	.half	1
+	.byte	86
+	.word	.L253-.L70,.L254-.L70
+	.half	1
+	.byte	84
+	.word	0,0
+.L166:
+	.word	-1,.L70,.L263-.L70,.L40-.L70
+	.half	1
+	.byte	84
+	.word	0,0
+.L167:
+	.word	-1,.L70,.L214-.L70,.L215-.L70
+	.half	1
+	.byte	81
+	.word	.L26-.L70,.L220-.L70
+	.half	1
+	.byte	81
+	.word	.L28-.L70,.L27-.L70
+	.half	1
+	.byte	81
+	.word	.L231-.L70,.L232-.L70
+	.half	1
+	.byte	81
+	.word	.L33-.L70,.L237-.L70
+	.half	1
+	.byte	81
+	.word	.L35-.L70,.L242-.L70
+	.half	1
+	.byte	81
+	.word	.L37-.L70,.L34-.L70
+	.half	1
+	.byte	81
+	.word	0,0
+.L169:
+	.word	-1,.L70,0,.L160-.L70
+	.half	2
+	.byte	145,124
+	.word	0,0
+.L168:
+	.word	-1,.L70,0,.L160-.L70
+	.half	2
+	.byte	145,120
+	.word	0,0
+.L171:
+	.word	0,0
+.L172:
+	.word	0,0
+.L173:
+	.word	0,0
+.L270:
+	.word	-1,.L70,.L271-.L70,.L266-.L70
+	.half	1
+	.byte	82
+	.word	.L266-.L70,.L272-.L70
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L49-.L70,.L275-.L70
+	.half	1
+	.byte	82
+	.word	0,0
+.L264:
+	.word	-1,.L70,.L265-.L70,.L266-.L70
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L274-.L70,.L41-.L70
+	.half	1
+	.byte	83
+	.word	0,0
+.L273:
+	.word	-1,.L70,.L269-.L70,.L41-.L70
+	.half	1
+	.byte	81
+	.word	0,0
+.L278:
+	.word	-1,.L70,.L279-.L70,.L50-.L70
+	.half	1
+	.byte	81
+	.word	0,0
+.L280:
+	.word	-1,.L70,.L281-.L70,.L50-.L70
+	.half	1
+	.byte	82
+	.word	0,0
+.L276:
+	.word	-1,.L70,.L277-.L70,.L50-.L70
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L267:
+	.word	-1,.L70,.L268-.L70,.L269-.L70
+	.half	1
+	.byte	81
+	.word	0,0
+.L162:
+	.word	-1,.L70,0,.L212-.L70
+	.half	1
+	.byte	100
+	.word	.L213-.L70,.L160-.L70
+	.half	1
+	.byte	108
+	.word	.L22-.L70,.L230-.L70
+	.half	1
+	.byte	100
+	.word	.L20-.L70,.L255-.L70
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN9BLDCMotor4initEv')
+	.sect	'.debug_loc'
+.L63:
+	.word	-1,.L64,0,.L150-.L64
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L202:
+	.word	-1,.L64,.L203-.L64,.L9-.L64
+	.half	2
+	.byte	144,32
+	.word	0,0
+.L152:
+	.word	-1,.L64,0,.L196-.L64
+	.half	1
+	.byte	100
+	.word	.L197-.L64,.L150-.L64
+	.half	1
+	.byte	108
+	.word	.L198-.L64,.L199-.L64
+	.half	1
+	.byte	100
+	.word	.L200-.L64,.L201-.L64
+	.half	1
+	.byte	100
+	.word	.L204-.L64,.L205-.L64
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN9BLDCMotor6enableEv')
+	.sect	'.debug_loc'
+.L67:
+	.word	-1,.L68,0,.L157-.L68
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L159:
+	.word	-1,.L68,0,.L208-.L68
+	.half	1
+	.byte	100
+	.word	.L209-.L68,.L157-.L68
+	.half	1
+	.byte	108
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN9BLDCMotor7disableEv')
+	.sect	'.debug_loc'
+.L65:
+	.word	-1,.L66,0,.L154-.L66
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L156:
+	.word	-1,.L66,0,.L206-.L66
+	.half	1
+	.byte	100
+	.word	.L207-.L66,.L154-.L66
+	.half	1
+	.byte	108
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN9BLDCMotorC1Eiffff')
+	.sect	'.debug_loc'
+.L57:
+	.word	-1,.L58,0,.L127-.L58
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L131:
+	.word	-1,.L58,0,.L183-.L58
+	.half	1
+	.byte	84
+	.word	.L185-.L58,.L186-.L58
+	.half	1
+	.byte	95
+	.word	0,0
+.L133:
+	.word	-1,.L58,0,.L183-.L58
+	.half	1
+	.byte	85
+	.word	.L188-.L58,.L189-.L58
+	.half	1
+	.byte	88
+	.word	0,0
+.L134:
+	.word	-1,.L58,0,.L183-.L58
+	.half	1
+	.byte	86
+	.word	.L189-.L58,.L190-.L58
+	.half	1
+	.byte	89
+	.word	0,0
+.L135:
+	.word	-1,.L58,0,.L183-.L58
+	.half	1
+	.byte	87
+	.word	.L187-.L58,.L127-.L58
+	.half	1
+	.byte	92
+	.word	.L191-.L58,.L127-.L58
+	.half	1
+	.byte	91
+	.word	0,0
+.L136:
+	.word	-1,.L58,0,.L127-.L58
+	.half	2
+	.byte	145,0
+	.word	0,.L127-.L58
+	.half	2
+	.byte	145,0
+	.word	0,0
+.L192:
+	.word	-1,.L58,.L191-.L58,.L127-.L58
+	.half	2
+	.byte	144,37
+	.word	0,0
+.L129:
+	.word	-1,.L58,0,.L183-.L58
+	.half	1
+	.byte	100
+	.word	.L184-.L58,.L127-.L58
+	.half	1
+	.byte	111
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN9BLDCMotorC2Eiffff')
+	.sect	'.debug_loc'
+.L59:
+	.word	-1,.L60,0,.L193-.L60
+	.half	2
+	.byte	138,0
+	.word	.L193-.L60,.L137-.L60
+	.half	2
+	.byte	138,8
+	.word	.L137-.L60,.L137-.L60
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L140:
+	.word	-1,.L60,0,.L194-.L60
+	.half	1
+	.byte	84
+	.word	0,0
+.L141:
+	.word	-1,.L60,0,.L194-.L60
+	.half	1
+	.byte	85
+	.word	0,0
+.L142:
+	.word	-1,.L60,0,.L194-.L60
+	.half	1
+	.byte	86
+	.word	0,0
+.L143:
+	.word	-1,.L60,0,.L194-.L60
+	.half	1
+	.byte	87
+	.word	0,0
+.L144:
+	.word	-1,.L60,0,.L137-.L60
+	.half	2
+	.byte	145,0
+	.word	0,.L137-.L60
+	.half	2
+	.byte	145,0
+	.word	.L195-.L60,.L137-.L60
+	.half	1
+	.byte	95
+	.word	0,0
+.L139:
+	.word	-1,.L60,0,.L194-.L60
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L656:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('_ZN9BLDCMotorC1Eiffff')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L656,.L58,.L127-.L58
+	.sdecl	'.debug_frame',debug,cluster('_ZN9BLDCMotorC2Eiffff')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L656,.L60,.L137-.L60
+	.byte	4
+	.word	(.L193-.L60)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L137-.L193)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN9BLDCMotor10linkDriverEP10BLDCDriver')
+	.sect	'.debug_frame'
+	.word	20
+	.word	.L656,.L62,.L145-.L62
+	.byte	8,18,8,19,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('_ZN9BLDCMotor4initEv')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L656,.L64,.L150-.L64
+	.sdecl	'.debug_frame',debug,cluster('_ZN9BLDCMotor7disableEv')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L656,.L66,.L154-.L66
+	.sdecl	'.debug_frame',debug,cluster('_ZN9BLDCMotor6enableEv')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L656,.L68,.L157-.L68
+	.sdecl	'.debug_frame',debug,cluster('_ZN9BLDCMotor15setPhaseVoltageEfff')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L656,.L70,.L160-.L70
+	.byte	4
+	.word	(.L210-.L70)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L160-.L210)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN9BLDCMotor12estimateBEMFEf')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L656,.L72,.L174-.L72
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	; Module end

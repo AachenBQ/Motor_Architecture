@@ -9,6 +9,7 @@ CRC16/MODBUS 的计算范围为 ``VER`` 到 ``PAYLOAD``，不包含帧头和 CRC
 """
 
 from enum import IntEnum
+import math
 import struct
 from typing import Iterable, List, Optional, Tuple, Union
 
@@ -48,6 +49,10 @@ class Command(IntEnum):
     SET_TELEMETRY_PROFILE = 0x23
     GET_BACKEND_INFO = 0x24
     GET_TELEMETRY_PROFILE = 0x25
+    SET_OPEN_LOOP_CONFIG = 0x26
+    GET_OPEN_LOOP_CONFIG = 0x27
+    START_OPEN_LOOP = 0x28
+    GET_BUILD_CONFIG = 0x29
     TELEMETRY = 0x80
     FAULT_EVENT = 0x81
     ACK = 0xF0
@@ -58,6 +63,12 @@ class ControlMode(IntEnum):
     TORQUE = 0
     SPEED = 1
     POSITION = 2
+    OPEN_LOOP_SPEED = 3
+
+
+class OpenLoopBackend(IntEnum):
+    DIRECT_SINE = 0
+    SIMPLEFOC = 1
 
 
 class PidLoop(IntEnum):
@@ -78,6 +89,12 @@ MODE_LABELS = {
     ControlMode.TORQUE: "转矩",
     ControlMode.SPEED: "速度",
     ControlMode.POSITION: "位置",
+    ControlMode.OPEN_LOOP_SPEED: "开环速度",
+}
+
+OPEN_LOOP_BACKEND_LABELS = {
+    OpenLoopBackend.DIRECT_SINE: "直接三相正弦",
+    OpenLoopBackend.SIMPLEFOC: "SimpleFOC 开环",
 }
 
 PID_LOOP_LABELS = {
@@ -161,9 +178,54 @@ class Telemetry(_ValueObject):
         self.status = status
 
 
+class OpenLoopConfig(_ValueObject):
+    __slots__ = (
+        "motor_id",
+        "backend",
+        "pole_pairs",
+        "flags",
+        "bus_voltage_v",
+        "voltage_limit_v",
+        "target_velocity_rad_s",
+        "acceleration_rad_s2",
+        "update_period_ms",
+        "startup_delay_ms",
+        "max_runtime_ms",
+    )
+
+    def __init__(
+        self,
+        motor_id,
+        backend,
+        pole_pairs,
+        flags,
+        bus_voltage_v,
+        voltage_limit_v,
+        target_velocity_rad_s,
+        acceleration_rad_s2,
+        update_period_ms,
+        startup_delay_ms,
+        max_runtime_ms,
+    ):
+        self.motor_id = int(motor_id)
+        self.backend = OpenLoopBackend(backend)
+        self.pole_pairs = int(pole_pairs)
+        self.flags = int(flags)
+        self.bus_voltage_v = float(bus_voltage_v)
+        self.voltage_limit_v = float(voltage_limit_v)
+        self.target_velocity_rad_s = float(target_velocity_rad_s)
+        self.acceleration_rad_s2 = float(acceleration_rad_s2)
+        self.update_period_ms = int(update_period_ms)
+        self.startup_delay_ms = int(startup_delay_ms)
+        self.max_runtime_ms = int(max_runtime_ms)
+
+
 TELEMETRY_STRUCT = struct.Struct("<BfffffH")
 LIMITS_STRUCT = struct.Struct("<Bffffffff")
 TELEMETRY_PROFILE_STRUCT = struct.Struct("<HI")
+OPEN_LOOP_CONFIG_STRUCT = struct.Struct("<BBBBffffHHI")
+LEGACY_BUILD_CONFIG_STRUCT = struct.Struct("<BBBBIIIIHHHHf")
+BUILD_CONFIG_STRUCT = struct.Struct("<BBBBBIIIIHHHHf")
 
 
 def crc16_modbus(data: Union[bytes, bytearray, memoryview]) -> int:
@@ -387,6 +449,111 @@ def unpack_telemetry_profile(payload: bytes) -> Tuple[int, int]:
             )
         )
     return TELEMETRY_PROFILE_STRUCT.unpack(payload)
+
+
+def pack_open_loop_config(value: OpenLoopConfig) -> bytes:
+    numeric_values = (
+        value.bus_voltage_v,
+        value.voltage_limit_v,
+        value.target_velocity_rad_s,
+        value.acceleration_rad_s2,
+    )
+    if not all(math.isfinite(item) for item in numeric_values):
+        raise ValueError("开环参数不能包含无穷大或 NaN")
+    if not 1 <= value.motor_id <= 0xFF:
+        raise ValueError("电机地址必须在 1..255 范围内")
+    if not 1 <= value.pole_pairs <= 64:
+        raise ValueError("极对数必须在 1..64 范围内")
+    if not 0 <= value.flags <= 0xFF:
+        raise ValueError("开环标志必须在 0..255 范围内")
+    if value.bus_voltage_v <= 0.0:
+        raise ValueError("母线电压必须大于 0 V")
+    if (
+        value.voltage_limit_v <= 0.0
+        or value.voltage_limit_v > value.bus_voltage_v
+    ):
+        raise ValueError("电压限幅必须大于 0 V 且不高于母线电压")
+    if abs(value.target_velocity_rad_s) > 1000.0:
+        raise ValueError("开环目标速度绝对值不能超过 1000 rad/s")
+    if not 0.01 <= value.acceleration_rad_s2 <= 10000.0:
+        raise ValueError("加速度必须在 0.01..10000 rad/s² 范围内")
+    if not 1 <= value.update_period_ms <= 100:
+        raise ValueError("更新周期必须在 1..100 ms 范围内")
+    if not 0 <= value.startup_delay_ms <= 5000:
+        raise ValueError("启动延时必须在 0..5000 ms 范围内")
+    if not 1000 <= value.max_runtime_ms <= 600000:
+        raise ValueError("最长运行时间必须在 1000..600000 ms 范围内")
+    return OPEN_LOOP_CONFIG_STRUCT.pack(
+        value.motor_id,
+        int(value.backend),
+        value.pole_pairs,
+        value.flags,
+        value.bus_voltage_v,
+        value.voltage_limit_v,
+        value.target_velocity_rad_s,
+        value.acceleration_rad_s2,
+        value.update_period_ms,
+        value.startup_delay_ms,
+        value.max_runtime_ms,
+    )
+
+
+def unpack_open_loop_config(payload: bytes) -> OpenLoopConfig:
+    if len(payload) != OPEN_LOOP_CONFIG_STRUCT.size:
+        raise ValueError(
+            "开环配置载荷长度错误：应为 {}，实际为 {}".format(
+                OPEN_LOOP_CONFIG_STRUCT.size,
+                len(payload),
+            )
+        )
+    return OpenLoopConfig(*OPEN_LOOP_CONFIG_STRUCT.unpack(payload))
+
+
+def unpack_build_config(
+    payload: bytes,
+) -> Tuple[int, int, int, int, int, int, int, int, int, int, int, int, int, float]:
+    if len(payload) == LEGACY_BUILD_CONFIG_STRUCT.size:
+        legacy = LEGACY_BUILD_CONFIG_STRUCT.unpack(payload)
+        (
+            device_id,
+            real_hardware_enabled,
+            simplefoc_enabled,
+            default_pole_pairs,
+            adc_hz,
+            pwm_hz,
+            isr_hz,
+            outer_hz,
+            telemetry_hz,
+            heartbeat_default_ms,
+            heartbeat_min_ms,
+            heartbeat_max_ms,
+            torque_constant,
+        ) = legacy
+        return (
+            device_id,
+            real_hardware_enabled,
+            real_hardware_enabled,
+            simplefoc_enabled,
+            default_pole_pairs,
+            adc_hz,
+            pwm_hz,
+            isr_hz,
+            outer_hz,
+            telemetry_hz,
+            heartbeat_default_ms,
+            heartbeat_min_ms,
+            heartbeat_max_ms,
+            torque_constant,
+        )
+    if len(payload) != BUILD_CONFIG_STRUCT.size:
+        raise ValueError(
+            "固件构建配置载荷长度错误：应为 {}（或兼容长度 {}），实际为 {}".format(
+                BUILD_CONFIG_STRUCT.size,
+                LEGACY_BUILD_CONFIG_STRUCT.size,
+                len(payload),
+            )
+        )
+    return BUILD_CONFIG_STRUCT.unpack(payload)
 
 
 def pack_telemetry(value: Telemetry) -> bytes:

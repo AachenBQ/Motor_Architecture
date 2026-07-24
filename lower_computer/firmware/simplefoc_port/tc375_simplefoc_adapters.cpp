@@ -45,7 +45,7 @@ static float ClampDuty(float voltage, float supply, float voltage_limit)
 
 Tc375BldcDriver::Tc375BldcDriver()
 {
-    pwm_frequency = MOTOR_CONTROL_ISR_HZ;
+    pwm_frequency = MOTOR_PWM_FREQUENCY_HZ;
     voltage_power_supply = MOTOR_DEFAULT_BUS_MAX_V;
     voltage_limit = MOTOR_DEFAULT_BUS_MAX_V * 0.5F;
 }
@@ -59,9 +59,13 @@ int Tc375BldcDriver::init()
 
 void Tc375BldcDriver::enable()
 {
-#if MOTOR_REAL_HARDWARE_ENABLED
-    Tc375Hal_SetGateEnabled(true);
+#if MOTOR_CONTROL_HARDWARE_ENABLED
     Tc375Hal_SetPwmEnabled(true);
+#if MOTOR_POWER_STAGE_ENABLED
+    Tc375Hal_SetGateEnabled(true);
+#else
+    Tc375Hal_SetGateEnabled(false);
+#endif
 #endif
 }
 
@@ -77,7 +81,7 @@ void Tc375BldcDriver::setPwm(float ua, float ub, float uc)
     dc_a = ClampDuty(ua, voltage_power_supply, voltage_limit);
     dc_b = ClampDuty(ub, voltage_power_supply, voltage_limit);
     dc_c = ClampDuty(uc, voltage_power_supply, voltage_limit);
-#if MOTOR_REAL_HARDWARE_ENABLED
+#if MOTOR_CONTROL_HARDWARE_ENABLED
     Tc375Hal_SetPhaseDuty(dc_a, dc_b, dc_c);
 #else
     Tc375Hal_SetPhaseDuty(0.0F, 0.0F, 0.0F);
@@ -93,7 +97,7 @@ void Tc375BldcDriver::setPhaseState(
         (sa == PhaseState::PHASE_ON) &&
         (sb == PhaseState::PHASE_ON) &&
         (sc == PhaseState::PHASE_ON);
-#if MOTOR_REAL_HARDWARE_ENABLED
+#if MOTOR_CONTROL_HARDWARE_ENABLED
     Tc375Hal_SetPwmEnabled(all_on);
 #else
     (void)all_on;

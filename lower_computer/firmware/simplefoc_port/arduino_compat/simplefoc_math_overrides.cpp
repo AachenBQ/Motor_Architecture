@@ -1,4 +1,4 @@
-#include "common/foc_utils.h"
+#include "../../../third_party/Arduino-FOC/src/common/foc_utils.h"
 
 float _sin(float angle)
 {

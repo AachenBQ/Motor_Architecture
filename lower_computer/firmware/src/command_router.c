@@ -59,6 +59,8 @@ static ProtocolStatus FromMotorResult(MotorResult result)
             return PROTOCOL_HEARTBEAT_REQUIRED;
         case MOTOR_RESULT_HARDWARE_FAULT:
             return PROTOCOL_HARDWARE_FAULT;
+        case MOTOR_RESULT_CAPABILITY_UNAVAILABLE:
+            return PROTOCOL_CAPABILITY_UNAVAILABLE;
         default:
             return PROTOCOL_INVALID_STATE;
     }
@@ -152,29 +154,33 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
     switch (request->command)
     {
         case CMD_PING:
-            memcpy(detail, "TC375-MCU/0.2", 13U);
+            memcpy(detail, MOTOR_FIRMWARE_PING_TEXT, 13U);
             detail_length = 13U;
             break;
 
         case CMD_GET_DEVICE_INFO:
-            detail[0] = 0U;
-            detail[1] = 2U;
-            detail[2] = 0U;
+            detail[0] = MOTOR_FIRMWARE_VERSION_MAJOR;
+            detail[1] = MOTOR_FIRMWARE_VERSION_MINOR;
+            detail[2] = MOTOR_FIRMWARE_VERSION_PATCH;
             detail[3] = 1U;
             detail[4] = 0U;
             WriteU32(&detail[5], 0x37500001UL);
             memset(&detail[9], 0, 24U);
             memcpy(&detail[9], "TC375-MCU", 9U);
-            memcpy(&detail[25], "LOCAL", 5U);
+            memcpy(
+                &detail[25],
+                MOTOR_FIRMWARE_BUILD_TAG,
+                MOTOR_FIRMWARE_BUILD_TAG_LENGTH);
             detail_length = 33U;
             break;
 
         case CMD_GET_CAPABILITIES:
             detail[0] = 1U;
             detail[1] = 0x01U;
-            detail[2] = 0x07U;
+            detail[2] = 0x0FU;
             WriteU32(&detail[3], (1UL << 0) | (1UL << 2) |
-                                    (1UL << 3) | (1UL << 4));
+                                    (1UL << 3) | (1UL << 4) |
+                                    (1UL << 5));
             WriteU16(&detail[7], 1000U);
             detail_length = 9U;
             break;
@@ -303,8 +309,18 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
             break;
 
         case CMD_CONTROLLED_STOP:
+            if (!IsSingleMotorPayload(request, 1U) ||
+                (request->payload_length != 1U))
+            {
+                status = PROTOCOL_INVALID_PAYLOAD;
+                break;
+            }
+            MotorControl_RequestControlledStop(router->motor);
+            break;
+
         case CMD_QUICK_STOP:
-            if (!IsSingleMotorPayload(request, 1U))
+            if (!IsSingleMotorPayload(request, 1U) ||
+                (request->payload_length != 1U))
             {
                 status = PROTOCOL_INVALID_PAYLOAD;
                 break;
@@ -355,7 +371,8 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
 
         case CMD_GET_BACKEND_INFO:
             detail[0] = 0U;
-            detail[1] = 1U;
+            detail[1] =
+                MOTOR_CONTROL_HARDWARE_ENABLED ? 1U : 0U;
             detail_length = 2U;
             break;
 
@@ -363,6 +380,128 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
             WriteU16(detail, router->telemetry_rate_hz);
             WriteU32(&detail[2], router->telemetry_mask);
             detail_length = 6U;
+            break;
+
+        case CMD_SET_OPEN_LOOP_CONFIG:
+            if (!IsSingleMotorPayload(request, 28U) ||
+                (request->payload_length != 28U))
+            {
+                status = PROTOCOL_INVALID_PAYLOAD;
+                break;
+            }
+            {
+                MotorOpenLoopConfig config;
+                memset(&config, 0, sizeof(config));
+                config.backend = request->payload[1];
+                config.pole_pairs = request->payload[2];
+                config.flags = request->payload[3];
+                config.bus_voltage_v = ReadF32(&request->payload[4]);
+                config.voltage_limit_v =
+                    ReadF32(&request->payload[8]);
+                config.target_velocity_rad_s =
+                    ReadF32(&request->payload[12]);
+                config.acceleration_rad_s2 =
+                    ReadF32(&request->payload[16]);
+                config.update_period_ms =
+                    ReadU16(&request->payload[20]);
+                config.startup_delay_ms =
+                    ReadU16(&request->payload[22]);
+                config.max_runtime_ms =
+                    ReadU32(&request->payload[24]);
+                status = FromMotorResult(
+                    MotorControl_SetOpenLoopConfig(
+                        router->motor,
+                        &config));
+            }
+            break;
+
+        case CMD_GET_OPEN_LOOP_CONFIG:
+            if (!IsSingleMotorPayload(request, 1U) ||
+                (request->payload_length != 1U))
+            {
+                status = PROTOCOL_INVALID_PAYLOAD;
+                break;
+            }
+            detail[0] = MOTOR_DEVICE_ID;
+            detail[1] = router->motor->open_loop.backend;
+            detail[2] = router->motor->open_loop.pole_pairs;
+            detail[3] = router->motor->open_loop.flags;
+            WriteF32(
+                &detail[4],
+                router->motor->open_loop.bus_voltage_v);
+            WriteF32(
+                &detail[8],
+                router->motor->open_loop.voltage_limit_v);
+            WriteF32(
+                &detail[12],
+                router->motor->open_loop.target_velocity_rad_s);
+            WriteF32(
+                &detail[16],
+                router->motor->open_loop.acceleration_rad_s2);
+            WriteU16(
+                &detail[20],
+                router->motor->open_loop.update_period_ms);
+            WriteU16(
+                &detail[22],
+                router->motor->open_loop.startup_delay_ms);
+            WriteU32(
+                &detail[24],
+                router->motor->open_loop.max_runtime_ms);
+            detail_length = 28U;
+            break;
+
+        case CMD_START_OPEN_LOOP:
+            if (!IsSingleMotorPayload(request, 1U) ||
+                (request->payload_length != 1U))
+            {
+                status = PROTOCOL_INVALID_PAYLOAD;
+                break;
+            }
+#if MOTOR_CONTROL_HARDWARE_ENABLED
+#if MOTOR_USE_SIMPLEFOC
+            status = FromMotorResult(MotorControl_StartOpenLoop(
+                router->motor,
+                Tc375Hal_TimeMs()));
+#else
+            if (router->motor->open_loop.backend ==
+                MOTOR_OPEN_LOOP_SIMPLEFOC)
+            {
+                status = PROTOCOL_CAPABILITY_UNAVAILABLE;
+            }
+            else
+            {
+                status = FromMotorResult(MotorControl_StartOpenLoop(
+                    router->motor,
+                    Tc375Hal_TimeMs()));
+            }
+#endif
+#else
+            status = PROTOCOL_CAPABILITY_UNAVAILABLE;
+#endif
+            break;
+
+        case CMD_GET_BUILD_CONFIG:
+            if (request->payload_length != 0U)
+            {
+                status = PROTOCOL_INVALID_PAYLOAD;
+                break;
+            }
+            detail[0] = MOTOR_DEVICE_ID;
+            detail[1] =
+                MOTOR_CONTROL_HARDWARE_ENABLED ? 1U : 0U;
+            detail[2] = MOTOR_POWER_STAGE_ENABLED ? 1U : 0U;
+            detail[3] = MOTOR_USE_SIMPLEFOC ? 1U : 0U;
+            detail[4] = MOTOR_POLE_PAIRS;
+            WriteU32(&detail[5], MOTOR_ADC_TRIGGER_HZ);
+            WriteU32(&detail[9], MOTOR_PWM_FREQUENCY_HZ);
+            WriteU32(&detail[13], MOTOR_CONTROL_ISR_HZ);
+            WriteU32(&detail[17], MOTOR_OUTER_LOOP_HZ);
+            WriteU16(&detail[21], MOTOR_TELEMETRY_HZ);
+            WriteU16(&detail[23], MOTOR_HEARTBEAT_DEFAULT_MS);
+            WriteU16(&detail[25], MOTOR_HEARTBEAT_MIN_MS);
+            WriteU16(&detail[27], MOTOR_HEARTBEAT_MAX_MS);
+            WriteF32(&detail[29], MOTOR_TORQUE_CONSTANT_NM_PER_A);
+            detail_length = 33U;
             break;
 
         case CMD_SET_LIMITS:
@@ -396,8 +535,16 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
                     (limits.current_a <= 0.0F) ||
                     (limits.torque_nm <= 0.0F) ||
                     (limits.speed_rad_s <= 0.0F) ||
+                    (fabsf(
+                         router->motor->open_loop
+                             .target_velocity_rad_s) >
+                     limits.speed_rad_s) ||
                     (limits.position_min_rad >= limits.position_max_rad) ||
-                    (limits.bus_min_v >= limits.bus_max_v))
+                    (limits.bus_min_v >= limits.bus_max_v) ||
+                    (router->motor->open_loop.bus_voltage_v <
+                     limits.bus_min_v) ||
+                    (router->motor->open_loop.bus_voltage_v >
+                     limits.bus_max_v))
                 {
                     status = PROTOCOL_OUT_OF_RANGE;
                 }
@@ -496,6 +643,10 @@ void CommandRouter_SendTelemetry(CommandRouter *router, uint8_t sequence)
     {
         status |= 1U << 1;
     }
+    if (router->motor->state == MOTOR_STATE_ESTOP)
+    {
+        status |= 1U << 2;
+    }
     if (router->motor->faults != 0U)
     {
         status |= 1U << 3;
@@ -503,6 +654,14 @@ void CommandRouter_SendTelemetry(CommandRouter *router, uint8_t sequence)
     if (router->motor->heartbeat_valid)
     {
         status |= 1U << 4;
+    }
+    if (router->motor->open_loop_active)
+    {
+        status |= 1U << 5;
+    }
+    if (router->motor->state == MOTOR_STATE_STOPPING)
+    {
+        status |= 1U << 6;
     }
     frame->payload[21] = (uint8_t)(status & 0xFFU);
     frame->payload[22] = (uint8_t)(status >> 8);

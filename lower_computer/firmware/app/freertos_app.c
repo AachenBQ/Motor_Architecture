@@ -32,6 +32,14 @@ static bool ProtocolTransmit(
     return Tc375Hal_UartQueueTx(data, length, high_priority);
 }
 
+static void UpdateProtocolErrorCount(void)
+{
+    uint32_t total =
+        g_parser.crc_errors + g_parser.length_errors;
+    g_router.protocol_errors =
+        total > 0xFFFFU ? 0xFFFFU : (uint16_t)total;
+}
+
 static void CommandTask(void *argument)
 {
     uint8_t bytes[128];
@@ -49,6 +57,7 @@ static void CommandTask(void *argument)
                 CommandRouter_Handle(&g_router, &frame);
             }
         }
+        UpdateProtocolErrorCount();
         vTaskDelay(pdMS_TO_TICKS(1U));
     }
 }

@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc13356a --dep-file=Libraries/iLLD/TC3xx/Tricore/_Impl/IfxI2c_cfg.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -ID:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o Libraries/iLLD/TC3xx/Tricore/_Impl/IfxI2c_cfg.src ../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxI2c_cfg.c"
+	.compiler_invocation	"ctc -f cc69496a --dep-file=Libraries/iLLD/TC3xx/Tricore/_Impl/IfxI2c_cfg.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 -o Libraries/iLLD/TC3xx/Tricore/_Impl/IfxI2c_cfg.src ../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxI2c_cfg.c"
 	.compiler_name		"ctc"
 	;source	'../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxI2c_cfg.c'
 
@@ -18,7 +18,7 @@ IfxI2c_cfg_indexMap:	.type	object
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
 .L3:
-	.word	8455
+	.word	8457
 	.half	3
 	.word	.L4
 	.byte	4
@@ -26,1214 +26,1214 @@ IfxI2c_cfg_indexMap:	.type	object
 	.byte	1
 	.byte	'../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxI2c_cfg.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
 	.word	.L5
 	.byte	2
 	.byte	'short int',0,2,5,3
 	.byte	'__wchar_t',0,1,1,1
-	.word	243
+	.word	245
 	.byte	2
 	.byte	'unsigned int',0,4,7,3
 	.byte	'__size_t',0,1,1,1
-	.word	274
+	.word	276
 	.byte	2
 	.byte	'int',0,4,5,3
 	.byte	'__ptrdiff_t',0,1,1,1
-	.word	307
+	.word	309
 	.byte	4,1,5
-	.word	334
+	.word	336
 	.byte	3
 	.byte	'__codeptr',0,1,1,1
-	.word	336
+	.word	338
 	.byte	2
 	.byte	'unsigned short int',0,2,7,3
 	.byte	'uint16',0,2,112,29
-	.word	359
+	.word	361
 	.byte	2
 	.byte	'unsigned long int',0,4,7,3
 	.byte	'uint32',0,2,116,29
-	.word	396
+	.word	398
 	.byte	3
 	.byte	'sint16',0,2,129,1,29
-	.word	243
+	.word	245
 	.byte	2
 	.byte	'long int',0,4,5,3
 	.byte	'sint32',0,2,134,1,29
-	.word	448
+	.word	450
 	.byte	2
 	.byte	'long long int',0,8,5,3
 	.byte	'sint64',0,2,141,1,29
-	.word	476
+	.word	478
 	.byte	2
 	.byte	'float',0,4,4,3
 	.byte	'float32',0,2,170,1,29
-	.word	509
+	.word	511
 	.byte	6
 	.byte	'void',0,5
-	.word	535
+	.word	537
 	.byte	3
 	.byte	'pvoid',0,3,54,28
-	.word	541
+	.word	543
 	.byte	7
-	.word	535
+	.word	537
 	.byte	5
-	.word	560
+	.word	562
 	.byte	8,3,132,1,9,8,9
 	.byte	'module',0
-	.word	565
+	.word	567
 	.byte	4,2,35,0,9
 	.byte	'index',0
-	.word	448
+	.word	450
 	.byte	4,2,35,4,0,3
 	.byte	'IfxModule_IndexMap',0,3,136,1,3
-	.word	570
+	.word	572
 	.byte	2
 	.byte	'unsigned char',0,1,8,3
 	.byte	'Ifx_UReg_8Bit',0,4,97,24
-	.word	636
+	.word	638
 	.byte	3
 	.byte	'Ifx_UReg_32Bit',0,4,99,24
-	.word	274
+	.word	276
 	.byte	3
 	.byte	'Ifx_SReg_32Bit',0,4,102,24
-	.word	307
+	.word	309
 	.byte	10
 	.byte	'_Ifx_I2C_ACCEN0_Bits',0,5,71,16,4,11
 	.byte	'EN0',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'EN1',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'EN2',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'EN3',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,0,11
 	.byte	'EN4',0,1
-	.word	636
+	.word	638
 	.byte	1,3,2,35,0,11
 	.byte	'EN5',0,1
-	.word	636
+	.word	638
 	.byte	1,2,2,35,0,11
 	.byte	'EN6',0,1
-	.word	636
+	.word	638
 	.byte	1,1,2,35,0,11
 	.byte	'EN7',0,1
-	.word	636
+	.word	638
 	.byte	1,0,2,35,0,11
 	.byte	'EN8',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,1,11
 	.byte	'EN9',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,1,11
 	.byte	'EN10',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,1,11
 	.byte	'EN11',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,1,11
 	.byte	'EN12',0,1
-	.word	636
+	.word	638
 	.byte	1,3,2,35,1,11
 	.byte	'EN13',0,1
-	.word	636
+	.word	638
 	.byte	1,2,2,35,1,11
 	.byte	'EN14',0,1
-	.word	636
+	.word	638
 	.byte	1,1,2,35,1,11
 	.byte	'EN15',0,1
-	.word	636
+	.word	638
 	.byte	1,0,2,35,1,11
 	.byte	'EN16',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,2,11
 	.byte	'EN17',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,2,11
 	.byte	'EN18',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,2,11
 	.byte	'EN19',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,2,11
 	.byte	'EN20',0,1
-	.word	636
+	.word	638
 	.byte	1,3,2,35,2,11
 	.byte	'EN21',0,1
-	.word	636
+	.word	638
 	.byte	1,2,2,35,2,11
 	.byte	'EN22',0,1
-	.word	636
+	.word	638
 	.byte	1,1,2,35,2,11
 	.byte	'EN23',0,1
-	.word	636
+	.word	638
 	.byte	1,0,2,35,2,11
 	.byte	'EN24',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,3,11
 	.byte	'EN25',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,3,11
 	.byte	'EN26',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,3,11
 	.byte	'EN27',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,3,11
 	.byte	'EN28',0,1
-	.word	636
+	.word	638
 	.byte	1,3,2,35,3,11
 	.byte	'EN29',0,1
-	.word	636
+	.word	638
 	.byte	1,2,2,35,3,11
 	.byte	'EN30',0,1
-	.word	636
+	.word	638
 	.byte	1,1,2,35,3,11
 	.byte	'EN31',0,1
-	.word	636
+	.word	638
 	.byte	1,0,2,35,3,0,3
 	.byte	'Ifx_I2C_ACCEN0_Bits',0,5,105,3
-	.word	721
+	.word	723
 	.byte	10
 	.byte	'_Ifx_I2C_ACCEN1_Bits',0,5,108,16,4,11
 	.byte	'reserved_0',0,4
-	.word	274
+	.word	276
 	.byte	32,0,2,35,0,0,3
 	.byte	'Ifx_I2C_ACCEN1_Bits',0,5,111,3
-	.word	1278
+	.word	1280
 	.byte	10
 	.byte	'_Ifx_I2C_ADDRCFG_Bits',0,5,114,16,4,11
 	.byte	'ADR',0,2
-	.word	359
+	.word	361
 	.byte	10,6,2,35,0,11
 	.byte	'reserved_10',0,1
-	.word	636
+	.word	638
 	.byte	6,0,2,35,1,11
 	.byte	'TBAM',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,2,11
 	.byte	'GCE',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,2,11
 	.byte	'MCE',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,2,11
 	.byte	'MNS',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,2,11
 	.byte	'SONA',0,1
-	.word	636
+	.word	638
 	.byte	1,3,2,35,2,11
 	.byte	'SOPE',0,1
-	.word	636
+	.word	638
 	.byte	1,2,2,35,2,11
 	.byte	'reserved_22',0,2
-	.word	359
+	.word	361
 	.byte	10,0,2,35,2,0,3
 	.byte	'Ifx_I2C_ADDRCFG_Bits',0,5,125,3
-	.word	1355
+	.word	1357
 	.byte	10
 	.byte	'_Ifx_I2C_BUSSTAT_Bits',0,5,128,1,16,4,11
 	.byte	'BS',0,1
-	.word	636
+	.word	638
 	.byte	2,6,2,35,0,11
 	.byte	'RNW',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'reserved_3',0,4
-	.word	274
+	.word	276
 	.byte	29,0,2,35,0,0,3
 	.byte	'Ifx_I2C_BUSSTAT_Bits',0,5,133,1,3
-	.word	1566
+	.word	1568
 	.byte	10
 	.byte	'_Ifx_I2C_CLC_Bits',0,5,136,1,16,4,11
 	.byte	'DISR',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'DISS',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'reserved_2',0,4
-	.word	274
+	.word	276
 	.byte	30,0,2,35,0,0,3
 	.byte	'Ifx_I2C_CLC_Bits',0,5,141,1,3
-	.word	1676
+	.word	1678
 	.byte	10
 	.byte	'_Ifx_I2C_CLC1_Bits',0,5,144,1,16,4,11
 	.byte	'DISR',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'DISS',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'SPEN',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'EDIS',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,0,11
 	.byte	'SBWE',0,1
-	.word	636
+	.word	638
 	.byte	1,3,2,35,0,11
 	.byte	'FSOE',0,1
-	.word	636
+	.word	638
 	.byte	1,2,2,35,0,11
 	.byte	'reserved_6',0,1
-	.word	636
+	.word	638
 	.byte	2,0,2,35,0,11
 	.byte	'RMC',0,1
-	.word	636
+	.word	638
 	.byte	8,0,2,35,1,11
 	.byte	'reserved_16',0,1
-	.word	636
+	.word	638
 	.byte	8,0,2,35,2,11
 	.byte	'reserved_24',0,1
-	.word	636
+	.word	638
 	.byte	8,0,2,35,3,0,3
 	.byte	'Ifx_I2C_CLC1_Bits',0,5,156,1,3
-	.word	1781
+	.word	1783
 	.byte	10
 	.byte	'_Ifx_I2C_ENDDCTRL_Bits',0,5,159,1,16,4,11
 	.byte	'SETRSC',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'SETEND',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'reserved_2',0,4
-	.word	274
+	.word	276
 	.byte	30,0,2,35,0,0,3
 	.byte	'Ifx_I2C_ENDDCTRL_Bits',0,5,164,1,3
-	.word	2013
+	.word	2015
 	.byte	10
 	.byte	'_Ifx_I2C_ERRIRQSC_Bits',0,5,167,1,16,4,11
 	.byte	'RXF_UFL',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'RXF_OFL',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'TXF_UFL',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'TXF_OFL',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,0,11
 	.byte	'reserved_4',0,4
-	.word	274
+	.word	276
 	.byte	28,0,2,35,0,0,3
 	.byte	'Ifx_I2C_ERRIRQSC_Bits',0,5,174,1,3
-	.word	2132
+	.word	2134
 	.byte	10
 	.byte	'_Ifx_I2C_ERRIRQSM_Bits',0,5,177,1,16,4,11
 	.byte	'RXF_UFL',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'RXF_OFL',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'TXF_UFL',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'TXF_OFL',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,0,11
 	.byte	'reserved_4',0,4
-	.word	274
+	.word	276
 	.byte	28,0,2,35,0,0,3
 	.byte	'Ifx_I2C_ERRIRQSM_Bits',0,5,184,1,3
-	.word	2291
+	.word	2293
 	.byte	10
 	.byte	'_Ifx_I2C_ERRIRQSS_Bits',0,5,187,1,16,4,11
 	.byte	'RXF_UFL',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'RXF_OFL',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'TXF_UFL',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'TXF_OFL',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,0,11
 	.byte	'reserved_4',0,4
-	.word	274
+	.word	276
 	.byte	28,0,2,35,0,0,3
 	.byte	'Ifx_I2C_ERRIRQSS_Bits',0,5,194,1,3
-	.word	2450
+	.word	2452
 	.byte	10
 	.byte	'_Ifx_I2C_FDIVCFG_Bits',0,5,197,1,16,4,11
 	.byte	'DEC',0,2
-	.word	359
+	.word	361
 	.byte	11,5,2,35,0,11
 	.byte	'reserved_11',0,1
-	.word	636
+	.word	638
 	.byte	5,0,2,35,1,11
 	.byte	'INC',0,1
-	.word	636
+	.word	638
 	.byte	8,0,2,35,2,11
 	.byte	'reserved_24',0,1
-	.word	636
+	.word	638
 	.byte	8,0,2,35,3,0,3
 	.byte	'Ifx_I2C_FDIVCFG_Bits',0,5,203,1,3
-	.word	2609
+	.word	2611
 	.byte	10
 	.byte	'_Ifx_I2C_FDIVHIGHCFG_Bits',0,5,206,1,16,4,11
 	.byte	'DEC',0,2
-	.word	359
+	.word	361
 	.byte	11,5,2,35,0,11
 	.byte	'reserved_11',0,1
-	.word	636
+	.word	638
 	.byte	5,0,2,35,1,11
 	.byte	'INC',0,1
-	.word	636
+	.word	638
 	.byte	8,0,2,35,2,11
 	.byte	'reserved_24',0,1
-	.word	636
+	.word	638
 	.byte	7,1,2,35,3,11
 	.byte	'reserved_31',0,1
-	.word	636
+	.word	638
 	.byte	1,0,2,35,3,0,3
 	.byte	'Ifx_I2C_FDIVHIGHCFG_Bits',0,5,213,1,3
-	.word	2744
+	.word	2746
 	.byte	10
 	.byte	'_Ifx_I2C_FFSSTAT_Bits',0,5,216,1,16,4,11
 	.byte	'FFS',0,1
-	.word	636
+	.word	638
 	.byte	6,2,2,35,0,11
 	.byte	'reserved_6',0,4
-	.word	274
+	.word	276
 	.byte	26,0,2,35,0,0,3
 	.byte	'Ifx_I2C_FFSSTAT_Bits',0,5,220,1,3
-	.word	2910
+	.word	2912
 	.byte	10
 	.byte	'_Ifx_I2C_FIFOCFG_Bits',0,5,223,1,16,4,11
 	.byte	'RXBS',0,1
-	.word	636
+	.word	638
 	.byte	2,6,2,35,0,11
 	.byte	'reserved_2',0,1
-	.word	636
+	.word	638
 	.byte	2,4,2,35,0,11
 	.byte	'TXBS',0,1
-	.word	636
+	.word	638
 	.byte	2,2,2,35,0,11
 	.byte	'reserved_6',0,1
-	.word	636
+	.word	638
 	.byte	2,0,2,35,0,11
 	.byte	'RXFA',0,1
-	.word	636
+	.word	638
 	.byte	2,6,2,35,1,11
 	.byte	'reserved_10',0,1
-	.word	636
+	.word	638
 	.byte	2,4,2,35,1,11
 	.byte	'TXFA',0,1
-	.word	636
+	.word	638
 	.byte	2,2,2,35,1,11
 	.byte	'reserved_14',0,1
-	.word	636
+	.word	638
 	.byte	2,0,2,35,1,11
 	.byte	'RXFC',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,2,11
 	.byte	'TXFC',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,2,11
 	.byte	'CRBC',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,2,11
 	.byte	'reserved_19',0,2
-	.word	359
+	.word	361
 	.byte	13,0,2,35,2,0,3
 	.byte	'Ifx_I2C_FIFOCFG_Bits',0,5,237,1,3
-	.word	3006
+	.word	3008
 	.byte	10
 	.byte	'_Ifx_I2C_GPCTL_Bits',0,5,240,1,16,4,11
 	.byte	'PISEL',0,1
-	.word	636
+	.word	638
 	.byte	3,5,2,35,0,11
 	.byte	'reserved_3',0,4
-	.word	274
+	.word	276
 	.byte	29,0,2,35,0,0,3
 	.byte	'Ifx_I2C_GPCTL_Bits',0,5,244,1,3
-	.word	3290
+	.word	3292
 	.byte	10
 	.byte	'_Ifx_I2C_ICR_Bits',0,5,247,1,16,4,11
 	.byte	'LSREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'SREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'LBREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'BREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,0,11
 	.byte	'reserved_4',0,4
-	.word	274
+	.word	276
 	.byte	28,0,2,35,0,0,3
 	.byte	'Ifx_I2C_ICR_Bits',0,5,254,1,3
-	.word	3384
+	.word	3386
 	.byte	10
 	.byte	'_Ifx_I2C_ID_Bits',0,5,129,2,16,4,11
 	.byte	'MOD_REV',0,1
-	.word	636
+	.word	638
 	.byte	8,0,2,35,0,11
 	.byte	'MOD_NUMBER',0,1
-	.word	636
+	.word	638
 	.byte	8,0,2,35,1,11
 	.byte	'reserved_16',0,2
-	.word	359
+	.word	361
 	.byte	16,0,2,35,2,0,3
 	.byte	'Ifx_I2C_ID_Bits',0,5,134,2,3
-	.word	3539
+	.word	3541
 	.byte	10
 	.byte	'_Ifx_I2C_IMSC_Bits',0,5,137,2,16,4,11
 	.byte	'LSREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'SREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'LBREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'BREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,0,11
 	.byte	'I2C_ERR_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,3,2,35,0,11
 	.byte	'I2C_P_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,2,2,35,0,11
 	.byte	'reserved_6',0,4
-	.word	274
+	.word	276
 	.byte	26,0,2,35,0,0,3
 	.byte	'Ifx_I2C_IMSC_Bits',0,5,146,2,3
-	.word	3652
+	.word	3654
 	.byte	10
 	.byte	'_Ifx_I2C_ISR_Bits',0,5,149,2,16,4,11
 	.byte	'LSREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'SREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'LBREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'BREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,0,11
 	.byte	'I2C_ERR_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,3,2,35,0,11
 	.byte	'I2C_P_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,2,2,35,0,11
 	.byte	'reserved_6',0,4
-	.word	274
+	.word	276
 	.byte	26,0,2,35,0,0,3
 	.byte	'Ifx_I2C_ISR_Bits',0,5,158,2,3
-	.word	3853
+	.word	3855
 	.byte	10
 	.byte	'_Ifx_I2C_KRST0_Bits',0,5,161,2,16,4,11
 	.byte	'RST',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'RSTSTAT',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'reserved_2',0,4
-	.word	274
+	.word	276
 	.byte	30,0,2,35,0,0,3
 	.byte	'Ifx_I2C_KRST0_Bits',0,5,166,2,3
-	.word	4052
+	.word	4054
 	.byte	10
 	.byte	'_Ifx_I2C_KRST1_Bits',0,5,169,2,16,4,11
 	.byte	'RST',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'reserved_1',0,4
-	.word	274
+	.word	276
 	.byte	31,0,2,35,0,0,3
 	.byte	'Ifx_I2C_KRST1_Bits',0,5,173,2,3
-	.word	4163
+	.word	4165
 	.byte	10
 	.byte	'_Ifx_I2C_KRSTCLR_Bits',0,5,176,2,16,4,11
 	.byte	'CLR',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'reserved_1',0,4
-	.word	274
+	.word	276
 	.byte	31,0,2,35,0,0,3
 	.byte	'Ifx_I2C_KRSTCLR_Bits',0,5,180,2,3
-	.word	4255
+	.word	4257
 	.byte	10
 	.byte	'_Ifx_I2C_MIS_Bits',0,5,183,2,16,4,11
 	.byte	'LSREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'SREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'LBREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'BREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,0,11
 	.byte	'I2C_ERR_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,3,2,35,0,11
 	.byte	'I2C_P_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,2,2,35,0,11
 	.byte	'reserved_6',0,4
-	.word	274
+	.word	276
 	.byte	26,0,2,35,0,0,3
 	.byte	'Ifx_I2C_MIS_Bits',0,5,192,2,3
-	.word	4351
+	.word	4353
 	.byte	10
 	.byte	'_Ifx_I2C_MODID_Bits',0,5,195,2,16,4,11
 	.byte	'MOD_REV',0,1
-	.word	636
+	.word	638
 	.byte	8,0,2,35,0,11
 	.byte	'MOD_TYPE',0,1
-	.word	636
+	.word	638
 	.byte	8,0,2,35,1,11
 	.byte	'MOD_NUMBER',0,2
-	.word	359
+	.word	361
 	.byte	16,0,2,35,2,0,3
 	.byte	'Ifx_I2C_MODID_Bits',0,5,200,2,3
-	.word	4550
+	.word	4552
 	.byte	10
 	.byte	'_Ifx_I2C_MRPSCTRL_Bits',0,5,203,2,16,4,11
 	.byte	'MRPS',0,2
-	.word	359
+	.word	361
 	.byte	14,2,2,35,0,11
 	.byte	'reserved_14',0,4
-	.word	274
+	.word	276
 	.byte	18,0,2,35,0,0,3
 	.byte	'Ifx_I2C_MRPSCTRL_Bits',0,5,207,2,3
-	.word	4666
+	.word	4668
 	.byte	10
 	.byte	'_Ifx_I2C_PIRQSC_Bits',0,5,210,2,16,4,11
 	.byte	'AM',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'GC',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'MC',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'AL',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,0,11
 	.byte	'NACK',0,1
-	.word	636
+	.word	638
 	.byte	1,3,2,35,0,11
 	.byte	'TX_END',0,1
-	.word	636
+	.word	638
 	.byte	1,2,2,35,0,11
 	.byte	'RX',0,1
-	.word	636
+	.word	638
 	.byte	1,1,2,35,0,11
 	.byte	'reserved_7',0,4
-	.word	274
+	.word	276
 	.byte	25,0,2,35,0,0,3
 	.byte	'Ifx_I2C_PIRQSC_Bits',0,5,220,2,3
-	.word	4766
+	.word	4768
 	.byte	10
 	.byte	'_Ifx_I2C_PIRQSM_Bits',0,5,223,2,16,4,11
 	.byte	'AM',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'GC',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'MC',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'AL',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,0,11
 	.byte	'NACK',0,1
-	.word	636
+	.word	638
 	.byte	1,3,2,35,0,11
 	.byte	'TX_END',0,1
-	.word	636
+	.word	638
 	.byte	1,2,2,35,0,11
 	.byte	'RX',0,1
-	.word	636
+	.word	638
 	.byte	1,1,2,35,0,11
 	.byte	'reserved_7',0,4
-	.word	274
+	.word	276
 	.byte	25,0,2,35,0,0,3
 	.byte	'Ifx_I2C_PIRQSM_Bits',0,5,233,2,3
-	.word	4949
+	.word	4951
 	.byte	10
 	.byte	'_Ifx_I2C_PIRQSS_Bits',0,5,236,2,16,4,11
 	.byte	'AM',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'GC',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'MC',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'AL',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,0,11
 	.byte	'NACK',0,1
-	.word	636
+	.word	638
 	.byte	1,3,2,35,0,11
 	.byte	'TX_END',0,1
-	.word	636
+	.word	638
 	.byte	1,2,2,35,0,11
 	.byte	'RX',0,1
-	.word	636
+	.word	638
 	.byte	1,1,2,35,0,11
 	.byte	'reserved_7',0,4
-	.word	274
+	.word	276
 	.byte	25,0,2,35,0,0,3
 	.byte	'Ifx_I2C_PIRQSS_Bits',0,5,246,2,3
-	.word	5132
+	.word	5134
 	.byte	10
 	.byte	'_Ifx_I2C_RIS_Bits',0,5,249,2,16,4,11
 	.byte	'LSREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'SREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,6,2,35,0,11
 	.byte	'LBREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,5,2,35,0,11
 	.byte	'BREQ_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,4,2,35,0,11
 	.byte	'I2C_ERR_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,3,2,35,0,11
 	.byte	'I2C_P_INT',0,1
-	.word	636
+	.word	638
 	.byte	1,2,2,35,0,11
 	.byte	'reserved_6',0,4
-	.word	274
+	.word	276
 	.byte	26,0,2,35,0,0,3
 	.byte	'Ifx_I2C_RIS_Bits',0,5,130,3,3
-	.word	5315
+	.word	5317
 	.byte	10
 	.byte	'_Ifx_I2C_RPSSTAT_Bits',0,5,133,3,16,4,11
 	.byte	'RPS',0,2
-	.word	359
+	.word	361
 	.byte	14,2,2,35,0,11
 	.byte	'reserved_14',0,4
-	.word	274
+	.word	276
 	.byte	18,0,2,35,0,0,3
 	.byte	'Ifx_I2C_RPSSTAT_Bits',0,5,137,3,3
-	.word	5514
+	.word	5516
 	.byte	10
 	.byte	'_Ifx_I2C_RUNCTRL_Bits',0,5,140,3,16,4,11
 	.byte	'RUN',0,1
-	.word	636
+	.word	638
 	.byte	1,7,2,35,0,11
 	.byte	'reserved_1',0,4
-	.word	274
+	.word	276
 	.byte	31,0,2,35,0,0,3
 	.byte	'Ifx_I2C_RUNCTRL_Bits',0,5,144,3,3
-	.word	5611
+	.word	5613
 	.byte	10
 	.byte	'_Ifx_I2C_RXD_Bits',0,5,147,3,16,4,11
 	.byte	'RXD',0,4
-	.word	274
+	.word	276
 	.byte	32,0,2,35,0,0,3
 	.byte	'Ifx_I2C_RXD_Bits',0,5,150,3,3
-	.word	5707
+	.word	5709
 	.byte	10
 	.byte	'_Ifx_I2C_TIMCFG_Bits',0,5,153,3,16,4,11
 	.byte	'SDA_DEL_HD_DAT',0,1
-	.word	636
+	.word	638
 	.byte	6,2,2,35,0,11
 	.byte	'HS_SDA_DEL_HD_DAT',0,2
-	.word	359
+	.word	361
 	.byte	3,7,2,35,0,11
 	.byte	'SCL_DEL_HD_STA',0,1
-	.word	636
+	.word	638
 	.byte	3,4,2,35,1,11
 	.byte	'reserved_12',0,1
-	.word	636
+	.word	638
 	.byte	2,2,2,35,1,11
 	.byte	'EN_SCL_LOW_LEN',0,1
-	.word	636
+	.word	638
 	.byte	1,1,2,35,1,11
 	.byte	'FS_SCL_LOW',0,1
-	.word	636
+	.word	638
 	.byte	1,0,2,35,1,11
 	.byte	'HS_SDA_DEL',0,1
-	.word	636
+	.word	638
 	.byte	5,3,2,35,2,11
 	.byte	'reserved_21',0,1
-	.word	636
+	.word	638
 	.byte	3,0,2,35,2,11
 	.byte	'SCL_LOW_LEN',0,1
-	.word	636
+	.word	638
 	.byte	8,0,2,35,3,0,3
 	.byte	'Ifx_I2C_TIMCFG_Bits',0,5,164,3,3
-	.word	5773
+	.word	5775
 	.byte	10
 	.byte	'_Ifx_I2C_TPSCTRL_Bits',0,5,167,3,16,4,11
 	.byte	'TPS',0,2
-	.word	359
+	.word	361
 	.byte	14,2,2,35,0,11
 	.byte	'reserved_14',0,4
-	.word	274
+	.word	276
 	.byte	18,0,2,35,0,0,3
 	.byte	'Ifx_I2C_TPSCTRL_Bits',0,5,171,3,3
-	.word	6050
+	.word	6052
 	.byte	10
 	.byte	'_Ifx_I2C_TXD_Bits',0,5,174,3,16,4,11
 	.byte	'TXD',0,4
-	.word	274
+	.word	276
 	.byte	32,0,2,35,0,0,3
 	.byte	'Ifx_I2C_TXD_Bits',0,5,177,3,3
-	.word	6147
+	.word	6149
 	.byte	12,5,185,3,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	721
+	.word	723
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_ACCEN0',0,5,190,3,3
-	.word	6213
+	.word	6215
 	.byte	12,5,193,3,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	1278
+	.word	1280
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_ACCEN1',0,5,198,3,3
-	.word	6277
+	.word	6279
 	.byte	12,5,201,3,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	1355
+	.word	1357
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_ADDRCFG',0,5,206,3,3
-	.word	6341
+	.word	6343
 	.byte	12,5,209,3,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	1566
+	.word	1568
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_BUSSTAT',0,5,214,3,3
-	.word	6406
+	.word	6408
 	.byte	12,5,217,3,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	1676
+	.word	1678
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_CLC',0,5,222,3,3
-	.word	6471
+	.word	6473
 	.byte	12,5,225,3,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	1781
+	.word	1783
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_CLC1',0,5,230,3,3
-	.word	6532
+	.word	6534
 	.byte	12,5,233,3,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	2013
+	.word	2015
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_ENDDCTRL',0,5,238,3,3
-	.word	6594
+	.word	6596
 	.byte	12,5,241,3,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	2132
+	.word	2134
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_ERRIRQSC',0,5,246,3,3
-	.word	6660
+	.word	6662
 	.byte	12,5,249,3,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	2291
+	.word	2293
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_ERRIRQSM',0,5,254,3,3
-	.word	6726
+	.word	6728
 	.byte	12,5,129,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	2450
+	.word	2452
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_ERRIRQSS',0,5,134,4,3
-	.word	6792
+	.word	6794
 	.byte	12,5,137,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	2609
+	.word	2611
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_FDIVCFG',0,5,142,4,3
-	.word	6858
+	.word	6860
 	.byte	12,5,145,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	2744
+	.word	2746
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_FDIVHIGHCFG',0,5,150,4,3
-	.word	6923
+	.word	6925
 	.byte	12,5,153,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	2910
+	.word	2912
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_FFSSTAT',0,5,158,4,3
-	.word	6992
+	.word	6994
 	.byte	12,5,161,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	3006
+	.word	3008
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_FIFOCFG',0,5,166,4,3
-	.word	7057
+	.word	7059
 	.byte	12,5,169,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	3290
+	.word	3292
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_GPCTL',0,5,174,4,3
-	.word	7122
+	.word	7124
 	.byte	12,5,177,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	3384
+	.word	3386
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_ICR',0,5,182,4,3
-	.word	7185
+	.word	7187
 	.byte	12,5,185,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	3539
+	.word	3541
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_ID',0,5,190,4,3
-	.word	7246
+	.word	7248
 	.byte	12,5,193,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	3652
+	.word	3654
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_IMSC',0,5,198,4,3
-	.word	7306
+	.word	7308
 	.byte	12,5,201,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	3853
+	.word	3855
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_ISR',0,5,206,4,3
-	.word	7368
+	.word	7370
 	.byte	12,5,209,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4052
+	.word	4054
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_KRST0',0,5,214,4,3
-	.word	7429
+	.word	7431
 	.byte	12,5,217,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4163
+	.word	4165
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_KRST1',0,5,222,4,3
-	.word	7492
+	.word	7494
 	.byte	12,5,225,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4255
+	.word	4257
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_KRSTCLR',0,5,230,4,3
-	.word	7555
+	.word	7557
 	.byte	12,5,233,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4351
+	.word	4353
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_MIS',0,5,238,4,3
-	.word	7620
+	.word	7622
 	.byte	12,5,241,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4550
+	.word	4552
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_MODID',0,5,246,4,3
-	.word	7681
+	.word	7683
 	.byte	12,5,249,4,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4666
+	.word	4668
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_MRPSCTRL',0,5,254,4,3
-	.word	7744
+	.word	7746
 	.byte	12,5,129,5,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4766
+	.word	4768
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_PIRQSC',0,5,134,5,3
-	.word	7810
+	.word	7812
 	.byte	12,5,137,5,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	4949
+	.word	4951
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_PIRQSM',0,5,142,5,3
-	.word	7874
+	.word	7876
 	.byte	12,5,145,5,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	5132
+	.word	5134
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_PIRQSS',0,5,150,5,3
-	.word	7938
+	.word	7940
 	.byte	12,5,153,5,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	5315
+	.word	5317
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_RIS',0,5,158,5,3
-	.word	8002
+	.word	8004
 	.byte	12,5,161,5,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	5514
+	.word	5516
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_RPSSTAT',0,5,166,5,3
-	.word	8063
+	.word	8065
 	.byte	12,5,169,5,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	5611
+	.word	5613
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_RUNCTRL',0,5,174,5,3
-	.word	8128
+	.word	8130
 	.byte	12,5,177,5,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	5707
+	.word	5709
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_RXD',0,5,182,5,3
-	.word	8193
+	.word	8195
 	.byte	12,5,185,5,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	5773
+	.word	5775
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_TIMCFG',0,5,190,5,3
-	.word	8254
+	.word	8256
 	.byte	12,5,193,5,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	6050
+	.word	6052
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_TPSCTRL',0,5,198,5,3
-	.word	8318
+	.word	8320
 	.byte	12,5,201,5,9,4,9
 	.byte	'U',0
-	.word	274
+	.word	276
 	.byte	4,2,35,0,9
 	.byte	'I',0
-	.word	307
+	.word	309
 	.byte	4,2,35,0,9
 	.byte	'B',0
-	.word	6147
+	.word	6149
 	.byte	4,2,35,0,0,3
 	.byte	'Ifx_I2C_TXD',0,5,206,5,3
-	.word	8383
+	.word	8385
 	.byte	13,8
-	.word	570
+	.word	572
 	.byte	14,0,0
 .L8:
 	.byte	15
-	.word	8444
+	.word	8446
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
@@ -1252,12 +1252,12 @@ IfxI2c_cfg_indexMap:	.type	object
 	.word	.L12-.L11
 .L11:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
-	.byte	'D:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x',0
+	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x',0
 	.byte	0
 	.byte	'../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxI2c_cfg.c',0,0,0,0
-	.byte	'D:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\Cpu\\Std\\Platform_Types.h',0
+	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\Cpu\\Std\\Platform_Types.h',0
 	.byte	0,0,0
-	.byte	'D:\\\\Violin_demo\\\\Motor_Architecture\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\Cpu\\Std\\Ifx_Types.h',0
+	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\Cpu\\Std\\Ifx_Types.h',0
 	.byte	0,0,0
 	.byte	'Ifx_TypesReg.h',0,1,0,0
 	.byte	'IfxI2c_regdef.h',0,1,0,0,0
@@ -1266,13 +1266,13 @@ IfxI2c_cfg_indexMap:	.type	object
 	.sdecl	'.debug_info',debug,cluster('IfxI2c_cfg_indexMap')
 	.sect	'.debug_info'
 .L6:
-	.word	276
+	.word	278
 	.half	3
 	.word	.L7
 	.byte	4,1
 	.byte	'../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxI2c_cfg.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1,2
 	.word	.L2
 	.byte	3

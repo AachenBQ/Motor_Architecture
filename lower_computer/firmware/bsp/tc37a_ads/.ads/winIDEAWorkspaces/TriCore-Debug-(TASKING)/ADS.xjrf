@@ -8,7 +8,7 @@
       <VersionLow>1</VersionLow>
      </REG_HEADER>
      <REG_ROOT>
-      <RegVer>1297424384</RegVer>
+      <RegVer>1297625088</RegVer>
      </REG_ROOT>
     </EditorOptions>
    </Editor>
@@ -20,7 +20,7 @@
       <VersionLow>1</VersionLow>
      </REG_HEADER>
      <REG_ROOT>
-      <RegVer>1297424384</RegVer>
+      <RegVer>1297625088</RegVer>
       <WorkspaceOptions>
        <Debug_Breakpoints>
         <ProfilerAnalysisSample>18446744073709551615</ProfilerAnalysisSample>
@@ -44,10 +44,13 @@
    </REG_HEADER>
    <REG_ROOT>
     <HServer>HASYST</HServer>
-    <RegVer>1297424384</RegVer>
+    <RegVer>1297625088</RegVer>
     <Sec4>72226310959049B83990C5F7DCDECAC972226310959049B83990C5F7DCDECAC972226310959049B83990C5F7DCDECAC9C60C5F397E632F0A3646E6691DAF3254</Sec4>
     <Cfg_License>
      <Source>HW</Source>
+     <AddOn.SWAT>
+      <Enabled>false</Enabled>
+     </AddOn.SWAT>
      <Floating>
       <Edition>Standard</Edition>
       <TLM>
@@ -91,9 +94,6 @@
           <PikeOSParentKernelTaskName></PikeOSParentKernelTaskName>
           <PikeOSParentPluginName></PikeOSParentPluginName>
          </Linux_Config>
-         <OpTee_Config>
-          <OP-TEE_._Version>3.8.0</OP-TEE_._Version>
-         </OpTee_Config>
          <OSEK_Data>
           <Config>
            <FileName></FileName>
@@ -122,14 +122,14 @@
          <rcX_Config>
           <rcX_._version>rcX 2.0.x.x</rcX_._version>
          </rcX_Config>
+         <SafeRTOS>
+          <ProfilerXMLPath></ProfilerXMLPath>
+         </SafeRTOS>
          <uCConfig>
           <AutoRefresh>false</AutoRefresh>
           <FloatingPoint>false</FloatingPoint>
           <VersionOfuC>uC/OS-II</VersionOfuC>
          </uCConfig>
-         <Xen_Config>
-          <Xen_._Version>Xen 4.8</Xen_._Version>
-         </Xen_Config>
         </OS>
         <StackUsage>
          <End></End>
@@ -176,6 +176,7 @@
             <TrustLineSymbolsToStartOnInstruction>true</TrustLineSymbolsToStartOnInstruction>
             <Type>ELF</Type>
             <Elf>
+             <AllowModulesWithSameName>false</AllowModulesWithSameName>
              <BitfieldsOverrideTypeFromByteSize>false</BitfieldsOverrideTypeFromByteSize>
              <CallStackGeneration>Automatic</CallStackGeneration>
              <CopyPropertiesFromVirtualToPhysical>true</CopyPropertiesFromVirtualToPhysical>
@@ -217,6 +218,7 @@
             </IEEE>
             <PE>
              <AddSymbolsFromSymbolTable>false</AddSymbolsFromSymbolTable>
+             <ReverseBitFieldsOrder>false</ReverseBitFieldsOrder>
             </PE>
             <UBROF>
              <ConvertBankAddresses>false</ConvertBankAddresses>
@@ -282,6 +284,7 @@
             <TrustLineSymbolsToStartOnInstruction>true</TrustLineSymbolsToStartOnInstruction>
             <Type>ELF</Type>
             <Elf>
+             <AllowModulesWithSameName>false</AllowModulesWithSameName>
              <BitfieldsOverrideTypeFromByteSize>false</BitfieldsOverrideTypeFromByteSize>
              <CallStackGeneration>Automatic</CallStackGeneration>
              <CopyPropertiesFromVirtualToPhysical>true</CopyPropertiesFromVirtualToPhysical>
@@ -323,6 +326,7 @@
             </IEEE>
             <PE>
              <AddSymbolsFromSymbolTable>false</AddSymbolsFromSymbolTable>
+             <ReverseBitFieldsOrder>false</ReverseBitFieldsOrder>
             </PE>
             <UBROF>
              <ConvertBankAddresses>false</ConvertBankAddresses>
@@ -513,7 +517,6 @@
        <RTUpdateWhenStopped>false</RTUpdateWhenStopped>
        <UpdateOnBP>false</UpdateOnBP>
        <Access>
-        <AllowMonitorAccess>false</AllowMonitorAccess>
         <AllowRealTimeAccess>true</AllowRealTimeAccess>
         <CacheAccesses>true</CacheAccesses>
         <DisableSFRCaching>true</DisableSFRCaching>
@@ -528,7 +531,7 @@
       </WatchExport>
      </Debug>
      <Info>
-      <winIDEA>Build 9.21.338</winIDEA>
+      <winIDEA>Build 9.21.387</winIDEA>
      </Info>
      <Options>
       <CMake>
@@ -613,6 +616,7 @@
       <BuildManagerType>None</BuildManagerType>
       <CheckProjectUpToDate>false</CheckProjectUpToDate>
       <iConnectLimitNum>0</iConnectLimitNum>
+      <PresetsFilePath>CMakePresets.json</PresetsFilePath>
       <SaveDesktop>false</SaveDesktop>
       <WriteProgressToFile>false</WriteProgressToFile>
      </Workspace>
@@ -623,11 +627,9 @@
     </Mode>
     <Op_System>
      <Debug>
-      <Processes>
-       <__.0>
-        <URL>App/SMP</URL>
-       </__.0>
-      </Processes>
+      <Processes.0>
+       <URL></URL>
+      </Processes.0>
      </Debug>
     </Op_System>
     <PluginData>
@@ -785,7 +787,7 @@
     <VersionLow>1</VersionLow>
    </REG_HEADER>
    <REG_ROOT>
-    <RegVer>1297424384</RegVer>
+    <RegVer>1297625088</RegVer>
     <Project_Local>
      <Project.0>
       <DefaultTargetName></DefaultTargetName>
@@ -800,7 +802,7 @@
     <VersionLow>1</VersionLow>
    </REG_HEADER>
    <REG_ROOT>
-    <RegVer>1297424384</RegVer>
+    <RegVer>1297625088</RegVer>
     <HServerData>
      <Data>
       <BBSync>
@@ -2294,6 +2296,7 @@
        <BB>
         <DAQMode>Auto</DAQMode>
         <FNetSpeed>Auto</FNetSpeed>
+        <MultiSoCSync>None</MultiSoCSync>
         <Services>
          <HP_SoCStatus>true</HP_SoCStatus>
         </Services>
@@ -3074,8 +3077,8 @@
       </UMI1>
      </Data>
      <HW>
-      <V_BUILD>338</V_BUILD>
-      <V_BUILD_SCC>218131</V_BUILD_SCC>
+      <V_BUILD>387</V_BUILD>
+      <V_BUILD_SCC>244489</V_BUILD_SCC>
       <V_BUILD_SUB>0</V_BUILD_SUB>
       <V_MAJOR>9</V_MAJOR>
       <V_MINOR>21</V_MINOR>
@@ -3307,79 +3310,6 @@
           <Type>PC</Type>
          </TriggerEvent1p8>
         </Aurix>
-        <TriCore>
-         <AllowCacheMonitorExecution>0</AllowCacheMonitorExecution>
-         <ApplicationLBIST>0</ApplicationLBIST>
-         <BRKIN>1</BRKIN>
-         <ClearICRIEWhenStopped>0</ClearICRIEWhenStopped>
-         <DAPClockkHz>5000</DAPClockkHz>
-         <DAPE>0</DAPE>
-         <DAPEClockkHz>10000</DAPEClockkHz>
-         <DAPEDebugMode>1</DAPEDebugMode>
-         <DebugMode>1</DebugMode>
-         <FirstTraceTile>0</FirstTraceTile>
-         <FlushTraceOnAGBTStop>0</FlushTraceOnAGBTStop>
-         <NumTraceTiles>1</NumTraceTiles>
-         <OnChipRamSize>0</OnChipRamSize>
-         <OnChipRamStart>0</OnChipRamStart>
-         <Password.0>0</Password.0>
-         <Password.1>0</Password.1>
-         <Password.2>0</Password.2>
-         <Password.3>0</Password.3>
-         <Password.4>0</Password.4>
-         <Password.5>0</Password.5>
-         <Password.6>0</Password.6>
-         <Password.7>0</Password.7>
-         <QuickLBIST>0</QuickLBIST>
-         <ReserveBPPair type="B">AA</ReserveBPPair>
-         <SingleStepMode>0</SingleStepMode>
-         <StopAfterAppReset>0</StopAfterAppReset>
-         <TimeSource_Profiler>1</TimeSource_Profiler>
-         <TraceBufferMode>1</TraceBufferMode>
-         <TraceMemoryRegion>0</TraceMemoryRegion>
-         <UseAllEmMemForTrace>1</UseAllEmMemForTrace>
-         <UsePassword>0</UsePassword>
-         <Event.0>
-          <BBM>1</BBM>
-          <BOD>0</BOD>
-          <CNT>0</CNT>
-          <CSP>0</CSP>
-          <CST>0</CST>
-          <Enable>0</Enable>
-          <EVTA>2</EVTA>
-          <SUSP>1</SUSP>
-         </Event.0>
-         <Event.1>
-          <BBM>0</BBM>
-          <BOD>0</BOD>
-          <CNT>0</CNT>
-          <CSP>0</CSP>
-          <CST>0</CST>
-          <Enable>0</Enable>
-          <EVTA>0</EVTA>
-          <SUSP>0</SUSP>
-         </Event.1>
-         <Event.2>
-          <BBM>0</BBM>
-          <BOD>0</BOD>
-          <CNT>0</CNT>
-          <CSP>0</CSP>
-          <CST>0</CST>
-          <Enable>0</Enable>
-          <EVTA>0</EVTA>
-          <SUSP>0</SUSP>
-         </Event.2>
-         <Event.3>
-          <BBM>1</BBM>
-          <BOD>0</BOD>
-          <CNT>0</CNT>
-          <CSP>0</CSP>
-          <CST>0</CST>
-          <Enable>0</Enable>
-          <EVTA>2</EVTA>
-          <SUSP>1</SUSP>
-         </Event.3>
-        </TriCore>
        </CPU>
        <Debug>
         <AllowAccessToUnimplementedRegisters>false</AllowAccessToUnimplementedRegisters>
@@ -3396,6 +3326,7 @@
         <DebugClockkHz>4000</DebugClockkHz>
         <DetectWDT>false</DetectWDT>
         <DetectWDT_duration_ms>20</DetectWDT_duration_ms>
+        <EnableLowPowerDebug>false</EnableLowPowerDebug>
         <EndSession>Cleanup</EndSession>
         <ExtOscillatorClk>1000</ExtOscillatorClk>
         <GenerateAuroraClock>false</GenerateAuroraClock>
@@ -3408,7 +3339,6 @@
         <MemorySecurity_Policy>Reject</MemorySecurity_Policy>
         <MemorySecurity_Policy_Preset></MemorySecurity_Policy_Preset>
         <MultiCoreSync>true</MultiCoreSync>
-        <MultiSoCSync>None</MultiSoCSync>
         <NexusClockDivider>1</NexusClockDivider>
         <NexusDataRate>Single</NexusDataRate>
         <NexusForcePeriodicSYNC>false</NexusForcePeriodicSYNC>
@@ -3428,12 +3358,14 @@
         <RESETMode>OD</RESETMode>
         <ResetPinConnected>true</ResetPinConnected>
         <ReversedAuroraLanes>false</ReversedAuroraLanes>
+        <RunAfterLowPowerExit>false</RunAfterLowPowerExit>
         <SamplingEdge>Pos</SamplingEdge>
         <StopAfterReset>false</StopAfterReset>
         <SuspendPeripheralsWhileStopped>false</SuspendPeripheralsWhileStopped>
         <TargetResetTimeout>100</TargetResetTimeout>
         <MemorySecurity_CheckParameters>
          <Entry>false</Entry>
+         <MirrorOverlapping>true</MirrorOverlapping>
          <Aurix>
           <ActiveDXCPL>false</ActiveDXCPL>
           <Always_._check_._BMHDs>true</Always_._check_._BMHDs>
@@ -3451,31 +3383,10 @@
           <RAMInitialization>false</RAMInitialization>
           <RequirePFLASHReadProtectWithDebugLock>false</RequirePFLASHReadProtectWithDebugLock>
           <SwapAltBanksHSMCode>false</SwapAltBanksHSMCode>
+          <UserSWUnlock>false</UserSWUnlock>
          </Aurix>
         </MemorySecurity_CheckParameters>
        </Debug>
-       <ExtWDT>
-        <DebugEntryExit>
-         <Address>0</Address>
-         <DataEntry>0</DataEntry>
-         <DataExit>0</DataExit>
-         <DataMask>0</DataMask>
-         <Enable>0</Enable>
-         <MinTime>0</MinTime>
-         <Size>0</Size>
-        </DebugEntryExit>
-        <PeriodicService>
-         <Initialization>0</Initialization>
-         <MinTime>1</MinTime>
-         <Service>0</Service>
-         <ServiceInRun>0</ServiceInRun>
-         <Item.0>
-          <Address>0</Address>
-          <Data>0</Data>
-          <Size>0</Size>
-         </Item.0>
-        </PeriodicService>
-       </ExtWDT>
        <Hardware>
         <CheckVref>true</CheckVref>
         <DebugVccSource>Target</DebugVccSource>
@@ -3585,6 +3496,7 @@
            <DCache_EnableWriteThrough>false</DCache_EnableWriteThrough>
            <DCache_FlushWhenStopped>false</DCache_FlushWhenStopped>
            <Endian>LE</Endian>
+           <HighAccuracyStatus>false</HighAccuracyStatus>
            <MCSync>true</MCSync>
            <StopCPUActivities>false</StopCPUActivities>
            <UseSWBPs>false</UseSWBPs>
@@ -3702,6 +3614,7 @@
            <DCache_EnableWriteThrough>false</DCache_EnableWriteThrough>
            <DCache_FlushWhenStopped>false</DCache_FlushWhenStopped>
            <Endian>LE</Endian>
+           <HighAccuracyStatus>false</HighAccuracyStatus>
            <MCSync>true</MCSync>
            <StopCPUActivities>false</StopCPUActivities>
            <UseSWBPs>false</UseSWBPs>
@@ -3819,6 +3732,7 @@
            <DCache_EnableWriteThrough>false</DCache_EnableWriteThrough>
            <DCache_FlushWhenStopped>false</DCache_FlushWhenStopped>
            <Endian>LE</Endian>
+           <HighAccuracyStatus>false</HighAccuracyStatus>
            <MCSync>true</MCSync>
            <StopCPUActivities>false</StopCPUActivities>
            <UseSWBPs>false</UseSWBPs>
@@ -3936,6 +3850,7 @@
            <DCache_EnableWriteThrough>false</DCache_EnableWriteThrough>
            <DCache_FlushWhenStopped>false</DCache_FlushWhenStopped>
            <Endian>BE</Endian>
+           <HighAccuracyStatus>false</HighAccuracyStatus>
            <MCSync>false</MCSync>
            <StopCPUActivities>false</StopCPUActivities>
            <UseSWBPs>false</UseSWBPs>
@@ -3997,7 +3912,6 @@
         <DebugVccSource>0</DebugVccSource>
         <DebugVccVoltage>3300</DebugVccVoltage>
         <HotAttach>0</HotAttach>
-        <PowerSupply>2</PowerSupply>
        </Module>
        <Probe>
         <APName></APName>
@@ -4206,6 +4120,10 @@
            <Enabled>false</Enabled>
            <Name>CONVCTRL</Name>
           </__.54>
+          <__.55>
+           <Enabled>false</Enabled>
+           <Name>SENT</Name>
+          </__.55>
           <__.5>
            <Enabled>true</Enabled>
            <Name>DMA</Name>
@@ -4272,6 +4190,208 @@
          <Sync type="B">AAAAAAAAAAAAAAAA</Sync>
         </Core.7>
        </Synchronization>
+       <UMIConfig>
+        <Devices>
+         <Devices>
+          <__.0>
+           <AllowDownloadOnly>false</AllowDownloadOnly>
+           <AllowErase>false</AllowErase>
+           <CoreIndex>4294967295</CoreIndex>
+           <Device>TC37x_PFLASH_6MB</Device>
+           <DeviceAddress>0x80000000</DeviceAddress>
+           <DeviceType>Unknown</DeviceType>
+           <Enabled>true</Enabled>
+           <EnableECC>1</EnableECC>
+           <EraseBeforeDownload>false</EraseBeforeDownload>
+           <FillDevice>true</FillDevice>
+           <FillFirst>0x0</FillFirst>
+           <FillLast>0x0</FillLast>
+           <FillValue>0</FillValue>
+           <Flags_0>0</Flags_0>
+           <Flags_1>4</Flags_1>
+           <Flags_2>0</Flags_2>
+           <Flags_3>0</Flags_3>
+           <Manufacturer>Infineon</Manufacturer>
+           <Name>Infineon TC37x_PFLASH_6MB</Name>
+           <OnChip>true</OnChip>
+           <OverrideTimeout>0</OverrideTimeout>
+           <ParallelNum>1</ParallelNum>
+           <ProgramAtDownload>false</ProgramAtDownload>
+           <RDOnly>false</RDOnly>
+           <SafeMode>Auto</SafeMode>
+           <Timeout>10</Timeout>
+           <UseBufferCompress>true</UseBufferCompress>
+           <UseCompression>true</UseCompression>
+           <UseHash>true</UseHash>
+           <UseHashing>true</UseHashing>
+           <Verify>true</Verify>
+           <VerifyOnTheFly>true</VerifyOnTheFly>
+           <Version></Version>
+           <Virtual>false</Virtual>
+           <CP_Post>
+            <Execute>Default</Execute>
+            <Scripts></Scripts>
+           </CP_Post>
+           <CP_Pre>
+            <Execute>Default</Execute>
+            <Scripts></Scripts>
+           </CP_Pre>
+           <Options>
+            <UNIT_Type_AllowProgramming_0>false</UNIT_Type_AllowProgramming_0>
+            <UNIT_Type_AllowProgramming_1>false</UNIT_Type_AllowProgramming_1>
+            <UNIT_Type_AllowProgramming_2>false</UNIT_Type_AllowProgramming_2>
+           </Options>
+          </__.0>
+          <__.1>
+           <AllowDownloadOnly>false</AllowDownloadOnly>
+           <AllowErase>false</AllowErase>
+           <CoreIndex>4294967295</CoreIndex>
+           <Device>TC37x_DFLASH_384kB</Device>
+           <DeviceAddress>0xAF000000</DeviceAddress>
+           <DeviceType>Unknown</DeviceType>
+           <Enabled>true</Enabled>
+           <EnableECC>1</EnableECC>
+           <EraseBeforeDownload>false</EraseBeforeDownload>
+           <FillDevice>true</FillDevice>
+           <FillFirst>0x0</FillFirst>
+           <FillLast>0x0</FillLast>
+           <FillValue>0</FillValue>
+           <Flags_0>1</Flags_0>
+           <Flags_1>0</Flags_1>
+           <Flags_2>0</Flags_2>
+           <Flags_3>0</Flags_3>
+           <Manufacturer>Infineon</Manufacturer>
+           <Name>Infineon TC37x_DFLASH_384kB</Name>
+           <OnChip>true</OnChip>
+           <OverrideTimeout>0</OverrideTimeout>
+           <ParallelNum>1</ParallelNum>
+           <ProgramAtDownload>false</ProgramAtDownload>
+           <RDOnly>false</RDOnly>
+           <SafeMode>Auto</SafeMode>
+           <Timeout>10</Timeout>
+           <UseBufferCompress>true</UseBufferCompress>
+           <UseCompression>true</UseCompression>
+           <UseHash>true</UseHash>
+           <UseHashing>true</UseHashing>
+           <Verify>true</Verify>
+           <VerifyOnTheFly>true</VerifyOnTheFly>
+           <Version></Version>
+           <Virtual>false</Virtual>
+           <CP_Post>
+            <Execute>Default</Execute>
+            <Scripts></Scripts>
+           </CP_Post>
+           <CP_Pre>
+            <Execute>Default</Execute>
+            <Scripts></Scripts>
+           </CP_Pre>
+           <Options>
+            <UNIT_Type_AllowProgramming_0>false</UNIT_Type_AllowProgramming_0>
+            <UNIT_Type_AllowProgramming_1>false</UNIT_Type_AllowProgramming_1>
+            <UNIT_Type_AllowProgramming_2>false</UNIT_Type_AllowProgramming_2>
+           </Options>
+          </__.1>
+          <__.2>
+           <AllowDownloadOnly>false</AllowDownloadOnly>
+           <AllowErase>false</AllowErase>
+           <CoreIndex>4294967295</CoreIndex>
+           <Device>TC3xx_UCB_24kB</Device>
+           <DeviceAddress>0xAF400000</DeviceAddress>
+           <DeviceType>Unknown</DeviceType>
+           <Enabled>true</Enabled>
+           <EnableECC>1</EnableECC>
+           <EraseBeforeDownload>false</EraseBeforeDownload>
+           <FillDevice>true</FillDevice>
+           <FillFirst>0x0</FillFirst>
+           <FillLast>0x0</FillLast>
+           <FillValue>0</FillValue>
+           <Flags_0>1</Flags_0>
+           <Flags_1>0</Flags_1>
+           <Flags_2>0</Flags_2>
+           <Flags_3>0</Flags_3>
+           <Manufacturer>Infineon</Manufacturer>
+           <Name>Infineon TC3xx_UCB_24kB</Name>
+           <OnChip>true</OnChip>
+           <OverrideTimeout>0</OverrideTimeout>
+           <ParallelNum>1</ParallelNum>
+           <ProgramAtDownload>false</ProgramAtDownload>
+           <RDOnly>false</RDOnly>
+           <SafeMode>Auto</SafeMode>
+           <Timeout>10</Timeout>
+           <UseBufferCompress>true</UseBufferCompress>
+           <UseCompression>true</UseCompression>
+           <UseHash>true</UseHash>
+           <UseHashing>true</UseHashing>
+           <Verify>true</Verify>
+           <VerifyOnTheFly>true</VerifyOnTheFly>
+           <Version></Version>
+           <Virtual>false</Virtual>
+           <CP_Post>
+            <Execute>Default</Execute>
+            <Scripts></Scripts>
+           </CP_Post>
+           <CP_Pre>
+            <Execute>Default</Execute>
+            <Scripts></Scripts>
+           </CP_Pre>
+           <Options>
+            <UNIT_Type_AllowProgramming_0>false</UNIT_Type_AllowProgramming_0>
+            <UNIT_Type_AllowProgramming_1>false</UNIT_Type_AllowProgramming_1>
+            <UNIT_Type_AllowProgramming_2>false</UNIT_Type_AllowProgramming_2>
+           </Options>
+          </__.2>
+          <__.3>
+           <AllowDownloadOnly>false</AllowDownloadOnly>
+           <AllowErase>true</AllowErase>
+           <CoreIndex>4294967295</CoreIndex>
+           <Device>TC3xx_DFLASH1_Cerberus_128kB</Device>
+           <DeviceAddress>0xAFC00000</DeviceAddress>
+           <DeviceType>Parallel</DeviceType>
+           <Enabled>false</Enabled>
+           <EnableECC>1</EnableECC>
+           <EraseBeforeDownload>false</EraseBeforeDownload>
+           <FillDevice>true</FillDevice>
+           <FillFirst>0x0</FillFirst>
+           <FillLast>0x0</FillLast>
+           <FillValue>0</FillValue>
+           <Flags_0>0</Flags_0>
+           <Flags_1>0</Flags_1>
+           <Flags_2>0</Flags_2>
+           <Flags_3>0</Flags_3>
+           <Manufacturer>Infineon</Manufacturer>
+           <Name>Infineon TC3xx_DFLASH1_Cerberus_128kB</Name>
+           <OnChip>true</OnChip>
+           <OverrideTimeout>0</OverrideTimeout>
+           <ParallelNum>1</ParallelNum>
+           <ProgramAtDownload>false</ProgramAtDownload>
+           <RDOnly>false</RDOnly>
+           <SafeMode>Auto</SafeMode>
+           <Timeout>100</Timeout>
+           <UseBufferCompress>true</UseBufferCompress>
+           <UseCompression>true</UseCompression>
+           <UseHash>true</UseHash>
+           <UseHashing>true</UseHashing>
+           <Verify>true</Verify>
+           <VerifyOnTheFly>true</VerifyOnTheFly>
+           <Version></Version>
+           <Virtual>false</Virtual>
+           <CP_Post>
+            <Execute>Default</Execute>
+            <Scripts></Scripts>
+           </CP_Post>
+           <CP_Pre>
+            <Execute>Default</Execute>
+            <Scripts></Scripts>
+           </CP_Pre>
+           <Options>
+            <UNIT_Type_AllowProgramming_0>false</UNIT_Type_AllowProgramming_0>
+            <UNIT_Type_AllowProgramming_1>false</UNIT_Type_AllowProgramming_1>
+            <UNIT_Type_AllowProgramming_2>false</UNIT_Type_AllowProgramming_2>
+           </Options>
+          </__.3>
+         </Devices>
+        </Devices>
+       </UMIConfig>
       </BDM>
       <HW>
        <HW>14</HW>
@@ -4284,6 +4404,7 @@
        </Communication>
        <IFX_DAS>
         <Config>
+         <SessionName></SessionName>
          <Str></Str>
         </Config>
        </IFX_DAS>

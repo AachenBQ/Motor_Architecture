@@ -5,7 +5,8 @@
 
 当前已确定的主要方向：
 
-- FreeRTOS + 原生 ASCLIN UART 协议作为第一阶段通信方案。
+- 原生 ASCLIN UART 协议作为第一阶段通信方案；TASKING 真机工程先使用
+  协作式运行入口，具有可用 TriCore port 后再切换 FreeRTOS。
 - 单电机 PMSM/BLDC SimpleFOC 移植。
 - MCU 完成 ADC、编码器、FOC 和 PWM。
 - micro-ROS 延后到电机闭环稳定后评估。
@@ -28,7 +29,7 @@ lower_computer/
   third_party/    FreeRTOS、SimpleFOC 和 Infineon TC37A iLLD
 ```
 
-当前尚未确定电机、功率板、编码器和最终编译工具链，因此
-不能安全生成真实引脚、采样极性和死区配置。固件默认
-`MOTOR_REAL_HARDWARE_ENABLED=0`，协议和状态机可以集成验证，但不会打开
-gate；板级参数完成评审后再启用真实功率输出。
+当前将硬件分为两个独立安全层：默认允许控制板 GTM/PWM 输出
+（`MOTOR_CONTROL_HARDWARE_ENABLED=1`），但在编译期锁住 DRV8313 功率级
+（`MOTOR_POWER_STAGE_ENABLED=0`）。因此可以只连接 TC375 控制板并检查 PWM，
+但不会释放 gate；板级参数和保护完成评审后才启用真实功率输出。

@@ -1,0 +1,5683 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc74860a --dep-file=command_router_ads.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 -o command_router_ads.src ../command_router_ads.c"
+	.compiler_name		"ctc"
+	;source	'../command_router_ads.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.command_router.ReadF32',code,cluster('ReadF32')
+	.sect	'.text.command_router.ReadF32'
+	.align	2
+	
+; Function ReadF32
+.L190:
+ReadF32:	.type	func
+	sub.a	a10,#8
+.L355:
+	mov.aa	a5,a4
+.L357:
+	lea	a4,[a10]0
+.L356:
+	mov	d4,#4
+	call	memcpy
+.L358:
+	ld.w	d2,[a10]
+.L977:
+	j	.L2
+.L2:
+	ret
+.L324:
+	
+__ReadF32_function_end:
+	.size	ReadF32,__ReadF32_function_end-ReadF32
+.L236:
+	; End of function
+	
+	.sdecl	'.text.command_router.ReadU16',code,cluster('ReadU16')
+	.sect	'.text.command_router.ReadU16'
+	.align	2
+	
+; Function ReadU16
+.L192:
+ReadU16:	.type	func
+	ld.bu	d2,[a4]
+.L982:
+	ld.bu	d15,[a4]1
+.L983:
+	sha	d15,d15,#8
+.L984:
+	or	d2,d15
+.L985:
+	j	.L3
+.L3:
+	ret
+.L328:
+	
+__ReadU16_function_end:
+	.size	ReadU16,__ReadU16_function_end-ReadU16
+.L241:
+	; End of function
+	
+	.sdecl	'.text.command_router.ReadU32',code,cluster('ReadU32')
+	.sect	'.text.command_router.ReadU32'
+	.align	2
+	
+; Function ReadU32
+.L194:
+ReadU32:	.type	func
+	ld.bu	d0,[a4]
+.L990:
+	ld.bu	d15,[a4]1
+.L991:
+	sh	d15,d15,#8
+.L992:
+	or	d0,d15
+.L993:
+	ld.bu	d15,[a4]2
+.L994:
+	sh	d15,d15,#16
+.L995:
+	or	d0,d15
+.L996:
+	ld.bu	d15,[a4]3
+.L997:
+	sh	d2,d15,#24
+.L998:
+	or	d2,d0
+.L999:
+	j	.L4
+.L4:
+	ret
+.L330:
+	
+__ReadU32_function_end:
+	.size	ReadU32,__ReadU32_function_end-ReadU32
+.L246:
+	; End of function
+	
+	.sdecl	'.text.command_router.WriteU16',code,cluster('WriteU16')
+	.sect	'.text.command_router.WriteU16'
+	.align	2
+	
+; Function WriteU16
+.L196:
+WriteU16:	.type	func
+	and	d15,d4,#255
+.L1004:
+	st.b	[a4],d15
+.L1005:
+	sha	d4,#-8
+.L359:
+	st.b	[a4]1,d4
+.L1006:
+	ret
+.L332:
+	
+__WriteU16_function_end:
+	.size	WriteU16,__WriteU16_function_end-WriteU16
+.L251:
+	; End of function
+	
+	.sdecl	'.text.command_router.WriteU32',code,cluster('WriteU32')
+	.sect	'.text.command_router.WriteU32'
+	.align	2
+	
+; Function WriteU32
+.L198:
+WriteU32:	.type	func
+	and	d15,d4,#255
+.L1011:
+	st.b	[a4],d15
+.L1012:
+	extr.u	d15,d4,#8,#8
+.L1013:
+	st.b	[a4]1,d15
+.L1014:
+	extr.u	d15,d4,#16,#8
+.L1015:
+	st.b	[a4]2,d15
+.L1016:
+	sh	d15,d4,#-24
+.L1017:
+	st.b	[a4]3,d15
+.L1018:
+	ret
+.L336:
+	
+__WriteU32_function_end:
+	.size	WriteU32,__WriteU32_function_end-WriteU32
+.L256:
+	; End of function
+	
+	.sdecl	'.text.command_router.WriteF32',code,cluster('WriteF32')
+	.sect	'.text.command_router.WriteF32'
+	.align	2
+	
+; Function WriteF32
+.L200:
+WriteF32:	.type	func
+	sub.a	a10,#8
+.L360:
+	st.w	[a10],d4
+.L1023:
+	lea	a5,[a10]0
+.L1024:
+	mov	d4,#4
+.L362:
+	call	memcpy
+.L361:
+	ret
+.L339:
+	
+__WriteF32_function_end:
+	.size	WriteF32,__WriteF32_function_end-WriteF32
+.L261:
+	; End of function
+	
+	.sdecl	'.text.command_router.FromMotorResult',code,cluster('FromMotorResult')
+	.sect	'.text.command_router.FromMotorResult'
+	.align	2
+	
+; Function FromMotorResult
+.L202:
+FromMotorResult:	.type	func
+	mov	d15,#0
+	jeq	d15,d4,.L5
+.L1029:
+	mov	d15,#2
+	jeq	d15,d4,.L6
+.L1030:
+	mov	d15,#3
+	jeq	d15,d4,.L7
+.L1031:
+	mov	d15,#4
+	jeq	d15,d4,.L8
+.L1032:
+	mov	d15,#5
+	jeq	d15,d4,.L9
+.L1033:
+	mov	d15,#6
+	jeq	d15,d4,.L10
+	j	.L11
+.L5:
+	mov	d2,#0
+.L1034:
+	j	.L12
+.L6:
+	mov	d2,#5
+.L1035:
+	j	.L13
+.L7:
+	mov	d2,#6
+.L1036:
+	j	.L14
+.L8:
+	mov	d2,#7
+.L1037:
+	j	.L15
+.L9:
+	mov	d2,#10
+.L1038:
+	j	.L16
+.L10:
+	mov	d2,#11
+.L1039:
+	j	.L17
+.L11:
+	mov	d2,#4
+.L1040:
+	j	.L18
+.L18:
+.L17:
+.L16:
+.L15:
+.L14:
+.L13:
+.L12:
+	ret
+.L342:
+	
+__FromMotorResult_function_end:
+	.size	FromMotorResult,__FromMotorResult_function_end-FromMotorResult
+.L266:
+	; End of function
+	
+	.sdecl	'.text.command_router.SendResponse',code,cluster('SendResponse')
+	.sect	'.text.command_router.SendResponse'
+	.align	2
+	
+; Function SendResponse
+.L204:
+SendResponse:	.type	func
+	mov.aa	a14,a4
+.L367:
+	mov.aa	a15,a5
+.L368:
+	mov	d8,d4
+.L370:
+	mov.aa	a12,a6
+.L371:
+	mov	d9,d5
+.L372:
+	lea	a13,[a14]20
+.L373:
+	mov	d4,#0
+.L366:
+	mov	d5,#2056
+.L364:
+	mov.aa	a4,a13
+.L365:
+	call	memset
+.L363:
+	mov	d15,#2
+.L1045:
+	st.b	[a13],d15
+.L1046:
+	mov	d15,#1
+.L1047:
+	st.b	[a14]21,d15
+.L1048:
+	ld.bu	d15,[a15]2
+.L1049:
+	st.b	[a14]22,d15
+.L1050:
+	jne	d8,#0,.L19
+.L1051:
+	mov	d15,#240
+.L1052:
+	j	.L20
+.L19:
+	mov	d15,#241
+.L20:
+	st.b	[a14]23,d15
+.L1053:
+	ld.bu	d15,[a15]4
+.L1054:
+	st.b	[a14]24,d15
+.L1055:
+	ld.bu	d15,[a15]3
+.L1056:
+	st.b	[a14]28,d15
+.L1057:
+	st.b	[a14]29,d8
+.L1058:
+	jz.a	a12,.L21
+.L1059:
+	jeq	d9,#0,.L22
+.L1060:
+	lea	a4,[a14]30
+.L1061:
+	mov.aa	a5,a12
+.L374:
+	mov	d4,d9
+.L375:
+	call	memcpy
+.L22:
+.L21:
+	add	d15,d9,#2
+.L1062:
+	st.h	[a14]26,d15
+.L1063:
+	lea	a5,[a14]2076
+.L1064:
+	mov	d4,#2059
+	mov.aa	a4,a13
+.L376:
+	call	NativeProtocol_Encode
+.L377:
+	jeq	d2,#0,.L23
+.L1065:
+	ld.a	a15,[a14]4
+.L369:
+	lea	a4,[a14]2076
+.L1066:
+	extr.u	d4,d2,#0,#16
+.L1067:
+	mov	d5,#1
+	calli	a15
+.L23:
+	ret
+.L344:
+	
+__SendResponse_function_end:
+	.size	SendResponse,__SendResponse_function_end-SendResponse
+.L271:
+	; End of function
+	
+	.sdecl	'.text.command_router.IsSingleMotorPayload',code,cluster('IsSingleMotorPayload')
+	.sect	'.text.command_router.IsSingleMotorPayload'
+	.align	2
+	
+; Function IsSingleMotorPayload
+.L206:
+IsSingleMotorPayload:	.type	func
+	mov	d2,#0
+.L1072:
+	ld.hu	d15,[a4]6
+.L1073:
+	jlt.u	d15,d4,.L24
+.L1074:
+	ld.bu	d15,[a4]8
+.L1075:
+	jne	d15,#1,.L25
+.L1076:
+	mov	d2,#1
+.L25:
+.L24:
+	j	.L26
+.L26:
+	ret
+.L352:
+	
+__IsSingleMotorPayload_function_end:
+	.size	IsSingleMotorPayload,__IsSingleMotorPayload_function_end-IsSingleMotorPayload
+.L276:
+	; End of function
+	
+	.sdecl	'.text.command_router.CommandRouter_Init',code,cluster('CommandRouter_Init')
+	.sect	'.text.command_router.CommandRouter_Init'
+	.align	2
+	
+	.global	CommandRouter_Init
+; Function CommandRouter_Init
+.L208:
+CommandRouter_Init:	.type	func
+	mov.aa	a15,a4
+.L379:
+	mov.aa	a12,a5
+.L380:
+	mov.aa	a13,a6
+.L381:
+	mov	d4,#0
+.L479:
+	mov	d5,#8252
+	mov.aa	a4,a15
+	call	memset
+.L378:
+	st.a	[a15],a12
+.L480:
+	st.a	[a15]4,a13
+.L481:
+	mov	d15,#100
+.L482:
+	st.h	[a15]8,d15
+.L483:
+	mov	d15,#-1
+.L484:
+	st.w	[a15]10,d15
+.L485:
+	ret
+.L277:
+	
+__CommandRouter_Init_function_end:
+	.size	CommandRouter_Init,__CommandRouter_Init_function_end-CommandRouter_Init
+.L221:
+	; End of function
+	
+	.sdecl	'.text.command_router.CommandRouter_Handle',code,cluster('CommandRouter_Handle')
+	.sect	'.text.command_router.CommandRouter_Handle'
+	.align	2
+	
+	.global	CommandRouter_Handle
+; Function CommandRouter_Handle
+.L210:
+CommandRouter_Handle:	.type	func
+	sub.a	a10,#168
+.L382:
+	mov.aa	a12,a4
+.L384:
+	mov.aa	a15,a5
+.L385:
+	mov	d8,#0
+.L386:
+	mov	d9,#0
+.L388:
+	ld.w	d0,[a12]14
+.L490:
+	add	d0,#1
+	st.w	[a12]14,d0
+.L491:
+	ld.bu	d15,[a15]
+.L492:
+	jeq	d15,#2,.L27
+.L493:
+	mov	d4,#2
+.L494:
+	mov.a	a6,#0
+.L495:
+	mov	d5,#0
+	mov.aa	a4,a12
+	mov.aa	a5,a15
+	call	SendResponse
+.L383:
+	j	.L28
+.L27:
+	mov	d10,#0
+.L390:
+	ld.bu	d0,[a15]2
+.L496:
+	mov	d15,#255
+.L497:
+	jne	d15,d0,.L29
+.L498:
+	ld.bu	d0,[a15]3
+.L499:
+	mov	d15,#16
+.L500:
+	jne	d15,d0,.L30
+.L501:
+	ld.hu	d15,[a15]6
+.L502:
+	jne	d15,#2,.L31
+.L503:
+	ld.bu	d15,[a15]8
+.L504:
+	jeq	d15,#1,.L32
+.L505:
+	ld.bu	d0,[a15]8
+.L506:
+	mov	d15,#255
+.L507:
+	jne	d15,d0,.L33
+.L32:
+	ld.bu	d15,[a15]9
+.L508:
+	jne	d15,#0,.L34
+.L509:
+	mov	d10,#1
+.L34:
+.L33:
+.L31:
+.L30:
+.L29:
+	ld.bu	d15,[a15]2
+.L510:
+	jeq	d15,#1,.L35
+.L511:
+	ld.bu	d0,[a15]2
+.L512:
+	mov	d15,#255
+.L513:
+	jne	d15,d0,.L36
+.L514:
+	ld.bu	d0,[a15]3
+.L515:
+	mov	d15,#31
+.L516:
+	jeq	d15,d0,.L37
+.L36:
+	jne	d10,#0,.L38
+.L517:
+	mov	d4,#3
+.L518:
+	mov.a	a6,#0
+.L519:
+	mov	d5,#0
+	mov.aa	a4,a12
+	mov.aa	a5,a15
+	call	SendResponse
+.L389:
+	j	.L39
+.L38:
+.L37:
+.L35:
+	ld.bu	d1,[a15]3
+.L520:
+	mov	d0,#1
+	jeq	d0,d1,.L40
+.L521:
+	mov	d0,#2
+	jeq	d0,d1,.L41
+.L522:
+	mov	d0,#3
+	jeq	d0,d1,.L42
+.L523:
+	mov	d0,#4
+	jeq	d0,d1,.L43
+.L524:
+	mov	d15,#16
+	jeq	d15,d1,.L44
+.L525:
+	mov	d15,#17
+	jeq	d15,d1,.L45
+.L526:
+	mov	d15,#18
+	jeq	d15,d1,.L46
+.L527:
+	mov	d15,#19
+	jeq	d15,d1,.L47
+.L528:
+	mov	d15,#21
+	jeq	d15,d1,.L48
+.L529:
+	mov	d15,#22
+	jeq	d15,d1,.L49
+.L530:
+	mov	d15,#23
+	jeq	d15,d1,.L50
+.L531:
+	mov	d15,#24
+	jeq	d15,d1,.L51
+.L532:
+	mov	d15,#25
+	jeq	d15,d1,.L52
+.L533:
+	mov	d15,#26
+	jeq	d15,d1,.L53
+.L534:
+	mov	d15,#27
+	jeq	d15,d1,.L54
+.L535:
+	mov	d15,#28
+	jeq	d15,d1,.L55
+.L536:
+	mov	d15,#31
+	jeq	d15,d1,.L56
+.L537:
+	mov	d15,#32
+	jeq	d15,d1,.L57
+.L538:
+	mov	d15,#34
+	jeq	d15,d1,.L58
+.L539:
+	mov	d15,#35
+	jeq	d15,d1,.L59
+.L540:
+	mov	d15,#36
+	jeq	d15,d1,.L60
+.L541:
+	mov	d15,#37
+	jeq	d15,d1,.L61
+.L542:
+	mov	d15,#38
+	jeq	d15,d1,.L62
+.L543:
+	mov	d15,#39
+	jeq	d15,d1,.L63
+.L544:
+	mov	d15,#40
+	jeq	d15,d1,.L64
+.L545:
+	mov	d15,#41
+	jeq	d15,d1,.L65
+	j	.L66
+.L40:
+	lea	a4,[a10]0
+.L392:
+	movh.a	a5,#@his(.1.str)
+.L391:
+	lea	a5,[a5]@los(.1.str)
+.L546:
+	mov	d4,#13
+	call	memcpy
+.L547:
+	mov	d8,#13
+.L548:
+	j	.L67
+.L41:
+	mov	d15,#0
+.L549:
+	st.b	[a10],d15
+.L550:
+	mov	d15,#3
+.L551:
+	st.b	[a10]1,d15
+.L552:
+	mov	d15,#0
+.L553:
+	st.b	[a10]2,d15
+.L554:
+	mov	d15,#1
+.L555:
+	st.b	[a10]3,d15
+.L556:
+	mov	d15,#0
+.L557:
+	st.b	[a10]4,d15
+.L558:
+	lea	a4,[a10]5
+.L394:
+	mov	d4,#1
+	addih	d4,d4,#14160
+	call	WriteU32
+.L393:
+	lea	a4,[a10]9
+.L559:
+	mov	d4,#0
+.L560:
+	mov	d5,#24
+	call	memset
+.L561:
+	lea	a4,[a10]9
+.L562:
+	movh.a	a5,#@his(.2.str)
+	lea	a5,[a5]@los(.2.str)
+.L563:
+	mov	d4,#9
+	call	memcpy
+.L564:
+	lea	a4,[a10]25
+.L565:
+	movh.a	a5,#@his(.3.str)
+	lea	a5,[a5]@los(.3.str)
+.L566:
+	mov	d4,#5
+	call	memcpy
+.L567:
+	mov	d8,#33
+.L568:
+	j	.L68
+.L42:
+	mov	d15,#1
+.L569:
+	st.b	[a10],d15
+.L570:
+	mov	d15,#1
+.L571:
+	st.b	[a10]1,d15
+.L572:
+	mov	d15,#15
+.L573:
+	st.b	[a10]2,d15
+.L574:
+	lea	a4,[a10]3
+.L396:
+	mov	d4,#61
+	call	WriteU32
+.L395:
+	lea	a4,[a10]7
+.L575:
+	mov	d4,#1000
+	call	WriteU16
+.L576:
+	mov	d8,#9
+.L577:
+	j	.L69
+.L43:
+	ld.hu	d15,[a15]6
+.L578:
+	jeq	d15,#6,.L70
+.L579:
+	mov	d9,#2
+.L580:
+	j	.L71
+.L70:
+	lea	a4,[a15]8
+.L397:
+	call	ReadU32
+.L302:
+	lea	a4,[a15]12
+	call	ReadU16
+.L398:
+	mov	d15,d2
+.L400:
+	mov	d0,#300
+.L581:
+	jlt.u	d15,d0,.L72
+.L582:
+	mov	d0,#5000
+.L583:
+	jge.u	d0,d15,.L73
+.L72:
+	mov	d9,#5
+.L584:
+	j	.L74
+.L73:
+	call	Tc375Hal_TimeMs
+.L399:
+	ld.a	a4,[a12]
+.L585:
+	mov	e4,d15,d2
+	call	MotorControl_Heartbeat
+.L74:
+	j	.L75
+.L44:
+	mov	d4,#2
+	mov.aa	a4,a15
+.L401:
+	call	IsSingleMotorPayload
+.L402:
+	jne	d2,#0,.L76
+.L586:
+	jeq	d10,#0,.L77
+.L76:
+	ld.hu	d15,[a15]6
+.L587:
+	jeq	d15,#2,.L78
+.L77:
+	mov	d9,#2
+.L588:
+	j	.L79
+.L78:
+	ld.a	a4,[a12]
+.L589:
+	ld.bu	d15,[a15]9
+.L590:
+	ne	d4,d15,#0
+	call	MotorControl_SetEnable
+.L403:
+	mov	d4,d2
+.L405:
+	call	FromMotorResult
+.L404:
+	mov	d9,d2
+.L591:
+	j	.L80
+.L45:
+	mov	d4,#2
+	mov.aa	a4,a15
+.L406:
+	call	IsSingleMotorPayload
+.L407:
+	jeq	d2,#0,.L81
+.L592:
+	ld.hu	d15,[a15]6
+.L593:
+	jeq	d15,#2,.L82
+.L81:
+	mov	d9,#2
+.L594:
+	j	.L83
+.L82:
+	ld.a	a4,[a12]
+.L595:
+	ld.bu	d4,[a15]9
+.L596:
+	call	MotorControl_SetMode
+.L408:
+	mov	d4,d2
+.L410:
+	call	FromMotorResult
+.L409:
+	mov	d9,d2
+.L597:
+	j	.L84
+.L46:
+	mov	d4,#6
+	mov.aa	a4,a15
+.L411:
+	call	IsSingleMotorPayload
+.L412:
+	jeq	d2,#0,.L85
+.L598:
+	ld.hu	d15,[a15]6
+.L599:
+	jeq	d15,#6,.L86
+.L85:
+	mov	d9,#2
+.L600:
+	j	.L87
+.L86:
+	lea	a4,[a15]10
+	call	ReadF32
+.L601:
+	ld.a	a4,[a12]
+.L602:
+	ld.bu	d4,[a15]9
+.L603:
+	mov	d5,d2
+	call	MotorControl_SetTarget
+.L413:
+	mov	d4,d2
+.L415:
+	call	FromMotorResult
+.L414:
+	mov	d9,d2
+.L604:
+	j	.L88
+.L47:
+	mov	d4,#14
+	mov.aa	a4,a15
+.L416:
+	call	IsSingleMotorPayload
+.L417:
+	jeq	d2,#0,.L89
+.L605:
+	ld.hu	d0,[a15]6
+.L606:
+	mov	d15,#14
+.L607:
+	jeq	d15,d0,.L90
+.L89:
+	mov	d9,#2
+.L608:
+	j	.L91
+.L90:
+	ld.bu	d15,[a15]9
+.L418:
+	lea	a4,[a15]10
+	call	ReadF32
+.L609:
+	st.w	[a10]40,d2
+.L610:
+	lea	a4,[a15]14
+	call	ReadF32
+.L611:
+	st.w	[a10]44,d2
+.L612:
+	lea	a4,[a15]18
+	call	ReadF32
+.L613:
+	st.w	[a10]48,d2
+.L614:
+	ld.a	a4,[a12]
+.L615:
+	lea	a5,[a10]40
+	mov	d4,d15
+.L419:
+	call	MotorControl_SetPid
+.L420:
+	mov	d4,d2
+	call	FromMotorResult
+.L616:
+	mov	d9,d2
+.L617:
+	j	.L92
+.L57:
+	mov	d4,#2
+	mov.aa	a4,a15
+.L421:
+	call	IsSingleMotorPayload
+.L422:
+	jeq	d2,#0,.L93
+.L618:
+	ld.hu	d15,[a15]6
+.L619:
+	jne	d15,#2,.L94
+.L620:
+	ld.bu	d15,[a15]9
+.L621:
+	jlt.u	d15,#3,.L95
+.L94:
+.L93:
+	mov	d9,#2
+.L622:
+	j	.L96
+.L95:
+	ld.bu	d8,[a15]9
+.L387:
+	st.b	[a10],d8
+.L623:
+	lea	a4,[a10]1
+.L624:
+	mul	d15,d8,#12
+.L625:
+	ld.a	a2,[a12]
+.L626:
+	addsc.a	a2,a2,d15,#0
+.L627:
+	ld.w	d4,[a2]36
+	call	WriteF32
+.L628:
+	lea	a4,[a10]5
+.L629:
+	mul	d15,d8,#12
+.L630:
+	ld.a	a2,[a12]
+.L631:
+	addsc.a	a2,a2,d15,#0
+.L632:
+	ld.w	d4,[a2]40
+	call	WriteF32
+.L633:
+	lea	a4,[a10]9
+.L634:
+	mul	d15,d8,#12
+.L635:
+	ld.a	a2,[a12]
+.L636:
+	addsc.a	a2,a2,d15,#0
+.L637:
+	ld.w	d4,[a2]44
+	call	WriteF32
+.L638:
+	mov	d8,#13
+.L423:
+	j	.L97
+.L48:
+	mov	d4,#2
+	mov.aa	a4,a15
+.L424:
+	call	IsSingleMotorPayload
+.L425:
+	jeq	d2,#0,.L98
+.L639:
+	ld.hu	d15,[a15]6
+.L640:
+	jne	d15,#2,.L99
+.L641:
+	ld.bu	d15,[a15]9
+.L642:
+	jlt.u	d15,#5,.L100
+.L99:
+.L98:
+	mov	d9,#2
+.L643:
+	j	.L101
+.L100:
+	ld.a	a4,[a12]
+.L644:
+	ld.bu	d4,[a15]9
+	call	MotorControl_StartCalibration
+.L645:
+	mov	d4,d2
+	call	FromMotorResult
+.L646:
+	mov	d9,d2
+.L647:
+	j	.L102
+.L49:
+	mov	d4,#1
+	mov.aa	a4,a15
+.L426:
+	call	IsSingleMotorPayload
+.L427:
+	jeq	d2,#0,.L103
+.L648:
+	ld.hu	d15,[a15]6
+.L649:
+	jeq	d15,#1,.L104
+.L103:
+	mov	d9,#2
+.L650:
+	j	.L105
+.L104:
+	call	Tc375Hal_ReadActiveFaults
+.L651:
+	ld.a	a4,[a12]
+.L652:
+	mov	d4,d2
+	call	MotorControl_ClearFault
+.L653:
+	mov	d4,d2
+	call	FromMotorResult
+.L654:
+	mov	d9,d2
+.L655:
+	j	.L106
+.L54:
+	mov	d4,#1
+	mov.aa	a4,a15
+.L428:
+	call	IsSingleMotorPayload
+.L429:
+	jeq	d2,#0,.L107
+.L656:
+	ld.hu	d15,[a15]6
+.L657:
+	jeq	d15,#1,.L108
+.L107:
+	mov	d9,#2
+.L658:
+	j	.L109
+.L108:
+	ld.a	a4,[a12]
+	call	MotorControl_RequestControlledStop
+.L659:
+	j	.L110
+.L55:
+	mov	d4,#1
+	mov.aa	a4,a15
+.L430:
+	call	IsSingleMotorPayload
+.L431:
+	jeq	d2,#0,.L111
+.L660:
+	ld.hu	d15,[a15]6
+.L661:
+	jeq	d15,#1,.L112
+.L111:
+	mov	d9,#2
+.L662:
+	j	.L113
+.L112:
+	ld.a	a4,[a12]
+.L663:
+	mov	d4,#0
+	call	MotorControl_Stop
+.L664:
+	j	.L114
+.L56:
+	ld.hu	d15,[a15]6
+.L665:
+	jne	d15,#1,.L115
+.L666:
+	ld.bu	d15,[a15]8
+.L667:
+	jeq	d15,#1,.L116
+.L668:
+	ld.bu	d0,[a15]8
+.L669:
+	mov	d15,#255
+.L670:
+	jeq	d15,d0,.L117
+.L115:
+	mov	d9,#2
+.L671:
+	j	.L118
+.L117:
+.L116:
+	ld.a	a4,[a12]
+.L433:
+	mov	d4,#1
+	call	MotorControl_Stop
+.L432:
+	mov	d4,#0
+	call	Tc375Hal_SetGateEnabled
+.L672:
+	mov	d4,#0
+	call	Tc375Hal_SetPwmEnabled
+.L673:
+	j	.L119
+.L58:
+	call	Tc375Hal_TimeMs
+.L434:
+	lea	a4,[a10]0
+.L674:
+	mov	d4,d2
+	call	WriteU32
+.L675:
+	lea	a4,[a10]4
+.L676:
+	ld.hu	d4,[a12]18
+	call	WriteU16
+.L677:
+	lea	a4,[a10]6
+.L678:
+	ld.a	a2,[a12]
+.L679:
+	ld.w	d15,[a2]16
+.L680:
+	extr.u	d4,d15,#0,#16
+	call	WriteU16
+.L681:
+	mov	d8,#8
+.L682:
+	j	.L120
+.L59:
+	ld.hu	d15,[a15]6
+.L683:
+	jeq	d15,#6,.L121
+.L684:
+	mov	d9,#2
+.L685:
+	j	.L122
+.L121:
+	lea	a4,[a15]8
+.L436:
+	call	ReadU16
+.L435:
+	mov	d15,d2
+.L438:
+	lea	a4,[a15]10
+	call	ReadU32
+.L437:
+	jeq	d15,#0,.L123
+.L686:
+	mov	d0,#1000
+.L687:
+	jge.u	d0,d15,.L124
+.L123:
+	mov	d9,#5
+.L688:
+	j	.L125
+.L124:
+	st.h	[a12]8,d15
+.L689:
+	st.w	[a12]10,d2
+.L125:
+	j	.L126
+.L60:
+	mov	d15,#0
+.L690:
+	st.b	[a10],d15
+.L691:
+	mov	d15,#1
+.L692:
+	st.b	[a10]1,d15
+.L693:
+	mov	d8,#2
+.L694:
+	j	.L127
+.L61:
+	lea	a4,[a10]0
+.L440:
+	ld.hu	d4,[a12]8
+	call	WriteU16
+.L439:
+	lea	a4,[a10]2
+.L695:
+	ld.w	d4,[a12]10
+	call	WriteU32
+.L696:
+	mov	d8,#6
+.L697:
+	j	.L128
+.L62:
+	mov	d4,#28
+	mov.aa	a4,a15
+.L441:
+	call	IsSingleMotorPayload
+.L442:
+	jeq	d2,#0,.L129
+.L698:
+	ld.hu	d0,[a15]6
+.L699:
+	mov	d15,#28
+.L700:
+	jeq	d15,d0,.L130
+.L129:
+	mov	d9,#2
+.L701:
+	j	.L131
+.L130:
+	lea	a4,[a10]52
+.L702:
+	mov	d4,#0
+.L703:
+	mov	d5,#28
+	call	memset
+.L704:
+	ld.bu	d15,[a15]9
+.L705:
+	st.b	[a10]52,d15
+.L706:
+	ld.bu	d15,[a15]10
+.L707:
+	st.b	[a10]53,d15
+.L708:
+	ld.bu	d15,[a15]11
+.L709:
+	st.b	[a10]54,d15
+.L710:
+	lea	a4,[a15]12
+	call	ReadF32
+.L711:
+	st.w	[a10]56,d2
+.L712:
+	lea	a4,[a15]16
+	call	ReadF32
+.L713:
+	st.w	[a10]60,d2
+.L714:
+	lea	a4,[a15]20
+	call	ReadF32
+.L715:
+	st.w	[a10]64,d2
+.L716:
+	lea	a4,[a15]24
+	call	ReadF32
+.L717:
+	st.w	[a10]68,d2
+.L718:
+	lea	a4,[a15]28
+	call	ReadU16
+.L719:
+	st.h	[a10]72,d2
+.L720:
+	lea	a4,[a15]30
+	call	ReadU16
+.L721:
+	st.h	[a10]74,d2
+.L722:
+	lea	a4,[a15]32
+	call	ReadU32
+.L723:
+	st.w	[a10]76,d2
+.L724:
+	ld.a	a4,[a12]
+.L725:
+	lea	a5,[a10]52
+	call	MotorControl_SetOpenLoopConfig
+.L726:
+	mov	d4,d2
+	call	FromMotorResult
+.L727:
+	mov	d9,d2
+.L307:
+	j	.L132
+.L63:
+	mov	d4,#1
+	mov.aa	a4,a15
+.L443:
+	call	IsSingleMotorPayload
+.L444:
+	jeq	d2,#0,.L133
+.L728:
+	ld.hu	d15,[a15]6
+.L729:
+	jeq	d15,#1,.L134
+.L133:
+	mov	d9,#2
+.L730:
+	j	.L135
+.L134:
+	mov	d15,#1
+.L731:
+	st.b	[a10],d15
+.L732:
+	ld.a	a2,[a12]
+.L733:
+	ld.bu	d15,[a2]168
+.L734:
+	st.b	[a10]1,d15
+.L735:
+	ld.a	a2,[a12]
+.L736:
+	ld.bu	d15,[a2]169
+.L737:
+	st.b	[a10]2,d15
+.L738:
+	ld.a	a2,[a12]
+.L739:
+	ld.bu	d15,[a2]170
+.L740:
+	st.b	[a10]3,d15
+.L741:
+	lea	a4,[a10]4
+.L742:
+	ld.a	a2,[a12]
+.L743:
+	ld.w	d4,[a2]172
+	call	WriteF32
+.L744:
+	lea	a4,[a10]8
+.L745:
+	ld.a	a2,[a12]
+.L746:
+	ld.w	d4,[a2]176
+	call	WriteF32
+.L747:
+	lea	a4,[a10]12
+.L748:
+	ld.a	a2,[a12]
+.L749:
+	ld.w	d4,[a2]180
+	call	WriteF32
+.L750:
+	lea	a4,[a10]16
+.L751:
+	ld.a	a2,[a12]
+.L752:
+	ld.w	d4,[a2]184
+	call	WriteF32
+.L753:
+	lea	a4,[a10]20
+.L754:
+	ld.a	a2,[a12]
+.L755:
+	ld.hu	d4,[a2]188
+	call	WriteU16
+.L756:
+	lea	a4,[a10]22
+.L757:
+	ld.a	a2,[a12]
+.L758:
+	ld.hu	d4,[a2]190
+	call	WriteU16
+.L759:
+	lea	a4,[a10]24
+.L760:
+	ld.a	a2,[a12]
+.L761:
+	ld.w	d4,[a2]192
+	call	WriteU32
+.L762:
+	mov	d8,#28
+.L763:
+	j	.L136
+.L64:
+	mov	d4,#1
+	mov.aa	a4,a15
+.L445:
+	call	IsSingleMotorPayload
+.L446:
+	jeq	d2,#0,.L137
+.L764:
+	ld.hu	d15,[a15]6
+.L765:
+	jeq	d15,#1,.L138
+.L137:
+	mov	d9,#2
+.L766:
+	j	.L139
+.L138:
+	call	Tc375Hal_TimeMs
+.L767:
+	ld.a	a4,[a12]
+.L768:
+	mov	d4,d2
+	call	MotorControl_StartOpenLoop
+.L769:
+	mov	d4,d2
+	call	FromMotorResult
+.L770:
+	mov	d9,d2
+.L771:
+	j	.L140
+.L65:
+	ld.hu	d15,[a15]6
+.L772:
+	jeq	d15,#0,.L141
+.L773:
+	mov	d9,#2
+.L774:
+	j	.L142
+.L141:
+	mov	d15,#1
+.L775:
+	st.b	[a10],d15
+.L776:
+	mov	d15,#1
+.L777:
+	st.b	[a10]1,d15
+.L778:
+	mov	d15,#0
+.L779:
+	st.b	[a10]2,d15
+.L780:
+	mov	d15,#1
+.L781:
+	st.b	[a10]3,d15
+.L782:
+	mov	d15,#7
+.L783:
+	st.b	[a10]4,d15
+.L784:
+	lea	a4,[a10]5
+.L448:
+	mov	d4,#10000
+	call	WriteU32
+.L447:
+	lea	a4,[a10]9
+.L785:
+	mov	d4,#20000
+	call	WriteU32
+.L786:
+	lea	a4,[a10]13
+.L787:
+	mov	d4,#10000
+	call	WriteU32
+.L788:
+	lea	a4,[a10]17
+.L789:
+	mov	d4,#1000
+	call	WriteU32
+.L790:
+	lea	a4,[a10]21
+.L791:
+	mov	d4,#100
+	call	WriteU16
+.L792:
+	lea	a4,[a10]23
+.L793:
+	mov	d4,#750
+	call	WriteU16
+.L794:
+	lea	a4,[a10]25
+.L795:
+	mov	d4,#300
+	call	WriteU16
+.L796:
+	lea	a4,[a10]27
+.L797:
+	mov	d4,#5000
+	call	WriteU16
+.L798:
+	lea	a4,[a10]29
+.L799:
+	mov.u	d4,#52429
+	addih	d4,d4,#15820
+	call	WriteF32
+.L800:
+	mov	d8,#33
+.L801:
+	j	.L143
+.L50:
+	mov	d4,#33
+	mov.aa	a4,a15
+.L449:
+	call	IsSingleMotorPayload
+.L450:
+	jeq	d2,#0,.L144
+.L802:
+	ld.hu	d0,[a15]6
+.L803:
+	mov	d15,#33
+.L804:
+	jne	d15,d0,.L145
+.L805:
+	ld.a	a2,[a12]
+.L806:
+	ld.bu	d15,[a2]6
+	jeq	d15,#0,.L146
+.L145:
+.L144:
+	ld.a	a2,[a12]
+.L807:
+	ld.bu	d15,[a2]6
+.L808:
+	jeq	d15,#0,.L147
+.L809:
+	mov	d9,#4
+.L810:
+	j	.L148
+.L147:
+	mov	d9,#2
+.L148:
+	j	.L149
+.L146:
+	lea	a4,[a15]9
+	call	ReadF32
+.L811:
+	st.w	[a10]52,d2
+.L812:
+	lea	a4,[a15]13
+	call	ReadF32
+.L813:
+	st.w	[a10]56,d2
+.L814:
+	lea	a4,[a15]17
+	call	ReadF32
+.L815:
+	st.w	[a10]60,d2
+.L816:
+	lea	a4,[a15]21
+	call	ReadF32
+.L817:
+	st.w	[a10]64,d2
+.L818:
+	lea	a4,[a15]25
+	call	ReadF32
+.L819:
+	st.w	[a10]68,d2
+.L820:
+	lea	a4,[a15]29
+	call	ReadF32
+.L821:
+	st.w	[a10]72,d2
+.L822:
+	lea	a4,[a15]33
+	call	ReadF32
+.L823:
+	st.w	[a10]76,d2
+.L824:
+	lea	a4,[a15]37
+	call	ReadF32
+.L825:
+	st.w	[a10]80,d2
+.L826:
+	ld.w	d4,[a10]52
+	call	_isfinitef
+	jeq	d2,#0,.L150
+.L827:
+	ld.w	d4,[a10]56
+	call	_isfinitef
+	jeq	d2,#0,.L151
+.L828:
+	ld.w	d4,[a10]60
+	call	_isfinitef
+	jeq	d2,#0,.L152
+.L829:
+	ld.w	d4,[a10]64
+	call	_isfinitef
+	jeq	d2,#0,.L153
+.L830:
+	ld.w	d4,[a10]68
+	call	_isfinitef
+	jeq	d2,#0,.L154
+.L831:
+	ld.w	d4,[a10]72
+	call	_isfinitef
+	jeq	d2,#0,.L155
+.L832:
+	ld.w	d4,[a10]76
+	call	_isfinitef
+	jeq	d2,#0,.L156
+.L833:
+	ld.w	d4,[a10]80
+	call	_isfinitef
+	jeq	d2,#0,.L157
+.L834:
+	ld.w	d15,[a10]52
+.L835:
+	mov	d0,#0
+.L836:
+	cmp.f	d15,d15,d0
+	and	d15,#3
+	ne	d15,d15,#0
+	jne	d15,#0,.L158
+.L837:
+	ld.w	d15,[a10]56
+.L838:
+	mov	d0,#0
+.L839:
+	cmp.f	d15,d15,d0
+	and	d15,#3
+	ne	d15,d15,#0
+	jne	d15,#0,.L159
+.L840:
+	ld.w	d15,[a10]60
+.L841:
+	mov	d0,#0
+.L842:
+	cmp.f	d15,d15,d0
+	and	d15,#3
+	ne	d15,d15,#0
+	jne	d15,#0,.L160
+.L843:
+	ld.a	a2,[a12]
+	ld.w	d15,[a2]180
+	insert	d0,d15,#0,#31,#1
+.L844:
+	ld.w	d15,[a10]60
+.L845:
+	cmp.f	d15,d0,d15
+	jnz.t	d15:2,.L161
+.L846:
+	ld.w	d0,[a10]64
+.L847:
+	ld.w	d15,[a10]68
+.L848:
+	cmp.f	d15,d0,d15
+	and	d15,#6
+	ne	d15,d15,#0
+	jne	d15,#0,.L162
+.L849:
+	ld.w	d0,[a10]72
+.L850:
+	ld.w	d15,[a10]76
+.L851:
+	cmp.f	d15,d0,d15
+	and	d15,#6
+	ne	d15,d15,#0
+	jne	d15,#0,.L163
+.L852:
+	ld.a	a2,[a12]
+.L853:
+	ld.w	d0,[a2]172
+.L854:
+	ld.w	d15,[a10]72
+.L855:
+	cmp.f	d15,d0,d15
+	jnz.t	d15:0,.L164
+.L856:
+	ld.a	a2,[a12]
+.L857:
+	ld.w	d0,[a2]172
+.L858:
+	ld.w	d15,[a10]76
+.L859:
+	cmp.f	d15,d0,d15
+	extr.u	d15,d15,#2,#1
+	jeq	d15,#0,.L165
+.L164:
+.L163:
+.L162:
+.L161:
+.L160:
+.L159:
+.L158:
+.L157:
+.L156:
+.L155:
+.L154:
+.L153:
+.L152:
+.L151:
+.L150:
+	mov	d9,#5
+.L860:
+	j	.L166
+.L165:
+	ld.a	a2,[a12]
+.L861:
+	lea	a4,[a10]52
+.L862:
+	lea	a2,[a2]112
+	mov.a	a5,#7
+.L167:
+	ld.w	d15,[a4+]
+	st.w	[a2+],d15
+	loop	a5,.L167
+.L166:
+	j	.L168
+.L51:
+	mov	d4,#1
+	mov.aa	a4,a15
+.L451:
+	call	IsSingleMotorPayload
+.L452:
+	jeq	d2,#0,.L169
+.L863:
+	ld.hu	d15,[a15]6
+.L864:
+	jeq	d15,#1,.L170
+.L169:
+	mov	d9,#2
+.L865:
+	j	.L171
+.L170:
+	mov	d15,#1
+.L866:
+	st.b	[a10],d15
+.L867:
+	lea	a4,[a10]1
+.L868:
+	ld.a	a2,[a12]
+.L869:
+	ld.w	d4,[a2]112
+	call	WriteF32
+.L870:
+	lea	a4,[a10]5
+.L871:
+	ld.a	a2,[a12]
+.L872:
+	ld.w	d4,[a2]116
+	call	WriteF32
+.L873:
+	lea	a4,[a10]9
+.L874:
+	ld.a	a2,[a12]
+.L875:
+	ld.w	d4,[a2]120
+	call	WriteF32
+.L876:
+	lea	a4,[a10]13
+.L877:
+	ld.a	a2,[a12]
+.L878:
+	ld.w	d4,[a2]124
+	call	WriteF32
+.L879:
+	lea	a4,[a10]17
+.L880:
+	ld.a	a2,[a12]
+.L881:
+	ld.w	d4,[a2]128
+	call	WriteF32
+.L882:
+	lea	a4,[a10]21
+.L883:
+	ld.a	a2,[a12]
+.L884:
+	ld.w	d4,[a2]132
+	call	WriteF32
+.L885:
+	lea	a4,[a10]25
+.L886:
+	ld.a	a2,[a12]
+.L887:
+	ld.w	d4,[a2]136
+	call	WriteF32
+.L888:
+	lea	a4,[a10]29
+.L889:
+	ld.a	a2,[a12]
+.L890:
+	ld.w	d4,[a2]140
+	call	WriteF32
+.L891:
+	mov	d8,#33
+.L892:
+	j	.L172
+.L52:
+	ld.a	a2,[a12]
+.L893:
+	ld.bu	d15,[a2]6
+.L894:
+	jeq	d15,#0,.L173
+.L895:
+	mov	d9,#4
+.L896:
+	j	.L174
+.L173:
+	ld.a	a4,[a12]
+.L454:
+	call	MotorControl_ApplyPendingPid
+.L453:
+	ld.a	a4,[a12]
+.L897:
+	lea	a5,[a10]52
+	call	MotorControl_ExportPersistentConfig
+.L898:
+	ld.hu	d15,[a12]8
+.L899:
+	st.h	[a10]60,d15
+.L900:
+	ld.w	d15,[a12]10
+.L901:
+	st.w	[a10]64,d15
+.L902:
+	lea	a4,[a10]52
+.L903:
+	mov	d4,#112
+	call	Tc375Hal_SaveConfiguration
+.L904:
+	jne	d2,#0,.L175
+.L905:
+	mov	d9,#9
+.L175:
+.L174:
+	j	.L176
+.L53:
+	ld.a	a2,[a12]
+.L906:
+	ld.bu	d15,[a2]6
+.L907:
+	jeq	d15,#0,.L177
+.L908:
+	mov	d9,#4
+.L909:
+	j	.L178
+.L177:
+	ld.a	a4,[a12]
+.L456:
+	call	MotorControl_RestoreDefaults
+.L455:
+	mov	d15,#100
+.L910:
+	st.h	[a12]8,d15
+.L911:
+	mov	d15,#-1
+.L912:
+	st.w	[a12]10,d15
+.L178:
+	j	.L179
+.L66:
+	mov	d9,#1
+.L913:
+	j	.L180
+.L180:
+.L179:
+.L176:
+.L172:
+.L171:
+.L168:
+.L149:
+.L143:
+.L142:
+.L140:
+.L139:
+.L136:
+.L135:
+.L132:
+.L131:
+.L128:
+.L127:
+.L126:
+.L122:
+.L120:
+.L119:
+.L118:
+.L114:
+.L113:
+.L110:
+.L109:
+.L106:
+.L105:
+.L102:
+.L101:
+.L97:
+.L96:
+.L92:
+.L91:
+.L88:
+.L87:
+.L84:
+.L83:
+.L80:
+.L79:
+.L75:
+.L71:
+.L69:
+.L68:
+.L67:
+	lea	a6,[a10]0
+.L914:
+	mov.aa	a4,a12
+.L457:
+	mov.aa	a5,a15
+.L458:
+	mov	e4,d8,d9
+	call	SendResponse
+.L39:
+.L28:
+	ret
+.L284:
+	
+__CommandRouter_Handle_function_end:
+	.size	CommandRouter_Handle,__CommandRouter_Handle_function_end-CommandRouter_Handle
+.L226:
+	; End of function
+	
+	.sdecl	'.text.command_router.CommandRouter_SendTelemetry',code,cluster('CommandRouter_SendTelemetry')
+	.sect	'.text.command_router.CommandRouter_SendTelemetry'
+	.align	2
+	
+	.global	CommandRouter_SendTelemetry
+; Function CommandRouter_SendTelemetry
+.L212:
+CommandRouter_SendTelemetry:	.type	func
+	mov.aa	a12,a4
+.L461:
+	mov	d8,d4
+.L462:
+	lea	a13,[a12]4136
+.L463:
+	ld.a	a2,[a12]
+.L919:
+	lea	a15,[a2]144
+.L464:
+	ld.hu	d9,[a15]20
+.L466:
+	mov	d4,#0
+.L460:
+	mov	d5,#2056
+	mov.aa	a4,a13
+.L459:
+	call	memset
+.L468:
+	mov	d0,#2
+.L920:
+	st.b	[a13],d0
+.L921:
+	mov	d0,#1
+.L922:
+	st.b	[a12]4138,d0
+.L923:
+	mov	d15,#128
+.L924:
+	st.b	[a12]4139,d15
+.L925:
+	st.b	[a12]4140,d8
+.L926:
+	mov	d0,#1
+.L927:
+	st.b	[a12]4144,d0
+.L928:
+	lea	a4,[a12]4145
+.L929:
+	ld.w	d0,[a15]
+.L930:
+	mov.u	d1,#51691
+	addih	d1,d1,#16664
+.L931:
+	mul.f	d4,d0,d1
+	call	WriteF32
+.L932:
+	lea	a4,[a12]4149
+.L933:
+	ld.w	d4,[a15]4
+	call	WriteF32
+.L934:
+	lea	a4,[a12]4153
+.L935:
+	ld.w	d4,[a15]8
+	call	WriteF32
+.L936:
+	lea	a4,[a12]4157
+.L937:
+	ld.w	d4,[a15]12
+	call	WriteF32
+.L938:
+	lea	a4,[a12]4161
+.L939:
+	ld.w	d15,[a15]16
+.L940:
+	mov	d0,#12001
+	addih	d0,d0,#16997
+.L941:
+	mul.f	d4,d15,d0
+	call	WriteF32
+.L942:
+	ld.a	a15,[a12]
+.L465:
+	ld.bu	d15,[a15]6
+.L943:
+	jeq	d15,#0,.L181
+.L944:
+	or	d9,d9,#1
+.L181:
+	ld.a	a15,[a12]
+.L945:
+	ld.bu	d15,[a15]7
+.L946:
+	jeq	d15,#0,.L182
+.L947:
+	or	d9,d9,#2
+.L182:
+	ld.a	a15,[a12]
+.L948:
+	ld.bu	d15,[a15]
+.L949:
+	jne	d15,#7,.L183
+.L950:
+	or	d9,d9,#4
+.L183:
+	ld.a	a15,[a12]
+.L951:
+	ld.w	d15,[a15]16
+.L952:
+	jeq	d15,#0,.L184
+.L953:
+	or	d9,d9,#8
+.L184:
+	ld.a	a15,[a12]
+.L954:
+	ld.bu	d15,[a15]8
+.L955:
+	jeq	d15,#0,.L185
+.L956:
+	or	d9,d9,#16
+.L185:
+	ld.a	a15,[a12]
+.L957:
+	ld.bu	d15,[a15]21
+.L958:
+	jeq	d15,#0,.L186
+.L959:
+	or	d9,d9,#32
+.L186:
+	ld.a	a15,[a12]
+.L960:
+	ld.bu	d15,[a15]
+.L961:
+	jne	d15,#5,.L187
+.L962:
+	or	d9,d9,#64
+.L187:
+	and	d15,d9,#255
+.L963:
+	st.b	[a12]4165,d15
+.L964:
+	sha	d9,#-8
+.L467:
+	st.b	[a12]4166,d9
+.L965:
+	mov	d15,#23
+.L966:
+	st.h	[a12]4142,d15
+.L967:
+	lea	a5,[a12]6192
+.L968:
+	mov	d4,#2059
+	mov.aa	a4,a13
+.L469:
+	call	NativeProtocol_Encode
+.L470:
+	jeq	d2,#0,.L188
+.L969:
+	ld.a	a15,[a12]4
+.L970:
+	lea	a4,[a12]6192
+.L971:
+	extr.u	d4,d2,#0,#16
+.L972:
+	mov	d5,#0
+	calli	a15
+.L188:
+	ret
+.L314:
+	
+__CommandRouter_SendTelemetry_function_end:
+	.size	CommandRouter_SendTelemetry,__CommandRouter_SendTelemetry_function_end-CommandRouter_SendTelemetry
+.L231:
+	; End of function
+	
+	.sdecl	'.rodata.command_router..1.str',data,rom
+	.sect	'.rodata.command_router..1.str'
+.1.str:	.type	object
+	.size	.1.str,14
+	.byte	84,67,51,55,53,45,77,67
+	.byte	85,47,48,46
+	.byte	51
+	.space	1
+	.sdecl	'.rodata.command_router..2.str',data,rom
+	.sect	'.rodata.command_router..2.str'
+.2.str:	.type	object
+	.size	.2.str,10
+	.byte	84,67,51,55,53,45,77,67
+	.byte	85
+	.space	1
+	.sdecl	'.rodata.command_router..3.str',data,rom
+	.sect	'.rodata.command_router..3.str'
+.3.str:	.type	object
+	.size	.3.str,6
+	.byte	67,70,71,50
+	.byte	57
+	.space	1
+	.calls	'ReadF32','memcpy'
+	.calls	'WriteF32','memcpy'
+	.calls	'SendResponse','memset'
+	.calls	'SendResponse','memcpy'
+	.calls	'SendResponse','NativeProtocol_Encode'
+	.calls	'SendResponse','__INDIRECT__'
+	.calls	'CommandRouter_Init','memset'
+	.calls	'CommandRouter_Handle','SendResponse'
+	.calls	'CommandRouter_Handle','memcpy'
+	.calls	'CommandRouter_Handle','WriteU32'
+	.calls	'CommandRouter_Handle','memset'
+	.calls	'CommandRouter_Handle','WriteU16'
+	.calls	'CommandRouter_Handle','ReadU32'
+	.calls	'CommandRouter_Handle','ReadU16'
+	.calls	'CommandRouter_Handle','Tc375Hal_TimeMs'
+	.calls	'CommandRouter_Handle','MotorControl_Heartbeat'
+	.calls	'CommandRouter_Handle','IsSingleMotorPayload'
+	.calls	'CommandRouter_Handle','MotorControl_SetEnable'
+	.calls	'CommandRouter_Handle','FromMotorResult'
+	.calls	'CommandRouter_Handle','MotorControl_SetMode'
+	.calls	'CommandRouter_Handle','ReadF32'
+	.calls	'CommandRouter_Handle','MotorControl_SetTarget'
+	.calls	'CommandRouter_Handle','MotorControl_SetPid'
+	.calls	'CommandRouter_Handle','WriteF32'
+	.calls	'CommandRouter_Handle','MotorControl_StartCalibration'
+	.calls	'CommandRouter_Handle','Tc375Hal_ReadActiveFaults'
+	.calls	'CommandRouter_Handle','MotorControl_ClearFault'
+	.calls	'CommandRouter_Handle','MotorControl_RequestControlledStop'
+	.calls	'CommandRouter_Handle','MotorControl_Stop'
+	.calls	'CommandRouter_Handle','Tc375Hal_SetGateEnabled'
+	.calls	'CommandRouter_Handle','Tc375Hal_SetPwmEnabled'
+	.calls	'CommandRouter_Handle','MotorControl_SetOpenLoopConfig'
+	.calls	'CommandRouter_Handle','MotorControl_StartOpenLoop'
+	.calls	'CommandRouter_Handle','_isfinitef'
+	.calls	'CommandRouter_Handle','MotorControl_ApplyPendingPid'
+	.calls	'CommandRouter_Handle','MotorControl_ExportPersistentConfig'
+	.calls	'CommandRouter_Handle','Tc375Hal_SaveConfiguration'
+	.calls	'CommandRouter_Handle','MotorControl_RestoreDefaults'
+	.calls	'CommandRouter_SendTelemetry','memset'
+	.calls	'CommandRouter_SendTelemetry','WriteF32'
+	.calls	'CommandRouter_SendTelemetry','NativeProtocol_Encode'
+	.calls	'CommandRouter_SendTelemetry','__INDIRECT__'
+	.calls	'ReadF32','',8
+	.calls	'ReadU16','',0
+	.calls	'ReadU32','',0
+	.calls	'WriteU16','',0
+	.calls	'WriteU32','',0
+	.calls	'WriteF32','',8
+	.calls	'FromMotorResult','',0
+	.calls	'SendResponse','',0
+	.calls	'IsSingleMotorPayload','',0
+	.calls	'CommandRouter_Init','',0
+	.calls	'CommandRouter_Handle','',168
+	.extern	MotorControl_Heartbeat
+	.extern	MotorControl_SetEnable
+	.extern	MotorControl_SetMode
+	.extern	MotorControl_SetTarget
+	.extern	MotorControl_SetOpenLoopConfig
+	.extern	MotorControl_StartOpenLoop
+	.extern	MotorControl_RequestControlledStop
+	.extern	MotorControl_SetPid
+	.extern	MotorControl_ApplyPendingPid
+	.extern	MotorControl_StartCalibration
+	.extern	MotorControl_ClearFault
+	.extern	MotorControl_Stop
+	.extern	MotorControl_RestoreDefaults
+	.extern	MotorControl_ExportPersistentConfig
+	.extern	NativeProtocol_Encode
+	.extern	Tc375Hal_TimeMs
+	.extern	Tc375Hal_SetPwmEnabled
+	.extern	Tc375Hal_SetGateEnabled
+	.extern	Tc375Hal_ReadActiveFaults
+	.extern	Tc375Hal_SaveConfiguration
+	.extern	_isfinitef
+	.extern	memcpy
+	.extern	memset
+	.extern	__INDIRECT__
+	.calls	'CommandRouter_SendTelemetry','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L214:
+	.word	5039
+	.half	3
+	.word	.L215
+	.byte	4
+.L213:
+	.byte	1
+	.byte	'../command_router_ads.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L216
+.L323:
+	.byte	2
+	.byte	'float',0,4,4,3
+	.byte	'__fabsf',0
+	.word	218
+	.byte	1,1,1,1,4
+	.byte	'f',0
+	.word	218
+	.byte	0,5,1,33,9,1,6
+	.byte	'MOTOR_STATE_BOOT',0,0,6
+	.byte	'MOTOR_STATE_IDLE',0,1,6
+	.byte	'MOTOR_STATE_CALIBRATING',0,2,6
+	.byte	'MOTOR_STATE_READY',0,3,6
+	.byte	'MOTOR_STATE_RUNNING',0,4,6
+	.byte	'MOTOR_STATE_STOPPING',0,5,6
+	.byte	'MOTOR_STATE_FAULT',0,6,6
+	.byte	'MOTOR_STATE_ESTOP',0,7,0,5,1,11,9,1,6
+	.byte	'MOTOR_MODE_TORQUE',0,0,6
+	.byte	'MOTOR_MODE_SPEED',0,1,6
+	.byte	'MOTOR_MODE_POSITION',0,2,6
+	.byte	'MOTOR_MODE_OPEN_LOOP_SPEED',0,3,0
+.L300:
+	.byte	2
+	.byte	'_Bool',0,1,2
+.L305:
+	.byte	2
+	.byte	'unsigned int',0,4,7
+.L290:
+	.byte	2
+	.byte	'unsigned short int',0,2,7
+.L298:
+	.byte	2
+	.byte	'unsigned char',0,1,8
+.L296:
+	.byte	7,1,68,9,12,8
+	.byte	'kp',0
+	.word	218
+	.byte	4,2,35,0,8
+	.byte	'ki',0
+	.word	218
+	.byte	4,2,35,4,8
+	.byte	'kd',0
+	.word	218
+	.byte	4,2,35,8,0,9,36
+	.word	587
+	.byte	10,2,0
+.L310:
+	.byte	7,1,75,9,32,8
+	.byte	'current_a',0
+	.word	218
+	.byte	4,2,35,0,8
+	.byte	'torque_nm',0
+	.word	218
+	.byte	4,2,35,4,8
+	.byte	'speed_rad_s',0
+	.word	218
+	.byte	4,2,35,8,8
+	.byte	'position_min_rad',0
+	.word	218
+	.byte	4,2,35,12,8
+	.byte	'position_max_rad',0
+	.word	218
+	.byte	4,2,35,16,8
+	.byte	'bus_min_v',0
+	.word	218
+	.byte	4,2,35,20,8
+	.byte	'bus_max_v',0
+	.word	218
+	.byte	4,2,35,24,8
+	.byte	'temperature_max_c',0
+	.word	218
+	.byte	4,2,35,28,0,7,1,87,9,24,8
+	.byte	'speed_rad_s',0
+	.word	218
+	.byte	4,2,35,0,8
+	.byte	'iq_current_a',0
+	.word	218
+	.byte	4,2,35,4,8
+	.byte	'bus_voltage_v',0
+	.word	218
+	.byte	4,2,35,8,8
+	.byte	'temperature_c',0
+	.word	218
+	.byte	4,2,35,12,8
+	.byte	'position_rad',0
+	.word	218
+	.byte	4,2,35,16,8
+	.byte	'status',0
+	.word	548
+	.byte	2,2,35,20,0
+.L308:
+	.byte	7,1,97,9,28,8
+	.byte	'backend',0
+	.word	570
+	.byte	1,2,35,0,8
+	.byte	'pole_pairs',0
+	.word	570
+	.byte	1,2,35,1,8
+	.byte	'flags',0
+	.word	570
+	.byte	1,2,35,2,8
+	.byte	'reserved',0
+	.word	570
+	.byte	1,2,35,3,8
+	.byte	'bus_voltage_v',0
+	.word	218
+	.byte	4,2,35,4,8
+	.byte	'voltage_limit_v',0
+	.word	218
+	.byte	4,2,35,8,8
+	.byte	'target_velocity_rad_s',0
+	.word	218
+	.byte	4,2,35,12,8
+	.byte	'acceleration_rad_s2',0
+	.word	218
+	.byte	4,2,35,16,8
+	.byte	'update_period_ms',0
+	.word	548
+	.byte	2,2,35,20,8
+	.byte	'startup_delay_ms',0
+	.word	548
+	.byte	2,2,35,22,8
+	.byte	'max_runtime_ms',0
+	.word	532
+	.byte	4,2,35,24,0,7,1,112,9,196,1,8
+	.byte	'state',0
+	.word	252
+	.byte	1,2,35,0,8
+	.byte	'mode',0
+	.word	427
+	.byte	1,2,35,1,8
+	.byte	'target',0
+	.word	218
+	.byte	4,2,35,2,8
+	.byte	'enabled',0
+	.word	523
+	.byte	1,2,35,6,8
+	.byte	'calibrated',0
+	.word	523
+	.byte	1,2,35,7,8
+	.byte	'heartbeat_valid',0
+	.word	523
+	.byte	1,2,35,8,8
+	.byte	'last_heartbeat_ms',0
+	.word	532
+	.byte	4,2,35,10,8
+	.byte	'heartbeat_lease_ms',0
+	.word	548
+	.byte	2,2,35,14,8
+	.byte	'faults',0
+	.word	532
+	.byte	4,2,35,16,8
+	.byte	'calibration_type',0
+	.word	570
+	.byte	1,2,35,20,8
+	.byte	'open_loop_active',0
+	.word	523
+	.byte	1,2,35,21,8
+	.byte	'open_loop_output_ready',0
+	.word	523
+	.byte	1,2,35,22,8
+	.byte	'open_loop_velocity_rad_s',0
+	.word	218
+	.byte	4,2,35,24,8
+	.byte	'open_loop_started_ms',0
+	.word	532
+	.byte	4,2,35,28,8
+	.byte	'open_loop_last_update_ms',0
+	.word	532
+	.byte	4,2,35,32,8
+	.byte	'pid',0
+	.word	629
+	.byte	36,2,35,36,8
+	.byte	'pending_pid',0
+	.word	629
+	.byte	36,2,35,72,8
+	.byte	'pending_pid_mask',0
+	.word	570
+	.byte	1,2,35,108,8
+	.byte	'limits',0
+	.word	638
+	.byte	32,2,35,112,8
+	.byte	'telemetry',0
+	.word	820
+	.byte	24,3,35,144,1,8
+	.byte	'open_loop',0
+	.word	953
+	.byte	28,3,35,168,1,0
+.L280:
+	.byte	11
+	.word	1213
+	.byte	12
+	.byte	'MotorControl_Heartbeat',0,1,156,1,6,1,1,1,1,13
+	.byte	'motor',0,1,157,1,19
+	.word	1696
+	.byte	13
+	.byte	'now_ms',0,1,158,1,14
+	.word	532
+	.byte	13
+	.byte	'lease_ms',0,1,159,1,14
+	.word	548
+	.byte	0
+.L294:
+	.byte	5,1,45,9,1,6
+	.byte	'MOTOR_RESULT_OK',0,0,6
+	.byte	'MOTOR_RESULT_INVALID_STATE',0,1,6
+	.byte	'MOTOR_RESULT_OUT_OF_RANGE',0,2,6
+	.byte	'MOTOR_RESULT_NOT_CALIBRATED',0,3,6
+	.byte	'MOTOR_RESULT_HEARTBEAT_REQUIRED',0,4,6
+	.byte	'MOTOR_RESULT_HARDWARE_FAULT',0,5,6
+	.byte	'MOTOR_RESULT_CAPABILITY_UNAVAILABLE',0,6,0,14
+	.byte	'MotorControl_SetEnable',0,1,161,1,13
+	.word	1783
+	.byte	1,1,1,1,13
+	.byte	'motor',0,1,161,1,50
+	.word	1696
+	.byte	13
+	.byte	'enable',0,1,161,1,62
+	.word	523
+	.byte	0,14
+	.byte	'MotorControl_SetMode',0,1,162,1,13
+	.word	1783
+	.byte	1,1,1,1,13
+	.byte	'motor',0,1,162,1,48
+	.word	1696
+	.byte	13
+	.byte	'mode',0,1,162,1,65
+	.word	427
+	.byte	0,14
+	.byte	'MotorControl_SetTarget',0,1,163,1,13
+	.word	1783
+	.byte	1,1,1,1,13
+	.byte	'motor',0,1,164,1,19
+	.word	1696
+	.byte	13
+	.byte	'mode',0,1,165,1,15
+	.word	427
+	.byte	13
+	.byte	'target',0,1,166,1,11
+	.word	218
+	.byte	0,15
+	.word	953
+	.byte	11
+	.word	2210
+	.byte	14
+	.byte	'MotorControl_SetOpenLoopConfig',0,1,167,1,13
+	.word	1783
+	.byte	1,1,1,1,13
+	.byte	'motor',0,1,168,1,19
+	.word	1696
+	.byte	13
+	.byte	'config',0,1,169,1,32
+	.word	2215
+	.byte	0,14
+	.byte	'MotorControl_StartOpenLoop',0,1,170,1,13
+	.word	1783
+	.byte	1,1,1,1,13
+	.byte	'motor',0,1,171,1,19
+	.word	1696
+	.byte	13
+	.byte	'now_ms',0,1,172,1,14
+	.word	532
+	.byte	0,12
+	.byte	'MotorControl_RequestControlledStop',0,1,173,1,6,1,1,1,1,13
+	.byte	'motor',0,1,173,1,55
+	.word	1696
+	.byte	0,5,1,25,9,1,6
+	.byte	'MOTOR_PID_CURRENT',0,0,6
+	.byte	'MOTOR_PID_SPEED',0,1,6
+	.byte	'MOTOR_PID_POSITION',0,2,6
+	.byte	'MOTOR_PID_COUNT',0,3,0,15
+	.word	587
+	.byte	11
+	.word	2511
+	.byte	14
+	.byte	'MotorControl_SetPid',0,1,174,1,13
+	.word	1783
+	.byte	1,1,1,1,13
+	.byte	'motor',0,1,175,1,19
+	.word	1696
+	.byte	13
+	.byte	'loop',0,1,176,1,18
+	.word	2428
+	.byte	13
+	.byte	'pid',0,1,177,1,21
+	.word	2516
+	.byte	0,12
+	.byte	'MotorControl_ApplyPendingPid',0,1,178,1,6,1,1,1,1,13
+	.byte	'motor',0,1,178,1,49
+	.word	1696
+	.byte	0,14
+	.byte	'MotorControl_StartCalibration',0,1,179,1,13
+	.word	1783
+	.byte	1,1,1,1,13
+	.byte	'motor',0,1,180,1,19
+	.word	1696
+	.byte	13
+	.byte	'calibration_type',0,1,181,1,13
+	.word	570
+	.byte	0,14
+	.byte	'MotorControl_ClearFault',0,1,183,1,13
+	.word	1783
+	.byte	1,1,1,1,13
+	.byte	'motor',0,1,183,1,51
+	.word	1696
+	.byte	13
+	.byte	'active_faults',0,1,183,1,67
+	.word	532
+	.byte	0,12
+	.byte	'MotorControl_Stop',0,1,184,1,6,1,1,1,1,13
+	.byte	'motor',0,1,184,1,38
+	.word	1696
+	.byte	13
+	.byte	'emergency',0,1,184,1,50
+	.word	523
+	.byte	0,12
+	.byte	'MotorControl_RestoreDefaults',0,1,189,1,6,1,1,1,1,13
+	.byte	'motor',0,1,189,1,49
+	.word	1696
+	.byte	0,15
+	.word	1213
+	.byte	11
+	.word	2928
+.L312:
+	.byte	7,1,140,1,9,112,8
+	.byte	'magic',0
+	.word	532
+	.byte	4,2,35,0,8
+	.byte	'version',0
+	.word	548
+	.byte	2,2,35,4,8
+	.byte	'calibration_valid',0
+	.word	570
+	.byte	1,2,35,6,8
+	.byte	'reserved',0
+	.word	570
+	.byte	1,2,35,7,8
+	.byte	'telemetry_rate_hz',0
+	.word	548
+	.byte	2,2,35,8,8
+	.byte	'reserved_2',0
+	.word	548
+	.byte	2,2,35,10,8
+	.byte	'telemetry_mask',0
+	.word	532
+	.byte	4,2,35,12,8
+	.byte	'pid',0
+	.word	629
+	.byte	36,2,35,16,8
+	.byte	'limits',0
+	.word	638
+	.byte	32,2,35,52,8
+	.byte	'open_loop',0
+	.word	953
+	.byte	28,2,35,84,0,11
+	.word	2938
+	.byte	12
+	.byte	'MotorControl_ExportPersistentConfig',0,1,190,1,6,1,1,1,1,13
+	.byte	'motor',0,1,191,1,25
+	.word	2933
+	.byte	13
+	.byte	'config',0,1,192,1,28
+	.word	3141
+	.byte	0,9,128,16
+	.word	570
+	.byte	10,255,15,0,7,2,66,9,136,16,8
+	.byte	'version',0
+	.word	570
+	.byte	1,2,35,0,8
+	.byte	'flags',0
+	.word	570
+	.byte	1,2,35,1,8
+	.byte	'device',0
+	.word	570
+	.byte	1,2,35,2,8
+	.byte	'command',0
+	.word	570
+	.byte	1,2,35,3,8
+	.byte	'sequence',0
+	.word	570
+	.byte	1,2,35,4,8
+	.byte	'payload_length',0
+	.word	548
+	.byte	2,2,35,6,8
+	.byte	'payload',0
+	.word	3223
+	.byte	128,16,2,35,8,0,15
+	.word	3234
+.L286:
+	.byte	11
+	.word	3366
+.L333:
+	.byte	11
+	.word	570
+	.byte	14
+	.byte	'NativeProtocol_Encode',0,2,89,8
+	.word	532
+	.byte	1,1,1,1,13
+	.byte	'frame',0,2,90,24
+	.word	3371
+	.byte	13
+	.byte	'destination',0,2,91,14
+	.word	3376
+	.byte	13
+	.byte	'capacity',0,2,92,12
+	.word	532
+	.byte	0,15
+	.word	570
+	.byte	11
+	.word	3467
+	.byte	16
+	.word	523
+	.byte	1,1,17
+	.word	3472
+	.byte	17
+	.word	548
+	.byte	17
+	.word	523
+	.byte	0,11
+	.word	3477
+.L282:
+	.byte	18
+	.byte	'CommandRouterTransmit',0,3,14,16
+	.word	3500
+	.byte	9,139,16
+	.word	570
+	.byte	10,138,16,0,7,3,19,9,188,64,8
+	.byte	'motor',0
+	.word	1696
+	.byte	4,2,35,0,8
+	.byte	'transmit',0
+	.word	3505
+	.byte	4,2,35,4,8
+	.byte	'telemetry_rate_hz',0
+	.word	548
+	.byte	2,2,35,8,8
+	.byte	'telemetry_mask',0
+	.word	532
+	.byte	4,2,35,10,8
+	.byte	'commands_received',0
+	.word	532
+	.byte	4,2,35,14,8
+	.byte	'protocol_errors',0
+	.word	548
+	.byte	2,2,35,18,8
+	.byte	'response_frame',0
+	.word	3234
+	.byte	136,16,2,35,20,8
+	.byte	'encoded_frame',0
+	.word	3535
+	.byte	139,16,3,35,156,16,8
+	.byte	'telemetry_frame',0
+	.word	3234
+	.byte	136,16,3,35,168,32,8
+	.byte	'encoded_telemetry',0
+	.word	3535
+	.byte	139,16,3,35,176,48,0
+.L278:
+	.byte	11
+	.word	3546
+	.byte	11
+	.word	3477
+.L288:
+	.byte	9,40
+	.word	570
+	.byte	10,39,0
+.L292:
+	.byte	5,2,50,9,1,6
+	.byte	'PROTOCOL_OK',0,0,6
+	.byte	'PROTOCOL_UNSUPPORTED_COMMAND',0,1,6
+	.byte	'PROTOCOL_INVALID_PAYLOAD',0,2,6
+	.byte	'PROTOCOL_INVALID_DEVICE',0,3,6
+	.byte	'PROTOCOL_INVALID_STATE',0,4,6
+	.byte	'PROTOCOL_OUT_OF_RANGE',0,5,6
+	.byte	'PROTOCOL_NOT_CALIBRATED',0,6,6
+	.byte	'PROTOCOL_HEARTBEAT_REQUIRED',0,7,6
+	.byte	'PROTOCOL_BUSY',0,8,6
+	.byte	'PROTOCOL_STORAGE_ERROR',0,9,6
+	.byte	'PROTOCOL_HARDWARE_FAULT',0,10,6
+	.byte	'PROTOCOL_CAPABILITY_UNAVAILABLE',0,11,0
+.L317:
+	.byte	11
+	.word	3234
+	.byte	15
+	.word	820
+.L320:
+	.byte	11
+	.word	4129
+	.byte	19
+	.byte	'Tc375Hal_TimeMs',0,4,30,10
+	.word	532
+	.byte	1,1,1,1,12
+	.byte	'Tc375Hal_SetPwmEnabled',0,4,45,6,1,1,1,1,13
+	.byte	'enabled',0,4,45,34
+	.word	523
+	.byte	0,12
+	.byte	'Tc375Hal_SetGateEnabled',0,4,46,6,1,1,1,1,13
+	.byte	'enabled',0,4,46,35
+	.word	523
+	.byte	0,19
+	.byte	'Tc375Hal_ReadActiveFaults',0,4,47,10
+	.word	532
+	.byte	1,1,1,1,20
+	.byte	'void',0,15
+	.word	4302
+	.byte	11
+	.word	4308
+	.byte	14
+	.byte	'Tc375Hal_SaveConfiguration',0,4,52,6
+	.word	523
+	.byte	1,1,1,1,13
+	.byte	'data',0,4,52,45
+	.word	4313
+	.byte	13
+	.byte	'size',0,4,52,58
+	.word	532
+	.byte	0,2
+	.byte	'int',0,4,5,14
+	.byte	'_isfinitef',0,5,147,2,25
+	.word	4384
+	.byte	1,1,1,1,21,5,147,2,51
+	.word	218
+	.byte	0,11
+	.word	4302
+	.byte	22
+	.word	4425
+	.byte	22
+	.word	4313
+	.byte	14
+	.byte	'memcpy',0,6,53,17
+	.word	4425
+	.byte	1,1,1,1,21,6,53,33
+	.word	4430
+	.byte	21,6,53,56
+	.word	4435
+	.byte	21,6,53,68
+	.word	532
+	.byte	0,14
+	.byte	'memset',0,6,56,17
+	.word	4425
+	.byte	1,1,1,1,21,6,56,33
+	.word	4425
+	.byte	21,6,56,36
+	.word	4384
+	.byte	21,6,56,41
+	.word	532
+	.byte	0,15
+	.word	570
+.L325:
+	.byte	11
+	.word	4528
+	.byte	23
+	.byte	'__INDIRECT__',0,7,1,1,1,1,1,2
+	.byte	'short int',0,2,5,18
+	.byte	'__wchar_t',0,7,1,1
+	.word	4558
+	.byte	18
+	.byte	'__size_t',0,7,1,1
+	.word	532
+	.byte	18
+	.byte	'__ptrdiff_t',0,7,1,1
+	.word	4384
+	.byte	24,1,11
+	.word	4626
+	.byte	18
+	.byte	'__codeptr',0,7,1,1
+	.word	4628
+	.byte	18
+	.byte	'__intptr_t',0,7,1,1
+	.word	4384
+	.byte	18
+	.byte	'__uintptr_t',0,7,1,1
+	.word	532
+	.byte	18
+	.byte	'uint8_t',0,8,242,1,41
+	.word	570
+	.byte	18
+	.byte	'uint16_t',0,8,246,1,41
+	.word	548
+	.byte	18
+	.byte	'uint32_t',0,8,254,1,41
+	.word	532
+	.byte	18
+	.byte	'MotorMode',0,1,17,3
+	.word	427
+	.byte	18
+	.byte	'MotorPidLoop',0,1,31,3
+	.word	2428
+	.byte	18
+	.byte	'MotorState',0,1,43,3
+	.word	252
+	.byte	18
+	.byte	'MotorResult',0,1,54,3
+	.word	1783
+	.byte	18
+	.byte	'MotorPid',0,1,73,3
+	.word	587
+	.byte	18
+	.byte	'MotorLimits',0,1,85,3
+	.word	638
+	.byte	18
+	.byte	'MotorTelemetry',0,1,95,3
+	.word	820
+	.byte	18
+	.byte	'MotorOpenLoopConfig',0,1,110,3
+	.word	953
+	.byte	18
+	.byte	'MotorControl',0,1,135,1,3
+	.word	1213
+	.byte	18
+	.byte	'MotorPersistentConfig',0,1,152,1,3
+	.word	2938
+	.byte	18
+	.byte	'size_t',0,9,24,25
+	.word	532
+	.byte	18
+	.byte	'ProtocolStatus',0,2,64,3
+	.word	3814
+	.byte	18
+	.byte	'NativeFrame',0,2,75,3
+	.word	3234
+	.byte	18
+	.byte	'CommandRouter',0,3,31,3
+	.word	3546
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L215:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,46,1,3,8,73,19,54,15,39,12
+	.byte	63,12,60,12,0,0,4,5,0,3,8,73,19,0,0,5,4,1,58,15,59,15,57,15,11,15,0,0,6,40,0,3,8,28,13,0,0,7,19,1,58,15
+	.byte	59,15,57,15,11,15,0,0,8,13,0,3,8,73,19,11,15,56,9,0,0,9,1,1,11,15,73,19,0,0,10,33,0,47,15,0,0,11,15,0
+	.byte	73,19,0,0,12,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,13,5,0,3,8,58,15,59,15,57,15,73,19
+	.byte	0,0,14,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,15,38,0,73,19,0,0,16,21,1,73,19,54
+	.byte	15,39,12,0,0,17,5,0,73,19,0,0,18,22,0,3,8,58,15,59,15,57,15,73,19,0,0,19,46,0,3,8,58,15,59,15,57,15,73
+	.byte	19,54,15,39,12,63,12,60,12,0,0,20,59,0,3,8,0,0,21,5,0,58,15,59,15,57,15,73,19,0,0,22,55,0,73,19,0,0,23
+	.byte	46,0,3,8,58,15,59,15,57,15,54,15,63,12,60,12,0,0,24,21,0,54,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L216:
+	.word	.L472-.L471
+.L471:
+	.half	3
+	.word	.L474-.L473
+.L473:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Infineon\\AURIX-Studio-1.10.32\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\',0,0
+	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\include\\motor_control.h',0
+	.byte	0,0,0
+	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\include\\native_protocol.h',0
+	.byte	0,0,0
+	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\include\\command_router.h',0
+	.byte	0,0,0
+	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\include\\tc375_hal.h',0
+	.byte	0,0,0
+	.byte	'math.h',0,1,0,0
+	.byte	'string.h',0,1,0,0
+	.byte	'../command_router_ads.c',0,0,0,0
+	.byte	'stdint.h',0,1,0,0
+	.byte	'stddef.h',0,1,0,0,0
+.L474:
+.L472:
+	.sdecl	'.debug_info',debug,cluster('CommandRouter_Init')
+	.sect	'.debug_info'
+.L217:
+	.word	336
+	.half	3
+	.word	.L218
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\command_router.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L220,.L219
+	.byte	2
+	.word	.L213
+	.byte	3
+	.byte	'CommandRouter_Init',0,1,110,6,1,1,1
+	.word	.L208,.L277,.L207
+	.byte	4
+	.byte	'router',0,1,111,20
+	.word	.L278,.L279
+	.byte	4
+	.byte	'motor',0,1,112,19
+	.word	.L280,.L281
+	.byte	4
+	.byte	'transmit',0,1,113,27
+	.word	.L282,.L283
+	.byte	5
+	.word	.L208,.L277
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CommandRouter_Init')
+	.sect	'.debug_abbrev'
+.L218:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CommandRouter_Init')
+	.sect	'.debug_line'
+.L219:
+	.word	.L476-.L475
+.L475:
+	.half	3
+	.word	.L478-.L477
+.L477:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\command_router.c',0,0,0,0,0
+.L478:
+	.byte	5,6,7,0,5,2
+	.word	.L208
+	.byte	3,237,0,1,5,20,9
+	.half	.L381-.L208
+	.byte	3,5,1,5,23,9
+	.half	.L479-.L381
+	.byte	1,5,19,9
+	.half	.L378-.L479
+	.byte	3,1,1,5,22,9
+	.half	.L480-.L378
+	.byte	3,1,1,5,33,9
+	.half	.L481-.L480
+	.byte	3,1,1,5,31,9
+	.half	.L482-.L481
+	.byte	1,5,30,9
+	.half	.L483-.L482
+	.byte	3,1,1,5,28,9
+	.half	.L484-.L483
+	.byte	1,5,1,9
+	.half	.L485-.L484
+	.byte	3,1,1,7,9
+	.half	.L221-.L485
+	.byte	0,1,1
+.L476:
+	.sdecl	'.debug_ranges',debug,cluster('CommandRouter_Init')
+	.sect	'.debug_ranges'
+.L220:
+	.word	-1,.L208,0,.L221-.L208,0,0
+	.sdecl	'.debug_info',debug,cluster('CommandRouter_Handle')
+	.sect	'.debug_info'
+.L222:
+	.word	650
+	.half	3
+	.word	.L223
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\command_router.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L225,.L224
+	.byte	2
+	.word	.L213
+	.byte	3
+	.byte	'CommandRouter_Handle',0,1,122,6,1,1,1
+	.word	.L210,.L284,.L209
+	.byte	4
+	.byte	'router',0,1,122,42
+	.word	.L278,.L285
+	.byte	4
+	.byte	'request',0,1,122,69
+	.word	.L286,.L287
+	.byte	5
+	.word	.L210,.L284
+	.byte	6
+	.byte	'detail',0,1,124,13
+	.word	.L288,.L289
+	.byte	6
+	.byte	'detail_length',0,1,125,14
+	.word	.L290,.L291
+	.byte	6
+	.byte	'status',0,1,126,20
+	.word	.L292,.L293
+	.byte	6
+	.byte	'motor_result',0,1,127,17
+	.word	.L294,.L295
+	.byte	6
+	.byte	'pid',0,1,128,1,14
+	.word	.L296,.L297
+	.byte	6
+	.byte	'loop',0,1,129,1,13
+	.word	.L298,.L299
+	.byte	6
+	.byte	'broadcast_disable',0,1,130,1,10
+	.word	.L300,.L301
+	.byte	5
+	.word	.L302,.L74
+	.byte	6
+	.byte	'lease',0,1,196,1,26
+	.word	.L290,.L303
+	.byte	0,5
+	.word	.L121,.L125
+	.byte	6
+	.byte	'rate_hz',0,1,230,2,26
+	.word	.L290,.L304
+	.byte	6
+	.byte	'signal_mask',0,1,231,2,26
+	.word	.L305,.L306
+	.byte	0,5
+	.word	.L130,.L307
+	.byte	6
+	.byte	'config',0,1,137,3,37
+	.word	.L308,.L309
+	.byte	0,5
+	.word	.L146,.L166
+	.byte	6
+	.byte	'limits',0,1,134,4,29
+	.word	.L310,.L311
+	.byte	0,5
+	.word	.L173,.L174
+	.byte	6
+	.byte	'config',0,1,200,4,39
+	.word	.L312,.L313
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CommandRouter_Handle')
+	.sect	'.debug_abbrev'
+.L223:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CommandRouter_Handle')
+	.sect	'.debug_line'
+.L224:
+	.word	.L487-.L486
+.L486:
+	.half	3
+	.word	.L489-.L488
+.L488:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\command_router.c',0,0,0,0,0
+.L489:
+	.byte	5,6,7,0,5,2
+	.word	.L210
+	.byte	3,249,0,1,5,28,9
+	.half	.L385-.L210
+	.byte	3,3,1,5,27,9
+	.half	.L386-.L385
+	.byte	3,1,1,5,11,9
+	.half	.L388-.L386
+	.byte	3,6,1,5,30,9
+	.half	.L490-.L388
+	.byte	1,5,16,9
+	.half	.L491-.L490
+	.byte	3,1,1,5,5,9
+	.half	.L492-.L491
+	.byte	1,5,39,7,9
+	.half	.L493-.L492
+	.byte	3,2,1,5,65,9
+	.half	.L494-.L493
+	.byte	1,5,71,9
+	.half	.L495-.L494
+	.byte	1,5,9,9
+	.half	.L383-.L495
+	.byte	3,1,1,5,42,9
+	.half	.L27-.L383
+	.byte	3,7,1,5,17,9
+	.half	.L390-.L27
+	.byte	3,124,1,5,29,9
+	.half	.L496-.L390
+	.byte	1,5,9,9
+	.half	.L497-.L496
+	.byte	1,5,17,7,9
+	.half	.L498-.L497
+	.byte	3,1,1,5,30,9
+	.half	.L499-.L498
+	.byte	1,5,27,9
+	.half	.L500-.L499
+	.byte	1,5,17,7,9
+	.half	.L501-.L500
+	.byte	3,1,1,5,34,9
+	.half	.L502-.L501
+	.byte	1,5,27,7,9
+	.half	.L503-.L502
+	.byte	3,1,1,5,10,9
+	.half	.L504-.L503
+	.byte	1,5,27,7,9
+	.half	.L505-.L504
+	.byte	3,1,1,5,34,9
+	.half	.L506-.L505
+	.byte	1,5,31,9
+	.half	.L507-.L506
+	.byte	1,5,26,7,9
+	.half	.L32-.L507
+	.byte	3,1,1,5,30,9
+	.half	.L508-.L32
+	.byte	1,5,42,7,9
+	.half	.L509-.L508
+	.byte	3,127,1,5,17,9
+	.half	.L29-.L509
+	.byte	3,2,1,5,9,9
+	.half	.L510-.L29
+	.byte	1,5,19,7,9
+	.half	.L511-.L510
+	.byte	3,1,1,5,31,9
+	.half	.L512-.L511
+	.byte	1,5,11,9
+	.half	.L513-.L512
+	.byte	1,5,19,7,9
+	.half	.L514-.L513
+	.byte	3,1,1,5,32,9
+	.half	.L515-.L514
+	.byte	1,5,29,9
+	.half	.L516-.L515
+	.byte	1,5,10,7,9
+	.half	.L36-.L516
+	.byte	3,1,1,5,39,7,9
+	.half	.L517-.L36
+	.byte	3,2,1,5,64,9
+	.half	.L518-.L517
+	.byte	1,5,70,9
+	.half	.L519-.L518
+	.byte	1,5,9,9
+	.half	.L389-.L519
+	.byte	3,1,1,5,20,9
+	.half	.L35-.L389
+	.byte	3,3,1,5,14,9
+	.half	.L520-.L35
+	.byte	3,2,1,9
+	.half	.L521-.L520
+	.byte	3,5,1,9
+	.half	.L522-.L521
+	.byte	3,16,1,9
+	.half	.L523-.L522
+	.byte	3,11,1,9
+	.half	.L524-.L523
+	.byte	3,24,1,9
+	.half	.L525-.L524
+	.byte	3,14,1,9
+	.half	.L526-.L525
+	.byte	3,13,1,9
+	.half	.L527-.L526
+	.byte	3,14,1,9
+	.half	.L528-.L527
+	.byte	3,33,1,9
+	.half	.L529-.L528
+	.byte	3,13,1,9
+	.half	.L530-.L529
+	.byte	3,208,1,1,9
+	.half	.L531-.L530
+	.byte	3,51,1,9
+	.half	.L532-.L531
+	.byte	3,19,1,9
+	.half	.L533-.L532
+	.byte	3,23,1,9
+	.half	.L534-.L533
+	.byte	3,223,125,1,9
+	.half	.L535-.L534
+	.byte	3,10,1,9
+	.half	.L536-.L535
+	.byte	3,10,1,9
+	.half	.L537-.L536
+	.byte	3,67,1,9
+	.half	.L538-.L537
+	.byte	3,202,0,1,9
+	.half	.L539-.L538
+	.byte	3,7,1,9
+	.half	.L540-.L539
+	.byte	3,21,1,9
+	.half	.L541-.L540
+	.byte	3,7,1,9
+	.half	.L542-.L541
+	.byte	3,6,1,9
+	.half	.L543-.L542
+	.byte	3,33,1,9
+	.half	.L544-.L543
+	.byte	3,35,1,9
+	.half	.L545-.L544
+	.byte	3,30,1,5,20,9
+	.half	.L40-.L545
+	.byte	3,186,125,1,5,28,9
+	.half	.L392-.L40
+	.byte	1,5,54,9
+	.half	.L546-.L392
+	.byte	1,5,27,9
+	.half	.L547-.L546
+	.byte	3,1,1,5,13,9
+	.half	.L548-.L547
+	.byte	3,1,1,5,25,9
+	.half	.L41-.L548
+	.byte	3,3,1,5,23,9
+	.half	.L549-.L41
+	.byte	1,5,25,9
+	.half	.L550-.L549
+	.byte	3,1,1,5,23,9
+	.half	.L551-.L550
+	.byte	1,5,25,9
+	.half	.L552-.L551
+	.byte	3,1,1,5,23,9
+	.half	.L553-.L552
+	.byte	1,5,25,9
+	.half	.L554-.L553
+	.byte	3,1,1,5,23,9
+	.half	.L555-.L554
+	.byte	1,5,25,9
+	.half	.L556-.L555
+	.byte	3,1,1,5,23,9
+	.half	.L557-.L556
+	.byte	1,5,29,9
+	.half	.L558-.L557
+	.byte	3,1,1,5,34,9
+	.half	.L394-.L558
+	.byte	1,5,27,9
+	.half	.L393-.L394
+	.byte	3,1,1,5,32,9
+	.half	.L559-.L393
+	.byte	1,5,35,9
+	.half	.L560-.L559
+	.byte	1,5,27,9
+	.half	.L561-.L560
+	.byte	3,1,1,5,32,9
+	.half	.L562-.L561
+	.byte	1,5,45,9
+	.half	.L563-.L562
+	.byte	1,5,24,9
+	.half	.L564-.L563
+	.byte	3,2,1,5,17,9
+	.half	.L565-.L564
+	.byte	3,1,1,9
+	.half	.L566-.L565
+	.byte	3,1,1,5,27,9
+	.half	.L567-.L566
+	.byte	3,1,1,5,13,9
+	.half	.L568-.L567
+	.byte	3,1,1,5,25,9
+	.half	.L42-.L568
+	.byte	3,3,1,5,23,9
+	.half	.L569-.L42
+	.byte	1,5,25,9
+	.half	.L570-.L569
+	.byte	3,1,1,5,23,9
+	.half	.L571-.L570
+	.byte	1,5,25,9
+	.half	.L572-.L571
+	.byte	3,1,1,5,23,9
+	.half	.L573-.L572
+	.byte	1,5,29,9
+	.half	.L574-.L573
+	.byte	3,1,1,5,61,9
+	.half	.L396-.L574
+	.byte	3,1,1,5,29,9
+	.half	.L395-.L396
+	.byte	3,2,1,5,34,9
+	.half	.L575-.L395
+	.byte	1,5,27,9
+	.half	.L576-.L575
+	.byte	3,1,1,5,13,9
+	.half	.L577-.L576
+	.byte	3,1,1,5,24,9
+	.half	.L43-.L577
+	.byte	3,3,1,5,13,9
+	.half	.L578-.L43
+	.byte	1,5,24,7,9
+	.half	.L579-.L578
+	.byte	3,2,1,5,17,9
+	.half	.L580-.L579
+	.byte	3,1,1,5,34,9
+	.half	.L70-.L580
+	.byte	3,2,1,5,59,9
+	.half	.L302-.L70
+	.byte	3,2,1,5,32,9
+	.half	.L398-.L302
+	.byte	1,5,30,9
+	.half	.L400-.L398
+	.byte	3,1,1,5,21,9
+	.half	.L581-.L400
+	.byte	1,5,30,7,9
+	.half	.L582-.L581
+	.byte	3,1,1,5,28,9
+	.half	.L583-.L582
+	.byte	1,7,9
+	.half	.L72-.L583
+	.byte	3,2,1,5,51,9
+	.half	.L584-.L72
+	.byte	1,5,40,9
+	.half	.L73-.L584
+	.byte	3,6,1,5,31,9
+	.half	.L399-.L73
+	.byte	3,127,1,5,25,9
+	.half	.L585-.L399
+	.byte	3,2,1,5,13,9
+	.half	.L74-.L585
+	.byte	3,3,1,5,49,9
+	.half	.L44-.L74
+	.byte	3,3,1,5,19,9
+	.half	.L402-.L44
+	.byte	1,7,9
+	.half	.L586-.L402
+	.byte	3,1,1,5,25,7,9
+	.half	.L76-.L586
+	.byte	3,1,1,5,42,9
+	.half	.L587-.L76
+	.byte	1,5,24,7,9
+	.half	.L77-.L587
+	.byte	3,2,1,5,17,9
+	.half	.L588-.L77
+	.byte	3,1,1,5,23,9
+	.half	.L78-.L588
+	.byte	3,3,1,5,33,9
+	.half	.L589-.L78
+	.byte	3,1,1,5,37,9
+	.half	.L590-.L589
+	.byte	1,5,38,9
+	.half	.L403-.L590
+	.byte	3,1,1,5,20,9
+	.half	.L404-.L403
+	.byte	1,5,13,9
+	.half	.L591-.L404
+	.byte	3,1,1,5,48,9
+	.half	.L45-.L591
+	.byte	3,3,1,5,18,9
+	.half	.L407-.L45
+	.byte	1,5,25,7,9
+	.half	.L592-.L407
+	.byte	3,1,1,5,42,9
+	.half	.L593-.L592
+	.byte	1,5,24,7,9
+	.half	.L81-.L593
+	.byte	3,2,1,5,17,9
+	.half	.L594-.L81
+	.byte	3,1,1,5,23,9
+	.half	.L82-.L594
+	.byte	3,3,1,5,44,9
+	.half	.L595-.L82
+	.byte	3,1,1,5,17,9
+	.half	.L596-.L595
+	.byte	1,5,38,9
+	.half	.L408-.L596
+	.byte	3,1,1,5,20,9
+	.half	.L409-.L408
+	.byte	1,5,13,9
+	.half	.L597-.L409
+	.byte	3,1,1,5,48,9
+	.half	.L46-.L597
+	.byte	3,3,1,5,18,9
+	.half	.L412-.L46
+	.byte	1,5,25,7,9
+	.half	.L598-.L412
+	.byte	3,1,1,5,42,9
+	.half	.L599-.L598
+	.byte	1,5,24,7,9
+	.half	.L85-.L599
+	.byte	3,2,1,5,17,9
+	.half	.L600-.L85
+	.byte	3,1,1,5,42,9
+	.half	.L86-.L600
+	.byte	3,5,1,5,23,9
+	.half	.L601-.L86
+	.byte	3,126,1,5,44,9
+	.half	.L602-.L601
+	.byte	3,1,1,5,24,9
+	.half	.L603-.L602
+	.byte	3,1,1,5,38,9
+	.half	.L413-.L603
+	.byte	3,1,1,5,20,9
+	.half	.L414-.L413
+	.byte	1,5,13,9
+	.half	.L604-.L414
+	.byte	3,1,1,5,48,9
+	.half	.L47-.L604
+	.byte	3,3,1,5,18,9
+	.half	.L417-.L47
+	.byte	1,5,25,7,9
+	.half	.L605-.L417
+	.byte	3,1,1,5,45,9
+	.half	.L606-.L605
+	.byte	1,5,42,9
+	.half	.L607-.L606
+	.byte	1,5,24,7,9
+	.half	.L89-.L607
+	.byte	3,2,1,5,17,9
+	.half	.L608-.L89
+	.byte	3,1,1,5,36,9
+	.half	.L90-.L608
+	.byte	3,2,1,5,47,9
+	.half	.L418-.L90
+	.byte	3,1,1,5,20,9
+	.half	.L609-.L418
+	.byte	1,5,47,9
+	.half	.L610-.L609
+	.byte	3,1,1,5,20,9
+	.half	.L611-.L610
+	.byte	1,5,47,9
+	.half	.L612-.L611
+	.byte	3,1,1,5,20,9
+	.half	.L613-.L612
+	.byte	1,5,23,9
+	.half	.L614-.L613
+	.byte	3,2,1,5,18,9
+	.half	.L615-.L614
+	.byte	3,2,1,5,57,9
+	.half	.L420-.L615
+	.byte	3,125,1,5,20,9
+	.half	.L616-.L420
+	.byte	1,5,13,9
+	.half	.L617-.L616
+	.byte	3,4,1,5,48,9
+	.half	.L57-.L617
+	.byte	3,3,1,5,18,9
+	.half	.L422-.L57
+	.byte	1,5,25,7,9
+	.half	.L618-.L422
+	.byte	3,1,1,5,42,9
+	.half	.L619-.L618
+	.byte	1,5,34,7,9
+	.half	.L620-.L619
+	.byte	3,1,1,5,38,9
+	.half	.L621-.L620
+	.byte	1,5,24,7,9
+	.half	.L93-.L621
+	.byte	3,2,1,5,17,9
+	.half	.L622-.L93
+	.byte	3,1,1,5,36,9
+	.half	.L95-.L622
+	.byte	3,2,1,5,23,9
+	.half	.L387-.L95
+	.byte	3,1,1,5,29,9
+	.half	.L623-.L387
+	.byte	3,1,1,5,52,9
+	.half	.L624-.L623
+	.byte	1,5,40,9
+	.half	.L625-.L624
+	.byte	1,5,52,9
+	.half	.L626-.L625
+	.byte	1,5,58,9
+	.half	.L627-.L626
+	.byte	1,5,29,9
+	.half	.L628-.L627
+	.byte	3,1,1,5,52,9
+	.half	.L629-.L628
+	.byte	1,5,40,9
+	.half	.L630-.L629
+	.byte	1,5,52,9
+	.half	.L631-.L630
+	.byte	1,5,58,9
+	.half	.L632-.L631
+	.byte	1,5,29,9
+	.half	.L633-.L632
+	.byte	3,1,1,5,52,9
+	.half	.L634-.L633
+	.byte	1,5,40,9
+	.half	.L635-.L634
+	.byte	1,5,52,9
+	.half	.L636-.L635
+	.byte	1,5,58,9
+	.half	.L637-.L636
+	.byte	1,5,27,9
+	.half	.L638-.L637
+	.byte	3,1,1,5,13,9
+	.half	.L423-.L638
+	.byte	3,1,1,5,48,9
+	.half	.L48-.L423
+	.byte	3,3,1,5,18,9
+	.half	.L425-.L48
+	.byte	1,5,25,7,9
+	.half	.L639-.L425
+	.byte	3,1,1,5,42,9
+	.half	.L640-.L639
+	.byte	1,5,34,7,9
+	.half	.L641-.L640
+	.byte	3,1,1,5,38,9
+	.half	.L642-.L641
+	.byte	1,5,24,7,9
+	.half	.L98-.L642
+	.byte	3,2,1,5,17,9
+	.half	.L643-.L98
+	.byte	3,1,1,5,23,9
+	.half	.L100-.L643
+	.byte	3,3,1,5,33,9
+	.half	.L644-.L100
+	.byte	3,1,1,5,67,9
+	.half	.L645-.L644
+	.byte	3,126,1,5,20,9
+	.half	.L646-.L645
+	.byte	1,5,13,9
+	.half	.L647-.L646
+	.byte	3,3,1,5,48,9
+	.half	.L49-.L647
+	.byte	3,3,1,5,18,9
+	.half	.L427-.L49
+	.byte	1,5,25,7,9
+	.half	.L648-.L427
+	.byte	3,1,1,5,42,9
+	.half	.L649-.L648
+	.byte	1,5,24,7,9
+	.half	.L103-.L649
+	.byte	3,2,1,5,17,9
+	.half	.L650-.L103
+	.byte	3,1,1,5,42,9
+	.half	.L104-.L650
+	.byte	3,4,1,5,23,9
+	.half	.L651-.L104
+	.byte	3,127,1,5,42,9
+	.half	.L652-.L651
+	.byte	3,1,1,5,61,9
+	.half	.L653-.L652
+	.byte	3,126,1,5,20,9
+	.half	.L654-.L653
+	.byte	1,5,13,9
+	.half	.L655-.L654
+	.byte	3,3,1,5,48,9
+	.half	.L54-.L655
+	.byte	3,3,1,5,18,9
+	.half	.L429-.L54
+	.byte	1,5,25,7,9
+	.half	.L656-.L429
+	.byte	3,1,1,5,42,9
+	.half	.L657-.L656
+	.byte	1,5,24,7,9
+	.half	.L107-.L657
+	.byte	3,2,1,5,17,9
+	.half	.L658-.L107
+	.byte	3,1,1,5,54,9
+	.half	.L108-.L658
+	.byte	3,2,1,5,13,9
+	.half	.L659-.L108
+	.byte	3,1,1,5,48,9
+	.half	.L55-.L659
+	.byte	3,3,1,5,18,9
+	.half	.L431-.L55
+	.byte	1,5,25,7,9
+	.half	.L660-.L431
+	.byte	3,1,1,5,42,9
+	.half	.L661-.L660
+	.byte	1,5,24,7,9
+	.half	.L111-.L661
+	.byte	3,2,1,5,17,9
+	.half	.L662-.L111
+	.byte	3,1,1,5,37,9
+	.half	.L112-.L662
+	.byte	3,2,1,5,46,9
+	.half	.L663-.L112
+	.byte	1,5,13,9
+	.half	.L664-.L663
+	.byte	3,1,1,5,25,9
+	.half	.L56-.L664
+	.byte	3,3,1,5,17,9
+	.half	.L665-.L56
+	.byte	1,5,35,7,9
+	.half	.L666-.L665
+	.byte	3,1,1,5,18,9
+	.half	.L667-.L666
+	.byte	1,5,35,7,9
+	.half	.L668-.L667
+	.byte	3,1,1,5,42,9
+	.half	.L669-.L668
+	.byte	1,5,39,9
+	.half	.L670-.L669
+	.byte	1,5,24,7,9
+	.half	.L115-.L670
+	.byte	3,2,1,5,17,9
+	.half	.L671-.L115
+	.byte	3,1,1,5,37,9
+	.half	.L116-.L671
+	.byte	3,2,1,5,46,9
+	.half	.L433-.L116
+	.byte	1,5,37,9
+	.half	.L432-.L433
+	.byte	3,1,1,5,36,9
+	.half	.L672-.L432
+	.byte	3,1,1,5,13,9
+	.half	.L673-.L672
+	.byte	3,1,1,5,45,9
+	.half	.L58-.L673
+	.byte	3,3,1,5,22,9
+	.half	.L434-.L58
+	.byte	1,5,45,9
+	.half	.L674-.L434
+	.byte	1,5,29,9
+	.half	.L675-.L674
+	.byte	3,1,1,5,40,9
+	.half	.L676-.L675
+	.byte	1,5,29,9
+	.half	.L677-.L676
+	.byte	3,1,1,5,50,9
+	.half	.L678-.L677
+	.byte	1,5,57,9
+	.half	.L679-.L678
+	.byte	1,5,34,9
+	.half	.L680-.L679
+	.byte	1,5,27,9
+	.half	.L681-.L680
+	.byte	3,1,1,5,13,9
+	.half	.L682-.L681
+	.byte	3,1,1,5,24,9
+	.half	.L59-.L682
+	.byte	3,3,1,5,13,9
+	.half	.L683-.L59
+	.byte	1,5,24,7,9
+	.half	.L684-.L683
+	.byte	3,2,1,5,17,9
+	.half	.L685-.L684
+	.byte	3,1,1,5,51,9
+	.half	.L121-.L685
+	.byte	3,3,1,5,34,9
+	.half	.L435-.L121
+	.byte	1,5,65,9
+	.half	.L438-.L435
+	.byte	3,1,1,5,21,9
+	.half	.L437-.L438
+	.byte	3,1,1,5,51,7,9
+	.half	.L686-.L437
+	.byte	1,5,49,9
+	.half	.L687-.L686
+	.byte	1,5,28,7,9
+	.half	.L123-.L687
+	.byte	3,2,1,5,51,9
+	.half	.L688-.L123
+	.byte	1,5,47,9
+	.half	.L124-.L688
+	.byte	3,4,1,5,44,9
+	.half	.L689-.L124
+	.byte	3,1,1,5,13,9
+	.half	.L125-.L689
+	.byte	3,3,1,5,25,9
+	.half	.L60-.L125
+	.byte	3,3,1,5,23,9
+	.half	.L690-.L60
+	.byte	1,5,50,9
+	.half	.L691-.L690
+	.byte	3,2,1,5,23,9
+	.half	.L692-.L691
+	.byte	3,127,1,5,27,9
+	.half	.L693-.L692
+	.byte	3,2,1,5,13,9
+	.half	.L694-.L693
+	.byte	3,1,1,5,22,9
+	.half	.L61-.L694
+	.byte	3,3,1,5,36,9
+	.half	.L440-.L61
+	.byte	1,5,29,9
+	.half	.L439-.L440
+	.byte	3,1,1,5,40,9
+	.half	.L695-.L439
+	.byte	1,5,27,9
+	.half	.L696-.L695
+	.byte	3,1,1,5,13,9
+	.half	.L697-.L696
+	.byte	3,1,1,5,48,9
+	.half	.L62-.L697
+	.byte	3,3,1,5,18,9
+	.half	.L442-.L62
+	.byte	1,5,25,7,9
+	.half	.L698-.L442
+	.byte	3,1,1,5,45,9
+	.half	.L699-.L698
+	.byte	1,5,42,9
+	.half	.L700-.L699
+	.byte	1,5,24,7,9
+	.half	.L129-.L700
+	.byte	3,2,1,5,17,9
+	.half	.L701-.L129
+	.byte	3,1,1,5,25,9
+	.half	.L130-.L701
+	.byte	3,4,1,5,33,9
+	.half	.L702-.L130
+	.byte	1,5,36,9
+	.half	.L703-.L702
+	.byte	1,5,50,9
+	.half	.L704-.L703
+	.byte	3,1,1,5,32,9
+	.half	.L705-.L704
+	.byte	1,5,53,9
+	.half	.L706-.L705
+	.byte	3,1,1,5,35,9
+	.half	.L707-.L706
+	.byte	1,5,48,9
+	.half	.L708-.L707
+	.byte	3,1,1,5,30,9
+	.half	.L709-.L708
+	.byte	1,5,65,9
+	.half	.L710-.L709
+	.byte	3,1,1,5,38,9
+	.half	.L711-.L710
+	.byte	1,5,46,9
+	.half	.L712-.L711
+	.byte	3,2,1,5,40,9
+	.half	.L713-.L712
+	.byte	3,127,1,5,46,9
+	.half	.L714-.L713
+	.byte	3,3,1,9
+	.half	.L715-.L714
+	.byte	3,127,1,9
+	.half	.L716-.L715
+	.byte	3,3,1,5,44,9
+	.half	.L717-.L716
+	.byte	3,127,1,5,46,9
+	.half	.L718-.L717
+	.byte	3,3,1,5,41,9
+	.half	.L719-.L718
+	.byte	3,127,1,5,46,9
+	.half	.L720-.L719
+	.byte	3,3,1,5,41,9
+	.half	.L721-.L720
+	.byte	3,127,1,5,46,9
+	.half	.L722-.L721
+	.byte	3,3,1,5,39,9
+	.half	.L723-.L722
+	.byte	3,127,1,5,31,9
+	.half	.L724-.L723
+	.byte	3,4,1,5,26,9
+	.half	.L725-.L724
+	.byte	3,1,1,5,51,9
+	.half	.L726-.L725
+	.byte	3,126,1,5,24,9
+	.half	.L727-.L726
+	.byte	3,127,1,5,13,9
+	.half	.L307-.L727
+	.byte	3,5,1,5,48,9
+	.half	.L63-.L307
+	.byte	3,3,1,5,18,9
+	.half	.L444-.L63
+	.byte	1,5,25,7,9
+	.half	.L728-.L444
+	.byte	3,1,1,5,42,9
+	.half	.L729-.L728
+	.byte	1,5,24,7,9
+	.half	.L133-.L729
+	.byte	3,2,1,5,17,9
+	.half	.L730-.L133
+	.byte	3,1,1,5,25,9
+	.half	.L134-.L730
+	.byte	3,2,1,5,23,9
+	.half	.L731-.L134
+	.byte	1,5,31,9
+	.half	.L732-.L731
+	.byte	3,1,1,5,49,9
+	.half	.L733-.L732
+	.byte	1,5,23,9
+	.half	.L734-.L733
+	.byte	1,5,31,9
+	.half	.L735-.L734
+	.byte	3,1,1,5,49,9
+	.half	.L736-.L735
+	.byte	1,5,23,9
+	.half	.L737-.L736
+	.byte	1,5,31,9
+	.half	.L738-.L737
+	.byte	3,1,1,5,49,9
+	.half	.L739-.L738
+	.byte	1,5,23,9
+	.half	.L740-.L739
+	.byte	1,5,24,9
+	.half	.L741-.L740
+	.byte	3,2,1,5,23,9
+	.half	.L742-.L741
+	.byte	3,1,1,5,41,9
+	.half	.L743-.L742
+	.byte	1,5,24,9
+	.half	.L744-.L743
+	.byte	3,2,1,5,23,9
+	.half	.L745-.L744
+	.byte	3,1,1,5,41,9
+	.half	.L746-.L745
+	.byte	1,5,24,9
+	.half	.L747-.L746
+	.byte	3,2,1,5,23,9
+	.half	.L748-.L747
+	.byte	3,1,1,5,41,9
+	.half	.L749-.L748
+	.byte	1,5,24,9
+	.half	.L750-.L749
+	.byte	3,2,1,5,23,9
+	.half	.L751-.L750
+	.byte	3,1,1,5,41,9
+	.half	.L752-.L751
+	.byte	1,5,24,9
+	.half	.L753-.L752
+	.byte	3,2,1,5,23,9
+	.half	.L754-.L753
+	.byte	3,1,1,5,41,9
+	.half	.L755-.L754
+	.byte	1,5,24,9
+	.half	.L756-.L755
+	.byte	3,2,1,5,23,9
+	.half	.L757-.L756
+	.byte	3,1,1,5,41,9
+	.half	.L758-.L757
+	.byte	1,5,24,9
+	.half	.L759-.L758
+	.byte	3,2,1,5,23,9
+	.half	.L760-.L759
+	.byte	3,1,1,5,41,9
+	.half	.L761-.L760
+	.byte	1,5,27,9
+	.half	.L762-.L761
+	.byte	3,1,1,5,13,9
+	.half	.L763-.L762
+	.byte	3,1,1,5,48,9
+	.half	.L64-.L763
+	.byte	3,3,1,5,18,9
+	.half	.L446-.L64
+	.byte	1,5,25,7,9
+	.half	.L764-.L446
+	.byte	3,1,1,5,42,9
+	.half	.L765-.L764
+	.byte	1,5,24,7,9
+	.half	.L137-.L765
+	.byte	3,2,1,5,17,9
+	.half	.L766-.L137
+	.byte	3,1,1,5,32,9
+	.half	.L138-.L766
+	.byte	3,6,1,5,23,9
+	.half	.L767-.L138
+	.byte	3,127,1,5,32,9
+	.half	.L768-.L767
+	.byte	3,1,1,5,64,9
+	.half	.L769-.L768
+	.byte	3,126,1,5,20,9
+	.half	.L770-.L769
+	.byte	1,5,13,9
+	.half	.L771-.L770
+	.byte	3,19,1,5,24,9
+	.half	.L65-.L771
+	.byte	3,3,1,5,13,9
+	.half	.L772-.L65
+	.byte	1,5,24,7,9
+	.half	.L773-.L772
+	.byte	3,2,1,5,17,9
+	.half	.L774-.L773
+	.byte	3,1,1,5,25,9
+	.half	.L141-.L774
+	.byte	3,2,1,5,23,9
+	.half	.L775-.L141
+	.byte	1,5,50,9
+	.half	.L776-.L775
+	.byte	3,2,1,5,23,9
+	.half	.L777-.L776
+	.byte	3,127,1,5,58,9
+	.half	.L778-.L777
+	.byte	3,2,1,5,23,9
+	.half	.L779-.L778
+	.byte	1,5,47,9
+	.half	.L780-.L779
+	.byte	3,1,1,5,23,9
+	.half	.L781-.L780
+	.byte	1,5,25,9
+	.half	.L782-.L781
+	.byte	3,1,1,5,23,9
+	.half	.L783-.L782
+	.byte	1,5,29,9
+	.half	.L784-.L783
+	.byte	3,1,1,5,34,9
+	.half	.L448-.L784
+	.byte	1,5,29,9
+	.half	.L447-.L448
+	.byte	3,1,1,5,34,9
+	.half	.L785-.L447
+	.byte	1,5,29,9
+	.half	.L786-.L785
+	.byte	3,1,1,5,35,9
+	.half	.L787-.L786
+	.byte	1,5,29,9
+	.half	.L788-.L787
+	.byte	3,1,1,5,35,9
+	.half	.L789-.L788
+	.byte	1,5,29,9
+	.half	.L790-.L789
+	.byte	3,1,1,5,35,9
+	.half	.L791-.L790
+	.byte	1,5,29,9
+	.half	.L792-.L791
+	.byte	3,1,1,5,35,9
+	.half	.L793-.L792
+	.byte	1,5,29,9
+	.half	.L794-.L793
+	.byte	3,1,1,5,35,9
+	.half	.L795-.L794
+	.byte	1,5,29,9
+	.half	.L796-.L795
+	.byte	3,1,1,5,35,9
+	.half	.L797-.L796
+	.byte	1,5,29,9
+	.half	.L798-.L797
+	.byte	3,1,1,5,35,9
+	.half	.L799-.L798
+	.byte	1,5,27,9
+	.half	.L800-.L799
+	.byte	3,1,1,5,13,9
+	.half	.L801-.L800
+	.byte	3,1,1,5,48,9
+	.half	.L50-.L801
+	.byte	3,3,1,5,18,9
+	.half	.L450-.L50
+	.byte	1,5,25,7,9
+	.half	.L802-.L450
+	.byte	3,1,1,5,45,9
+	.half	.L803-.L802
+	.byte	1,5,42,9
+	.half	.L804-.L803
+	.byte	1,5,23,7,9
+	.half	.L805-.L804
+	.byte	3,1,1,5,30,9
+	.half	.L806-.L805
+	.byte	1,5,32,9
+	.half	.L144-.L806
+	.byte	3,2,1,5,39,9
+	.half	.L807-.L144
+	.byte	1,5,26,9
+	.half	.L808-.L807
+	.byte	1,5,21,7,9
+	.half	.L809-.L808
+	.byte	3,1,1,9
+	.half	.L810-.L809
+	.byte	3,1,1,9
+	.half	.L147-.L810
+	.byte	3,127,1,5,17,9
+	.half	.L148-.L147
+	.byte	3,2,1,5,61,9
+	.half	.L146-.L148
+	.byte	3,4,1,5,34,9
+	.half	.L811-.L146
+	.byte	1,5,61,9
+	.half	.L812-.L811
+	.byte	3,1,1,5,34,9
+	.half	.L813-.L812
+	.byte	1,5,63,9
+	.half	.L814-.L813
+	.byte	3,1,1,5,36,9
+	.half	.L815-.L814
+	.byte	1,5,68,9
+	.half	.L816-.L815
+	.byte	3,1,1,5,41,9
+	.half	.L817-.L816
+	.byte	1,5,68,9
+	.half	.L818-.L817
+	.byte	3,1,1,5,41,9
+	.half	.L819-.L818
+	.byte	1,5,61,9
+	.half	.L820-.L819
+	.byte	3,1,1,5,34,9
+	.half	.L821-.L820
+	.byte	1,5,61,9
+	.half	.L822-.L821
+	.byte	3,1,1,5,34,9
+	.half	.L823-.L822
+	.byte	1,5,69,9
+	.half	.L824-.L823
+	.byte	3,1,1,5,42,9
+	.half	.L825-.L824
+	.byte	1,5,22,9
+	.half	.L826-.L825
+	.byte	3,1,1,9
+	.half	.L827-.L826
+	.byte	3,1,1,9
+	.half	.L828-.L827
+	.byte	3,1,1,9
+	.half	.L829-.L828
+	.byte	3,1,1,9
+	.half	.L830-.L829
+	.byte	3,1,1,9
+	.half	.L831-.L830
+	.byte	3,1,1,9
+	.half	.L832-.L831
+	.byte	3,1,1,9
+	.half	.L833-.L832
+	.byte	3,1,1,5,28,9
+	.half	.L834-.L833
+	.byte	3,1,1,5,42,9
+	.half	.L835-.L834
+	.byte	1,5,39,9
+	.half	.L836-.L835
+	.byte	1,5,28,9
+	.half	.L837-.L836
+	.byte	3,1,1,5,42,9
+	.half	.L838-.L837
+	.byte	1,5,39,9
+	.half	.L839-.L838
+	.byte	1,5,28,9
+	.half	.L840-.L839
+	.byte	3,1,1,5,44,9
+	.half	.L841-.L840
+	.byte	1,5,41,9
+	.half	.L842-.L841
+	.byte	1,5,22,9
+	.half	.L843-.L842
+	.byte	3,1,1,5,28,9
+	.half	.L844-.L843
+	.byte	3,3,1,5,54,9
+	.half	.L845-.L844
+	.byte	3,127,1,5,28,9
+	.half	.L846-.L845
+	.byte	3,2,1,5,55,9
+	.half	.L847-.L846
+	.byte	1,5,46,9
+	.half	.L848-.L847
+	.byte	1,5,28,9
+	.half	.L849-.L848
+	.byte	3,1,1,5,48,9
+	.half	.L850-.L849
+	.byte	1,5,39,9
+	.half	.L851-.L850
+	.byte	1,5,28,9
+	.half	.L852-.L851
+	.byte	3,1,1,5,46,9
+	.half	.L853-.L852
+	.byte	1,5,28,9
+	.half	.L854-.L853
+	.byte	3,1,1,5,61,9
+	.half	.L855-.L854
+	.byte	3,127,1,5,28,9
+	.half	.L856-.L855
+	.byte	3,2,1,5,46,9
+	.half	.L857-.L856
+	.byte	1,5,28,9
+	.half	.L858-.L857
+	.byte	3,1,1,5,61,9
+	.half	.L859-.L858
+	.byte	3,127,1,5,28,9
+	.half	.L150-.L859
+	.byte	3,3,1,5,51,9
+	.half	.L860-.L150
+	.byte	1,5,27,9
+	.half	.L165-.L860
+	.byte	3,4,1,5,45,9
+	.half	.L861-.L165
+	.byte	1,5,43,9
+	.half	.L862-.L861
+	.byte	1,5,13,9
+	.half	.L166-.L862
+	.byte	3,3,1,5,48,9
+	.half	.L51-.L166
+	.byte	3,3,1,5,18,9
+	.half	.L452-.L51
+	.byte	1,5,25,7,9
+	.half	.L863-.L452
+	.byte	3,1,1,5,42,9
+	.half	.L864-.L863
+	.byte	1,5,24,7,9
+	.half	.L169-.L864
+	.byte	3,2,1,5,17,9
+	.half	.L865-.L169
+	.byte	3,1,1,5,25,9
+	.half	.L170-.L865
+	.byte	3,2,1,5,23,9
+	.half	.L866-.L170
+	.byte	1,5,29,9
+	.half	.L867-.L866
+	.byte	3,1,1,5,40,9
+	.half	.L868-.L867
+	.byte	1,5,55,9
+	.half	.L869-.L868
+	.byte	1,5,29,9
+	.half	.L870-.L869
+	.byte	3,1,1,5,40,9
+	.half	.L871-.L870
+	.byte	1,5,55,9
+	.half	.L872-.L871
+	.byte	1,5,29,9
+	.half	.L873-.L872
+	.byte	3,1,1,5,40,9
+	.half	.L874-.L873
+	.byte	1,5,55,9
+	.half	.L875-.L874
+	.byte	1,5,29,9
+	.half	.L876-.L875
+	.byte	3,1,1,5,41,9
+	.half	.L877-.L876
+	.byte	1,5,56,9
+	.half	.L878-.L877
+	.byte	1,5,29,9
+	.half	.L879-.L878
+	.byte	3,1,1,5,41,9
+	.half	.L880-.L879
+	.byte	1,5,56,9
+	.half	.L881-.L880
+	.byte	1,5,29,9
+	.half	.L882-.L881
+	.byte	3,1,1,5,41,9
+	.half	.L883-.L882
+	.byte	1,5,56,9
+	.half	.L884-.L883
+	.byte	1,5,29,9
+	.half	.L885-.L884
+	.byte	3,1,1,5,41,9
+	.half	.L886-.L885
+	.byte	1,5,56,9
+	.half	.L887-.L886
+	.byte	1,5,29,9
+	.half	.L888-.L887
+	.byte	3,1,1,5,41,9
+	.half	.L889-.L888
+	.byte	1,5,56,9
+	.half	.L890-.L889
+	.byte	1,5,27,9
+	.half	.L891-.L890
+	.byte	3,1,1,5,13,9
+	.half	.L892-.L891
+	.byte	3,1,1,5,23,9
+	.half	.L52-.L892
+	.byte	3,3,1,5,30,9
+	.half	.L893-.L52
+	.byte	1,5,13,9
+	.half	.L894-.L893
+	.byte	1,5,24,7,9
+	.half	.L895-.L894
+	.byte	3,2,1,5,48,9
+	.half	.L896-.L895
+	.byte	1,5,52,9
+	.half	.L173-.L896
+	.byte	3,5,1,5,27,9
+	.half	.L453-.L173
+	.byte	3,2,1,5,22,9
+	.half	.L897-.L453
+	.byte	3,1,1,5,50,9
+	.half	.L898-.L897
+	.byte	3,1,1,5,42,9
+	.half	.L899-.L898
+	.byte	1,5,47,9
+	.half	.L900-.L899
+	.byte	3,1,1,5,39,9
+	.half	.L901-.L900
+	.byte	1,5,27,9
+	.half	.L902-.L901
+	.byte	3,2,1,5,26,9
+	.half	.L903-.L902
+	.byte	3,1,1,5,22,9
+	.half	.L904-.L903
+	.byte	3,126,1,5,28,7,9
+	.half	.L905-.L904
+	.byte	3,4,1,5,13,9
+	.half	.L174-.L905
+	.byte	3,3,1,5,23,9
+	.half	.L53-.L174
+	.byte	3,3,1,5,30,9
+	.half	.L906-.L53
+	.byte	1,5,13,9
+	.half	.L907-.L906
+	.byte	1,5,24,7,9
+	.half	.L908-.L907
+	.byte	3,2,1,5,48,9
+	.half	.L909-.L908
+	.byte	1,5,52,9
+	.half	.L177-.L909
+	.byte	3,4,1,5,45,9
+	.half	.L455-.L177
+	.byte	3,1,1,5,43,9
+	.half	.L910-.L455
+	.byte	1,5,42,9
+	.half	.L911-.L910
+	.byte	3,1,1,5,40,9
+	.half	.L912-.L911
+	.byte	1,5,13,9
+	.half	.L178-.L912
+	.byte	3,2,1,5,20,9
+	.half	.L66-.L178
+	.byte	3,3,1,5,13,9
+	.half	.L913-.L66
+	.byte	3,1,1,5,43,9
+	.half	.L67-.L913
+	.byte	3,2,1,5,51,9
+	.half	.L914-.L67
+	.byte	1,5,1,9
+	.half	.L28-.L914
+	.byte	3,1,1,7,9
+	.half	.L226-.L28
+	.byte	0,1,1
+.L487:
+	.sdecl	'.debug_ranges',debug,cluster('CommandRouter_Handle')
+	.sect	'.debug_ranges'
+.L225:
+	.word	-1,.L210,0,.L226-.L210,0,0
+	.sdecl	'.debug_info',debug,cluster('CommandRouter_SendTelemetry')
+	.sect	'.debug_info'
+.L227:
+	.word	409
+	.half	3
+	.word	.L228
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\command_router.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L230,.L229
+	.byte	2
+	.word	.L213
+	.byte	3
+	.byte	'CommandRouter_SendTelemetry',0,1,236,4,6,1,1,1
+	.word	.L212,.L314,.L211
+	.byte	4
+	.byte	'router',0,1,236,4,49
+	.word	.L278,.L315
+	.byte	4
+	.byte	'sequence',0,1,236,4,65
+	.word	.L298,.L316
+	.byte	5
+	.word	.L212,.L314
+	.byte	6
+	.byte	'frame',0,1,238,4,18
+	.word	.L317,.L318
+	.byte	6
+	.byte	'length',0,1,239,4,12
+	.word	.L305,.L319
+	.byte	6
+	.byte	'value',0,1,240,4,27
+	.word	.L320,.L321
+	.byte	6
+	.byte	'status',0,1,241,4,14
+	.word	.L290,.L322
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CommandRouter_SendTelemetry')
+	.sect	'.debug_abbrev'
+.L228:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CommandRouter_SendTelemetry')
+	.sect	'.debug_line'
+.L229:
+	.word	.L916-.L915
+.L915:
+	.half	3
+	.word	.L918-.L917
+.L917:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\command_router.c',0,0,0,0,0
+.L918:
+	.byte	5,6,7,0,5,2
+	.word	.L212
+	.byte	3,235,4,1,5,33,9
+	.half	.L462-.L212
+	.byte	3,2,1,5,42,9
+	.half	.L463-.L462
+	.byte	3,2,1,5,49,9
+	.half	.L919-.L463
+	.byte	1,5,28,9
+	.half	.L464-.L919
+	.byte	3,1,1,5,19,9
+	.half	.L466-.L464
+	.byte	3,2,1,5,22,9
+	.half	.L460-.L466
+	.byte	1,9
+	.half	.L468-.L460
+	.byte	3,1,1,5,20,9
+	.half	.L920-.L468
+	.byte	1,5,21,9
+	.half	.L921-.L920
+	.byte	3,1,1,5,19,9
+	.half	.L922-.L921
+	.byte	1,5,22,9
+	.half	.L923-.L922
+	.byte	3,1,1,5,20,9
+	.half	.L924-.L923
+	.byte	1,5,21,9
+	.half	.L925-.L924
+	.byte	3,1,1,5,25,9
+	.half	.L926-.L925
+	.byte	3,1,1,5,23,9
+	.half	.L927-.L926
+	.byte	1,5,29,9
+	.half	.L928-.L927
+	.byte	3,1,1,5,39,9
+	.half	.L929-.L928
+	.byte	1,5,55,9
+	.half	.L930-.L929
+	.byte	1,5,53,9
+	.half	.L931-.L930
+	.byte	1,5,29,9
+	.half	.L932-.L931
+	.byte	3,1,1,5,39,9
+	.half	.L933-.L932
+	.byte	1,5,29,9
+	.half	.L934-.L933
+	.byte	3,1,1,5,39,9
+	.half	.L935-.L934
+	.byte	1,5,29,9
+	.half	.L936-.L935
+	.byte	3,1,1,5,40,9
+	.half	.L937-.L936
+	.byte	1,5,29,9
+	.half	.L938-.L937
+	.byte	3,1,1,5,40,9
+	.half	.L939-.L938
+	.byte	1,5,57,9
+	.half	.L940-.L939
+	.byte	1,5,55,9
+	.half	.L941-.L940
+	.byte	1,5,15,9
+	.half	.L942-.L941
+	.byte	3,1,1,5,22,9
+	.half	.L465-.L942
+	.byte	1,5,5,9
+	.half	.L943-.L465
+	.byte	1,5,16,7,9
+	.half	.L944-.L943
+	.byte	3,2,1,5,15,9
+	.half	.L181-.L944
+	.byte	3,2,1,5,22,9
+	.half	.L945-.L181
+	.byte	1,5,5,9
+	.half	.L946-.L945
+	.byte	1,5,16,7,9
+	.half	.L947-.L946
+	.byte	3,2,1,5,15,9
+	.half	.L182-.L947
+	.byte	3,2,1,5,22,9
+	.half	.L948-.L182
+	.byte	1,5,5,9
+	.half	.L949-.L948
+	.byte	1,5,16,7,9
+	.half	.L950-.L949
+	.byte	3,2,1,5,15,9
+	.half	.L183-.L950
+	.byte	3,2,1,5,22,9
+	.half	.L951-.L183
+	.byte	1,5,5,9
+	.half	.L952-.L951
+	.byte	1,5,16,7,9
+	.half	.L953-.L952
+	.byte	3,2,1,5,15,9
+	.half	.L184-.L953
+	.byte	3,2,1,5,22,9
+	.half	.L954-.L184
+	.byte	1,5,5,9
+	.half	.L955-.L954
+	.byte	1,5,16,7,9
+	.half	.L956-.L955
+	.byte	3,2,1,5,15,9
+	.half	.L185-.L956
+	.byte	3,2,1,5,22,9
+	.half	.L957-.L185
+	.byte	1,5,5,9
+	.half	.L958-.L957
+	.byte	1,5,16,7,9
+	.half	.L959-.L958
+	.byte	3,2,1,5,15,9
+	.half	.L186-.L959
+	.byte	3,2,1,5,22,9
+	.half	.L960-.L186
+	.byte	1,5,5,9
+	.half	.L961-.L960
+	.byte	1,5,16,7,9
+	.half	.L962-.L961
+	.byte	3,2,1,5,43,9
+	.half	.L187-.L962
+	.byte	3,2,1,5,24,9
+	.half	.L963-.L187
+	.byte	1,5,43,9
+	.half	.L964-.L963
+	.byte	3,1,1,5,24,9
+	.half	.L467-.L964
+	.byte	1,5,29,9
+	.half	.L965-.L467
+	.byte	3,1,1,5,27,9
+	.half	.L966-.L965
+	.byte	1,5,15,9
+	.half	.L967-.L966
+	.byte	3,3,1,5,9,9
+	.half	.L968-.L967
+	.byte	3,1,1,5,5,9
+	.half	.L470-.L968
+	.byte	3,1,1,5,15,7,9
+	.half	.L969-.L470
+	.byte	3,2,1,5,19,9
+	.half	.L970-.L969
+	.byte	3,1,1,5,13,9
+	.half	.L971-.L970
+	.byte	3,1,1,9
+	.half	.L972-.L971
+	.byte	3,1,1,5,1,9
+	.half	.L188-.L972
+	.byte	3,2,1,7,9
+	.half	.L231-.L188
+	.byte	0,1,1
+.L916:
+	.sdecl	'.debug_ranges',debug,cluster('CommandRouter_SendTelemetry')
+	.sect	'.debug_ranges'
+.L230:
+	.word	-1,.L212,0,.L231-.L212,0,0
+	.sdecl	'.debug_info',debug,cluster('ReadF32')
+	.sect	'.debug_info'
+.L232:
+	.word	306
+	.half	3
+	.word	.L233
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\command_router.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L235,.L234
+	.byte	2
+	.word	.L213
+	.byte	3
+	.byte	'ReadF32',0,1,9,14
+	.word	.L323
+	.byte	1,1
+	.word	.L190,.L324,.L189
+	.byte	4
+	.byte	'data',0,1,9,37
+	.word	.L325,.L326
+	.byte	5
+	.word	.L190,.L324
+	.byte	6
+	.byte	'value',0,1,11,11
+	.word	.L323,.L327
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ReadF32')
+	.sect	'.debug_abbrev'
+.L233:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ReadF32')
+	.sect	'.debug_line'
+.L234:
+	.word	.L974-.L973
+.L973:
+	.half	3
+	.word	.L976-.L975
+.L975:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\command_router.c',0,0,0,0,0
+.L976:
+	.byte	5,14,7,0,5,2
+	.word	.L190
+	.byte	3,8,1,5,13,9
+	.half	.L357-.L190
+	.byte	3,3,1,5,26,9
+	.half	.L356-.L357
+	.byte	1,5,12,9
+	.half	.L358-.L356
+	.byte	3,1,1,5,5,9
+	.half	.L977-.L358
+	.byte	1,5,1,9
+	.half	.L2-.L977
+	.byte	3,1,1,7,9
+	.half	.L236-.L2
+	.byte	0,1,1
+.L974:
+	.sdecl	'.debug_ranges',debug,cluster('ReadF32')
+	.sect	'.debug_ranges'
+.L235:
+	.word	-1,.L190,0,.L236-.L190,0,0
+	.sdecl	'.debug_info',debug,cluster('ReadU16')
+	.sect	'.debug_info'
+.L237:
+	.word	287
+	.half	3
+	.word	.L238
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\command_router.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L240,.L239
+	.byte	2
+	.word	.L213
+	.byte	3
+	.byte	'ReadU16',0,1,16,17
+	.word	.L290
+	.byte	1,1
+	.word	.L192,.L328,.L191
+	.byte	4
+	.byte	'data',0,1,16,40
+	.word	.L325,.L329
+	.byte	5
+	.word	.L192,.L328
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ReadU16')
+	.sect	'.debug_abbrev'
+.L238:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ReadU16')
+	.sect	'.debug_line'
+.L239:
+	.word	.L979-.L978
+.L978:
+	.half	3
+	.word	.L981-.L980
+.L980:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\command_router.c',0,0,0,0,0
+.L981:
+	.byte	5,26,7,0,5,2
+	.word	.L192
+	.byte	3,17,1,5,47,9
+	.half	.L982-.L192
+	.byte	1,5,51,9
+	.half	.L983-.L982
+	.byte	1,5,30,9
+	.half	.L984-.L983
+	.byte	1,5,5,9
+	.half	.L985-.L984
+	.byte	1,5,1,9
+	.half	.L3-.L985
+	.byte	3,1,1,7,9
+	.half	.L241-.L3
+	.byte	0,1,1
+.L979:
+	.sdecl	'.debug_ranges',debug,cluster('ReadU16')
+	.sect	'.debug_ranges'
+.L240:
+	.word	-1,.L192,0,.L241-.L192,0,0
+	.sdecl	'.debug_info',debug,cluster('ReadU32')
+	.sect	'.debug_info'
+.L242:
+	.word	287
+	.half	3
+	.word	.L243
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\command_router.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L245,.L244
+	.byte	2
+	.word	.L213
+	.byte	3
+	.byte	'ReadU32',0,1,21,17
+	.word	.L305
+	.byte	1,1
+	.word	.L194,.L330,.L193
+	.byte	4
+	.byte	'data',0,1,21,40
+	.word	.L325,.L331
+	.byte	5
+	.word	.L194,.L330
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ReadU32')
+	.sect	'.debug_abbrev'
+.L243:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ReadU32')
+	.sect	'.debug_line'
+.L244:
+	.word	.L987-.L986
+.L986:
+	.half	3
+	.word	.L989-.L988
+.L988:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\command_router.c',0,0,0,0,0
+.L989:
+	.byte	5,26,7,0,5,2
+	.word	.L194
+	.byte	3,22,1,5,27,9
+	.half	.L990-.L194
+	.byte	3,1,1,5,31,9
+	.half	.L991-.L990
+	.byte	1,5,30,9
+	.half	.L992-.L991
+	.byte	3,127,1,5,27,9
+	.half	.L993-.L992
+	.byte	3,2,1,5,31,9
+	.half	.L994-.L993
+	.byte	1,5,37,9
+	.half	.L995-.L994
+	.byte	3,127,1,5,27,9
+	.half	.L996-.L995
+	.byte	3,2,1,5,31,9
+	.half	.L997-.L996
+	.byte	1,5,38,9
+	.half	.L998-.L997
+	.byte	3,127,1,5,5,9
+	.half	.L999-.L998
+	.byte	3,126,1,5,1,9
+	.half	.L4-.L999
+	.byte	3,4,1,7,9
+	.half	.L246-.L4
+	.byte	0,1,1
+.L987:
+	.sdecl	'.debug_ranges',debug,cluster('ReadU32')
+	.sect	'.debug_ranges'
+.L245:
+	.word	-1,.L194,0,.L246-.L194,0,0
+	.sdecl	'.debug_info',debug,cluster('WriteU16')
+	.sect	'.debug_info'
+.L247:
+	.word	302
+	.half	3
+	.word	.L248
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\command_router.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L250,.L249
+	.byte	2
+	.word	.L213
+	.byte	3
+	.byte	'WriteU16',0,1,29,13,1,1
+	.word	.L196,.L332,.L195
+	.byte	4
+	.byte	'data',0,1,29,31
+	.word	.L333,.L334
+	.byte	4
+	.byte	'value',0,1,29,46
+	.word	.L290,.L335
+	.byte	5
+	.word	.L196,.L332
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('WriteU16')
+	.sect	'.debug_abbrev'
+.L248:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('WriteU16')
+	.sect	'.debug_line'
+.L249:
+	.word	.L1001-.L1000
+.L1000:
+	.half	3
+	.word	.L1003-.L1002
+.L1002:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\command_router.c',0,0,0,0,0
+.L1003:
+	.byte	5,31,7,0,5,2
+	.word	.L196
+	.byte	3,30,1,5,13,9
+	.half	.L1004-.L196
+	.byte	1,5,31,9
+	.half	.L1005-.L1004
+	.byte	3,1,1,5,13,9
+	.half	.L359-.L1005
+	.byte	1,5,1,9
+	.half	.L1006-.L359
+	.byte	3,1,1,7,9
+	.half	.L251-.L1006
+	.byte	0,1,1
+.L1001:
+	.sdecl	'.debug_ranges',debug,cluster('WriteU16')
+	.sect	'.debug_ranges'
+.L250:
+	.word	-1,.L196,0,.L251-.L196,0,0
+	.sdecl	'.debug_info',debug,cluster('WriteU32')
+	.sect	'.debug_info'
+.L252:
+	.word	302
+	.half	3
+	.word	.L253
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\command_router.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L255,.L254
+	.byte	2
+	.word	.L213
+	.byte	3
+	.byte	'WriteU32',0,1,35,13,1,1
+	.word	.L198,.L336,.L197
+	.byte	4
+	.byte	'data',0,1,35,31
+	.word	.L333,.L337
+	.byte	4
+	.byte	'value',0,1,35,46
+	.word	.L305,.L338
+	.byte	5
+	.word	.L198,.L336
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('WriteU32')
+	.sect	'.debug_abbrev'
+.L253:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('WriteU32')
+	.sect	'.debug_line'
+.L254:
+	.word	.L1008-.L1007
+.L1007:
+	.half	3
+	.word	.L1010-.L1009
+.L1009:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\command_router.c',0,0,0,0,0
+.L1010:
+	.byte	5,31,7,0,5,2
+	.word	.L198
+	.byte	3,36,1,5,13,9
+	.half	.L1011-.L198
+	.byte	1,5,38,9
+	.half	.L1012-.L1011
+	.byte	3,1,1,5,13,9
+	.half	.L1013-.L1012
+	.byte	1,5,39,9
+	.half	.L1014-.L1013
+	.byte	3,1,1,5,13,9
+	.half	.L1015-.L1014
+	.byte	1,5,31,9
+	.half	.L1016-.L1015
+	.byte	3,1,1,5,13,9
+	.half	.L1017-.L1016
+	.byte	1,5,1,9
+	.half	.L1018-.L1017
+	.byte	3,1,1,7,9
+	.half	.L256-.L1018
+	.byte	0,1,1
+.L1008:
+	.sdecl	'.debug_ranges',debug,cluster('WriteU32')
+	.sect	'.debug_ranges'
+.L255:
+	.word	-1,.L198,0,.L256-.L198,0,0
+	.sdecl	'.debug_info',debug,cluster('WriteF32')
+	.sect	'.debug_info'
+.L257:
+	.word	302
+	.half	3
+	.word	.L258
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\command_router.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L260,.L259
+	.byte	2
+	.word	.L213
+	.byte	3
+	.byte	'WriteF32',0,1,43,13,1,1
+	.word	.L200,.L339,.L199
+	.byte	4
+	.byte	'data',0,1,43,31
+	.word	.L333,.L340
+	.byte	4
+	.byte	'value',0,1,43,43
+	.word	.L323,.L341
+	.byte	5
+	.word	.L200,.L339
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('WriteF32')
+	.sect	'.debug_abbrev'
+.L258:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('WriteF32')
+	.sect	'.debug_line'
+.L259:
+	.word	.L1020-.L1019
+.L1019:
+	.half	3
+	.word	.L1022-.L1021
+.L1021:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\command_router.c',0,0,0,0,0
+.L1022:
+	.byte	5,13,7,0,5,2
+	.word	.L200
+	.byte	3,42,1,5,19,9
+	.half	.L1023-.L200
+	.byte	3,2,1,5,26,9
+	.half	.L1024-.L1023
+	.byte	1,5,1,9
+	.half	.L361-.L1024
+	.byte	3,1,1,7,9
+	.half	.L261-.L361
+	.byte	0,1,1
+.L1020:
+	.sdecl	'.debug_ranges',debug,cluster('WriteF32')
+	.sect	'.debug_ranges'
+.L260:
+	.word	-1,.L200,0,.L261-.L200,0,0
+	.sdecl	'.debug_info',debug,cluster('FromMotorResult')
+	.sect	'.debug_info'
+.L262:
+	.word	297
+	.half	3
+	.word	.L263
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\command_router.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L265,.L264
+	.byte	2
+	.word	.L213
+	.byte	3
+	.byte	'FromMotorResult',0,1,48,23
+	.word	.L292
+	.byte	1,1
+	.word	.L202,.L342,.L201
+	.byte	4
+	.byte	'result',0,1,48,51
+	.word	.L294,.L343
+	.byte	5
+	.word	.L202,.L342
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('FromMotorResult')
+	.sect	'.debug_abbrev'
+.L263:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('FromMotorResult')
+	.sect	'.debug_line'
+.L264:
+	.word	.L1026-.L1025
+.L1025:
+	.half	3
+	.word	.L1028-.L1027
+.L1027:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\command_router.c',0,0,0,0,0
+.L1028:
+	.byte	5,14,7,0,5,2
+	.word	.L202
+	.byte	3,51,1,9
+	.half	.L1029-.L202
+	.byte	3,2,1,9
+	.half	.L1030-.L1029
+	.byte	3,2,1,9
+	.half	.L1031-.L1030
+	.byte	3,2,1,9
+	.half	.L1032-.L1031
+	.byte	3,2,1,9
+	.half	.L1033-.L1032
+	.byte	3,2,1,5,20,9
+	.half	.L5-.L1033
+	.byte	3,119,1,5,13,9
+	.half	.L1034-.L5
+	.byte	1,5,20,9
+	.half	.L6-.L1034
+	.byte	3,2,1,5,13,9
+	.half	.L1035-.L6
+	.byte	1,5,20,9
+	.half	.L7-.L1035
+	.byte	3,2,1,5,13,9
+	.half	.L1036-.L7
+	.byte	1,5,20,9
+	.half	.L8-.L1036
+	.byte	3,2,1,5,13,9
+	.half	.L1037-.L8
+	.byte	1,5,20,9
+	.half	.L9-.L1037
+	.byte	3,2,1,5,13,9
+	.half	.L1038-.L9
+	.byte	1,5,20,9
+	.half	.L10-.L1038
+	.byte	3,2,1,5,13,9
+	.half	.L1039-.L10
+	.byte	1,5,20,9
+	.half	.L11-.L1039
+	.byte	3,2,1,5,13,9
+	.half	.L1040-.L11
+	.byte	1,5,1,9
+	.half	.L12-.L1040
+	.byte	3,2,1,7,9
+	.half	.L266-.L12
+	.byte	0,1,1
+.L1026:
+	.sdecl	'.debug_ranges',debug,cluster('FromMotorResult')
+	.sect	'.debug_ranges'
+.L265:
+	.word	-1,.L202,0,.L266-.L202,0,0
+	.sdecl	'.debug_info',debug,cluster('SendResponse')
+	.sect	'.debug_info'
+.L267:
+	.word	415
+	.half	3
+	.word	.L268
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\command_router.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L270,.L269
+	.byte	2
+	.word	.L213
+	.byte	3
+	.byte	'SendResponse',0,1,69,13,1,1
+	.word	.L204,.L344,.L203
+	.byte	4
+	.byte	'router',0,1,70,20
+	.word	.L278,.L345
+	.byte	4
+	.byte	'request',0,1,71,24
+	.word	.L286,.L346
+	.byte	4
+	.byte	'status',0,1,72,20
+	.word	.L292,.L347
+	.byte	4
+	.byte	'detail',0,1,73,20
+	.word	.L325,.L348
+	.byte	4
+	.byte	'detail_length',0,1,74,14
+	.word	.L290,.L349
+	.byte	5
+	.word	.L204,.L344
+	.byte	6
+	.byte	'response',0,1,76,18
+	.word	.L317,.L350
+	.byte	6
+	.byte	'length',0,1,77,12
+	.word	.L305,.L351
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SendResponse')
+	.sect	'.debug_abbrev'
+.L268:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3,8,58
+	.byte	15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SendResponse')
+	.sect	'.debug_line'
+.L269:
+	.word	.L1042-.L1041
+.L1041:
+	.half	3
+	.word	.L1044-.L1043
+.L1043:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\command_router.c',0,0,0,0,0
+.L1044:
+	.byte	5,13,7,0,5,2
+	.word	.L204
+	.byte	3,196,0,1,5,36,9
+	.half	.L372-.L204
+	.byte	3,7,1,5,22,9
+	.half	.L373-.L372
+	.byte	3,2,1,5,25,9
+	.half	.L366-.L373
+	.byte	1,9
+	.half	.L363-.L366
+	.byte	3,1,1,5,23,9
+	.half	.L1045-.L363
+	.byte	1,9
+	.half	.L1046-.L1045
+	.byte	3,1,1,5,21,9
+	.half	.L1047-.L1046
+	.byte	1,5,31,9
+	.half	.L1048-.L1047
+	.byte	3,1,1,5,22,9
+	.half	.L1049-.L1048
+	.byte	1,5,25,9
+	.half	.L1050-.L1049
+	.byte	3,1,1,5,47,7,9
+	.half	.L1051-.L1050
+	.byte	1,5,57,9
+	.half	.L1052-.L1051
+	.byte	1,5,47,9
+	.half	.L19-.L1052
+	.byte	1,5,23,9
+	.half	.L20-.L19
+	.byte	1,5,33,9
+	.half	.L1053-.L20
+	.byte	3,1,1,5,24,9
+	.half	.L1054-.L1053
+	.byte	1,5,35,9
+	.half	.L1055-.L1054
+	.byte	3,1,1,5,26,9
+	.half	.L1056-.L1055
+	.byte	1,9
+	.half	.L1057-.L1056
+	.byte	3,1,1,5,9,9
+	.half	.L1058-.L1057
+	.byte	3,1,1,5,44,7,9
+	.half	.L1059-.L1058
+	.byte	1,5,34,7,9
+	.half	.L1060-.L1059
+	.byte	3,2,1,5,47,9
+	.half	.L1061-.L1060
+	.byte	1,5,46,9
+	.half	.L21-.L1061
+	.byte	3,2,1,5,30,9
+	.half	.L1062-.L21
+	.byte	1,5,15,9
+	.half	.L1063-.L1062
+	.byte	3,3,1,5,9,9
+	.half	.L1064-.L1063
+	.byte	3,1,1,5,5,9
+	.half	.L377-.L1064
+	.byte	3,1,1,5,15,7,9
+	.half	.L1065-.L377
+	.byte	3,2,1,5,19,9
+	.half	.L369-.L1065
+	.byte	3,1,1,5,13,9
+	.half	.L1066-.L369
+	.byte	3,1,1,9
+	.half	.L1067-.L1066
+	.byte	3,1,1,5,1,9
+	.half	.L23-.L1067
+	.byte	3,2,1,7,9
+	.half	.L271-.L23
+	.byte	0,1,1
+.L1042:
+	.sdecl	'.debug_ranges',debug,cluster('SendResponse')
+	.sect	'.debug_ranges'
+.L270:
+	.word	-1,.L204,0,.L271-.L204,0,0
+	.sdecl	'.debug_info',debug,cluster('IsSingleMotorPayload')
+	.sect	'.debug_info'
+.L272:
+	.word	323
+	.half	3
+	.word	.L273
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\command_router.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L275,.L274
+	.byte	2
+	.word	.L213
+	.byte	3
+	.byte	'IsSingleMotorPayload',0,1,104,13
+	.word	.L300
+	.byte	1,1
+	.word	.L206,.L352,.L205
+	.byte	4
+	.byte	'request',0,1,104,53
+	.word	.L286,.L353
+	.byte	4
+	.byte	'minimum',0,1,104,71
+	.word	.L290,.L354
+	.byte	5
+	.word	.L206,.L352
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('IsSingleMotorPayload')
+	.sect	'.debug_abbrev'
+.L273:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('IsSingleMotorPayload')
+	.sect	'.debug_line'
+.L274:
+	.word	.L1069-.L1068
+.L1068:
+	.half	3
+	.word	.L1071-.L1070
+.L1070:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\command_router.c',0,0,0,0,0
+.L1071:
+	.byte	5,49,7,0,5,2
+	.word	.L206
+	.byte	3,233,0,1,5,20,9
+	.half	.L1072-.L206
+	.byte	1,5,12,9
+	.half	.L1073-.L1072
+	.byte	1,5,29,7,9
+	.half	.L1074-.L1073
+	.byte	3,1,1,5,33,9
+	.half	.L1075-.L1074
+	.byte	1,5,49,7,9
+	.half	.L1076-.L1075
+	.byte	3,127,1,5,5,9
+	.half	.L24-.L1076
+	.byte	1,5,1,9
+	.half	.L26-.L24
+	.byte	3,2,1,7,9
+	.half	.L276-.L26
+	.byte	0,1,1
+.L1069:
+	.sdecl	'.debug_ranges',debug,cluster('IsSingleMotorPayload')
+	.sect	'.debug_ranges'
+.L275:
+	.word	-1,.L206,0,.L276-.L206,0,0
+	.sdecl	'.debug_loc',debug,cluster('CommandRouter_Handle')
+	.sect	'.debug_loc'
+.L209:
+	.word	-1,.L210,0,.L382-.L210
+	.half	2
+	.byte	138,0
+	.word	.L382-.L210,.L284-.L210
+	.half	3
+	.byte	138,168,1
+	.word	.L284-.L210,.L284-.L210
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L301:
+	.word	-1,.L210,.L390-.L210,.L28-.L210
+	.half	1
+	.byte	90
+	.word	0,0
+.L309:
+	.word	-1,.L210,0,.L284-.L210
+	.half	3
+	.byte	145,140,127
+	.word	0,0
+.L313:
+	.word	-1,.L210,0,.L284-.L210
+	.half	3
+	.byte	145,140,127
+	.word	0,0
+.L289:
+	.word	-1,.L210,0,.L284-.L210
+	.half	3
+	.byte	145,216,126
+	.word	0,0
+.L291:
+	.word	-1,.L210,.L386-.L210,.L387-.L210
+	.half	1
+	.byte	88
+	.word	.L423-.L210,.L284-.L210
+	.half	1
+	.byte	88
+	.word	0,0
+.L303:
+	.word	-1,.L210,.L398-.L210,.L399-.L210
+	.half	1
+	.byte	82
+	.word	.L400-.L210,.L44-.L210
+	.half	1
+	.byte	95
+	.word	0,0
+.L311:
+	.word	-1,.L210,0,.L284-.L210
+	.half	3
+	.byte	145,140,127
+	.word	0,0
+.L299:
+	.word	-1,.L210,.L418-.L210,.L57-.L210
+	.half	1
+	.byte	95
+	.word	.L419-.L210,.L420-.L210
+	.half	1
+	.byte	84
+	.word	.L387-.L210,.L423-.L210
+	.half	1
+	.byte	88
+	.word	0,0
+.L295:
+	.word	-1,.L210,.L403-.L210,.L404-.L210
+	.half	1
+	.byte	82
+	.word	.L405-.L210,.L404-.L210
+	.half	1
+	.byte	84
+	.word	.L408-.L210,.L409-.L210
+	.half	1
+	.byte	82
+	.word	.L410-.L210,.L409-.L210
+	.half	1
+	.byte	84
+	.word	.L413-.L210,.L414-.L210
+	.half	1
+	.byte	82
+	.word	.L415-.L210,.L414-.L210
+	.half	1
+	.byte	84
+	.word	0,0
+.L297:
+	.word	-1,.L210,0,.L284-.L210
+	.half	3
+	.byte	145,128,127
+	.word	0,0
+.L304:
+	.word	-1,.L210,.L435-.L210,.L437-.L210
+	.half	1
+	.byte	82
+	.word	.L438-.L210,.L60-.L210
+	.half	1
+	.byte	95
+	.word	0,0
+.L287:
+	.word	-1,.L210,0,.L383-.L210
+	.half	1
+	.byte	101
+	.word	.L385-.L210,.L284-.L210
+	.half	1
+	.byte	111
+	.word	.L27-.L210,.L389-.L210
+	.half	1
+	.byte	101
+	.word	.L35-.L210,.L391-.L210
+	.half	1
+	.byte	101
+	.word	.L41-.L210,.L393-.L210
+	.half	1
+	.byte	101
+	.word	.L42-.L210,.L395-.L210
+	.half	1
+	.byte	101
+	.word	.L43-.L210,.L302-.L210
+	.half	1
+	.byte	101
+	.word	.L44-.L210,.L401-.L210
+	.half	1
+	.byte	101
+	.word	.L401-.L210,.L402-.L210
+	.half	1
+	.byte	100
+	.word	.L45-.L210,.L406-.L210
+	.half	1
+	.byte	101
+	.word	.L406-.L210,.L407-.L210
+	.half	1
+	.byte	100
+	.word	.L46-.L210,.L411-.L210
+	.half	1
+	.byte	101
+	.word	.L411-.L210,.L412-.L210
+	.half	1
+	.byte	100
+	.word	.L47-.L210,.L416-.L210
+	.half	1
+	.byte	101
+	.word	.L416-.L210,.L417-.L210
+	.half	1
+	.byte	100
+	.word	.L57-.L210,.L421-.L210
+	.half	1
+	.byte	101
+	.word	.L421-.L210,.L422-.L210
+	.half	1
+	.byte	100
+	.word	.L48-.L210,.L424-.L210
+	.half	1
+	.byte	101
+	.word	.L424-.L210,.L425-.L210
+	.half	1
+	.byte	100
+	.word	.L49-.L210,.L426-.L210
+	.half	1
+	.byte	101
+	.word	.L426-.L210,.L427-.L210
+	.half	1
+	.byte	100
+	.word	.L54-.L210,.L428-.L210
+	.half	1
+	.byte	101
+	.word	.L428-.L210,.L429-.L210
+	.half	1
+	.byte	100
+	.word	.L55-.L210,.L430-.L210
+	.half	1
+	.byte	101
+	.word	.L430-.L210,.L431-.L210
+	.half	1
+	.byte	100
+	.word	.L56-.L210,.L432-.L210
+	.half	1
+	.byte	101
+	.word	.L58-.L210,.L434-.L210
+	.half	1
+	.byte	101
+	.word	.L59-.L210,.L435-.L210
+	.half	1
+	.byte	101
+	.word	.L60-.L210,.L439-.L210
+	.half	1
+	.byte	101
+	.word	.L62-.L210,.L441-.L210
+	.half	1
+	.byte	101
+	.word	.L441-.L210,.L442-.L210
+	.half	1
+	.byte	100
+	.word	.L63-.L210,.L443-.L210
+	.half	1
+	.byte	101
+	.word	.L443-.L210,.L444-.L210
+	.half	1
+	.byte	100
+	.word	.L64-.L210,.L445-.L210
+	.half	1
+	.byte	101
+	.word	.L445-.L210,.L446-.L210
+	.half	1
+	.byte	100
+	.word	.L65-.L210,.L447-.L210
+	.half	1
+	.byte	101
+	.word	.L50-.L210,.L449-.L210
+	.half	1
+	.byte	101
+	.word	.L449-.L210,.L450-.L210
+	.half	1
+	.byte	100
+	.word	.L51-.L210,.L451-.L210
+	.half	1
+	.byte	101
+	.word	.L451-.L210,.L452-.L210
+	.half	1
+	.byte	100
+	.word	.L52-.L210,.L453-.L210
+	.half	1
+	.byte	101
+	.word	.L53-.L210,.L455-.L210
+	.half	1
+	.byte	101
+	.word	.L66-.L210,.L67-.L210
+	.half	1
+	.byte	101
+	.word	.L458-.L210,.L28-.L210
+	.half	1
+	.byte	101
+	.word	0,0
+.L285:
+	.word	-1,.L210,0,.L383-.L210
+	.half	1
+	.byte	100
+	.word	.L384-.L210,.L284-.L210
+	.half	1
+	.byte	108
+	.word	.L27-.L210,.L389-.L210
+	.half	1
+	.byte	100
+	.word	.L35-.L210,.L392-.L210
+	.half	1
+	.byte	100
+	.word	.L41-.L210,.L394-.L210
+	.half	1
+	.byte	100
+	.word	.L42-.L210,.L396-.L210
+	.half	1
+	.byte	100
+	.word	.L43-.L210,.L397-.L210
+	.half	1
+	.byte	100
+	.word	.L44-.L210,.L401-.L210
+	.half	1
+	.byte	100
+	.word	.L45-.L210,.L406-.L210
+	.half	1
+	.byte	100
+	.word	.L46-.L210,.L411-.L210
+	.half	1
+	.byte	100
+	.word	.L47-.L210,.L416-.L210
+	.half	1
+	.byte	100
+	.word	.L57-.L210,.L421-.L210
+	.half	1
+	.byte	100
+	.word	.L48-.L210,.L424-.L210
+	.half	1
+	.byte	100
+	.word	.L49-.L210,.L426-.L210
+	.half	1
+	.byte	100
+	.word	.L54-.L210,.L428-.L210
+	.half	1
+	.byte	100
+	.word	.L55-.L210,.L430-.L210
+	.half	1
+	.byte	100
+	.word	.L56-.L210,.L433-.L210
+	.half	1
+	.byte	100
+	.word	.L58-.L210,.L434-.L210
+	.half	1
+	.byte	100
+	.word	.L59-.L210,.L436-.L210
+	.half	1
+	.byte	100
+	.word	.L60-.L210,.L440-.L210
+	.half	1
+	.byte	100
+	.word	.L62-.L210,.L441-.L210
+	.half	1
+	.byte	100
+	.word	.L63-.L210,.L443-.L210
+	.half	1
+	.byte	100
+	.word	.L64-.L210,.L445-.L210
+	.half	1
+	.byte	100
+	.word	.L65-.L210,.L448-.L210
+	.half	1
+	.byte	100
+	.word	.L50-.L210,.L449-.L210
+	.half	1
+	.byte	100
+	.word	.L51-.L210,.L451-.L210
+	.half	1
+	.byte	100
+	.word	.L52-.L210,.L454-.L210
+	.half	1
+	.byte	100
+	.word	.L53-.L210,.L456-.L210
+	.half	1
+	.byte	100
+	.word	.L66-.L210,.L67-.L210
+	.half	1
+	.byte	100
+	.word	.L457-.L210,.L28-.L210
+	.half	1
+	.byte	100
+	.word	0,0
+.L306:
+	.word	-1,.L210,.L437-.L210,.L60-.L210
+	.half	1
+	.byte	82
+	.word	0,0
+.L293:
+	.word	-1,.L210,.L388-.L210,.L284-.L210
+	.half	1
+	.byte	89
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CommandRouter_Init')
+	.sect	'.debug_loc'
+.L207:
+	.word	-1,.L208,0,.L277-.L208
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L281:
+	.word	-1,.L208,0,.L378-.L208
+	.half	1
+	.byte	101
+	.word	.L380-.L208,.L277-.L208
+	.half	1
+	.byte	108
+	.word	0,0
+.L279:
+	.word	-1,.L208,0,.L378-.L208
+	.half	1
+	.byte	100
+	.word	.L379-.L208,.L277-.L208
+	.half	1
+	.byte	111
+	.word	0,0
+.L283:
+	.word	-1,.L208,0,.L378-.L208
+	.half	1
+	.byte	102
+	.word	.L381-.L208,.L277-.L208
+	.half	1
+	.byte	109
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CommandRouter_SendTelemetry')
+	.sect	'.debug_loc'
+.L211:
+	.word	-1,.L212,0,.L314-.L212
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L318:
+	.word	-1,.L212,.L463-.L212,.L314-.L212
+	.half	1
+	.byte	109
+	.word	.L459-.L212,.L468-.L212
+	.half	1
+	.byte	100
+	.word	.L469-.L212,.L470-.L212
+	.half	1
+	.byte	100
+	.word	0,0
+.L319:
+	.word	-1,.L212,.L470-.L212,.L188-.L212
+	.half	1
+	.byte	82
+	.word	0,0
+.L315:
+	.word	-1,.L212,0,.L459-.L212
+	.half	1
+	.byte	100
+	.word	.L461-.L212,.L314-.L212
+	.half	1
+	.byte	108
+	.word	0,0
+.L316:
+	.word	-1,.L212,0,.L460-.L212
+	.half	1
+	.byte	84
+	.word	.L462-.L212,.L314-.L212
+	.half	1
+	.byte	88
+	.word	0,0
+.L322:
+	.word	-1,.L212,.L466-.L212,.L467-.L212
+	.half	1
+	.byte	89
+	.word	0,0
+.L321:
+	.word	-1,.L212,.L464-.L212,.L465-.L212
+	.half	1
+	.byte	111
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('FromMotorResult')
+	.sect	'.debug_loc'
+.L201:
+	.word	-1,.L202,0,.L342-.L202
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L343:
+	.word	-1,.L202,0,.L342-.L202
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('IsSingleMotorPayload')
+	.sect	'.debug_loc'
+.L205:
+	.word	-1,.L206,0,.L352-.L206
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L354:
+	.word	-1,.L206,0,.L352-.L206
+	.half	1
+	.byte	84
+	.word	0,0
+.L353:
+	.word	-1,.L206,0,.L352-.L206
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ReadF32')
+	.sect	'.debug_loc'
+.L189:
+	.word	-1,.L190,0,.L355-.L190
+	.half	2
+	.byte	138,0
+	.word	.L355-.L190,.L324-.L190
+	.half	2
+	.byte	138,8
+	.word	.L324-.L190,.L324-.L190
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L326:
+	.word	-1,.L190,0,.L356-.L190
+	.half	1
+	.byte	100
+	.word	.L357-.L190,.L358-.L190
+	.half	1
+	.byte	101
+	.word	0,0
+.L327:
+	.word	-1,.L190,0,.L324-.L190
+	.half	2
+	.byte	145,120
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ReadU16')
+	.sect	'.debug_loc'
+.L191:
+	.word	-1,.L192,0,.L328-.L192
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L329:
+	.word	-1,.L192,0,.L328-.L192
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ReadU32')
+	.sect	'.debug_loc'
+.L193:
+	.word	-1,.L194,0,.L330-.L194
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L331:
+	.word	-1,.L194,0,.L330-.L194
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SendResponse')
+	.sect	'.debug_loc'
+.L203:
+	.word	-1,.L204,0,.L344-.L204
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L348:
+	.word	-1,.L204,0,.L363-.L204
+	.half	1
+	.byte	102
+	.word	.L371-.L204,.L344-.L204
+	.half	1
+	.byte	108
+	.word	.L374-.L204,.L21-.L204
+	.half	1
+	.byte	101
+	.word	0,0
+.L349:
+	.word	-1,.L204,0,.L364-.L204
+	.half	1
+	.byte	85
+	.word	.L372-.L204,.L344-.L204
+	.half	1
+	.byte	89
+	.word	.L375-.L204,.L21-.L204
+	.half	1
+	.byte	84
+	.word	0,0
+.L351:
+	.word	-1,.L204,.L377-.L204,.L23-.L204
+	.half	1
+	.byte	82
+	.word	0,0
+.L346:
+	.word	-1,.L204,0,.L363-.L204
+	.half	1
+	.byte	101
+	.word	.L368-.L204,.L369-.L204
+	.half	1
+	.byte	111
+	.word	0,0
+.L350:
+	.word	-1,.L204,.L373-.L204,.L344-.L204
+	.half	1
+	.byte	109
+	.word	.L365-.L204,.L363-.L204
+	.half	1
+	.byte	100
+	.word	.L376-.L204,.L377-.L204
+	.half	1
+	.byte	100
+	.word	0,0
+.L345:
+	.word	-1,.L204,0,.L365-.L204
+	.half	1
+	.byte	100
+	.word	.L367-.L204,.L344-.L204
+	.half	1
+	.byte	110
+	.word	0,0
+.L347:
+	.word	-1,.L204,0,.L366-.L204
+	.half	1
+	.byte	84
+	.word	.L370-.L204,.L344-.L204
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('WriteF32')
+	.sect	'.debug_loc'
+.L199:
+	.word	-1,.L200,0,.L360-.L200
+	.half	2
+	.byte	138,0
+	.word	.L360-.L200,.L339-.L200
+	.half	2
+	.byte	138,8
+	.word	.L339-.L200,.L339-.L200
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L340:
+	.word	-1,.L200,0,.L361-.L200
+	.half	1
+	.byte	100
+	.word	0,0
+.L341:
+	.word	-1,.L200,0,.L339-.L200
+	.half	2
+	.byte	145,120
+	.word	0,.L362-.L200
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('WriteU16')
+	.sect	'.debug_loc'
+.L195:
+	.word	-1,.L196,0,.L332-.L196
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L334:
+	.word	-1,.L196,0,.L332-.L196
+	.half	1
+	.byte	100
+	.word	0,0
+.L335:
+	.word	-1,.L196,0,.L359-.L196
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('WriteU32')
+	.sect	'.debug_loc'
+.L197:
+	.word	-1,.L198,0,.L336-.L198
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L337:
+	.word	-1,.L198,0,.L336-.L198
+	.half	1
+	.byte	100
+	.word	0,0
+.L338:
+	.word	-1,.L198,0,.L336-.L198
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L1077:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('ReadF32')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L1077,.L190,.L324-.L190
+	.byte	4
+	.word	(.L355-.L190)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L324-.L355)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('ReadU16')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L1077,.L192,.L328-.L192
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('ReadU32')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L1077,.L194,.L330-.L194
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('WriteU16')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L1077,.L196,.L332-.L196
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('WriteU32')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L1077,.L198,.L336-.L198
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('WriteF32')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L1077,.L200,.L339-.L200
+	.byte	4
+	.word	(.L360-.L200)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L339-.L360)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('FromMotorResult')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L1077,.L202,.L342-.L202
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SendResponse')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1077,.L204,.L344-.L204
+	.sdecl	'.debug_frame',debug,cluster('IsSingleMotorPayload')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L1077,.L206,.L352-.L206
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('CommandRouter_Init')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1077,.L208,.L277-.L208
+	.sdecl	'.debug_frame',debug,cluster('CommandRouter_Handle')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L1077,.L210,.L284-.L210
+	.byte	4
+	.word	(.L382-.L210)/2
+	.byte	19,168,1,22,26,4,19,138,168,1,4
+	.word	(.L284-.L382)/2
+	.byte	19,0,8,26
+	.sdecl	'.debug_frame',debug,cluster('CommandRouter_SendTelemetry')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1077,.L212,.L314-.L212
+	; Module end

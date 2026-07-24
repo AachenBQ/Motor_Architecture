@@ -1,7 +1,7 @@
 # Native UART Protocol v2
 
-该协议是 Motor Studio 上位机与 TC375 FreeRTOS 单电机控制器之间的
-MVP 通信协议。
+该协议是 Motor Studio 上位机与 TC375 单电机控制器之间的 MVP 通信协议，
+适用于当前 TASKING 协作式运行入口和后续 FreeRTOS 入口。
 
 ## 1. 基本约定
 
@@ -56,6 +56,10 @@ AA 55 | VER | FLAGS | DEVICE | CMD | SEQ | LEN:u16 | PAYLOAD | CRC16:u16
 | `SET_TELEMETRY_PROFILE` | `23` | `rate_hz:u16, signal_mask:u32` |
 | `GET_BACKEND_INFO` | `24` | 无 |
 | `GET_TELEMETRY_PROFILE` | `25` | 无；ACK detail 返回 `rate_hz:u16, signal_mask:u32` |
+| `SET_OPEN_LOOP_CONFIG` | `26` | 见第 9 节；仅停止状态可写 |
+| `GET_OPEN_LOOP_CONFIG` | `27` | `motor:u8` |
+| `START_OPEN_LOOP` | `28` | `motor:u8` |
+| `GET_BUILD_CONFIG` | `29` | 无；返回只读编译配置 |
 | `TELEMETRY` | `80` | MCU 主动发送 |
 | `FAULT_EVENT` | `81` | MCU 主动发送 |
 | `ACK` | `F0` | 应答 |
@@ -70,6 +74,7 @@ AA 55 | VER | FLAGS | DEVICE | CMD | SEQ | LEN:u16 | PAYLOAD | CRC16:u16
 | 0 | `TORQUE` | N·m |
 | 1 | `SPEED` | rad/s |
 | 2 | `POSITION` | rad，多圈 |
+| 3 | `OPEN_LOOP_SPEED` | rad/s，仅开环已启动时允许更新 |
 
 PID 环：
 
@@ -183,7 +188,60 @@ kd:f32
 
 与现有上位机三环下拉框一致。
 
-## 9. Telemetry v2
+## 9. Open-loop commissioning
+
+`SET_OPEN_LOOP_CONFIG` 和 `GET_OPEN_LOOP_CONFIG` ACK detail 使用相同布局：
+
+```text
+motor:u8
+backend:u8            // 0 direct sine, 1 SimpleFOC
+pole_pairs:u8
+flags:u8              // 当前保留，发送 0
+bus_voltage_v:f32
+voltage_limit_v:f32
+target_velocity_rad_s:f32
+acceleration_rad_s2:f32
+update_period_ms:u16
+startup_delay_ms:u16
+max_runtime_ms:u32
+```
+
+运行时约束：
+
+- 除目标速度外，所有开环参数只能在输出停止时修改。
+- 运行中调速使用 `SET_TARGET(motor, mode=3, target)`。
+- 启动要求心跳有效、无活动故障且输出处于停止状态。
+- 达到 `max_runtime_ms`、心跳超时、限值越界或驱动故障时自动撤销输出。
+- `CONTROLLED_STOP` 按 `acceleration_rad_s2` 斜坡降到零；
+  `QUICK_STOP` 立即撤销 PWM；`EMERGENCY_STOP` 立即撤销 PWM 和 gate。
+- 固件硬上限不能由上位机提高：母线 60 V、电压限幅 6 V、
+  速度绝对值 100 rad/s、最长运行 600 s。
+
+`GET_BUILD_CONFIG` ACK detail：
+
+```text
+device_id:u8
+control_hardware_enabled:u8
+power_stage_enabled:u8
+simplefoc_enabled:u8
+default_pole_pairs:u8
+adc_trigger_hz:u32
+pwm_frequency_hz:u32
+control_isr_hz:u32
+outer_loop_hz:u32
+default_telemetry_hz:u16
+heartbeat_default_ms:u16
+heartbeat_min_ms:u16
+heartbeat_max_ms:u16
+torque_constant_nm_per_a:f32
+```
+
+当前 detail 长度为 33 字节。上位机仍兼容旧版 32 字节
+`real_hardware_enabled` 格式，并把旧字段同时映射为控制硬件和功率硬件状态。
+这些字段来自编译期宏，只读显示；PWM/ADC/ISR 频率和两个硬件输出开关不能
+在线修改。串口连接只表示控制器通信连通，不代表功率硬件已经连接或可用。
+
+## 10. Telemetry v2
 
 为了保持上位机现有波形兼容，MVP 遥测继续使用：
 
@@ -201,11 +259,11 @@ status:u16
 
 - bit0 enabled
 - bit1 calibrated
-- bit2 warning
+- bit2 emergency stop latched
 - bit3 fault
 - bit4 heartbeat valid
-- bit5 target saturated
-- bit6 current loop saturated
+- bit5 open-loop active
+- bit6 controlled stopping
 - bit7 encoder valid
 - bit8 deadline miss
 - bit9 gate driver fault
@@ -213,7 +271,7 @@ status:u16
 
 更完整的 fault bitmask 通过 `FAULT_EVENT` 和 `GET_DIAGNOSTICS` 传输。
 
-## 10. Heartbeat
+## 11. Heartbeat
 
 - 上位机每 250 ms 发送一次。
 - `lease_ms` 默认 750 ms，允许范围 300–5000 ms。
@@ -221,7 +279,17 @@ status:u16
 - 电机运行时超时必须 quick stop 并失能。
 - 心跳恢复后不自动重新使能。
 
-## 11. 兼容性规则
+## 12. 软件停止与保护
+
+- 上位机主动断开前发送 `QUICK_STOP`。
+- 上位机正常关闭前发送广播 `EMERGENCY_STOP`。
+- 上位机检测到过流、过温、母线越界、设备 fault/estop 状态或遥测超时后，
+  按配置发送受控停止、快速停止或急停，并停止发送心跳。
+- 上位机保护只是第二道防线；MCU 必须独立执行心跳、限值、nFAULT 和
+  最长运行时间保护。
+- 软件或串口异常导致停止帧丢失时，MCU 心跳租约到期仍必须失能。
+
+## 13. 兼容性规则
 
 - v2 接收端拒绝不支持的主版本。
 - 新增命令不能改变已有命令的字段含义。

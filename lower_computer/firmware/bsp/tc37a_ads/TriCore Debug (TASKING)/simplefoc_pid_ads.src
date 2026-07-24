@@ -1,0 +1,1170 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc86592c -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 --no-warnings -o simplefoc_pid_ads.src cc86592a.ic"
+	.compiler_name		"ctc"
+	;source	'../simplefoc_pid_ads.cpp'
+
+	
+$TC162
+	
+	.sdecl	'.text.pid._ZN13PIDControllerC1Effffff',code,cluster('_ZN13PIDControllerC1Effffff')
+	.sect	'.text.pid._ZN13PIDControllerC1Effffff'
+	.align	2
+	
+	.global	_ZN13PIDControllerC1Effffff
+; Function _ZN13PIDControllerC1Effffff
+.L22:
+_ZN13PIDControllerC1Effffff:	.type	func
+	mov.aa	a15,a4
+.L90:
+	ld.w	d0,[a10]
+.L91:
+	ld.w	d15,[a10]4
+.L92:
+	st.w	[a15],d4
+.L119:
+	st.w	[a15]4,d5
+.L120:
+	st.w	[a15]8,d6
+.L121:
+	st.w	[a15]12,d7
+.L122:
+	st.w	[a15]16,d0
+.L123:
+	st.w	[a15]20,d15
+.L124:
+	mov	d15,#0
+.L93:
+	st.w	[a15]24,d15
+.L125:
+	mov	d15,#0
+.L126:
+	st.w	[a15]28,d15
+.L127:
+	mov	d15,#0
+.L128:
+	st.w	[a15]32,d15
+.L129:
+	call	_Z7_microsv
+.L89:
+	st.w	[a15]36,d2
+.L130:
+	ret
+.L53:
+	
+___ZN13PIDControllerC1Effffff_function_end:
+	.size	_ZN13PIDControllerC1Effffff,___ZN13PIDControllerC1Effffff_function_end-_ZN13PIDControllerC1Effffff
+.L37:
+	; End of function
+	
+	.sdecl	'.text.pid._ZN13PIDControllerC2Effffff',code,cluster('_ZN13PIDControllerC2Effffff')
+	.sect	'.text.pid._ZN13PIDControllerC2Effffff'
+	.align	2
+	
+	.global	_ZN13PIDControllerC2Effffff
+; Function _ZN13PIDControllerC2Effffff
+.L24:
+_ZN13PIDControllerC2Effffff:	.type	func
+	sub.a	a10,#8
+.L94:
+	ld.w	d0,[a10]8
+.L96:
+	ld.w	d15,[a10]12
+.L97:
+	st.w	[a10],d0
+.L135:
+	st.w	[a10]4,d15
+.L136:
+	call	_ZN13PIDControllerC1Effffff
+.L95:
+	ret
+.L63:
+	
+___ZN13PIDControllerC2Effffff_function_end:
+	.size	_ZN13PIDControllerC2Effffff,___ZN13PIDControllerC2Effffff_function_end-_ZN13PIDControllerC2Effffff
+.L42:
+	; End of function
+	
+	.sdecl	'.text.pid._ZN13PIDControllerclEf',code,cluster('_ZN13PIDControllerclEf')
+	.sect	'.text.pid._ZN13PIDControllerclEf'
+	.align	2
+	
+	.global	_ZN13PIDControllerclEf
+; Function _ZN13PIDControllerclEf
+.L26:
+_ZN13PIDControllerclEf:	.type	func
+	mov.aa	a15,a4
+.L99:
+	mov	d8,d4
+.L100:
+	ld.w	d3,[a15]20
+.L101:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L141:
+	cmp.f	d0,d3,d0
+	jz.t	d0:1,.L2
+.L81:
+	call	_Z7_microsv
+.L98:
+	ld.w	d15,[a15]36
+.L142:
+	sub	d0,d2,d15
+.L143:
+	utof	d0,d0
+.L144:
+	mov	d1,#14269
+	addih	d1,d1,#13702
+.L145:
+	mul.f	d3,d0,d1
+.L102:
+	mov	d0,#0
+.L146:
+	cmp.f	d15,d3,d0
+	and	d15,#3
+	ne	d15,d15,#0
+.L147:
+	jne	d15,#0,.L3
+.L148:
+	movh	d0,#16128
+.L149:
+	cmp.f	d0,d3,d0
+	extr.u	d15,d0,#2,#1
+	jeq	d15,#0,.L4
+.L3:
+	mov	d3,#4719
+	addih	d3,d3,#14979
+.L4:
+	st.w	[a15]36,d2
+.L2:
+	ld.w	d0,[a15]
+.L150:
+	mul.f	d2,d0,d8
+.L103:
+	ld.w	d15,[a15]4
+.L151:
+	mul.f	d0,d15,d3
+.L152:
+	movh	d1,#16128
+.L153:
+	mul.f	d0,d0,d1
+.L154:
+	ld.w	d15,[a15]24
+.L155:
+	add.f	d1,d8,d15
+.L156:
+	ld.w	d15,[a15]32
+.L157:
+	madd.f	d1,d15,d0,d1
+.L105:
+	ld.w	d15,[a15]16
+.L158:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L159:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+.L160:
+	jeq	d15,#0,.L5
+.L161:
+	ld.w	d15,[a15]16
+.L162:
+	insn.t	d0,d15:31,d15:31
+.L163:
+	cmp.f	d0,d1,d0
+	extr.u	d15,d0,#0,#1
+.L164:
+	jeq	d15,#0,.L6
+.L165:
+	ld.w	d15,[a15]16
+.L166:
+	insn.t	d1,d15:31,d15:31
+.L167:
+	j	.L7
+.L6:
+	ld.w	d15,[a15]16
+.L168:
+	cmp.f	d15,d1,d15
+	jnz.t	d15:2,.L8
+.L169:
+	j	.L9
+.L8:
+	ld.w	d1,[a15]16
+.L9:
+.L7:
+.L5:
+	ld.w	d0,[a15]8
+.L170:
+	ld.w	d15,[a15]24
+.L171:
+	sub.f	d15,d8,d15
+.L172:
+	mul.f	d15,d0,d15
+.L173:
+	div.f	d15,d15,d3
+.L106:
+	add.f	d0,d2,d1
+.L174:
+	add.f	d2,d0,d15
+.L104:
+	ld.w	d15,[a15]16
+.L107:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L175:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+.L176:
+	jeq	d15,#0,.L10
+.L177:
+	ld.w	d15,[a15]16
+.L178:
+	insn.t	d0,d15:31,d15:31
+.L179:
+	cmp.f	d0,d2,d0
+	extr.u	d15,d0,#0,#1
+.L180:
+	jeq	d15,#0,.L11
+.L181:
+	ld.w	d15,[a15]16
+.L182:
+	insn.t	d2,d15:31,d15:31
+.L183:
+	j	.L12
+.L11:
+	ld.w	d15,[a15]16
+.L184:
+	cmp.f	d15,d2,d15
+	jnz.t	d15:2,.L13
+.L185:
+	j	.L14
+.L13:
+	ld.w	d2,[a15]16
+.L14:
+.L12:
+.L10:
+	ld.w	d15,[a15]12
+.L186:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L187:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+.L188:
+	jeq	d15,#0,.L15
+.L189:
+	ld.w	d15,[a15]12
+.L190:
+	mov	d0,#0
+.L191:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#2,#1
+	jeq	d15,#0,.L16
+.L84:
+	ld.w	d15,[a15]28
+.L192:
+	sub.f	d15,d2,d15
+.L193:
+	div.f	d0,d15,d3
+.L108:
+	ld.w	d15,[a15]12
+.L194:
+	cmp.f	d15,d0,d15
+	extr.u	d15,d15,#2,#1
+.L195:
+	jeq	d15,#0,.L17
+.L196:
+	ld.w	d0,[a15]12
+.L109:
+	ld.w	d15,[a15]28
+.L197:
+	madd.f	d2,d15,d0,d3
+.L198:
+	j	.L18
+.L17:
+	ld.w	d15,[a15]12
+.L199:
+	insn.t	d15,d15:31,d15:31
+.L200:
+	cmp.f	d15,d0,d15
+	extr.u	d15,d15,#0,#1
+.L201:
+	jeq	d15,#0,.L19
+.L202:
+	ld.w	d0,[a15]28
+.L110:
+	ld.w	d15,[a15]12
+.L203:
+	msub.f	d2,d0,d15,d3
+.L19:
+.L18:
+.L16:
+.L15:
+	st.w	[a15]32,d1
+.L204:
+	st.w	[a15]28,d2
+.L205:
+	st.w	[a15]24,d8
+.L206:
+	j	.L20
+.L20:
+	ret
+.L72:
+	
+___ZN13PIDControllerclEf_function_end:
+	.size	_ZN13PIDControllerclEf,___ZN13PIDControllerclEf_function_end-_ZN13PIDControllerclEf
+.L47:
+	; End of function
+	
+	.sdecl	'.text.pid._ZN13PIDController5resetEv',code,cluster('_ZN13PIDController5resetEv')
+	.sect	'.text.pid._ZN13PIDController5resetEv'
+	.align	2
+	
+	.global	_ZN13PIDController5resetEv
+; Function _ZN13PIDController5resetEv
+.L28:
+_ZN13PIDController5resetEv:	.type	func
+	mov	d15,#0
+.L211:
+	st.w	[a4]32,d15
+.L212:
+	mov	d15,#0
+.L213:
+	st.w	[a4]28,d15
+.L214:
+	mov	d15,#0
+.L215:
+	st.w	[a4]24,d15
+.L216:
+	ret
+.L86:
+	
+___ZN13PIDController5resetEv_function_end:
+	.size	_ZN13PIDController5resetEv,___ZN13PIDController5resetEv_function_end-_ZN13PIDController5resetEv
+.L52:
+	; End of function
+	
+	.calls	'_ZN13PIDControllerC1Effffff','_Z7_microsv'
+	.calls	'_ZN13PIDControllerC2Effffff','_ZN13PIDControllerC1Effffff'
+	.calls	'_ZN13PIDControllerclEf','_Z7_microsv'
+	.calls	'_ZN13PIDControllerC1Effffff','',0
+	.calls	'_ZN13PIDControllerC2Effffff','',8
+	.calls	'_ZN13PIDControllerclEf','',0
+	.extern	_Z7_microsv
+	.calls	'_ZN13PIDController5resetEv','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L30:
+	.word	509
+	.half	3
+	.word	.L31
+	.byte	4
+.L29:
+	.byte	1
+	.byte	'../simplefoc_pid_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L32
+.L82:
+	.byte	2
+	.byte	'unsigned long int',0,4,7,3
+	.byte	'_Z7_microsv',0,1,19,22
+	.word	219
+	.byte	1,1,1,1
+.L56:
+	.byte	2
+	.byte	'float',0,4,4,4
+	.byte	'PIDController',0,2,11,30,40,5
+	.byte	'P',0
+	.word	264
+	.byte	4,2,35,0,5
+	.byte	'I',0
+	.word	264
+	.byte	4,2,35,4,5
+	.byte	'D',0
+	.word	264
+	.byte	4,2,35,8,5
+	.byte	'output_ramp',0
+	.word	264
+	.byte	4,2,35,12,5
+	.byte	'limit',0
+	.word	264
+	.byte	4,2,35,16,5
+	.byte	'Ts',0
+	.word	264
+	.byte	4,2,35,20,5
+	.byte	'error_prev',0
+	.word	264
+	.byte	4,2,35,24,5
+	.byte	'output_prev',0
+	.word	264
+	.byte	4,2,35,28,5
+	.byte	'integral_prev',0
+	.word	264
+	.byte	4,2,35,32,5
+	.byte	'timestamp_prev',0
+	.word	219
+	.byte	4,2,35,36,0,6
+	.word	273
+.L54:
+	.byte	7
+	.word	462
+.L64:
+	.byte	7
+	.word	462
+.L73:
+	.byte	7
+	.word	462
+.L87:
+	.byte	7
+	.word	462
+	.byte	8,1,6
+	.word	487
+	.byte	9
+	.byte	'__codeptr',0,3,1,1
+	.word	489
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L31:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,46,0,3,8,58,15,59,15,57,15
+	.byte	73,19,54,15,39,12,63,12,60,12,0,0,4,19,1,3,8,58,15,59,15,57,15,11,15,0,0,5,13,0,3,8,73,19,11,15,56,9,0
+	.byte	0,6,15,0,73,19,0,0,7,38,0,73,19,0,0,8,21,0,54,15,0,0,9,22,0,3,8,58,15,59,15,57,15,73,19,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L32:
+	.word	.L112-.L111
+.L111:
+	.half	3
+	.word	.L114-.L113
+.L113:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/time_utils.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/pid.h',0,0,0,0
+	.byte	'../simplefoc_pid_ads.cpp',0,0,0,0,0
+.L114:
+.L112:
+	.sdecl	'.debug_info',debug,cluster('_ZN13PIDControllerC1Effffff')
+	.sect	'.debug_info'
+.L33:
+	.word	495
+	.half	3
+	.word	.L34
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/pid.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L36,.L35
+	.byte	2
+	.word	.L29
+	.byte	3
+	.byte	'_ZN13PIDControllerC1Effffff',0,1,3,6,1,1,1
+	.word	.L22,.L53,.L21
+	.byte	4
+	.byte	'this',0,1,3,63
+	.word	.L54,.L55
+	.byte	4
+	.byte	'__4669_36_P',0,1,3,76
+	.word	.L56,.L57
+	.byte	4
+	.byte	'__4669_45_I',0,1,3,96
+	.word	.L56,.L58
+	.byte	4
+	.byte	'__4669_54_D',0,1,3,116
+	.word	.L56,.L59
+	.byte	4
+	.byte	'__4669_63_ramp',0,1,3,136,1
+	.word	.L56,.L60
+	.byte	4
+	.byte	'__4669_75_limit',0,1,3,159,1
+	.word	.L56,.L61
+	.byte	4
+	.byte	'__4669_88_sampling_time',0,1,3,183,1
+	.word	.L56,.L62
+	.byte	5
+	.word	.L22,.L53
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN13PIDControllerC1Effffff')
+	.sect	'.debug_abbrev'
+.L34:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN13PIDControllerC1Effffff')
+	.sect	'.debug_line'
+.L35:
+	.word	.L116-.L115
+.L115:
+	.half	3
+	.word	.L118-.L117
+.L117:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/pid.cpp',0,0,0,0,0
+.L118:
+	.byte	5,6,7,0,5,2
+	.word	.L22
+	.byte	3,2,1,5,13,9
+	.half	.L92-.L22
+	.byte	3,10,1,5,38,9
+	.half	.L119-.L92
+	.byte	1,5,63,9
+	.half	.L120-.L119
+	.byte	1,5,98,9
+	.half	.L121-.L120
+	.byte	1,5,130,1,9
+	.half	.L122-.L121
+	.byte	1,5,160,1,9
+	.half	.L123-.L122
+	.byte	1,5,209,1,9
+	.half	.L124-.L123
+	.byte	1,5,206,1,9
+	.half	.L93-.L124
+	.byte	1,5,239,1,9
+	.half	.L125-.L93
+	.byte	1,5,236,1,9
+	.half	.L126-.L125
+	.byte	1,5,143,2,9
+	.half	.L127-.L126
+	.byte	1,5,140,2,9
+	.half	.L128-.L127
+	.byte	1,5,38,9
+	.half	.L129-.L128
+	.byte	3,1,1,5,24,9
+	.half	.L89-.L129
+	.byte	1,5,1,9
+	.half	.L130-.L89
+	.byte	3,1,1,7,9
+	.half	.L37-.L130
+	.byte	0,1,1
+.L116:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN13PIDControllerC1Effffff')
+	.sect	'.debug_ranges'
+.L36:
+	.word	-1,.L22,0,.L37-.L22,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN13PIDControllerC2Effffff')
+	.sect	'.debug_info'
+.L38:
+	.word	433
+	.half	3
+	.word	.L39
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/pid.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L41,.L40
+	.byte	2
+	.word	.L29
+	.byte	3
+	.byte	'_ZN13PIDControllerC2Effffff',0,1,15,8,1,1,1
+	.word	.L24,.L63,.L23
+	.byte	4
+	.byte	'this',0,1,15,65
+	.word	.L64,.L65
+	.byte	4
+	.byte	'__T1',0,1,15,78
+	.word	.L56,.L66
+	.byte	4
+	.byte	'__T2',0,1,15,91
+	.word	.L56,.L67
+	.byte	4
+	.byte	'__T3',0,1,15,104
+	.word	.L56,.L68
+	.byte	4
+	.byte	'__T4',0,1,15,117
+	.word	.L56,.L69
+	.byte	4
+	.byte	'__T5',0,1,15,130,1
+	.word	.L56,.L70
+	.byte	4
+	.byte	'__T6',0,1,15,143,1
+	.word	.L56,.L71
+	.byte	5
+	.word	.L24,.L63
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN13PIDControllerC2Effffff')
+	.sect	'.debug_abbrev'
+.L39:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN13PIDControllerC2Effffff')
+	.sect	'.debug_line'
+.L40:
+	.word	.L132-.L131
+.L131:
+	.half	3
+	.word	.L134-.L133
+.L133:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/pid.cpp',0,0,0,0,0
+.L134:
+	.byte	5,8,7,0,5,2
+	.word	.L24
+	.byte	3,14,1,5,210,1,9
+	.half	.L97-.L24
+	.byte	1,5,216,1,9
+	.half	.L135-.L97
+	.byte	1,5,204,1,9
+	.half	.L136-.L135
+	.byte	1,5,224,1,9
+	.half	.L95-.L136
+	.byte	1,7,9
+	.half	.L42-.L95
+	.byte	0,1,1
+.L132:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN13PIDControllerC2Effffff')
+	.sect	'.debug_ranges'
+.L41:
+	.word	-1,.L24,0,.L42-.L24,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN13PIDControllerclEf')
+	.sect	'.debug_info'
+.L43:
+	.word	600
+	.half	3
+	.word	.L44
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/pid.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L46,.L45
+	.byte	2
+	.word	.L29
+	.byte	3
+	.byte	'_ZN13PIDControllerclEf',0,1,18,7
+	.word	.L56
+	.byte	1,1,1
+	.word	.L26,.L72,.L25
+	.byte	4
+	.byte	'this',0,1,18,59
+	.word	.L73,.L74
+	.byte	4
+	.byte	'__4684_40_error',0,1,18,72
+	.word	.L56,.L75
+	.byte	5
+	.word	.L26,.L72
+	.byte	6
+	.byte	'__4686_11_dt',0,1,20,12
+	.word	.L56,.L76
+	.byte	6
+	.byte	'__4701_11_proportional',0,1,35,12
+	.word	.L56,.L77
+	.byte	6
+	.byte	'__4704_11_integral',0,1,38,12
+	.word	.L56,.L78
+	.byte	6
+	.byte	'__4709_11_derivative',0,1,43,12
+	.word	.L56,.L79
+	.byte	6
+	.byte	'__4712_11_output',0,1,46,12
+	.word	.L56,.L80
+	.byte	5
+	.word	.L81,.L2
+	.byte	6
+	.byte	'__4690_23_timestamp_now',0,1,24,20
+	.word	.L82,.L83
+	.byte	0,5
+	.word	.L84,.L15
+	.byte	6
+	.byte	'__4719_15_output_rate',0,1,53,12
+	.word	.L56,.L85
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN13PIDControllerclEf')
+	.sect	'.debug_abbrev'
+.L44:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN13PIDControllerclEf')
+	.sect	'.debug_line'
+.L45:
+	.word	.L138-.L137
+.L137:
+	.half	3
+	.word	.L140-.L139
+.L139:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/pid.cpp',0,0,0,0,0
+.L140:
+	.byte	5,7,7,0,5,2
+	.word	.L26
+	.byte	3,17,1,5,21,9
+	.half	.L100-.L26
+	.byte	3,2,1,5,24,9
+	.half	.L101-.L100
+	.byte	3,3,1,5,6,9
+	.half	.L141-.L101
+	.byte	1,5,83,9
+	.half	.L81-.L141
+	.byte	3,1,1,5,57,9
+	.half	.L98-.L81
+	.byte	3,1,1,5,50,9
+	.half	.L142-.L98
+	.byte	1,5,18,9
+	.half	.L143-.L142
+	.byte	1,5,80,9
+	.half	.L144-.L143
+	.byte	1,5,77,9
+	.half	.L145-.L144
+	.byte	1,5,23,9
+	.half	.L102-.L145
+	.byte	3,2,1,5,19,9
+	.half	.L146-.L102
+	.byte	1,5,5,9
+	.half	.L147-.L146
+	.byte	1,5,50,7,9
+	.half	.L148-.L147
+	.byte	1,5,47,9
+	.half	.L149-.L148
+	.byte	1,5,76,9
+	.half	.L3-.L149
+	.byte	1,5,24,9
+	.half	.L4-.L3
+	.byte	3,1,1,5,32,9
+	.half	.L2-.L4
+	.byte	3,7,1,5,37,9
+	.half	.L150-.L2
+	.byte	1,5,55,9
+	.half	.L103-.L150
+	.byte	3,3,1,5,60,9
+	.half	.L151-.L103
+	.byte	1,5,79,9
+	.half	.L152-.L151
+	.byte	1,5,76,9
+	.half	.L153-.L152
+	.byte	1,5,112,9
+	.half	.L154-.L153
+	.byte	1,5,105,9
+	.half	.L155-.L154
+	.byte	1,5,28,9
+	.half	.L156-.L155
+	.byte	1,5,45,9
+	.half	.L157-.L156
+	.byte	1,5,10,9
+	.half	.L105-.L157
+	.byte	3,2,1,5,23,9
+	.half	.L158-.L105
+	.byte	1,5,19,9
+	.half	.L159-.L158
+	.byte	1,5,1,9
+	.half	.L160-.L159
+	.byte	1,5,88,7,9
+	.half	.L161-.L160
+	.byte	1,5,82,9
+	.half	.L162-.L161
+	.byte	1,5,79,9
+	.half	.L163-.L162
+	.byte	1,5,59,9
+	.half	.L164-.L163
+	.byte	1,5,108,7,9
+	.half	.L165-.L164
+	.byte	1,5,102,9
+	.half	.L166-.L165
+	.byte	1,5,118,9
+	.half	.L167-.L166
+	.byte	1,5,148,1,9
+	.half	.L6-.L167
+	.byte	1,5,121,9
+	.half	.L168-.L6
+	.byte	1,5,174,1,9
+	.half	.L169-.L168
+	.byte	1,5,165,1,9
+	.half	.L8-.L169
+	.byte	1,5,31,9
+	.half	.L5-.L8
+	.byte	3,3,1,5,62,9
+	.half	.L170-.L5
+	.byte	1,5,55,9
+	.half	.L171-.L170
+	.byte	1,5,36,9
+	.half	.L172-.L171
+	.byte	1,5,78,9
+	.half	.L173-.L172
+	.byte	1,5,45,9
+	.half	.L106-.L173
+	.byte	3,3,1,5,67,9
+	.half	.L174-.L106
+	.byte	1,5,10,9
+	.half	.L104-.L174
+	.byte	3,2,1,5,23,9
+	.half	.L107-.L104
+	.byte	1,5,19,9
+	.half	.L175-.L107
+	.byte	1,5,1,9
+	.half	.L176-.L175
+	.byte	1,5,84,7,9
+	.half	.L177-.L176
+	.byte	1,5,78,9
+	.half	.L178-.L177
+	.byte	1,5,75,9
+	.half	.L179-.L178
+	.byte	1,5,57,9
+	.half	.L180-.L179
+	.byte	1,5,104,7,9
+	.half	.L181-.L180
+	.byte	1,5,98,9
+	.half	.L182-.L181
+	.byte	1,5,114,9
+	.half	.L183-.L182
+	.byte	1,5,142,1,9
+	.half	.L11-.L183
+	.byte	1,5,117,9
+	.half	.L184-.L11
+	.byte	1,5,168,1,9
+	.half	.L185-.L184
+	.byte	1,5,159,1,9
+	.half	.L13-.L185
+	.byte	1,5,11,9
+	.half	.L10-.L13
+	.byte	3,3,1,5,30,9
+	.half	.L186-.L10
+	.byte	1,5,26,9
+	.half	.L187-.L186
+	.byte	1,5,5,9
+	.half	.L188-.L187
+	.byte	1,5,51,7,9
+	.half	.L189-.L188
+	.byte	1,5,69,9
+	.half	.L190-.L189
+	.byte	1,5,66,9
+	.half	.L191-.L190
+	.byte	1,5,85,9
+	.half	.L84-.L191
+	.byte	3,2,1,5,78,9
+	.half	.L192-.L84
+	.byte	1,5,101,9
+	.half	.L193-.L192
+	.byte	1,5,34,9
+	.half	.L108-.L193
+	.byte	3,1,1,5,27,9
+	.half	.L194-.L108
+	.byte	1,5,1,9
+	.half	.L195-.L194
+	.byte	1,5,49,7,9
+	.half	.L196-.L195
+	.byte	3,1,1,5,26,9
+	.half	.L109-.L196
+	.byte	1,5,41,9
+	.half	.L197-.L109
+	.byte	1,5,80,9
+	.half	.L198-.L197
+	.byte	1,5,36,9
+	.half	.L17-.L198
+	.byte	3,1,1,5,30,9
+	.half	.L199-.L17
+	.byte	1,5,27,9
+	.half	.L200-.L199
+	.byte	1,5,1,9
+	.half	.L201-.L200
+	.byte	1,5,26,7,9
+	.half	.L202-.L201
+	.byte	3,1,1,5,49,9
+	.half	.L110-.L202
+	.byte	1,5,41,9
+	.half	.L203-.L110
+	.byte	1,5,23,9
+	.half	.L15-.L203
+	.byte	3,3,1,5,21,9
+	.half	.L204-.L15
+	.byte	3,1,1,5,20,9
+	.half	.L205-.L204
+	.byte	3,1,1,5,1,9
+	.half	.L206-.L205
+	.byte	3,1,1,9
+	.half	.L20-.L206
+	.byte	3,1,1,7,9
+	.half	.L47-.L20
+	.byte	0,1,1
+.L138:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN13PIDControllerclEf')
+	.sect	'.debug_ranges'
+.L46:
+	.word	-1,.L26,0,.L47-.L26,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN13PIDController5resetEv')
+	.sect	'.debug_info'
+.L48:
+	.word	328
+	.half	3
+	.word	.L49
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/pid.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L51,.L50
+	.byte	2
+	.word	.L29
+	.byte	3
+	.byte	'_ZN13PIDController5resetEv',0,1,66,6,1,1,1
+	.word	.L28,.L86,.L27
+	.byte	4
+	.byte	'this',0,1,66,62
+	.word	.L87,.L88
+	.byte	5
+	.word	.L28,.L86
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN13PIDController5resetEv')
+	.sect	'.debug_abbrev'
+.L49:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN13PIDController5resetEv')
+	.sect	'.debug_line'
+.L50:
+	.word	.L208-.L207
+.L207:
+	.half	3
+	.word	.L210-.L209
+.L209:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/pid.cpp',0,0,0,0,0
+.L210:
+	.byte	5,26,7,0,5,2
+	.word	.L28
+	.byte	3,194,0,1,5,23,9
+	.half	.L211-.L28
+	.byte	1,5,24,9
+	.half	.L212-.L211
+	.byte	3,1,1,5,21,9
+	.half	.L213-.L212
+	.byte	1,5,23,9
+	.half	.L214-.L213
+	.byte	3,1,1,5,20,9
+	.half	.L215-.L214
+	.byte	1,5,1,9
+	.half	.L216-.L215
+	.byte	3,1,1,7,9
+	.half	.L52-.L216
+	.byte	0,1,1
+.L208:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN13PIDController5resetEv')
+	.sect	'.debug_ranges'
+.L51:
+	.word	-1,.L28,0,.L52-.L28,0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN13PIDController5resetEv')
+	.sect	'.debug_loc'
+.L27:
+	.word	-1,.L28,0,.L86-.L28
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L88:
+	.word	-1,.L28,0,.L86-.L28
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN13PIDControllerC1Effffff')
+	.sect	'.debug_loc'
+.L21:
+	.word	-1,.L22,0,.L53-.L22
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L57:
+	.word	-1,.L22,0,.L89-.L22
+	.half	1
+	.byte	84
+	.word	0,0
+.L58:
+	.word	-1,.L22,0,.L89-.L22
+	.half	1
+	.byte	85
+	.word	0,0
+.L59:
+	.word	-1,.L22,0,.L89-.L22
+	.half	1
+	.byte	86
+	.word	0,0
+.L60:
+	.word	-1,.L22,0,.L89-.L22
+	.half	1
+	.byte	87
+	.word	0,0
+.L61:
+	.word	-1,.L22,0,.L53-.L22
+	.half	2
+	.byte	145,0
+	.word	0,.L53-.L22
+	.half	2
+	.byte	145,0
+	.word	.L91-.L22,.L89-.L22
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L62:
+	.word	-1,.L22,0,.L53-.L22
+	.half	2
+	.byte	145,4
+	.word	0,.L53-.L22
+	.half	2
+	.byte	145,4
+	.word	.L92-.L22,.L93-.L22
+	.half	1
+	.byte	95
+	.word	0,0
+.L55:
+	.word	-1,.L22,0,.L89-.L22
+	.half	1
+	.byte	100
+	.word	.L90-.L22,.L53-.L22
+	.half	1
+	.byte	111
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN13PIDControllerC2Effffff')
+	.sect	'.debug_loc'
+.L23:
+	.word	-1,.L24,0,.L94-.L24
+	.half	2
+	.byte	138,0
+	.word	.L94-.L24,.L63-.L24
+	.half	2
+	.byte	138,8
+	.word	.L63-.L24,.L63-.L24
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L66:
+	.word	-1,.L24,0,.L95-.L24
+	.half	1
+	.byte	84
+	.word	0,0
+.L67:
+	.word	-1,.L24,0,.L95-.L24
+	.half	1
+	.byte	85
+	.word	0,0
+.L68:
+	.word	-1,.L24,0,.L95-.L24
+	.half	1
+	.byte	86
+	.word	0,0
+.L69:
+	.word	-1,.L24,0,.L95-.L24
+	.half	1
+	.byte	87
+	.word	0,0
+.L70:
+	.word	-1,.L24,0,.L63-.L24
+	.half	2
+	.byte	145,0
+	.word	0,.L63-.L24
+	.half	2
+	.byte	145,0
+	.word	.L96-.L24,.L95-.L24
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L71:
+	.word	-1,.L24,0,.L63-.L24
+	.half	2
+	.byte	145,4
+	.word	0,.L63-.L24
+	.half	2
+	.byte	145,4
+	.word	.L97-.L24,.L63-.L24
+	.half	1
+	.byte	95
+	.word	0,0
+.L65:
+	.word	-1,.L24,0,.L95-.L24
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN13PIDControllerclEf')
+	.sect	'.debug_loc'
+.L25:
+	.word	-1,.L26,0,.L72-.L26
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L75:
+	.word	-1,.L26,0,.L98-.L26
+	.half	1
+	.byte	84
+	.word	.L100-.L26,.L72-.L26
+	.half	1
+	.byte	88
+	.word	0,0
+.L76:
+	.word	-1,.L26,.L101-.L26,.L98-.L26
+	.half	1
+	.byte	83
+	.word	.L102-.L26,.L72-.L26
+	.half	1
+	.byte	83
+	.word	0,0
+.L83:
+	.word	-1,.L26,.L98-.L26,.L2-.L26
+	.half	1
+	.byte	82
+	.word	0,0
+.L77:
+	.word	-1,.L26,.L103-.L26,.L104-.L26
+	.half	1
+	.byte	82
+	.word	0,0
+.L78:
+	.word	-1,.L26,.L105-.L26,.L72-.L26
+	.half	1
+	.byte	81
+	.word	0,0
+.L79:
+	.word	-1,.L26,.L106-.L26,.L107-.L26
+	.half	1
+	.byte	95
+	.word	0,0
+.L80:
+	.word	-1,.L26,.L104-.L26,.L72-.L26
+	.half	1
+	.byte	82
+	.word	0,0
+.L85:
+	.word	-1,.L26,.L108-.L26,.L109-.L26
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L17-.L26,.L110-.L26
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L74:
+	.word	-1,.L26,0,.L98-.L26
+	.half	1
+	.byte	100
+	.word	.L99-.L26,.L72-.L26
+	.half	1
+	.byte	111
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L217:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('_ZN13PIDControllerC1Effffff')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L217,.L22,.L53-.L22
+	.sdecl	'.debug_frame',debug,cluster('_ZN13PIDControllerC2Effffff')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L217,.L24,.L63-.L24
+	.byte	4
+	.word	(.L94-.L24)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L63-.L94)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN13PIDControllerclEf')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L217,.L26,.L72-.L26
+	.sdecl	'.debug_frame',debug,cluster('_ZN13PIDController5resetEv')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L217,.L28,.L86-.L28
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	; Module end

@@ -85,6 +85,20 @@
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 			<storageModule moduleId="com.infineon.aurix.buildsystem.build.autodiscovery.settings"/>
+			<storageModule moduleId="com.infineon.aurix.buildsystem.build.booster.settings">
+				<libraries-roots>
+					<path>/Libraries/Infra</path>
+					<path>/Libraries/Service</path>
+					<path>/Libraries/.ads</path>
+					<path>/Libraries/iLLD</path>
+				</libraries-roots>
+				<never-exclude-from-build>
+					<path>/Configurations</path>
+					<path>/Libraries/iLLD/TC3xx/Tricore/Cpu/CStart</path>
+					<path>/Configurations/Debug</path>
+					<path>/Libraries/iLLD/TC3xx/Tricore/Cpu/Trap</path>
+				</never-exclude-from-build>
+			</storageModule>
 		</cconfiguration>
 		<cconfiguration id="com.infineon.aurix.buildsystem.managed.configuration.binary.943553666">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.infineon.aurix.buildsystem.managed.configuration.binary.943553666" moduleId="org.eclipse.cdt.core.settings" name="TriCore Release (TASKING)">
@@ -510,6 +524,7 @@
 							<tool id="com.infineon.aurix.buildsystem.managed.tool.c.objcopy.1513090521" name="AURIX Object Copy" superClass="com.infineon.aurix.buildsystem.managed.tool.c.objcopy"/>
 							<tool id="com.infineon.aurix.buildsystem.managed.tool.objdump.1612084898" name="AURIX Create Listing" superClass="com.infineon.aurix.buildsystem.managed.tool.objdump"/>
 							<tool id="com.infineon.aurix.buildsystem.managed.tool.printsize.1808930385" name="AURIX Print Size" superClass="com.infineon.aurix.buildsystem.managed.tool.printsize"/>
+							<tool id="com.infineon.aurix.buildsystem.managed.tool.archiver.1270372285" name="AURIX Archiver" superClass="com.infineon.aurix.buildsystem.managed.tool.archiver"/>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
@@ -727,6 +742,7 @@
 							<tool id="com.infineon.aurix.buildsystem.managed.tool.c.objcopy.399483733" name="AURIX Object Copy" superClass="com.infineon.aurix.buildsystem.managed.tool.c.objcopy"/>
 							<tool id="com.infineon.aurix.buildsystem.managed.tool.objdump.472635886" name="AURIX Create Listing" superClass="com.infineon.aurix.buildsystem.managed.tool.objdump"/>
 							<tool id="com.infineon.aurix.buildsystem.managed.tool.printsize.765667737" name="AURIX Print Size" superClass="com.infineon.aurix.buildsystem.managed.tool.printsize"/>
+							<tool id="com.infineon.aurix.buildsystem.managed.tool.archiver.1763384171" name="AURIX Archiver" superClass="com.infineon.aurix.buildsystem.managed.tool.archiver"/>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>

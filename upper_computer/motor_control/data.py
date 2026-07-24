@@ -219,6 +219,21 @@ class AlarmMonitor:
     def active(self) -> Tuple[Alarm, ...]:
         return tuple(self._active.values())
 
+    def configure(
+        self,
+        max_current_a: float,
+        max_temperature_c: float,
+        min_voltage_v: float,
+        max_voltage_v: float,
+    ) -> None:
+        self.max_current_a = float(max_current_a)
+        self.max_temperature_c = float(max_temperature_c)
+        self.min_voltage_v = float(min_voltage_v)
+        self.max_voltage_v = float(max_voltage_v)
+
+    def clear(self) -> None:
+        self._active.clear()
+
     def evaluate(self, value: Telemetry) -> Tuple[List[Alarm], List[Alarm]]:
         candidates = {}  # type: Dict[str, Alarm]
         if abs(value.current_a) > self.max_current_a:
@@ -237,11 +252,11 @@ class AlarmMonitor:
                 "warning",
                 f"M{value.motor_id} 电压异常：{value.voltage_v:.2f} V",
             )
-        if value.status:
+        if value.status & ((1 << 2) | (1 << 3)):
             candidates["status"] = Alarm(
                 value.motor_id,
                 "critical",
-                f"M{value.motor_id} 驱动器状态字：0x{value.status:04X}",
+                f"M{value.motor_id} 故障/急停状态：0x{value.status:04X}",
             )
 
         raised = []  # type: List[Alarm]

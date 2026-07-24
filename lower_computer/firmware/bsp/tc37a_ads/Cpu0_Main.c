@@ -30,9 +30,26 @@
 #include "Ifx_Cfg_Ssw.h"
 #include "GTM_ATOM_3_Phase_Inverter_PWM.h"
 #include "DRV8313_handle.h"
+#include "firmware_runtime.h"
 #include "Bsp.h"
 
 #define WAIT_TIME_MS    (10U)
+
+#define BSP_RUNTIME_STANDALONE_TEST  (0)
+#define BSP_RUNTIME_NATIVE_PROTOCOL  (1)
+
+/*
+ * The native-protocol runtime is the safe default. It starts ASCLIN and the
+ * motor state machine, but it does not enable the gate driver or PWM.
+ */
+#ifndef BSP_RUNTIME_MODE
+#define BSP_RUNTIME_MODE BSP_RUNTIME_NATIVE_PROTOCOL
+#endif
+
+#if (BSP_RUNTIME_MODE != BSP_RUNTIME_STANDALONE_TEST) && \
+    (BSP_RUNTIME_MODE != BSP_RUNTIME_NATIVE_PROTOCOL)
+#error "BSP_RUNTIME_MODE must be STANDALONE_TEST or NATIVE_PROTOCOL"
+#endif
 
 #ifndef BSP_SIMPLEFOC_OPEN_LOOP_TEST
 #define BSP_SIMPLEFOC_OPEN_LOOP_TEST (0)
@@ -58,7 +75,11 @@ IFX_ALIGN(4) IfxCpu_syncEvent cpuSyncEvent = 0;
 
 void core0_main(void)
 {
+#if BSP_RUNTIME_MODE == BSP_RUNTIME_NATIVE_PROTOCOL
+    Ifx_TickTime ticksFor1ms;
+#else
     Ifx_TickTime ticksFor10ms;
+#endif
 
     IfxCpu_enableInterrupts();
 
@@ -79,6 +100,35 @@ void core0_main(void)
     IfxCpu_emitEvent(&cpuSyncEvent);
     IfxCpu_waitEvent(&cpuSyncEvent, 1);
 
+#if BSP_RUNTIME_MODE == BSP_RUNTIME_NATIVE_PROTOCOL
+    ticksFor1ms = IfxStm_getTicksFromMilliseconds(
+        BSP_DEFAULT_TIMER,
+        1U
+    );
+
+    if (!Firmware_CooperativeInit())
+    {
+        /*
+         * UART initialization failed. Explicitly establish a safe power-stage
+         * state before stopping here so a debugger can inspect the cause.
+         */
+        Drv8313_init();
+        initGtmAtom3phInv();
+        GtmAtom3phInv_setSafeDuty();
+        Drv8313_disable();
+
+        while (1)
+        {
+            waitTime(ticksFor1ms);
+        }
+    }
+
+    while (1)
+    {
+        Firmware_CooperativePoll();
+        waitTime(ticksFor1ms);
+    }
+#else
     /*
      * Initialize delay time.
      */
@@ -166,4 +216,5 @@ void core0_main(void)
 
         waitTime(ticksFor10ms);
     }
+#endif
 }

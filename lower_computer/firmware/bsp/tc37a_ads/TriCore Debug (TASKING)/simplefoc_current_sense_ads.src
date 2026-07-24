@@ -1,0 +1,7918 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc86892c -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 --no-warnings -o simplefoc_current_sense_ads.src cc86892a.ic"
+	.compiler_name		"ctc"
+	;source	'../simplefoc_current_sense_ads.cpp'
+
+	
+$TC162
+	
+	.sdecl	'.text.CurrentSense._ZN12CurrentSense10linkDriverEP9FOCDriver',code,cluster('_ZN12CurrentSense10linkDriverEP9FOCDriver')
+	.sect	'.text.CurrentSense._ZN12CurrentSense10linkDriverEP9FOCDriver'
+	.align	2
+	
+	.global	_ZN12CurrentSense10linkDriverEP9FOCDriver
+; Function _ZN12CurrentSense10linkDriverEP9FOCDriver
+.L249:
+_ZN12CurrentSense10linkDriverEP9FOCDriver:	.type	func
+	mov.aa	a12,a4
+.L610:
+	st.a	[a12]8,a5
+.L825:
+	ld.a	a15,[a5]
+.L826:
+	ld.w	d15,[a15]12
+.L827:
+	mov.a	a15,d15
+.L828:
+	mov.aa	a4,a5
+.L609:
+	calli	a15
+.L608:
+	st.b	[a12]20,d2
+.L829:
+	ret
+.L342:
+	
+___ZN12CurrentSense10linkDriverEP9FOCDriver_function_end:
+	.size	_ZN12CurrentSense10linkDriverEP9FOCDriver,___ZN12CurrentSense10linkDriverEP9FOCDriver_function_end-_ZN12CurrentSense10linkDriverEP9FOCDriver
+.L280:
+	; End of function
+	
+	.sdecl	'.text.CurrentSense._ZN12CurrentSense11driverAlignEfb',code,cluster('_ZN12CurrentSense11driverAlignEfb')
+	.sect	'.text.CurrentSense._ZN12CurrentSense11driverAlignEfb'
+	.align	2
+	
+	.global	_ZN12CurrentSense11driverAlignEfb
+; Function _ZN12CurrentSense11driverAlignEfb
+.L251:
+_ZN12CurrentSense11driverAlignEfb:	.type	func
+	mov	d2,#1
+.L612:
+	ld.b	d15,[a4]4
+.L834:
+	jeq	d15,#0,.L2
+.L835:
+	j	.L3
+.L2:
+	ld.b	d15,[a4]12
+.L836:
+	jne	d15,#0,.L4
+.L837:
+	mov	d2,#0
+.L613:
+	j	.L5
+.L4:
+	ld.bu	d15,[a4]20
+.L838:
+	mov	d0,#1
+	jeq	d15,d0,.L6
+.L839:
+	mov	d0,#2
+	jeq	d15,d0,.L7
+.L840:
+	mov	d0,#3
+	jeq	d15,d0,.L8
+	j	.L9
+.L6:
+	ld.a	a5,[a4]8
+.L841:
+	call	_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb
+.L611:
+	j	.L10
+.L7:
+	ld.a	a5,[a4]8
+.L842:
+	call	_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb
+.L614:
+	j	.L11
+.L8:
+	ld.a	a5,[a4]8
+.L843:
+	call	_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb
+.L615:
+	j	.L12
+.L9:
+.L13:
+	mov	d2,#0
+.L616:
+	j	.L14
+.L14:
+.L12:
+.L11:
+.L10:
+.L5:
+.L3:
+	ret
+.L348:
+	
+___ZN12CurrentSense11driverAlignEfb_function_end:
+	.size	_ZN12CurrentSense11driverAlignEfb,___ZN12CurrentSense11driverAlignEfb_function_end-_ZN12CurrentSense11driverAlignEfb
+.L285:
+	; End of function
+	
+	.sdecl	'.text.CurrentSense._ZN12CurrentSense12getDCCurrentEf',code,cluster('_ZN12CurrentSense12getDCCurrentEf')
+	.sect	'.text.CurrentSense._ZN12CurrentSense12getDCCurrentEf'
+	.align	2
+	
+	.global	_ZN12CurrentSense12getDCCurrentEf
+; Function _ZN12CurrentSense12getDCCurrentEf
+.L253:
+_ZN12CurrentSense12getDCCurrentEf:	.type	func
+	sub.a	a10,#32
+.L617:
+	mov.aa	a12,a4
+.L620:
+	mov	d8,d4
+.L621:
+	movh	d9,#16256
+.L622:
+	lea	a4,[a10]12
+.L619:
+	ld.a	a15,[a12]
+.L848:
+	ld.w	d15,[a15]8
+.L849:
+	mov.a	a15,d15
+.L850:
+	mov.aa	a5,a12
+.L623:
+	calli	a15
+.L618:
+	lea	a15,[a10]12
+	lea	a2,[a10]0
+	mov.a	a4,#2
+.L15:
+	ld.w	d15,[a15+]
+	st.w	[a2+],d15
+	loop	a4,.L15
+.L851:
+	mov.aa	a4,a12
+.L624:
+	call	_ZN12CurrentSense13getABCurrentsE7Phase_s
+.L625:
+	mov	e10,d3,d2
+.L852:
+	extr.u	d15,d8,#23,#8
+	ne	d15,d15,#0
+	jeq	d15,#0,.L16
+.L365:
+	lea	a4,[a10]28
+.L853:
+	lea	a5,[a10]24
+	mov	d4,d8
+.L626:
+	call	_Z7_sincosfPfS_
+.L627:
+	mov	d0,d11
+.L854:
+	ld.w	d15,[a10]24
+.L855:
+	mul.f	d0,d0,d15
+.L856:
+	mov	d1,d10
+.L857:
+	ld.w	d15,[a10]28
+.L858:
+	msub.f	d15,d0,d1,d15
+.L859:
+	mov	d0,#0
+.L860:
+	cmp.f	d15,d15,d0
+	jnz.t	d15:2,.L17
+.L861:
+	mov	d15,#-1
+.L862:
+	j	.L18
+.L17:
+	mov	d15,#1
+.L18:
+	itof	d9,d15
+.L16:
+	mov	d15,d10
+.L863:
+	mov	d0,d10
+.L864:
+	mul.f	d1,d11,d11
+.L865:
+	madd.f	d4,d1,d15,d0
+	call	_Z11_sqrtApproxf
+.L866:
+	mul.f	d2,d9,d2
+.L867:
+	j	.L19
+.L19:
+	ret
+.L356:
+	
+___ZN12CurrentSense12getDCCurrentEf_function_end:
+	.size	_ZN12CurrentSense12getDCCurrentEf,___ZN12CurrentSense12getDCCurrentEf_function_end-_ZN12CurrentSense12getDCCurrentEf
+.L290:
+	; End of function
+	
+	.sdecl	'.text.CurrentSense._ZN12CurrentSense14getFOCCurrentsEf',code,cluster('_ZN12CurrentSense14getFOCCurrentsEf')
+	.sect	'.text.CurrentSense._ZN12CurrentSense14getFOCCurrentsEf'
+	.align	2
+	
+	.global	_ZN12CurrentSense14getFOCCurrentsEf
+; Function _ZN12CurrentSense14getFOCCurrentsEf
+.L255:
+_ZN12CurrentSense14getFOCCurrentsEf:	.type	func
+	sub.a	a10,#24
+.L628:
+	mov.aa	a12,a4
+.L631:
+	mov	d8,d4
+.L632:
+	lea	a4,[a10]12
+.L630:
+	ld.a	a15,[a12]
+.L872:
+	ld.w	d15,[a15]8
+.L873:
+	mov.a	a15,d15
+.L874:
+	mov.aa	a5,a12
+.L633:
+	calli	a15
+.L629:
+	lea	a15,[a10]12
+	lea	a2,[a10]0
+	mov.a	a4,#2
+.L20:
+	ld.w	d15,[a15+]
+	st.w	[a2+],d15
+	loop	a4,.L20
+.L875:
+	mov.aa	a4,a12
+.L634:
+	call	_ZN12CurrentSense13getABCurrentsE7Phase_s
+.L635:
+	mov	e4,d3,d2
+.L876:
+	mov.aa	a4,a12
+.L636:
+	mov	d6,d8
+.L638:
+	call	_ZN12CurrentSense13getDQCurrentsE4AB_sf
+.L637:
+	j	.L21
+.L21:
+	ret
+.L369:
+	
+___ZN12CurrentSense14getFOCCurrentsEf_function_end:
+	.size	_ZN12CurrentSense14getFOCCurrentsEf,___ZN12CurrentSense14getFOCCurrentsEf_function_end-_ZN12CurrentSense14getFOCCurrentsEf
+.L295:
+	; End of function
+	
+	.sdecl	'.text.CurrentSense._ZN12CurrentSense13getABCurrentsE7Phase_s',code,cluster('_ZN12CurrentSense13getABCurrentsE7Phase_s')
+	.sect	'.text.CurrentSense._ZN12CurrentSense13getABCurrentsE7Phase_s'
+	.align	2
+	
+	.global	_ZN12CurrentSense13getABCurrentsE7Phase_s
+; Function _ZN12CurrentSense13getABCurrentsE7Phase_s
+.L257:
+_ZN12CurrentSense13getABCurrentsE7Phase_s:	.type	func
+	ld.bu	d15,[a4]20
+.L881:
+	jne	d15,#2,.L22
+.L383:
+	ld.w	d2,[a10]
+.L882:
+	ld.w	d3,[a10]4
+.L639:
+	j	.L23
+.L22:
+	ld.bu	d15,[a4]20
+.L883:
+	jne	d15,#3,.L24
+.L385:
+	ld.w	d15,[a10]
+.L884:
+	extr.u	d15,d15,#23,#8
+	eq	d15,d15,#0
+.L885:
+	jeq	d15,#0,.L25
+.L886:
+	ld.w	d15,[a10]8
+.L887:
+	insn.t	d0,d15:31,d15:31
+.L888:
+	ld.w	d15,[a10]4
+.L889:
+	sub.f	d2,d0,d15
+.L890:
+	ld.w	d3,[a10]4
+.L640:
+	j	.L26
+.L25:
+	ld.w	d15,[a10]4
+.L891:
+	extr.u	d15,d15,#23,#8
+	jeq	d15,#0,.L27
+.L892:
+	ld.w	d2,[a10]
+.L893:
+	ld.w	d3,[a10]4
+.L641:
+	j	.L28
+.L27:
+	ld.w	d2,[a10]
+.L894:
+	ld.w	d15,[a10]8
+.L895:
+	insn.t	d15,d15:31,d15:31
+.L896:
+	ld.w	d0,[a10]
+.L897:
+	sub.f	d3,d15,d0
+.L28:
+.L26:
+	j	.L29
+.L24:
+	ld.w	d15,[a10]8
+.L898:
+	extr.u	d15,d15,#23,#8
+	jne	d15,#0,.L30
+.L388:
+	ld.w	d2,[a10]
+.L389:
+	ld.w	d0,[a10]
+.L899:
+	mov.u	d1,#52538
+	addih	d1,d1,#16147
+.L900:
+	ld.w	d15,[a10]4
+.L901:
+	mov.u	d3,#52538
+	addih	d3,d3,#16275
+.L902:
+	mul.f	d15,d15,d3
+.L903:
+	madd.f	d3,d15,d0,d1
+.L642:
+	j	.L31
+.L30:
+	ld.w	d15,[a10]
+.L904:
+	extr.u	d15,d15,#23,#8
+	jne	d15,#0,.L32
+.L393:
+	ld.w	d15,[a10]8
+.L905:
+	insn.t	d0,d15:31,d15:31
+.L906:
+	ld.w	d15,[a10]4
+.L907:
+	sub.f	d2,d0,d15
+.L908:
+	mov.u	d0,#52538
+	addih	d0,d0,#16147
+.L909:
+	ld.w	d15,[a10]4
+.L910:
+	mov.u	d1,#52538
+	addih	d1,d1,#16275
+.L911:
+	mul.f	d15,d15,d1
+.L912:
+	madd.f	d3,d15,d2,d0
+.L394:
+	j	.L33
+.L32:
+	ld.w	d15,[a10]4
+.L913:
+	extr.u	d15,d15,#23,#8
+	jne	d15,#0,.L34
+.L396:
+	ld.w	d15,[a10]
+.L914:
+	insn.t	d0,d15:31,d15:31
+.L915:
+	ld.w	d15,[a10]8
+.L916:
+	sub.f	d15,d0,d15
+.L643:
+	ld.w	d2,[a10]
+.L917:
+	ld.w	d0,[a10]
+.L918:
+	mov.u	d1,#52538
+	addih	d1,d1,#16147
+.L919:
+	mov.u	d3,#52538
+	addih	d3,d3,#16275
+.L920:
+	mul.f	d15,d15,d3
+.L644:
+	madd.f	d3,d15,d0,d1
+.L397:
+	j	.L35
+.L34:
+	ld.w	d0,[a10]
+.L921:
+	ld.w	d15,[a10]4
+.L922:
+	add.f	d0,d0,d15
+.L923:
+	ld.w	d15,[a10]8
+.L924:
+	add.f	d15,d0,d15
+.L925:
+	mov.u	d0,#43691
+	addih	d0,d0,#16042
+.L926:
+	mul.f	d0,d15,d0
+.L645:
+	ld.w	d15,[a10]
+.L927:
+	sub.f	d2,d15,d0
+.L928:
+	ld.w	d15,[a10]4
+.L929:
+	sub.f	d15,d15,d0
+.L647:
+	mov.u	d0,#52538
+.L646:
+	addih	d0,d0,#16147
+.L930:
+	mov.u	d1,#52538
+	addih	d1,d1,#16275
+.L931:
+	mul.f	d15,d15,d1
+.L648:
+	madd.f	d3,d15,d2,d0
+.L35:
+.L33:
+.L31:
+	j	.L36
+.L36:
+.L29:
+.L23:
+	ret
+.L376:
+	
+___ZN12CurrentSense13getABCurrentsE7Phase_s_function_end:
+	.size	_ZN12CurrentSense13getABCurrentsE7Phase_s,___ZN12CurrentSense13getABCurrentsE7Phase_s_function_end-_ZN12CurrentSense13getABCurrentsE7Phase_s
+.L300:
+	; End of function
+	
+	.sdecl	'.text.CurrentSense._ZN12CurrentSense13getDQCurrentsE4AB_sf',code,cluster('_ZN12CurrentSense13getDQCurrentsE4AB_sf')
+	.sect	'.text.CurrentSense._ZN12CurrentSense13getDQCurrentsE4AB_sf'
+	.align	2
+	
+	.global	_ZN12CurrentSense13getDQCurrentsE4AB_sf
+; Function _ZN12CurrentSense13getDQCurrentsE4AB_sf
+.L259:
+_ZN12CurrentSense13getDQCurrentsE4AB_sf:	.type	func
+	sub.a	a10,#8
+.L649:
+	mov	e8,d5,d4
+	mov	d4,d6
+.L650:
+	lea	a4,[a10]4
+.L652:
+	lea	a5,[a10]0
+	call	_Z7_sincosfPfS_
+.L651:
+	mov	d0,d8
+.L936:
+	ld.w	d1,[a10]
+.L937:
+	mov	d2,d9
+.L938:
+	ld.w	d15,[a10]4
+.L939:
+	mul.f	d15,d2,d15
+.L940:
+	madd.f	d2,d15,d0,d1
+.L941:
+	mov	d15,d9
+.L942:
+	ld.w	d0,[a10]
+.L943:
+	mul.f	d0,d15,d0
+.L944:
+	ld.w	d15,[a10]4
+.L945:
+	msub.f	d3,d0,d8,d15
+.L653:
+	j	.L37
+.L37:
+	ret
+.L399:
+	
+___ZN12CurrentSense13getDQCurrentsE4AB_sf_function_end:
+	.size	_ZN12CurrentSense13getDQCurrentsE4AB_sf,___ZN12CurrentSense13getDQCurrentsE4AB_sf_function_end-_ZN12CurrentSense13getDQCurrentsE4AB_sf
+.L305:
+	; End of function
+	
+	.sdecl	'.text.CurrentSense._ZN12CurrentSense6enableEv',code,cluster('_ZN12CurrentSense6enableEv')
+	.sect	'.text.CurrentSense._ZN12CurrentSense6enableEv'
+	.align	2
+	
+	.global	_ZN12CurrentSense6enableEv
+; Function _ZN12CurrentSense6enableEv
+.L261:
+_ZN12CurrentSense6enableEv:	.type	func
+	ret
+.L407:
+	
+___ZN12CurrentSense6enableEv_function_end:
+	.size	_ZN12CurrentSense6enableEv,___ZN12CurrentSense6enableEv_function_end-_ZN12CurrentSense6enableEv
+.L310:
+	; End of function
+	
+	.sdecl	'.text.CurrentSense._ZN12CurrentSense7disableEv',code,cluster('_ZN12CurrentSense7disableEv')
+	.sect	'.text.CurrentSense._ZN12CurrentSense7disableEv'
+	.align	2
+	
+	.global	_ZN12CurrentSense7disableEv
+; Function _ZN12CurrentSense7disableEv
+.L263:
+_ZN12CurrentSense7disableEv:	.type	func
+	ret
+.L410:
+	
+___ZN12CurrentSense7disableEv_function_end:
+	.size	_ZN12CurrentSense7disableEv,___ZN12CurrentSense7disableEv_function_end-_ZN12CurrentSense7disableEv
+.L315:
+	; End of function
+	
+	.sdecl	'.text.CurrentSense._ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb',code,cluster('_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb')
+	.sect	'.text.CurrentSense._ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb'
+	.align	2
+	
+	.global	_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb
+; Function _ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb
+.L265:
+_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb:	.type	func
+	sub.a	a10,#48
+.L654:
+	mov.aa	a12,a4
+.L655:
+	mov	d8,d4
+.L656:
+	mov.aa	a13,a5
+.L657:
+	mov	d9,#0
+.L658:
+	mov	d10,#0
+.L659:
+	mov	d11,#0
+.L660:
+	jeq	d5,#0,.L38
+.L958:
+	ld.a	a15,[a12]8
+.L959:
+	ld.w	d15,[a15]12
+.L960:
+	movh	d0,#16384
+.L961:
+	div.f	d11,d15,d0
+.L38:
+	mov	d12,#0
+.L661:
+	j	.L39
+.L40:
+	ld.a	a15,[a13]
+.L962:
+	ld.w	d15,[a15]16
+.L963:
+	mov.a	a15,d15
+.L964:
+	movh	d0,#17096
+.L965:
+	div.f	d0,d8,d0
+.L966:
+	itof	d15,d12
+.L967:
+	madd.f	d4,d11,d0,d15
+.L968:
+	mov.aa	a4,a13
+.L663:
+	mov	d5,d11
+.L665:
+	mov	d6,d11
+.L666:
+	calli	a15
+.L664:
+	mov	d4,#3
+	call	_Z6_delaym
+.L969:
+	add	d12,#1
+.L39:
+	mov	d15,#100
+.L970:
+	jlt	d12,d15,.L40
+.L433:
+	mov	d4,#500
+	call	_Z6_delaym
+.L971:
+	lea	a4,[a10]0
+.L972:
+	mov	d4,#100
+	mov.aa	a5,a12
+.L667:
+	call	_ZN12CurrentSense19readAverageCurrentsEi
+.L668:
+	ld.a	a15,[a13]
+.L973:
+	ld.w	d15,[a15]16
+.L974:
+	mov.a	a15,d15
+.L975:
+	mov.aa	a4,a13
+.L669:
+	mov	e4,d11,d11
+	mov	d6,d11
+.L671:
+	calli	a15
+.L670:
+	ld.w	d15,[a10]
+.L976:
+	insert	d15,d15,#0,#31,#1
+.L977:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L978:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+.L979:
+	jeq	d15,#0,.L41
+.L980:
+	ld.w	d15,[a10]4
+.L981:
+	insert	d15,d15,#0,#31,#1
+.L982:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L983:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+	jeq	d15,#0,.L42
+.L984:
+	ld.w	d15,[a10]8
+.L985:
+	insert	d15,d15,#0,#31,#1
+.L986:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L987:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+	jeq	d15,#0,.L43
+.L44:
+	mov	d2,#0
+.L988:
+	j	.L45
+.L43:
+.L42:
+.L41:
+	ld.w	d15,[a10]
+.L989:
+	insert	d15,d15,#0,#31,#1
+.L990:
+	st.w	[a10]12,d15
+.L991:
+	ld.w	d15,[a10]4
+.L992:
+	insert	d15,d15,#0,#31,#1
+.L993:
+	st.w	[a10]16,d15
+.L994:
+	ld.w	d15,[a10]8
+.L995:
+	insert	d15,d15,#0,#31,#1
+.L996:
+	st.w	[a10]20,d15
+.L997:
+	mov	d1,#255
+.L672:
+	mov	d4,#0
+.L673:
+	mov	d3,#0
+.L435:
+	mov	d2,#0
+.L674:
+	j	.L46
+.L47:
+	mul	d15,d2,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d15,[a15]12
+.L998:
+	extr.u	d15,d15,#23,#8
+	jne	d15,#0,.L48
+.L999:
+	j	.L49
+.L48:
+	mul	d15,d2,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d15,[a15]12
+.L1000:
+	cmp.f	d0,d15,d4
+	extr.u	d15,d0,#2,#1
+.L1001:
+	jeq	d15,#0,.L50
+.L1002:
+	mul	d15,d2,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d4,[a15]12
+.L1003:
+	extr.u	d1,d2,#0,#8
+.L438:
+	mov	d6,#0
+.L676:
+	j	.L51
+.L52:
+	jne	d2,d6,.L53
+.L1004:
+	j	.L54
+.L53:
+	mul	d15,d6,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d15,[a15]12
+.L1005:
+	extr.u	d15,d15,#23,#8
+	jne	d15,#0,.L55
+.L1006:
+	j	.L56
+.L55:
+	mul	d15,d6,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d15,[a15]12
+.L1007:
+	div.f	d0,d4,d15
+.L677:
+	cmp.f	d5,d0,d3
+	extr.u	d15,d5,#2,#1
+.L1008:
+	jeq	d15,#0,.L57
+.L1009:
+	mov	d3,d0
+.L57:
+.L54:
+.L56:
+	add	d6,#1
+.L51:
+	jlt	d6,#3,.L52
+.L50:
+.L49:
+	add	d2,#1
+.L46:
+	jlt	d2,#3,.L47
+.L436:
+	movh	d15,#16320
+.L1010:
+	cmp.f	d15,d3,d15
+	and	d15,#6
+	ne	d15,d15,#0
+.L1011:
+	jeq	d15,#0,.L58
+.L1012:
+	mov	d15,#1
+	jeq	d15,d1,.L59
+.L1013:
+	mov	d15,#2
+	jeq	d15,d1,.L60
+	j	.L61
+.L59:
+.L62:
+	ld.w	d15,[a12]46
+.L678:
+	ld.w	d0,[a12]50
+.L1014:
+	st.w	[a12]46,d0
+.L1015:
+	st.w	[a12]50,d15
+.L441:
+	ld.w	d15,[a12]34
+.L679:
+	ld.w	d0,[a12]38
+.L1016:
+	st.w	[a12]34,d0
+.L1017:
+	st.w	[a12]38,d15
+.L443:
+	ld.w	d15,[a12]22
+.L680:
+	ld.w	d0,[a12]26
+.L1018:
+	st.w	[a12]22,d0
+.L1019:
+	st.w	[a12]26,d15
+.L445:
+	ld.w	d0,[a10]4
+.L682:
+	ld.w	d15,[a10]4
+.L681:
+	st.w	[a10]4,d15
+.L1020:
+	st.w	[a10]4,d0
+.L447:
+	mov	d9,#1
+.L1021:
+	j	.L63
+.L60:
+.L64:
+	ld.w	d15,[a12]46
+.L683:
+	ld.w	d0,[a12]54
+.L1022:
+	st.w	[a12]46,d0
+.L1023:
+	st.w	[a12]54,d15
+.L449:
+	ld.w	d15,[a12]34
+.L684:
+	ld.w	d0,[a12]42
+.L1024:
+	st.w	[a12]34,d0
+.L1025:
+	st.w	[a12]42,d15
+.L451:
+	ld.w	d15,[a12]22
+.L685:
+	ld.w	d0,[a12]30
+.L1026:
+	st.w	[a12]22,d0
+.L1027:
+	st.w	[a12]30,d15
+.L453:
+	ld.w	d0,[a10]
+.L687:
+	ld.w	d15,[a10]8
+.L686:
+	st.w	[a10],d15
+.L1028:
+	st.w	[a10]8,d0
+.L455:
+	mov	d9,#1
+.L1029:
+	j	.L65
+.L61:
+.L63:
+.L65:
+	ld.w	d15,[a10]
+.L1030:
+	mov	d0,#0
+.L1031:
+	cmp.f	d15,d15,d0
+	jnz.t	d15:0,.L66
+.L1032:
+	ld.w	d15,[a10]
+.L1033:
+	mov	d0,#0
+.L1034:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#2,#1
+.L1035:
+	j	.L67
+.L66:
+	mov	d15,#-1
+.L67:
+	jge	d15,#0,.L68
+.L69:
+	ld.w	d15,[a12]22
+.L1036:
+	movh	d0,#49024
+.L1037:
+	mul.f	d15,d15,d0
+	st.w	[a12]22,d15
+.L1038:
+	mov	d10,#1
+.L68:
+	j	.L70
+.L58:
+	ld.w	d15,[a12]46
+.L1039:
+	itof	d15,d15
+.L1040:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1041:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+.L1042:
+	jeq	d15,#0,.L71
+.L1043:
+	ld.w	d15,[a12]50
+.L1044:
+	itof	d15,d15
+.L1045:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1046:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+	jeq	d15,#0,.L72
+.L1047:
+	ld.w	d15,[a12]54
+.L1048:
+	itof	d15,d15
+.L1049:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1050:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+	jeq	d15,#0,.L73
+.L74:
+	mov	d2,#0
+.L675:
+	j	.L75
+.L73:
+.L72:
+.L71:
+	ld.w	d15,[a12]46
+.L1051:
+	itof	d15,d15
+.L1052:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1053:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+.L1054:
+	jeq	d15,#0,.L76
+.L1055:
+	ld.w	d15,[a12]50
+.L1056:
+	itof	d15,d15
+.L1057:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1058:
+	cmp.f	d15,d15,d0
+	jz.t	d15:1,.L77
+.L78:
+	ld.w	d15,[a12]46
+.L688:
+	ld.w	d0,[a12]50
+.L1059:
+	st.w	[a12]46,d0
+.L1060:
+	st.w	[a12]50,d15
+.L457:
+	ld.w	d15,[a12]34
+.L689:
+	ld.w	d0,[a12]38
+.L1061:
+	st.w	[a12]34,d0
+.L1062:
+	st.w	[a12]38,d15
+.L459:
+	ld.w	d15,[a12]22
+.L690:
+	ld.w	d0,[a12]26
+.L1063:
+	st.w	[a12]22,d0
+.L1064:
+	st.w	[a12]26,d15
+.L461:
+	ld.w	d0,[a10]4
+.L692:
+	ld.w	d15,[a10]4
+.L691:
+	st.w	[a10]4,d15
+.L1065:
+	st.w	[a10]4,d0
+.L463:
+	mov	d9,#1
+.L1066:
+	j	.L79
+.L77:
+.L76:
+	ld.w	d15,[a12]46
+.L1067:
+	itof	d15,d15
+.L1068:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1069:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+.L1070:
+	jeq	d15,#0,.L80
+.L1071:
+	ld.w	d15,[a12]54
+.L1072:
+	itof	d15,d15
+.L1073:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1074:
+	cmp.f	d15,d15,d0
+	jz.t	d15:1,.L81
+.L82:
+	ld.w	d15,[a12]46
+.L693:
+	ld.w	d0,[a12]54
+.L1075:
+	st.w	[a12]46,d0
+.L1076:
+	st.w	[a12]54,d15
+.L465:
+	ld.w	d15,[a12]34
+.L694:
+	ld.w	d0,[a12]42
+.L1077:
+	st.w	[a12]34,d0
+.L1078:
+	st.w	[a12]42,d15
+.L467:
+	ld.w	d15,[a12]22
+.L695:
+	ld.w	d0,[a12]30
+.L1079:
+	st.w	[a12]22,d0
+.L1080:
+	st.w	[a12]30,d15
+.L469:
+	ld.w	d0,[a10]4
+.L697:
+	ld.w	d15,[a10]8
+.L696:
+	st.w	[a10]4,d15
+.L1081:
+	st.w	[a10]8,d0
+.L471:
+	mov	d9,#1
+.L81:
+.L80:
+.L79:
+.L70:
+	mov	d12,#0
+.L662:
+	j	.L83
+.L84:
+	ld.a	a15,[a13]
+.L1082:
+	ld.w	d15,[a15]16
+.L1083:
+	mov.a	a15,d15
+.L1084:
+	movh	d15,#17096
+.L1085:
+	div.f	d15,d8,d15
+.L1086:
+	itof	d0,d12
+.L1087:
+	madd.f	d5,d11,d15,d0
+.L1088:
+	mov.aa	a4,a13
+.L698:
+	mov	d4,d11
+.L700:
+	mov	d6,d11
+.L701:
+	calli	a15
+.L699:
+	mov	d4,#3
+	call	_Z6_delaym
+.L1089:
+	add	d12,#1
+.L83:
+	mov	d15,#100
+.L1090:
+	jlt	d12,d15,.L84
+.L473:
+	mov	d4,#500
+	call	_Z6_delaym
+.L1091:
+	lea	a4,[a10]24
+.L1092:
+	mov	d4,#100
+	mov.aa	a5,a12
+.L702:
+	call	_ZN12CurrentSense19readAverageCurrentsEi
+.L703:
+	ld.a	a15,[a13]
+.L1093:
+	ld.w	d15,[a15]16
+.L1094:
+	mov.a	a15,d15
+.L1095:
+	mov.aa	a4,a13
+.L704:
+	mov	e4,d11,d11
+	mov	d6,d11
+.L706:
+	calli	a15
+.L705:
+	ld.w	d15,[a10]24
+.L1096:
+	insert	d15,d15,#0,#31,#1
+.L1097:
+	st.w	[a10]36,d15
+.L1098:
+	ld.w	d15,[a10]28
+.L1099:
+	insert	d15,d15,#0,#31,#1
+.L1100:
+	st.w	[a10]40,d15
+.L1101:
+	ld.w	d15,[a10]32
+.L1102:
+	insert	d15,d15,#0,#31,#1
+.L1103:
+	st.w	[a10]44,d15
+.L1104:
+	mov	d1,#255
+.L707:
+	mov	d4,#0
+.L708:
+	mov	d3,#0
+.L475:
+	mov	d2,#0
+.L709:
+	j	.L85
+.L86:
+	mul	d15,d2,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d15,[a15]36
+.L1105:
+	extr.u	d15,d15,#23,#8
+	jne	d15,#0,.L87
+.L1106:
+	j	.L88
+.L87:
+	mul	d15,d2,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d15,[a15]36
+.L1107:
+	cmp.f	d0,d15,d4
+	extr.u	d15,d0,#2,#1
+.L1108:
+	jeq	d15,#0,.L89
+.L1109:
+	mul	d15,d2,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d4,[a15]36
+.L1110:
+	extr.u	d1,d2,#0,#8
+.L478:
+	mov	d0,#0
+.L711:
+	j	.L90
+.L91:
+	jne	d2,d0,.L92
+.L1111:
+	j	.L93
+.L92:
+	mul	d15,d0,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d15,[a15]36
+.L1112:
+	extr.u	d15,d15,#23,#8
+	jne	d15,#0,.L94
+.L1113:
+	j	.L95
+.L94:
+	mul	d15,d0,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d15,[a15]36
+.L1114:
+	div.f	d5,d4,d15
+.L712:
+	cmp.f	d15,d5,d3
+	extr.u	d15,d15,#2,#1
+.L1115:
+	jeq	d15,#0,.L96
+.L1116:
+	mov	d3,d5
+.L96:
+.L93:
+.L95:
+	add	d0,#1
+.L90:
+	jlt	d0,#3,.L91
+.L89:
+.L88:
+	add	d2,#1
+.L85:
+	jlt	d2,#3,.L86
+.L476:
+	movh	d15,#16320
+.L1117:
+	cmp.f	d15,d3,d15
+	and	d15,#6
+	ne	d15,d15,#0
+.L1118:
+	jeq	d15,#0,.L97
+.L1119:
+	mov	d15,#0
+	jeq	d15,d1,.L98
+.L1120:
+	mov	d15,#2
+	jeq	d15,d1,.L99
+	j	.L100
+.L98:
+.L101:
+	mov	d2,#0
+.L710:
+	j	.L102
+.L99:
+.L103:
+	ld.w	d15,[a12]50
+.L714:
+	ld.w	d0,[a12]54
+.L1121:
+	st.w	[a12]50,d0
+.L1122:
+	st.w	[a12]54,d15
+.L481:
+	ld.w	d15,[a12]38
+.L715:
+	ld.w	d0,[a12]42
+.L1123:
+	st.w	[a12]38,d0
+.L1124:
+	st.w	[a12]42,d15
+.L483:
+	ld.w	d15,[a12]26
+.L716:
+	ld.w	d0,[a12]30
+.L1125:
+	st.w	[a12]26,d0
+.L1126:
+	st.w	[a12]30,d15
+.L485:
+	ld.w	d0,[a10]28
+.L718:
+	ld.w	d15,[a10]32
+.L717:
+	st.w	[a10]28,d15
+.L1127:
+	st.w	[a10]32,d0
+.L487:
+	mov	d9,#1
+.L1128:
+	j	.L104
+.L100:
+.L104:
+	ld.w	d15,[a10]28
+.L1129:
+	mov	d0,#0
+.L1130:
+	cmp.f	d15,d15,d0
+	jnz.t	d15:0,.L105
+.L1131:
+	ld.w	d15,[a10]28
+.L1132:
+	mov	d0,#0
+.L1133:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#2,#1
+.L1134:
+	j	.L106
+.L105:
+	mov	d15,#-1
+.L106:
+	jge	d15,#0,.L107
+.L108:
+	ld.w	d15,[a12]26
+.L1135:
+	movh	d0,#49024
+.L1136:
+	mul.f	d15,d15,d0
+	st.w	[a12]26,d15
+.L1137:
+	mov	d10,#1
+.L107:
+	j	.L109
+.L97:
+	ld.w	d15,[a12]50
+.L1138:
+	itof	d15,d15
+.L1139:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1140:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+.L1141:
+	jeq	d15,#0,.L110
+.L1142:
+	ld.w	d15,[a12]54
+.L1143:
+	itof	d15,d15
+.L1144:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1145:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+	jeq	d15,#0,.L111
+.L112:
+	mov	d2,#0
+.L713:
+	j	.L113
+.L111:
+.L110:
+	ld.w	d15,[a12]50
+.L1146:
+	itof	d15,d15
+.L1147:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1148:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+.L1149:
+	jeq	d15,#0,.L114
+.L1150:
+	ld.w	d15,[a12]54
+.L1151:
+	itof	d15,d15
+.L1152:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1153:
+	cmp.f	d15,d15,d0
+	jz.t	d15:1,.L115
+.L116:
+	ld.w	d15,[a12]50
+.L720:
+	ld.w	d0,[a12]54
+.L1154:
+	st.w	[a12]50,d0
+.L1155:
+	st.w	[a12]54,d15
+.L489:
+	ld.w	d15,[a12]38
+.L721:
+	ld.w	d0,[a12]42
+.L1156:
+	st.w	[a12]38,d0
+.L1157:
+	st.w	[a12]42,d15
+.L491:
+	ld.w	d15,[a12]26
+.L722:
+	ld.w	d0,[a12]30
+.L1158:
+	st.w	[a12]26,d0
+.L1159:
+	st.w	[a12]30,d15
+.L493:
+	ld.w	d0,[a10]28
+.L724:
+	ld.w	d15,[a10]32
+.L723:
+	st.w	[a10]28,d15
+.L1160:
+	st.w	[a10]32,d0
+.L495:
+	mov	d9,#1
+.L115:
+.L114:
+.L109:
+	ld.w	d15,[a12]54
+.L1161:
+	itof	d15,d15
+.L1162:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1163:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+.L1164:
+	jeq	d15,#0,.L117
+.L1165:
+	ld.w	d15,[a10]32
+.L1166:
+	mov	d0,#0
+.L1167:
+	cmp.f	d15,d15,d0
+	jnz.t	d15:0,.L118
+.L1168:
+	ld.w	d15,[a10]32
+.L1169:
+	mov	d0,#0
+.L1170:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#2,#1
+.L1171:
+	j	.L119
+.L118:
+	mov	d15,#-1
+.L119:
+	jlt	d15,#1,.L120
+.L121:
+	ld.w	d15,[a12]30
+.L1172:
+	movh	d0,#49024
+.L1173:
+	mul.f	d15,d15,d0
+	st.w	[a12]30,d15
+.L1174:
+	mov	d10,#1
+.L120:
+.L117:
+	mov	d2,#1
+.L719:
+	jeq	d9,#0,.L122
+.L1175:
+	add	d2,#1
+.L122:
+	jeq	d10,#0,.L123
+.L1176:
+	add	d2,#2
+.L123:
+	j	.L124
+.L124:
+.L113:
+.L102:
+.L75:
+.L45:
+	ret
+.L413:
+	
+___ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb_function_end:
+	.size	_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb,___ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb_function_end-_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb
+.L320:
+	; End of function
+	
+	.sdecl	'.text.CurrentSense._ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb',code,cluster('_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb')
+	.sect	'.text.CurrentSense._ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb'
+	.align	2
+	
+	.global	_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb
+; Function _ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb
+.L267:
+_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb:	.type	func
+	sub.a	a10,#16
+.L725:
+	mov.aa	a12,a4
+.L726:
+	mov	d8,d4
+.L727:
+	mov.aa	a13,a5
+.L728:
+	mov	d9,#0
+.L729:
+	mov	d10,#0
+.L730:
+	ld.w	d0,[a12]46
+.L1181:
+	itof	d0,d0
+.L1182:
+	mov.u	d1,#58368
+	addih	d1,d1,#50752
+.L1183:
+	cmp.f	d15,d0,d1
+	and	d15,#2
+	eq	d15,d15,#0
+.L1184:
+	jeq	d15,#0,.L125
+.L1185:
+	ld.w	d15,[a12]50
+.L1186:
+	itof	d15,d15
+.L1187:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1188:
+	cmp.f	d15,d15,d0
+	jz.t	d15:1,.L126
+.L125:
+.L127:
+	mov	d2,#0
+.L1189:
+	j	.L128
+.L126:
+	mov	d11,#0
+.L731:
+	j	.L129
+.L130:
+	ld.a	a15,[a13]
+.L1190:
+	ld.w	d15,[a15]16
+.L1191:
+	mov.a	a15,d15
+.L1192:
+	movh	d15,#17096
+.L1193:
+	div.f	d15,d8,d15
+.L1194:
+	itof	d0,d11
+.L1195:
+	mul.f	d4,d15,d0
+.L1196:
+	mov	d5,#0
+	mov.aa	a4,a13
+.L733:
+	calli	a15
+.L734:
+	mov	d4,#3
+	call	_Z6_delaym
+.L1197:
+	add	d11,#1
+.L129:
+	mov	d15,#100
+.L1198:
+	jlt	d11,d15,.L130
+.L508:
+	mov	d4,#500
+	call	_Z6_delaym
+.L1199:
+	lea	a4,[a10]0
+.L1200:
+	mov	d4,#100
+	mov.aa	a5,a12
+.L735:
+	call	_ZN12CurrentSense19readAverageCurrentsEi
+.L736:
+	ld.a	a15,[a13]
+.L1201:
+	ld.w	d15,[a15]16
+.L1202:
+	mov.a	a15,d15
+.L1203:
+	mov	d4,#0
+.L1204:
+	mov	d5,#0
+	mov.aa	a4,a13
+.L737:
+	calli	a15
+.L738:
+	ld.w	d15,[a10]
+.L1205:
+	insert	d15,d15,#0,#31,#1
+.L1206:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1207:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+.L1208:
+	jeq	d15,#0,.L131
+.L1209:
+	ld.w	d15,[a10]4
+.L1210:
+	insert	d15,d15,#0,#31,#1
+.L1211:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1212:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+	jeq	d15,#0,.L132
+.L133:
+	mov	d2,#0
+.L1213:
+	j	.L134
+.L132:
+.L131:
+	ld.w	d15,[a10]
+.L1214:
+	insert	d0,d15,#0,#31,#1
+.L1215:
+	ld.w	d15,[a10]4
+.L1216:
+	insert	d15,d15,#0,#31,#1
+.L1217:
+	cmp.f	d15,d0,d15
+	extr.u	d15,d15,#0,#1
+.L1218:
+	jeq	d15,#0,.L135
+.L136:
+	ld.w	d15,[a12]46
+.L739:
+	ld.w	d0,[a12]50
+.L1219:
+	st.w	[a12]46,d0
+.L1220:
+	st.w	[a12]50,d15
+.L510:
+	ld.w	d15,[a12]34
+.L740:
+	ld.w	d0,[a12]38
+.L1221:
+	st.w	[a12]34,d0
+.L1222:
+	st.w	[a12]38,d15
+.L512:
+	ld.w	d15,[a12]22
+.L741:
+	ld.w	d0,[a12]26
+.L1223:
+	st.w	[a12]22,d0
+.L1224:
+	st.w	[a12]26,d15
+.L514:
+	mov	d9,#1
+.L135:
+	ld.w	d15,[a10]
+.L1225:
+	mov	d0,#0
+.L1226:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+.L1227:
+	jeq	d15,#0,.L137
+.L138:
+	ld.w	d15,[a12]22
+.L1228:
+	movh	d0,#49024
+.L1229:
+	mul.f	d15,d15,d0
+	st.w	[a12]22,d15
+.L1230:
+	mov	d10,#1
+.L137:
+	mov	d11,#0
+.L732:
+	j	.L139
+.L140:
+	ld.a	a15,[a13]
+.L1231:
+	ld.w	d15,[a15]16
+.L1232:
+	mov.a	a15,d15
+.L1233:
+	mov	d4,#0
+.L1234:
+	movh	d15,#17096
+.L1235:
+	div.f	d15,d8,d15
+.L1236:
+	itof	d0,d11
+.L1237:
+	mul.f	d5,d15,d0
+	mov.aa	a4,a13
+.L742:
+	calli	a15
+.L743:
+	mov	d4,#3
+	call	_Z6_delaym
+.L1238:
+	add	d11,#1
+.L139:
+	mov	d15,#100
+.L1239:
+	jlt	d11,d15,.L140
+.L516:
+	mov	d4,#500
+	call	_Z6_delaym
+.L1240:
+	lea	a4,[a10]0
+.L1241:
+	mov	d4,#100
+	mov.aa	a5,a12
+.L744:
+	call	_ZN12CurrentSense19readAverageCurrentsEi
+.L745:
+	ld.a	a15,[a13]
+.L1242:
+	ld.w	d15,[a15]16
+.L1243:
+	mov.a	a15,d15
+.L1244:
+	mov	d4,#0
+.L1245:
+	mov	d5,#0
+	mov.aa	a4,a13
+.L746:
+	calli	a15
+.L747:
+	ld.w	d15,[a10]4
+.L1246:
+	insert	d15,d15,#0,#31,#1
+.L1247:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1248:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+.L1249:
+	jeq	d15,#0,.L141
+.L142:
+	mov	d2,#0
+.L1250:
+	j	.L143
+.L141:
+	ld.w	d15,[a10]4
+.L1251:
+	mov	d0,#0
+.L1252:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+.L1253:
+	jeq	d15,#0,.L144
+.L145:
+	ld.w	d15,[a12]26
+.L1254:
+	movh	d0,#49024
+.L1255:
+	mul.f	d15,d15,d0
+	st.w	[a12]26,d15
+.L1256:
+	mov	d10,#1
+.L144:
+	mov	d2,#1
+.L748:
+	jeq	d9,#0,.L146
+.L1257:
+	add	d2,#1
+.L146:
+	jeq	d10,#0,.L147
+.L1258:
+	add	d2,#2
+.L147:
+	j	.L148
+.L148:
+.L143:
+.L134:
+.L128:
+	ret
+.L497:
+	
+___ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb_function_end:
+	.size	_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb,___ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb_function_end-_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb
+.L325:
+	; End of function
+	
+	.sdecl	'.text.CurrentSense._ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb',code,cluster('_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb')
+	.sect	'.text.CurrentSense._ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb'
+	.align	2
+	
+	.global	_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb
+; Function _ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb
+.L269:
+_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb:	.type	func
+	sub.a	a10,#48
+.L749:
+	mov.aa	a12,a4
+.L750:
+	mov	d8,d4
+.L751:
+	mov.aa	a13,a5
+.L752:
+	mov	d9,#0
+.L753:
+	mov	d10,#0
+.L534:
+	mov	d11,#0
+.L754:
+	j	.L149
+.L150:
+	ld.a	a15,[a13]
+.L1263:
+	ld.w	d15,[a15]16
+.L1264:
+	mov.a	a15,d15
+.L1265:
+	movh	d0,#17096
+.L1266:
+	div.f	d0,d8,d0
+.L1267:
+	itof	d1,d11
+.L1268:
+	mul.f	d4,d0,d1
+.L1269:
+	movh	d15,#17096
+.L1270:
+	div.f	d15,d8,d15
+.L1271:
+	itof	d0,d11
+.L1272:
+	mul.f	d5,d15,d0
+.L1273:
+	mov	d6,#0
+	mov.aa	a4,a13
+.L756:
+	calli	a15
+.L757:
+	mov	d4,#3
+	call	_Z6_delaym
+.L1274:
+	add	d11,#1
+.L149:
+	mov	d15,#100
+.L1275:
+	jlt	d11,d15,.L150
+.L535:
+	mov	d4,#500
+	call	_Z6_delaym
+.L1276:
+	lea	a4,[a10]0
+.L1277:
+	mov	d4,#100
+	mov.aa	a5,a12
+.L758:
+	call	_ZN12CurrentSense19readAverageCurrentsEi
+.L759:
+	ld.a	a15,[a13]
+.L1278:
+	ld.w	d15,[a15]16
+.L1279:
+	mov.a	a15,d15
+.L1280:
+	mov	d4,#0
+.L1281:
+	mov	d5,#0
+.L1282:
+	mov	d6,#0
+	mov.aa	a4,a13
+.L760:
+	calli	a15
+.L761:
+	ld.w	d15,[a10]
+.L1283:
+	insert	d15,d15,#0,#31,#1
+.L1284:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1285:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+.L1286:
+	jeq	d15,#0,.L151
+.L1287:
+	ld.w	d15,[a10]4
+.L1288:
+	insert	d15,d15,#0,#31,#1
+.L1289:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1290:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+	jeq	d15,#0,.L152
+.L1291:
+	ld.w	d15,[a10]8
+.L1292:
+	insert	d15,d15,#0,#31,#1
+.L1293:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1294:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+	jeq	d15,#0,.L153
+.L154:
+	mov	d2,#0
+.L1295:
+	j	.L155
+.L153:
+.L152:
+.L151:
+	ld.w	d15,[a10]
+.L1296:
+	insert	d15,d15,#0,#31,#1
+.L1297:
+	st.w	[a10]12,d15
+.L1298:
+	ld.w	d15,[a10]4
+.L1299:
+	insert	d15,d15,#0,#31,#1
+.L1300:
+	st.w	[a10]16,d15
+.L1301:
+	ld.w	d15,[a10]8
+.L1302:
+	insert	d15,d15,#0,#31,#1
+.L1303:
+	st.w	[a10]20,d15
+.L1304:
+	mov	d1,#255
+.L762:
+	mov	d4,#0
+.L763:
+	mov	d3,#0
+.L537:
+	mov	d2,#0
+.L764:
+	j	.L156
+.L157:
+	mul	d15,d2,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d15,[a15]12
+.L1305:
+	extr.u	d15,d15,#23,#8
+	jne	d15,#0,.L158
+.L1306:
+	j	.L159
+.L158:
+	mul	d15,d2,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d15,[a15]12
+.L1307:
+	cmp.f	d0,d15,d4
+	extr.u	d15,d0,#2,#1
+.L1308:
+	jeq	d15,#0,.L160
+.L1309:
+	mul	d15,d2,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d4,[a15]12
+.L1310:
+	extr.u	d1,d2,#0,#8
+.L540:
+	mov	d0,#0
+.L765:
+	j	.L161
+.L162:
+	jne	d2,d0,.L163
+.L1311:
+	j	.L164
+.L163:
+	mul	d15,d0,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d15,[a15]12
+.L1312:
+	extr.u	d15,d15,#23,#8
+	jne	d15,#0,.L165
+.L1313:
+	j	.L166
+.L165:
+	mul	d15,d0,#4
+	addsc.a	a15,a10,d15,#0
+	ld.w	d15,[a15]12
+.L1314:
+	div.f	d5,d4,d15
+.L766:
+	cmp.f	d15,d5,d3
+	extr.u	d15,d15,#2,#1
+.L1315:
+	jeq	d15,#0,.L167
+.L1316:
+	mov	d3,d5
+.L167:
+.L164:
+.L166:
+	add	d0,#1
+.L161:
+	jlt	d0,#3,.L162
+.L160:
+.L159:
+	add	d2,#1
+.L156:
+	jlt	d2,#3,.L157
+.L538:
+	movh	d15,#16320
+.L1317:
+	cmp.f	d15,d3,d15
+	and	d15,#6
+	ne	d15,d15,#0
+.L1318:
+	jeq	d15,#0,.L168
+.L1319:
+	mov	d15,#0
+	jeq	d15,d1,.L169
+.L1320:
+	mov	d15,#1
+	jeq	d15,d1,.L170
+	j	.L171
+.L169:
+.L172:
+	ld.w	d15,[a12]46
+.L767:
+	ld.w	d0,[a12]54
+.L1321:
+	st.w	[a12]46,d0
+.L1322:
+	st.w	[a12]54,d15
+.L543:
+	ld.w	d15,[a12]34
+.L768:
+	ld.w	d0,[a12]42
+.L1323:
+	st.w	[a12]34,d0
+.L1324:
+	st.w	[a12]42,d15
+.L545:
+	ld.w	d15,[a12]22
+.L769:
+	ld.w	d0,[a12]30
+.L1325:
+	st.w	[a12]22,d0
+.L1326:
+	st.w	[a12]30,d15
+.L547:
+	ld.w	d0,[a10]
+.L771:
+	ld.w	d15,[a10]8
+.L770:
+	st.w	[a10],d15
+.L1327:
+	st.w	[a10]8,d0
+.L549:
+	mov	d9,#1
+.L1328:
+	j	.L173
+.L170:
+.L174:
+	ld.w	d15,[a12]50
+.L772:
+	ld.w	d0,[a12]54
+.L1329:
+	st.w	[a12]50,d0
+.L1330:
+	st.w	[a12]54,d15
+.L551:
+	ld.w	d15,[a12]38
+.L773:
+	ld.w	d0,[a12]42
+.L1331:
+	st.w	[a12]38,d0
+.L1332:
+	st.w	[a12]42,d15
+.L553:
+	ld.w	d15,[a12]26
+.L774:
+	ld.w	d0,[a12]30
+.L1333:
+	st.w	[a12]26,d0
+.L1334:
+	st.w	[a12]30,d15
+.L555:
+	ld.w	d0,[a10]4
+.L776:
+	ld.w	d15,[a10]8
+.L775:
+	st.w	[a10]4,d15
+.L1335:
+	st.w	[a10]8,d0
+.L557:
+	mov	d9,#1
+.L1336:
+	j	.L175
+.L171:
+.L173:
+.L175:
+	ld.w	d15,[a10]8
+.L1337:
+	mov	d0,#0
+.L1338:
+	cmp.f	d15,d15,d0
+	jnz.t	d15:0,.L176
+.L1339:
+	ld.w	d15,[a10]8
+.L1340:
+	mov	d0,#0
+.L1341:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#2,#1
+.L1342:
+	j	.L177
+.L176:
+	mov	d15,#-1
+.L177:
+	jlt	d15,#1,.L178
+.L179:
+	ld.w	d15,[a12]30
+.L1343:
+	movh	d0,#49024
+.L1344:
+	mul.f	d15,d15,d0
+	st.w	[a12]30,d15
+.L1345:
+	mov	d10,#1
+.L178:
+	j	.L180
+.L168:
+.L181:
+	ld.w	d15,[a12]54
+.L1346:
+	itof	d15,d15
+.L1347:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1348:
+	cmp.f	d15,d15,d0
+	and	d15,#2
+	eq	d15,d15,#0
+.L1349:
+	jeq	d15,#0,.L182
+.L1350:
+	ld.w	d15,[a12]46
+.L1351:
+	itof	d15,d15
+.L1352:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1353:
+	cmp.f	d15,d15,d0
+	jz.t	d15:1,.L183
+.L184:
+	ld.w	d15,[a12]46
+.L777:
+	ld.w	d0,[a12]54
+.L1354:
+	st.w	[a12]46,d0
+.L1355:
+	st.w	[a12]54,d15
+.L559:
+	ld.w	d15,[a12]34
+.L778:
+	ld.w	d0,[a12]42
+.L1356:
+	st.w	[a12]34,d0
+.L1357:
+	st.w	[a12]42,d15
+.L561:
+	ld.w	d15,[a12]22
+.L779:
+	ld.w	d0,[a12]30
+.L1358:
+	st.w	[a12]22,d0
+.L1359:
+	st.w	[a12]30,d15
+.L563:
+	ld.w	d0,[a10]
+.L781:
+	ld.w	d15,[a10]8
+.L780:
+	st.w	[a10],d15
+.L1360:
+	st.w	[a10]8,d0
+.L565:
+	mov	d9,#1
+.L1361:
+	j	.L185
+.L183:
+	ld.w	d15,[a12]50
+.L1362:
+	itof	d15,d15
+.L1363:
+	mov.u	d0,#58368
+	addih	d0,d0,#50752
+.L1364:
+	cmp.f	d15,d15,d0
+	jz.t	d15:1,.L186
+.L187:
+	ld.w	d15,[a12]50
+.L782:
+	ld.w	d0,[a12]54
+.L1365:
+	st.w	[a12]50,d0
+.L1366:
+	st.w	[a12]54,d15
+.L567:
+	ld.w	d15,[a12]38
+.L783:
+	ld.w	d0,[a12]42
+.L1367:
+	st.w	[a12]38,d0
+.L1368:
+	st.w	[a12]42,d15
+.L569:
+	ld.w	d15,[a12]26
+.L784:
+	ld.w	d0,[a12]30
+.L1369:
+	st.w	[a12]26,d0
+.L1370:
+	st.w	[a12]30,d15
+.L571:
+	ld.w	d0,[a10]4
+.L786:
+	ld.w	d15,[a10]8
+.L785:
+	st.w	[a10]4,d15
+.L1371:
+	st.w	[a10]8,d0
+.L573:
+	mov	d9,#1
+.L186:
+.L185:
+.L182:
+.L180:
+	mov	d11,#0
+.L755:
+	j	.L188
+.L189:
+	ld.a	a15,[a13]
+.L1372:
+	ld.w	d15,[a15]16
+.L1373:
+	mov.a	a15,d15
+.L1374:
+	movh	d15,#17096
+.L1375:
+	div.f	d15,d8,d15
+.L1376:
+	itof	d0,d11
+.L1377:
+	mul.f	d4,d15,d0
+.L1378:
+	mov	d5,#0
+.L1379:
+	mov	d6,#0
+	mov.aa	a4,a13
+.L788:
+	calli	a15
+.L789:
+	mov	d4,#3
+	call	_Z6_delaym
+.L1380:
+	add	d11,#1
+.L188:
+	mov	d15,#100
+.L1381:
+	jlt	d11,d15,.L189
+.L575:
+	mov	d4,#500
+	call	_Z6_delaym
+.L1382:
+	lea	a4,[a10]0
+.L1383:
+	mov	d4,#100
+	mov.aa	a5,a12
+.L790:
+	call	_ZN12CurrentSense19readAverageCurrentsEi
+.L791:
+	ld.a	a15,[a13]
+.L1384:
+	ld.w	d15,[a15]16
+.L1385:
+	mov.a	a15,d15
+.L1386:
+	mov	d4,#0
+.L1387:
+	mov	d5,#0
+.L1388:
+	mov	d6,#0
+	mov.aa	a4,a13
+.L792:
+	calli	a15
+.L793:
+	ld.w	d15,[a10]
+.L1389:
+	insert	d15,d15,#0,#31,#1
+.L1390:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1391:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+.L1392:
+	jeq	d15,#0,.L190
+.L1393:
+	ld.w	d15,[a10]4
+.L1394:
+	insert	d15,d15,#0,#31,#1
+.L1395:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1396:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+	jeq	d15,#0,.L191
+.L1397:
+	ld.w	d15,[a10]8
+.L1398:
+	insert	d15,d15,#0,#31,#1
+.L1399:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1400:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+	jeq	d15,#0,.L192
+.L193:
+	mov	d2,#0
+.L1401:
+	j	.L194
+.L192:
+.L191:
+.L190:
+	ld.w	d15,[a10]
+.L1402:
+	insert	d15,d15,#0,#31,#1
+.L1403:
+	st.w	[a10]24,d15
+.L1404:
+	ld.w	d15,[a10]4
+.L1405:
+	insert	d15,d15,#0,#31,#1
+.L1406:
+	st.w	[a10]28,d15
+.L1407:
+	ld.w	d15,[a10]8
+.L1408:
+	insert	d15,d15,#0,#31,#1
+.L1409:
+	st.w	[a10]32,d15
+.L1410:
+	ld.w	d15,[a10]
+.L1411:
+	extr.u	d15,d15,#23,#8
+	ne	d15,d15,#0
+	jeq	d15,#0,.L195
+.L1412:
+	ld.w	d15,[a10]8
+	extr.u	d15,d15,#23,#8
+	ne	d15,d15,#0
+	jeq	d15,#0,.L196
+.L1413:
+	ld.w	d15,[a10]
+.L1414:
+	insert	d0,d15,#0,#31,#1
+.L1415:
+	ld.w	d15,[a10]8
+.L1416:
+	insert	d15,d15,#0,#31,#1
+.L1417:
+	sub.f	d15,d0,d15
+.L1418:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1419:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#2,#1
+.L1420:
+	jeq	d15,#0,.L197
+.L198:
+	mov	d2,#0
+.L1421:
+	j	.L199
+.L197:
+	j	.L200
+.L196:
+.L195:
+	ld.w	d15,[a10]4
+.L1422:
+	extr.u	d15,d15,#23,#8
+	ne	d15,d15,#0
+	jeq	d15,#0,.L201
+.L1423:
+	ld.w	d15,[a10]8
+	extr.u	d15,d15,#23,#8
+	ne	d15,d15,#0
+	jeq	d15,#0,.L202
+.L1424:
+	ld.w	d15,[a10]
+.L1425:
+	insert	d0,d15,#0,#31,#1
+.L1426:
+	ld.w	d15,[a10]8
+.L1427:
+	insert	d15,d15,#0,#31,#1
+.L1428:
+	sub.f	d15,d0,d15
+.L1429:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1430:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#2,#1
+.L1431:
+	jeq	d15,#0,.L203
+.L204:
+	mov	d2,#0
+.L1432:
+	j	.L205
+.L203:
+.L206:
+	ld.w	d15,[a12]46
+.L794:
+	ld.w	d0,[a12]50
+.L1433:
+	st.w	[a12]46,d0
+.L1434:
+	st.w	[a12]50,d15
+.L577:
+	ld.w	d15,[a12]34
+.L795:
+	ld.w	d0,[a12]38
+.L1435:
+	st.w	[a12]34,d0
+.L1436:
+	st.w	[a12]38,d15
+.L579:
+	ld.w	d15,[a12]22
+.L796:
+	ld.w	d0,[a12]26
+.L1437:
+	st.w	[a12]22,d0
+.L1438:
+	st.w	[a12]26,d15
+.L581:
+	ld.w	d0,[a10]
+.L798:
+	ld.w	d15,[a10]4
+.L797:
+	st.w	[a10],d15
+.L1439:
+	st.w	[a10]4,d0
+.L583:
+	mov	d9,#1
+.L1440:
+	j	.L207
+.L202:
+.L201:
+	ld.w	d15,[a10]
+.L1441:
+	extr.u	d15,d15,#23,#8
+	ne	d15,d15,#0
+	jeq	d15,#0,.L208
+.L1442:
+	ld.w	d15,[a10]4
+	extr.u	d15,d15,#23,#8
+	ne	d15,d15,#0
+	jeq	d15,#0,.L209
+.L1443:
+	ld.w	d15,[a10]
+.L1444:
+	insert	d0,d15,#0,#31,#1
+.L1445:
+	ld.w	d15,[a10]4
+.L1446:
+	insert	d15,d15,#0,#31,#1
+.L1447:
+	sub.f	d15,d0,d15
+.L1448:
+	insert	d15,d15,#0,#31,#1
+.L1449:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1450:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+.L1451:
+	jeq	d15,#0,.L210
+.L211:
+	mov	d2,#0
+.L1452:
+	j	.L212
+.L210:
+	ld.w	d15,[a10]
+.L1453:
+	insert	d0,d15,#0,#31,#1
+.L1454:
+	ld.w	d15,[a10]4
+.L1455:
+	insert	d15,d15,#0,#31,#1
+.L1456:
+	cmp.f	d15,d0,d15
+	extr.u	d15,d15,#0,#1
+.L1457:
+	jeq	d15,#0,.L213
+.L214:
+	ld.w	d15,[a12]46
+.L799:
+	ld.w	d0,[a12]50
+.L1458:
+	st.w	[a12]46,d0
+.L1459:
+	st.w	[a12]50,d15
+.L585:
+	ld.w	d15,[a12]34
+.L800:
+	ld.w	d0,[a12]38
+.L1460:
+	st.w	[a12]34,d0
+.L1461:
+	st.w	[a12]38,d15
+.L587:
+	ld.w	d15,[a12]22
+.L801:
+	ld.w	d0,[a12]26
+.L1462:
+	st.w	[a12]22,d0
+.L1463:
+	st.w	[a12]26,d15
+.L589:
+	ld.w	d0,[a10]
+.L803:
+	ld.w	d15,[a10]4
+.L802:
+	st.w	[a10],d15
+.L1464:
+	st.w	[a10]4,d0
+.L591:
+	mov	d9,#1
+.L213:
+.L209:
+.L208:
+.L207:
+.L200:
+	ld.w	d15,[a10]
+.L1465:
+	mov	d0,#0
+.L1466:
+	cmp.f	d15,d15,d0
+	jnz.t	d15:0,.L215
+.L1467:
+	ld.w	d15,[a10]
+.L1468:
+	mov	d0,#0
+.L1469:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#2,#1
+.L1470:
+	j	.L216
+.L215:
+	mov	d15,#-1
+.L216:
+	jge	d15,#0,.L217
+.L218:
+	ld.w	d15,[a12]22
+.L1471:
+	movh	d0,#49024
+.L1472:
+	mul.f	d15,d15,d0
+	st.w	[a12]22,d15
+.L1473:
+	mov	d10,#1
+.L217:
+	mov	d11,#0
+.L787:
+	j	.L219
+.L220:
+	ld.a	a15,[a13]
+.L1474:
+	ld.w	d15,[a15]16
+.L1475:
+	mov.a	a15,d15
+.L1476:
+	mov	d4,#0
+.L1477:
+	movh	d15,#17096
+.L1478:
+	div.f	d15,d8,d15
+.L1479:
+	itof	d0,d11
+.L1480:
+	mul.f	d5,d15,d0
+.L1481:
+	mov	d6,#0
+	mov.aa	a4,a13
+.L804:
+	calli	a15
+.L805:
+	mov	d4,#3
+	call	_Z6_delaym
+.L1482:
+	add	d11,#1
+.L219:
+	mov	d15,#100
+.L1483:
+	jlt	d11,d15,.L220
+.L593:
+	mov	d4,#500
+	call	_Z6_delaym
+.L1484:
+	lea	a4,[a10]0
+.L1485:
+	mov	d4,#100
+	mov.aa	a5,a12
+.L806:
+	call	_ZN12CurrentSense19readAverageCurrentsEi
+.L807:
+	ld.a	a15,[a13]
+.L1486:
+	ld.w	d15,[a15]16
+.L1487:
+	mov.a	a15,d15
+.L1488:
+	mov	d4,#0
+.L1489:
+	mov	d5,#0
+.L1490:
+	mov	d6,#0
+	mov.aa	a4,a13
+.L808:
+	calli	a15
+.L809:
+	ld.w	d15,[a10]
+.L1491:
+	insert	d15,d15,#0,#31,#1
+.L1492:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1493:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+.L1494:
+	jeq	d15,#0,.L221
+.L1495:
+	ld.w	d15,[a10]4
+.L1496:
+	insert	d15,d15,#0,#31,#1
+.L1497:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1498:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+	jeq	d15,#0,.L222
+.L1499:
+	ld.w	d15,[a10]8
+.L1500:
+	insert	d15,d15,#0,#31,#1
+.L1501:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1502:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+	jeq	d15,#0,.L223
+.L224:
+	mov	d2,#0
+.L1503:
+	j	.L225
+.L223:
+.L222:
+.L221:
+	ld.w	d15,[a10]
+.L1504:
+	insert	d15,d15,#0,#31,#1
+.L1505:
+	st.w	[a10]36,d15
+.L1506:
+	ld.w	d15,[a10]4
+.L1507:
+	insert	d15,d15,#0,#31,#1
+.L1508:
+	st.w	[a10]40,d15
+.L1509:
+	ld.w	d15,[a10]8
+.L1510:
+	insert	d15,d15,#0,#31,#1
+.L1511:
+	st.w	[a10]44,d15
+.L1512:
+	ld.w	d15,[a10]4
+.L1513:
+	extr.u	d15,d15,#23,#8
+	ne	d15,d15,#0
+	jeq	d15,#0,.L226
+.L1514:
+	ld.w	d15,[a10]8
+	extr.u	d15,d15,#23,#8
+	ne	d15,d15,#0
+	jeq	d15,#0,.L227
+.L1515:
+	ld.w	d15,[a10]4
+.L1516:
+	insert	d0,d15,#0,#31,#1
+.L1517:
+	ld.w	d15,[a10]8
+.L1518:
+	insert	d15,d15,#0,#31,#1
+.L1519:
+	sub.f	d15,d0,d15
+.L1520:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1521:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#2,#1
+.L1522:
+	jeq	d15,#0,.L228
+.L229:
+	mov	d2,#0
+.L1523:
+	j	.L230
+.L228:
+	j	.L231
+.L227:
+.L226:
+	ld.w	d15,[a10]
+.L1524:
+	extr.u	d15,d15,#23,#8
+	ne	d15,d15,#0
+	jeq	d15,#0,.L232
+.L1525:
+	ld.w	d15,[a10]4
+	extr.u	d15,d15,#23,#8
+	ne	d15,d15,#0
+	jeq	d15,#0,.L233
+.L1526:
+	ld.w	d15,[a10]
+.L1527:
+	insert	d0,d15,#0,#31,#1
+.L1528:
+	ld.w	d15,[a10]4
+.L1529:
+	insert	d15,d15,#0,#31,#1
+.L1530:
+	sub.f	d15,d0,d15
+.L1531:
+	insert	d15,d15,#0,#31,#1
+.L1532:
+	mov.u	d0,#52429
+	addih	d0,d0,#15820
+.L1533:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#0,#1
+.L1534:
+	jeq	d15,#0,.L234
+.L235:
+	mov	d2,#0
+.L1535:
+	j	.L236
+.L234:
+.L233:
+.L232:
+.L231:
+	ld.w	d15,[a10]4
+.L1536:
+	mov	d0,#0
+.L1537:
+	cmp.f	d15,d15,d0
+	jnz.t	d15:0,.L237
+.L1538:
+	ld.w	d15,[a10]4
+.L1539:
+	mov	d0,#0
+.L1540:
+	cmp.f	d15,d15,d0
+	extr.u	d15,d15,#2,#1
+.L1541:
+	j	.L238
+.L237:
+	mov	d15,#-1
+.L238:
+	jge	d15,#0,.L239
+.L240:
+	ld.w	d15,[a12]26
+.L1542:
+	movh	d0,#49024
+.L1543:
+	mul.f	d15,d15,d0
+	st.w	[a12]26,d15
+.L1544:
+	mov	d10,#1
+.L239:
+	mov	d2,#1
+.L810:
+	jeq	d9,#0,.L241
+.L1545:
+	add	d2,#1
+.L241:
+	jeq	d10,#0,.L242
+.L1546:
+	add	d2,#2
+.L242:
+	j	.L243
+.L243:
+.L236:
+.L230:
+.L225:
+.L212:
+.L205:
+.L199:
+.L194:
+.L155:
+	ret
+.L518:
+	
+___ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb_function_end:
+	.size	_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb,___ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb_function_end-_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb
+.L330:
+	; End of function
+	
+	.sdecl	'.text.CurrentSense._ZN12CurrentSense19readAverageCurrentsEi',code,cluster('_ZN12CurrentSense19readAverageCurrentsEi')
+	.sect	'.text.CurrentSense._ZN12CurrentSense19readAverageCurrentsEi'
+	.align	2
+	
+	.global	_ZN12CurrentSense19readAverageCurrentsEi
+; Function _ZN12CurrentSense19readAverageCurrentsEi
+.L271:
+_ZN12CurrentSense19readAverageCurrentsEi:	.type	func
+	sub.a	a10,#24
+.L811:
+	mov.aa	a12,a4
+	mov.aa	a13,a5
+.L812:
+	mov	d8,d4
+.L813:
+	lea	a4,[a10]0
+.L1551:
+	ld.a	a15,[a13]
+.L1552:
+	ld.w	d15,[a15]8
+.L1553:
+	mov.a	a15,d15
+.L1554:
+	mov.aa	a5,a13
+	calli	a15
+.L600:
+	mov	d9,#0
+.L814:
+	j	.L244
+.L245:
+	lea	a4,[a10]12
+.L1555:
+	ld.a	a15,[a13]
+.L1556:
+	ld.w	d15,[a15]8
+.L1557:
+	mov.a	a15,d15
+.L1558:
+	mov.aa	a5,a13
+.L815:
+	calli	a15
+.L816:
+	ld.w	d0,[a10]
+.L1559:
+	mov.u	d1,#39322
+	addih	d1,d1,#16153
+.L1560:
+	ld.w	d15,[a10]12
+.L1561:
+	mov.u	d2,#52429
+	addih	d2,d2,#16076
+.L1562:
+	mul.f	d15,d15,d2
+.L1563:
+	madd.f	d15,d15,d0,d1
+.L1564:
+	st.w	[a10],d15
+.L1565:
+	ld.w	d0,[a10]4
+.L1566:
+	mov.u	d1,#39322
+	addih	d1,d1,#16153
+.L1567:
+	ld.w	d15,[a10]16
+.L1568:
+	mov.u	d2,#52429
+	addih	d2,d2,#16076
+.L1569:
+	mul.f	d15,d15,d2
+.L1570:
+	madd.f	d15,d15,d0,d1
+.L1571:
+	st.w	[a10]4,d15
+.L1572:
+	ld.w	d0,[a10]8
+.L1573:
+	mov.u	d1,#39322
+	addih	d1,d1,#16153
+.L1574:
+	ld.w	d15,[a10]20
+.L1575:
+	mov.u	d2,#52429
+	addih	d2,d2,#16076
+.L1576:
+	mul.f	d15,d15,d2
+.L1577:
+	madd.f	d15,d15,d0,d1
+.L1578:
+	st.w	[a10]8,d15
+.L1579:
+	mov	d4,#3
+	call	_Z6_delaym
+.L603:
+	add	d9,#1
+.L244:
+	jlt	d9,d8,.L245
+.L601:
+	lea	a15,[a10]0
+.L1580:
+	mov.a	a2,#2
+.L246:
+	ld.w	d15,[a15+]
+	st.w	[a12+],d15
+	loop	a2,.L246
+	j	.L247
+.L247:
+	ret
+.L595:
+	
+___ZN12CurrentSense19readAverageCurrentsEi_function_end:
+	.size	_ZN12CurrentSense19readAverageCurrentsEi,___ZN12CurrentSense19readAverageCurrentsEi_function_end-_ZN12CurrentSense19readAverageCurrentsEi
+.L335:
+	; End of function
+	
+	.sdecl	'.rodata.CurrentSense._ZTV12CurrentSense',data,rom,cluster('_ZTV12CurrentSense')
+	.sect	'.rodata.CurrentSense._ZTV12CurrentSense'
+	.global	_ZTV12CurrentSense
+	.align	2
+_ZTV12CurrentSense:	.type	object
+	.size	_ZTV12CurrentSense,32
+	.space	4
+	.word	_ZTI12CurrentSense,__cxa_pure_virtual,_ZN12CurrentSense11driverAlignEfb,__cxa_pure_virtual
+	.word	_ZN12CurrentSense12getDCCurrentEf,_ZN12CurrentSense6enableEv,_ZN12CurrentSense7disableEv
+	.sdecl	'.rodata.CurrentSense._ZTI12CurrentSense',data,rom,cluster('_ZTI12CurrentSense')
+	.sect	'.rodata.CurrentSense._ZTI12CurrentSense'
+	.global	_ZTI12CurrentSense
+	.align	4
+_ZTI12CurrentSense:	.type	object
+	.size	_ZTI12CurrentSense,8
+	.word	_ZTVN10__cxxabiv117__class_type_infoE+8,_ZTS12CurrentSense
+	.sdecl	'.rodata.CurrentSense._ZTS12CurrentSense',data,rom,cluster('_ZTS12CurrentSense')
+	.sect	'.rodata.CurrentSense._ZTS12CurrentSense'
+	.global	_ZTS12CurrentSense
+_ZTS12CurrentSense:	.type	object
+	.size	_ZTS12CurrentSense,15
+	.byte	49,50,67,117,114,114,101,110
+	.byte	116,83,101,110
+	.byte	115,101
+	.space	1
+	.calls	'__INDIRECT__','__cxa_pure_virtual'
+	.calls	'__INDIRECT__','_ZN12CurrentSense11driverAlignEfb'
+	.calls	'__INDIRECT__','_ZN12CurrentSense12getDCCurrentEf'
+	.calls	'__INDIRECT__','_ZN12CurrentSense6enableEv'
+	.calls	'__INDIRECT__','_ZN12CurrentSense7disableEv'
+	.calls	'_ZN12CurrentSense10linkDriverEP9FOCDriver','__INDIRECT__'
+	.calls	'_ZN12CurrentSense11driverAlignEfb','_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb'
+	.calls	'_ZN12CurrentSense11driverAlignEfb','_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb'
+	.calls	'_ZN12CurrentSense11driverAlignEfb','_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb'
+	.calls	'_ZN12CurrentSense12getDCCurrentEf','__INDIRECT__'
+	.calls	'_ZN12CurrentSense12getDCCurrentEf','_ZN12CurrentSense13getABCurrentsE7Phase_s'
+	.calls	'_ZN12CurrentSense12getDCCurrentEf','_Z7_sincosfPfS_'
+	.calls	'_ZN12CurrentSense12getDCCurrentEf','_Z11_sqrtApproxf'
+	.calls	'_ZN12CurrentSense14getFOCCurrentsEf','__INDIRECT__'
+	.calls	'_ZN12CurrentSense14getFOCCurrentsEf','_ZN12CurrentSense13getABCurrentsE7Phase_s'
+	.calls	'_ZN12CurrentSense14getFOCCurrentsEf','_ZN12CurrentSense13getDQCurrentsE4AB_sf'
+	.calls	'_ZN12CurrentSense13getDQCurrentsE4AB_sf','_Z7_sincosfPfS_'
+	.calls	'_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb','__INDIRECT__'
+	.calls	'_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb','_Z6_delaym'
+	.calls	'_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb','_ZN12CurrentSense19readAverageCurrentsEi'
+	.calls	'_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb','__INDIRECT__'
+	.calls	'_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb','_Z6_delaym'
+	.calls	'_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb','_ZN12CurrentSense19readAverageCurrentsEi'
+	.calls	'_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb','__INDIRECT__'
+	.calls	'_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb','_Z6_delaym'
+	.calls	'_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb','_ZN12CurrentSense19readAverageCurrentsEi'
+	.calls	'_ZN12CurrentSense19readAverageCurrentsEi','__INDIRECT__'
+	.calls	'_ZN12CurrentSense19readAverageCurrentsEi','_Z6_delaym'
+	.calls	'_ZN12CurrentSense10linkDriverEP9FOCDriver','',0
+	.calls	'_ZN12CurrentSense11driverAlignEfb','',0
+	.calls	'_ZN12CurrentSense12getDCCurrentEf','',32
+	.calls	'_ZN12CurrentSense14getFOCCurrentsEf','',24
+	.calls	'_ZN12CurrentSense13getABCurrentsE7Phase_s','',0
+	.calls	'_ZN12CurrentSense13getDQCurrentsE4AB_sf','',8
+	.calls	'_ZN12CurrentSense6enableEv','',0
+	.calls	'_ZN12CurrentSense7disableEv','',0
+	.calls	'_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb','',48
+	.calls	'_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb','',16
+	.calls	'_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb','',48
+	.extern	_Z7_sincosfPfS_
+	.extern	_Z11_sqrtApproxf
+	.extern	_Z6_delaym
+	.extern	__cxa_pure_virtual
+	.weak	_ZTV12CurrentSense
+	.weak	_ZTI12CurrentSense
+	.extern	_ZTVN10__cxxabiv117__class_type_infoE
+	.weak	_ZTS12CurrentSense
+	.extern	__INDIRECT__
+	.calls	'_ZN12CurrentSense19readAverageCurrentsEi','',24
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L273:
+	.word	1650
+	.half	3
+	.word	.L274
+	.byte	4
+.L272:
+	.byte	1
+	.byte	'../simplefoc_current_sense_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L275
+.L351:
+	.byte	2
+	.byte	'float',0,4,4,3
+	.byte	'__fabs',0
+	.word	229
+	.byte	1,1,1,1,4
+	.byte	'd',0
+	.word	229
+	.byte	0,5
+	.word	229
+	.byte	6
+	.byte	'_Z7_sincosfPfS_',0,1,93,13,1,1,1,1,7
+	.byte	'a',0,1,93,35
+	.word	229
+	.byte	7
+	.byte	's',0,1,93,45
+	.word	262
+	.byte	7
+	.byte	'c',0,1,93,55
+	.word	262
+	.byte	0,8
+	.byte	'_Z11_sqrtApproxf',0,1,122,14
+	.word	229
+	.byte	1,1,1,1,7
+	.byte	'value',0,1,122,37
+	.word	229
+	.byte	0,2
+	.byte	'unsigned long int',0,4,7,6
+	.byte	'_Z6_delaym',0,2,13,13,1,1,1,1,7
+	.byte	'ms',0,2,13,38
+	.word	366
+	.byte	0,9
+	.byte	'__cxa_pure_virtual',0,2,13,55,1,1,1
+.L347:
+	.byte	2
+	.byte	'int',0,4,5,10
+	.word	444
+	.byte	5
+	.word	451
+.L353:
+	.byte	2
+	.byte	'char',0,1,6,2
+	.byte	'long int',0,4,5,11
+	.byte	'void',0,5
+	.word	481
+	.byte	12
+	.byte	'FOCDriver',0,4,25,8,28,13
+	.byte	'__vptr',0
+	.word	456
+	.byte	4,2,35,0,13
+	.byte	'pwm_frequency',0
+	.word	469
+	.byte	4,2,35,4,13
+	.byte	'voltage_power_supply',0
+	.word	229
+	.byte	4,2,35,8,13
+	.byte	'voltage_limit',0
+	.word	229
+	.byte	4,2,35,12,13
+	.byte	'initialized',0
+	.word	461
+	.byte	1,2,35,16,13
+	.byte	'params',0
+	.word	487
+	.byte	4,2,35,20,13
+	.byte	'enable_active_high',0
+	.word	461
+	.byte	1,2,35,24,0
+.L345:
+	.byte	5
+	.word	492
+	.byte	14
+	.byte	'DriverType',0,4,15,6,1,15
+	.byte	'UnknownDriver',0,0,15
+	.byte	'BLDC',0,1,15
+	.byte	'Stepper',0,2,15
+	.byte	'Hybrid',0,3,0,12
+	.byte	'CurrentSense',0,3,14,8,60,13
+	.byte	'__vptr',0
+	.word	456
+	.byte	4,2,35,0,13
+	.byte	'skip_align',0
+	.word	461
+	.byte	1,2,35,4,13
+	.byte	'driver',0
+	.word	665
+	.byte	4,2,35,8,13
+	.byte	'initialized',0
+	.word	461
+	.byte	1,2,35,12,13
+	.byte	'params',0
+	.word	487
+	.byte	4,2,35,16,13
+	.byte	'driver_type',0
+	.word	670
+	.byte	1,2,35,20,13
+	.byte	'gain_a',0
+	.word	229
+	.byte	4,2,35,22,13
+	.byte	'gain_b',0
+	.word	229
+	.byte	4,2,35,26,13
+	.byte	'gain_c',0
+	.word	229
+	.byte	4,2,35,30,13
+	.byte	'offset_ia',0
+	.word	229
+	.byte	4,2,35,34,13
+	.byte	'offset_ib',0
+	.word	229
+	.byte	4,2,35,38,13
+	.byte	'offset_ic',0
+	.word	229
+	.byte	4,2,35,42,13
+	.byte	'pinA',0
+	.word	444
+	.byte	4,2,35,46,13
+	.byte	'pinB',0
+	.word	444
+	.byte	4,2,35,50,13
+	.byte	'pinC',0
+	.word	444
+	.byte	4,2,35,54,0,5
+	.word	729
+.L343:
+	.byte	10
+	.word	1005
+.L349:
+	.byte	10
+	.word	1005
+.L357:
+	.byte	10
+	.word	1005
+.L360:
+	.byte	12
+	.byte	'Phase_s',0,1,64,8,12,13
+	.byte	'a',0
+	.word	229
+	.byte	4,2,35,0,13
+	.byte	'b',0
+	.word	229
+	.byte	4,2,35,4,13
+	.byte	'c',0
+	.word	229
+	.byte	4,2,35,8,0
+.L362:
+	.byte	12
+	.byte	'AB_s',0,1,55,8,8,13
+	.byte	'alpha',0
+	.word	229
+	.byte	4,2,35,0,13
+	.byte	'beta',0
+	.word	229
+	.byte	4,2,35,4,0
+.L368:
+	.byte	12
+	.byte	'DQ_s',0,1,43,8,8,13
+	.byte	'd',0
+	.word	229
+	.byte	4,2,35,0,13
+	.byte	'q',0
+	.word	229
+	.byte	4,2,35,4,0
+.L370:
+	.byte	10
+	.word	1005
+.L377:
+	.byte	10
+	.word	1005
+.L400:
+	.byte	10
+	.word	1005
+.L408:
+	.byte	10
+	.word	1005
+.L411:
+	.byte	10
+	.word	1005
+.L414:
+	.byte	10
+	.word	1005
+	.byte	12
+	.byte	'BLDCDriver',0,5,7,8,40,13
+	.byte	'__b_9FOCDriver',0
+	.word	492
+	.byte	28,2,35,0,13
+	.byte	'dc_a',0
+	.word	229
+	.byte	4,2,35,28,13
+	.byte	'dc_b',0
+	.word	229
+	.byte	4,2,35,32,13
+	.byte	'dc_c',0
+	.word	229
+	.byte	4,2,35,36,0
+.L417:
+	.byte	5
+	.word	1175
+.L424:
+	.byte	16,12
+	.word	229
+	.byte	17,2,0
+.L426:
+	.byte	2
+	.byte	'unsigned char',0,1,8
+.L498:
+	.byte	10
+	.word	1005
+	.byte	12
+	.byte	'StepperDriver',0,6,7,8,28,13
+	.byte	'__b_9FOCDriver',0
+	.word	492
+	.byte	28,2,35,0,0
+.L501:
+	.byte	5
+	.word	1294
+.L519:
+	.byte	10
+	.word	1005
+.L596:
+	.byte	10
+	.word	1005
+	.byte	9
+	.byte	'__INDIRECT__',0,7,1,1,1,1,1,18,1,5
+	.word	1373
+	.byte	19
+	.byte	'__codeptr',0,7,1,1
+	.word	1375
+	.byte	19
+	.byte	'DQCurrent_s',0,1,52,21
+	.word	1112
+	.byte	19
+	.byte	'ABCurrent_s',0,1,61,21
+	.word	1072
+	.byte	19
+	.byte	'PhaseCurrent_s',0,1,71,24
+	.word	1025
+	.byte	16,32
+	.word	444
+	.byte	17,7,0
+.L605:
+	.byte	10
+	.word	1461
+	.byte	10
+	.word	461
+	.byte	5
+	.word	1475
+	.byte	12
+	.byte	'__type_info',0,3,14,29,8,13
+	.byte	'__vptr',0
+	.word	456
+	.byte	4,2,35,0,13
+	.byte	'__name',0
+	.word	1480
+	.byte	4,2,35,4,0,12
+	.byte	'__class_type_info',0,3,14,91,8,13
+	.byte	'base',0
+	.word	1485
+	.byte	8,2,35,0,0
+.L606:
+	.byte	10
+	.word	1535
+	.byte	20
+	.word	444
+	.byte	21,0,10
+	.word	1578
+	.byte	22
+	.byte	'_ZTVN10__cxxabiv117__class_type_infoE',0,8,183,1,76
+	.word	1585
+	.byte	1,1,16,15
+	.word	461
+	.byte	17,14,0
+.L607:
+	.byte	10
+	.word	1639
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L274:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,46,1,3,8,73,19,54,15,39,12
+	.byte	63,12,60,12,0,0,4,5,0,3,8,73,19,0,0,5,15,0,73,19,0,0,6,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60
+	.byte	12,0,0,7,5,0,3,8,58,15,59,15,57,15,73,19,0,0,8,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12
+	.byte	0,0,9,46,0,3,8,58,15,59,15,57,15,54,15,63,12,60,12,0,0,10,38,0,73,19,0,0,11,59,0,3,8,0,0,12,19,1,3,8,58
+	.byte	15,59,15,57,15,11,15,0,0,13,13,0,3,8,73,19,11,15,56,9,0,0,14,4,1,3,8,58,15,59,15,57,15,11,15,0,0,15,40
+	.byte	0,3,8,28,13,0,0,16,1,1,11,15,73,19,0,0,17,33,0,47,15,0,0,18,21,0,54,15,0,0,19,22,0,3,8,58,15,59,15,57
+	.byte	15,73,19,0,0,20,1,1,73,19,0,0,21,33,0,0,0,22,52,0,3,8,58,15,59,15,57,15,73,19,63,12,60,12,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L275:
+	.word	.L818-.L817
+.L817:
+	.half	3
+	.word	.L820-.L819
+.L819:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/../foc_utils.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/../time_utils.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/FOCDriver.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/BLDCDriver.h',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/StepperDriver.h',0,0,0,0
+	.byte	'../simplefoc_current_sense_ads.cpp',0,0,0,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0,0,0,0,0
+.L820:
+.L818:
+	.sdecl	'.debug_info',debug,cluster('_ZN12CurrentSense10linkDriverEP9FOCDriver')
+	.sect	'.debug_info'
+.L276:
+	.word	395
+	.half	3
+	.word	.L277
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L279,.L278
+	.byte	2
+	.word	.L272
+	.byte	3
+	.byte	'_ZN12CurrentSense10linkDriverEP9FOCDriver',0,1,127,6,1,1,1
+	.word	.L249,.L342,.L248
+	.byte	4
+	.byte	'this',0,1,127,76
+	.word	.L343,.L344
+	.byte	4
+	.byte	'__5137_42__driver',0,1,127,101
+	.word	.L345,.L346
+	.byte	5
+	.word	.L249,.L342
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN12CurrentSense10linkDriverEP9FOCDriver')
+	.sect	'.debug_abbrev'
+.L277:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN12CurrentSense10linkDriverEP9FOCDriver')
+	.sect	'.debug_line'
+.L278:
+	.word	.L822-.L821
+.L821:
+	.half	3
+	.word	.L824-.L823
+.L823:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0,0,0,0,0
+.L824:
+	.byte	5,6,7,0,5,2
+	.word	.L249
+	.byte	3,254,0,1,5,16,9
+	.half	.L610-.L249
+	.byte	3,1,1,5,89,9
+	.half	.L825-.L610
+	.byte	3,2,1,5,72,9
+	.half	.L826-.L825
+	.byte	1,5,25,9
+	.half	.L827-.L826
+	.byte	1,5,111,9
+	.half	.L828-.L827
+	.byte	1,5,21,9
+	.half	.L608-.L828
+	.byte	1,5,1,9
+	.half	.L829-.L608
+	.byte	3,1,1,7,9
+	.half	.L280-.L829
+	.byte	0,1,1
+.L822:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN12CurrentSense10linkDriverEP9FOCDriver')
+	.sect	'.debug_ranges'
+.L279:
+	.word	-1,.L249,0,.L280-.L249,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN12CurrentSense11driverAlignEfb')
+	.sect	'.debug_info'
+.L281:
+	.word	470
+	.half	3
+	.word	.L282
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L284,.L283
+	.byte	2
+	.word	.L272
+	.byte	3
+	.byte	'_ZN12CurrentSense11driverAlignEfb',0,1,152,1,5
+	.word	.L347
+	.byte	1,1,1
+	.word	.L251,.L348,.L250
+	.byte	4
+	.byte	'this',0,1,152,1,67
+	.word	.L349,.L350
+	.byte	4
+	.byte	'__5162_37_voltage',0,1,152,1,80
+	.word	.L351,.L352
+	.byte	4
+	.byte	'__5162_51_modulation_centered',0,1,152,1,105
+	.word	.L353,.L354
+	.byte	5
+	.word	.L251,.L348
+	.byte	6
+	.byte	'__5164_9_exit_flag',0,1,154,1,10
+	.word	.L347,.L355
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN12CurrentSense11driverAlignEfb')
+	.sect	'.debug_abbrev'
+.L282:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN12CurrentSense11driverAlignEfb')
+	.sect	'.debug_line'
+.L283:
+	.word	.L831-.L830
+.L830:
+	.half	3
+	.word	.L833-.L832
+.L832:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0,0,0,0,0
+.L833:
+	.byte	5,29,7,0,5,2
+	.word	.L251
+	.byte	3,153,1,1,5,9,9
+	.half	.L612-.L251
+	.byte	3,1,1,5,1,9
+	.half	.L834-.L612
+	.byte	1,5,25,7,9
+	.half	.L835-.L834
+	.byte	1,5,11,9
+	.half	.L2-.L835
+	.byte	3,2,1,5,6,9
+	.half	.L836-.L2
+	.byte	1,5,36,7,9
+	.half	.L837-.L836
+	.byte	1,5,29,9
+	.half	.L613-.L837
+	.byte	1,5,19,9
+	.half	.L4-.L613
+	.byte	3,3,1,5,6,9
+	.half	.L838-.L4
+	.byte	3,1,1,9
+	.half	.L839-.L838
+	.byte	3,2,1,9
+	.half	.L840-.L839
+	.byte	3,2,1,5,111,9
+	.half	.L6-.L840
+	.byte	3,125,1,5,123,9
+	.half	.L841-.L6
+	.byte	1,5,1,9
+	.half	.L611-.L841
+	.byte	1,5,120,9
+	.half	.L7-.L611
+	.byte	3,2,1,5,132,1,9
+	.half	.L842-.L7
+	.byte	1,5,1,9
+	.half	.L614-.L842
+	.byte	1,5,113,9
+	.half	.L8-.L614
+	.byte	3,2,1,5,125,9
+	.half	.L843-.L8
+	.byte	1,5,1,9
+	.half	.L615-.L843
+	.byte	1,5,8,9
+	.half	.L13-.L615
+	.byte	3,4,1,5,1,9
+	.half	.L616-.L13
+	.byte	1,9
+	.half	.L3-.L616
+	.byte	3,2,1,7,9
+	.half	.L285-.L3
+	.byte	0,1,1
+.L831:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN12CurrentSense11driverAlignEfb')
+	.sect	'.debug_ranges'
+.L284:
+	.word	-1,.L251,0,.L285-.L251,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN12CurrentSense12getDCCurrentEf')
+	.sect	'.debug_info'
+.L286:
+	.word	556
+	.half	3
+	.word	.L287
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L289,.L288
+	.byte	2
+	.word	.L272
+	.byte	3
+	.byte	'_ZN12CurrentSense12getDCCurrentEf',0,1,8,7
+	.word	.L351
+	.byte	1,1,1
+	.word	.L253,.L356,.L252
+	.byte	4
+	.byte	'this',0,1,8,69
+	.word	.L357,.L358
+	.byte	4
+	.byte	'__5018_40_motor_electrical_angle',0,1,8,82
+	.word	.L351,.L359
+	.byte	5
+	.word	.L253,.L356
+	.byte	6
+	.byte	'__5020_20_current',0,1,10,21
+	.word	.L360,.L361
+	.byte	6
+	.byte	'__5023_17_ABcurrent',0,1,13,18
+	.word	.L362,.L363
+	.byte	6
+	.byte	'__5026_11_sign',0,1,16,12
+	.word	.L351,.L364
+	.byte	5
+	.word	.L365,.L16
+	.byte	6
+	.byte	'__5032_15_ct',0,1,22,12
+	.word	.L351,.L366
+	.byte	6
+	.byte	'__5033_15_st',0,1,23,12
+	.word	.L351,.L367
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN12CurrentSense12getDCCurrentEf')
+	.sect	'.debug_abbrev'
+.L287:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN12CurrentSense12getDCCurrentEf')
+	.sect	'.debug_line'
+.L288:
+	.word	.L845-.L844
+.L844:
+	.half	3
+	.word	.L847-.L846
+.L846:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0,0,0,0,0
+.L847:
+	.byte	5,7,7,0,5,2
+	.word	.L253
+	.byte	3,7,1,5,30,9
+	.half	.L621-.L253
+	.byte	3,8,1,5,1,9
+	.half	.L622-.L621
+	.byte	3,122,1,5,79,9
+	.half	.L619-.L622
+	.byte	1,5,72,9
+	.half	.L848-.L619
+	.byte	1,5,23,9
+	.half	.L849-.L848
+	.byte	1,5,96,9
+	.half	.L850-.L849
+	.byte	1,5,72,9
+	.half	.L618-.L850
+	.byte	3,3,1,5,66,9
+	.half	.L851-.L618
+	.byte	1,5,1,9
+	.half	.L852-.L851
+	.byte	3,8,1,5,53,9
+	.half	.L365-.L852
+	.byte	3,3,1,5,70,9
+	.half	.L853-.L365
+	.byte	1,5,50,9
+	.half	.L627-.L853
+	.byte	3,1,1,5,59,9
+	.half	.L854-.L627
+	.byte	1,5,57,9
+	.half	.L855-.L854
+	.byte	1,5,96,9
+	.half	.L856-.L855
+	.byte	1,5,106,9
+	.half	.L857-.L856
+	.byte	1,5,73,9
+	.half	.L858-.L857
+	.byte	1,5,124,9
+	.half	.L859-.L858
+	.byte	1,5,27,9
+	.half	.L860-.L859
+	.byte	1,5,131,1,9
+	.half	.L861-.L860
+	.byte	1,5,135,1,9
+	.half	.L862-.L861
+	.byte	1,5,131,1,9
+	.half	.L17-.L862
+	.byte	1,5,19,9
+	.half	.L18-.L17
+	.byte	1,5,65,9
+	.half	.L16-.L18
+	.byte	3,3,1,5,95,9
+	.half	.L863-.L16
+	.byte	1,5,134,1,9
+	.half	.L864-.L863
+	.byte	1,5,104,9
+	.half	.L865-.L864
+	.byte	1,5,23,9
+	.half	.L866-.L865
+	.byte	1,5,1,9
+	.half	.L867-.L866
+	.byte	1,9
+	.half	.L19-.L867
+	.byte	3,1,1,7,9
+	.half	.L290-.L19
+	.byte	0,1,1
+.L845:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN12CurrentSense12getDCCurrentEf')
+	.sect	'.debug_ranges'
+.L289:
+	.word	-1,.L253,0,.L290-.L253,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN12CurrentSense14getFOCCurrentsEf')
+	.sect	'.debug_info'
+.L291:
+	.word	494
+	.half	3
+	.word	.L292
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L294,.L293
+	.byte	2
+	.word	.L272
+	.byte	3
+	.byte	'_ZN12CurrentSense14getFOCCurrentsEf',0,1,35,13
+	.word	.L368
+	.byte	1,1,1
+	.word	.L255,.L369,.L254
+	.byte	4
+	.byte	'this',0,1,35,77
+	.word	.L370,.L371
+	.byte	4
+	.byte	'__5045_48_angle_el',0,1,35,90
+	.word	.L351,.L372
+	.byte	5
+	.word	.L255,.L369
+	.byte	6
+	.byte	'__5047_20_current',0,1,37,21
+	.word	.L360,.L373
+	.byte	6
+	.byte	'__5050_17_ABcurrent',0,1,40,18
+	.word	.L362,.L374
+	.byte	6
+	.byte	'__5053_17_return_current',0,1,43,18
+	.word	.L368,.L375
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN12CurrentSense14getFOCCurrentsEf')
+	.sect	'.debug_abbrev'
+.L292:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN12CurrentSense14getFOCCurrentsEf')
+	.sect	'.debug_line'
+.L293:
+	.word	.L869-.L868
+.L868:
+	.half	3
+	.word	.L871-.L870
+.L870:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0,0,0,0,0
+.L871:
+	.byte	5,13,7,0,5,2
+	.word	.L255
+	.byte	3,34,1,5,1,9
+	.half	.L632-.L255
+	.byte	3,2,1,5,79,9
+	.half	.L630-.L632
+	.byte	1,5,72,9
+	.half	.L872-.L630
+	.byte	1,5,23,9
+	.half	.L873-.L872
+	.byte	1,5,96,9
+	.half	.L874-.L873
+	.byte	1,5,72,9
+	.half	.L629-.L874
+	.byte	3,3,1,5,66,9
+	.half	.L875-.L629
+	.byte	1,5,96,9
+	.half	.L876-.L875
+	.byte	3,3,1,5,1,9
+	.half	.L637-.L876
+	.byte	3,2,1,9
+	.half	.L21-.L637
+	.byte	3,1,1,7,9
+	.half	.L295-.L21
+	.byte	0,1,1
+.L869:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN12CurrentSense14getFOCCurrentsEf')
+	.sect	'.debug_ranges'
+.L294:
+	.word	-1,.L255,0,.L295-.L255,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN12CurrentSense13getABCurrentsE7Phase_s')
+	.sect	'.debug_info'
+.L296:
+	.word	744
+	.half	3
+	.word	.L297
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L299,.L298
+	.byte	2
+	.word	.L272
+	.byte	3
+	.byte	'_ZN12CurrentSense13getABCurrentsE7Phase_s',0,1,51,13
+	.word	.L362
+	.byte	1,1,1
+	.word	.L257,.L376,.L256
+	.byte	4
+	.byte	'this',0,1,51,83
+	.word	.L377,.L378
+	.byte	4
+	.byte	'__5061_56_current',0,1,51,105
+	.word	.L360,.L379
+	.byte	5
+	.word	.L257,.L376
+	.byte	6
+	.byte	'__5090_11_i_alpha',0,1,80,12
+	.word	.L351,.L380
+	.byte	6
+	.byte	'__5090_20_i_beta',0,1,80,42
+	.word	.L351,.L381
+	.byte	6
+	.byte	'__5114_17_return_ABcurrent',0,1,104,18
+	.word	.L362,.L382
+	.byte	5
+	.word	.L383,.L22
+	.byte	6
+	.byte	'__5066_21_return_ABcurrent',0,1,56,18
+	.word	.L362,.L384
+	.byte	0,5
+	.word	.L385,.L24
+	.byte	6
+	.byte	'__5073_21_return_ABcurrent',0,1,63,18
+	.word	.L362,.L386
+	.byte	0,7
+	.word	.L387
+	.byte	6
+	.byte	'__5107_15_mid',0,1,97,12
+	.word	.L351,.L390
+	.byte	6
+	.byte	'__5108_15_a',0,1,98,12
+	.word	.L351,.L391
+	.byte	6
+	.byte	'__5109_15_b',0,1,99,12
+	.word	.L351,.L392
+	.byte	0,5
+	.word	.L393,.L394
+	.byte	6
+	.byte	'__5097_15_a',0,1,87,12
+	.word	.L351,.L395
+	.byte	0,5
+	.word	.L396,.L397
+	.byte	6
+	.byte	'__5102_15_b',0,1,92,12
+	.word	.L351,.L398
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN12CurrentSense13getABCurrentsE7Phase_s')
+	.sect	'.debug_abbrev'
+.L297:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,11,1,85,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN12CurrentSense13getABCurrentsE7Phase_s')
+	.sect	'.debug_line'
+.L298:
+	.word	.L878-.L877
+.L877:
+	.half	3
+	.word	.L880-.L879
+.L879:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0,0,0,0,0
+.L880:
+	.byte	5,16,7,0,5,2
+	.word	.L257
+	.byte	3,54,1,5,1,9
+	.half	.L881-.L257
+	.byte	1,5,56,7,9
+	.half	.L383-.L881
+	.byte	3,2,1,5,55,9
+	.half	.L882-.L383
+	.byte	3,1,1,5,1,9
+	.half	.L639-.L882
+	.byte	3,1,1,5,16,9
+	.half	.L22-.L639
+	.byte	3,3,1,5,1,9
+	.half	.L883-.L22
+	.byte	1,5,23,7,9
+	.half	.L385-.L883
+	.byte	3,3,1,5,27,9
+	.half	.L884-.L385
+	.byte	1,5,1,9
+	.half	.L885-.L884
+	.byte	1,5,59,7,9
+	.half	.L886-.L885
+	.byte	3,1,1,5,40,9
+	.half	.L887-.L886
+	.byte	1,5,84,9
+	.half	.L888-.L887
+	.byte	1,5,64,9
+	.half	.L889-.L888
+	.byte	1,5,55,9
+	.half	.L890-.L889
+	.byte	3,1,1,5,88,9
+	.half	.L640-.L890
+	.byte	3,127,1,5,33,9
+	.half	.L25-.L640
+	.byte	3,2,1,5,11,9
+	.half	.L891-.L25
+	.byte	1,5,56,9
+	.half	.L892-.L891
+	.byte	3,4,1,5,55,9
+	.half	.L893-.L892
+	.byte	3,1,1,5,59,9
+	.half	.L641-.L893
+	.byte	3,124,1,5,56,9
+	.half	.L27-.L641
+	.byte	1,5,58,9
+	.half	.L894-.L27
+	.byte	3,1,1,5,39,9
+	.half	.L895-.L894
+	.byte	1,5,83,9
+	.half	.L896-.L895
+	.byte	1,5,63,9
+	.half	.L897-.L896
+	.byte	1,5,1,9
+	.half	.L26-.L897
+	.byte	3,5,1,5,24,9
+	.half	.L24-.L26
+	.byte	3,6,1,5,6,9
+	.half	.L898-.L24
+	.byte	1,5,39,9
+	.half	.L388-.L898
+	.byte	3,2,1,5,58,9
+	.half	.L389-.L388
+	.byte	3,1,1,5,23,9
+	.half	.L899-.L389
+	.byte	1,5,101,9
+	.half	.L900-.L899
+	.byte	1,5,67,9
+	.half	.L901-.L900
+	.byte	1,5,81,9
+	.half	.L902-.L901
+	.byte	1,5,63,9
+	.half	.L903-.L902
+	.byte	1,5,42,9
+	.half	.L642-.L903
+	.byte	3,127,1,5,34,9
+	.half	.L30-.L642
+	.byte	3,2,1,5,16,9
+	.half	.L904-.L30
+	.byte	1,5,60,9
+	.half	.L393-.L904
+	.byte	3,2,1,5,41,9
+	.half	.L905-.L393
+	.byte	1,5,85,9
+	.half	.L906-.L905
+	.byte	1,5,65,9
+	.half	.L907-.L906
+	.byte	1,5,23,9
+	.half	.L908-.L907
+	.byte	3,2,1,5,91,9
+	.half	.L909-.L908
+	.byte	1,5,57,9
+	.half	.L910-.L909
+	.byte	1,5,71,9
+	.half	.L911-.L910
+	.byte	1,5,53,9
+	.half	.L912-.L911
+	.byte	1,5,89,9
+	.half	.L394-.L912
+	.byte	3,126,1,5,34,9
+	.half	.L32-.L394
+	.byte	3,3,1,5,16,9
+	.half	.L913-.L32
+	.byte	1,5,60,9
+	.half	.L396-.L913
+	.byte	3,2,1,5,41,9
+	.half	.L914-.L396
+	.byte	1,5,85,9
+	.half	.L915-.L914
+	.byte	1,5,65,9
+	.half	.L916-.L915
+	.byte	1,5,39,9
+	.half	.L643-.L916
+	.byte	3,1,1,5,58,9
+	.half	.L917-.L643
+	.byte	3,1,1,5,23,9
+	.half	.L918-.L917
+	.byte	1,5,67,9
+	.half	.L919-.L918
+	.byte	1,5,81,9
+	.half	.L920-.L919
+	.byte	1,5,63,9
+	.half	.L644-.L920
+	.byte	1,5,89,9
+	.half	.L397-.L644
+	.byte	3,126,1,5,56,9
+	.half	.L34-.L397
+	.byte	3,5,1,5,80,9
+	.half	.L921-.L34
+	.byte	1,5,60,9
+	.half	.L922-.L921
+	.byte	1,5,105,9
+	.half	.L923-.L922
+	.byte	1,5,85,9
+	.half	.L924-.L923
+	.byte	1,5,19,9
+	.half	.L925-.L924
+	.byte	1,5,34,9
+	.half	.L926-.L925
+	.byte	1,9
+	.half	.L645-.L926
+	.byte	3,1,1,5,38,9
+	.half	.L927-.L645
+	.byte	1,5,34,9
+	.half	.L928-.L927
+	.byte	3,1,1,5,38,9
+	.half	.L929-.L928
+	.byte	1,5,23,9
+	.half	.L647-.L929
+	.byte	3,2,1,5,57,9
+	.half	.L930-.L647
+	.byte	1,5,71,9
+	.half	.L931-.L930
+	.byte	1,5,53,9
+	.half	.L648-.L931
+	.byte	1,5,1,9
+	.half	.L31-.L648
+	.byte	3,6,1,9
+	.half	.L23-.L31
+	.byte	3,1,1,7,9
+	.half	.L300-.L23
+	.byte	0,1,1
+.L878:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN12CurrentSense13getABCurrentsE7Phase_s')
+	.sect	'.debug_ranges'
+.L299:
+	.word	-1,.L257,0,.L300-.L257,0,0
+.L387:
+	.word	-1,.L257,.L388-.L257,.L389-.L257,.L34-.L257,.L31-.L257,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN12CurrentSense13getDQCurrentsE4AB_sf')
+	.sect	'.debug_info'
+.L301:
+	.word	516
+	.half	3
+	.word	.L302
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L304,.L303
+	.byte	2
+	.word	.L272
+	.byte	3
+	.byte	'_ZN12CurrentSense13getDQCurrentsE4AB_sf',0,1,113,13
+	.word	.L368
+	.byte	1,1,1
+	.word	.L259,.L399,.L258
+	.byte	4
+	.byte	'this',0,1,113,81
+	.word	.L400,.L401
+	.byte	4
+	.byte	'__5123_53_current',0,1,113,100
+	.word	.L362,.L402
+	.byte	4
+	.byte	'__5123_68_angle_el',0,1,113,126
+	.word	.L351,.L403
+	.byte	5
+	.word	.L259,.L399
+	.byte	6
+	.byte	'__5125_11_ct',0,1,115,12
+	.word	.L351,.L404
+	.byte	6
+	.byte	'__5126_11_st',0,1,116,12
+	.word	.L351,.L405
+	.byte	6
+	.byte	'__5128_17_return_current',0,1,118,18
+	.word	.L368,.L406
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN12CurrentSense13getDQCurrentsE4AB_sf')
+	.sect	'.debug_abbrev'
+.L302:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN12CurrentSense13getDQCurrentsE4AB_sf')
+	.sect	'.debug_line'
+.L303:
+	.word	.L933-.L932
+.L932:
+	.half	3
+	.word	.L935-.L934
+.L934:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0,0,0,0,0
+.L935:
+	.byte	5,13,7,0,5,2
+	.word	.L259
+	.byte	3,240,0,1,5,39,9
+	.half	.L650-.L259
+	.byte	3,4,1,5,56,9
+	.half	.L652-.L650
+	.byte	1,5,52,9
+	.half	.L651-.L652
+	.byte	3,2,1,5,62,9
+	.half	.L936-.L651
+	.byte	1,5,97,9
+	.half	.L937-.L936
+	.byte	1,5,106,9
+	.half	.L938-.L937
+	.byte	1,5,104,9
+	.half	.L939-.L938
+	.byte	1,5,76,9
+	.half	.L940-.L939
+	.byte	1,5,52,9
+	.half	.L941-.L940
+	.byte	3,1,1,5,61,9
+	.half	.L942-.L941
+	.byte	1,5,59,9
+	.half	.L943-.L942
+	.byte	1,5,106,9
+	.half	.L944-.L943
+	.byte	1,5,75,9
+	.half	.L945-.L944
+	.byte	1,5,1,9
+	.half	.L653-.L945
+	.byte	3,1,1,9
+	.half	.L37-.L653
+	.byte	3,1,1,7,9
+	.half	.L305-.L37
+	.byte	0,1,1
+.L933:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN12CurrentSense13getDQCurrentsE4AB_sf')
+	.sect	'.debug_ranges'
+.L304:
+	.word	-1,.L259,0,.L305-.L259,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN12CurrentSense6enableEv')
+	.sect	'.debug_info'
+.L306:
+	.word	352
+	.half	3
+	.word	.L307
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L309,.L308
+	.byte	2
+	.word	.L272
+	.byte	3
+	.byte	'_ZN12CurrentSense6enableEv',0,1,134,1,6,1,1,1
+	.word	.L261,.L407,.L260
+	.byte	4
+	.byte	'this',0,1,134,1,61
+	.word	.L408,.L409
+	.byte	5
+	.word	.L261,.L407
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN12CurrentSense6enableEv')
+	.sect	'.debug_abbrev'
+.L307:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN12CurrentSense6enableEv')
+	.sect	'.debug_line'
+.L308:
+	.word	.L947-.L946
+.L946:
+	.half	3
+	.word	.L949-.L948
+.L948:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0,0,0,0,0
+.L949:
+	.byte	5,1,7,0,5,2
+	.word	.L261
+	.byte	3,135,1,1,7,9
+	.half	.L310-.L261
+	.byte	0,1,1
+.L947:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN12CurrentSense6enableEv')
+	.sect	'.debug_ranges'
+.L309:
+	.word	-1,.L261,0,.L310-.L261,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN12CurrentSense7disableEv')
+	.sect	'.debug_info'
+.L311:
+	.word	353
+	.half	3
+	.word	.L312
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L314,.L313
+	.byte	2
+	.word	.L272
+	.byte	3
+	.byte	'_ZN12CurrentSense7disableEv',0,1,138,1,6,1,1,1
+	.word	.L263,.L410,.L262
+	.byte	4
+	.byte	'this',0,1,138,1,62
+	.word	.L411,.L412
+	.byte	5
+	.word	.L263,.L410
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN12CurrentSense7disableEv')
+	.sect	'.debug_abbrev'
+.L312:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN12CurrentSense7disableEv')
+	.sect	'.debug_line'
+.L313:
+	.word	.L951-.L950
+.L950:
+	.half	3
+	.word	.L953-.L952
+.L952:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0,0,0,0,0
+.L953:
+	.byte	5,1,7,0,5,2
+	.word	.L263
+	.byte	3,139,1,1,7,9
+	.half	.L315-.L263
+	.byte	0,1,1
+.L951:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN12CurrentSense7disableEv')
+	.sect	'.debug_ranges'
+.L314:
+	.word	-1,.L263,0,.L315-.L263,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb')
+	.sect	'.debug_info'
+.L316:
+	.word	2030
+	.half	3
+	.word	.L317
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L319,.L318
+	.byte	2
+	.word	.L272
+	.byte	3
+	.byte	'_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb',0,1,199,1,5
+	.word	.L347
+	.byte	1,1,1
+	.word	.L265,.L413,.L264
+	.byte	4
+	.byte	'this',0,1,199,1,84
+	.word	.L414,.L415
+	.byte	4
+	.byte	'__5209_41_voltage',0,1,199,1,97
+	.word	.L351,.L416
+	.byte	4
+	.byte	'__5209_62_bldc_driver',0,1,199,1,136,1
+	.word	.L417,.L418
+	.byte	4
+	.byte	'__5209_80_modulation_centered',0,1,199,1,165,1
+	.word	.L353,.L419
+	.byte	5
+	.word	.L265,.L413
+	.byte	6
+	.byte	'__5211_10_phases_switched',0,1,201,1,11
+	.word	.L353,.L420
+	.byte	6
+	.byte	'__5212_10_phases_inverted',0,1,202,1,11
+	.word	.L353,.L421
+	.byte	6
+	.byte	'__5214_11_zero',0,1,204,1,12
+	.word	.L351,.L422
+	.byte	6
+	.byte	'__5224_20_c_a',0,1,214,1,21
+	.word	.L360,.L423
+	.byte	6
+	.byte	'__5246_11_ca',0,1,236,1,12
+	.word	.L424,.L425
+	.byte	6
+	.byte	'__5247_13_max_i',0,1,237,1,14
+	.word	.L426,.L427
+	.byte	6
+	.byte	'__5248_11_max_c',0,1,238,1,12
+	.word	.L351,.L428
+	.byte	6
+	.byte	'__5249_11_max_c_ratio',0,1,239,1,12
+	.word	.L351,.L429
+	.byte	6
+	.byte	'__5335_20_c_b',0,1,197,2,21
+	.word	.L360,.L430
+	.byte	6
+	.byte	'__5341_11_cb',0,1,203,2,12
+	.word	.L424,.L431
+	.byte	6
+	.byte	'__5413_13_exit_flag',0,1,147,3,14
+	.word	.L426,.L432
+	.byte	5
+	.word	.L38,.L433
+	.byte	6
+	.byte	'__5219_13_i',0,1,209,1,10
+	.word	.L347,.L434
+	.byte	0,5
+	.word	.L435,.L436
+	.byte	6
+	.byte	'__5250_13_i',0,1,240,1,10
+	.word	.L347,.L437
+	.byte	5
+	.word	.L438,.L49
+	.byte	6
+	.byte	'__5255_21_j',0,1,245,1,10
+	.word	.L347,.L439
+	.byte	5
+	.word	.L52,.L56
+	.byte	6
+	.byte	'__5258_23_ratio',0,1,248,1,12
+	.word	.L351,.L440
+	.byte	0,0,0,5
+	.word	.L62,.L441
+	.byte	6
+	.byte	'__5277_17_temp',0,1,139,2,12
+	.word	.L347,.L442
+	.byte	0,5
+	.word	.L441,.L443
+	.byte	6
+	.byte	'__5278_17_temp',0,1,140,2,14
+	.word	.L351,.L444
+	.byte	0,5
+	.word	.L443,.L445
+	.byte	6
+	.byte	'__5279_17_temp',0,1,141,2,14
+	.word	.L351,.L446
+	.byte	0,5
+	.word	.L445,.L447
+	.byte	6
+	.byte	'__5280_17_temp',0,1,142,2,14
+	.word	.L351,.L448
+	.byte	0,5
+	.word	.L64,.L449
+	.byte	6
+	.byte	'__5286_17_temp',0,1,148,2,12
+	.word	.L347,.L450
+	.byte	0,5
+	.word	.L449,.L451
+	.byte	6
+	.byte	'__5287_17_temp',0,1,149,2,14
+	.word	.L351,.L452
+	.byte	0,5
+	.word	.L451,.L453
+	.byte	6
+	.byte	'__5288_17_temp',0,1,150,2,14
+	.word	.L351,.L454
+	.byte	0,5
+	.word	.L453,.L455
+	.byte	6
+	.byte	'__5289_17_temp',0,1,151,2,14
+	.word	.L351,.L456
+	.byte	0,5
+	.word	.L78,.L457
+	.byte	6
+	.byte	'__5307_13_temp',0,1,169,2,12
+	.word	.L347,.L458
+	.byte	0,5
+	.word	.L457,.L459
+	.byte	6
+	.byte	'__5308_13_temp',0,1,170,2,14
+	.word	.L351,.L460
+	.byte	0,5
+	.word	.L459,.L461
+	.byte	6
+	.byte	'__5309_13_temp',0,1,171,2,14
+	.word	.L351,.L462
+	.byte	0,5
+	.word	.L461,.L463
+	.byte	6
+	.byte	'__5310_13_temp',0,1,172,2,14
+	.word	.L351,.L464
+	.byte	0,5
+	.word	.L82,.L465
+	.byte	6
+	.byte	'__5314_13_temp',0,1,176,2,12
+	.word	.L347,.L466
+	.byte	0,5
+	.word	.L465,.L467
+	.byte	6
+	.byte	'__5315_13_temp',0,1,177,2,14
+	.word	.L351,.L468
+	.byte	0,5
+	.word	.L467,.L469
+	.byte	6
+	.byte	'__5316_13_temp',0,1,178,2,14
+	.word	.L351,.L470
+	.byte	0,5
+	.word	.L469,.L471
+	.byte	6
+	.byte	'__5317_13_temp',0,1,179,2,14
+	.word	.L351,.L472
+	.byte	0,5
+	.word	.L70,.L473
+	.byte	6
+	.byte	'__5330_13_i',0,1,192,2,10
+	.word	.L347,.L474
+	.byte	0,5
+	.word	.L475,.L476
+	.byte	6
+	.byte	'__5345_13_i',0,1,207,2,10
+	.word	.L347,.L477
+	.byte	5
+	.word	.L478,.L88
+	.byte	6
+	.byte	'__5350_21_j',0,1,212,2,10
+	.word	.L347,.L479
+	.byte	5
+	.word	.L91,.L95
+	.byte	6
+	.byte	'__5353_23_ratio',0,1,215,2,12
+	.word	.L351,.L480
+	.byte	0,0,0,5
+	.word	.L103,.L481
+	.byte	6
+	.byte	'__5366_17_temp',0,1,228,2,12
+	.word	.L347,.L482
+	.byte	0,5
+	.word	.L481,.L483
+	.byte	6
+	.byte	'__5367_17_temp',0,1,229,2,14
+	.word	.L351,.L484
+	.byte	0,5
+	.word	.L483,.L485
+	.byte	6
+	.byte	'__5368_17_temp',0,1,230,2,14
+	.word	.L351,.L486
+	.byte	0,5
+	.word	.L485,.L487
+	.byte	6
+	.byte	'__5369_17_temp',0,1,231,2,14
+	.word	.L351,.L488
+	.byte	0,5
+	.word	.L116,.L489
+	.byte	6
+	.byte	'__5387_13_temp',0,1,249,2,12
+	.word	.L347,.L490
+	.byte	0,5
+	.word	.L489,.L491
+	.byte	6
+	.byte	'__5388_13_temp',0,1,250,2,14
+	.word	.L351,.L492
+	.byte	0,5
+	.word	.L491,.L493
+	.byte	6
+	.byte	'__5389_13_temp',0,1,251,2,14
+	.word	.L351,.L494
+	.byte	0,5
+	.word	.L493,.L495
+	.byte	6
+	.byte	'__5390_13_temp',0,1,252,2,14
+	.word	.L351,.L496
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb')
+	.sect	'.debug_abbrev'
+.L317:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb')
+	.sect	'.debug_line'
+.L318:
+	.word	.L955-.L954
+.L954:
+	.half	3
+	.word	.L957-.L956
+.L956:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0,0,0,0,0
+.L957:
+	.byte	5,5,7,0,5,2
+	.word	.L265
+	.byte	3,198,1,1,5,37,9
+	.half	.L657-.L265
+	.byte	3,2,1,9
+	.half	.L658-.L657
+	.byte	3,1,1,5,27,9
+	.half	.L659-.L658
+	.byte	3,2,1,5,1,9
+	.half	.L660-.L659
+	.byte	3,1,1,5,79,7,9
+	.half	.L958-.L660
+	.byte	1,5,88,9
+	.half	.L959-.L958
+	.byte	1,5,109,9
+	.half	.L960-.L959
+	.byte	1,5,106,9
+	.half	.L961-.L960
+	.byte	1,5,35,9
+	.half	.L38-.L961
+	.byte	3,4,1,5,66,9
+	.half	.L661-.L38
+	.byte	1,5,111,9
+	.half	.L40-.L661
+	.byte	3,1,1,5,69,9
+	.half	.L962-.L40
+	.byte	1,5,2,9
+	.half	.L963-.L962
+	.byte	1,5,192,1,9
+	.half	.L964-.L963
+	.byte	1,5,189,1,9
+	.half	.L965-.L964
+	.byte	1,5,212,1,9
+	.half	.L966-.L965
+	.byte	1,5,234,1,9
+	.half	.L967-.L966
+	.byte	1,5,152,2,9
+	.half	.L968-.L967
+	.byte	1,5,12,9
+	.half	.L664-.L968
+	.byte	3,1,1,5,79,9
+	.half	.L969-.L664
+	.byte	3,126,1,5,62,9
+	.half	.L39-.L969
+	.byte	1,5,66,9
+	.half	.L970-.L39
+	.byte	1,5,12,7,9
+	.half	.L433-.L970
+	.byte	3,4,1,5,1,9
+	.half	.L971-.L433
+	.byte	3,1,1,5,65,9
+	.half	.L972-.L971
+	.byte	1,5,111,9
+	.half	.L668-.L972
+	.byte	3,1,1,5,69,9
+	.half	.L973-.L668
+	.byte	1,5,2,9
+	.half	.L974-.L973
+	.byte	1,5,182,1,9
+	.half	.L975-.L974
+	.byte	1,5,38,9
+	.half	.L670-.L975
+	.byte	3,6,1,5,14,9
+	.half	.L976-.L670
+	.byte	1,5,48,9
+	.half	.L977-.L976
+	.byte	1,5,45,9
+	.half	.L978-.L977
+	.byte	1,5,6,9
+	.half	.L979-.L978
+	.byte	1,5,105,7,9
+	.half	.L980-.L979
+	.byte	1,5,81,9
+	.half	.L981-.L980
+	.byte	1,5,115,9
+	.half	.L982-.L981
+	.byte	1,5,112,9
+	.half	.L983-.L982
+	.byte	1,5,173,1,9
+	.half	.L984-.L983
+	.byte	1,5,149,1,9
+	.half	.L985-.L984
+	.byte	1,5,183,1,9
+	.half	.L986-.L985
+	.byte	1,5,180,1,9
+	.half	.L987-.L986
+	.byte	1,5,8,9
+	.half	.L44-.L987
+	.byte	3,2,1,5,1,9
+	.half	.L988-.L44
+	.byte	1,5,60,9
+	.half	.L41-.L988
+	.byte	3,13,1,5,36,9
+	.half	.L989-.L41
+	.byte	1,5,19,9
+	.half	.L990-.L989
+	.byte	1,5,131,1,9
+	.half	.L991-.L990
+	.byte	1,5,107,9
+	.half	.L992-.L991
+	.byte	1,5,90,9
+	.half	.L993-.L992
+	.byte	1,5,202,1,9
+	.half	.L994-.L993
+	.byte	1,5,178,1,9
+	.half	.L995-.L994
+	.byte	1,5,161,1,9
+	.half	.L996-.L995
+	.byte	1,5,17,9
+	.half	.L997-.L996
+	.byte	3,1,1,9
+	.half	.L672-.L997
+	.byte	3,1,1,5,23,9
+	.half	.L673-.L672
+	.byte	3,1,1,5,35,9
+	.half	.L435-.L673
+	.byte	3,1,1,5,64,9
+	.half	.L674-.L435
+	.byte	1,5,21,9
+	.half	.L47-.L674
+	.byte	3,1,1,5,6,9
+	.half	.L998-.L47
+	.byte	1,5,39,9
+	.half	.L999-.L998
+	.byte	1,5,20,9
+	.half	.L48-.L999
+	.byte	3,1,1,5,35,9
+	.half	.L1000-.L48
+	.byte	1,5,1,9
+	.half	.L1001-.L1000
+	.byte	1,5,34,7,9
+	.half	.L1002-.L1001
+	.byte	3,1,1,5,20,9
+	.half	.L1003-.L1002
+	.byte	3,1,1,5,35,9
+	.half	.L438-.L1003
+	.byte	3,1,1,5,64,9
+	.half	.L676-.L438
+	.byte	1,5,1,9
+	.half	.L52-.L676
+	.byte	3,1,1,5,35,7,9
+	.half	.L1004-.L52
+	.byte	1,5,21,9
+	.half	.L53-.L1004
+	.byte	3,1,1,5,6,9
+	.half	.L1005-.L53
+	.byte	1,5,39,9
+	.half	.L1006-.L1005
+	.byte	1,5,53,9
+	.half	.L55-.L1006
+	.byte	3,1,1,5,36,9
+	.half	.L1007-.L55
+	.byte	1,5,21,9
+	.half	.L677-.L1007
+	.byte	3,1,1,5,1,9
+	.half	.L1008-.L677
+	.byte	1,5,70,7,9
+	.half	.L1009-.L1008
+	.byte	1,5,77,9
+	.half	.L56-.L1009
+	.byte	3,124,1,5,64,9
+	.half	.L51-.L56
+	.byte	1,5,77,7,9
+	.half	.L49-.L51
+	.byte	3,123,1,5,64,9
+	.half	.L46-.L49
+	.byte	1,5,31,7,9
+	.half	.L436-.L46
+	.byte	3,22,1,5,27,9
+	.half	.L1010-.L436
+	.byte	1,5,1,9
+	.half	.L1011-.L1010
+	.byte	1,5,6,7,9
+	.half	.L1012-.L1011
+	.byte	3,2,1,9
+	.half	.L1013-.L1012
+	.byte	3,9,1,5,50,9
+	.half	.L62-.L1013
+	.byte	3,122,1,5,79,9
+	.half	.L678-.L62
+	.byte	1,5,72,9
+	.half	.L1014-.L678
+	.byte	1,5,101,9
+	.half	.L1015-.L1014
+	.byte	1,5,52,9
+	.half	.L441-.L1015
+	.byte	3,1,1,5,91,9
+	.half	.L679-.L441
+	.byte	1,5,84,9
+	.half	.L1016-.L679
+	.byte	1,5,123,9
+	.half	.L1017-.L1016
+	.byte	1,5,52,9
+	.half	.L443-.L1017
+	.byte	3,1,1,5,85,9
+	.half	.L680-.L443
+	.byte	1,5,78,9
+	.half	.L1018-.L680
+	.byte	1,5,111,9
+	.half	.L1019-.L1018
+	.byte	1,5,61,9
+	.half	.L445-.L1019
+	.byte	3,1,1,5,100,9
+	.half	.L682-.L445
+	.byte	1,5,84,9
+	.half	.L681-.L682
+	.byte	1,5,123,9
+	.half	.L1020-.L681
+	.byte	1,5,27,9
+	.half	.L447-.L1020
+	.byte	3,1,1,5,1,9
+	.half	.L1021-.L447
+	.byte	3,1,1,5,50,9
+	.half	.L64-.L1021
+	.byte	3,4,1,5,79,9
+	.half	.L683-.L64
+	.byte	1,5,72,9
+	.half	.L1022-.L683
+	.byte	1,5,101,9
+	.half	.L1023-.L1022
+	.byte	1,5,52,9
+	.half	.L449-.L1023
+	.byte	3,1,1,5,91,9
+	.half	.L684-.L449
+	.byte	1,5,84,9
+	.half	.L1024-.L684
+	.byte	1,5,123,9
+	.half	.L1025-.L1024
+	.byte	1,5,52,9
+	.half	.L451-.L1025
+	.byte	3,1,1,5,85,9
+	.half	.L685-.L451
+	.byte	1,5,78,9
+	.half	.L1026-.L685
+	.byte	1,5,111,9
+	.half	.L1027-.L1026
+	.byte	1,5,61,9
+	.half	.L453-.L1027
+	.byte	3,1,1,5,100,9
+	.half	.L687-.L453
+	.byte	1,5,84,9
+	.half	.L686-.L687
+	.byte	1,5,123,9
+	.half	.L1028-.L686
+	.byte	1,5,27,9
+	.half	.L455-.L1028
+	.byte	3,1,1,5,1,9
+	.half	.L1029-.L455
+	.byte	3,1,1,5,21,9
+	.half	.L65-.L1029
+	.byte	3,3,1,5,28,9
+	.half	.L1030-.L65
+	.byte	1,5,6,9
+	.half	.L1031-.L1030
+	.byte	1,5,65,9
+	.half	.L1032-.L1031
+	.byte	1,5,72,9
+	.half	.L1033-.L1032
+	.byte	1,5,69,9
+	.half	.L1034-.L1033
+	.byte	1,5,42,9
+	.half	.L1035-.L1034
+	.byte	1,5,35,9
+	.half	.L66-.L1035
+	.byte	1,5,1,9
+	.half	.L67-.L66
+	.byte	1,5,6,7,9
+	.half	.L69-.L67
+	.byte	3,2,1,5,20,9
+	.half	.L1036-.L69
+	.byte	1,5,16,9
+	.half	.L1037-.L1036
+	.byte	1,5,27,9
+	.half	.L1038-.L1037
+	.byte	3,1,1,5,1,9
+	.half	.L68-.L1038
+	.byte	3,125,1,5,30,9
+	.half	.L58-.L68
+	.byte	3,5,1,5,18,9
+	.half	.L1039-.L58
+	.byte	1,5,43,9
+	.half	.L1040-.L1039
+	.byte	1,5,39,9
+	.half	.L1041-.L1040
+	.byte	1,5,16,9
+	.half	.L1042-.L1041
+	.byte	1,5,72,7,9
+	.half	.L1043-.L1042
+	.byte	1,5,60,9
+	.half	.L1044-.L1043
+	.byte	1,5,85,9
+	.half	.L1045-.L1044
+	.byte	1,5,81,9
+	.half	.L1046-.L1045
+	.byte	1,5,115,9
+	.half	.L1047-.L1046
+	.byte	1,5,103,9
+	.half	.L1048-.L1047
+	.byte	1,5,128,1,9
+	.half	.L1049-.L1048
+	.byte	1,5,124,9
+	.half	.L1050-.L1049
+	.byte	1,5,8,9
+	.half	.L74-.L1050
+	.byte	3,4,1,5,1,9
+	.half	.L675-.L74
+	.byte	1,5,19,9
+	.half	.L71-.L675
+	.byte	3,2,1,5,7,9
+	.half	.L1051-.L71
+	.byte	1,5,32,9
+	.half	.L1052-.L1051
+	.byte	1,5,28,9
+	.half	.L1053-.L1052
+	.byte	1,5,5,9
+	.half	.L1054-.L1053
+	.byte	1,5,63,7,9
+	.half	.L1055-.L1054
+	.byte	1,5,51,9
+	.half	.L1056-.L1055
+	.byte	1,5,76,9
+	.half	.L1057-.L1056
+	.byte	1,5,49,9
+	.half	.L1058-.L1057
+	.byte	1,5,50,9
+	.half	.L78-.L1058
+	.byte	3,2,1,5,79,9
+	.half	.L688-.L78
+	.byte	1,5,72,9
+	.half	.L1059-.L688
+	.byte	1,5,101,9
+	.half	.L1060-.L1059
+	.byte	1,5,52,9
+	.half	.L457-.L1060
+	.byte	3,1,1,5,91,9
+	.half	.L689-.L457
+	.byte	1,5,84,9
+	.half	.L1061-.L689
+	.byte	1,5,123,9
+	.half	.L1062-.L1061
+	.byte	1,5,52,9
+	.half	.L459-.L1062
+	.byte	3,1,1,5,85,9
+	.half	.L690-.L459
+	.byte	1,5,78,9
+	.half	.L1063-.L690
+	.byte	1,5,111,9
+	.half	.L1064-.L1063
+	.byte	1,5,61,9
+	.half	.L461-.L1064
+	.byte	3,1,1,5,100,9
+	.half	.L692-.L461
+	.byte	1,5,84,9
+	.half	.L691-.L692
+	.byte	1,5,123,9
+	.half	.L1065-.L691
+	.byte	1,5,27,9
+	.half	.L463-.L1065
+	.byte	3,1,1,5,57,9
+	.half	.L1066-.L463
+	.byte	3,124,1,5,29,9
+	.half	.L76-.L1066
+	.byte	3,5,1,5,17,9
+	.half	.L1067-.L76
+	.byte	1,5,42,9
+	.half	.L1068-.L1067
+	.byte	1,5,38,9
+	.half	.L1069-.L1068
+	.byte	1,5,15,9
+	.half	.L1070-.L1069
+	.byte	1,5,73,7,9
+	.half	.L1071-.L1070
+	.byte	1,5,61,9
+	.half	.L1072-.L1071
+	.byte	1,5,86,9
+	.half	.L1073-.L1072
+	.byte	1,5,59,9
+	.half	.L1074-.L1073
+	.byte	1,5,50,9
+	.half	.L82-.L1074
+	.byte	3,2,1,5,79,9
+	.half	.L693-.L82
+	.byte	1,5,72,9
+	.half	.L1075-.L693
+	.byte	1,5,101,9
+	.half	.L1076-.L1075
+	.byte	1,5,52,9
+	.half	.L465-.L1076
+	.byte	3,1,1,5,91,9
+	.half	.L694-.L465
+	.byte	1,5,84,9
+	.half	.L1077-.L694
+	.byte	1,5,123,9
+	.half	.L1078-.L1077
+	.byte	1,5,52,9
+	.half	.L467-.L1078
+	.byte	3,1,1,5,85,9
+	.half	.L695-.L467
+	.byte	1,5,78,9
+	.half	.L1079-.L695
+	.byte	1,5,111,9
+	.half	.L1080-.L1079
+	.byte	1,5,61,9
+	.half	.L469-.L1080
+	.byte	3,1,1,5,100,9
+	.half	.L697-.L469
+	.byte	1,5,84,9
+	.half	.L696-.L697
+	.byte	1,5,123,9
+	.half	.L1081-.L696
+	.byte	1,5,27,9
+	.half	.L471-.L1081
+	.byte	3,1,1,5,35,9
+	.half	.L70-.L471
+	.byte	3,12,1,5,66,9
+	.half	.L662-.L70
+	.byte	1,5,111,9
+	.half	.L84-.L662
+	.byte	3,1,1,5,69,9
+	.half	.L1082-.L84
+	.byte	1,5,2,9
+	.half	.L1083-.L1082
+	.byte	1,5,208,1,9
+	.half	.L1084-.L1083
+	.byte	1,5,205,1,9
+	.half	.L1085-.L1084
+	.byte	1,5,228,1,9
+	.half	.L1086-.L1085
+	.byte	1,5,250,1,9
+	.half	.L1087-.L1086
+	.byte	1,5,152,2,9
+	.half	.L1088-.L1087
+	.byte	1,5,12,9
+	.half	.L699-.L1088
+	.byte	3,1,1,5,79,9
+	.half	.L1089-.L699
+	.byte	3,126,1,5,62,9
+	.half	.L83-.L1089
+	.byte	1,5,66,9
+	.half	.L1090-.L83
+	.byte	1,5,12,7,9
+	.half	.L473-.L1090
+	.byte	3,4,1,5,1,9
+	.half	.L1091-.L473
+	.byte	3,1,1,5,65,9
+	.half	.L1092-.L1091
+	.byte	1,5,111,9
+	.half	.L703-.L1092
+	.byte	3,1,1,5,69,9
+	.half	.L1093-.L703
+	.byte	1,5,2,9
+	.half	.L1094-.L1093
+	.byte	1,5,182,1,9
+	.half	.L1095-.L1094
+	.byte	1,5,60,9
+	.half	.L705-.L1095
+	.byte	3,5,1,5,36,9
+	.half	.L1096-.L705
+	.byte	1,5,19,9
+	.half	.L1097-.L1096
+	.byte	1,5,131,1,9
+	.half	.L1098-.L1097
+	.byte	1,5,107,9
+	.half	.L1099-.L1098
+	.byte	1,5,90,9
+	.half	.L1100-.L1099
+	.byte	1,5,202,1,9
+	.half	.L1101-.L1100
+	.byte	1,5,178,1,9
+	.half	.L1102-.L1101
+	.byte	1,5,161,1,9
+	.half	.L1103-.L1102
+	.byte	1,5,17,9
+	.half	.L1104-.L1103
+	.byte	3,1,1,9
+	.half	.L707-.L1104
+	.byte	3,1,1,5,23,9
+	.half	.L708-.L707
+	.byte	3,1,1,5,35,9
+	.half	.L475-.L708
+	.byte	3,1,1,5,64,9
+	.half	.L709-.L475
+	.byte	1,5,21,9
+	.half	.L86-.L709
+	.byte	3,1,1,5,6,9
+	.half	.L1105-.L86
+	.byte	1,5,39,9
+	.half	.L1106-.L1105
+	.byte	1,5,20,9
+	.half	.L87-.L1106
+	.byte	3,1,1,5,35,9
+	.half	.L1107-.L87
+	.byte	1,5,1,9
+	.half	.L1108-.L1107
+	.byte	1,5,34,7,9
+	.half	.L1109-.L1108
+	.byte	3,1,1,5,20,9
+	.half	.L1110-.L1109
+	.byte	3,1,1,5,35,9
+	.half	.L478-.L1110
+	.byte	3,1,1,5,64,9
+	.half	.L711-.L478
+	.byte	1,5,1,9
+	.half	.L91-.L711
+	.byte	3,1,1,5,35,7,9
+	.half	.L1111-.L91
+	.byte	1,5,21,9
+	.half	.L92-.L1111
+	.byte	3,1,1,5,6,9
+	.half	.L1112-.L92
+	.byte	1,5,39,9
+	.half	.L1113-.L1112
+	.byte	1,5,53,9
+	.half	.L94-.L1113
+	.byte	3,1,1,5,36,9
+	.half	.L1114-.L94
+	.byte	1,5,21,9
+	.half	.L712-.L1114
+	.byte	3,1,1,5,1,9
+	.half	.L1115-.L712
+	.byte	1,5,70,7,9
+	.half	.L1116-.L1115
+	.byte	1,5,77,9
+	.half	.L95-.L1116
+	.byte	3,124,1,5,64,9
+	.half	.L90-.L95
+	.byte	1,5,77,7,9
+	.half	.L88-.L90
+	.byte	3,123,1,5,64,9
+	.half	.L85-.L88
+	.byte	1,5,31,7,9
+	.half	.L476-.L85
+	.byte	3,13,1,5,27,9
+	.half	.L1117-.L476
+	.byte	1,5,1,9
+	.half	.L1118-.L1117
+	.byte	1,5,6,7,9
+	.half	.L1119-.L1118
+	.byte	3,2,1,9
+	.half	.L1120-.L1119
+	.byte	3,4,1,5,8,9
+	.half	.L101-.L1120
+	.byte	3,127,1,5,1,9
+	.half	.L710-.L101
+	.byte	1,5,50,9
+	.half	.L103-.L710
+	.byte	3,3,1,5,79,9
+	.half	.L714-.L103
+	.byte	1,5,72,9
+	.half	.L1121-.L714
+	.byte	1,5,101,9
+	.half	.L1122-.L1121
+	.byte	1,5,52,9
+	.half	.L481-.L1122
+	.byte	3,1,1,5,91,9
+	.half	.L715-.L481
+	.byte	1,5,84,9
+	.half	.L1123-.L715
+	.byte	1,5,123,9
+	.half	.L1124-.L1123
+	.byte	1,5,52,9
+	.half	.L483-.L1124
+	.byte	3,1,1,5,85,9
+	.half	.L716-.L483
+	.byte	1,5,78,9
+	.half	.L1125-.L716
+	.byte	1,5,111,9
+	.half	.L1126-.L1125
+	.byte	1,5,61,9
+	.half	.L485-.L1126
+	.byte	3,1,1,5,100,9
+	.half	.L718-.L485
+	.byte	1,5,84,9
+	.half	.L717-.L718
+	.byte	1,5,123,9
+	.half	.L1127-.L717
+	.byte	1,5,27,9
+	.half	.L487-.L1127
+	.byte	3,1,1,5,1,9
+	.half	.L1128-.L487
+	.byte	3,1,1,5,21,9
+	.half	.L104-.L1128
+	.byte	3,3,1,5,28,9
+	.half	.L1129-.L104
+	.byte	1,5,6,9
+	.half	.L1130-.L1129
+	.byte	1,5,65,9
+	.half	.L1131-.L1130
+	.byte	1,5,72,9
+	.half	.L1132-.L1131
+	.byte	1,5,69,9
+	.half	.L1133-.L1132
+	.byte	1,5,42,9
+	.half	.L1134-.L1133
+	.byte	1,5,35,9
+	.half	.L105-.L1134
+	.byte	1,5,1,9
+	.half	.L106-.L105
+	.byte	1,5,6,7,9
+	.half	.L108-.L106
+	.byte	3,2,1,5,20,9
+	.half	.L1135-.L108
+	.byte	1,5,16,9
+	.half	.L1136-.L1135
+	.byte	1,5,27,9
+	.half	.L1137-.L1136
+	.byte	3,1,1,5,1,9
+	.half	.L107-.L1137
+	.byte	3,125,1,5,29,9
+	.half	.L97-.L107
+	.byte	3,5,1,5,17,9
+	.half	.L1138-.L97
+	.byte	1,5,42,9
+	.half	.L1139-.L1138
+	.byte	1,5,38,9
+	.half	.L1140-.L1139
+	.byte	1,5,15,9
+	.half	.L1141-.L1140
+	.byte	1,5,71,7,9
+	.half	.L1142-.L1141
+	.byte	1,5,59,9
+	.half	.L1143-.L1142
+	.byte	1,5,84,9
+	.half	.L1144-.L1143
+	.byte	1,5,80,9
+	.half	.L1145-.L1144
+	.byte	1,5,8,9
+	.half	.L112-.L1145
+	.byte	3,4,1,5,1,9
+	.half	.L713-.L112
+	.byte	1,5,19,9
+	.half	.L110-.L713
+	.byte	3,2,1,5,7,9
+	.half	.L1146-.L110
+	.byte	1,5,32,9
+	.half	.L1147-.L1146
+	.byte	1,5,28,9
+	.half	.L1148-.L1147
+	.byte	1,5,5,9
+	.half	.L1149-.L1148
+	.byte	1,5,63,7,9
+	.half	.L1150-.L1149
+	.byte	1,5,51,9
+	.half	.L1151-.L1150
+	.byte	1,5,76,9
+	.half	.L1152-.L1151
+	.byte	1,5,49,9
+	.half	.L1153-.L1152
+	.byte	1,5,50,9
+	.half	.L116-.L1153
+	.byte	3,2,1,5,79,9
+	.half	.L720-.L116
+	.byte	1,5,72,9
+	.half	.L1154-.L720
+	.byte	1,5,101,9
+	.half	.L1155-.L1154
+	.byte	1,5,52,9
+	.half	.L489-.L1155
+	.byte	3,1,1,5,91,9
+	.half	.L721-.L489
+	.byte	1,5,84,9
+	.half	.L1156-.L721
+	.byte	1,5,123,9
+	.half	.L1157-.L1156
+	.byte	1,5,52,9
+	.half	.L491-.L1157
+	.byte	3,1,1,5,85,9
+	.half	.L722-.L491
+	.byte	1,5,78,9
+	.half	.L1158-.L722
+	.byte	1,5,111,9
+	.half	.L1159-.L1158
+	.byte	1,5,61,9
+	.half	.L493-.L1159
+	.byte	3,1,1,5,100,9
+	.half	.L724-.L493
+	.byte	1,5,84,9
+	.half	.L723-.L724
+	.byte	1,5,123,9
+	.half	.L1160-.L723
+	.byte	1,5,27,9
+	.half	.L495-.L1160
+	.byte	3,1,1,5,18,9
+	.half	.L109-.L495
+	.byte	3,10,1,5,6,9
+	.half	.L1161-.L109
+	.byte	1,5,31,9
+	.half	.L1162-.L1161
+	.byte	1,5,27,9
+	.half	.L1163-.L1162
+	.byte	1,5,1,9
+	.half	.L1164-.L1163
+	.byte	1,5,21,7,9
+	.half	.L1165-.L1164
+	.byte	3,1,1,5,28,9
+	.half	.L1166-.L1165
+	.byte	1,5,6,9
+	.half	.L1167-.L1166
+	.byte	1,5,65,9
+	.half	.L1168-.L1167
+	.byte	1,5,72,9
+	.half	.L1169-.L1168
+	.byte	1,5,69,9
+	.half	.L1170-.L1169
+	.byte	1,5,42,9
+	.half	.L1171-.L1170
+	.byte	1,5,35,9
+	.half	.L118-.L1171
+	.byte	1,5,1,9
+	.half	.L119-.L118
+	.byte	1,5,6,7,9
+	.half	.L121-.L119
+	.byte	3,2,1,5,20,9
+	.half	.L1172-.L121
+	.byte	1,5,16,9
+	.half	.L1173-.L1172
+	.byte	1,5,27,9
+	.half	.L1174-.L1173
+	.byte	3,1,1,5,21,9
+	.half	.L117-.L1174
+	.byte	3,8,1,5,1,9
+	.half	.L719-.L117
+	.byte	3,1,1,5,54,7,9
+	.half	.L1175-.L719
+	.byte	1,5,1,9
+	.half	.L122-.L1175
+	.byte	3,1,1,5,54,7,9
+	.half	.L1176-.L122
+	.byte	1,5,1,9
+	.half	.L123-.L1176
+	.byte	3,1,1,9
+	.half	.L45-.L123
+	.byte	3,1,1,7,9
+	.half	.L320-.L45
+	.byte	0,1,1
+.L955:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb')
+	.sect	'.debug_ranges'
+.L319:
+	.word	-1,.L265,0,.L320-.L265,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb')
+	.sect	'.debug_info'
+.L321:
+	.word	818
+	.half	3
+	.word	.L322
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L324,.L323
+	.byte	2
+	.word	.L272
+	.byte	3
+	.byte	'_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb',0,1,162,3,5
+	.word	.L347
+	.byte	1,1,1
+	.word	.L267,.L497,.L266
+	.byte	4
+	.byte	'this',0,1,162,3,90
+	.word	.L498,.L499
+	.byte	4
+	.byte	'__5428_44_voltage',0,1,162,3,103
+	.word	.L351,.L500
+	.byte	4
+	.byte	'__5428_68_stepper_driver',0,1,162,3,145,1
+	.word	.L501,.L502
+	.byte	4
+	.byte	'__5428_89_modulation_centered',0,1,162,3,177,1
+	.word	.L353,.L503
+	.byte	5
+	.word	.L267,.L497
+	.byte	6
+	.byte	'__5432_10_phases_switched',0,1,166,3,11
+	.word	.L353,.L504
+	.byte	6
+	.byte	'__5433_10_phases_inverted',0,1,167,3,11
+	.word	.L353,.L505
+	.byte	6
+	.byte	'__5447_20_c',0,1,181,3,21
+	.word	.L360,.L506
+	.byte	6
+	.byte	'__5503_13_exit_flag',0,1,237,3,14
+	.word	.L426,.L507
+	.byte	5
+	.word	.L126,.L508
+	.byte	6
+	.byte	'__5442_13_i',0,1,176,3,10
+	.word	.L347,.L509
+	.byte	0,5
+	.word	.L136,.L510
+	.byte	6
+	.byte	'__5460_9_temp',0,1,194,3,12
+	.word	.L347,.L511
+	.byte	0,5
+	.word	.L510,.L512
+	.byte	6
+	.byte	'__5461_9_temp',0,1,195,3,14
+	.word	.L351,.L513
+	.byte	0,5
+	.word	.L512,.L514
+	.byte	6
+	.byte	'__5462_9_temp',0,1,196,3,14
+	.word	.L351,.L515
+	.byte	0,5
+	.word	.L137,.L516
+	.byte	6
+	.byte	'__5477_13_i',0,1,211,3,10
+	.word	.L347,.L517
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb')
+	.sect	'.debug_abbrev'
+.L322:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb')
+	.sect	'.debug_line'
+.L323:
+	.word	.L1178-.L1177
+.L1177:
+	.half	3
+	.word	.L1180-.L1179
+.L1179:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0,0,0,0,0
+.L1180:
+	.byte	5,5,7,0,5,2
+	.word	.L267
+	.byte	3,161,3,1,5,27,9
+	.half	.L728-.L267
+	.byte	3,4,1,9
+	.half	.L729-.L728
+	.byte	3,1,1,5,21,9
+	.half	.L730-.L729
+	.byte	3,2,1,5,9,9
+	.half	.L1181-.L730
+	.byte	1,5,34,9
+	.half	.L1182-.L1181
+	.byte	1,5,30,9
+	.half	.L1183-.L1182
+	.byte	1,5,7,9
+	.half	.L1184-.L1183
+	.byte	1,5,66,7,9
+	.half	.L1185-.L1184
+	.byte	1,5,54,9
+	.half	.L1186-.L1185
+	.byte	1,5,79,9
+	.half	.L1187-.L1186
+	.byte	1,5,52,9
+	.half	.L1188-.L1187
+	.byte	1,5,8,9
+	.half	.L127-.L1188
+	.byte	3,2,1,5,1,9
+	.half	.L1189-.L127
+	.byte	1,5,35,9
+	.half	.L126-.L1189
+	.byte	3,5,1,5,66,9
+	.half	.L731-.L126
+	.byte	1,5,107,9
+	.half	.L130-.L731
+	.byte	3,1,1,5,62,9
+	.half	.L1190-.L130
+	.byte	1,5,2,9
+	.half	.L1191-.L1190
+	.byte	1,5,190,1,9
+	.half	.L1192-.L1191
+	.byte	1,5,187,1,9
+	.half	.L1193-.L1192
+	.byte	1,5,210,1,9
+	.half	.L1194-.L1193
+	.byte	1,5,198,1,9
+	.half	.L1195-.L1194
+	.byte	1,5,235,1,9
+	.half	.L1196-.L1195
+	.byte	1,5,12,9
+	.half	.L734-.L1196
+	.byte	3,1,1,5,79,9
+	.half	.L1197-.L734
+	.byte	3,126,1,5,62,9
+	.half	.L129-.L1197
+	.byte	1,5,66,9
+	.half	.L1198-.L129
+	.byte	1,5,12,7,9
+	.half	.L508-.L1198
+	.byte	3,4,1,5,1,9
+	.half	.L1199-.L508
+	.byte	3,1,1,5,63,9
+	.half	.L1200-.L1199
+	.byte	1,5,107,9
+	.half	.L736-.L1200
+	.byte	3,2,1,5,62,9
+	.half	.L1201-.L736
+	.byte	1,5,2,9
+	.half	.L1202-.L1201
+	.byte	1,5,150,1,9
+	.half	.L1203-.L1202
+	.byte	1,5,158,1,9
+	.half	.L1204-.L1203
+	.byte	1,5,35,9
+	.half	.L738-.L1204
+	.byte	3,1,1,5,13,9
+	.half	.L1205-.L738
+	.byte	1,5,45,9
+	.half	.L1206-.L1205
+	.byte	1,5,42,9
+	.half	.L1207-.L1206
+	.byte	1,5,5,9
+	.half	.L1208-.L1207
+	.byte	1,5,100,7,9
+	.half	.L1209-.L1208
+	.byte	1,5,78,9
+	.half	.L1210-.L1209
+	.byte	1,5,110,9
+	.half	.L1211-.L1210
+	.byte	1,5,107,9
+	.half	.L1212-.L1211
+	.byte	1,5,8,9
+	.half	.L133-.L1212
+	.byte	3,2,1,5,1,9
+	.half	.L1213-.L133
+	.byte	1,5,34,9
+	.half	.L131-.L1213
+	.byte	3,5,1,5,12,9
+	.half	.L1214-.L131
+	.byte	1,5,72,9
+	.half	.L1215-.L1214
+	.byte	1,5,50,9
+	.half	.L1216-.L1215
+	.byte	1,5,41,9
+	.half	.L1217-.L1216
+	.byte	1,5,1,9
+	.half	.L1218-.L1217
+	.byte	1,5,48,7,9
+	.half	.L136-.L1218
+	.byte	3,3,1,5,77,9
+	.half	.L739-.L136
+	.byte	1,5,70,9
+	.half	.L1219-.L739
+	.byte	1,5,99,9
+	.half	.L1220-.L1219
+	.byte	1,5,50,9
+	.half	.L510-.L1220
+	.byte	3,1,1,5,89,9
+	.half	.L740-.L510
+	.byte	1,5,82,9
+	.half	.L1221-.L740
+	.byte	1,5,121,9
+	.half	.L1222-.L1221
+	.byte	1,5,50,9
+	.half	.L512-.L1222
+	.byte	3,1,1,5,83,9
+	.half	.L741-.L512
+	.byte	1,5,76,9
+	.half	.L1223-.L741
+	.byte	1,5,109,9
+	.half	.L1224-.L1223
+	.byte	1,5,27,9
+	.half	.L514-.L1224
+	.byte	3,1,1,5,17,9
+	.half	.L135-.L514
+	.byte	3,3,1,5,24,9
+	.half	.L1225-.L135
+	.byte	1,5,21,9
+	.half	.L1226-.L1225
+	.byte	1,5,1,9
+	.half	.L1227-.L1226
+	.byte	1,5,6,7,9
+	.half	.L138-.L1227
+	.byte	3,2,1,5,20,9
+	.half	.L1228-.L138
+	.byte	1,5,16,9
+	.half	.L1229-.L1228
+	.byte	1,5,27,9
+	.half	.L1230-.L1229
+	.byte	3,1,1,5,35,9
+	.half	.L137-.L1230
+	.byte	3,8,1,5,66,9
+	.half	.L732-.L137
+	.byte	1,5,107,9
+	.half	.L140-.L732
+	.byte	3,1,1,5,62,9
+	.half	.L1231-.L140
+	.byte	1,5,2,9
+	.half	.L1232-.L1231
+	.byte	1,5,150,1,9
+	.half	.L1233-.L1232
+	.byte	1,5,198,1,9
+	.half	.L1234-.L1233
+	.byte	1,5,195,1,9
+	.half	.L1235-.L1234
+	.byte	1,5,218,1,9
+	.half	.L1236-.L1235
+	.byte	1,5,206,1,9
+	.half	.L1237-.L1236
+	.byte	1,5,12,9
+	.half	.L743-.L1237
+	.byte	3,1,1,5,79,9
+	.half	.L1238-.L743
+	.byte	3,126,1,5,62,9
+	.half	.L139-.L1238
+	.byte	1,5,66,9
+	.half	.L1239-.L139
+	.byte	1,5,12,7,9
+	.half	.L516-.L1239
+	.byte	3,4,1,5,1,9
+	.half	.L1240-.L516
+	.byte	3,1,1,5,63,9
+	.half	.L1241-.L1240
+	.byte	1,5,107,9
+	.half	.L745-.L1241
+	.byte	3,1,1,5,62,9
+	.half	.L1242-.L745
+	.byte	1,5,2,9
+	.half	.L1243-.L1242
+	.byte	1,5,150,1,9
+	.half	.L1244-.L1243
+	.byte	1,5,158,1,9
+	.half	.L1245-.L1244
+	.byte	1,5,34,9
+	.half	.L747-.L1245
+	.byte	3,4,1,5,12,9
+	.half	.L1246-.L747
+	.byte	1,5,44,9
+	.half	.L1247-.L1246
+	.byte	1,5,41,9
+	.half	.L1248-.L1247
+	.byte	1,5,1,9
+	.half	.L1249-.L1248
+	.byte	1,5,8,7,9
+	.half	.L142-.L1249
+	.byte	3,2,1,5,1,9
+	.half	.L1250-.L142
+	.byte	1,5,17,9
+	.half	.L141-.L1250
+	.byte	3,3,1,5,24,9
+	.half	.L1251-.L141
+	.byte	1,5,21,9
+	.half	.L1252-.L1251
+	.byte	1,5,1,9
+	.half	.L1253-.L1252
+	.byte	1,5,6,7,9
+	.half	.L145-.L1253
+	.byte	3,2,1,5,20,9
+	.half	.L1254-.L145
+	.byte	1,5,16,9
+	.half	.L1255-.L1254
+	.byte	1,5,27,9
+	.half	.L1256-.L1255
+	.byte	3,1,1,5,21,9
+	.half	.L144-.L1256
+	.byte	3,8,1,5,1,9
+	.half	.L748-.L144
+	.byte	3,1,1,5,54,7,9
+	.half	.L1257-.L748
+	.byte	1,5,1,9
+	.half	.L146-.L1257
+	.byte	3,1,1,5,54,7,9
+	.half	.L1258-.L146
+	.byte	1,5,1,9
+	.half	.L147-.L1258
+	.byte	3,1,1,9
+	.half	.L128-.L147
+	.byte	3,1,1,7,9
+	.half	.L325-.L128
+	.byte	0,1,1
+.L1178:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb')
+	.sect	'.debug_ranges'
+.L324:
+	.word	-1,.L267,0,.L325-.L267,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb')
+	.sect	'.debug_info'
+.L326:
+	.word	1927
+	.half	3
+	.word	.L327
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L329,.L328
+	.byte	2
+	.word	.L272
+	.byte	3
+	.byte	'_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb',0,1,247,3,5
+	.word	.L347
+	.byte	1,1,1
+	.word	.L269,.L518,.L268
+	.byte	4
+	.byte	'this',0,1,247,3,86
+	.word	.L519,.L520
+	.byte	4
+	.byte	'__5513_43_voltage',0,1,247,3,99
+	.word	.L351,.L521
+	.byte	4
+	.byte	'__5513_64_bldc_driver',0,1,247,3,138,1
+	.word	.L417,.L522
+	.byte	4
+	.byte	'__5513_82_modulation_centered',0,1,247,3,167,1
+	.word	.L353,.L523
+	.byte	5
+	.word	.L269,.L518
+	.byte	6
+	.byte	'__5517_10_phases_switched',0,1,251,3,11
+	.word	.L353,.L524
+	.byte	6
+	.byte	'__5518_10_phases_inverted',0,1,252,3,11
+	.word	.L353,.L525
+	.byte	6
+	.byte	'__5528_20_c',0,1,134,4,21
+	.word	.L360,.L526
+	.byte	6
+	.byte	'__5537_11_cc',0,1,143,4,12
+	.word	.L424,.L527
+	.byte	6
+	.byte	'__5538_13_max_i',0,1,144,4,14
+	.word	.L426,.L528
+	.byte	6
+	.byte	'__5539_11_max_c',0,1,145,4,12
+	.word	.L351,.L529
+	.byte	6
+	.byte	'__5540_11_max_c_ratio',0,1,146,4,12
+	.word	.L351,.L530
+	.byte	6
+	.byte	'__5638_11_ca',0,1,244,4,12
+	.word	.L424,.L531
+	.byte	6
+	.byte	'__5711_11_cb',0,1,189,5,12
+	.word	.L424,.L532
+	.byte	6
+	.byte	'__5739_13_exit_flag',0,1,217,5,14
+	.word	.L426,.L533
+	.byte	5
+	.word	.L534,.L535
+	.byte	6
+	.byte	'__5523_13_i',0,1,129,4,10
+	.word	.L347,.L536
+	.byte	0,5
+	.word	.L537,.L538
+	.byte	6
+	.byte	'__5541_13_i',0,1,147,4,10
+	.word	.L347,.L539
+	.byte	5
+	.word	.L540,.L159
+	.byte	6
+	.byte	'__5546_21_j',0,1,152,4,10
+	.word	.L347,.L541
+	.byte	5
+	.word	.L162,.L166
+	.byte	6
+	.byte	'__5549_23_ratio',0,1,155,4,12
+	.word	.L351,.L542
+	.byte	0,0,0,5
+	.word	.L172,.L543
+	.byte	6
+	.byte	'__5559_17_temp',0,1,165,4,12
+	.word	.L347,.L544
+	.byte	0,5
+	.word	.L543,.L545
+	.byte	6
+	.byte	'__5560_17_temp',0,1,166,4,14
+	.word	.L351,.L546
+	.byte	0,5
+	.word	.L545,.L547
+	.byte	6
+	.byte	'__5561_17_temp',0,1,167,4,14
+	.word	.L351,.L548
+	.byte	0,5
+	.word	.L547,.L549
+	.byte	6
+	.byte	'__5562_17_temp',0,1,168,4,14
+	.word	.L351,.L550
+	.byte	0,5
+	.word	.L174,.L551
+	.byte	6
+	.byte	'__5568_17_temp',0,1,174,4,12
+	.word	.L347,.L552
+	.byte	0,5
+	.word	.L551,.L553
+	.byte	6
+	.byte	'__5569_17_temp',0,1,175,4,14
+	.word	.L351,.L554
+	.byte	0,5
+	.word	.L553,.L555
+	.byte	6
+	.byte	'__5570_17_temp',0,1,176,4,14
+	.word	.L351,.L556
+	.byte	0,5
+	.word	.L555,.L557
+	.byte	6
+	.byte	'__5571_17_temp',0,1,177,4,14
+	.word	.L351,.L558
+	.byte	0,5
+	.word	.L184,.L559
+	.byte	6
+	.byte	'__5589_17_temp',0,1,195,4,12
+	.word	.L347,.L560
+	.byte	0,5
+	.word	.L559,.L561
+	.byte	6
+	.byte	'__5590_17_temp',0,1,196,4,14
+	.word	.L351,.L562
+	.byte	0,5
+	.word	.L561,.L563
+	.byte	6
+	.byte	'__5591_17_temp',0,1,197,4,14
+	.word	.L351,.L564
+	.byte	0,5
+	.word	.L563,.L565
+	.byte	6
+	.byte	'__5592_17_temp',0,1,198,4,14
+	.word	.L351,.L566
+	.byte	0,5
+	.word	.L187,.L567
+	.byte	6
+	.byte	'__5596_17_temp',0,1,202,4,12
+	.word	.L347,.L568
+	.byte	0,5
+	.word	.L567,.L569
+	.byte	6
+	.byte	'__5597_17_temp',0,1,203,4,14
+	.word	.L351,.L570
+	.byte	0,5
+	.word	.L569,.L571
+	.byte	6
+	.byte	'__5598_17_temp',0,1,204,4,14
+	.word	.L351,.L572
+	.byte	0,5
+	.word	.L571,.L573
+	.byte	6
+	.byte	'__5599_17_temp',0,1,205,4,14
+	.word	.L351,.L574
+	.byte	0,5
+	.word	.L180,.L575
+	.byte	6
+	.byte	'__5613_13_i',0,1,219,4,10
+	.word	.L347,.L576
+	.byte	0,5
+	.word	.L206,.L577
+	.byte	6
+	.byte	'__5656_13_temp',0,1,134,5,12
+	.word	.L347,.L578
+	.byte	0,5
+	.word	.L577,.L579
+	.byte	6
+	.byte	'__5657_13_temp',0,1,135,5,14
+	.word	.L351,.L580
+	.byte	0,5
+	.word	.L579,.L581
+	.byte	6
+	.byte	'__5658_13_temp',0,1,136,5,14
+	.word	.L351,.L582
+	.byte	0,5
+	.word	.L581,.L583
+	.byte	6
+	.byte	'__5659_13_temp',0,1,137,5,14
+	.word	.L351,.L584
+	.byte	0,5
+	.word	.L214,.L585
+	.byte	6
+	.byte	'__5672_17_temp',0,1,150,5,12
+	.word	.L347,.L586
+	.byte	0,5
+	.word	.L585,.L587
+	.byte	6
+	.byte	'__5673_17_temp',0,1,151,5,14
+	.word	.L351,.L588
+	.byte	0,5
+	.word	.L587,.L589
+	.byte	6
+	.byte	'__5674_17_temp',0,1,152,5,14
+	.word	.L351,.L590
+	.byte	0,5
+	.word	.L589,.L591
+	.byte	6
+	.byte	'__5675_17_temp',0,1,153,5,14
+	.word	.L351,.L592
+	.byte	0,5
+	.word	.L217,.L593
+	.byte	6
+	.byte	'__5694_13_i',0,1,172,5,10
+	.word	.L347,.L594
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb')
+	.sect	'.debug_abbrev'
+.L327:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb')
+	.sect	'.debug_line'
+.L328:
+	.word	.L1260-.L1259
+.L1259:
+	.half	3
+	.word	.L1262-.L1261
+.L1261:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0,0,0,0,0
+.L1262:
+	.byte	5,5,7,0,5,2
+	.word	.L269
+	.byte	3,246,3,1,5,27,9
+	.half	.L752-.L269
+	.byte	3,4,1,9
+	.half	.L753-.L752
+	.byte	3,1,1,5,35,9
+	.half	.L534-.L753
+	.byte	3,5,1,5,66,9
+	.half	.L754-.L534
+	.byte	1,5,111,9
+	.half	.L150-.L754
+	.byte	3,1,1,5,69,9
+	.half	.L1263-.L150
+	.byte	1,5,2,9
+	.half	.L1264-.L1263
+	.byte	1,5,191,1,9
+	.half	.L1265-.L1264
+	.byte	1,5,188,1,9
+	.half	.L1266-.L1265
+	.byte	1,5,211,1,9
+	.half	.L1267-.L1266
+	.byte	1,5,199,1,9
+	.half	.L1268-.L1267
+	.byte	1,5,148,2,9
+	.half	.L1269-.L1268
+	.byte	1,5,145,2,9
+	.half	.L1270-.L1269
+	.byte	1,5,168,2,9
+	.half	.L1271-.L1270
+	.byte	1,5,156,2,9
+	.half	.L1272-.L1271
+	.byte	1,5,25,9
+	.half	.L1273-.L1272
+	.byte	1,5,12,9
+	.half	.L757-.L1273
+	.byte	3,1,1,5,79,9
+	.half	.L1274-.L757
+	.byte	3,126,1,5,62,9
+	.half	.L149-.L1274
+	.byte	1,5,66,9
+	.half	.L1275-.L149
+	.byte	1,5,12,7,9
+	.half	.L535-.L1275
+	.byte	3,4,1,5,1,9
+	.half	.L1276-.L535
+	.byte	3,1,1,5,63,9
+	.half	.L1277-.L1276
+	.byte	1,5,111,9
+	.half	.L759-.L1277
+	.byte	3,2,1,5,69,9
+	.half	.L1278-.L759
+	.byte	1,5,2,9
+	.half	.L1279-.L1278
+	.byte	1,5,151,1,9
+	.half	.L1280-.L1279
+	.byte	1,5,159,1,9
+	.half	.L1281-.L1280
+	.byte	1,5,167,1,9
+	.half	.L1282-.L1281
+	.byte	1,5,36,9
+	.half	.L761-.L1282
+	.byte	3,1,1,5,14,9
+	.half	.L1283-.L761
+	.byte	1,5,46,9
+	.half	.L1284-.L1283
+	.byte	1,5,43,9
+	.half	.L1285-.L1284
+	.byte	1,5,6,9
+	.half	.L1286-.L1285
+	.byte	1,5,101,7,9
+	.half	.L1287-.L1286
+	.byte	1,5,79,9
+	.half	.L1288-.L1287
+	.byte	1,5,111,9
+	.half	.L1289-.L1288
+	.byte	1,5,108,9
+	.half	.L1290-.L1289
+	.byte	1,5,167,1,9
+	.half	.L1291-.L1290
+	.byte	1,5,145,1,9
+	.half	.L1292-.L1291
+	.byte	1,5,177,1,9
+	.half	.L1293-.L1292
+	.byte	1,5,174,1,9
+	.half	.L1294-.L1293
+	.byte	1,5,8,9
+	.half	.L154-.L1294
+	.byte	3,2,1,5,1,9
+	.half	.L1295-.L154
+	.byte	1,5,58,9
+	.half	.L151-.L1295
+	.byte	3,4,1,5,36,9
+	.half	.L1296-.L151
+	.byte	1,5,19,9
+	.half	.L1297-.L1296
+	.byte	1,5,127,9
+	.half	.L1298-.L1297
+	.byte	1,5,105,9
+	.half	.L1299-.L1298
+	.byte	1,5,88,9
+	.half	.L1300-.L1299
+	.byte	1,5,196,1,9
+	.half	.L1301-.L1300
+	.byte	1,5,174,1,9
+	.half	.L1302-.L1301
+	.byte	1,5,157,1,9
+	.half	.L1303-.L1302
+	.byte	1,5,17,9
+	.half	.L1304-.L1303
+	.byte	3,1,1,9
+	.half	.L762-.L1304
+	.byte	3,1,1,5,23,9
+	.half	.L763-.L762
+	.byte	3,1,1,5,35,9
+	.half	.L537-.L763
+	.byte	3,1,1,5,64,9
+	.half	.L764-.L537
+	.byte	1,5,21,9
+	.half	.L157-.L764
+	.byte	3,1,1,5,6,9
+	.half	.L1305-.L157
+	.byte	1,5,39,9
+	.half	.L1306-.L1305
+	.byte	1,5,20,9
+	.half	.L158-.L1306
+	.byte	3,1,1,5,35,9
+	.half	.L1307-.L158
+	.byte	1,5,1,9
+	.half	.L1308-.L1307
+	.byte	1,5,34,7,9
+	.half	.L1309-.L1308
+	.byte	3,1,1,5,20,9
+	.half	.L1310-.L1309
+	.byte	3,1,1,5,35,9
+	.half	.L540-.L1310
+	.byte	3,1,1,5,64,9
+	.half	.L765-.L540
+	.byte	1,5,1,9
+	.half	.L162-.L765
+	.byte	3,1,1,5,35,7,9
+	.half	.L1311-.L162
+	.byte	1,5,21,9
+	.half	.L163-.L1311
+	.byte	3,1,1,5,6,9
+	.half	.L1312-.L163
+	.byte	1,5,39,9
+	.half	.L1313-.L1312
+	.byte	1,5,53,9
+	.half	.L165-.L1313
+	.byte	3,1,1,5,36,9
+	.half	.L1314-.L165
+	.byte	1,5,21,9
+	.half	.L766-.L1314
+	.byte	3,1,1,5,1,9
+	.half	.L1315-.L766
+	.byte	1,5,70,7,9
+	.half	.L1316-.L1315
+	.byte	1,5,77,9
+	.half	.L166-.L1316
+	.byte	3,124,1,5,64,9
+	.half	.L161-.L166
+	.byte	1,5,77,7,9
+	.half	.L159-.L161
+	.byte	3,123,1,5,64,9
+	.half	.L156-.L159
+	.byte	1,5,31,7,9
+	.half	.L538-.L156
+	.byte	3,13,1,5,27,9
+	.half	.L1317-.L538
+	.byte	1,5,1,9
+	.half	.L1318-.L1317
+	.byte	1,5,6,7,9
+	.half	.L1319-.L1318
+	.byte	3,2,1,9
+	.half	.L1320-.L1319
+	.byte	3,9,1,5,50,9
+	.half	.L172-.L1320
+	.byte	3,122,1,5,79,9
+	.half	.L767-.L172
+	.byte	1,5,72,9
+	.half	.L1321-.L767
+	.byte	1,5,101,9
+	.half	.L1322-.L1321
+	.byte	1,5,52,9
+	.half	.L543-.L1322
+	.byte	3,1,1,5,91,9
+	.half	.L768-.L543
+	.byte	1,5,84,9
+	.half	.L1323-.L768
+	.byte	1,5,123,9
+	.half	.L1324-.L1323
+	.byte	1,5,52,9
+	.half	.L545-.L1324
+	.byte	3,1,1,5,85,9
+	.half	.L769-.L545
+	.byte	1,5,78,9
+	.half	.L1325-.L769
+	.byte	1,5,111,9
+	.half	.L1326-.L1325
+	.byte	1,5,59,9
+	.half	.L547-.L1326
+	.byte	3,1,1,5,94,9
+	.half	.L771-.L547
+	.byte	1,5,80,9
+	.half	.L770-.L771
+	.byte	1,5,115,9
+	.half	.L1327-.L770
+	.byte	1,5,27,9
+	.half	.L549-.L1327
+	.byte	3,1,1,5,1,9
+	.half	.L1328-.L549
+	.byte	3,1,1,5,50,9
+	.half	.L174-.L1328
+	.byte	3,4,1,5,79,9
+	.half	.L772-.L174
+	.byte	1,5,72,9
+	.half	.L1329-.L772
+	.byte	1,5,101,9
+	.half	.L1330-.L1329
+	.byte	1,5,52,9
+	.half	.L551-.L1330
+	.byte	3,1,1,5,91,9
+	.half	.L773-.L551
+	.byte	1,5,84,9
+	.half	.L1331-.L773
+	.byte	1,5,123,9
+	.half	.L1332-.L1331
+	.byte	1,5,52,9
+	.half	.L553-.L1332
+	.byte	3,1,1,5,85,9
+	.half	.L774-.L553
+	.byte	1,5,78,9
+	.half	.L1333-.L774
+	.byte	1,5,111,9
+	.half	.L1334-.L1333
+	.byte	1,5,59,9
+	.half	.L555-.L1334
+	.byte	3,1,1,5,94,9
+	.half	.L776-.L555
+	.byte	1,5,80,9
+	.half	.L775-.L776
+	.byte	1,5,115,9
+	.half	.L1335-.L775
+	.byte	1,5,27,9
+	.half	.L557-.L1335
+	.byte	3,1,1,5,1,9
+	.half	.L1336-.L557
+	.byte	3,1,1,5,19,9
+	.half	.L175-.L1336
+	.byte	3,4,1,5,26,9
+	.half	.L1337-.L175
+	.byte	1,5,6,9
+	.half	.L1338-.L1337
+	.byte	1,5,61,9
+	.half	.L1339-.L1338
+	.byte	1,5,68,9
+	.half	.L1340-.L1339
+	.byte	1,5,65,9
+	.half	.L1341-.L1340
+	.byte	1,5,40,9
+	.half	.L1342-.L1341
+	.byte	1,5,33,9
+	.half	.L176-.L1342
+	.byte	1,5,1,9
+	.half	.L177-.L176
+	.byte	1,5,6,7,9
+	.half	.L179-.L177
+	.byte	3,2,1,5,20,9
+	.half	.L1343-.L179
+	.byte	1,5,16,9
+	.half	.L1344-.L1343
+	.byte	1,5,27,9
+	.half	.L1345-.L1344
+	.byte	3,1,1,5,1,9
+	.half	.L178-.L1345
+	.byte	3,125,1,5,18,9
+	.half	.L181-.L178
+	.byte	3,8,1,5,6,9
+	.half	.L1346-.L181
+	.byte	1,5,31,9
+	.half	.L1347-.L1346
+	.byte	1,5,27,9
+	.half	.L1348-.L1347
+	.byte	1,5,1,9
+	.half	.L1349-.L1348
+	.byte	1,5,20,7,9
+	.half	.L1350-.L1349
+	.byte	3,2,1,5,8,9
+	.half	.L1351-.L1350
+	.byte	1,5,33,9
+	.half	.L1352-.L1351
+	.byte	1,5,6,9
+	.half	.L1353-.L1352
+	.byte	1,5,50,9
+	.half	.L184-.L1353
+	.byte	3,2,1,5,79,9
+	.half	.L777-.L184
+	.byte	1,5,72,9
+	.half	.L1354-.L777
+	.byte	1,5,101,9
+	.half	.L1355-.L1354
+	.byte	1,5,52,9
+	.half	.L559-.L1355
+	.byte	3,1,1,5,91,9
+	.half	.L778-.L559
+	.byte	1,5,84,9
+	.half	.L1356-.L778
+	.byte	1,5,123,9
+	.half	.L1357-.L1356
+	.byte	1,5,52,9
+	.half	.L561-.L1357
+	.byte	3,1,1,5,85,9
+	.half	.L779-.L561
+	.byte	1,5,78,9
+	.half	.L1358-.L779
+	.byte	1,5,111,9
+	.half	.L1359-.L1358
+	.byte	1,5,59,9
+	.half	.L563-.L1359
+	.byte	3,1,1,5,94,9
+	.half	.L781-.L563
+	.byte	1,5,80,9
+	.half	.L780-.L781
+	.byte	1,5,115,9
+	.half	.L1360-.L780
+	.byte	1,5,27,9
+	.half	.L565-.L1360
+	.byte	3,1,1,5,57,9
+	.half	.L1361-.L565
+	.byte	3,124,1,5,30,9
+	.half	.L183-.L1361
+	.byte	3,5,1,5,18,9
+	.half	.L1362-.L183
+	.byte	1,5,43,9
+	.half	.L1363-.L1362
+	.byte	1,5,16,9
+	.half	.L1364-.L1363
+	.byte	1,5,50,9
+	.half	.L187-.L1364
+	.byte	3,2,1,5,79,9
+	.half	.L782-.L187
+	.byte	1,5,72,9
+	.half	.L1365-.L782
+	.byte	1,5,101,9
+	.half	.L1366-.L1365
+	.byte	1,5,52,9
+	.half	.L567-.L1366
+	.byte	3,1,1,5,91,9
+	.half	.L783-.L567
+	.byte	1,5,84,9
+	.half	.L1367-.L783
+	.byte	1,5,123,9
+	.half	.L1368-.L1367
+	.byte	1,5,52,9
+	.half	.L569-.L1368
+	.byte	3,1,1,5,85,9
+	.half	.L784-.L569
+	.byte	1,5,78,9
+	.half	.L1369-.L784
+	.byte	1,5,111,9
+	.half	.L1370-.L1369
+	.byte	1,5,59,9
+	.half	.L571-.L1370
+	.byte	3,1,1,5,94,9
+	.half	.L786-.L571
+	.byte	1,5,80,9
+	.half	.L785-.L786
+	.byte	1,5,115,9
+	.half	.L1371-.L785
+	.byte	1,5,27,9
+	.half	.L573-.L1371
+	.byte	3,1,1,5,35,9
+	.half	.L180-.L573
+	.byte	3,13,1,5,66,9
+	.half	.L755-.L180
+	.byte	1,5,111,9
+	.half	.L189-.L755
+	.byte	3,1,1,5,69,9
+	.half	.L1372-.L189
+	.byte	1,5,2,9
+	.half	.L1373-.L1372
+	.byte	1,5,191,1,9
+	.half	.L1374-.L1373
+	.byte	1,5,188,1,9
+	.half	.L1375-.L1374
+	.byte	1,5,211,1,9
+	.half	.L1376-.L1375
+	.byte	1,5,199,1,9
+	.half	.L1377-.L1376
+	.byte	1,5,236,1,9
+	.half	.L1378-.L1377
+	.byte	1,5,244,1,9
+	.half	.L1379-.L1378
+	.byte	1,5,12,9
+	.half	.L789-.L1379
+	.byte	3,1,1,5,79,9
+	.half	.L1380-.L789
+	.byte	3,126,1,5,62,9
+	.half	.L188-.L1380
+	.byte	1,5,66,9
+	.half	.L1381-.L188
+	.byte	1,5,12,7,9
+	.half	.L575-.L1381
+	.byte	3,4,1,5,1,9
+	.half	.L1382-.L575
+	.byte	3,1,1,5,63,9
+	.half	.L1383-.L1382
+	.byte	1,5,111,9
+	.half	.L791-.L1383
+	.byte	3,2,1,5,69,9
+	.half	.L1384-.L791
+	.byte	1,5,2,9
+	.half	.L1385-.L1384
+	.byte	1,5,151,1,9
+	.half	.L1386-.L1385
+	.byte	1,5,159,1,9
+	.half	.L1387-.L1386
+	.byte	1,5,167,1,9
+	.half	.L1388-.L1387
+	.byte	1,5,36,9
+	.half	.L793-.L1388
+	.byte	3,3,1,5,14,9
+	.half	.L1389-.L793
+	.byte	1,5,46,9
+	.half	.L1390-.L1389
+	.byte	1,5,43,9
+	.half	.L1391-.L1390
+	.byte	1,5,6,9
+	.half	.L1392-.L1391
+	.byte	1,5,101,7,9
+	.half	.L1393-.L1392
+	.byte	1,5,79,9
+	.half	.L1394-.L1393
+	.byte	1,5,111,9
+	.half	.L1395-.L1394
+	.byte	1,5,108,9
+	.half	.L1396-.L1395
+	.byte	1,5,167,1,9
+	.half	.L1397-.L1396
+	.byte	1,5,145,1,9
+	.half	.L1398-.L1397
+	.byte	1,5,177,1,9
+	.half	.L1399-.L1398
+	.byte	1,5,174,1,9
+	.half	.L1400-.L1399
+	.byte	1,5,8,9
+	.half	.L193-.L1400
+	.byte	3,2,1,5,1,9
+	.half	.L1401-.L193
+	.byte	1,5,58,9
+	.half	.L190-.L1401
+	.byte	3,13,1,5,36,9
+	.half	.L1402-.L190
+	.byte	1,5,19,9
+	.half	.L1403-.L1402
+	.byte	1,5,127,9
+	.half	.L1404-.L1403
+	.byte	1,5,105,9
+	.half	.L1405-.L1404
+	.byte	1,5,88,9
+	.half	.L1406-.L1405
+	.byte	1,5,196,1,9
+	.half	.L1407-.L1406
+	.byte	1,5,174,1,9
+	.half	.L1408-.L1407
+	.byte	1,5,157,1,9
+	.half	.L1409-.L1408
+	.byte	1,5,17,9
+	.half	.L1410-.L1409
+	.byte	3,1,1,5,5,9
+	.half	.L1411-.L1410
+	.byte	1,5,36,9
+	.half	.L1412-.L1411
+	.byte	1,5,35,9
+	.half	.L1413-.L1412
+	.byte	3,3,1,5,13,9
+	.half	.L1414-.L1413
+	.byte	1,5,73,9
+	.half	.L1415-.L1414
+	.byte	1,5,51,9
+	.half	.L1416-.L1415
+	.byte	1,5,42,9
+	.half	.L1417-.L1416
+	.byte	1,5,84,9
+	.half	.L1418-.L1417
+	.byte	1,5,81,9
+	.half	.L1419-.L1418
+	.byte	1,5,1,9
+	.half	.L1420-.L1419
+	.byte	1,5,8,7,9
+	.half	.L198-.L1420
+	.byte	3,2,1,5,1,9
+	.half	.L1421-.L198
+	.byte	1,9
+	.half	.L197-.L1421
+	.byte	3,126,1,5,27,9
+	.half	.L195-.L197
+	.byte	3,4,1,5,15,9
+	.half	.L1422-.L195
+	.byte	1,5,46,9
+	.half	.L1423-.L1422
+	.byte	1,5,35,9
+	.half	.L1424-.L1423
+	.byte	3,3,1,5,13,9
+	.half	.L1425-.L1424
+	.byte	1,5,73,9
+	.half	.L1426-.L1425
+	.byte	1,5,51,9
+	.half	.L1427-.L1426
+	.byte	1,5,42,9
+	.half	.L1428-.L1427
+	.byte	1,5,84,9
+	.half	.L1429-.L1428
+	.byte	1,5,81,9
+	.half	.L1430-.L1429
+	.byte	1,5,1,9
+	.half	.L1431-.L1430
+	.byte	1,5,8,7,9
+	.half	.L204-.L1431
+	.byte	3,2,1,5,1,9
+	.half	.L1432-.L204
+	.byte	1,5,50,9
+	.half	.L206-.L1432
+	.byte	3,5,1,5,79,9
+	.half	.L794-.L206
+	.byte	1,5,72,9
+	.half	.L1433-.L794
+	.byte	1,5,101,9
+	.half	.L1434-.L1433
+	.byte	1,5,52,9
+	.half	.L577-.L1434
+	.byte	3,1,1,5,91,9
+	.half	.L795-.L577
+	.byte	1,5,84,9
+	.half	.L1435-.L795
+	.byte	1,5,123,9
+	.half	.L1436-.L1435
+	.byte	1,5,52,9
+	.half	.L579-.L1436
+	.byte	3,1,1,5,85,9
+	.half	.L796-.L579
+	.byte	1,5,78,9
+	.half	.L1437-.L796
+	.byte	1,5,111,9
+	.half	.L1438-.L1437
+	.byte	1,5,59,9
+	.half	.L581-.L1438
+	.byte	3,1,1,5,94,9
+	.half	.L798-.L581
+	.byte	1,5,80,9
+	.half	.L797-.L798
+	.byte	1,5,115,9
+	.half	.L1439-.L797
+	.byte	1,5,27,9
+	.half	.L583-.L1439
+	.byte	3,1,1,5,57,9
+	.half	.L1440-.L583
+	.byte	3,124,1,5,27,9
+	.half	.L201-.L1440
+	.byte	3,6,1,5,15,9
+	.half	.L1441-.L201
+	.byte	1,5,46,9
+	.half	.L1442-.L1441
+	.byte	1,5,43,9
+	.half	.L1443-.L1442
+	.byte	3,2,1,5,21,9
+	.half	.L1444-.L1443
+	.byte	1,5,81,9
+	.half	.L1445-.L1444
+	.byte	1,5,59,9
+	.half	.L1446-.L1445
+	.byte	1,5,50,9
+	.half	.L1447-.L1446
+	.byte	1,5,12,9
+	.half	.L1448-.L1447
+	.byte	1,5,94,9
+	.half	.L1449-.L1448
+	.byte	1,5,91,9
+	.half	.L1450-.L1449
+	.byte	1,5,1,9
+	.half	.L1451-.L1450
+	.byte	1,5,8,7,9
+	.half	.L211-.L1451
+	.byte	3,2,1,5,1,9
+	.half	.L1452-.L211
+	.byte	1,5,34,9
+	.half	.L210-.L1452
+	.byte	3,3,1,5,12,9
+	.half	.L1453-.L210
+	.byte	1,5,72,9
+	.half	.L1454-.L1453
+	.byte	1,5,50,9
+	.half	.L1455-.L1454
+	.byte	1,5,41,9
+	.half	.L1456-.L1455
+	.byte	1,5,1,9
+	.half	.L1457-.L1456
+	.byte	1,5,50,7,9
+	.half	.L214-.L1457
+	.byte	3,3,1,5,79,9
+	.half	.L799-.L214
+	.byte	1,5,72,9
+	.half	.L1458-.L799
+	.byte	1,5,101,9
+	.half	.L1459-.L1458
+	.byte	1,5,52,9
+	.half	.L585-.L1459
+	.byte	3,1,1,5,91,9
+	.half	.L800-.L585
+	.byte	1,5,84,9
+	.half	.L1460-.L800
+	.byte	1,5,123,9
+	.half	.L1461-.L1460
+	.byte	1,5,52,9
+	.half	.L587-.L1461
+	.byte	3,1,1,5,85,9
+	.half	.L801-.L587
+	.byte	1,5,78,9
+	.half	.L1462-.L801
+	.byte	1,5,111,9
+	.half	.L1463-.L1462
+	.byte	1,5,59,9
+	.half	.L589-.L1463
+	.byte	3,1,1,5,94,9
+	.half	.L803-.L589
+	.byte	1,5,80,9
+	.half	.L802-.L803
+	.byte	1,5,115,9
+	.half	.L1464-.L802
+	.byte	1,5,27,9
+	.half	.L591-.L1464
+	.byte	3,1,1,5,19,9
+	.half	.L200-.L591
+	.byte	3,7,1,5,26,9
+	.half	.L1465-.L200
+	.byte	1,5,6,9
+	.half	.L1466-.L1465
+	.byte	1,5,61,9
+	.half	.L1467-.L1466
+	.byte	1,5,68,9
+	.half	.L1468-.L1467
+	.byte	1,5,65,9
+	.half	.L1469-.L1468
+	.byte	1,5,40,9
+	.half	.L1470-.L1469
+	.byte	1,5,33,9
+	.half	.L215-.L1470
+	.byte	1,5,1,9
+	.half	.L216-.L215
+	.byte	1,5,6,7,9
+	.half	.L218-.L216
+	.byte	3,2,1,5,20,9
+	.half	.L1471-.L218
+	.byte	1,5,16,9
+	.half	.L1472-.L1471
+	.byte	1,5,27,9
+	.half	.L1473-.L1472
+	.byte	3,1,1,5,35,9
+	.half	.L217-.L1473
+	.byte	3,8,1,5,66,9
+	.half	.L787-.L217
+	.byte	1,5,111,9
+	.half	.L220-.L787
+	.byte	3,1,1,5,69,9
+	.half	.L1474-.L220
+	.byte	1,5,2,9
+	.half	.L1475-.L1474
+	.byte	1,5,151,1,9
+	.half	.L1476-.L1475
+	.byte	1,5,199,1,9
+	.half	.L1477-.L1476
+	.byte	1,5,196,1,9
+	.half	.L1478-.L1477
+	.byte	1,5,219,1,9
+	.half	.L1479-.L1478
+	.byte	1,5,207,1,9
+	.half	.L1480-.L1479
+	.byte	1,5,244,1,9
+	.half	.L1481-.L1480
+	.byte	1,5,12,9
+	.half	.L805-.L1481
+	.byte	3,1,1,5,79,9
+	.half	.L1482-.L805
+	.byte	3,126,1,5,62,9
+	.half	.L219-.L1482
+	.byte	1,5,66,9
+	.half	.L1483-.L219
+	.byte	1,5,12,7,9
+	.half	.L593-.L1483
+	.byte	3,4,1,5,1,9
+	.half	.L1484-.L593
+	.byte	3,1,1,5,63,9
+	.half	.L1485-.L1484
+	.byte	1,5,111,9
+	.half	.L807-.L1485
+	.byte	3,1,1,5,69,9
+	.half	.L1486-.L807
+	.byte	1,5,2,9
+	.half	.L1487-.L1486
+	.byte	1,5,151,1,9
+	.half	.L1488-.L1487
+	.byte	1,5,159,1,9
+	.half	.L1489-.L1488
+	.byte	1,5,167,1,9
+	.half	.L1490-.L1489
+	.byte	1,5,36,9
+	.half	.L809-.L1490
+	.byte	3,3,1,5,14,9
+	.half	.L1491-.L809
+	.byte	1,5,46,9
+	.half	.L1492-.L1491
+	.byte	1,5,43,9
+	.half	.L1493-.L1492
+	.byte	1,5,6,9
+	.half	.L1494-.L1493
+	.byte	1,5,101,7,9
+	.half	.L1495-.L1494
+	.byte	1,5,79,9
+	.half	.L1496-.L1495
+	.byte	1,5,111,9
+	.half	.L1497-.L1496
+	.byte	1,5,108,9
+	.half	.L1498-.L1497
+	.byte	1,5,167,1,9
+	.half	.L1499-.L1498
+	.byte	1,5,145,1,9
+	.half	.L1500-.L1499
+	.byte	1,5,177,1,9
+	.half	.L1501-.L1500
+	.byte	1,5,174,1,9
+	.half	.L1502-.L1501
+	.byte	1,5,8,9
+	.half	.L224-.L1502
+	.byte	3,2,1,5,1,9
+	.half	.L1503-.L224
+	.byte	1,5,58,9
+	.half	.L221-.L1503
+	.byte	3,6,1,5,36,9
+	.half	.L1504-.L221
+	.byte	1,5,19,9
+	.half	.L1505-.L1504
+	.byte	1,5,127,9
+	.half	.L1506-.L1505
+	.byte	1,5,105,9
+	.half	.L1507-.L1506
+	.byte	1,5,88,9
+	.half	.L1508-.L1507
+	.byte	1,5,196,1,9
+	.half	.L1509-.L1508
+	.byte	1,5,174,1,9
+	.half	.L1510-.L1509
+	.byte	1,5,157,1,9
+	.half	.L1511-.L1510
+	.byte	1,5,17,9
+	.half	.L1512-.L1511
+	.byte	3,1,1,5,5,9
+	.half	.L1513-.L1512
+	.byte	1,5,36,9
+	.half	.L1514-.L1513
+	.byte	1,5,35,9
+	.half	.L1515-.L1514
+	.byte	3,3,1,5,13,9
+	.half	.L1516-.L1515
+	.byte	1,5,73,9
+	.half	.L1517-.L1516
+	.byte	1,5,51,9
+	.half	.L1518-.L1517
+	.byte	1,5,42,9
+	.half	.L1519-.L1518
+	.byte	1,5,84,9
+	.half	.L1520-.L1519
+	.byte	1,5,81,9
+	.half	.L1521-.L1520
+	.byte	1,5,1,9
+	.half	.L1522-.L1521
+	.byte	1,5,8,7,9
+	.half	.L229-.L1522
+	.byte	3,2,1,5,1,9
+	.half	.L1523-.L229
+	.byte	1,9
+	.half	.L228-.L1523
+	.byte	3,126,1,5,27,9
+	.half	.L226-.L228
+	.byte	3,4,1,5,15,9
+	.half	.L1524-.L226
+	.byte	1,5,46,9
+	.half	.L1525-.L1524
+	.byte	1,5,43,9
+	.half	.L1526-.L1525
+	.byte	3,2,1,5,21,9
+	.half	.L1527-.L1526
+	.byte	1,5,81,9
+	.half	.L1528-.L1527
+	.byte	1,5,59,9
+	.half	.L1529-.L1528
+	.byte	1,5,50,9
+	.half	.L1530-.L1529
+	.byte	1,5,12,9
+	.half	.L1531-.L1530
+	.byte	1,5,94,9
+	.half	.L1532-.L1531
+	.byte	1,5,91,9
+	.half	.L1533-.L1532
+	.byte	1,5,1,9
+	.half	.L1534-.L1533
+	.byte	1,5,8,7,9
+	.half	.L235-.L1534
+	.byte	3,2,1,5,1,9
+	.half	.L1535-.L235
+	.byte	1,5,19,9
+	.half	.L231-.L1535
+	.byte	3,5,1,5,26,9
+	.half	.L1536-.L231
+	.byte	1,5,6,9
+	.half	.L1537-.L1536
+	.byte	1,5,61,9
+	.half	.L1538-.L1537
+	.byte	1,5,68,9
+	.half	.L1539-.L1538
+	.byte	1,5,65,9
+	.half	.L1540-.L1539
+	.byte	1,5,40,9
+	.half	.L1541-.L1540
+	.byte	1,5,33,9
+	.half	.L237-.L1541
+	.byte	1,5,1,9
+	.half	.L238-.L237
+	.byte	1,5,6,7,9
+	.half	.L240-.L238
+	.byte	3,2,1,5,20,9
+	.half	.L1542-.L240
+	.byte	1,5,16,9
+	.half	.L1543-.L1542
+	.byte	1,5,27,9
+	.half	.L1544-.L1543
+	.byte	3,1,1,5,21,9
+	.half	.L239-.L1544
+	.byte	3,8,1,5,1,9
+	.half	.L810-.L239
+	.byte	3,1,1,5,54,7,9
+	.half	.L1545-.L810
+	.byte	1,5,1,9
+	.half	.L241-.L1545
+	.byte	3,1,1,5,54,7,9
+	.half	.L1546-.L241
+	.byte	1,5,1,9
+	.half	.L242-.L1546
+	.byte	3,1,1,9
+	.half	.L155-.L242
+	.byte	3,1,1,7,9
+	.half	.L330-.L155
+	.byte	0,1,1
+.L1260:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb')
+	.sect	'.debug_ranges'
+.L329:
+	.word	-1,.L269,0,.L330-.L269,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN12CurrentSense19readAverageCurrentsEi')
+	.sect	'.debug_info'
+.L331:
+	.word	492
+	.half	3
+	.word	.L332
+	.byte	4,1
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L334,.L333
+	.byte	2
+	.word	.L272
+	.byte	3
+	.byte	'_ZN12CurrentSense19readAverageCurrentsEi',0,1,177,1,16
+	.word	.L360
+	.byte	1,1,1
+	.word	.L271,.L595,.L270
+	.byte	4
+	.byte	'this',0,1,177,1,85
+	.word	.L596,.L597
+	.byte	4
+	.byte	'__5187_54_N',0,1,177,1,96
+	.word	.L347,.L598
+	.byte	5
+	.word	.L271,.L595
+	.byte	6
+	.byte	'__5188_20_c',0,1,178,1,21
+	.word	.L360,.L599
+	.byte	5
+	.word	.L600,.L601
+	.byte	6
+	.byte	'__5189_14_i',0,1,179,1,10
+	.word	.L347,.L602
+	.byte	5
+	.word	.L245,.L603
+	.byte	6
+	.byte	'__5190_24_c1',0,1,180,1,21
+	.word	.L360,.L604
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN12CurrentSense19readAverageCurrentsEi')
+	.sect	'.debug_abbrev'
+.L332:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN12CurrentSense19readAverageCurrentsEi')
+	.sect	'.debug_line'
+.L333:
+	.word	.L1548-.L1547
+.L1547:
+	.half	3
+	.word	.L1550-.L1549
+.L1549:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.cpp',0,0,0,0,0
+.L1550:
+	.byte	5,16,7,0,5,2
+	.word	.L271
+	.byte	3,176,1,1,5,34,9
+	.half	.L813-.L271
+	.byte	3,1,1,5,106,9
+	.half	.L1551-.L813
+	.byte	1,5,99,9
+	.half	.L1552-.L1551
+	.byte	1,5,50,9
+	.half	.L1553-.L1552
+	.byte	1,5,123,9
+	.half	.L1554-.L1553
+	.byte	1,5,35,9
+	.half	.L600-.L1554
+	.byte	3,1,1,5,74,9
+	.half	.L814-.L600
+	.byte	1,5,35,9
+	.half	.L245-.L814
+	.byte	3,1,1,5,108,9
+	.half	.L1555-.L245
+	.byte	1,5,101,9
+	.half	.L1556-.L1555
+	.byte	1,5,52,9
+	.half	.L1557-.L1556
+	.byte	1,5,125,9
+	.half	.L1558-.L1557
+	.byte	1,5,33,9
+	.half	.L816-.L1558
+	.byte	3,1,1,5,40,9
+	.half	.L1559-.L816
+	.byte	1,5,89,9
+	.half	.L1560-.L1559
+	.byte	1,5,60,9
+	.half	.L1561-.L1560
+	.byte	1,5,74,9
+	.half	.L1562-.L1561
+	.byte	1,5,56,9
+	.half	.L1563-.L1562
+	.byte	1,5,17,9
+	.half	.L1564-.L1563
+	.byte	1,5,33,9
+	.half	.L1565-.L1564
+	.byte	3,1,1,5,40,9
+	.half	.L1566-.L1565
+	.byte	1,5,89,9
+	.half	.L1567-.L1566
+	.byte	1,5,60,9
+	.half	.L1568-.L1567
+	.byte	1,5,74,9
+	.half	.L1569-.L1568
+	.byte	1,5,56,9
+	.half	.L1570-.L1569
+	.byte	1,5,17,9
+	.half	.L1571-.L1570
+	.byte	1,5,33,9
+	.half	.L1572-.L1571
+	.byte	3,1,1,5,40,9
+	.half	.L1573-.L1572
+	.byte	1,5,89,9
+	.half	.L1574-.L1573
+	.byte	1,5,60,9
+	.half	.L1575-.L1574
+	.byte	1,5,74,9
+	.half	.L1576-.L1575
+	.byte	1,5,56,9
+	.half	.L1577-.L1576
+	.byte	1,5,17,9
+	.half	.L1578-.L1577
+	.byte	1,5,12,9
+	.half	.L1579-.L1578
+	.byte	3,1,1,5,87,9
+	.half	.L603-.L1579
+	.byte	3,123,1,5,74,9
+	.half	.L244-.L603
+	.byte	1,5,8,7,9
+	.half	.L601-.L244
+	.byte	3,7,1,5,1,9
+	.half	.L1580-.L601
+	.byte	1,9
+	.half	.L247-.L1580
+	.byte	3,1,1,7,9
+	.half	.L335-.L247
+	.byte	0,1,1
+.L1548:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN12CurrentSense19readAverageCurrentsEi')
+	.sect	'.debug_ranges'
+.L334:
+	.word	-1,.L271,0,.L335-.L271,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZTV12CurrentSense')
+	.sect	'.debug_info'
+.L336:
+	.word	262
+	.half	3
+	.word	.L337
+	.byte	4,1
+	.byte	'../simplefoc_current_sense_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L272
+	.byte	3
+	.byte	'_ZTV12CurrentSense',0,8,187,1,11
+	.word	.L605
+	.byte	1,5,3
+	.word	_ZTV12CurrentSense
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZTV12CurrentSense')
+	.sect	'.debug_abbrev'
+.L337:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZTI12CurrentSense')
+	.sect	'.debug_info'
+.L338:
+	.word	262
+	.half	3
+	.word	.L339
+	.byte	4,1
+	.byte	'../simplefoc_current_sense_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L272
+	.byte	3
+	.byte	'_ZTI12CurrentSense',0,8,189,1,32
+	.word	.L606
+	.byte	1,5,3
+	.word	_ZTI12CurrentSense
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZTI12CurrentSense')
+	.sect	'.debug_abbrev'
+.L339:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZTS12CurrentSense')
+	.sect	'.debug_info'
+.L340:
+	.word	263
+	.half	3
+	.word	.L341
+	.byte	4,1
+	.byte	'../simplefoc_current_sense_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L272
+	.byte	3
+	.byte	'_ZTS12CurrentSense',0,8,189,1,132,1
+	.word	.L607
+	.byte	1,5,3
+	.word	_ZTS12CurrentSense
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZTS12CurrentSense')
+	.sect	'.debug_abbrev'
+.L341:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN12CurrentSense10linkDriverEP9FOCDriver')
+	.sect	'.debug_loc'
+.L248:
+	.word	-1,.L249,0,.L342-.L249
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L346:
+	.word	-1,.L249,0,.L608-.L249
+	.half	1
+	.byte	101
+	.word	.L609-.L249,.L608-.L249
+	.half	1
+	.byte	100
+	.word	0,0
+.L344:
+	.word	-1,.L249,0,.L609-.L249
+	.half	1
+	.byte	100
+	.word	.L610-.L249,.L342-.L249
+	.half	1
+	.byte	108
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN12CurrentSense11driverAlignEfb')
+	.sect	'.debug_loc'
+.L250:
+	.word	-1,.L251,0,.L348-.L251
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L352:
+	.word	-1,.L251,0,.L611-.L251
+	.half	1
+	.byte	84
+	.word	.L7-.L251,.L614-.L251
+	.half	1
+	.byte	84
+	.word	.L8-.L251,.L615-.L251
+	.half	1
+	.byte	84
+	.word	.L13-.L251,.L3-.L251
+	.half	1
+	.byte	84
+	.word	0,0
+.L354:
+	.word	-1,.L251,0,.L611-.L251
+	.half	1
+	.byte	85
+	.word	.L7-.L251,.L614-.L251
+	.half	1
+	.byte	85
+	.word	.L8-.L251,.L615-.L251
+	.half	1
+	.byte	85
+	.word	.L13-.L251,.L3-.L251
+	.half	1
+	.byte	85
+	.word	0,0
+.L355:
+	.word	-1,.L251,.L612-.L251,.L613-.L251
+	.half	1
+	.byte	82
+	.word	.L4-.L251,.L611-.L251
+	.half	1
+	.byte	82
+	.word	.L7-.L251,.L614-.L251
+	.half	1
+	.byte	82
+	.word	.L8-.L251,.L615-.L251
+	.half	1
+	.byte	82
+	.word	.L13-.L251,.L616-.L251
+	.half	1
+	.byte	82
+	.word	0,0
+.L350:
+	.word	-1,.L251,0,.L611-.L251
+	.half	1
+	.byte	100
+	.word	.L7-.L251,.L614-.L251
+	.half	1
+	.byte	100
+	.word	.L8-.L251,.L615-.L251
+	.half	1
+	.byte	100
+	.word	.L13-.L251,.L3-.L251
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN12CurrentSense12getDCCurrentEf')
+	.sect	'.debug_loc'
+.L252:
+	.word	-1,.L253,0,.L617-.L253
+	.half	2
+	.byte	138,0
+	.word	.L617-.L253,.L356-.L253
+	.half	2
+	.byte	138,32
+	.word	.L356-.L253,.L356-.L253
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L359:
+	.word	-1,.L253,0,.L618-.L253
+	.half	1
+	.byte	84
+	.word	.L621-.L253,.L356-.L253
+	.half	1
+	.byte	88
+	.word	.L626-.L253,.L627-.L253
+	.half	1
+	.byte	84
+	.word	0,0
+.L361:
+	.word	0,0
+.L363:
+	.word	0,0
+.L364:
+	.word	-1,.L253,.L622-.L253,.L356-.L253
+	.half	1
+	.byte	89
+	.word	0,0
+.L366:
+	.word	-1,.L253,0,.L356-.L253
+	.half	2
+	.byte	145,120
+	.word	0,0
+.L367:
+	.word	-1,.L253,0,.L356-.L253
+	.half	2
+	.byte	145,124
+	.word	0,0
+.L358:
+	.word	-1,.L253,0,.L619-.L253
+	.half	1
+	.byte	100
+	.word	.L620-.L253,.L356-.L253
+	.half	1
+	.byte	108
+	.word	.L623-.L253,.L618-.L253
+	.half	1
+	.byte	101
+	.word	.L624-.L253,.L625-.L253
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN12CurrentSense13getABCurrentsE7Phase_s')
+	.sect	'.debug_loc'
+.L256:
+	.word	-1,.L257,0,.L376-.L257
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L379:
+	.word	-1,.L257,0,.L376-.L257
+	.half	2
+	.byte	145,0
+	.word	0,0
+.L384:
+	.word	-1,.L257,.L639-.L257,.L22-.L257
+	.half	2
+	.byte	144,33
+	.word	0,0
+.L386:
+	.word	-1,.L257,.L640-.L257,.L25-.L257
+	.half	2
+	.byte	144,33
+	.word	.L641-.L257,.L27-.L257
+	.half	2
+	.byte	144,33
+	.word	.L26-.L257,.L24-.L257
+	.half	2
+	.byte	144,33
+	.word	0,0
+.L380:
+	.word	0,0
+.L381:
+	.word	-1,.L257,.L642-.L257,.L30-.L257
+	.half	1
+	.byte	83
+	.word	.L394-.L257,.L32-.L257
+	.half	1
+	.byte	83
+	.word	.L397-.L257,.L34-.L257
+	.half	1
+	.byte	83
+	.word	.L31-.L257,.L23-.L257
+	.half	1
+	.byte	83
+	.word	0,0
+.L395:
+	.word	0,0
+.L398:
+	.word	-1,.L257,.L643-.L257,.L644-.L257
+	.half	1
+	.byte	95
+	.word	0,0
+.L390:
+	.word	-1,.L257,.L645-.L257,.L646-.L257
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L391:
+	.word	0,0
+.L392:
+	.word	-1,.L257,.L647-.L257,.L648-.L257
+	.half	1
+	.byte	95
+	.word	0,0
+.L382:
+	.word	-1,.L257,.L642-.L257,.L30-.L257
+	.half	2
+	.byte	144,33
+	.word	.L394-.L257,.L32-.L257
+	.half	2
+	.byte	144,33
+	.word	.L397-.L257,.L34-.L257
+	.half	2
+	.byte	144,33
+	.word	.L31-.L257,.L23-.L257
+	.half	2
+	.byte	144,33
+	.word	0,0
+.L378:
+	.word	-1,.L257,0,.L376-.L257
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN12CurrentSense13getDQCurrentsE4AB_sf')
+	.sect	'.debug_loc'
+.L258:
+	.word	-1,.L259,0,.L649-.L259
+	.half	2
+	.byte	138,0
+	.word	.L649-.L259,.L399-.L259
+	.half	2
+	.byte	138,8
+	.word	.L399-.L259,.L399-.L259
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L402:
+	.word	-1,.L259,0,.L650-.L259
+	.half	2
+	.byte	144,34
+	.word	0,0
+.L403:
+	.word	-1,.L259,0,.L651-.L259
+	.half	1
+	.byte	86
+	.word	.L650-.L259,.L651-.L259
+	.half	1
+	.byte	84
+	.word	0,0
+.L404:
+	.word	-1,.L259,0,.L399-.L259
+	.half	2
+	.byte	145,120
+	.word	0,0
+.L405:
+	.word	-1,.L259,0,.L399-.L259
+	.half	2
+	.byte	145,124
+	.word	0,0
+.L406:
+	.word	-1,.L259,.L653-.L259,.L399-.L259
+	.half	2
+	.byte	144,33
+	.word	0,0
+.L401:
+	.word	-1,.L259,0,.L652-.L259
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN12CurrentSense14getFOCCurrentsEf')
+	.sect	'.debug_loc'
+.L254:
+	.word	-1,.L255,0,.L628-.L255
+	.half	2
+	.byte	138,0
+	.word	.L628-.L255,.L369-.L255
+	.half	2
+	.byte	138,24
+	.word	.L369-.L255,.L369-.L255
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L372:
+	.word	-1,.L255,0,.L629-.L255
+	.half	1
+	.byte	84
+	.word	.L632-.L255,.L369-.L255
+	.half	1
+	.byte	88
+	.word	.L638-.L255,.L637-.L255
+	.half	1
+	.byte	86
+	.word	0,0
+.L373:
+	.word	0,0
+.L374:
+	.word	-1,.L255,.L638-.L255,.L637-.L255
+	.half	2
+	.byte	144,34
+	.word	0,0
+.L375:
+	.word	0,0
+.L371:
+	.word	-1,.L255,0,.L630-.L255
+	.half	1
+	.byte	100
+	.word	.L631-.L255,.L369-.L255
+	.half	1
+	.byte	108
+	.word	.L633-.L255,.L629-.L255
+	.half	1
+	.byte	101
+	.word	.L634-.L255,.L635-.L255
+	.half	1
+	.byte	100
+	.word	.L636-.L255,.L637-.L255
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb')
+	.sect	'.debug_loc'
+.L264:
+	.word	-1,.L265,0,.L654-.L265
+	.half	2
+	.byte	138,0
+	.word	.L654-.L265,.L413-.L265
+	.half	2
+	.byte	138,48
+	.word	.L413-.L265,.L413-.L265
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L416:
+	.word	-1,.L265,0,.L40-.L265
+	.half	1
+	.byte	84
+	.word	.L656-.L265,.L413-.L265
+	.half	1
+	.byte	88
+	.word	0,0
+.L418:
+	.word	-1,.L265,0,.L40-.L265
+	.half	1
+	.byte	101
+	.word	.L657-.L265,.L413-.L265
+	.half	1
+	.byte	109
+	.word	.L663-.L265,.L664-.L265
+	.half	1
+	.byte	100
+	.word	.L669-.L265,.L670-.L265
+	.half	1
+	.byte	100
+	.word	.L698-.L265,.L699-.L265
+	.half	1
+	.byte	100
+	.word	.L704-.L265,.L705-.L265
+	.half	1
+	.byte	100
+	.word	0,0
+.L419:
+	.word	-1,.L265,0,.L40-.L265
+	.half	1
+	.byte	85
+	.word	0,0
+.L420:
+	.word	-1,.L265,.L658-.L265,.L413-.L265
+	.half	1
+	.byte	89
+	.word	0,0
+.L421:
+	.word	-1,.L265,.L659-.L265,.L413-.L265
+	.half	1
+	.byte	90
+	.word	0,0
+.L422:
+	.word	-1,.L265,.L660-.L265,.L413-.L265
+	.half	1
+	.byte	91
+	.word	.L665-.L265,.L664-.L265
+	.half	1
+	.byte	85
+	.word	.L666-.L265,.L664-.L265
+	.half	1
+	.byte	86
+	.word	.L671-.L265,.L670-.L265
+	.half	1
+	.byte	86
+	.word	.L700-.L265,.L699-.L265
+	.half	1
+	.byte	84
+	.word	.L701-.L265,.L699-.L265
+	.half	1
+	.byte	86
+	.word	.L706-.L265,.L705-.L265
+	.half	1
+	.byte	86
+	.word	0,0
+.L434:
+	.word	-1,.L265,.L661-.L265,.L662-.L265
+	.half	1
+	.byte	92
+	.word	0,0
+.L423:
+	.word	-1,.L265,0,.L413-.L265
+	.half	2
+	.byte	145,80
+	.word	0,0
+.L425:
+	.word	-1,.L265,0,.L413-.L265
+	.half	2
+	.byte	145,92
+	.word	0,0
+.L427:
+	.word	-1,.L265,.L672-.L265,.L84-.L265
+	.half	1
+	.byte	81
+	.word	.L707-.L265,.L45-.L265
+	.half	1
+	.byte	81
+	.word	0,0
+.L428:
+	.word	-1,.L265,.L673-.L265,.L84-.L265
+	.half	1
+	.byte	84
+	.word	.L708-.L265,.L45-.L265
+	.half	1
+	.byte	84
+	.word	0,0
+.L429:
+	.word	-1,.L265,.L435-.L265,.L84-.L265
+	.half	1
+	.byte	83
+	.word	.L475-.L265,.L45-.L265
+	.half	1
+	.byte	83
+	.word	0,0
+.L437:
+	.word	-1,.L265,.L674-.L265,.L675-.L265
+	.half	1
+	.byte	82
+	.word	.L71-.L265,.L84-.L265
+	.half	1
+	.byte	82
+	.word	0,0
+.L439:
+	.word	-1,.L265,.L676-.L265,.L49-.L265
+	.half	1
+	.byte	86
+	.word	0,0
+.L440:
+	.word	-1,.L265,.L677-.L265,.L56-.L265
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L442:
+	.word	-1,.L265,.L678-.L265,.L679-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L444:
+	.word	-1,.L265,.L679-.L265,.L680-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L446:
+	.word	-1,.L265,.L680-.L265,.L681-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L448:
+	.word	-1,.L265,.L682-.L265,.L64-.L265
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L450:
+	.word	-1,.L265,.L683-.L265,.L684-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L452:
+	.word	-1,.L265,.L684-.L265,.L685-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L454:
+	.word	-1,.L265,.L685-.L265,.L686-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L456:
+	.word	-1,.L265,.L687-.L265,.L65-.L265
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L458:
+	.word	-1,.L265,.L688-.L265,.L689-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L460:
+	.word	-1,.L265,.L689-.L265,.L690-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L462:
+	.word	-1,.L265,.L690-.L265,.L691-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L464:
+	.word	-1,.L265,.L692-.L265,.L76-.L265
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L466:
+	.word	-1,.L265,.L693-.L265,.L694-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L468:
+	.word	-1,.L265,.L694-.L265,.L695-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L470:
+	.word	-1,.L265,.L695-.L265,.L696-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L472:
+	.word	-1,.L265,.L697-.L265,.L70-.L265
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L474:
+	.word	-1,.L265,.L662-.L265,.L45-.L265
+	.half	1
+	.byte	92
+	.word	0,0
+.L430:
+	.word	-1,.L265,0,.L413-.L265
+	.half	2
+	.byte	145,104
+	.word	0,0
+.L431:
+	.word	-1,.L265,0,.L413-.L265
+	.half	2
+	.byte	145,116
+	.word	0,0
+.L477:
+	.word	-1,.L265,.L709-.L265,.L710-.L265
+	.half	1
+	.byte	82
+	.word	.L103-.L265,.L713-.L265
+	.half	1
+	.byte	82
+	.word	.L110-.L265,.L719-.L265
+	.half	1
+	.byte	82
+	.word	0,0
+.L479:
+	.word	-1,.L265,.L711-.L265,.L88-.L265
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L480:
+	.word	-1,.L265,.L712-.L265,.L95-.L265
+	.half	1
+	.byte	85
+	.word	0,0
+.L482:
+	.word	-1,.L265,.L714-.L265,.L715-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L484:
+	.word	-1,.L265,.L715-.L265,.L716-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L486:
+	.word	-1,.L265,.L716-.L265,.L717-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L488:
+	.word	-1,.L265,.L718-.L265,.L104-.L265
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L490:
+	.word	-1,.L265,.L720-.L265,.L721-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L492:
+	.word	-1,.L265,.L721-.L265,.L722-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L494:
+	.word	-1,.L265,.L722-.L265,.L723-.L265
+	.half	1
+	.byte	95
+	.word	0,0
+.L496:
+	.word	-1,.L265,.L724-.L265,.L109-.L265
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L432:
+	.word	-1,.L265,.L719-.L265,.L45-.L265
+	.half	1
+	.byte	82
+	.word	0,0
+.L415:
+	.word	-1,.L265,0,.L40-.L265
+	.half	1
+	.byte	100
+	.word	.L655-.L265,.L413-.L265
+	.half	1
+	.byte	108
+	.word	.L667-.L265,.L668-.L265
+	.half	1
+	.byte	101
+	.word	.L702-.L265,.L703-.L265
+	.half	1
+	.byte	101
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb')
+	.sect	'.debug_loc'
+.L268:
+	.word	-1,.L269,0,.L749-.L269
+	.half	2
+	.byte	138,0
+	.word	.L749-.L269,.L518-.L269
+	.half	2
+	.byte	138,48
+	.word	.L518-.L269,.L518-.L269
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L521:
+	.word	-1,.L269,0,.L150-.L269
+	.half	1
+	.byte	84
+	.word	.L751-.L269,.L518-.L269
+	.half	1
+	.byte	88
+	.word	0,0
+.L522:
+	.word	-1,.L269,0,.L150-.L269
+	.half	1
+	.byte	101
+	.word	.L752-.L269,.L518-.L269
+	.half	1
+	.byte	109
+	.word	.L756-.L269,.L757-.L269
+	.half	1
+	.byte	100
+	.word	.L760-.L269,.L761-.L269
+	.half	1
+	.byte	100
+	.word	.L788-.L269,.L789-.L269
+	.half	1
+	.byte	100
+	.word	.L792-.L269,.L793-.L269
+	.half	1
+	.byte	100
+	.word	.L804-.L269,.L805-.L269
+	.half	1
+	.byte	100
+	.word	.L808-.L269,.L809-.L269
+	.half	1
+	.byte	100
+	.word	0,0
+.L523:
+	.word	-1,.L269,0,.L150-.L269
+	.half	1
+	.byte	85
+	.word	0,0
+.L524:
+	.word	-1,.L269,.L753-.L269,.L518-.L269
+	.half	1
+	.byte	89
+	.word	0,0
+.L525:
+	.word	-1,.L269,.L534-.L269,.L518-.L269
+	.half	1
+	.byte	90
+	.word	0,0
+.L536:
+	.word	-1,.L269,.L754-.L269,.L755-.L269
+	.half	1
+	.byte	91
+	.word	0,0
+.L526:
+	.word	-1,.L269,0,.L518-.L269
+	.half	2
+	.byte	145,80
+	.word	0,0
+.L527:
+	.word	-1,.L269,0,.L518-.L269
+	.half	2
+	.byte	145,92
+	.word	0,0
+.L528:
+	.word	-1,.L269,.L762-.L269,.L189-.L269
+	.half	1
+	.byte	81
+	.word	0,0
+.L529:
+	.word	-1,.L269,.L763-.L269,.L189-.L269
+	.half	1
+	.byte	84
+	.word	0,0
+.L530:
+	.word	-1,.L269,.L537-.L269,.L189-.L269
+	.half	1
+	.byte	83
+	.word	0,0
+.L539:
+	.word	-1,.L269,.L764-.L269,.L189-.L269
+	.half	1
+	.byte	82
+	.word	0,0
+.L541:
+	.word	-1,.L269,.L765-.L269,.L159-.L269
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L542:
+	.word	-1,.L269,.L766-.L269,.L166-.L269
+	.half	1
+	.byte	85
+	.word	0,0
+.L544:
+	.word	-1,.L269,.L767-.L269,.L768-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L546:
+	.word	-1,.L269,.L768-.L269,.L769-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L548:
+	.word	-1,.L269,.L769-.L269,.L770-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L550:
+	.word	-1,.L269,.L771-.L269,.L174-.L269
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L552:
+	.word	-1,.L269,.L772-.L269,.L773-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L554:
+	.word	-1,.L269,.L773-.L269,.L774-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L556:
+	.word	-1,.L269,.L774-.L269,.L775-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L558:
+	.word	-1,.L269,.L776-.L269,.L175-.L269
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L560:
+	.word	-1,.L269,.L777-.L269,.L778-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L562:
+	.word	-1,.L269,.L778-.L269,.L779-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L564:
+	.word	-1,.L269,.L779-.L269,.L780-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L566:
+	.word	-1,.L269,.L781-.L269,.L183-.L269
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L568:
+	.word	-1,.L269,.L782-.L269,.L783-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L570:
+	.word	-1,.L269,.L783-.L269,.L784-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L572:
+	.word	-1,.L269,.L784-.L269,.L785-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L574:
+	.word	-1,.L269,.L786-.L269,.L180-.L269
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L576:
+	.word	-1,.L269,.L755-.L269,.L787-.L269
+	.half	1
+	.byte	91
+	.word	0,0
+.L531:
+	.word	-1,.L269,0,.L518-.L269
+	.half	2
+	.byte	145,104
+	.word	0,0
+.L578:
+	.word	-1,.L269,.L794-.L269,.L795-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L580:
+	.word	-1,.L269,.L795-.L269,.L796-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L582:
+	.word	-1,.L269,.L796-.L269,.L797-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L584:
+	.word	-1,.L269,.L798-.L269,.L201-.L269
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L586:
+	.word	-1,.L269,.L799-.L269,.L800-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L588:
+	.word	-1,.L269,.L800-.L269,.L801-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L590:
+	.word	-1,.L269,.L801-.L269,.L802-.L269
+	.half	1
+	.byte	95
+	.word	0,0
+.L592:
+	.word	-1,.L269,.L803-.L269,.L200-.L269
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L594:
+	.word	-1,.L269,.L787-.L269,.L155-.L269
+	.half	1
+	.byte	91
+	.word	0,0
+.L532:
+	.word	-1,.L269,0,.L518-.L269
+	.half	2
+	.byte	145,116
+	.word	0,0
+.L533:
+	.word	-1,.L269,.L810-.L269,.L155-.L269
+	.half	1
+	.byte	82
+	.word	0,0
+.L520:
+	.word	-1,.L269,0,.L150-.L269
+	.half	1
+	.byte	100
+	.word	.L750-.L269,.L518-.L269
+	.half	1
+	.byte	108
+	.word	.L758-.L269,.L759-.L269
+	.half	1
+	.byte	101
+	.word	.L790-.L269,.L791-.L269
+	.half	1
+	.byte	101
+	.word	.L806-.L269,.L807-.L269
+	.half	1
+	.byte	101
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb')
+	.sect	'.debug_loc'
+.L266:
+	.word	-1,.L267,0,.L725-.L267
+	.half	2
+	.byte	138,0
+	.word	.L725-.L267,.L497-.L267
+	.half	2
+	.byte	138,16
+	.word	.L497-.L267,.L497-.L267
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L500:
+	.word	-1,.L267,0,.L130-.L267
+	.half	1
+	.byte	84
+	.word	.L727-.L267,.L497-.L267
+	.half	1
+	.byte	88
+	.word	0,0
+.L502:
+	.word	-1,.L267,0,.L130-.L267
+	.half	1
+	.byte	101
+	.word	.L728-.L267,.L497-.L267
+	.half	1
+	.byte	109
+	.word	.L733-.L267,.L734-.L267
+	.half	1
+	.byte	100
+	.word	.L737-.L267,.L738-.L267
+	.half	1
+	.byte	100
+	.word	.L742-.L267,.L743-.L267
+	.half	1
+	.byte	100
+	.word	.L746-.L267,.L747-.L267
+	.half	1
+	.byte	100
+	.word	0,0
+.L503:
+	.word	-1,.L267,0,.L130-.L267
+	.half	1
+	.byte	85
+	.word	0,0
+.L504:
+	.word	-1,.L267,.L729-.L267,.L497-.L267
+	.half	1
+	.byte	89
+	.word	0,0
+.L505:
+	.word	-1,.L267,.L730-.L267,.L497-.L267
+	.half	1
+	.byte	90
+	.word	0,0
+.L509:
+	.word	-1,.L267,.L731-.L267,.L732-.L267
+	.half	1
+	.byte	91
+	.word	0,0
+.L506:
+	.word	-1,.L267,0,.L497-.L267
+	.half	2
+	.byte	145,112
+	.word	0,0
+.L511:
+	.word	-1,.L267,.L739-.L267,.L740-.L267
+	.half	1
+	.byte	95
+	.word	0,0
+.L513:
+	.word	-1,.L267,.L740-.L267,.L741-.L267
+	.half	1
+	.byte	95
+	.word	0,0
+.L515:
+	.word	-1,.L267,.L741-.L267,.L135-.L267
+	.half	1
+	.byte	95
+	.word	0,0
+.L517:
+	.word	-1,.L267,.L732-.L267,.L128-.L267
+	.half	1
+	.byte	91
+	.word	0,0
+.L507:
+	.word	-1,.L267,.L748-.L267,.L128-.L267
+	.half	1
+	.byte	82
+	.word	0,0
+.L499:
+	.word	-1,.L267,0,.L130-.L267
+	.half	1
+	.byte	100
+	.word	.L726-.L267,.L497-.L267
+	.half	1
+	.byte	108
+	.word	.L735-.L267,.L736-.L267
+	.half	1
+	.byte	101
+	.word	.L744-.L267,.L745-.L267
+	.half	1
+	.byte	101
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN12CurrentSense19readAverageCurrentsEi')
+	.sect	'.debug_loc'
+.L270:
+	.word	-1,.L271,0,.L811-.L271
+	.half	2
+	.byte	138,0
+	.word	.L811-.L271,.L595-.L271
+	.half	2
+	.byte	138,24
+	.word	.L595-.L271,.L595-.L271
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L598:
+	.word	-1,.L271,0,.L600-.L271
+	.half	1
+	.byte	84
+	.word	.L813-.L271,.L595-.L271
+	.half	1
+	.byte	88
+	.word	0,0
+.L599:
+	.word	-1,.L271,0,.L595-.L271
+	.half	2
+	.byte	145,104
+	.word	0,0
+.L602:
+	.word	-1,.L271,.L814-.L271,.L595-.L271
+	.half	1
+	.byte	89
+	.word	0,0
+.L604:
+	.word	-1,.L271,0,.L595-.L271
+	.half	2
+	.byte	145,116
+	.word	0,0
+.L597:
+	.word	-1,.L271,0,.L600-.L271
+	.half	1
+	.byte	101
+	.word	.L812-.L271,.L595-.L271
+	.half	1
+	.byte	109
+	.word	.L815-.L271,.L816-.L271
+	.half	1
+	.byte	101
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN12CurrentSense6enableEv')
+	.sect	'.debug_loc'
+.L260:
+	.word	-1,.L261,0,.L407-.L261
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L409:
+	.word	-1,.L261,0,.L407-.L261
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN12CurrentSense7disableEv')
+	.sect	'.debug_loc'
+.L262:
+	.word	-1,.L263,0,.L410-.L263
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L412:
+	.word	-1,.L263,0,.L410-.L263
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L1581:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('_ZN12CurrentSense10linkDriverEP9FOCDriver')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1581,.L249,.L342-.L249
+	.sdecl	'.debug_frame',debug,cluster('_ZN12CurrentSense11driverAlignEfb')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1581,.L251,.L348-.L251
+	.sdecl	'.debug_frame',debug,cluster('_ZN12CurrentSense12getDCCurrentEf')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L1581,.L253,.L356-.L253
+	.byte	4
+	.word	(.L617-.L253)/2
+	.byte	19,32,22,26,3,19,138,32,4
+	.word	(.L356-.L617)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN12CurrentSense14getFOCCurrentsEf')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L1581,.L255,.L369-.L255
+	.byte	4
+	.word	(.L628-.L255)/2
+	.byte	19,24,22,26,3,19,138,24,4
+	.word	(.L369-.L628)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN12CurrentSense13getABCurrentsE7Phase_s')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L1581,.L257,.L376-.L257
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN12CurrentSense13getDQCurrentsE4AB_sf')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L1581,.L259,.L399-.L259
+	.byte	4
+	.word	(.L649-.L259)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L399-.L649)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN12CurrentSense6enableEv')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L1581,.L261,.L407-.L261
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('_ZN12CurrentSense7disableEv')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L1581,.L263,.L410-.L263
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('_ZN12CurrentSense15alignBLDCDriverEfP10BLDCDriverb')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L1581,.L265,.L413-.L265
+	.byte	4
+	.word	(.L654-.L265)/2
+	.byte	19,48,22,26,3,19,138,48,4
+	.word	(.L413-.L654)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN12CurrentSense18alignStepperDriverEfP13StepperDriverb')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L1581,.L267,.L497-.L267
+	.byte	4
+	.word	(.L725-.L267)/2
+	.byte	19,16,22,26,3,19,138,16,4
+	.word	(.L497-.L725)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN12CurrentSense17alignHybridDriverEfP10BLDCDriverb')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L1581,.L269,.L518-.L269
+	.byte	4
+	.word	(.L749-.L269)/2
+	.byte	19,48,22,26,3,19,138,48,4
+	.word	(.L518-.L749)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('_ZN12CurrentSense19readAverageCurrentsEi')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L1581,.L271,.L595-.L271
+	.byte	4
+	.word	(.L811-.L271)/2
+	.byte	19,24,22,26,3,19,138,24,4
+	.word	(.L595-.L811)/2
+	.byte	19,0,8,26,0,0
+	; Module end

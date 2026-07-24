@@ -1,4 +1,4 @@
 IfxPort_cfg_TC37xED.o :	../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxPort_cfg_TC37xED.c
 ../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxPort_cfg_TC37xED.c :
-IfxPort_cfg_TC37xED.o :	"D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\Configurations\Ifx_Cfg.h"
-"D:\\Violin_demo\\Motor_Architecture\\lower_computer\\firmware\\bsp\\tc37a_ads\\Configurations\Ifx_Cfg.h" :
+IfxPort_cfg_TC37xED.o :	"C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\Configurations\Ifx_Cfg.h"
+"C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\Configurations\Ifx_Cfg.h" :

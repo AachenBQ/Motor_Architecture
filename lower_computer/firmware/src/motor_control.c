@@ -10,6 +10,59 @@ static bool IsFiniteNonnegative(float value)
     return isfinite(value) && value >= 0.0F;
 }
 
+static MotorOpenLoopConfig DefaultOpenLoopConfig(void)
+{
+    MotorOpenLoopConfig config;
+    memset(&config, 0, sizeof(config));
+    config.backend = MOTOR_OPEN_LOOP_DEFAULT_BACKEND;
+    config.pole_pairs = MOTOR_POLE_PAIRS;
+    config.bus_voltage_v = MOTOR_OPEN_LOOP_DEFAULT_BUS_V;
+    config.voltage_limit_v = MOTOR_OPEN_LOOP_DEFAULT_VOLTAGE_LIMIT_V;
+    config.target_velocity_rad_s =
+        MOTOR_OPEN_LOOP_DEFAULT_TARGET_RAD_S;
+    config.acceleration_rad_s2 =
+        MOTOR_OPEN_LOOP_DEFAULT_ACCEL_RAD_S2;
+    config.update_period_ms =
+        MOTOR_OPEN_LOOP_DEFAULT_UPDATE_MS;
+    config.startup_delay_ms =
+        MOTOR_OPEN_LOOP_DEFAULT_START_DELAY_MS;
+    config.max_runtime_ms =
+        MOTOR_OPEN_LOOP_DEFAULT_MAX_RUNTIME_MS;
+    return config;
+}
+
+static bool IsValidOpenLoopConfig(const MotorOpenLoopConfig *config)
+{
+    return
+        (config != NULL) &&
+        (config->backend <= MOTOR_OPEN_LOOP_SIMPLEFOC) &&
+        (config->flags == 0U) &&
+        ((config->backend != MOTOR_OPEN_LOOP_SIMPLEFOC) ||
+         (config->pole_pairs == MOTOR_POLE_PAIRS)) &&
+        (config->pole_pairs >= 1U) &&
+        (config->pole_pairs <= 64U) &&
+        isfinite(config->bus_voltage_v) &&
+        isfinite(config->voltage_limit_v) &&
+        isfinite(config->target_velocity_rad_s) &&
+        isfinite(config->acceleration_rad_s2) &&
+        (config->bus_voltage_v > 0.0F) &&
+        (config->bus_voltage_v <= MOTOR_OPEN_LOOP_HARD_MAX_BUS_V) &&
+        (config->voltage_limit_v > 0.0F) &&
+        (config->voltage_limit_v <= config->bus_voltage_v) &&
+        (config->voltage_limit_v <=
+         MOTOR_OPEN_LOOP_HARD_MAX_VOLTAGE_V) &&
+        (fabsf(config->target_velocity_rad_s) <=
+         MOTOR_OPEN_LOOP_HARD_MAX_TARGET_RAD_S) &&
+        (config->acceleration_rad_s2 >= 0.01F) &&
+        (config->acceleration_rad_s2 <= 10000.0F) &&
+        (config->update_period_ms >= 1U) &&
+        (config->update_period_ms <= 100U) &&
+        (config->startup_delay_ms <= 5000U) &&
+        (config->max_runtime_ms >= 1000UL) &&
+        (config->max_runtime_ms <=
+         MOTOR_OPEN_LOOP_HARD_MAX_RUNTIME_MS);
+}
+
 void MotorControl_Init(MotorControl *motor, uint32_t now_ms)
 {
     memset(motor, 0, sizeof(*motor));
@@ -30,6 +83,7 @@ void MotorControl_Init(MotorControl *motor, uint32_t now_ms)
         MOTOR_DEFAULT_BUS_MIN_V,
         MOTOR_DEFAULT_BUS_MAX_V,
         MOTOR_DEFAULT_TEMP_MAX_C};
+    motor->open_loop = DefaultOpenLoopConfig();
 }
 
 void MotorControl_SetCalibrationValid(MotorControl *motor, bool valid)
@@ -55,13 +109,64 @@ void MotorControl_Heartbeat(
 void MotorControl_Tick(MotorControl *motor, uint32_t now_ms)
 {
     uint32_t elapsed = now_ms - motor->last_heartbeat_ms;
-    motor->heartbeat_valid = elapsed <= motor->heartbeat_lease_ms;
-    if (!motor->heartbeat_valid && motor->enabled)
+    /*
+     * A recent boot timestamp is not a heartbeat. Once a real heartbeat has
+     * armed the lease, Tick may keep it valid or expire it, but must never
+     * promote the initial false state to true by itself.
+     */
+    if (motor->heartbeat_valid)
     {
-        motor->target = 0.0F;
-        motor->enabled = false;
-        motor->faults |= MOTOR_FAULT_COMM_TIMEOUT;
-        motor->state = MOTOR_STATE_FAULT;
+        motor->heartbeat_valid =
+            elapsed <= motor->heartbeat_lease_ms;
+    }
+    if (!motor->heartbeat_valid &&
+        (motor->enabled || motor->open_loop_active))
+    {
+        MotorControl_TripFault(motor, MOTOR_FAULT_COMM_TIMEOUT);
+        return;
+    }
+
+    if (!motor->open_loop_active)
+    {
+        return;
+    }
+    if ((now_ms - motor->open_loop_started_ms) >=
+        motor->open_loop.max_runtime_ms)
+    {
+        MotorControl_Stop(motor, false);
+        return;
+    }
+    if (!motor->open_loop_output_ready)
+    {
+        motor->open_loop_output_ready =
+            (now_ms - motor->open_loop_started_ms) >=
+            motor->open_loop.startup_delay_ms;
+        motor->open_loop_last_update_ms = now_ms;
+        return;
+    }
+    elapsed = now_ms - motor->open_loop_last_update_ms;
+    if (elapsed >= motor->open_loop.update_period_ms)
+    {
+        float desired = motor->target;
+        float maximum_step =
+            motor->open_loop.acceleration_rad_s2 *
+            ((float)elapsed / 1000.0F);
+        float difference = desired - motor->open_loop_velocity_rad_s;
+        if (difference > maximum_step)
+        {
+            difference = maximum_step;
+        }
+        else if (difference < -maximum_step)
+        {
+            difference = -maximum_step;
+        }
+        motor->open_loop_velocity_rad_s += difference;
+        motor->open_loop_last_update_ms = now_ms;
+        if ((motor->state == MOTOR_STATE_STOPPING) &&
+            (fabsf(motor->open_loop_velocity_rad_s) < 0.001F))
+        {
+            MotorControl_Stop(motor, false);
+        }
     }
 }
 
@@ -69,13 +174,12 @@ MotorResult MotorControl_SetEnable(MotorControl *motor, bool enable)
 {
     if (!enable)
     {
-        motor->enabled = false;
-        motor->target = 0.0F;
-        if (motor->state == MOTOR_STATE_RUNNING)
-        {
-            motor->state = MOTOR_STATE_READY;
-        }
+        MotorControl_Stop(motor, false);
         return MOTOR_RESULT_OK;
+    }
+    if (motor->mode == MOTOR_MODE_OPEN_LOOP_SPEED)
+    {
+        return MOTOR_RESULT_INVALID_STATE;
     }
     if (motor->faults != 0U)
     {
@@ -100,7 +204,9 @@ MotorResult MotorControl_SetEnable(MotorControl *motor, bool enable)
 
 MotorResult MotorControl_SetMode(MotorControl *motor, MotorMode mode)
 {
-    if ((mode < MOTOR_MODE_TORQUE) || (mode > MOTOR_MODE_POSITION))
+    if ((mode < MOTOR_MODE_TORQUE) ||
+        (mode > MOTOR_MODE_OPEN_LOOP_SPEED) ||
+        (mode == MOTOR_MODE_OPEN_LOOP_SPEED))
     {
         return MOTOR_RESULT_OUT_OF_RANGE;
     }
@@ -142,8 +248,87 @@ MotorResult MotorControl_SetTarget(
     {
         return MOTOR_RESULT_OUT_OF_RANGE;
     }
+    if (mode == MOTOR_MODE_OPEN_LOOP_SPEED)
+    {
+        if (!motor->open_loop_active ||
+            (fabsf(target) > motor->limits.speed_rad_s) ||
+            (fabsf(target) >
+             MOTOR_OPEN_LOOP_HARD_MAX_TARGET_RAD_S))
+        {
+            return MOTOR_RESULT_OUT_OF_RANGE;
+        }
+        motor->open_loop.target_velocity_rad_s = target;
+    }
     motor->target = target;
     return MOTOR_RESULT_OK;
+}
+
+MotorResult MotorControl_SetOpenLoopConfig(
+    MotorControl *motor,
+    const MotorOpenLoopConfig *config)
+{
+    if (motor->enabled || motor->open_loop_active)
+    {
+        return MOTOR_RESULT_INVALID_STATE;
+    }
+    if (!IsValidOpenLoopConfig(config) ||
+        (fabsf(config->target_velocity_rad_s) >
+         motor->limits.speed_rad_s) ||
+        (config->bus_voltage_v < motor->limits.bus_min_v) ||
+        (config->bus_voltage_v > motor->limits.bus_max_v))
+    {
+        return MOTOR_RESULT_OUT_OF_RANGE;
+    }
+    motor->open_loop = *config;
+    motor->open_loop.reserved = 0U;
+    return MOTOR_RESULT_OK;
+}
+
+MotorResult MotorControl_StartOpenLoop(
+    MotorControl *motor,
+    uint32_t now_ms)
+{
+    if (motor->faults != 0U)
+    {
+        return MOTOR_RESULT_HARDWARE_FAULT;
+    }
+    if (!motor->heartbeat_valid)
+    {
+        return MOTOR_RESULT_HEARTBEAT_REQUIRED;
+    }
+    if (motor->enabled ||
+        motor->open_loop_active ||
+        ((motor->state != MOTOR_STATE_IDLE) &&
+         (motor->state != MOTOR_STATE_READY)))
+    {
+        return MOTOR_RESULT_INVALID_STATE;
+    }
+    if (!IsValidOpenLoopConfig(&motor->open_loop))
+    {
+        return MOTOR_RESULT_OUT_OF_RANGE;
+    }
+    motor->mode = MOTOR_MODE_OPEN_LOOP_SPEED;
+    motor->target = motor->open_loop.target_velocity_rad_s;
+    motor->open_loop_velocity_rad_s = 0.0F;
+    motor->open_loop_started_ms = now_ms;
+    motor->open_loop_last_update_ms = now_ms;
+    motor->open_loop_output_ready =
+        motor->open_loop.startup_delay_ms == 0U;
+    motor->open_loop_active = true;
+    motor->enabled = true;
+    motor->state = MOTOR_STATE_RUNNING;
+    return MOTOR_RESULT_OK;
+}
+
+void MotorControl_RequestControlledStop(MotorControl *motor)
+{
+    if (motor->open_loop_active && motor->enabled)
+    {
+        motor->target = 0.0F;
+        motor->state = MOTOR_STATE_STOPPING;
+        return;
+    }
+    MotorControl_Stop(motor, false);
 }
 
 MotorResult MotorControl_SetPid(
@@ -222,6 +407,9 @@ void MotorControl_Stop(MotorControl *motor, bool emergency)
 {
     motor->target = 0.0F;
     motor->enabled = false;
+    motor->open_loop_active = false;
+    motor->open_loop_output_ready = false;
+    motor->open_loop_velocity_rad_s = 0.0F;
     motor->state = emergency
         ? MOTOR_STATE_ESTOP
         : (motor->calibrated ? MOTOR_STATE_READY : MOTOR_STATE_IDLE);
@@ -231,6 +419,9 @@ void MotorControl_TripFault(MotorControl *motor, uint32_t fault)
 {
     motor->target = 0.0F;
     motor->enabled = false;
+    motor->open_loop_active = false;
+    motor->open_loop_output_ready = false;
+    motor->open_loop_velocity_rad_s = 0.0F;
     motor->faults |= fault;
     motor->state = MOTOR_STATE_FAULT;
 }
@@ -240,6 +431,25 @@ void MotorControl_UpdateTelemetry(
     const MotorTelemetry *telemetry)
 {
     motor->telemetry = *telemetry;
+    if (fabsf(telemetry->iq_current_a) > motor->limits.current_a)
+    {
+        MotorControl_TripFault(motor, MOTOR_FAULT_OVERCURRENT);
+    }
+    if (telemetry->bus_voltage_v > 0.0F)
+    {
+        if (telemetry->bus_voltage_v > motor->limits.bus_max_v)
+        {
+            MotorControl_TripFault(motor, MOTOR_FAULT_OVERVOLTAGE);
+        }
+        else if (telemetry->bus_voltage_v < motor->limits.bus_min_v)
+        {
+            MotorControl_TripFault(motor, MOTOR_FAULT_UNDERVOLTAGE);
+        }
+    }
+    if (telemetry->temperature_c > motor->limits.temperature_max_c)
+    {
+        MotorControl_TripFault(motor, MOTOR_FAULT_OVERTEMPERATURE);
+    }
 }
 
 void MotorControl_RestoreDefaults(MotorControl *motor)
@@ -260,6 +470,7 @@ void MotorControl_RestoreDefaults(MotorControl *motor)
         MOTOR_DEFAULT_BUS_MIN_V,
         MOTOR_DEFAULT_BUS_MAX_V,
         MOTOR_DEFAULT_TEMP_MAX_C};
+    motor->open_loop = DefaultOpenLoopConfig();
 }
 
 void MotorControl_ExportPersistentConfig(
@@ -274,6 +485,7 @@ void MotorControl_ExportPersistentConfig(
     config->telemetry_mask = 0xFFFFFFFFUL;
     memcpy(config->pid, motor->pid, sizeof(config->pid));
     config->limits = motor->limits;
+    config->open_loop = motor->open_loop;
 }
 
 bool MotorControl_ImportPersistentConfig(
@@ -302,6 +514,16 @@ bool MotorControl_ImportPersistentConfig(
     {
         return false;
     }
+    if (!IsValidOpenLoopConfig(&config->open_loop) ||
+        (fabsf(config->open_loop.target_velocity_rad_s) >
+         config->limits.speed_rad_s) ||
+        (config->open_loop.bus_voltage_v <
+         config->limits.bus_min_v) ||
+        (config->open_loop.bus_voltage_v >
+         config->limits.bus_max_v))
+    {
+        return false;
+    }
     for (loop = 0U; loop < MOTOR_PID_COUNT; ++loop)
     {
         if (!IsFiniteNonnegative(config->pid[loop].kp) ||
@@ -315,6 +537,7 @@ bool MotorControl_ImportPersistentConfig(
     memcpy(motor->pending_pid, config->pid, sizeof(motor->pending_pid));
     motor->pending_pid_mask = 0U;
     motor->limits = config->limits;
+    motor->open_loop = config->open_loop;
     MotorControl_SetCalibrationValid(
         motor,
         config->calibration_valid != 0U);

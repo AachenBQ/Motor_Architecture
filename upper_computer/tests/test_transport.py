@@ -8,14 +8,18 @@ from motor_control.protocol import (
     ControlMode,
     Frame,
     FrameParser,
+    OpenLoopBackend,
+    OpenLoopConfig,
     PidLoop,
     encode_frame,
     pack_enable,
     pack_heartbeat,
     pack_limits,
+    pack_open_loop_config,
     pack_pid,
     pack_target,
     pack_telemetry_profile,
+    unpack_build_config,
     unpack_limits,
     unpack_telemetry,
 )
@@ -156,6 +160,22 @@ class SimulatorTests(unittest.TestCase):
         self.assertEqual(set(replies), {30, 31})
         self.assertEqual(struct.unpack("<BBBIH", replies[30].payload[2:])[0], 1)
 
+    def test_build_config_query_returns_ack(self) -> None:
+        self.link.send(
+            encode_frame(Frame(1, Command.GET_BUILD_CONFIG, 32))
+        )
+        frames = self._collect_frames(0.15)
+        replies = [
+            frame
+            for frame in frames
+            if frame.command == Command.ACK and frame.sequence == 32
+        ]
+        self.assertEqual(len(replies), 1)
+        self.assertEqual(replies[0].payload[:2], bytes((Command.GET_BUILD_CONFIG, 0)))
+        build_config = unpack_build_config(replies[0].payload[2:])
+        self.assertEqual(build_config[0:4], (1, 1, 0, 1))
+        self.assertEqual(build_config[6], 20000)
+
     def test_rejects_protocol_v1(self) -> None:
         self.link.send(
             encode_frame(Frame(1, Command.PING, 40, version=1))
@@ -242,6 +262,67 @@ class SimulatorTests(unittest.TestCase):
         self.assertEqual(len(restored), 1)
         default_limits = unpack_limits(restored[0].payload[2:])
         self.assertAlmostEqual(default_limits[2], 2.0, places=5)
+
+    def test_open_loop_configuration_start_and_quick_stop(self) -> None:
+        config = OpenLoopConfig(
+            1,
+            OpenLoopBackend.DIRECT_SINE,
+            7,
+            0,
+            24.0,
+            2.0,
+            5.0,
+            20.0,
+            10,
+            50,
+            30000,
+        )
+        self.link.send(
+            encode_frame(
+                Frame(
+                    1,
+                    Command.SET_OPEN_LOOP_CONFIG,
+                    70,
+                    pack_open_loop_config(config),
+                )
+            )
+        )
+        self.link.send(
+            encode_frame(
+                Frame(1, Command.START_OPEN_LOOP, 71, b"\x01")
+            )
+        )
+        frames = self._collect_frames(0.35)
+        replies = {
+            frame.sequence: frame
+            for frame in frames
+            if frame.command == Command.ACK
+            and frame.sequence in (70, 71)
+        }
+        self.assertEqual(set(replies), {70, 71})
+        telemetry = [
+            unpack_telemetry(frame.payload)
+            for frame in frames
+            if frame.command == Command.TELEMETRY
+        ]
+        self.assertTrue(telemetry)
+        self.assertNotEqual(telemetry[-1].status & (1 << 5), 0)
+        self.assertGreater(max(value.speed_rpm for value in telemetry), 5.0)
+
+        self.link.send(
+            encode_frame(
+                Frame(1, Command.QUICK_STOP, 72, b"\x01")
+            )
+        )
+        stopped_frames = self._collect_frames(0.12)
+        stopped = [
+            unpack_telemetry(frame.payload)
+            for frame in stopped_frames
+            if frame.command == Command.TELEMETRY
+        ]
+        self.assertTrue(stopped)
+        self.assertEqual(stopped[-1].status & (1 << 0), 0)
+        self.assertEqual(stopped[-1].status & (1 << 5), 0)
 
 
 if __name__ == "__main__":

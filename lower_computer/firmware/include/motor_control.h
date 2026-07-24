@@ -12,8 +12,15 @@ typedef enum
 {
     MOTOR_MODE_TORQUE = 0,
     MOTOR_MODE_SPEED = 1,
-    MOTOR_MODE_POSITION = 2
+    MOTOR_MODE_POSITION = 2,
+    MOTOR_MODE_OPEN_LOOP_SPEED = 3
 } MotorMode;
+
+typedef enum
+{
+    MOTOR_OPEN_LOOP_DIRECT_SINE = 0,
+    MOTOR_OPEN_LOOP_SIMPLEFOC = 1
+} MotorOpenLoopBackend;
 
 typedef enum
 {
@@ -42,7 +49,8 @@ typedef enum
     MOTOR_RESULT_OUT_OF_RANGE,
     MOTOR_RESULT_NOT_CALIBRATED,
     MOTOR_RESULT_HEARTBEAT_REQUIRED,
-    MOTOR_RESULT_HARDWARE_FAULT
+    MOTOR_RESULT_HARDWARE_FAULT,
+    MOTOR_RESULT_CAPABILITY_UNAVAILABLE
 } MotorResult;
 
 enum
@@ -88,6 +96,21 @@ typedef struct
 
 typedef struct
 {
+    uint8_t backend;
+    uint8_t pole_pairs;
+    uint8_t flags;
+    uint8_t reserved;
+    float bus_voltage_v;
+    float voltage_limit_v;
+    float target_velocity_rad_s;
+    float acceleration_rad_s2;
+    uint16_t update_period_ms;
+    uint16_t startup_delay_ms;
+    uint32_t max_runtime_ms;
+} MotorOpenLoopConfig;
+
+typedef struct
+{
     MotorState state;
     MotorMode mode;
     float target;
@@ -98,15 +121,21 @@ typedef struct
     uint16_t heartbeat_lease_ms;
     uint32_t faults;
     uint8_t calibration_type;
+    bool open_loop_active;
+    bool open_loop_output_ready;
+    float open_loop_velocity_rad_s;
+    uint32_t open_loop_started_ms;
+    uint32_t open_loop_last_update_ms;
     MotorPid pid[MOTOR_PID_COUNT];
     MotorPid pending_pid[MOTOR_PID_COUNT];
     uint8_t pending_pid_mask;
     MotorLimits limits;
     MotorTelemetry telemetry;
+    MotorOpenLoopConfig open_loop;
 } MotorControl;
 
 #define MOTOR_PERSISTENT_MAGIC 0x4D435432UL
-#define MOTOR_PERSISTENT_VERSION 3U
+#define MOTOR_PERSISTENT_VERSION 4U
 
 typedef struct
 {
@@ -119,6 +148,7 @@ typedef struct
     uint32_t telemetry_mask;
     MotorPid pid[MOTOR_PID_COUNT];
     MotorLimits limits;
+    MotorOpenLoopConfig open_loop;
 } MotorPersistentConfig;
 
 void MotorControl_Init(MotorControl *motor, uint32_t now_ms);
@@ -134,6 +164,13 @@ MotorResult MotorControl_SetTarget(
     MotorControl *motor,
     MotorMode mode,
     float target);
+MotorResult MotorControl_SetOpenLoopConfig(
+    MotorControl *motor,
+    const MotorOpenLoopConfig *config);
+MotorResult MotorControl_StartOpenLoop(
+    MotorControl *motor,
+    uint32_t now_ms);
+void MotorControl_RequestControlledStop(MotorControl *motor);
 MotorResult MotorControl_SetPid(
     MotorControl *motor,
     MotorPidLoop loop,

@@ -5,9 +5,9 @@
 
 #if MOTOR_USE_SIMPLEFOC
 
-#include "BLDCMotor.h"
-#include "common/base_classes/CurrentSense.h"
-#include "common/base_classes/Sensor.h"
+#include "../../third_party/Arduino-FOC/src/BLDCMotor.h"
+#include "../../third_party/Arduino-FOC/src/common/base_classes/CurrentSense.h"
+#include "../../third_party/Arduino-FOC/src/common/base_classes/Sensor.h"
 
 class Tc375BldcDriver final : public BLDCDriver
 {

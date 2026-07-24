@@ -8,6 +8,8 @@ from motor_control.protocol import (
     ControlMode,
     Frame,
     FrameParser,
+    OpenLoopBackend,
+    OpenLoopConfig,
     PidLoop,
     Telemetry,
     crc16_modbus,
@@ -16,12 +18,15 @@ from motor_control.protocol import (
     pack_calibrate,
     pack_heartbeat,
     pack_limits,
+    pack_open_loop_config,
     pack_telemetry_profile,
     pack_target,
     pack_telemetry,
     pack_pid,
     unpack_pid,
+    unpack_build_config,
     unpack_limits,
+    unpack_open_loop_config,
     unpack_telemetry_profile,
     unpack_target,
     unpack_telemetry,
@@ -149,6 +154,85 @@ class PayloadTests(unittest.TestCase):
         self.assertEqual(unpack_telemetry_profile(profile), (100, 0x1F))
         with self.assertRaises(ValueError):
             pack_telemetry_profile(0)
+
+    def test_build_config_hardware_layers_and_legacy_compatibility(self) -> None:
+        layered = struct.pack(
+            "<BBBBBIIIIHHHHf",
+            1,
+            1,
+            0,
+            1,
+            7,
+            10000,
+            20000,
+            10000,
+            1000,
+            100,
+            750,
+            300,
+            5000,
+            0.1,
+        )
+        values = unpack_build_config(layered)
+        self.assertEqual(values[:5], (1, 1, 0, 1, 7))
+        self.assertEqual(values[6], 20000)
+
+        legacy = struct.pack(
+            "<BBBBIIIIHHHHf",
+            1,
+            1,
+            1,
+            7,
+            10000,
+            10000,
+            10000,
+            1000,
+            100,
+            750,
+            300,
+            5000,
+            0.1,
+        )
+        legacy_values = unpack_build_config(legacy)
+        self.assertEqual(legacy_values[:5], (1, 1, 1, 1, 7))
+
+    def test_open_loop_configuration_round_trip(self) -> None:
+        config = OpenLoopConfig(
+            1,
+            OpenLoopBackend.DIRECT_SINE,
+            7,
+            0,
+            24.0,
+            2.0,
+            -5.0,
+            10.0,
+            10,
+            500,
+            30000,
+        )
+        decoded = unpack_open_loop_config(
+            pack_open_loop_config(config)
+        )
+        self.assertEqual(decoded.motor_id, 1)
+        self.assertEqual(decoded.backend, OpenLoopBackend.DIRECT_SINE)
+        self.assertEqual(decoded.pole_pairs, 7)
+        self.assertAlmostEqual(decoded.target_velocity_rad_s, -5.0)
+        with self.assertRaises(ValueError):
+            pack_open_loop_config(
+                OpenLoopConfig(
+                    1,
+                    OpenLoopBackend.DIRECT_SINE,
+                    7,
+                    0,
+                    24.0,
+                    25.0,
+                    5.0,
+                    10.0,
+                    10,
+                    500,
+                    30000,
+                )
+            )
 
 
 if __name__ == "__main__":
