@@ -31,6 +31,7 @@
 #include "GTM_ATOM_3_Phase_Inverter_PWM.h"
 #include "DRV8313_handle.h"
 #include "firmware_runtime.h"
+#include "project_config.h"
 #include "Bsp.h"
 
 #define WAIT_TIME_MS    (10U)
@@ -51,16 +52,25 @@
 #error "BSP_RUNTIME_MODE must be STANDALONE_TEST or NATIVE_PROTOCOL"
 #endif
 
+/*
+ * A standalone loop has no heartbeat lease, one-shot power confirmation or
+ * host emergency-stop path. Never allow it to energize a real inverter.
+ */
+#if MOTOR_POWER_STAGE_ENABLED && \
+    (BSP_RUNTIME_MODE != BSP_RUNTIME_NATIVE_PROTOCOL)
+#error "Real power-stage builds must use the native-protocol runtime"
+#endif
+
 #ifndef BSP_SIMPLEFOC_OPEN_LOOP_TEST
 #define BSP_SIMPLEFOC_OPEN_LOOP_TEST (0)
 #endif
 
 #ifndef BSP_SIMPLEFOC_OPEN_LOOP_BUS_V
-#define BSP_SIMPLEFOC_OPEN_LOOP_BUS_V (24.0f)
+#define BSP_SIMPLEFOC_OPEN_LOOP_BUS_V (7.0f)
 #endif
 
 #ifndef BSP_SIMPLEFOC_OPEN_LOOP_VOLTAGE_LIMIT_V
-#define BSP_SIMPLEFOC_OPEN_LOOP_VOLTAGE_LIMIT_V (2.0f)
+#define BSP_SIMPLEFOC_OPEN_LOOP_VOLTAGE_LIMIT_V (0.3f)
 #endif
 
 #ifndef BSP_SIMPLEFOC_OPEN_LOOP_TARGET_RAD_S
@@ -169,11 +179,10 @@ void core0_main(void)
     initGtmAtom3phInv();
 
     /*
-     * Enable DRV8313 after PWM initialization.
-     *
-     * nSP goes high first, then nRT goes high.
+     * Standalone mode is only a control-board waveform test. The compile-time
+     * power-stage lock remains authoritative even in this legacy path.
      */
-    Drv8313_enable();
+    Drv8313_disable();
 #endif
 
     while (1)

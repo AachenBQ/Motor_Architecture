@@ -18,6 +18,8 @@ from motor_control.protocol import (
     pack_calibrate,
     pack_heartbeat,
     pack_limits,
+    pack_open_loop_config_commit,
+    pack_open_loop_config_fragments,
     pack_open_loop_config,
     pack_telemetry_profile,
     pack_target,
@@ -25,7 +27,10 @@ from motor_control.protocol import (
     pack_pid,
     unpack_pid,
     unpack_build_config,
+    unpack_diagnostics,
     unpack_limits,
+    unpack_open_loop_config_commit,
+    unpack_open_loop_config_fragment,
     unpack_open_loop_config,
     unpack_telemetry_profile,
     unpack_target,
@@ -196,6 +201,71 @@ class PayloadTests(unittest.TestCase):
         legacy_values = unpack_build_config(legacy)
         self.assertEqual(legacy_values[:5], (1, 1, 1, 1, 7))
 
+    def test_diagnostics_extension_and_legacy_compatibility(self) -> None:
+        extended = struct.pack(
+            "<IHHIHHBBBBHH",
+            12345,
+            2,
+            0x0100,
+            77,
+            280,
+            750,
+            6,
+            5,
+            0x01,
+            0,
+            1,
+            9,
+        )
+        values = unpack_diagnostics(extended)
+        self.assertEqual(values.uptime_ms, 12345)
+        self.assertEqual(values.commands_received, 77)
+        self.assertEqual(values.last_stop_reason, 5)
+        self.assertEqual(values.tx_high_priority_failures, 1)
+        self.assertEqual(values.telemetry_drops, 9)
+        self.assertEqual(values.rx_sw_fifo_overflows, 0)
+
+        uart = extended + struct.pack("<HHHH", 10, 11, 12, 13)
+        uart_values = unpack_diagnostics(uart)
+        self.assertEqual(uart_values.rx_sw_fifo_overflows, 10)
+        self.assertEqual(uart_values.rx_hw_fifo_overflows, 11)
+        self.assertEqual(uart_values.parser_crc_errors, 0)
+
+        full = extended + struct.pack(
+            "<HHHHHHHH",
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+        )
+        full_values = unpack_diagnostics(full)
+        self.assertEqual(full_values.rx_sw_fifo_overflows, 10)
+        self.assertEqual(full_values.rx_hw_fifo_overflows, 11)
+        self.assertEqual(full_values.rx_frame_errors, 12)
+        self.assertEqual(full_values.rx_parity_errors, 13)
+        self.assertEqual(full_values.parser_crc_errors, 14)
+        self.assertEqual(full_values.parser_length_errors, 15)
+        self.assertEqual(full_values.parser_timeout_errors, 16)
+        self.assertEqual(full_values.parser_resync_events, 17)
+        self.assertEqual(full_values.rx_isr_entries, 0)
+
+        scheduler = full + struct.pack("<HHH", 18, 19, 20)
+        scheduler_values = unpack_diagnostics(scheduler)
+        self.assertEqual(scheduler_values.rx_isr_entries, 18)
+        self.assertEqual(scheduler_values.rx_poll_drains, 19)
+        self.assertEqual(scheduler_values.rx_poll_bytes, 20)
+
+        legacy = unpack_diagnostics(struct.pack("<IHH", 42, 3, 4))
+        self.assertEqual(legacy.uptime_ms, 42)
+        self.assertEqual(legacy.protocol_errors, 3)
+        self.assertEqual(legacy.fault_bits, 4)
+        self.assertEqual(legacy.commands_received, 0)
+        self.assertEqual(legacy.rx_poll_drains, 0)
+
     def test_open_loop_configuration_round_trip(self) -> None:
         config = OpenLoopConfig(
             1,
@@ -233,6 +303,76 @@ class PayloadTests(unittest.TestCase):
                     30000,
                 )
             )
+
+    def test_open_loop_fragmented_transfer_stays_within_16_bytes(self) -> None:
+        config = OpenLoopConfig(
+            1,
+            OpenLoopBackend.SIMPLEFOC,
+            7,
+            0,
+            7.0,
+            0.3,
+            5.0,
+            10.0,
+            10,
+            500,
+            30000,
+        )
+        generation = 23
+        fragments = pack_open_loop_config_fragments(
+            config,
+            generation,
+        )
+        self.assertEqual(len(fragments), 14)
+
+        rebuilt = bytearray()
+        for sequence, payload in enumerate(fragments):
+            motor_id, decoded_generation, index, data = (
+                unpack_open_loop_config_fragment(payload)
+            )
+            self.assertEqual(motor_id, 1)
+            self.assertEqual(decoded_generation, generation)
+            self.assertEqual(index, sequence)
+            rebuilt.extend(data)
+            packet = encode_frame(
+                Frame(
+                    1,
+                    Command.SET_OPEN_LOOP_CONFIG_PART,
+                    sequence,
+                    payload,
+                )
+            )
+            self.assertEqual(len(packet), 16)
+
+        self.assertEqual(
+            bytes(rebuilt),
+            pack_open_loop_config(config),
+        )
+        commit = pack_open_loop_config_commit(
+            config,
+            generation,
+        )
+        motor_id, decoded_generation, expected_crc = (
+            unpack_open_loop_config_commit(commit)
+        )
+        self.assertEqual((motor_id, decoded_generation), (1, generation))
+        self.assertEqual(
+            expected_crc,
+            crc16_modbus(bytes(rebuilt)),
+        )
+        self.assertEqual(
+            len(
+                encode_frame(
+                    Frame(
+                        1,
+                        Command.COMMIT_OPEN_LOOP_CONFIG,
+                        99,
+                        commit,
+                    )
+                )
+            ),
+            15,
+        )
 
 
 if __name__ == "__main__":

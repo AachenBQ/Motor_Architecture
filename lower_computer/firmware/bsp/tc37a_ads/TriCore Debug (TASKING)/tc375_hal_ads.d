@@ -1,5 +1,9 @@
 tc375_hal_ads.o :	../tc375_hal_ads.c
 ../tc375_hal_ads.c :
+tc375_hal_ads.o :	..\project_config.h
+..\project_config.h :
+tc375_hal_ads.o :	..\..\..\config\project_config.h
+..\..\..\config\project_config.h :
 tc375_hal_ads.o :	..\tc375_hal.h
 ..\tc375_hal.h :
 tc375_hal_ads.o :	..\..\..\include\tc375_hal.h

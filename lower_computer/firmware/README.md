@@ -68,6 +68,61 @@ SimpleFOC 开环模式要求固件已链接 SimpleFOC 且极对数与编译配�
 不可在线提高的硬上限约束。心跳超时、测量限值、nFAULT 和最长运行时间
 都会撤销输出。
 
+## 功率级接入门禁与首次启动流程
+
+功率级不是“连接串口后再勾选”的运行时选项，而是独立的编译期安全层。
+推荐按以下顺序推进，不能跳级：
+
+1. **控制板示波器阶段**
+   - 保持 `MOTOR_CONTROL_HARDWARE_ENABLED=1`、
+     `MOTOR_POWER_STAGE_ENABLED=0`；
+   - 不连接功率板，只检查三相 TOUT 的频率、相位、占空比和安全停止；
+   - `GET_BUILD_CONFIG (0x29)` 必须报告 `power_stage_enabled=0`；
+   - `GET_DIAGNOSTICS (0x22)` 的 `hardware_flags.gate_enabled` 必须始终为 0；
+   - 发送 `QUICK_STOP (0x1C)` 后，在 ACK 到达前 PWM 和 gate 必须均已关闭。
+
+2. **逐项完成安全证据**
+   - 三相电流采样、零偏、极性和软件过流；
+   - 母线电压采样及欠压/过压；
+   - 功率温度采样及过温；
+   - CPU watchdog；
+   - 独立于软件的物理急停；
+   - 外部硬件限流；
+   - DRV8313 nFAULT/gate 监测；
+   - 心跳超时关断；
+   - PWM/gate 安全输出路径。
+
+   只有实际实现并在硬件上验证一项后，才能把对应的
+   `MOTOR_*_READY` 宏改为 1。完整安全掩码为 `0x000001FF`。
+   `MOTOR_POWER_STAGE_ENABLED=1` 且未启用 override 时，只要缺少任意一项，
+   `project_config.h` 就会在编译期阻止构建。
+
+3. **受限 commissioning（确有必要时）**
+   - 只能在限流电源、外部硬件限流和可立即操作的物理急停均到位时使用；
+   - 显式设置 `MOTOR_POWER_STAGE_COMMISSIONING_OVERRIDE=1`，不得把它作为
+     默认发布配置；
+   - `0x29.safety_mask` 的 bit31 会置位，缺失的 bit0–8 仍保持为 0；
+   - 每次启动都必须重新由操作者确认，并发送
+     `START_OPEN_LOOP` payload `01 01`；
+   - 首次测试建议额外限制为电压不高于 0.10 V、速度不高于 1 rad/s、
+     加速度不高于 1 rad/s²、单次运行不超过 1000 ms。
+
+4. **完整功率级阶段**
+   - 所有安全位均完成后使用 `MOTOR_POWER_STAGE_ENABLED=1`、
+     `MOTOR_POWER_STAGE_COMMISSIONING_OVERRIDE=0`；
+   - 烧录后先读 `0x29`，确认 `power_stage_enabled=1` 且
+     `(safety_mask & 0x1FF) == 0x1FF`；
+   - 再读 `0x22`，确认 `power_stage_build=1`、`safety_ready=1`、
+     `nFAULT_clear=1`、`pwm_enabled=0`、`gate_enabled=0`；
+   - 建立并持续发送心跳，通过 `0x2A/0x2B` 写入低风险参数，再用 `0x27`
+     回读逐字段核对；
+   - 操作者完成真实功率级确认后才发送 `0x28: 01 01`；
+   - 测试结束发送 `0x1C` 并重新读取诊断，必须观察到 PWM/gate 均为 0。
+
+`start_flags` 的确认位不会绕过任何保护。未知 flag、缺少功率级确认、启动前
+PWM/gate 状态不安静、活动硬件故障、心跳无效或参数超限都会拒绝启动。
+闭环 `SET_ENABLE` 还要求编码器、电流采样和闭环控制实现均标记为 ready。
+
 `tc375_hal_ads.c` 已实现 ASCLIN0 中断式 UART，默认使用 P14.0 TX、
 P14.1 RX、115200 8N1；具体接线、宏和构建步骤见
 [bsp/tc37a_ads/README.md](bsp/tc37a_ads/README.md)。ADC、编码器和 Flash
@@ -82,6 +137,39 @@ gcc -std=c11 -Ifirmware/include -Ifirmware/config `
   -o tests/core_test.exe
 .\tests\core_test.exe
 ```
+
+命令路由、安全字段和立即停止可在 host HAL stub 上以两种编译模式回归；
+第二种只是电脑侧模拟，不会访问或使能真实硬件：
+
+```powershell
+$routerSources = @(
+  "tests/test_command_router.c",
+  "firmware/src/command_router.c",
+  "firmware/src/motor_control.c",
+  "firmware/src/native_protocol.c",
+  "tests/host/tc375_hal_stub.c"
+)
+
+gcc -std=c11 -Wall -Wextra -Werror `
+  -DMOTOR_CONTROL_HARDWARE_ENABLED=1 `
+  -DMOTOR_POWER_STAGE_ENABLED=0 -DMOTOR_USE_SIMPLEFOC=1 `
+  -Ifirmware/config -Ifirmware/include -Itests/host `
+  $routerSources -o tests/router_control_test.exe
+.\tests\router_control_test.exe
+
+gcc -std=c11 -Wall -Wextra -Werror `
+  -DMOTOR_CONTROL_HARDWARE_ENABLED=1 `
+  -DMOTOR_POWER_STAGE_ENABLED=1 `
+  -DMOTOR_POWER_STAGE_COMMISSIONING_OVERRIDE=1 `
+  -DMOTOR_USE_SIMPLEFOC=1 `
+  -Ifirmware/config -Ifirmware/include -Itests/host `
+  $routerSources -o tests/router_power_override_test.exe
+.\tests\router_power_override_test.exe
+```
+
+两次均应输出 `lower_computer command router: OK`。测试覆盖 `0x28`
+确认位、`0x29.safety_mask`、诊断 `hardware_flags`、分片配置原子提交以及
+`QUICK_STOP` 返回前关闭 PWM/gate。
 
 完整 PC 侧集成 smoke test：
 

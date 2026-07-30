@@ -40,7 +40,6 @@
 /*********************************************************************************************************************/
 #define NUM_OF_CHANNELS         (3)                                    /* Number of DRV8313 PWM input channels       */
 #define PWM_FREQUENCY           ((float32)MOTOR_PWM_FREQUENCY_HZ)      /* PWM frequency in [Hz]                      */
-#define ISR_PRIORITY_ATOM       (20)                                   /* Interrupt priority number                  */
 
 #define PHASE_U_HS              &IfxGtm_ATOM1_0_TOUT9_P00_0_OUT         /* Phase U PWM: P00.0 */
 #define PHASE_V_HS              &IfxGtm_ATOM1_1_TOUT11_P00_2_OUT        /* Phase V PWM: P00.2 */
@@ -49,8 +48,6 @@
 #define PHASE_U_DUTY            (0.0f)                                /* Initial PWM duty cycle of phase U in [%]   */
 #define PHASE_V_DUTY            (0.0f)                                /* Initial PWM duty cycle of phase V in [%]   */
 #define PHASE_W_DUTY            (0.0f)                                /* Initial PWM duty cycle of phase W in [%]   */
-
-#define LED                     &MODULE_P13, 0       /* LED which will be toggled in Interrupt Service Routine (ISR) */
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Global variables--------------------------------------------------*/
@@ -87,21 +84,6 @@ static float32 GtmAtom3phInv_clampDuty(float32 duty)
     return duty;
 }
 
-/* Macro to define the Interrupt Service Routine. */
-IFX_INTERRUPT(interruptGtmAtom, 0, ISR_PRIORITY_ATOM);
-
-/* Interrupt Service Routine of the ATOM */
-void interruptGtmAtom(void)
-{
-    IfxPort_togglePin(LED);                                                      /* Toggle the LED                   */
-}
-
-/* Period interrupt callback function */
-void IfxGtm_periodEventFunction(void *data)
-{
-
-}
-
 /* This function initializes the ATOM */
 void initGtmAtom3phInv(void)
 {
@@ -112,7 +94,6 @@ void initGtmAtom3phInv(void)
      */
     IfxGtm_Pwm_Config config;                                /* Main PWM configuration structure                     */
     IfxGtm_Pwm_ChannelConfig channelConfig[NUM_OF_CHANNELS]; /* Array containing configuration for each channel      */
-    IfxGtm_Pwm_InterruptConfig interruptConfig;              /* Only needed if using interrupt. Can also be an array */
     IfxGtm_Pwm_OutputConfig output[NUM_OF_CHANNELS];         /* Only needed if connected to pin                      */
 
     /* 1. Configuration structure initialization
@@ -151,17 +132,7 @@ void initGtmAtom3phInv(void)
     output[2].outputMode            = IfxPort_OutputMode_pushPull;              /* Output mode                       */
     output[2].padDriver             = IfxPort_PadDriver_cmosAutomotiveSpeed1;   /* Pad driver                        */
 
-    /* 3. [Optional] Interrupt configuration, Example configuration of interrupt for base channel                    */
-
-    interruptConfig.mode          = IfxGtm_IrqMode_pulseNotify;  /* IRQ mode of interrupt                            */
-    interruptConfig.isrProvider   = IfxSrc_Tos_cpu0;             /* Type of Service                                  */
-
-    interruptConfig.priority      = ISR_PRIORITY_ATOM;           /* Interrupt priority                               */
-    /* Connect callback function for period event interrupt */
-    interruptConfig.periodEvent   = IfxGtm_periodEventFunction;
-    interruptConfig.dutyEvent     = NULL_PTR;                /* Do not duty event interrupt                          */
-
-    /* 4. Channel configuration */
+    /* 3. Channel configuration */
     /*Base channel - CH0 configuration. */
     channelConfig[0].timerCh      = IfxGtm_Pwm_SubModule_Ch_0;   /* Atom channel index to be used for sync channel   */
     channelConfig[0].phase        = 0.0f;                        /* Phase shift in radians (range: 0.0 .. 2pi;
@@ -170,7 +141,7 @@ void initGtmAtom3phInv(void)
     channelConfig[0].dtm          = NULL_PTR;                    /* DRV8313 owns complementary low-side timing       */
     channelConfig[0].output       = &output[0];                  /* Pin connections and polarities for this channel  */
     channelConfig[0].mscOut       = NULL_PTR;                    /* MSC configuration for this channel               */
-    channelConfig[0].interrupt    = &interruptConfig;            /* Attach Interrupt configuration for this channel  */
+    channelConfig[0].interrupt    = NULL_PTR;                    /* PWM generation needs no periodic CPU interrupt   */
 
     /* Sync channel - CH1 configuration */
     channelConfig[1].timerCh      = IfxGtm_Pwm_SubModule_Ch_1;   /* Atom channel index to be used for base channel   */
@@ -192,7 +163,7 @@ void initGtmAtom3phInv(void)
     channelConfig[2].mscOut       = NULL_PTR;                    /* MSC configuration for this channel               */
     channelConfig[2].interrupt    = NULL_PTR;                    /* Interrupt configuration for this channel         */
 
-    /* 5. Other configurations */
+    /* 4. Other configurations */
     config.cluster                = IfxGtm_Cluster_1;                  /* Cluster                                    */
     config.subModule              = IfxGtm_Pwm_SubModule_atom;         /* Sub module                                 */
     config.alignment              = IfxGtm_Pwm_Alignment_center;       /* Alignment                                  */
@@ -205,7 +176,7 @@ void initGtmAtom3phInv(void)
     config.syncUpdateEnabled      = TRUE;                              /* TRUE: Update compare registers from shadow
                                                                         * at the end of period */
 
-    /* 6. Call the init function */
+    /* 5. Call the init function */
 
     if(!IfxGtm_isEnabled(&MODULE_GTM))
     {
@@ -224,12 +195,10 @@ void initGtmAtom3phInv(void)
 
     IfxGtm_Pwm_init(&g_gtmAtom3phInv.pwm, &g_gtmAtom3phInv.channels[0], &config);
 
-    /* 7. Store the current duty values for runtime calls */
+    /* 6. Store the current duty values for runtime calls */
     g_gtmAtom3phInv.dutyCycles[0]= channelConfig[0].duty;
     g_gtmAtom3phInv.dutyCycles[1]= channelConfig[1].duty;
     g_gtmAtom3phInv.dutyCycles[2]= channelConfig[2].duty;
-
-    IfxPort_setPinModeOutput(LED, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);   /* Set pin mode         */
 }
 
 /* This function update duty cycles */

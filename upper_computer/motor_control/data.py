@@ -204,10 +204,10 @@ class AlarmMonitor:
 
     def __init__(
         self,
-        max_current_a: float = 20.0,
+        max_current_a: float = 0.3,
         max_temperature_c: float = 80.0,
-        min_voltage_v: float = 18.0,
-        max_voltage_v: float = 60.0,
+        min_voltage_v: float = 5.0,
+        max_voltage_v: float = 8.0,
     ) -> None:
         self.max_current_a = max_current_a
         self.max_temperature_c = max_temperature_c

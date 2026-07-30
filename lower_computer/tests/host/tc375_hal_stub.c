@@ -1,5 +1,7 @@
 #include "tc375_hal_stub.h"
 
+#include "project_config.h"
+
 #include <string.h>
 
 typedef struct
@@ -9,7 +11,7 @@ typedef struct
     size_t size;
 } MotorPersistentConfigStorage;
 
-static uint32_t g_time_us;
+static uint64_t g_time_us;
 static bool g_gate_enabled;
 static bool g_pwm_enabled;
 static float g_phase_duty_a;
@@ -20,6 +22,9 @@ static Tc375PhaseCurrents g_phase_currents;
 static Tc375EncoderSample g_encoder_sample;
 static float g_bus_voltage;
 static float g_temperature;
+static uint16_t g_uart_rx_isr_entries;
+static uint16_t g_uart_rx_poll_drains;
+static uint16_t g_uart_rx_poll_bytes;
 static MotorPersistentConfigStorage g_storage;
 
 void Tc375HalStub_Reset(void)
@@ -35,8 +40,16 @@ void Tc375HalStub_Reset(void)
     g_phase_currents = (Tc375PhaseCurrents){0.0F, 0.0F, 0.0F, false};
     g_encoder_sample =
         (Tc375EncoderSample){0.0F, 0.0F, 0.0F, true};
-    g_bus_voltage = 24.0F;
+    g_bus_voltage = 7.0F;
     g_temperature = 25.0F;
+    g_uart_rx_isr_entries = 0U;
+    g_uart_rx_poll_drains = 0U;
+    g_uart_rx_poll_bytes = 0U;
+}
+
+void Tc375HalStub_SetTimeMs(uint64_t time_ms)
+{
+    g_time_us = time_ms * 1000ULL;
 }
 
 void Tc375HalStub_SetPhaseCurrentSample(
@@ -67,6 +80,26 @@ void Tc375HalStub_SetActiveFaults(uint32_t faults)
     g_active_faults = faults;
 }
 
+void Tc375HalStub_SetBusVoltage(float bus_voltage_v)
+{
+    g_bus_voltage = bus_voltage_v;
+}
+
+void Tc375HalStub_SetPowerTemperature(float temperature_c)
+{
+    g_temperature = temperature_c;
+}
+
+void Tc375HalStub_SetUartRxServiceCounters(
+    uint16_t isr_entries,
+    uint16_t poll_drains,
+    uint16_t poll_bytes)
+{
+    g_uart_rx_isr_entries = isr_entries;
+    g_uart_rx_poll_drains = poll_drains;
+    g_uart_rx_poll_bytes = poll_bytes;
+}
+
 bool Tc375HalStub_GateEnabled(void)
 {
     return g_gate_enabled;
@@ -94,13 +127,19 @@ bool Tc375Hal_BoardInit(void)
 
 uint32_t Tc375Hal_TimeMs(void)
 {
-    return Tc375Hal_TimeUs() / 1000U;
+    return (uint32_t)Tc375Hal_TimeMs64();
+}
+
+uint64_t Tc375Hal_TimeMs64(void)
+{
+    g_time_us += 100ULL;
+    return g_time_us / 1000ULL;
 }
 
 uint32_t Tc375Hal_TimeUs(void)
 {
-    g_time_us += 100U;
-    return g_time_us;
+    g_time_us += 100ULL;
+    return (uint32_t)g_time_us;
 }
 
 void Tc375Hal_ServiceWatchdogs(void)
@@ -123,6 +162,51 @@ bool Tc375Hal_UartQueueTx(
     (void)length;
     (void)high_priority;
     return true;
+}
+
+uint16_t Tc375Hal_UartHighPriorityFailures(void)
+{
+    return 0U;
+}
+
+uint16_t Tc375Hal_UartTelemetryDrops(void)
+{
+    return 0U;
+}
+
+uint16_t Tc375Hal_UartRxSwFifoOverflows(void)
+{
+    return 0U;
+}
+
+uint16_t Tc375Hal_UartRxHwFifoOverflows(void)
+{
+    return 0U;
+}
+
+uint16_t Tc375Hal_UartRxFrameErrors(void)
+{
+    return 0U;
+}
+
+uint16_t Tc375Hal_UartRxParityErrors(void)
+{
+    return 0U;
+}
+
+uint16_t Tc375Hal_UartRxIsrEntries(void)
+{
+    return g_uart_rx_isr_entries;
+}
+
+uint16_t Tc375Hal_UartRxPollDrains(void)
+{
+    return g_uart_rx_poll_drains;
+}
+
+uint16_t Tc375Hal_UartRxPollBytes(void)
+{
+    return g_uart_rx_poll_bytes;
 }
 
 bool Tc375Hal_MotorPeripheralsInit(void)
@@ -152,6 +236,13 @@ float Tc375Hal_ReadPowerTemperature(void)
 
 void Tc375Hal_SetPhaseDuty(float phase_a, float phase_b, float phase_c)
 {
+    if (!g_pwm_enabled)
+    {
+        g_phase_duty_a = 0.0F;
+        g_phase_duty_b = 0.0F;
+        g_phase_duty_c = 0.0F;
+        return;
+    }
     g_phase_duty_a = phase_a;
     g_phase_duty_b = phase_b;
     g_phase_duty_c = phase_c;
@@ -159,12 +250,56 @@ void Tc375Hal_SetPhaseDuty(float phase_a, float phase_b, float phase_c)
 
 void Tc375Hal_SetPwmEnabled(bool enabled)
 {
+#if MOTOR_CONTROL_HARDWARE_ENABLED
+#if MOTOR_POWER_STAGE_ENABLED
+    g_pwm_enabled = enabled && g_gate_enabled;
+#else
     g_pwm_enabled = enabled;
+#endif
+#else
+    (void)enabled;
+    g_pwm_enabled = false;
+#endif
+    if (!g_pwm_enabled)
+    {
+        g_phase_duty_a = 0.0F;
+        g_phase_duty_b = 0.0F;
+        g_phase_duty_c = 0.0F;
+    }
 }
 
-void Tc375Hal_SetGateEnabled(bool enabled)
+bool Tc375Hal_SetGateEnabled(bool enabled)
 {
-    g_gate_enabled = enabled;
+#if MOTOR_POWER_STAGE_ENABLED
+    if (!enabled)
+    {
+        Tc375Hal_SetPwmEnabled(false);
+        g_gate_enabled = false;
+        return true;
+    }
+    if (g_active_faults != 0U)
+    {
+        Tc375Hal_SetPwmEnabled(false);
+        g_gate_enabled = false;
+        return false;
+    }
+    g_gate_enabled = true;
+    return true;
+#else
+    (void)enabled;
+    g_gate_enabled = false;
+    return !enabled;
+#endif
+}
+
+bool Tc375Hal_IsPwmEnabled(void)
+{
+    return g_pwm_enabled;
+}
+
+bool Tc375Hal_IsGateEnabled(void)
+{
+    return g_gate_enabled;
 }
 
 uint32_t Tc375Hal_ReadActiveFaults(void)

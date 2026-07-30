@@ -32,12 +32,45 @@
 #define TC375_BOARD_UART_BAUDRATE            (115200U)
 #endif
 
+/*
+ * Use a noise-tolerant asynchronous sampling setup. The values remain board
+ * overrides so a future clock or transceiver constraint can be handled
+ * without changing the HAL.
+ */
+#ifndef TC375_BOARD_UART_OVERSAMPLING
+#define TC375_BOARD_UART_OVERSAMPLING        IfxAsclin_OversamplingFactor_16
+#endif
+
+#ifndef TC375_BOARD_UART_SAMPLE_POINT
+#define TC375_BOARD_UART_SAMPLE_POINT        IfxAsclin_SamplePointPosition_8
+#endif
+
+#ifndef TC375_BOARD_UART_SAMPLES_PER_BIT
+#define TC375_BOARD_UART_SAMPLES_PER_BIT     IfxAsclin_SamplesPerBit_three
+#endif
+
+#ifndef TC375_BOARD_UART_RX_POLL_DRAIN_LIMIT
+#define TC375_BOARD_UART_RX_POLL_DRAIN_LIMIT (4U)
+#endif
+
 #ifndef TC375_BOARD_UART_RX_BUFFER_SIZE
 #define TC375_BOARD_UART_RX_BUFFER_SIZE      (4096U)
 #endif
 
 #ifndef TC375_BOARD_UART_TX_BUFFER_SIZE
 #define TC375_BOARD_UART_TX_BUFFER_SIZE      (4096U)
+#endif
+
+/*
+ * Preserve TX FIFO space for command ACK/ERROR frames. Low-priority
+ * telemetry is dropped before it can consume this reserve.
+ */
+#ifndef TC375_BOARD_UART_TX_PRIORITY_RESERVE
+#define TC375_BOARD_UART_TX_PRIORITY_RESERVE  (256U)
+#endif
+
+#ifndef TC375_BOARD_UART_HIGH_PRIORITY_WAIT_US
+#define TC375_BOARD_UART_HIGH_PRIORITY_WAIT_US (3000U)
 #endif
 
 /*

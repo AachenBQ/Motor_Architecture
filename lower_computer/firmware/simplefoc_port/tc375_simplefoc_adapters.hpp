@@ -18,6 +18,12 @@ public:
     void disable() override;
     void setPwm(float ua, float ub, float uc) override;
     void setPhaseState(PhaseState sa, PhaseState sb, PhaseState sc) override;
+    void setInitializationInhibit(bool inhibited);
+    bool isOutputEnabled() const;
+
+private:
+    bool initialization_inhibit_ = false;
+    bool output_enabled_ = false;
 };
 
 class Tc375Encoder final : public Sensor

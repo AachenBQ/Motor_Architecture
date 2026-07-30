@@ -8,21 +8,35 @@ import struct
 import time
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
-from typing import Callable, Dict, List, Optional, Set, Tuple, Union
+from typing import Any, Callable, Dict, List, Optional, Set, Tuple, Union
 
+from .codex_bridge import BridgeRequestError, CodexBridge
 from .data import AlarmMonitor, CsvRecorder, HistoryStore
 from .protocol import (
     CalibrationType,
     Command,
     ControlMode,
+    FEATURE_FRAGMENTED_OPEN_LOOP_CONFIG,
     Frame,
     FrameParser,
+    HARDWARE_FLAG_COMMISSIONING_OVERRIDE,
+    HARDWARE_FLAG_GATE_ENABLED,
+    HARDWARE_FLAG_NFAULT_CLEAR,
+    HARDWARE_FLAG_POWER_STAGE_BUILD,
+    HARDWARE_FLAG_PWM_ENABLED,
+    HARDWARE_FLAG_SAFETY_READY,
     MODE_LABELS,
     OPEN_LOOP_BACKEND_LABELS,
     OpenLoopBackend,
     OpenLoopConfig,
     PID_LOOP_LABELS,
     PidLoop,
+    POWER_STAGE_COMMISSIONING_MAX_ACCEL_RAD_S2,
+    POWER_STAGE_COMMISSIONING_MAX_RUNTIME_MS,
+    POWER_STAGE_COMMISSIONING_MAX_SPEED_RAD_S,
+    POWER_STAGE_COMMISSIONING_MAX_VOLTAGE_V,
+    POWER_STAGE_COMMISSIONING_OVERRIDE,
+    POWER_STAGE_REQUIRED_SAFETY_MASK,
     bytes_to_hex,
     encode_frame,
     hex_to_bytes,
@@ -31,12 +45,16 @@ from .protocol import (
     pack_heartbeat,
     pack_limits,
     pack_mode,
+    pack_open_loop_config_commit,
     pack_open_loop_config,
+    pack_open_loop_config_fragments,
     pack_pid,
     pack_target,
+    pack_start_open_loop,
     pack_telemetry_profile,
     unpack_limits,
     unpack_build_config,
+    unpack_diagnostics,
     unpack_open_loop_config,
     unpack_telemetry_profile,
     unpack_telemetry,
@@ -71,6 +89,19 @@ PID_DEFAULT_VALUES = {
     PidLoop.CURRENT: (0.80, 0.12, 0.01),
     PidLoop.SPEED: (0.50, 0.05, 0.00),
     PidLoop.POSITION: (2.00, 0.00, 0.02),
+}
+OPEN_LOOP_FRAGMENT_ACK_TIMEOUT_MS = 400
+OPEN_LOOP_FRAGMENT_MAX_ATTEMPTS = 3
+
+STOP_REASON_LABELS = {
+    0: "无",
+    1: "失能命令",
+    2: "受控停止",
+    3: "快速停止",
+    4: "紧急停止",
+    5: "心跳超时",
+    6: "开环运行到期",
+    7: "硬件或软件故障",
 }
 
 
@@ -331,14 +362,24 @@ class MotorStudioApp:
         self._software_protection_latched = False
         self._shutdown_pending = False
         self._pending_open_loop_start = None  # type: Optional[OpenLoopConfig]
+        self._open_loop_transfer = None  # type: Optional[Dict[str, Any]]
+        self._open_loop_transfer_result = None  # type: Optional[Dict[str, Any]]
+        self._open_loop_transfer_token = 0
         self._build_control_hardware_enabled = None  # type: Optional[bool]
         self._build_power_stage_enabled = None  # type: Optional[bool]
         self._build_simplefoc_enabled = None  # type: Optional[bool]
+        self._build_safety_mask = None  # type: Optional[int]
         self._build_config_query_generation = 0
         self._build_config_query_attempt = 0
         self._build_config_query_started_at = 0.0
         self._device_firmware_version = None  # type: Optional[Tuple[int, int, int]]
         self._device_build_id = ""
+        self._device_features = None  # type: Optional[int]
+        self._latest_diagnostics = None  # type: Optional[Dict[str, Any]]
+        self._device_open_loop_config = None  # type: Optional[OpenLoopConfig]
+        self._codex_control_until = 0.0
+        self._codex_transactions = {}  # type: Dict[int, Dict[str, Any]]
+        self._codex_bridge = None  # type: Optional[CodexBridge]
         self.pid_values = {
             (motor_id, loop): values
             for motor_id in range(1, self.motor_count + 1)
@@ -348,13 +389,13 @@ class MotorStudioApp:
         self._active_pid_loop = PidLoop.SPEED
         self.config_window = None  # type: Optional[tk.Toplevel]
         self.limit_vars = {
-            "current": tk.StringVar(master=root, value="20"),
-            "torque": tk.StringVar(master=root, value="2"),
+            "current": tk.StringVar(master=root, value="0.3"),
+            "torque": tk.StringVar(master=root, value="0.03"),
             "speed": tk.StringVar(master=root, value="100"),
             "position_min": tk.StringVar(master=root, value="-1000"),
             "position_max": tk.StringVar(master=root, value="1000"),
-            "bus_min": tk.StringVar(master=root, value="18"),
-            "bus_max": tk.StringVar(master=root, value="60"),
+            "bus_min": tk.StringVar(master=root, value="5"),
+            "bus_max": tk.StringVar(master=root, value="8"),
             "temperature": tk.StringVar(master=root, value="80"),
         }
         self.telemetry_rate_var = tk.StringVar(master=root, value="20")
@@ -364,8 +405,8 @@ class MotorStudioApp:
         )
         self.open_loop_vars = {
             "pole_pairs": tk.StringVar(master=root, value="7"),
-            "bus_voltage": tk.StringVar(master=root, value="24"),
-            "voltage_limit": tk.StringVar(master=root, value="2"),
+            "bus_voltage": tk.StringVar(master=root, value="7"),
+            "voltage_limit": tk.StringVar(master=root, value="0.3"),
             "target_velocity": tk.StringVar(master=root, value="5"),
             "acceleration": tk.StringVar(master=root, value="10"),
             "update_period": tk.StringVar(master=root, value="10"),
@@ -386,6 +427,10 @@ class MotorStudioApp:
             master=root,
             value="连接层级：控制硬件未确认｜功率硬件未确认",
         )
+        self.codex_bridge_var = tk.StringVar(
+            master=root,
+            value="Codex：只读",
+        )
 
         self._configure_theme()
         self._build_ui()
@@ -397,6 +442,21 @@ class MotorStudioApp:
         self.root.after(50, self._render_plots)
         self.root.after(200, self._refresh_values)
         self.root.after(250, self._heartbeat_tick)
+        try:
+            self._codex_bridge = CodexBridge(
+                self.root,
+                self._handle_codex_action,
+            )
+            self._codex_bridge.start()
+            self._append_log(
+                "Codex 调试桥已启动：仅本机访问，当前为只读模式",
+                "ok",
+            )
+        except OSError as exc:
+            self._append_log(
+                "Codex 调试桥启动失败：{}".format(exc),
+                "error",
+            )
 
     def _configure_theme(self) -> None:
         style = ttk.Style(self.root)
@@ -645,6 +705,12 @@ class MotorStudioApp:
             header, text="开始记录", command=self._toggle_recording
         )
         self.record_button.pack(side=tk.RIGHT)
+        self.codex_bridge_button = ttk.Button(
+            header,
+            textvariable=self.codex_bridge_var,
+            command=self._toggle_codex_control,
+        )
+        self.codex_bridge_button.pack(side=tk.RIGHT, padx=(0, 7))
         ttk.Button(
             header,
             text="设备配置",
@@ -1125,7 +1191,8 @@ class MotorStudioApp:
             open_loop_box,
             text=(
                 "运行中仅允许通过右侧“开环速度”目标实时调速；"
-                "提高电压限幅前请先停止。"
+                "开环为电压模式，0.3 A 软件限值不等于实时限流；"
+                "提高电压限幅前请先停止，并使用电源硬件限流。"
             ),
             style="PanelMuted.TLabel",
         ).grid(row=6, column=0, columnspan=6, sticky=tk.W, pady=(7, 0))
@@ -1287,11 +1354,11 @@ class MotorStudioApp:
             (Command.GET_TELEMETRY_PROFILE, b""),
             (Command.GET_OPEN_LOOP_CONFIG, b"\x01"),
             (Command.GET_BACKEND_INFO, b""),
-            (Command.GET_DIAGNOSTICS, b""),
+            (Command.GET_DIAGNOSTICS, b"\x07"),
         )
         for index, (command, payload) in enumerate(queries):
             self.root.after(
-                60 * (index + 1),
+                120 * (index + 1),
                 lambda cmd=command, data=payload: self._send_if_connected(
                     cmd, data, 1
                 ),
@@ -1323,6 +1390,8 @@ class MotorStudioApp:
             self._build_control_hardware_enabled = None
             self._build_power_stage_enabled = None
             self._build_simplefoc_enabled = None
+            self._build_safety_mask = None
+            self._device_open_loop_config = None
             self.hardware_layer_var.set(
                 "连接层级：正在确认控制硬件与功率硬件…"
             )
@@ -1335,7 +1404,7 @@ class MotorStudioApp:
                 )
             )
             self.root.after(
-                700,
+                1000,
                 lambda token=generation: self._check_build_config_reply(
                     token
                 ),
@@ -1365,7 +1434,7 @@ class MotorStudioApp:
             ):
                 message = (
                     "板上当前运行 FW {}（build={}），不是支持 0x29 的 "
-                    "FW 0.3.0 / CFG29；请重新 Download 最新 ELF 并 Resume。"
+                    "FW 0.3.4 / CFG33；请重新 Download 最新 ELF 并 Resume。"
                 ).format(
                     ".".join(
                         str(value)
@@ -1427,10 +1496,10 @@ class MotorStudioApp:
             )
         except (KeyError, ValueError):
             raise ValueError("所有开环参数都必须是有效数字")
-        if bus_voltage > 60.0:
-            raise ValueError("母线电压不能超过固件硬上限 60 V")
-        if voltage_limit > 6.0:
-            raise ValueError("开环电压限幅不能超过固件硬上限 6 V")
+        if bus_voltage > 8.0:
+            raise ValueError("母线电压不能超过当前电机固件硬上限 8 V")
+        if voltage_limit > 2.0:
+            raise ValueError("开环电压限幅不能超过当前电机固件硬上限 2 V")
         if abs(target_velocity) > 100.0:
             raise ValueError("开环速度绝对值不能超过固件硬上限 100 rad/s")
         return OpenLoopConfig(
@@ -1447,24 +1516,450 @@ class MotorStudioApp:
             max_runtime,
         )
 
+    def _validate_power_stage_open_loop(
+        self,
+        config: OpenLoopConfig,
+    ) -> None:
+        if not self._build_power_stage_enabled:
+            return
+        if self._build_safety_mask is None:
+            raise ValueError(
+                "尚未读取功率级安全清单；请先点击“读取全部”。"
+            )
+
+        safety_mask = int(self._build_safety_mask)
+        missing = POWER_STAGE_REQUIRED_SAFETY_MASK & ~safety_mask
+        commissioning_override = bool(
+            safety_mask & POWER_STAGE_COMMISSIONING_OVERRIDE
+        )
+        if missing and not commissioning_override:
+            raise ValueError(
+                "功率级安全清单不完整（缺少 0x{:03X}），固件也未启用调试旁路。"
+                .format(missing)
+            )
+
+        diagnostics = self._latest_diagnostics
+        if diagnostics is None:
+            raise ValueError(
+                "尚未读取功率级运行诊断；请先点击“读取全部”或“刷新诊断”。"
+            )
+        hardware_flags = int(diagnostics.get("hardware_flags", 0))
+        if not hardware_flags & HARDWARE_FLAG_POWER_STAGE_BUILD:
+            raise ValueError(
+                "诊断结果未确认当前固件为真实功率级构建，禁止启动。"
+            )
+        if not hardware_flags & HARDWARE_FLAG_NFAULT_CLEAR:
+            raise ValueError("nFAULT 未确认释放，禁止启动功率级。")
+
+        if commissioning_override:
+            if not (
+                hardware_flags
+                & HARDWARE_FLAG_COMMISSIONING_OVERRIDE
+            ):
+                raise ValueError(
+                    "构建配置与运行诊断的调试旁路状态不一致。"
+                )
+            conservative = (
+                config.voltage_limit_v
+                <= POWER_STAGE_COMMISSIONING_MAX_VOLTAGE_V
+                and abs(config.target_velocity_rad_s)
+                <= POWER_STAGE_COMMISSIONING_MAX_SPEED_RAD_S
+                and config.acceleration_rad_s2
+                <= POWER_STAGE_COMMISSIONING_MAX_ACCEL_RAD_S2
+                and config.max_runtime_ms
+                <= POWER_STAGE_COMMISSIONING_MAX_RUNTIME_MS
+            )
+            if not conservative:
+                raise ValueError(
+                    "调试旁路仅允许 U≤{:.2f} V、|ω|≤{:.1f} rad/s、"
+                    "加速度≤{:.1f} rad/s²、运行≤{} ms。".format(
+                        POWER_STAGE_COMMISSIONING_MAX_VOLTAGE_V,
+                        POWER_STAGE_COMMISSIONING_MAX_SPEED_RAD_S,
+                        POWER_STAGE_COMMISSIONING_MAX_ACCEL_RAD_S2,
+                        POWER_STAGE_COMMISSIONING_MAX_RUNTIME_MS,
+                    )
+                )
+        elif not hardware_flags & HARDWARE_FLAG_SAFETY_READY:
+            raise ValueError(
+                "固件安全清单完整，但运行诊断尚未进入 safety-ready 状态。"
+            )
+
+        if hardware_flags & (
+            HARDWARE_FLAG_PWM_ENABLED | HARDWARE_FLAG_GATE_ENABLED
+        ):
+            raise ValueError(
+                "诊断显示 PWM 或 gate 已经使能；请先快速停止并重新读取诊断。"
+            )
+
+    def _open_loop_start_payload(
+        self,
+        config: OpenLoopConfig,
+        power_stage_confirmed: bool,
+    ) -> bytes:
+        self._validate_power_stage_open_loop(config)
+        return pack_start_open_loop(
+            config.motor_id,
+            bool(self._build_power_stage_enabled),
+            power_stage_confirmed,
+        )
+
     def _apply_open_loop_config(self) -> None:
         try:
             config = self._open_loop_config_from_ui()
-            payload = pack_open_loop_config(config)
         except ValueError as exc:
             messagebox.showerror("开环配置错误", str(exc))
             return
-        if self._send_frame(
-            Command.SET_OPEN_LOOP_CONFIG, payload, 1
-        ):
-            self._set_config_status(
-                "已发送开环参数；设备只会在停止状态下接受。"
+        self._begin_open_loop_config_transfer(config, False)
+
+    def _begin_open_loop_config_transfer(
+        self,
+        config: OpenLoopConfig,
+        start_after_commit: bool,
+        power_stage_confirmed: bool = False,
+    ) -> Optional[Dict[str, Any]]:
+        if not self.link.connected:
+            self.status_message.configure(
+                text="请先连接串口或启动仿真"
             )
+            return None
+        if self._open_loop_transfer is not None:
+            self._set_config_status(
+                "已有一组开环参数正在传输，请等待完成。"
+            )
+            return None
+        if (
+            self._device_features is not None
+            and not (
+                self._device_features
+                & FEATURE_FRAGMENTED_OPEN_LOOP_CONFIG
+            )
+        ):
+            message = (
+                "当前固件不支持短帧分片配置；请烧录 FW 0.3.6 / FRG2 "
+                "或更新版本。"
+            )
+            self._set_config_status(message)
+            self.status_message.configure(text=message)
+            return None
+
+        start_payload = None  # type: Optional[bytes]
+        if start_after_commit:
+            try:
+                start_payload = self._open_loop_start_payload(
+                    config,
+                    power_stage_confirmed,
+                )
+            except ValueError as exc:
+                message = str(exc)
+                self._set_config_status(message)
+                self.status_message.configure(text=message)
+                return None
+
+        self._open_loop_transfer_token += 1
+        generation = self._open_loop_transfer_token & 0xFF
+        try:
+            fragments = pack_open_loop_config_fragments(
+                config,
+                generation,
+            )
+            commit = pack_open_loop_config_commit(
+                config,
+                generation,
+            )
+        except ValueError as exc:
+            self._set_config_status(str(exc))
+            return None
+
+        transfer = {
+            "token": self._open_loop_transfer_token,
+            "generation": generation,
+            "config": config,
+            "fragments": fragments,
+            "commit": commit,
+            "index": 0,
+            "phase": "fragment",
+            "attempts": 0,
+            "expected_sequence": None,
+            "start_after_commit": bool(start_after_commit),
+            "start_payload": start_payload,
+        }
+        result = {
+            "token": transfer["token"],
+            "generation": generation,
+            "state": "pending",
+            "phase": "fragment",
+            "fragment_index": 0,
+            "fragment_count": len(fragments),
+            "attempts": 0,
+            "retries": 0,
+            "started_at": time.time(),
+        }
+        transfer["result"] = result
+        self._open_loop_transfer = transfer
+        self._open_loop_transfer_result = result
+        self._pending_open_loop_start = None
+        self._send_open_loop_transfer_step()
+        return transfer
+
+    def _send_open_loop_transfer_step(self) -> None:
+        transfer = self._open_loop_transfer
+        if transfer is None:
+            return
+        if transfer["attempts"] >= OPEN_LOOP_FRAGMENT_MAX_ATTEMPTS:
+            self._abort_open_loop_transfer(
+                "开环配置传输失败：设备连续 {} 次未应答。".format(
+                    OPEN_LOOP_FRAGMENT_MAX_ATTEMPTS
+                )
+            )
+            return
+
+        if transfer["phase"] == "fragment":
+            index = int(transfer["index"])
+            command = Command.SET_OPEN_LOOP_CONFIG_PART
+            payload = transfer["fragments"][index]
+            progress = "开环配置分片 {}/{}".format(
+                index + 1,
+                len(transfer["fragments"]),
+            )
+        elif transfer["phase"] == "commit":
+            command = Command.COMMIT_OPEN_LOOP_CONFIG
+            payload = transfer["commit"]
+            progress = "开环配置原子提交"
+        else:
+            command = Command.GET_OPEN_LOOP_CONFIG
+            payload = b"\x01"
+            progress = "开环配置精确回读校验"
+
+        sequence = self._next_sequence()
+        frame = Frame(
+            device_id=1,
+            command=int(command),
+            sequence=sequence,
+            payload=payload,
+        )
+        try:
+            self.link.send(encode_frame(frame))
+        except RuntimeError as exc:
+            self._abort_open_loop_transfer(str(exc))
+            return
+
+        transfer["attempts"] = int(transfer["attempts"]) + 1
+        transfer["expected_sequence"] = sequence
+        result = transfer["result"]
+        result.update(
+            {
+                "phase": transfer["phase"],
+                "fragment_index": int(transfer["index"]),
+                "attempts": int(transfer["attempts"]),
+                "sequence": sequence,
+            }
+        )
+        self._set_config_status(
+            "正在发送{}，第 {} 次尝试…".format(
+                progress,
+                transfer["attempts"],
+            )
+        )
+        token = int(transfer["token"])
+        self.root.after(
+            OPEN_LOOP_FRAGMENT_ACK_TIMEOUT_MS,
+            lambda: self._on_open_loop_transfer_timeout(
+                token,
+                sequence,
+            ),
+        )
+
+    def _on_open_loop_transfer_timeout(
+        self,
+        token: int,
+        sequence: int,
+    ) -> None:
+        transfer = self._open_loop_transfer
+        if (
+            transfer is None
+            or transfer["token"] != token
+            or transfer["expected_sequence"] != sequence
+        ):
+            return
+        self._append_log(
+            "开环配置 {} seq={} 等待 ACK 超时，正在重试。".format(
+                transfer["phase"],
+                sequence,
+            ),
+            "warn",
+        )
+        transfer["result"]["retries"] = (
+            int(transfer["result"]["retries"]) + 1
+        )
+        self._send_open_loop_transfer_step()
+
+    def _abort_open_loop_transfer(self, message: str) -> None:
+        transfer = self._open_loop_transfer
+        if transfer is not None:
+            transfer["result"].update(
+                {
+                    "state": "error",
+                    "message": message,
+                    "completed_at": time.time(),
+                }
+            )
+        self._open_loop_transfer = None
+        self._pending_open_loop_start = None
+        self._open_loop_transfer_token += 1
+        self._set_config_status(message)
+        self.status_message.configure(text=message)
+        self._append_log(message, "error")
+
+    def _handle_open_loop_transfer_reply(
+        self,
+        original: int,
+        status: int,
+        sequence: int,
+        detail: bytes,
+    ) -> bool:
+        transfer = self._open_loop_transfer
+        if (
+            transfer is None
+            or original not in (
+                Command.SET_OPEN_LOOP_CONFIG_PART,
+                Command.COMMIT_OPEN_LOOP_CONFIG,
+                Command.GET_OPEN_LOOP_CONFIG,
+            )
+            or transfer["expected_sequence"] != sequence
+        ):
+            return False
+
+        expected_commands = {
+            "fragment": Command.SET_OPEN_LOOP_CONFIG_PART,
+            "commit": Command.COMMIT_OPEN_LOOP_CONFIG,
+            "verify": Command.GET_OPEN_LOOP_CONFIG,
+        }
+        expected_command = expected_commands.get(transfer["phase"])
+        if original != expected_command:
+            self._abort_open_loop_transfer(
+                "开环配置 ACK 命令与当前传输阶段不匹配。"
+            )
+            return True
+
+        if status != 0:
+            self._abort_open_loop_transfer(
+                "设备拒绝开环配置命令 0x{:02X}，错误码 {}。".format(
+                    original,
+                    status,
+                )
+            )
+            return True
+
+        generation = int(transfer["generation"])
+        if original == Command.SET_OPEN_LOOP_CONFIG_PART:
+            index = int(transfer["index"])
+            if (
+                len(detail) != 2
+                or detail[0] != generation
+                or detail[1] != index
+            ):
+                self._abort_open_loop_transfer(
+                    "开环配置分片 ACK 与当前传输不匹配。"
+                )
+                return True
+            transfer["expected_sequence"] = None
+            transfer["attempts"] = 0
+            transfer["index"] = index + 1
+            transfer["result"].update(
+                {
+                    "fragment_index": int(transfer["index"]),
+                    "attempts": 0,
+                }
+            )
+            if transfer["index"] < len(transfer["fragments"]):
+                self.root.after(
+                    10,
+                    self._send_open_loop_transfer_step,
+                )
+            else:
+                transfer["phase"] = "commit"
+                transfer["result"]["phase"] = "commit"
+                self.root.after(
+                    10,
+                    self._send_open_loop_transfer_step,
+                )
+            return True
+
+        if original == Command.COMMIT_OPEN_LOOP_CONFIG:
+            if len(detail) != 1 or detail[0] != generation:
+                self._abort_open_loop_transfer(
+                    "开环配置提交 ACK 与当前传输不匹配。"
+                )
+                return True
+            transfer["expected_sequence"] = None
+            transfer["attempts"] = 0
+            transfer["phase"] = "verify"
+            transfer["result"].update(
+                {
+                    "phase": "verify",
+                    "attempts": 0,
+                }
+            )
+            self.root.after(
+                10,
+                self._send_open_loop_transfer_step,
+            )
+            return True
+
+        config = transfer["config"]
+        expected_config = pack_open_loop_config(config)
+        if detail != expected_config:
+            self._abort_open_loop_transfer(
+                "设备回读的开环参数与刚提交的参数不一致，已禁止启动。"
+            )
+            return True
+        try:
+            verified_config = unpack_open_loop_config(detail)
+        except ValueError as exc:
+            self._abort_open_loop_transfer(str(exc))
+            return True
+        self._device_open_loop_config = verified_config
+        start_after_commit = bool(
+            transfer["start_after_commit"]
+        )
+        transfer["result"].update(
+            {
+                "state": "ack",
+                "phase": "complete",
+                "fragment_index": len(transfer["fragments"]),
+                "attempts": int(transfer["attempts"]),
+                "completed_at": time.time(),
+            }
+        )
+        self._open_loop_transfer = None
+        self._pending_open_loop_start = None
+        if start_after_commit:
+            if self._send_frame(
+                Command.START_OPEN_LOOP,
+                transfer["start_payload"],
+                1,
+            ):
+                self.control_mode.set(
+                    MODE_LABELS[ControlMode.OPEN_LOOP_SPEED]
+                )
+                self.target_value.set(
+                    "{:g}".format(
+                        config.target_velocity_rad_s
+                    )
+                )
+                self._update_target_unit()
+                self._set_config_status(
+                    "参数已提交并精确回读一致，正在执行开环安全启动…"
+                )
+        else:
+            self._set_config_status(
+                "开环参数已通过 14 个短帧分片提交并精确回读一致。"
+            )
+        return True
 
     def _start_open_loop(self) -> None:
         try:
             config = self._open_loop_config_from_ui()
-            payload = pack_open_loop_config(config)
         except ValueError as exc:
             messagebox.showerror("开环配置错误", str(exc))
             return
@@ -1495,12 +1990,26 @@ class MotorStudioApp:
                 "当前固件没有编译 SimpleFOC，请重新构建并烧录后再启动。",
             )
             return
+        try:
+            self._validate_power_stage_open_loop(config)
+        except ValueError as exc:
+            messagebox.showerror("功率级安全条件未满足", str(exc))
+            return
         if self._build_power_stage_enabled:
+            commissioning_override = bool(
+                int(self._build_safety_mask or 0)
+                & POWER_STAGE_COMMISSIONING_OVERRIDE
+            )
             safety_text = (
                 "功率级已由固件允许：电机可能立即转动。请确认电机已卸载、"
-                "直流电源已限流、物理急停可用，且 nFAULT 已验证。"
+                "直流电源先限流到 0.1 A、物理急停可用，且 nFAULT 已验证。"
+                "开环为电压模式，0.3 A 软件上限不会直接调节或限制相电流。"
             )
-            stage_text = "功率级：已允许（真实功率输出）"
+            stage_text = (
+                "功率级：调试旁路（仅允许保守参数）"
+                if commissioning_override
+                else "功率级：安全清单与运行诊断均已就绪"
+            )
         else:
             safety_text = (
                 "当前为控制板 PWM 检查模式：DRV8313 nSLEEP/nRESET 将保持关闭。"
@@ -1526,14 +2035,15 @@ class MotorStudioApp:
         )
         if not confirmed:
             return
-        if self._send_frame(
-            Command.SET_OPEN_LOOP_CONFIG,
-            payload,
-            1,
+        if self._begin_open_loop_config_transfer(
+            config,
+            True,
+            power_stage_confirmed=(
+                confirmed and bool(self._build_power_stage_enabled)
+            ),
         ):
-            self._pending_open_loop_start = config
             self._set_config_status(
-                "正在先应用开环参数；设备确认后将发送启动命令…"
+                "正在逐片应用开环参数；14 个分片和提交命令全部确认后将启动。"
             )
 
     def _apply_software_protection(self) -> None:
@@ -1628,7 +2138,7 @@ class MotorStudioApp:
         self._send_frame(Command.GET_BACKEND_INFO, b"", 1)
 
     def _query_diagnostics(self) -> None:
-        if self._send_frame(Command.GET_DIAGNOSTICS, b"", 1):
+        if self._send_frame(Command.GET_DIAGNOSTICS, b"\x07", 1):
             self._set_config_status("正在读取设备诊断信息…")
 
     def _restore_default_config(self) -> None:
@@ -1887,6 +2397,734 @@ class MotorStudioApp:
         except RuntimeError as exc:
             messagebox.showerror("启动失败", str(exc))
 
+    def _codex_arm_state(self) -> Dict[str, Any]:
+        remaining = max(0.0, self._codex_control_until - time.monotonic())
+        armed = remaining > 0.0
+        self.codex_bridge_var.set(
+            "Codex：控制 {:d}s".format(int(remaining + 0.999))
+            if armed
+            else "Codex：只读"
+        )
+        return {
+            "armed": armed,
+            "remaining_seconds": round(remaining, 1),
+            "scope": (
+                "configuration-and-motor-control"
+                if armed
+                else "read-stop-connect"
+            ),
+        }
+
+    def _refresh_codex_arm_label(self) -> None:
+        state = self._codex_arm_state()
+        if state["armed"]:
+            self.root.after(1000, self._refresh_codex_arm_label)
+
+    def _toggle_codex_control(self) -> None:
+        if self._codex_arm_state()["armed"]:
+            self._codex_control_until = 0.0
+            self._codex_arm_state()
+            self._append_log("Codex 控制授权已由用户撤销", "warn")
+            return
+        confirmed = messagebox.askyesno(
+            "授权 Codex 控制",
+            (
+                "授权后 10 分钟内，Codex 可以修改 PID、目标值和开环配置，"
+                "并可发送使能或启动开环指令。\n\n"
+                "读取、连接、失能、快速停止和紧急停止不需要此授权。"
+                "真实功率级启用时，危险动作仍需额外确认参数。\n\n"
+                "是否继续？"
+            ),
+            parent=self.root,
+        )
+        if not confirmed:
+            return
+        self._codex_control_until = time.monotonic() + 600.0
+        self._codex_arm_state()
+        self.root.after(1000, self._refresh_codex_arm_label)
+        self._append_log("Codex 控制授权已开启，有效期 10 分钟", "warn")
+
+    def _require_codex_control(self) -> None:
+        if not self._codex_arm_state()["armed"]:
+            raise BridgeRequestError(
+                "此操作需要用户在上位机点击“Codex：只读”并授权 10 分钟",
+                403,
+            )
+
+    def _require_codex_power_confirmation(
+        self,
+        params: Dict[str, Any],
+    ) -> None:
+        if (
+            self._build_power_stage_enabled
+            and not bool(params.get("power_stage_confirmed", False))
+        ):
+            raise BridgeRequestError(
+                "固件允许真实功率输出；请在命令中明确传入 "
+                "power_stage_confirmed=true",
+                403,
+            )
+
+    def _send_codex_frame(
+        self,
+        command: Union[Command, int],
+        payload: bytes = b"",
+        device: int = 1,
+    ) -> Dict[str, Any]:
+        if not self.link.connected:
+            raise BridgeRequestError("控制器尚未连接", 409)
+        sequence = self._next_sequence()
+        command_code = int(command)
+        try:
+            command_name = Command(command_code).name
+        except ValueError:
+            command_name = "0x{:02X}".format(command_code)
+        frame = Frame(
+            device_id=device,
+            command=command_code,
+            sequence=sequence,
+            payload=payload,
+        )
+        transaction = {
+            "sequence": sequence,
+            "command": command_name,
+            "command_code": command_code,
+            "state": "pending",
+            "write_state": "queued",
+            "queued_at": time.time(),
+        }
+        self._codex_transactions[sequence] = transaction
+        try:
+            self.link.send(encode_frame(frame))
+        except RuntimeError as exc:
+            self._codex_transactions.pop(sequence, None)
+            raise BridgeRequestError(str(exc), 409)
+        self._prune_codex_transactions()
+        return dict(transaction)
+
+    def _prune_codex_transactions(self) -> None:
+        cutoff = time.time() - 60.0
+        stale = [
+            sequence
+            for sequence, transaction in self._codex_transactions.items()
+            if float(transaction.get("queued_at", 0.0)) < cutoff
+        ]
+        for sequence in stale:
+            self._codex_transactions.pop(sequence, None)
+
+    def _record_codex_write(
+        self,
+        packet: bytes,
+        error: Optional[str] = None,
+    ) -> None:
+        parser = FrameParser()
+        frames = parser.feed(packet)
+        if len(frames) != 1:
+            return
+        frame = frames[0]
+        transaction = self._codex_transactions.get(frame.sequence)
+        if (
+            transaction is None
+            or transaction.get("command_code") != frame.command
+        ):
+            return
+        if error is None:
+            transaction.update(
+                {
+                    "write_state": "written",
+                    "written_at": time.time(),
+                }
+            )
+        else:
+            transaction.update(
+                {
+                    "state": "error",
+                    "write_state": "error",
+                    "write_error": str(error),
+                    "completed_at": time.time(),
+                }
+            )
+
+    def _record_codex_reply(self, frame: Frame) -> None:
+        if frame.command not in (Command.ACK, Command.ERROR):
+            return
+        if len(frame.payload) < 2:
+            return
+        original, status = frame.payload[:2]
+        transaction = self._codex_transactions.get(frame.sequence)
+        if (
+            transaction is None
+            or transaction.get("command_code") != original
+        ):
+            return
+        transaction.update(
+            {
+                "state": "ack" if frame.command == Command.ACK else "error",
+                "status": int(status),
+                "detail_hex": bytes_to_hex(frame.payload[2:]),
+                "received_at": time.time(),
+            }
+        )
+        if status == 0:
+            try:
+                decoded = self._decode_codex_reply(
+                    original,
+                    frame.payload[2:],
+                )
+            except (ValueError, struct.error):
+                decoded = None
+            if decoded is not None:
+                transaction["decoded"] = decoded
+
+    @staticmethod
+    def _decode_codex_reply(
+        original: int,
+        detail: bytes,
+    ) -> Optional[Dict[str, Any]]:
+        if original == Command.PING:
+            return {
+                "device": detail.decode("ascii", errors="replace")
+            }
+        if original == Command.GET_DEVICE_INFO and len(detail) == 33:
+            values = struct.unpack("<BBBBBI16s8s", detail)
+            return {
+                "firmware": "{}.{}.{}".format(*values[:3]),
+                "hardware": "{}.{}".format(values[3], values[4]),
+                "serial_number": "{:08X}".format(values[5]),
+                "name": values[6].rstrip(b"\x00").decode(
+                    "ascii",
+                    errors="replace",
+                ),
+                "build_id": values[7].rstrip(b"\x00").decode(
+                    "ascii",
+                    errors="replace",
+                ),
+            }
+        if original == Command.GET_CAPABILITIES and len(detail) == 9:
+            values = struct.unpack("<BBBIH", detail)
+            return {
+                "motor_count": values[0],
+                "backend_mask": values[1],
+                "mode_mask": values[2],
+                "features": values[3],
+                "max_telemetry_hz": values[4],
+            }
+        if original == Command.GET_LIMITS:
+            values = unpack_limits(detail)
+            keys = (
+                "motor_id",
+                "current_limit_a",
+                "torque_limit_nm",
+                "speed_limit_rad_s",
+                "position_min_rad",
+                "position_max_rad",
+                "bus_voltage_min_v",
+                "bus_voltage_max_v",
+                "temperature_max_c",
+            )
+            return dict(zip(keys, values))
+        if original == Command.GET_DIAGNOSTICS:
+            value = unpack_diagnostics(detail)
+            return {
+                "payload_bytes": len(detail),
+                "rx_scheduler_available": len(detail) == 46,
+                "uptime_ms": value.uptime_ms,
+                "protocol_errors": value.protocol_errors,
+                "fault_bits": value.fault_bits,
+                "commands_received": value.commands_received,
+                "heartbeat_age_ms": value.heartbeat_age_ms,
+                "heartbeat_lease_ms": value.heartbeat_lease_ms,
+                "motor_state": value.motor_state,
+                "last_stop_reason": value.last_stop_reason,
+                "last_stop_reason_text": STOP_REASON_LABELS.get(
+                    value.last_stop_reason,
+                    "未知",
+                ),
+                "runtime_flags": value.runtime_flags,
+                "hardware_flags": value.hardware_flags,
+                "heartbeat_valid": bool(value.runtime_flags & (1 << 0)),
+                "enabled": bool(value.runtime_flags & (1 << 1)),
+                "open_loop_active": bool(
+                    value.runtime_flags & (1 << 2)
+                ),
+                "output_ready": bool(value.runtime_flags & (1 << 3)),
+                "pwm_enabled": bool(
+                    value.hardware_flags & HARDWARE_FLAG_PWM_ENABLED
+                ),
+                "gate_enabled": bool(
+                    value.hardware_flags & HARDWARE_FLAG_GATE_ENABLED
+                ),
+                "nfault_clear": bool(
+                    value.hardware_flags & HARDWARE_FLAG_NFAULT_CLEAR
+                ),
+                "safety_ready": bool(
+                    value.hardware_flags & HARDWARE_FLAG_SAFETY_READY
+                ),
+                "tx_high_priority_failures":
+                    value.tx_high_priority_failures,
+                "telemetry_drops": value.telemetry_drops,
+                "rx_sw_fifo_overflows":
+                    value.rx_sw_fifo_overflows,
+                "rx_hw_fifo_overflows":
+                    value.rx_hw_fifo_overflows,
+                "rx_frame_errors": value.rx_frame_errors,
+                "rx_parity_errors": value.rx_parity_errors,
+                "parser_crc_errors": value.parser_crc_errors,
+                "parser_length_errors":
+                    value.parser_length_errors,
+                "parser_timeout_errors":
+                    value.parser_timeout_errors,
+                "parser_resync_events":
+                    value.parser_resync_events,
+                "rx_isr_entries": value.rx_isr_entries,
+                "rx_poll_drains": value.rx_poll_drains,
+                "rx_poll_bytes": value.rx_poll_bytes,
+            }
+        if original == Command.GET_TELEMETRY_PROFILE:
+            rate_hz, signal_mask = unpack_telemetry_profile(detail)
+            return {
+                "rate_hz": rate_hz,
+                "signal_mask": signal_mask,
+            }
+        if original == Command.GET_BACKEND_INFO and len(detail) == 2:
+            backend, available = struct.unpack("<BB", detail)
+            return {
+                "backend": "MCU" if backend == 0 else "FPGA",
+                "available": bool(available),
+            }
+        if original == Command.GET_OPEN_LOOP_CONFIG:
+            value = unpack_open_loop_config(detail)
+            return {
+                "motor_id": value.motor_id,
+                "backend": value.backend.name,
+                "pole_pairs": value.pole_pairs,
+                "flags": value.flags,
+                "bus_voltage_v": value.bus_voltage_v,
+                "voltage_limit_v": value.voltage_limit_v,
+                "target_velocity_rad_s":
+                    value.target_velocity_rad_s,
+                "acceleration_rad_s2": value.acceleration_rad_s2,
+                "update_period_ms": value.update_period_ms,
+                "startup_delay_ms": value.startup_delay_ms,
+                "max_runtime_ms": value.max_runtime_ms,
+            }
+        if original == Command.GET_BUILD_CONFIG:
+            values = unpack_build_config(detail)
+            keys = (
+                "device_id",
+                "control_hardware_enabled",
+                "power_stage_enabled",
+                "simplefoc_enabled",
+                "default_pole_pairs",
+                "adc_hz",
+                "pwm_hz",
+                "isr_hz",
+                "outer_loop_hz",
+                "default_telemetry_hz",
+                "heartbeat_default_ms",
+                "heartbeat_min_ms",
+                "heartbeat_max_ms",
+                "torque_constant_nm_per_a",
+                "safety_mask",
+            )
+            return dict(zip(keys, values))
+        return None
+
+    def _codex_status_snapshot(self) -> Dict[str, Any]:
+        now = time.monotonic()
+        latest = {
+            key: self.history.latest(key)
+            for key in self.history.keys
+        }
+        alarms = [
+            {
+                "motor_id": alarm.motor_id,
+                "level": alarm.level,
+                "message": alarm.message,
+            }
+            for alarm in self.alarms.active
+        ]
+        telemetry_age_ms = None
+        if self._last_telemetry_at > 0.0:
+            telemetry_age_ms = int(
+                max(0.0, now - self._last_telemetry_at) * 1000.0
+            )
+        protocol_age_ms = None
+        if self._protocol_response_at > 0.0:
+            protocol_age_ms = int(
+                max(0.0, now - self._protocol_response_at) * 1000.0
+            )
+        return {
+            "connection": {
+                "connected": self.link.connected,
+                "running": self.link.running,
+                "mode": self.link.mode,
+                "port": self.port_var.get(),
+                "baudrate": self.baud_var.get(),
+            },
+            "protocol": {
+                "rx_bytes": self.rx_bytes,
+                "rx_frames": self.rx_frames,
+                "tx_bytes": self.tx_bytes,
+                "tx_queued_packets": self.link.tx_queued_packets,
+                "tx_queued_bytes": self.link.tx_queued_bytes,
+                "tx_written_packets": self.link.tx_written_packets,
+                "tx_written_bytes": self.link.tx_written_bytes,
+                "tx_write_failures": self.link.tx_write_failures,
+                "crc_errors": self.parser.crc_errors,
+                "last_response_age_ms": protocol_age_ms,
+            },
+            "diagnostics": (
+                dict(self._latest_diagnostics)
+                if self._latest_diagnostics is not None
+                else None
+            ),
+            "telemetry": {
+                "latest": latest,
+                "age_ms": telemetry_age_ms,
+            },
+            "firmware": {
+                "version": (
+                    list(self._device_firmware_version)
+                    if self._device_firmware_version is not None
+                    else None
+                ),
+                "build_id": self._device_build_id or None,
+                "control_hardware_enabled":
+                    self._build_control_hardware_enabled,
+                "power_stage_enabled":
+                    self._build_power_stage_enabled,
+                "simplefoc_enabled":
+                    self._build_simplefoc_enabled,
+                "safety_mask": self._build_safety_mask,
+                "features": self._device_features,
+            },
+            "open_loop_transfer": (
+                dict(self._open_loop_transfer_result)
+                if self._open_loop_transfer_result is not None
+                else None
+            ),
+            "protection": {
+                "software_latched": self._software_protection_latched,
+                "automatic_enabled": bool(
+                    self.auto_protection_var.get()
+                ),
+                "response": self.protection_response_var.get(),
+                "telemetry_timeout_ms":
+                    self.telemetry_timeout_var.get(),
+                "heartbeat_lease_ms": self.heartbeat_lease_ms,
+                "alarms": alarms,
+            },
+            "codex_control": self._codex_arm_state(),
+            "ui": {
+                "status": str(self.status_message.cget("text")),
+                "configuration": self.config_status_var.get(),
+                "diagnostics": self.diagnostics_var.get(),
+                "hardware_layer": self.hardware_layer_var.get(),
+            },
+        }
+
+    def _codex_logs(self, limit_value: Any) -> Dict[str, Any]:
+        try:
+            limit = max(1, min(2000, int(limit_value)))
+        except (TypeError, ValueError):
+            raise BridgeRequestError("limit 必须是 1..2000 的整数")
+        lines = self.log_text.get("1.0", "end-1c").splitlines()
+        return {"lines": lines[-limit:], "count": min(limit, len(lines))}
+
+    def _codex_history(self, params: Dict[str, Any]) -> Dict[str, Any]:
+        try:
+            seconds = max(0.1, min(120.0, float(params.get("seconds", 5))))
+            limit = max(1, min(5000, int(params.get("limit", 500))))
+        except (TypeError, ValueError):
+            raise BridgeRequestError("seconds 或 limit 无效")
+        now = time.monotonic()
+        cutoff = now - seconds
+        rows = [
+            {
+                "age_ms": int(max(0.0, now - stamp) * 1000.0),
+                "signal": key,
+                "value": value,
+            }
+            for stamp, key, value in self.history.export_rows()
+            if stamp >= cutoff
+        ]
+        return {
+            "seconds": seconds,
+            "rows": rows[-limit:],
+            "truncated": len(rows) > limit,
+        }
+
+    def _handle_codex_action(
+        self,
+        action: str,
+        params: Dict[str, Any],
+    ) -> Any:
+        if action == "status":
+            return self._codex_status_snapshot()
+        if action == "logs":
+            return self._codex_logs(params.get("limit", 200))
+        if action == "history":
+            return self._codex_history(params)
+        if action == "ports":
+            ports, error = list_serial_ports()
+            return {"ports": ports, "error": error}
+        if action == "arm_status":
+            return self._codex_arm_state()
+        if action == "transaction":
+            try:
+                sequence = int(params.get("sequence"))
+            except (TypeError, ValueError):
+                raise BridgeRequestError("sequence 必须是 0..255")
+            transaction = self._codex_transactions.get(sequence)
+            if transaction is None:
+                raise BridgeRequestError("没有找到该事务", 404)
+            return dict(transaction)
+
+        self._append_log(
+            "Codex 请求操作：{}".format(action),
+            "warn" if action not in (
+                "quick_stop",
+                "emergency_stop",
+                "disable",
+            ) else "error",
+        )
+        if action == "connect":
+            if self.link.connected or self.link.running:
+                raise BridgeRequestError("已有连接正在运行", 409)
+            port = str(params.get("port", "")).strip()
+            if not port:
+                raise BridgeRequestError("必须指定串口，例如 COM4")
+            try:
+                baudrate = int(params.get("baud", 115200))
+                self.link.connect_serial(port, baudrate)
+            except (TypeError, ValueError, RuntimeError) as exc:
+                raise BridgeRequestError(str(exc))
+            self.port_var.set(port)
+            self.baud_var.set(str(baudrate))
+            self._set_pending_state("Codex 正在连接串口…")
+            return {"queued": True, "port": port, "baudrate": baudrate}
+        if action == "simulator":
+            if self.link.connected or self.link.running:
+                raise BridgeRequestError("已有连接正在运行", 409)
+            self.link.connect_simulator(1)
+            self._set_pending_state("Codex 正在启动仿真设备…")
+            return {"queued": True}
+        if action == "disconnect":
+            self._safe_disconnect()
+            return {"queued": True}
+
+        direct_queries = {
+            "ping": (Command.PING, b"", 1),
+            "device_info": (Command.GET_DEVICE_INFO, b"", 1),
+            "capabilities": (Command.GET_CAPABILITIES, b"", 1),
+            "limits": (Command.GET_LIMITS, b"\x01", 1),
+            "telemetry_profile": (
+                Command.GET_TELEMETRY_PROFILE,
+                b"",
+                1,
+            ),
+            "open_loop_config": (
+                Command.GET_OPEN_LOOP_CONFIG,
+                b"\x01",
+                1,
+            ),
+            "backend": (Command.GET_BACKEND_INFO, b"", 1),
+            "diagnostics": (Command.GET_DIAGNOSTICS, b"\x07", 1),
+            "build_config": (Command.GET_BUILD_CONFIG, b"", 1),
+        }
+        if action in direct_queries:
+            command, payload, device = direct_queries[action]
+            return self._send_codex_frame(command, payload, device)
+        if action == "read_config":
+            raise BridgeRequestError(
+                "read_config 必须逐条等待设备确认；"
+                "请使用 codex_client read-config",
+                409,
+            )
+        if action == "quick_stop":
+            return self._send_codex_frame(
+                Command.QUICK_STOP,
+                b"\x01",
+                1,
+            )
+        if action == "emergency_stop":
+            self._software_protection_latched = True
+            return self._send_codex_frame(
+                Command.EMERGENCY_STOP,
+                b"\xFF",
+                0xFF,
+            )
+        if action == "disable":
+            return self._send_codex_frame(
+                Command.SET_ENABLE,
+                pack_enable(1, False),
+                1,
+            )
+
+        self._require_codex_control()
+        if action == "clear_fault":
+            return self._send_codex_frame(
+                Command.CLEAR_FAULT,
+                b"\x01",
+                1,
+            )
+        if action == "enable":
+            if self._software_protection_latched:
+                raise BridgeRequestError(
+                    "软件保护已锁定，请先排除原因并清除故障",
+                    409,
+                )
+            if self._build_control_hardware_enabled is not True:
+                raise BridgeRequestError(
+                    "尚未确认固件允许控制硬件输出；请先读取 build-config",
+                    409,
+                )
+            self._require_codex_power_confirmation(params)
+            return self._send_codex_frame(
+                Command.SET_ENABLE,
+                pack_enable(1, True),
+                1,
+            )
+        if action == "set_target":
+            modes = {
+                "torque": ControlMode.TORQUE,
+                "speed": ControlMode.SPEED,
+                "position": ControlMode.POSITION,
+                "open-loop-speed": ControlMode.OPEN_LOOP_SPEED,
+            }
+            mode = modes.get(str(params.get("mode", "")))
+            if mode is None:
+                raise BridgeRequestError("mode 无效")
+            try:
+                value = float(params["value"])
+            except (KeyError, TypeError, ValueError):
+                raise BridgeRequestError("value 必须是数字")
+            if not math.isfinite(value):
+                raise BridgeRequestError("value 不能是 NaN 或无穷大")
+            target_request = (
+                Command.SET_TARGET,
+                pack_target(1, mode, value),
+                1,
+            )
+            if mode == ControlMode.OPEN_LOOP_SPEED:
+                return self._send_codex_frame(*target_request)
+            return {
+                "transactions": [
+                    self._send_codex_frame(
+                        Command.SET_MODE,
+                        pack_mode(1, mode),
+                        1,
+                    ),
+                    self._send_codex_frame(*target_request),
+                ]
+            }
+        if action == "set_pid":
+            loops = {
+                "current": PidLoop.CURRENT,
+                "speed": PidLoop.SPEED,
+                "position": PidLoop.POSITION,
+            }
+            loop = loops.get(str(params.get("loop", "")))
+            if loop is None:
+                raise BridgeRequestError("loop 无效")
+            try:
+                values = (
+                    float(params["kp"]),
+                    float(params["ki"]),
+                    float(params["kd"]),
+                )
+            except (KeyError, TypeError, ValueError):
+                raise BridgeRequestError("kp、ki、kd 必须是数字")
+            if not all(math.isfinite(value) for value in values):
+                raise BridgeRequestError("PID 不能包含 NaN 或无穷大")
+            return self._send_codex_frame(
+                Command.SET_PID,
+                pack_pid(1, loop, *values),
+                1,
+            )
+        if action == "configure_open_loop":
+            try:
+                config = OpenLoopConfig(
+                    1,
+                    OpenLoopBackend.SIMPLEFOC,
+                    int(params.get("pole_pairs", 7)),
+                    0,
+                    float(params.get("bus_voltage", 7.0)),
+                    float(params.get("voltage_limit", 0.3)),
+                    float(params.get("target_velocity", 5.0)),
+                    float(params.get("acceleration", 10.0)),
+                    int(params.get("update_period_ms", 10)),
+                    int(params.get("startup_delay_ms", 500)),
+                    int(params.get("max_runtime_ms", 30000)),
+                )
+                if config.bus_voltage_v > 8.0:
+                    raise ValueError("母线电压不能超过 8 V")
+                if config.voltage_limit_v > 2.0:
+                    raise ValueError("开环电压限幅不能超过 2 V")
+                if abs(config.target_velocity_rad_s) > 100.0:
+                    raise ValueError("开环速度绝对值不能超过 100 rad/s")
+            except (TypeError, ValueError) as exc:
+                raise BridgeRequestError(str(exc))
+            transfer = self._begin_open_loop_config_transfer(
+                config,
+                False,
+            )
+            if transfer is None:
+                raise BridgeRequestError(
+                    "无法启动开环配置分片传输",
+                    409,
+                )
+            return {
+                "queued": True,
+                "transfer_token": transfer["token"],
+                "generation": transfer["generation"],
+                "fragments": len(transfer["fragments"]),
+            }
+        if action == "start_open_loop":
+            if self._software_protection_latched:
+                raise BridgeRequestError(
+                    "软件保护已锁定，请先排除原因并清除故障",
+                    409,
+                )
+            if self._build_control_hardware_enabled is not True:
+                raise BridgeRequestError(
+                    "尚未确认固件允许控制硬件输出；请先读取 build-config",
+                    409,
+                )
+            config = self._device_open_loop_config
+            if (
+                config is not None
+                and config.backend == OpenLoopBackend.SIMPLEFOC
+                and self._build_simplefoc_enabled is not True
+            ):
+                raise BridgeRequestError(
+                    "固件未确认启用 SimpleFOC",
+                    409,
+                )
+            self._require_codex_power_confirmation(params)
+            if self._build_power_stage_enabled and config is None:
+                raise BridgeRequestError(
+                    "尚未精确回读设备开环参数；请先读取或配置 open-loop-config",
+                    409,
+                )
+            try:
+                if config is None:
+                    start_payload = pack_start_open_loop(1)
+                else:
+                    start_payload = self._open_loop_start_payload(
+                        config,
+                        bool(params.get("power_stage_confirmed", False)),
+                    )
+            except ValueError as exc:
+                raise BridgeRequestError(str(exc), 409)
+            return self._send_codex_frame(
+                Command.START_OPEN_LOOP,
+                start_payload,
+                1,
+            )
+        raise BridgeRequestError("不支持的 Codex 操作：{}".format(action), 404)
+
     def _safe_disconnect(self) -> None:
         if not self.link.connected:
             self.link.disconnect()
@@ -1915,6 +3153,8 @@ class MotorStudioApp:
             self._build_control_hardware_enabled = None
             self._build_power_stage_enabled = None
             self._build_simplefoc_enabled = None
+            self._build_safety_mask = None
+            self._device_open_loop_config = None
             self.hardware_layer_var.set(
                 "连接层级：控制硬件未连接｜功率硬件未确认"
             )
@@ -2238,13 +3478,19 @@ class MotorStudioApp:
                     self._no_telemetry_reported = False
                     self._software_protection_latched = False
                     self._pending_open_loop_start = None
+                    self._open_loop_transfer = None
+                    self._open_loop_transfer_token += 1
                     self._build_config_query_generation += 1
                     self._build_config_query_started_at = 0.0
                     self._build_control_hardware_enabled = None
                     self._build_power_stage_enabled = None
                     self._build_simplefoc_enabled = None
+                    self._build_safety_mask = None
                     self._device_firmware_version = None
                     self._device_build_id = ""
+                    self._device_features = None
+                    self._latest_diagnostics = None
+                    self._device_open_loop_config = None
                     self.hardware_layer_var.set(
                         "连接层级：控制硬件未确认｜功率硬件未确认"
                     )
@@ -2254,15 +3500,28 @@ class MotorStudioApp:
                     self._set_connection_state(True, str(event.data))
                     self.status_message.configure(text=f"已连接：{event.data}")
                     self._append_log(f"连接成功：{event.data}", "ok")
-                    self._query_device_info()
                     self.root.after(
-                        60,
+                        120,
+                        self._query_device_info,
+                    )
+                    self.root.after(
+                        220,
                         lambda: self._send_if_connected(
                             Command.GET_CAPABILITIES, b"", 1
                         ),
                     )
-                    self.root.after(120, self._query_build_config)
+                    self.root.after(320, self._query_build_config)
                 elif event.kind == "disconnected":
+                    if self._open_loop_transfer is not None:
+                        self._open_loop_transfer["result"].update(
+                            {
+                                "state": "error",
+                                "message": "连接在开环配置传输期间断开。",
+                                "completed_at": time.time(),
+                            }
+                        )
+                    self._codex_control_until = 0.0
+                    self._codex_arm_state()
                     self._connected_at = 0.0
                     self._last_telemetry_at = 0.0
                     self._protocol_response_at = 0.0
@@ -2270,13 +3529,19 @@ class MotorStudioApp:
                     self._no_response_reported = False
                     self._no_telemetry_reported = False
                     self._pending_open_loop_start = None
+                    self._open_loop_transfer = None
+                    self._open_loop_transfer_token += 1
                     self._build_config_query_generation += 1
                     self._build_config_query_started_at = 0.0
                     self._build_control_hardware_enabled = None
                     self._build_power_stage_enabled = None
                     self._build_simplefoc_enabled = None
+                    self._build_safety_mask = None
                     self._device_firmware_version = None
                     self._device_build_id = ""
+                    self._device_features = None
+                    self._latest_diagnostics = None
+                    self._device_open_loop_config = None
                     self.hardware_layer_var.set(
                         "连接层级：控制硬件未确认｜功率硬件未确认"
                     )
@@ -2287,12 +3552,37 @@ class MotorStudioApp:
                 elif event.kind == "error":
                     self.status_message.configure(text=f"通信错误：{event.data}")
                     self._append_log(f"错误：{event.data}", "error")
-                elif event.kind in ("tx", "tx_quiet"):
-                    packet = bytes(event.data)
-                    self.tx_bytes += len(packet)
-                    if event.kind == "tx":
+                elif event.kind == "tx_write_error":
+                    info = dict(event.data)
+                    self._record_codex_write(
+                        bytes(info.get("packet", b"")),
+                        str(info.get("message", "未知错误")),
+                    )
+                    self.status_message.configure(
+                        text="串口写入失败：{}".format(
+                            info.get("message", "未知错误")
+                        )
+                    )
+                    self._append_log(
+                        "TX WRITE ERROR requested={} B written={} B: {}".format(
+                            info.get("requested", 0),
+                            info.get("written", 0),
+                            info.get("message", ""),
+                        ),
+                        "error",
+                    )
+                elif event.kind == "tx_written":
+                    info = dict(event.data)
+                    packet = bytes(info.get("packet", b""))
+                    written = int(info.get("written", len(packet)))
+                    self._record_codex_write(packet)
+                    self.tx_bytes += written
+                    if not bool(info.get("quiet", False)):
                         self._append_log(
-                            f"TX {len(packet):4d} B  {bytes_to_hex(packet, 96)}",
+                            "TXW {:4d} B  {}".format(
+                                written,
+                                bytes_to_hex(packet, 96),
+                            ),
                             "tx",
                         )
                 elif event.kind == "rx":
@@ -2307,7 +3597,15 @@ class MotorStudioApp:
                         self._last_parser_crc_errors = self.parser.crc_errors
                         self._append_log(f"检测到 {delta} 个 CRC 错误帧", "warn")
             self.counter_label.configure(
-                text=f"RX {self.rx_bytes:,} B / {self.rx_frames:,} 帧   TX {self.tx_bytes:,} B"
+                text=(
+                    "RX {:,} B / {:,} 帧   TXW {:,} B / {:,} 帧   写失败 {}"
+                ).format(
+                    self.rx_bytes,
+                    self.rx_frames,
+                    self.tx_bytes,
+                    self.link.tx_written_packets,
+                    self.link.tx_write_failures,
+                )
             )
         finally:
             self.root.after(20, self._poll_link)
@@ -2315,6 +3613,7 @@ class MotorStudioApp:
     def _handle_frame(self, frame: Frame) -> None:
         self._protocol_response_at = time.monotonic()
         self._no_response_reported = False
+        self._record_codex_reply(frame)
         if frame.command == Command.TELEMETRY:
             try:
                 telemetry = unpack_telemetry(frame.payload)
@@ -2362,6 +3661,17 @@ class MotorStudioApp:
                     f"RX {'ACK' if tag == 'ok' else 'ERROR'}  "
                     f"cmd=0x{original:02X} seq={frame.sequence} status={status}"
                 )
+                if original in (
+                    Command.SET_OPEN_LOOP_CONFIG_PART,
+                    Command.COMMIT_OPEN_LOOP_CONFIG,
+                    Command.GET_OPEN_LOOP_CONFIG,
+                ):
+                    self._handle_open_loop_transfer_reply(
+                        original,
+                        status,
+                        frame.sequence,
+                        detail,
+                    )
                 configuration_commands = (
                     Command.SET_LIMITS,
                     Command.GET_LIMITS,
@@ -2372,6 +3682,8 @@ class MotorStudioApp:
                     Command.GET_BACKEND_INFO,
                     Command.GET_TELEMETRY_PROFILE,
                     Command.SET_OPEN_LOOP_CONFIG,
+                    Command.SET_OPEN_LOOP_CONFIG_PART,
+                    Command.COMMIT_OPEN_LOOP_CONFIG,
                     Command.GET_OPEN_LOOP_CONFIG,
                     Command.START_OPEN_LOOP,
                     Command.GET_BUILD_CONFIG,
@@ -2424,6 +3736,7 @@ class MotorStudioApp:
                     motor_count, backend_mask, mode_mask, features, max_rate = (
                         struct.unpack("<BBBIH", detail)
                     )
+                    self._device_features = int(features)
                     message += (
                         f"  motors={motor_count} backend=0x{backend_mask:02X} "
                         f"modes=0x{mode_mask:02X} features=0x{features:08X} "
@@ -2466,24 +3779,87 @@ class MotorStudioApp:
                 elif (
                     original == Command.GET_DIAGNOSTICS
                     and status == 0
-                    and len(detail) == 8
                 ):
-                    uptime_ms, protocol_errors, fault_bits = struct.unpack(
-                        "<IHH", detail
-                    )
-                    self.diagnostics_var.set(
-                        "运行 {:.1f} s｜协议错误 {}｜故障 0x{:04X}".format(
-                            uptime_ms / 1000.0,
-                            protocol_errors,
-                            fault_bits,
+                    try:
+                        diagnostics = unpack_diagnostics(detail)
+                    except ValueError as exc:
+                        self._set_config_status(str(exc))
+                    else:
+                        self._latest_diagnostics = (
+                            self._decode_codex_reply(original, detail)
                         )
-                    )
-                    message += (
-                        f"  uptime={uptime_ms} ms "
-                        f"protocol_errors={protocol_errors} "
-                        f"fault=0x{fault_bits:04X}"
-                    )
-                    self._set_config_status("诊断信息已刷新。")
+                        stop_reason = STOP_REASON_LABELS.get(
+                            diagnostics.last_stop_reason,
+                            "未知({})".format(
+                                diagnostics.last_stop_reason
+                            ),
+                        )
+                        self.diagnostics_var.set(
+                            (
+                                "运行 {:.1f} s｜协议错误 {}｜故障 0x{:04X}｜"
+                                "状态 {}｜停止原因 {}｜HB {}/{} ms｜"
+                                "HW 0x{:02X}｜"
+                                "ACK失败 {}｜遥测丢弃 {}｜"
+                                "RX溢出 SW/HW {}/{}｜帧/奇偶 {}/{}｜"
+                                "解析 CRC/LEN/TO/同步 {}/{}/{}/{}｜"
+                                "RX调度 ISR/轮询/字节 {}/{}/{}"
+                            ).format(
+                                diagnostics.uptime_ms / 1000.0,
+                                diagnostics.protocol_errors,
+                                diagnostics.fault_bits,
+                                diagnostics.motor_state,
+                                stop_reason,
+                                diagnostics.heartbeat_age_ms,
+                                diagnostics.heartbeat_lease_ms,
+                                diagnostics.hardware_flags,
+                                diagnostics.tx_high_priority_failures,
+                                diagnostics.telemetry_drops,
+                                diagnostics.rx_sw_fifo_overflows,
+                                diagnostics.rx_hw_fifo_overflows,
+                                diagnostics.rx_frame_errors,
+                                diagnostics.rx_parity_errors,
+                                diagnostics.parser_crc_errors,
+                                diagnostics.parser_length_errors,
+                                diagnostics.parser_timeout_errors,
+                                diagnostics.parser_resync_events,
+                                diagnostics.rx_isr_entries,
+                                diagnostics.rx_poll_drains,
+                                diagnostics.rx_poll_bytes,
+                            )
+                        )
+                        message += (
+                            "  uptime={} ms protocol_errors={} "
+                            "fault=0x{:04X} commands={} "
+                            "stop={} hb_age={} ms hardware=0x{:02X} "
+                            "tx_ack_fail={} "
+                            "telem_drop={} rx_sw_ovf={} rx_hw_ovf={} "
+                            "frame_err={} parity_err={} "
+                            "parser_crc={} parser_len={} parser_timeout={} "
+                            "parser_resync={} rx_isr_entries={} "
+                            "rx_poll_drains={} rx_poll_bytes={}"
+                        ).format(
+                            diagnostics.uptime_ms,
+                            diagnostics.protocol_errors,
+                            diagnostics.fault_bits,
+                            diagnostics.commands_received,
+                            stop_reason,
+                            diagnostics.heartbeat_age_ms,
+                            diagnostics.hardware_flags,
+                            diagnostics.tx_high_priority_failures,
+                            diagnostics.telemetry_drops,
+                            diagnostics.rx_sw_fifo_overflows,
+                            diagnostics.rx_hw_fifo_overflows,
+                            diagnostics.rx_frame_errors,
+                            diagnostics.rx_parity_errors,
+                            diagnostics.parser_crc_errors,
+                            diagnostics.parser_length_errors,
+                            diagnostics.parser_timeout_errors,
+                            diagnostics.parser_resync_events,
+                            diagnostics.rx_isr_entries,
+                            diagnostics.rx_poll_drains,
+                            diagnostics.rx_poll_bytes,
+                        )
+                        self._set_config_status("诊断信息已刷新。")
                 elif (
                     original == Command.GET_BACKEND_INFO
                     and status == 0
@@ -2521,6 +3897,7 @@ class MotorStudioApp:
                     except ValueError as exc:
                         self._set_config_status(str(exc))
                     else:
+                        self._device_open_loop_config = config
                         self.open_loop_backend_var.set(
                             OPEN_LOOP_BACKEND_LABELS[config.backend]
                         )
@@ -2577,6 +3954,7 @@ class MotorStudioApp:
                             heartbeat_min_ms,
                             heartbeat_max_ms,
                             torque_constant,
+                            safety_mask,
                         ) = values
                         self._build_control_hardware_enabled = bool(
                             control_hardware_enabled
@@ -2587,16 +3965,36 @@ class MotorStudioApp:
                         self._build_simplefoc_enabled = bool(
                             simplefoc_enabled
                         )
+                        self._build_safety_mask = int(safety_mask)
+                        missing_safety = (
+                            POWER_STAGE_REQUIRED_SAFETY_MASK
+                            & ~int(safety_mask)
+                        )
+                        commissioning_override = bool(
+                            int(safety_mask)
+                            & POWER_STAGE_COMMISSIONING_OVERRIDE
+                        )
                         if not control_hardware_enabled:
                             layer_text = (
                                 "连接层级：控制器通信已连接，但 MCU PWM 被固件锁定｜"
                                 "功率硬件被锁定"
                             )
                         elif power_stage_enabled:
-                            layer_text = (
-                                "连接层级：控制硬件已允许｜功率级已允许"
-                                "（真实电机可能动作）"
-                            )
+                            if commissioning_override:
+                                layer_text = (
+                                    "连接层级：控制硬件已允许｜功率级调试旁路已启用"
+                                    "（仅允许保守参数）"
+                                )
+                            elif missing_safety:
+                                layer_text = (
+                                    "连接层级：功率级编译已允许，但安全清单缺少 "
+                                    "0x{:03X}｜启动已锁定"
+                                ).format(missing_safety)
+                            else:
+                                layer_text = (
+                                    "连接层级：控制硬件已允许｜功率级安全清单完整"
+                                    "（启动仍需运行诊断与明确确认）"
+                                )
                         else:
                             layer_text = (
                                 "连接层级：控制硬件已允许（仅 MCU PWM）｜"
@@ -2609,7 +4007,7 @@ class MotorStudioApp:
                                 "SIMPLEFOC={}｜"
                                 "PP={}｜ADC/PWM/ISR={}/{}/{} Hz｜"
                                 "OUTER={} Hz｜TELEM={} Hz｜HB={}"
-                                " ({}..{}) ms｜Kt={:g} N·m/A"
+                                " ({}..{}) ms｜Kt={:g} N·m/A｜SAFETY=0x{:08X}"
                             ).format(
                                 device_id,
                                 control_hardware_enabled,
@@ -2625,15 +4023,18 @@ class MotorStudioApp:
                                 heartbeat_min_ms,
                                 heartbeat_max_ms,
                                 torque_constant,
+                                safety_mask,
                             )
                         )
                         message += (
-                            "  control_hw={} power_stage={} simplefoc={} pwm={} Hz"
+                            "  control_hw={} power_stage={} simplefoc={} "
+                            "pwm={} Hz safety=0x{:08X}"
                         ).format(
                             control_hardware_enabled,
                             power_stage_enabled,
                             simplefoc_enabled,
                             pwm_hz,
+                            safety_mask,
                         )
                 elif (
                     original == Command.SET_OPEN_LOOP_CONFIG
@@ -2642,23 +4043,10 @@ class MotorStudioApp:
                     pending = self._pending_open_loop_start
                     if pending is not None:
                         self._pending_open_loop_start = None
-                        if self._send_frame(
-                            Command.START_OPEN_LOOP, b"\x01", 1
-                        ):
-                            self.control_mode.set(
-                                MODE_LABELS[
-                                    ControlMode.OPEN_LOOP_SPEED
-                                ]
-                            )
-                            self.target_value.set(
-                                "{:g}".format(
-                                    pending.target_velocity_rad_s
-                                )
-                            )
-                            self._update_target_unit()
-                            self._set_config_status(
-                                "参数已确认，正在执行开环安全启动…"
-                            )
+                        self._set_config_status(
+                            "兼容命令 0x26 已应用，但不会自动启动；"
+                            "请使用分片提交、精确回读和安全确认流程。"
+                        )
                     else:
                         self._set_config_status(
                             "开环参数已应用；运行中只允许修改目标速度。"
@@ -2869,6 +4257,9 @@ class MotorStudioApp:
         self._finalize_close()
 
     def _finalize_close(self) -> None:
+        if self._codex_bridge is not None:
+            self._codex_bridge.stop()
+            self._codex_bridge = None
         self.link.close()
         self.root.destroy()
 

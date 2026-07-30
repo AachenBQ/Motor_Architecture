@@ -10,6 +10,40 @@ static bool IsFiniteNonnegative(float value)
     return isfinite(value) && value >= 0.0F;
 }
 
+static bool IsValidPowerStageOpenLoopConfig(
+    const MotorOpenLoopConfig *config)
+{
+#if MOTOR_POWER_STAGE_ENABLED
+    return
+        (config->bus_voltage_v >= MOTOR_POWER_STAGE_MIN_BUS_V) &&
+        (config->bus_voltage_v <= MOTOR_POWER_STAGE_MAX_BUS_V) &&
+        (config->voltage_limit_v <=
+         MOTOR_POWER_STAGE_MAX_OPEN_LOOP_VOLTAGE_V) &&
+        (fabsf(config->target_velocity_rad_s) <=
+         MOTOR_POWER_STAGE_MAX_OPEN_LOOP_SPEED_RAD_S) &&
+        (config->acceleration_rad_s2 <=
+         MOTOR_POWER_STAGE_MAX_OPEN_LOOP_ACCEL_RAD_S2) &&
+        (config->startup_delay_ms >=
+         MOTOR_POWER_STAGE_MIN_START_DELAY_MS) &&
+        (config->max_runtime_ms <=
+         MOTOR_POWER_STAGE_MAX_OPEN_LOOP_RUNTIME_MS)
+#if MOTOR_POWER_STAGE_COMMISSIONING_OVERRIDE
+        && (config->voltage_limit_v <=
+            MOTOR_COMMISSIONING_MAX_OPEN_LOOP_VOLTAGE_V)
+        && (fabsf(config->target_velocity_rad_s) <=
+            MOTOR_COMMISSIONING_MAX_OPEN_LOOP_SPEED_RAD_S)
+        && (config->acceleration_rad_s2 <=
+            MOTOR_COMMISSIONING_MAX_OPEN_LOOP_ACCEL_RAD_S2)
+        && (config->max_runtime_ms <=
+            MOTOR_COMMISSIONING_MAX_OPEN_LOOP_RUNTIME_MS)
+#endif
+        ;
+#else
+    (void)config;
+    return true;
+#endif
+}
+
 static MotorOpenLoopConfig DefaultOpenLoopConfig(void)
 {
     MotorOpenLoopConfig config;
@@ -60,7 +94,8 @@ static bool IsValidOpenLoopConfig(const MotorOpenLoopConfig *config)
         (config->startup_delay_ms <= 5000U) &&
         (config->max_runtime_ms >= 1000UL) &&
         (config->max_runtime_ms <=
-         MOTOR_OPEN_LOOP_HARD_MAX_RUNTIME_MS);
+         MOTOR_OPEN_LOOP_HARD_MAX_RUNTIME_MS) &&
+        IsValidPowerStageOpenLoopConfig(config);
 }
 
 void MotorControl_Init(MotorControl *motor, uint32_t now_ms)
@@ -122,6 +157,8 @@ void MotorControl_Tick(MotorControl *motor, uint32_t now_ms)
     if (!motor->heartbeat_valid &&
         (motor->enabled || motor->open_loop_active))
     {
+        motor->last_stop_reason =
+            MOTOR_STOP_REASON_HEARTBEAT_TIMEOUT;
         MotorControl_TripFault(motor, MOTOR_FAULT_COMM_TIMEOUT);
         return;
     }
@@ -133,7 +170,10 @@ void MotorControl_Tick(MotorControl *motor, uint32_t now_ms)
     if ((now_ms - motor->open_loop_started_ms) >=
         motor->open_loop.max_runtime_ms)
     {
-        MotorControl_Stop(motor, false);
+        MotorControl_StopWithReason(
+            motor,
+            false,
+            MOTOR_STOP_REASON_OPEN_LOOP_RUNTIME);
         return;
     }
     if (!motor->open_loop_output_ready)
@@ -165,7 +205,10 @@ void MotorControl_Tick(MotorControl *motor, uint32_t now_ms)
         if ((motor->state == MOTOR_STATE_STOPPING) &&
             (fabsf(motor->open_loop_velocity_rad_s) < 0.001F))
         {
-            MotorControl_Stop(motor, false);
+            MotorControl_StopWithReason(
+                motor,
+                false,
+                MOTOR_STOP_REASON_CONTROLLED_COMMAND);
         }
     }
 }
@@ -174,9 +217,20 @@ MotorResult MotorControl_SetEnable(MotorControl *motor, bool enable)
 {
     if (!enable)
     {
-        MotorControl_Stop(motor, false);
+        MotorControl_StopWithReason(
+            motor,
+            false,
+            MOTOR_STOP_REASON_DISABLE_COMMAND);
         return MOTOR_RESULT_OK;
     }
+#if MOTOR_POWER_STAGE_ENABLED
+    if (!MOTOR_CLOSED_LOOP_CONTROL_READY ||
+        !MOTOR_ENCODER_SENSE_READY ||
+        !MOTOR_PHASE_CURRENT_SENSE_READY)
+    {
+        return MOTOR_RESULT_SAFETY_INTERLOCK;
+    }
+#endif
     if (motor->mode == MOTOR_MODE_OPEN_LOOP_SPEED)
     {
         return MOTOR_RESULT_INVALID_STATE;
@@ -199,6 +253,7 @@ MotorResult MotorControl_SetEnable(MotorControl *motor, bool enable)
     }
     motor->enabled = true;
     motor->state = MOTOR_STATE_RUNNING;
+    motor->last_stop_reason = MOTOR_STOP_REASON_NONE;
     return MOTOR_RESULT_OK;
 }
 
@@ -317,6 +372,7 @@ MotorResult MotorControl_StartOpenLoop(
     motor->open_loop_active = true;
     motor->enabled = true;
     motor->state = MOTOR_STATE_RUNNING;
+    motor->last_stop_reason = MOTOR_STOP_REASON_NONE;
     return MOTOR_RESULT_OK;
 }
 
@@ -326,9 +382,14 @@ void MotorControl_RequestControlledStop(MotorControl *motor)
     {
         motor->target = 0.0F;
         motor->state = MOTOR_STATE_STOPPING;
+        motor->last_stop_reason =
+            MOTOR_STOP_REASON_CONTROLLED_COMMAND;
         return;
     }
-    MotorControl_Stop(motor, false);
+    MotorControl_StopWithReason(
+        motor,
+        false,
+        MOTOR_STOP_REASON_CONTROLLED_COMMAND);
 }
 
 MotorResult MotorControl_SetPid(
@@ -365,6 +426,16 @@ MotorResult MotorControl_StartCalibration(
     MotorControl *motor,
     uint8_t calibration_type)
 {
+#if MOTOR_POWER_STAGE_ENABLED
+    /*
+     * Sensor/current alignment may move the rotor. Until calibration has its
+     * own one-shot power confirmation and bounded alignment profile, it must
+     * not be an alternate route around the open-loop commissioning interlock.
+     */
+    (void)motor;
+    (void)calibration_type;
+    return MOTOR_RESULT_SAFETY_INTERLOCK;
+#else
     if (motor->enabled ||
         ((motor->state != MOTOR_STATE_IDLE) &&
          (motor->state != MOTOR_STATE_READY)))
@@ -375,6 +446,7 @@ MotorResult MotorControl_StartCalibration(
     motor->calibration_type = calibration_type;
     motor->state = MOTOR_STATE_CALIBRATING;
     return MOTOR_RESULT_OK;
+#endif
 }
 
 void MotorControl_FinishCalibration(MotorControl *motor, bool success)
@@ -405,11 +477,25 @@ MotorResult MotorControl_ClearFault(MotorControl *motor, uint32_t active_faults)
 
 void MotorControl_Stop(MotorControl *motor, bool emergency)
 {
+    MotorControl_StopWithReason(
+        motor,
+        emergency,
+        emergency
+            ? MOTOR_STOP_REASON_EMERGENCY_COMMAND
+            : MOTOR_STOP_REASON_DISABLE_COMMAND);
+}
+
+void MotorControl_StopWithReason(
+    MotorControl *motor,
+    bool emergency,
+    MotorStopReason reason)
+{
     motor->target = 0.0F;
     motor->enabled = false;
     motor->open_loop_active = false;
     motor->open_loop_output_ready = false;
     motor->open_loop_velocity_rad_s = 0.0F;
+    motor->last_stop_reason = reason;
     motor->state = emergency
         ? MOTOR_STATE_ESTOP
         : (motor->calibrated ? MOTOR_STATE_READY : MOTOR_STATE_IDLE);
@@ -423,6 +509,15 @@ void MotorControl_TripFault(MotorControl *motor, uint32_t fault)
     motor->open_loop_output_ready = false;
     motor->open_loop_velocity_rad_s = 0.0F;
     motor->faults |= fault;
+    if ((fault & MOTOR_FAULT_COMM_TIMEOUT) != 0U)
+    {
+        motor->last_stop_reason =
+            MOTOR_STOP_REASON_HEARTBEAT_TIMEOUT;
+    }
+    else
+    {
+        motor->last_stop_reason = MOTOR_STOP_REASON_FAULT;
+    }
     motor->state = MOTOR_STATE_FAULT;
 }
 
@@ -486,6 +581,7 @@ void MotorControl_ExportPersistentConfig(
     memcpy(config->pid, motor->pid, sizeof(config->pid));
     config->limits = motor->limits;
     config->open_loop = motor->open_loop;
+    config->open_loop.flags = 0U;
 }
 
 bool MotorControl_ImportPersistentConfig(
@@ -538,6 +634,7 @@ bool MotorControl_ImportPersistentConfig(
     motor->pending_pid_mask = 0U;
     motor->limits = config->limits;
     motor->open_loop = config->open_loop;
+    motor->open_loop.flags = 0U;
     MotorControl_SetCalibrationValid(
         motor,
         config->calibration_valid != 0U);

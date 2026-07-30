@@ -7,20 +7,76 @@ static uint16_t ReadU16Le(const uint8_t *data)
     return (uint16_t)data[0] | ((uint16_t)data[1] << 8);
 }
 
-static void ResetForNextByte(NativeParser *parser, uint8_t value)
+static void ResetParser(NativeParser *parser)
 {
     parser->used = 0U;
     parser->expected = 0U;
-    if (value == 0xAAU)
+}
+
+static void ResyncBufferedBytes(NativeParser *parser)
+{
+    uint16_t index;
+    uint16_t start = parser->used;
+
+    /*
+     * Preserve the newest AA 55 header. A corrupted length can make the
+     * parser consume a later valid frame; retaining the newest header lets
+     * that frame complete without waiting for another host transmission.
+     */
+    if (parser->used >= 3U)
     {
-        parser->bytes[0] = value;
+        /*
+         * Do not select the header at offset zero: keeping the same bad
+         * frame would make NativeParser_Push() retry it forever.
+         */
+        for (index = parser->used - 1U; index > 1U; --index)
+        {
+            if ((parser->bytes[index - 1U] == 0xAAU) &&
+                (parser->bytes[index] == 0x55U))
+            {
+                start = index - 1U;
+                break;
+            }
+        }
+    }
+
+    if (start < parser->used)
+    {
+        parser->used = (uint16_t)(parser->used - start);
+        memmove(
+            parser->bytes,
+            &parser->bytes[start],
+            parser->used);
+    }
+    else if ((parser->used != 0U) &&
+             (parser->bytes[parser->used - 1U] == 0xAAU))
+    {
+        parser->bytes[0] = 0xAAU;
         parser->used = 1U;
     }
+    else
+    {
+        parser->used = 0U;
+    }
+    parser->expected = 0U;
+    parser->resync_events++;
 }
 
 void NativeParser_Init(NativeParser *parser)
 {
     memset(parser, 0, sizeof(*parser));
+}
+
+bool NativeParser_ExpirePartial(NativeParser *parser)
+{
+    if ((parser == NULL) || (parser->used == 0U))
+    {
+        return false;
+    }
+
+    parser->timeout_errors++;
+    ResetParser(parser);
+    return true;
 }
 
 uint16_t NativeProtocol_Crc16(const uint8_t *data, size_t length)
@@ -47,6 +103,11 @@ bool NativeParser_Push(NativeParser *parser, uint8_t value, NativeFrame *frame)
     uint16_t received_crc;
     uint16_t actual_crc;
 
+    if ((parser == NULL) || (frame == NULL))
+    {
+        return false;
+    }
+
     if (parser->used == 0U)
     {
         if (value == 0xAAU)
@@ -60,54 +121,81 @@ bool NativeParser_Push(NativeParser *parser, uint8_t value, NativeFrame *frame)
     {
         if (value != 0x55U)
         {
-            ResetForNextByte(parser, value);
+            if (value != 0xAAU)
+            {
+                ResetParser(parser);
+            }
             return false;
         }
         parser->bytes[parser->used++] = value;
         return false;
     }
 
-    parser->bytes[parser->used++] = value;
-    if (parser->used == 9U)
+    if (parser->used >= NATIVE_PROTOCOL_MAX_FRAME)
     {
-        payload_length = ReadU16Le(&parser->bytes[7]);
-        if (payload_length > NATIVE_PROTOCOL_MAX_PAYLOAD)
+        parser->length_errors++;
+        ResyncBufferedBytes(parser);
+    }
+    parser->bytes[parser->used++] = value;
+
+    for (;;)
+    {
+        if (parser->used < 9U)
         {
-            parser->length_errors++;
-            ResetForNextByte(parser, value);
             return false;
         }
-        parser->expected = (uint16_t)(11U + payload_length);
-    }
-    if ((parser->expected == 0U) || (parser->used < parser->expected))
-    {
-        return false;
-    }
+        if (parser->expected == 0U)
+        {
+            payload_length = ReadU16Le(&parser->bytes[7]);
+            if (payload_length > NATIVE_PROTOCOL_MAX_PAYLOAD)
+            {
+                parser->length_errors++;
+                ResyncBufferedBytes(parser);
+                if (parser->used < 9U)
+                {
+                    return false;
+                }
+                continue;
+            }
+            parser->expected = (uint16_t)(11U + payload_length);
+        }
+        if (parser->used < parser->expected)
+        {
+            return false;
+        }
 
-    received_crc = ReadU16Le(&parser->bytes[parser->expected - 2U]);
-    actual_crc = NativeProtocol_Crc16(
-        &parser->bytes[2],
-        (size_t)parser->expected - 4U);
-    if (received_crc != actual_crc)
-    {
-        parser->crc_errors++;
-        ResetForNextByte(parser, value);
-        return false;
-    }
+        received_crc = ReadU16Le(
+            &parser->bytes[parser->expected - 2U]);
+        actual_crc = NativeProtocol_Crc16(
+            &parser->bytes[2],
+            (size_t)parser->expected - 4U);
+        if (received_crc != actual_crc)
+        {
+            parser->crc_errors++;
+            ResyncBufferedBytes(parser);
+            if (parser->used < 9U)
+            {
+                return false;
+            }
+            continue;
+        }
 
-    frame->version = parser->bytes[2];
-    frame->flags = parser->bytes[3];
-    frame->device = parser->bytes[4];
-    frame->command = parser->bytes[5];
-    frame->sequence = parser->bytes[6];
-    frame->payload_length = ReadU16Le(&parser->bytes[7]);
-    if (frame->payload_length != 0U)
-    {
-        memcpy(frame->payload, &parser->bytes[9], frame->payload_length);
+        frame->version = parser->bytes[2];
+        frame->flags = parser->bytes[3];
+        frame->device = parser->bytes[4];
+        frame->command = parser->bytes[5];
+        frame->sequence = parser->bytes[6];
+        frame->payload_length = ReadU16Le(&parser->bytes[7]);
+        if (frame->payload_length != 0U)
+        {
+            memcpy(
+                frame->payload,
+                &parser->bytes[9],
+                frame->payload_length);
+        }
+        ResetParser(parser);
+        return true;
     }
-    parser->used = 0U;
-    parser->expected = 0U;
-    return true;
 }
 
 size_t NativeProtocol_Encode(
@@ -145,4 +233,3 @@ size_t NativeProtocol_Encode(
     destination[10U + frame->payload_length] = (uint8_t)(crc >> 8);
     return frame_length;
 }
-

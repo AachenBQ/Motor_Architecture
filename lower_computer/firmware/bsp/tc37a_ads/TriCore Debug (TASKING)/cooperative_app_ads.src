@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc77164a --dep-file=cooperative_app_ads.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 -o cooperative_app_ads.src ../cooperative_app_ads.c"
+	.compiler_invocation	"ctc -f cc24880a --dep-file=cooperative_app_ads.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 -o cooperative_app_ads.src ../cooperative_app_ads.c"
 	.compiler_name		"ctc"
 	;source	'../cooperative_app_ads.c'
 
@@ -12,18 +12,18 @@ $TC162
 	.align	2
 	
 ; Function ProtocolTransmit
-.L35:
+.L48:
 ProtocolTransmit:	.type	func
 	call	Tc375Hal_UartQueueTx
-.L157:
+.L176:
 	j	.L2
 .L2:
 	ret
-.L129:
+.L148:
 	
 __ProtocolTransmit_function_end:
 	.size	ProtocolTransmit,__ProtocolTransmit_function_end-ProtocolTransmit
-.L75:
+.L88:
 	; End of function
 	
 	.sdecl	'.text.cooperative_app.PeriodFromRate',code,cluster('PeriodFromRate')
@@ -31,33 +31,33 @@ __ProtocolTransmit_function_end:
 	.align	2
 	
 ; Function PeriodFromRate
-.L37:
+.L50:
 PeriodFromRate:	.type	func
 	jne	d4,#0,.L3
-.L277:
+.L304:
 	mov	d4,#100
 .L3:
 	addi	d15,d4,#1000
-.L278:
+.L305:
 	add	d15,#-1
-.L279:
+.L306:
 	div.u	e2,d15,d4
-.L158:
+.L177:
 	jne	d2,#0,.L4
-.L280:
+.L307:
 	mov	d2,#1
-.L281:
+.L308:
 	j	.L5
 .L4:
 .L5:
 	j	.L6
 .L6:
 	ret
-.L135:
+.L154:
 	
 __PeriodFromRate_function_end:
 	.size	PeriodFromRate,__PeriodFromRate_function_end-PeriodFromRate
-.L80:
+.L93:
 	; End of function
 	
 	.sdecl	'.text.cooperative_app.UpdateProtocolErrorCount',code,cluster('UpdateProtocolErrorCount')
@@ -65,41 +65,140 @@ __PeriodFromRate_function_end:
 	.align	2
 	
 ; Function UpdateProtocolErrorCount
-.L39:
+.L52:
 UpdateProtocolErrorCount:	.type	func
 	movh.a	a15,#@his(g_parser)
 	lea	a15,[a15]@los(g_parser)
-.L286:
+.L313:
 	ld.w	d15,[a15]2064
-.L287:
+.L314:
 	movh.a	a15,#@his(g_parser)
 	lea	a15,[a15]@los(g_parser)
-.L288:
+.L315:
 	ld.w	d0,[a15]2068
-.L159:
+.L316:
 	add	d15,d0
-.L289:
+.L317:
+	movh.a	a15,#@his(g_parser)
+	lea	a15,[a15]@los(g_parser)
+.L318:
+	ld.w	d0,[a15]2072
+.L178:
+	add	d15,d0
+.L319:
 	mov.u	d0,#65535
-.L290:
+.L320:
 	jge.u	d0,d15,.L7
-.L291:
+.L321:
 	mov.u	d15,#65535
-.L160:
+.L179:
 	j	.L8
 .L7:
 	extr.u	d15,d15,#0,#16
 .L8:
 	movh.a	a15,#@his(g_router)
 	lea	a15,[a15]@los(g_router)
-.L292:
+.L322:
 	st.h	[a15]18,d15
-.L293:
+.L323:
+	movh.a	a15,#@his(g_parser)
+	lea	a15,[a15]@los(g_parser)
+.L324:
+	ld.w	d15,[a15]2064
+.L325:
+	mov.u	d0,#65535
+.L326:
+	jge.u	d0,d15,.L9
+.L327:
+	mov.u	d15,#65535
+.L328:
+	j	.L10
+.L9:
+	movh.a	a15,#@his(g_parser)
+	lea	a15,[a15]@los(g_parser)
+.L329:
+	ld.w	d15,[a15]2064
+.L10:
+	movh.a	a15,#@his(g_router)
+	lea	a15,[a15]@los(g_router)
+.L330:
+	st.h	[a15]20,d15
+.L331:
+	movh.a	a15,#@his(g_parser)
+	lea	a15,[a15]@los(g_parser)
+.L332:
+	ld.w	d15,[a15]2068
+.L333:
+	mov.u	d0,#65535
+.L334:
+	jge.u	d0,d15,.L11
+.L335:
+	mov.u	d15,#65535
+.L336:
+	j	.L12
+.L11:
+	movh.a	a15,#@his(g_parser)
+	lea	a15,[a15]@los(g_parser)
+.L337:
+	ld.w	d15,[a15]2068
+.L12:
+	movh.a	a15,#@his(g_router)
+	lea	a15,[a15]@los(g_router)
+.L338:
+	st.h	[a15]22,d15
+.L339:
+	movh.a	a15,#@his(g_parser)
+	lea	a15,[a15]@los(g_parser)
+.L340:
+	ld.w	d15,[a15]2072
+.L341:
+	mov.u	d0,#65535
+.L342:
+	jge.u	d0,d15,.L13
+.L343:
+	mov.u	d15,#65535
+.L344:
+	j	.L14
+.L13:
+	movh.a	a15,#@his(g_parser)
+	lea	a15,[a15]@los(g_parser)
+.L345:
+	ld.w	d15,[a15]2072
+.L14:
+	movh.a	a15,#@his(g_router)
+	lea	a15,[a15]@los(g_router)
+.L346:
+	st.h	[a15]24,d15
+.L347:
+	movh.a	a15,#@his(g_parser)
+	lea	a15,[a15]@los(g_parser)
+.L348:
+	ld.w	d15,[a15]2076
+.L349:
+	mov.u	d0,#65535
+.L350:
+	jge.u	d0,d15,.L15
+.L351:
+	mov.u	d15,#65535
+.L352:
+	j	.L16
+.L15:
+	movh.a	a15,#@his(g_parser)
+	lea	a15,[a15]@los(g_parser)
+.L353:
+	ld.w	d15,[a15]2076
+.L16:
+	movh.a	a15,#@his(g_router)
+	lea	a15,[a15]@los(g_router)
+.L354:
+	st.h	[a15]26,d15
+.L355:
 	ret
-.L138:
+.L157:
 	
 __UpdateProtocolErrorCount_function_end:
 	.size	UpdateProtocolErrorCount,__UpdateProtocolErrorCount_function_end-UpdateProtocolErrorCount
-.L85:
+.L98:
 	; End of function
 	
 	.sdecl	'.text.cooperative_app.ServiceCommands',code,cluster('ServiceCommands')
@@ -107,64 +206,135 @@ __UpdateProtocolErrorCount_function_end:
 	.align	2
 	
 ; Function ServiceCommands
-.L41:
+.L54:
 ServiceCommands:	.type	func
-	lea	a10,[a10]-2184
-.L161:
+	sub.a	a10,#128
+.L180:
 	mov	d8,#0
-.L162:
-	j	.L9
-.L10:
+.L181:
+	mov	d9,#0
+.L182:
+	j	.L17
+.L18:
 	lea	a4,[a10]0
-.L298:
+.L360:
 	mov	d4,#128
 	call	Tc375Hal_UartRead
-.L163:
+.L183:
 	mov	d15,d2
-.L164:
-	jne	d15,#0,.L11
-.L299:
-	j	.L12
-.L11:
-	mov	d9,#0
-.L165:
-	j	.L13
-.L14:
+.L185:
+	jne	d15,#0,.L19
+.L361:
+	j	.L20
+.L19:
+	mov	d8,#1
+.L362:
+	movh.a	a15,#@his(g_last_rx_byte_ms)
+	lea	a15,[a15]@los(g_last_rx_byte_ms)
+.L363:
+	call	Tc375Hal_TimeMs
+.L184:
+	st.w	[a15],d2
+.L364:
+	movh.a	a15,#@his(g_rx_byte_seen)
+	lea	a15,[a15]@los(g_rx_byte_seen)
+.L365:
+	mov	d0,#1
+.L366:
+	st.b	[a15],d0
+.L367:
+	mov	d10,#0
+.L186:
+	j	.L21
+.L22:
 	movh.a	a4,#@his(g_parser)
 	lea	a4,[a4]@los(g_parser)
-.L300:
-	addsc.a	a15,a10,d9,#0
+.L368:
+	addsc.a	a15,a10,d10,#0
 	ld.bu	d4,[a15]
-.L301:
-	lea	a5,[a10]128
+.L369:
+	movh.a	a5,#@his(g_rx_frame)
+	lea	a5,[a5]@los(g_rx_frame)
 	call	NativeParser_Push
-.L302:
-	jeq	d2,#0,.L15
-.L303:
+.L370:
+	jeq	d2,#0,.L23
+.L371:
+	call	UpdateProtocolErrorCount
+.L372:
 	movh.a	a4,#@his(g_router)
 	lea	a4,[a4]@los(g_router)
-.L304:
-	lea	a5,[a10]128
+.L373:
+	movh.a	a5,#@his(g_rx_frame)
+	lea	a5,[a5]@los(g_rx_frame)
 	call	CommandRouter_Handle
-.L15:
+.L23:
+	add	d10,#1
+.L21:
+	jlt.u	d10,d15,.L22
+.L374:
 	add	d9,#1
-.L13:
-	jlt.u	d9,d15,.L14
-.L305:
-	add	d8,#1
-.L9:
+.L17:
 	mov	d15,#16
-.L306:
-	jlt.u	d8,d15,.L10
-.L12:
+.L375:
+	jlt.u	d9,d15,.L18
+.L20:
+	movh.a	a15,#@his(g_parser)
+	lea	a15,[a15]@los(g_parser)
+.L376:
+	ld.hu	d15,[a15]2060
+.L377:
+	jne	d15,#0,.L24
+.L378:
+	movh.a	a15,#@his(g_rx_byte_seen)
+	lea	a15,[a15]@los(g_rx_byte_seen)
+.L379:
+	mov	d15,#0
+.L380:
+	st.b	[a15],d15
+.L381:
+	j	.L25
+.L24:
+	jne	d8,#0,.L26
+.L382:
+	movh.a	a15,#@his(g_rx_byte_seen)
+	lea	a15,[a15]@los(g_rx_byte_seen)
+	ld.bu	d15,[a15]
+	jeq	d15,#0,.L27
+.L383:
+	call	Tc375Hal_TimeMs
+.L384:
+	movh.a	a15,#@his(g_last_rx_byte_ms)
+	lea	a15,[a15]@los(g_last_rx_byte_ms)
+	ld.w	d15,[a15]
+.L385:
+	sub	d2,d15
+.L386:
+	mov	d15,#100
+.L387:
+	jlt.u	d2,d15,.L28
+.L388:
+	movh.a	a4,#@his(g_parser)
+	lea	a4,[a4]@los(g_parser)
+	call	NativeParser_ExpirePartial
+.L389:
+	movh.a	a15,#@his(g_rx_byte_seen)
+	lea	a15,[a15]@los(g_rx_byte_seen)
+.L390:
+	mov	d15,#0
+.L391:
+	st.b	[a15],d15
+.L28:
+.L27:
+.L26:
+.L25:
 	call	UpdateProtocolErrorCount
-.L307:
+.L392:
 	ret
-.L140:
+.L159:
 	
 __ServiceCommands_function_end:
 	.size	ServiceCommands,__ServiceCommands_function_end-ServiceCommands
-.L90:
+.L103:
 	; End of function
 	
 	.sdecl	'.text.cooperative_app.ServiceMotor',code,cluster('ServiceMotor')
@@ -172,36 +342,36 @@ __ServiceCommands_function_end:
 	.align	2
 	
 ; Function ServiceMotor
-.L43:
+.L56:
 ServiceMotor:	.type	func
 	movh.a	a4,#@his(g_motor)
 	lea	a4,[a4]@los(g_motor)
-.L312:
+.L397:
 	call	MotorControl_Tick
-.L166:
+.L187:
 	call	Tc375Hal_ReadActiveFaults
-.L167:
-	jeq	d2,#0,.L16
-.L168:
+.L188:
+	jeq	d2,#0,.L29
+.L189:
 	movh.a	a4,#@his(g_motor)
 	lea	a4,[a4]@los(g_motor)
-.L169:
+.L190:
 	mov	d4,d2
-.L170:
+.L191:
 	call	MotorControl_TripFault
-.L171:
+.L192:
 	call	SimpleFocTc375_ForceSafeState
-.L16:
+.L29:
 	movh.a	a4,#@his(g_motor)
 	lea	a4,[a4]@los(g_motor)
 	call	SimpleFocTc375_OuterLoop
-.L313:
+.L398:
 	ret
-.L149:
+.L167:
 	
 __ServiceMotor_function_end:
 	.size	ServiceMotor,__ServiceMotor_function_end-ServiceMotor
-.L95:
+.L108:
 	; End of function
 	
 	.sdecl	'.text.cooperative_app.ServiceCalibration',code,cluster('ServiceCalibration')
@@ -209,38 +379,38 @@ __ServiceMotor_function_end:
 	.align	2
 	
 ; Function ServiceCalibration
-.L45:
+.L58:
 ServiceCalibration:	.type	func
 	movh.a	a15,#@his(g_motor)
 	lea	a15,[a15]@los(g_motor)
-.L318:
+.L403:
 	ld.bu	d15,[a15]
-.L319:
-	jeq	d15,#2,.L17
-.L320:
-	j	.L18
-.L17:
+.L404:
+	jeq	d15,#2,.L30
+.L405:
+	j	.L31
+.L30:
 	call	SimpleFocTc375_ForceSafeState
-.L321:
+.L406:
 	movh.a	a15,#@his(g_motor)
 	lea	a15,[a15]@los(g_motor)
-.L322:
-	ld.bu	d4,[a15]20
+.L407:
+	ld.bu	d4,[a15]22
 	call	SimpleFocTc375_RunCalibration
-.L172:
+.L193:
 	movh.a	a4,#@his(g_motor)
 	lea	a4,[a4]@los(g_motor)
-.L323:
+.L408:
 	mov	d4,d2
-.L173:
+.L194:
 	call	MotorControl_FinishCalibration
-.L18:
+.L31:
 	ret
-.L152:
+.L170:
 	
 __ServiceCalibration_function_end:
 	.size	ServiceCalibration,__ServiceCalibration_function_end-ServiceCalibration
-.L100:
+.L113:
 	; End of function
 	
 	.sdecl	'.text.cooperative_app.Firmware_CooperativeInit',code,cluster('Firmware_CooperativeInit')
@@ -249,153 +419,165 @@ __ServiceCalibration_function_end:
 	
 	.global	Firmware_CooperativeInit
 ; Function Firmware_CooperativeInit
-.L47:
+.L60:
 Firmware_CooperativeInit:	.type	func
 	sub.a	a10,#112
-.L174:
+.L195:
 	mov	d8,#0
-.L175:
+.L196:
 	movh.a	a15,#@his(g_initialized)
 	lea	a15,[a15]@los(g_initialized)
 	ld.bu	d15,[a15]
-.L197:
-	jeq	d15,#0,.L19
-.L198:
+.L219:
+	jeq	d15,#0,.L32
+.L220:
 	mov	d2,#1
-.L199:
-	j	.L20
-.L19:
+.L221:
+	j	.L33
+.L32:
 	call	Tc375Hal_BoardInit
-.L200:
-	jne	d2,#0,.L21
-.L201:
+.L222:
+	jne	d2,#0,.L34
+.L223:
 	mov	d2,#0
-.L202:
-	j	.L22
-.L21:
+.L224:
+	j	.L35
+.L34:
 	call	Tc375Hal_TimeMs
-.L177:
+.L198:
 	mov	d9,d2
-.L179:
+.L200:
 	movh.a	a4,#@his(g_motor)
 	lea	a4,[a4]@los(g_motor)
-.L203:
+.L225:
 	mov	d4,d9
-.L178:
+.L199:
 	call	MotorControl_Init
-.L180:
+.L201:
 	lea	a4,[a10]0
-.L204:
+.L226:
 	mov	d4,#112
 	call	Tc375Hal_LoadConfiguration
-.L205:
-	jeq	d2,#0,.L23
-.L206:
+.L227:
+	jeq	d2,#0,.L36
+.L228:
 	movh.a	a4,#@his(g_motor)
 	lea	a4,[a4]@los(g_motor)
-.L207:
+.L229:
 	lea	a5,[a10]0
 	call	MotorControl_ImportPersistentConfig
-.L176:
+.L197:
 	mov	d8,d2
-.L23:
+.L36:
 	movh.a	a4,#@his(g_parser)
 	lea	a4,[a4]@los(g_parser)
 	call	NativeParser_Init
-.L208:
+.L230:
+	movh.a	a15,#@his(g_last_rx_byte_ms)
+	lea	a15,[a15]@los(g_last_rx_byte_ms)
+.L231:
+	st.w	[a15],d9
+.L232:
+	movh.a	a15,#@his(g_rx_byte_seen)
+	lea	a15,[a15]@los(g_rx_byte_seen)
+.L233:
+	mov	d15,#0
+.L234:
+	st.b	[a15],d15
+.L235:
 	movh.a	a4,#@his(g_router)
 	lea	a4,[a4]@los(g_router)
-.L209:
+.L236:
 	movh.a	a5,#@his(g_motor)
 	lea	a5,[a5]@los(g_motor)
-.L210:
+.L237:
 	movh.a	a6,#@his(ProtocolTransmit)
 	lea	a6,[a6]@los(ProtocolTransmit)
 	call	CommandRouter_Init
-.L211:
-	jeq	d8,#0,.L24
-.L212:
+.L238:
+	jeq	d8,#0,.L37
+.L239:
 	movh.a	a15,#@his(g_router)
 	lea	a15,[a15]@los(g_router)
-.L213:
+.L240:
 	ld.hu	d15,[a10]8
-.L214:
+.L241:
 	st.h	[a15]8,d15
-.L215:
+.L242:
 	movh.a	a15,#@his(g_router)
 	lea	a15,[a15]@los(g_router)
-.L216:
+.L243:
 	ld.w	d15,[a10]12
-.L217:
+.L244:
 	st.w	[a15]10,d15
-.L24:
+.L37:
 	movh.a	a4,#@his(g_motor)
 	lea	a4,[a4]@los(g_motor)
 	call	SimpleFocTc375_Init
-.L218:
-	jne	d2,#0,.L25
-.L219:
+.L245:
+	jne	d2,#0,.L38
+.L246:
 	movh.a	a4,#@his(g_motor)
 	lea	a4,[a4]@los(g_motor)
-.L220:
+.L247:
 	mov	d4,#32
 	call	MotorControl_TripFault
-.L221:
+.L248:
 	call	SimpleFocTc375_ForceSafeState
-.L25:
+.L38:
 	mov	d4,d9
-.L181:
+.L202:
 	call	ServiceMotor
-.L182:
+.L203:
 	movh.a	a15,#@his(g_telemetry_sequence)
 	lea	a15,[a15]@los(g_telemetry_sequence)
-.L222:
+.L249:
 	mov	d15,#0
-.L223:
+.L250:
 	st.b	[a15],d15
-.L224:
+.L251:
 	movh.a	a15,#@his(g_last_outer_loop_ms)
 	lea	a15,[a15]@los(g_last_outer_loop_ms)
-.L225:
+.L252:
 	st.w	[a15],d9
-.L226:
+.L253:
 	movh.a	a15,#@his(g_last_telemetry_ms)
 	lea	a15,[a15]@los(g_last_telemetry_ms)
-.L227:
+.L254:
 	movh.a	a2,#@his(g_router)
 	lea	a2,[a2]@los(g_router)
-.L228:
+.L255:
 	ld.hu	d4,[a2]8
 	call	PeriodFromRate
-.L229:
+.L256:
 	sub	d15,d9,d2
-.L230:
+.L257:
 	st.w	[a15],d15
-.L231:
+.L258:
 	movh.a	a15,#@his(g_last_health_ms)
 	lea	a15,[a15]@los(g_last_health_ms)
-.L232:
+.L259:
 	st.w	[a15],d9
-.L233:
+.L260:
 	movh.a	a15,#@his(g_initialized)
 	lea	a15,[a15]@los(g_initialized)
-.L234:
+.L261:
 	mov	d15,#1
-.L235:
+.L262:
 	st.b	[a15],d15
-.L236:
+.L263:
 	mov	d2,#1
-.L237:
-	j	.L26
-.L26:
-.L22:
-.L20:
+.L264:
+	j	.L39
+.L39:
+.L35:
+.L33:
 	ret
-.L118:
+.L137:
 	
 __Firmware_CooperativeInit_function_end:
 	.size	Firmware_CooperativeInit,__Firmware_CooperativeInit_function_end-Firmware_CooperativeInit
-.L60:
+.L73:
 	; End of function
 	
 	.sdecl	'.text.cooperative_app.Firmware_CooperativePoll',code,cluster('Firmware_CooperativePoll')
@@ -404,63 +586,65 @@ __Firmware_CooperativeInit_function_end:
 	
 	.global	Firmware_CooperativePoll
 ; Function Firmware_CooperativePoll
-.L49:
+.L62:
 Firmware_CooperativePoll:	.type	func
 	movh.a	a15,#@his(g_initialized)
 	lea	a15,[a15]@los(g_initialized)
 	ld.bu	d15,[a15]
-	jne	d15,#0,.L27
-.L242:
-	j	.L28
-.L27:
+	jne	d15,#0,.L40
+.L269:
+	j	.L41
+.L40:
 	call	ServiceCommands
-.L243:
+.L270:
 	call	ServiceCalibration
-.L244:
+.L271:
 	call	Tc375Hal_TimeMs
-.L183:
+.L204:
 	mov	d15,d2
-.L185:
+.L206:
 	mov	d0,#1
-.L186:
-	jne	d0,#0,.L29
-.L29:
+.L207:
+	jne	d0,#0,.L42
+.L42:
 	movh.a	a15,#@his(g_last_outer_loop_ms)
 	lea	a15,[a15]@los(g_last_outer_loop_ms)
 	ld.w	d0,[a15]
-.L187:
+.L208:
 	sub	d0,d15,d0
-.L245:
-	jlt.u	d0,#1,.L30
-.L246:
+.L272:
+	jlt.u	d0,#1,.L43
+.L273:
 	movh.a	a15,#@his(g_last_outer_loop_ms)
 	lea	a15,[a15]@los(g_last_outer_loop_ms)
-.L247:
+.L274:
 	st.w	[a15],d15
-.L248:
+.L275:
 	mov	d4,d15
-.L184:
+.L205:
 	call	ServiceMotor
-.L30:
+.L209:
+	call	ServiceCommands
+.L43:
 	movh.a	a15,#@his(g_router)
 	lea	a15,[a15]@los(g_router)
-.L249:
+.L276:
 	ld.hu	d4,[a15]8
 	call	PeriodFromRate
-.L188:
+.L210:
 	movh.a	a15,#@his(g_last_telemetry_ms)
 	lea	a15,[a15]@los(g_last_telemetry_ms)
 	ld.w	d0,[a15]
-.L250:
+.L277:
 	sub	d0,d15,d0
-.L251:
-	jlt.u	d0,d2,.L31
-.L252:
+.L278:
+	jlt.u	d0,d2,.L44
+.L279:
 	movh.a	a15,#@his(g_last_telemetry_ms)
 	lea	a15,[a15]@los(g_last_telemetry_ms)
-.L253:
+.L280:
 	st.w	[a15],d15
-.L254:
+.L281:
 	movh.a	a15,#@his(g_telemetry_sequence)
 	lea	a15,[a15]@los(g_telemetry_sequence)
 	ld.bu	d4,[a15]
@@ -469,37 +653,37 @@ Firmware_CooperativePoll:	.type	func
 	movh.a	a2,#@his(g_telemetry_sequence)
 	lea	a2,[a2]@los(g_telemetry_sequence)
 	ld.bu	d0,[a2]
-.L255:
+.L282:
 	add	d0,#1
 	st.b	[a15],d0
-.L256:
+.L283:
 	movh.a	a4,#@his(g_router)
 	lea	a4,[a4]@los(g_router)
-.L257:
+.L284:
 	call	CommandRouter_SendTelemetry
-.L31:
+.L44:
 	movh.a	a15,#@his(g_last_health_ms)
 	lea	a15,[a15]@los(g_last_health_ms)
 	ld.w	d0,[a15]
-.L258:
+.L285:
 	sub	d0,d15,d0
-.L259:
-	jlt.u	d0,#10,.L32
-.L260:
+.L286:
+	jlt.u	d0,#10,.L45
+.L287:
 	movh.a	a15,#@his(g_last_health_ms)
 	lea	a15,[a15]@los(g_last_health_ms)
-.L261:
+.L288:
 	st.w	[a15],d15
-.L262:
+.L289:
 	call	Tc375Hal_ServiceWatchdogs
-.L32:
-.L28:
+.L45:
+.L41:
 	ret
-.L124:
+.L143:
 	
 __Firmware_CooperativePoll_function_end:
 	.size	Firmware_CooperativePoll,__Firmware_CooperativePoll_function_end-Firmware_CooperativePoll
-.L65:
+.L78:
 	; End of function
 	
 	.sdecl	'.text.cooperative_app.Firmware_CooperativeFocAdcIsr',code,cluster('Firmware_CooperativeFocAdcIsr')
@@ -508,44 +692,50 @@ __Firmware_CooperativePoll_function_end:
 	
 	.global	Firmware_CooperativeFocAdcIsr
 ; Function Firmware_CooperativeFocAdcIsr
-.L51:
+.L64:
 Firmware_CooperativeFocAdcIsr:	.type	func
 	movh.a	a15,#@his(g_initialized)
 	lea	a15,[a15]@los(g_initialized)
 	ld.bu	d15,[a15]
-.L267:
-	jeq	d15,#0,.L33
-.L268:
+.L294:
+	jeq	d15,#0,.L46
+.L295:
 	movh.a	a4,#@his(g_motor)
 	lea	a4,[a4]@los(g_motor)
 	call	SimpleFocTc375_AdcPwmIsr
-.L33:
+.L46:
 	ret
-.L128:
+.L147:
 	
 __Firmware_CooperativeFocAdcIsr_function_end:
 	.size	Firmware_CooperativeFocAdcIsr,__Firmware_CooperativeFocAdcIsr_function_end-Firmware_CooperativeFocAdcIsr
-.L70:
+.L83:
 	; End of function
 	
 	.sdecl	'.bss.cooperative_app.g_motor',data,cluster('g_motor')
 	.sect	'.bss.cooperative_app.g_motor'
 	.align	4
 g_motor:	.type	object
-	.size	g_motor,196
-	.space	196
+	.size	g_motor,200
+	.space	200
 	.sdecl	'.bss.cooperative_app.g_router',data,cluster('g_router')
 	.sect	'.bss.cooperative_app.g_router'
 	.align	4
 g_router:	.type	object
-	.size	g_router,8252
-	.space	8252
+	.size	g_router,8312
+	.space	8312
 	.sdecl	'.bss.cooperative_app.g_parser',data,cluster('g_parser')
 	.sect	'.bss.cooperative_app.g_parser'
 	.align	4
 g_parser:	.type	object
-	.size	g_parser,2072
-	.space	2072
+	.size	g_parser,2080
+	.space	2080
+	.sdecl	'.bss.cooperative_app.g_rx_frame',data,cluster('g_rx_frame')
+	.sect	'.bss.cooperative_app.g_rx_frame'
+	.align	4
+g_rx_frame:	.type	object
+	.size	g_rx_frame,2056
+	.space	2056
 	.sdecl	'.bss.cooperative_app.g_telemetry_sequence',data,cluster('g_telemetry_sequence')
 	.sect	'.bss.cooperative_app.g_telemetry_sequence'
 g_telemetry_sequence:	.type	object
@@ -569,6 +759,17 @@ g_last_telemetry_ms:	.type	object
 g_last_health_ms:	.type	object
 	.size	g_last_health_ms,4
 	.space	4
+	.sdecl	'.bss.cooperative_app.g_last_rx_byte_ms',data,cluster('g_last_rx_byte_ms')
+	.sect	'.bss.cooperative_app.g_last_rx_byte_ms'
+	.align	2
+g_last_rx_byte_ms:	.type	object
+	.size	g_last_rx_byte_ms,4
+	.space	4
+	.sdecl	'.bss.cooperative_app.g_rx_byte_seen',data,cluster('g_rx_byte_seen')
+	.sect	'.bss.cooperative_app.g_rx_byte_seen'
+g_rx_byte_seen:	.type	object
+	.size	g_rx_byte_seen,1
+	.space	1
 	.sdecl	'.bss.cooperative_app.g_initialized',data,cluster('g_initialized')
 	.sect	'.bss.cooperative_app.g_initialized'
 g_initialized:	.type	object
@@ -577,9 +778,11 @@ g_initialized:	.type	object
 	.calls	'__INDIRECT__','ProtocolTransmit'
 	.calls	'ProtocolTransmit','Tc375Hal_UartQueueTx'
 	.calls	'ServiceCommands','Tc375Hal_UartRead'
+	.calls	'ServiceCommands','Tc375Hal_TimeMs'
 	.calls	'ServiceCommands','NativeParser_Push'
-	.calls	'ServiceCommands','CommandRouter_Handle'
 	.calls	'ServiceCommands','UpdateProtocolErrorCount'
+	.calls	'ServiceCommands','CommandRouter_Handle'
+	.calls	'ServiceCommands','NativeParser_ExpirePartial'
 	.calls	'ServiceMotor','MotorControl_Tick'
 	.calls	'ServiceMotor','Tc375Hal_ReadActiveFaults'
 	.calls	'ServiceMotor','MotorControl_TripFault'
@@ -611,7 +814,7 @@ g_initialized:	.type	object
 	.calls	'ProtocolTransmit','',0
 	.calls	'PeriodFromRate','',0
 	.calls	'UpdateProtocolErrorCount','',0
-	.calls	'ServiceCommands','',2184
+	.calls	'ServiceCommands','',128
 	.calls	'ServiceMotor','',0
 	.calls	'ServiceCalibration','',0
 	.calls	'Firmware_CooperativeInit','',112
@@ -622,6 +825,7 @@ g_initialized:	.type	object
 	.extern	MotorControl_TripFault
 	.extern	MotorControl_ImportPersistentConfig
 	.extern	NativeParser_Init
+	.extern	NativeParser_ExpirePartial
 	.extern	NativeParser_Push
 	.extern	CommandRouter_Init
 	.extern	CommandRouter_Handle
@@ -642,31 +846,31 @@ g_initialized:	.type	object
 	.calls	'Firmware_CooperativeFocAdcIsr','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L53:
-	.word	4247
+.L66:
+	.word	5169
 	.half	3
-	.word	.L54
+	.word	.L67
 	.byte	4
-.L52:
+.L65:
 	.byte	1
 	.byte	'../cooperative_app_ads.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L55
-.L117:
+	.word	.L68
+.L136:
 	.byte	2
 	.byte	'_Bool',0,1,2
-.L122:
+.L141:
 	.byte	2
 	.byte	'unsigned int',0,4,7
-.L132:
+.L151:
 	.byte	2
 	.byte	'unsigned short int',0,2,7
-.L147:
+.L164:
 	.byte	2
 	.byte	'unsigned char',0,1,8,2
-	.byte	'float',0,4,4,3,1,68,9,12,4
+	.byte	'float',0,4,4,3,1,80,9,12,4
 	.byte	'kp',0
 	.word	283
 	.byte	4,2,35,0,4
@@ -677,7 +881,7 @@ g_initialized:	.type	object
 	.word	283
 	.byte	4,2,35,8,0,5,36
 	.word	292
-	.byte	6,2,0,3,1,75,9,32,4
+	.byte	6,2,0,3,1,87,9,32,4
 	.byte	'current_a',0
 	.word	283
 	.byte	4,2,35,0,4
@@ -701,7 +905,7 @@ g_initialized:	.type	object
 	.byte	4,2,35,24,4
 	.byte	'temperature_max_c',0
 	.word	283
-	.byte	4,2,35,28,0,3,1,97,9,28,4
+	.byte	4,2,35,28,0,3,1,109,9,28,4
 	.byte	'backend',0
 	.word	266
 	.byte	1,2,35,0,4
@@ -735,8 +939,8 @@ g_initialized:	.type	object
 	.byte	'max_runtime_ms',0
 	.word	228
 	.byte	4,2,35,24,0
-.L119:
-	.byte	3,1,140,1,9,112,4
+.L138:
+	.byte	3,1,153,1,9,112,4
 	.byte	'magic',0
 	.word	228
 	.byte	4,2,35,0,4
@@ -778,7 +982,15 @@ g_initialized:	.type	object
 	.byte	'MOTOR_MODE_TORQUE',0,0,8
 	.byte	'MOTOR_MODE_SPEED',0,1,8
 	.byte	'MOTOR_MODE_POSITION',0,2,8
-	.byte	'MOTOR_MODE_OPEN_LOOP_SPEED',0,3,0,3,1,87,9,24,4
+	.byte	'MOTOR_MODE_OPEN_LOOP_SPEED',0,3,0,7,1,56,9,1,8
+	.byte	'MOTOR_STOP_REASON_NONE',0,0,8
+	.byte	'MOTOR_STOP_REASON_DISABLE_COMMAND',0,1,8
+	.byte	'MOTOR_STOP_REASON_CONTROLLED_COMMAND',0,2,8
+	.byte	'MOTOR_STOP_REASON_QUICK_STOP_COMMAND',0,3,8
+	.byte	'MOTOR_STOP_REASON_EMERGENCY_COMMAND',0,4,8
+	.byte	'MOTOR_STOP_REASON_HEARTBEAT_TIMEOUT',0,5,8
+	.byte	'MOTOR_STOP_REASON_OPEN_LOOP_RUNTIME',0,6,8
+	.byte	'MOTOR_STOP_REASON_FAULT',0,7,0,3,1,99,9,24,4
 	.byte	'speed_rad_s',0
 	.word	283
 	.byte	4,2,35,0,4
@@ -797,8 +1009,8 @@ g_initialized:	.type	object
 	.byte	'status',0
 	.word	244
 	.byte	2,2,35,20,0
-.L154:
-	.byte	3,1,112,9,196,1,4
+.L172:
+	.byte	3,1,124,9,200,1,4
 	.byte	'state',0
 	.word	988
 	.byte	1,2,35,0,4
@@ -823,94 +1035,97 @@ g_initialized:	.type	object
 	.byte	'heartbeat_lease_ms',0
 	.word	244
 	.byte	2,2,35,14,4
+	.byte	'last_stop_reason',0
+	.word	1259
+	.byte	1,2,35,16,4
 	.byte	'faults',0
 	.word	228
-	.byte	4,2,35,16,4
+	.byte	4,2,35,18,4
 	.byte	'calibration_type',0
 	.word	266
-	.byte	1,2,35,20,4
+	.byte	1,2,35,22,4
 	.byte	'open_loop_active',0
 	.word	219
-	.byte	1,2,35,21,4
+	.byte	1,2,35,23,4
 	.byte	'open_loop_output_ready',0
 	.word	219
-	.byte	1,2,35,22,4
+	.byte	1,2,35,24,4
 	.byte	'open_loop_velocity_rad_s',0
 	.word	283
-	.byte	4,2,35,24,4
+	.byte	4,2,35,26,4
 	.byte	'open_loop_started_ms',0
 	.word	228
-	.byte	4,2,35,28,4
+	.byte	4,2,35,30,4
 	.byte	'open_loop_last_update_ms',0
 	.word	228
-	.byte	4,2,35,32,4
+	.byte	4,2,35,34,4
 	.byte	'pid',0
 	.word	334
-	.byte	36,2,35,36,4
+	.byte	36,2,35,40,4
 	.byte	'pending_pid',0
 	.word	334
-	.byte	36,2,35,72,4
+	.byte	36,2,35,76,4
 	.byte	'pending_pid_mask',0
 	.word	266
-	.byte	1,2,35,108,4
+	.byte	1,2,35,112,4
 	.byte	'limits',0
 	.word	343
-	.byte	32,2,35,112,4
+	.byte	32,2,35,116,4
 	.byte	'telemetry',0
-	.word	1259
-	.byte	24,3,35,144,1,4
+	.word	1544
+	.byte	24,3,35,148,1,4
 	.byte	'open_loop',0
 	.word	525
-	.byte	28,3,35,168,1,0,9
-	.word	1392
+	.byte	28,3,35,172,1,0,9
+	.word	1677
 	.byte	10
-	.byte	'MotorControl_Init',0,1,154,1,6,1,1,1,1,11
-	.byte	'motor',0,1,154,1,38
-	.word	1875
+	.byte	'MotorControl_Init',0,1,167,1,6,1,1,1,1,11
+	.byte	'motor',0,1,167,1,38
+	.word	2186
 	.byte	11
-	.byte	'now_ms',0,1,154,1,54
+	.byte	'now_ms',0,1,167,1,54
 	.word	228
 	.byte	0,10
-	.byte	'MotorControl_Tick',0,1,160,1,6,1,1,1,1,11
-	.byte	'motor',0,1,160,1,38
-	.word	1875
+	.byte	'MotorControl_Tick',0,1,173,1,6,1,1,1,1,11
+	.byte	'motor',0,1,173,1,38
+	.word	2186
 	.byte	11
-	.byte	'now_ms',0,1,160,1,54
+	.byte	'now_ms',0,1,173,1,54
 	.word	228
 	.byte	0,10
-	.byte	'MotorControl_FinishCalibration',0,1,182,1,6,1,1,1,1,11
-	.byte	'motor',0,1,182,1,51
-	.word	1875
+	.byte	'MotorControl_FinishCalibration',0,1,195,1,6,1,1,1,1,11
+	.byte	'motor',0,1,195,1,51
+	.word	2186
 	.byte	11
-	.byte	'success',0,1,182,1,63
+	.byte	'success',0,1,195,1,63
 	.word	219
 	.byte	0,10
-	.byte	'MotorControl_TripFault',0,1,185,1,6,1,1,1,1,11
-	.byte	'motor',0,1,185,1,43
-	.word	1875
+	.byte	'MotorControl_TripFault',0,1,202,1,6,1,1,1,1,11
+	.byte	'motor',0,1,202,1,43
+	.word	2186
 	.byte	11
-	.byte	'fault',0,1,185,1,59
+	.byte	'fault',0,1,202,1,59
 	.word	228
 	.byte	0,12
 	.word	785
 	.byte	9
-	.word	2134
+	.word	2445
 	.byte	13
-	.byte	'MotorControl_ImportPersistentConfig',0,1,193,1,6
+	.byte	'MotorControl_ImportPersistentConfig',0,1,210,1,6
 	.word	219
 	.byte	1,1,1,1,11
-	.byte	'motor',0,1,194,1,19
-	.word	1875
+	.byte	'motor',0,1,211,1,19
+	.word	2186
 	.byte	11
-	.byte	'config',0,1,195,1,34
-	.word	2139
+	.byte	'config',0,1,212,1,34
+	.word	2450
 	.byte	0,5,139,16
 	.word	266
 	.byte	6,138,16,0
-.L156:
-	.byte	3,2,77,9,152,16,4
+.L174:
+	.byte	3,2,79,9,160,16,4
 	.byte	'bytes',0
-	.word	2225
+	.word	2536
 	.byte	139,16,2,35,0,4
 	.byte	'used',0
 	.word	244
@@ -923,17 +1138,29 @@ g_initialized:	.type	object
 	.byte	4,3,35,144,16,4
 	.byte	'length_errors',0
 	.word	228
-	.byte	4,3,35,148,16,0,9
-	.word	2236
+	.byte	4,3,35,148,16,4
+	.byte	'timeout_errors',0
+	.word	228
+	.byte	4,3,35,152,16,4
+	.byte	'resync_events',0
+	.word	228
+	.byte	4,3,35,156,16,0,9
+	.word	2547
 	.byte	10
-	.byte	'NativeParser_Init',0,2,86,6,1,1,1,1,11
-	.byte	'parser',0,2,86,38
-	.word	2338
+	.byte	'NativeParser_Init',0,2,90,6,1,1,1,1,11
+	.byte	'parser',0,2,90,38
+	.word	2698
+	.byte	0,13
+	.byte	'NativeParser_ExpirePartial',0,2,91,6
+	.word	219
+	.byte	1,1,1,1,11
+	.byte	'parser',0,2,91,47
+	.word	2698
 	.byte	0,5,128,16
 	.word	266
 	.byte	6,255,15,0
-.L143:
-	.byte	3,2,66,9,136,16,4
+.L175:
+	.byte	3,2,68,9,136,16,4
 	.byte	'version',0
 	.word	266
 	.byte	1,2,35,0,4
@@ -953,45 +1180,49 @@ g_initialized:	.type	object
 	.word	244
 	.byte	2,2,35,6,4
 	.byte	'payload',0
-	.word	2385
+	.word	2800
 	.byte	128,16,2,35,8,0,9
-	.word	2396
+	.word	2811
 	.byte	13
-	.byte	'NativeParser_Push',0,2,87,6
+	.byte	'NativeParser_Push',0,2,92,6
 	.word	219
 	.byte	1,1,1,1,11
-	.byte	'parser',0,2,87,38
-	.word	2338
+	.byte	'parser',0,2,92,38
+	.word	2698
 	.byte	11
-	.byte	'value',0,2,87,54
+	.byte	'value',0,2,92,54
 	.word	266
 	.byte	11
-	.byte	'frame',0,2,87,74
-	.word	2528
+	.byte	'frame',0,2,92,74
+	.word	2943
 	.byte	0,12
 	.word	266
 	.byte	9
-	.word	2607
+	.word	3022
 	.byte	14
 	.word	219
 	.byte	1,1,15
-	.word	2612
+	.word	3027
 	.byte	15
 	.word	244
 	.byte	15
 	.word	219
 	.byte	0,9
-	.word	2617
+	.word	3032
 	.byte	16
 	.byte	'CommandRouterTransmit',0,3,14,16
-	.word	2640
-.L155:
-	.byte	3,3,19,9,188,64,4
+	.word	3055
+	.byte	5,28
+	.word	266
+	.byte	6,27,0,2
+	.byte	'unsigned long long int',0,8,7
+.L173:
+	.byte	3,3,25,9,248,64,4
 	.byte	'motor',0
-	.word	1875
+	.word	2186
 	.byte	4,2,35,0,4
 	.byte	'transmit',0
-	.word	2645
+	.word	3060
 	.byte	4,2,35,4,4
 	.byte	'telemetry_rate_hz',0
 	.word	244
@@ -1005,63 +1236,102 @@ g_initialized:	.type	object
 	.byte	'protocol_errors',0
 	.word	244
 	.byte	2,2,35,18,4
+	.byte	'parser_crc_errors',0
+	.word	244
+	.byte	2,2,35,20,4
+	.byte	'parser_length_errors',0
+	.word	244
+	.byte	2,2,35,22,4
+	.byte	'parser_timeout_errors',0
+	.word	244
+	.byte	2,2,35,24,4
+	.byte	'parser_resync_events',0
+	.word	244
+	.byte	2,2,35,26,4
+	.byte	'open_loop_staging',0
+	.word	3090
+	.byte	28,2,35,28,4
+	.byte	'open_loop_staging_mask',0
+	.word	244
+	.byte	2,2,35,56,4
+	.byte	'open_loop_staging_generation',0
+	.word	266
+	.byte	1,2,35,58,4
+	.byte	'open_loop_staging_updated_ms',0
+	.word	228
+	.byte	4,2,35,60,4
+	.byte	'open_loop_staging_active',0
+	.word	219
+	.byte	1,2,35,64,4
+	.byte	'open_loop_committed_generation',0
+	.word	266
+	.byte	1,2,35,65,4
+	.byte	'open_loop_committed_crc',0
+	.word	244
+	.byte	2,2,35,66,4
+	.byte	'open_loop_committed_at_ms',0
+	.word	3099
+	.byte	8,2,35,68,4
+	.byte	'open_loop_committed_valid',0
+	.word	219
+	.byte	1,2,35,76,4
 	.byte	'response_frame',0
-	.word	2396
-	.byte	136,16,2,35,20,4
+	.word	2811
+	.byte	136,16,2,35,80,4
 	.byte	'encoded_frame',0
-	.word	2225
-	.byte	139,16,3,35,156,16,4
+	.word	2536
+	.byte	139,16,3,35,216,16,4
 	.byte	'telemetry_frame',0
-	.word	2396
-	.byte	136,16,3,35,168,32,4
+	.word	2811
+	.byte	136,16,3,35,228,32,4
 	.byte	'encoded_telemetry',0
-	.word	2225
-	.byte	139,16,3,35,176,48,0,9
-	.word	2675
+	.word	2536
+	.byte	139,16,3,35,236,48,0,9
+	.word	3125
 	.byte	10
-	.byte	'CommandRouter_Init',0,3,33,6,1,1,1,1,11
-	.byte	'router',0,3,34,20
-	.word	2924
+	.byte	'CommandRouter_Init',0,3,53,6,1,1,1,1,11
+	.byte	'router',0,3,54,20
+	.word	3804
 	.byte	11
-	.byte	'motor',0,3,35,19
-	.word	1875
+	.byte	'motor',0,3,55,19
+	.word	2186
 	.byte	11
-	.byte	'transmit',0,3,36,27
-	.word	2645
+	.byte	'transmit',0,3,56,27
+	.word	3060
 	.byte	0,9
-	.word	2617
+	.word	3032
 	.byte	12
-	.word	2396
+	.word	2811
 	.byte	9
-	.word	3008
+	.word	3888
 	.byte	10
-	.byte	'CommandRouter_Handle',0,3,37,6,1,1,1,1,11
-	.byte	'router',0,3,37,42
-	.word	2924
+	.byte	'CommandRouter_Handle',0,3,57,6,1,1,1,1,11
+	.byte	'router',0,3,57,42
+	.word	3804
 	.byte	11
-	.byte	'request',0,3,37,69
-	.word	3013
+	.byte	'request',0,3,57,69
+	.word	3893
 	.byte	0,10
-	.byte	'CommandRouter_SendTelemetry',0,3,38,6,1,1,1,1,11
-	.byte	'router',0,3,38,49
-	.word	2924
+	.byte	'CommandRouter_SendTelemetry',0,3,58,6,1,1,1,1,11
+	.byte	'router',0,3,58,49
+	.word	3804
 	.byte	11
-	.byte	'sequence',0,3,38,65
+	.byte	'sequence',0,3,58,65
 	.word	266
 	.byte	0,13
 	.byte	'SimpleFocTc375_Init',0,4,16,6
 	.word	219
 	.byte	1,1,1,1,11
 	.byte	'motor',0,4,16,40
-	.word	1875
+	.word	2186
 	.byte	0,10
 	.byte	'SimpleFocTc375_AdcPwmIsr',0,4,17,6,1,1,1,1,11
 	.byte	'motor',0,4,17,45
-	.word	1875
+	.word	2186
 	.byte	0,10
 	.byte	'SimpleFocTc375_OuterLoop',0,4,18,6,1,1,1,1,11
 	.byte	'motor',0,4,18,45
-	.word	1875
+	.word	2186
 	.byte	0,13
 	.byte	'SimpleFocTc375_RunCalibration',0,4,19,6
 	.word	219
@@ -1076,73 +1346,73 @@ g_initialized:	.type	object
 	.byte	'Tc375Hal_TimeMs',0,5,30,10
 	.word	228
 	.byte	1,1,1,1,17
-	.byte	'Tc375Hal_ServiceWatchdogs',0,5,32,6,1,1,1,1,9
+	.byte	'Tc375Hal_ServiceWatchdogs',0,5,33,6,1,1,1,1,9
 	.word	266
 	.byte	13
-	.byte	'Tc375Hal_UartRead',0,5,35,8
+	.byte	'Tc375Hal_UartRead',0,5,36,8
 	.word	228
 	.byte	1,1,1,1,11
-	.byte	'destination',0,5,35,35
-	.word	3490
+	.byte	'destination',0,5,36,35
+	.word	4370
 	.byte	11
-	.byte	'capacity',0,5,35,55
+	.byte	'capacity',0,5,36,55
 	.word	228
 	.byte	0,12
 	.word	266
-.L130:
+.L149:
 	.byte	9
-	.word	3563
+	.word	4443
 	.byte	13
-	.byte	'Tc375Hal_UartQueueTx',0,5,36,6
+	.byte	'Tc375Hal_UartQueueTx',0,5,37,6
 	.word	219
 	.byte	1,1,1,1,11
-	.byte	'data',0,5,36,42
-	.word	3568
+	.byte	'data',0,5,37,42
+	.word	4448
 	.byte	11
-	.byte	'length',0,5,36,55
+	.byte	'length',0,5,37,55
 	.word	228
 	.byte	11
-	.byte	'high_priority',0,5,36,68
+	.byte	'high_priority',0,5,37,68
 	.word	219
 	.byte	0,18
-	.byte	'Tc375Hal_ReadActiveFaults',0,5,47,10
+	.byte	'Tc375Hal_ReadActiveFaults',0,5,57,10
 	.word	228
 	.byte	1,1,1,1,19
 	.byte	'void',0,9
-	.word	3695
+	.word	4575
 	.byte	13
-	.byte	'Tc375Hal_LoadConfiguration',0,5,51,6
+	.byte	'Tc375Hal_LoadConfiguration',0,5,61,6
 	.word	219
 	.byte	1,1,1,1,11
-	.byte	'data',0,5,51,39
-	.word	3701
+	.byte	'data',0,5,61,39
+	.word	4581
 	.byte	11
-	.byte	'size',0,5,51,52
+	.byte	'size',0,5,61,52
 	.word	228
 	.byte	0
-.L141:
+.L160:
 	.byte	5,128,1
 	.word	266
 	.byte	6,127,0,20
 	.byte	'__INDIRECT__',0,6,1,1,1,1,1,2
 	.byte	'short int',0,2,5,16
 	.byte	'__wchar_t',0,6,1,1
-	.word	3802
+	.word	4682
 	.byte	16
 	.byte	'__size_t',0,6,1,1
 	.word	228
 	.byte	2
 	.byte	'int',0,4,5,16
 	.byte	'__ptrdiff_t',0,6,1,1
-	.word	3850
+	.word	4730
 	.byte	21,1,9
-	.word	3877
+	.word	4757
 	.byte	16
 	.byte	'__codeptr',0,6,1,1
-	.word	3879
+	.word	4759
 	.byte	16
 	.byte	'__intptr_t',0,6,1,1
-	.word	3850
+	.word	4730
 	.byte	16
 	.byte	'__uintptr_t',0,6,1,1
 	.word	228
@@ -1156,45 +1426,51 @@ g_initialized:	.type	object
 	.byte	'uint32_t',0,7,254,1,41
 	.word	228
 	.byte	16
+	.byte	'uint64_t',0,7,134,2,41
+	.word	3099
+	.byte	16
 	.byte	'MotorMode',0,1,17,3
 	.word	1163
 	.byte	16
 	.byte	'MotorState',0,1,43,3
 	.word	988
 	.byte	16
-	.byte	'MotorPid',0,1,73,3
-	.word	292
-	.byte	16
-	.byte	'MotorLimits',0,1,85,3
-	.word	343
-	.byte	16
-	.byte	'MotorTelemetry',0,1,95,3
+	.byte	'MotorStopReason',0,1,66,3
 	.word	1259
 	.byte	16
-	.byte	'MotorOpenLoopConfig',0,1,110,3
+	.byte	'MotorPid',0,1,85,3
+	.word	292
+	.byte	16
+	.byte	'MotorLimits',0,1,97,3
+	.word	343
+	.byte	16
+	.byte	'MotorTelemetry',0,1,107,3
+	.word	1544
+	.byte	16
+	.byte	'MotorOpenLoopConfig',0,1,122,3
 	.word	525
 	.byte	16
-	.byte	'MotorControl',0,1,135,1,3
-	.word	1392
+	.byte	'MotorControl',0,1,148,1,3
+	.word	1677
 	.byte	16
-	.byte	'MotorPersistentConfig',0,1,152,1,3
+	.byte	'MotorPersistentConfig',0,1,165,1,3
 	.word	785
 	.byte	16
 	.byte	'size_t',0,8,24,25
 	.word	228
 	.byte	16
-	.byte	'NativeFrame',0,2,75,3
-	.word	2396
+	.byte	'NativeFrame',0,2,77,3
+	.word	2811
 	.byte	16
-	.byte	'NativeParser',0,2,84,3
-	.word	2236
+	.byte	'NativeParser',0,2,88,3
+	.word	2547
 	.byte	16
-	.byte	'CommandRouter',0,3,31,3
-	.word	2675
+	.byte	'CommandRouter',0,3,51,3
+	.word	3125
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L54:
+.L67:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,19,1,58,15,59,15,57,15,11,15
 	.byte	0,0,4,13,0,3,8,73,19,11,15,56,9,0,0,5,1,1,11,15,73,19,0,0,6,33,0,47,15,0,0,7,4,1,58,15,59,15,57,15,11
 	.byte	15,0,0,8,40,0,3,8,28,13,0,0,9,15,0,73,19,0,0,10,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0
@@ -1205,12 +1481,12 @@ g_initialized:	.type	object
 	.byte	0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L55:
-	.word	.L190-.L189
-.L189:
+.L68:
+	.word	.L212-.L211
+.L211:
 	.half	3
-	.word	.L192-.L191
-.L191:
+	.word	.L214-.L213
+.L213:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'C:\\Infineon\\AURIX-Studio-1.10.32\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\',0,0
 	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\include\\motor_control.h',0
@@ -1227,1180 +1503,1398 @@ g_initialized:	.type	object
 	.byte	'stdint.h',0,1,0,0
 	.byte	'stddef.h',0,1,0,0
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0,0,0,0,0
-.L192:
-.L190:
+.L214:
+.L212:
 	.sdecl	'.debug_info',debug,cluster('Firmware_CooperativeInit')
 	.sect	'.debug_info'
-.L56:
-	.word	367
+.L69:
+	.word	371
 	.half	3
-	.word	.L57
+	.word	.L70
 	.byte	4,1
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L59,.L58
+	.word	.L72,.L71
 	.byte	2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'Firmware_CooperativeInit',0,1,115,6
-	.word	.L117
+	.byte	'Firmware_CooperativeInit',0,1,166,1,6
+	.word	.L136
 	.byte	1,1,1
-	.word	.L47,.L118,.L46
+	.word	.L60,.L137,.L59
 	.byte	4
-	.word	.L47,.L118
+	.word	.L60,.L137
 	.byte	5
-	.byte	'stored_config',0,1,117,27
-	.word	.L119,.L120
+	.byte	'stored_config',0,1,168,1,27
+	.word	.L138,.L139
 	.byte	5
-	.byte	'stored_config_valid',0,1,118,10
-	.word	.L117,.L121
+	.byte	'stored_config_valid',0,1,169,1,10
+	.word	.L136,.L140
 	.byte	5
-	.byte	'now_ms',0,1,119,14
-	.word	.L122,.L123
+	.byte	'now_ms',0,1,170,1,14
+	.word	.L141,.L142
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('Firmware_CooperativeInit')
 	.sect	'.debug_abbrev'
-.L57:
+.L70:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('Firmware_CooperativeInit')
 	.sect	'.debug_line'
-.L58:
-	.word	.L194-.L193
-.L193:
+.L71:
+	.word	.L216-.L215
+.L215:
 	.half	3
-	.word	.L196-.L195
-.L195:
+	.word	.L218-.L217
+.L217:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0,0,0,0,0
-.L196:
+.L218:
 	.byte	5,6,7,0,5,2
-	.word	.L47
-	.byte	3,242,0,1,5,30,9
-	.half	.L174-.L47
+	.word	.L60
+	.byte	3,165,1,1,5,30,9
+	.half	.L195-.L60
 	.byte	3,3,1,5,9,9
-	.half	.L175-.L174
+	.half	.L196-.L195
 	.byte	3,3,1,5,5,9
-	.half	.L197-.L175
+	.half	.L219-.L196
 	.byte	1,5,16,7,9
-	.half	.L198-.L197
-	.byte	3,2,1,5,9,9
-	.half	.L199-.L198
-	.byte	1,5,28,9
-	.half	.L19-.L199
-	.byte	3,2,1,5,10,9
-	.half	.L200-.L19
-	.byte	1,5,16,7,9
-	.half	.L201-.L200
-	.byte	3,2,1,5,9,9
-	.half	.L202-.L201
-	.byte	1,5,29,9
-	.half	.L21-.L202
-	.byte	3,3,1,5,12,9
-	.half	.L177-.L21
-	.byte	1,5,24,9
-	.half	.L179-.L177
-	.byte	3,1,1,5,33,9
-	.half	.L203-.L179
-	.byte	1,5,14,9
-	.half	.L180-.L203
-	.byte	3,2,1,5,13,9
-	.half	.L204-.L180
-	.byte	3,1,1,5,5,9
-	.half	.L205-.L204
-	.byte	3,126,1,5,18,7,9
-	.half	.L206-.L205
-	.byte	3,6,1,9
-	.half	.L207-.L206
-	.byte	3,1,1,5,29,9
-	.half	.L176-.L207
-	.byte	3,125,1,5,24,9
-	.half	.L23-.L176
-	.byte	3,6,1,5,10,9
-	.half	.L208-.L23
-	.byte	3,2,1,9
-	.half	.L209-.L208
-	.byte	3,1,1,5,9,9
-	.half	.L210-.L209
-	.byte	3,1,1,5,5,9
-	.half	.L211-.L210
-	.byte	3,1,1,5,9,7,9
-	.half	.L212-.L211
-	.byte	3,2,1,5,26,9
-	.half	.L213-.L212
-	.byte	3,1,1,5,36,9
-	.half	.L214-.L213
-	.byte	3,127,1,5,9,9
-	.half	.L215-.L214
-	.byte	3,2,1,5,26,9
-	.half	.L216-.L215
-	.byte	3,1,1,5,33,9
-	.half	.L217-.L216
-	.byte	3,127,1,5,31,9
-	.half	.L24-.L217
-	.byte	3,8,1,5,10,9
-	.half	.L218-.L24
-	.byte	1,5,14,7,9
-	.half	.L219-.L218
-	.byte	3,3,1,5,13,9
 	.half	.L220-.L219
-	.byte	3,1,1,5,38,9
+	.byte	3,2,1,5,9,9
 	.half	.L221-.L220
-	.byte	3,1,1,5,18,9
-	.half	.L25-.L221
-	.byte	3,8,1,5,5,9
-	.half	.L182-.L25
-	.byte	3,2,1,5,28,9
-	.half	.L222-.L182
-	.byte	1,5,26,9
+	.byte	1,5,28,9
+	.half	.L32-.L221
+	.byte	3,2,1,5,10,9
+	.half	.L222-.L32
+	.byte	1,5,16,7,9
 	.half	.L223-.L222
-	.byte	1,5,5,9
+	.byte	3,2,1,5,9,9
 	.half	.L224-.L223
-	.byte	3,1,1,5,26,9
-	.half	.L225-.L224
-	.byte	1,5,5,9
-	.half	.L226-.L225
+	.byte	1,5,29,9
+	.half	.L34-.L224
+	.byte	3,3,1,5,12,9
+	.half	.L198-.L34
+	.byte	1,5,24,9
+	.half	.L200-.L198
 	.byte	3,1,1,5,33,9
-	.half	.L227-.L226
-	.byte	3,1,1,5,41,9
-	.half	.L228-.L227
-	.byte	1,5,16,9
-	.half	.L229-.L228
-	.byte	1,5,25,9
-	.half	.L230-.L229
-	.byte	3,127,1,5,5,9
-	.half	.L231-.L230
-	.byte	3,2,1,5,22,9
-	.half	.L232-.L231
-	.byte	1,5,5,9
-	.half	.L233-.L232
-	.byte	3,1,1,5,21,9
-	.half	.L234-.L233
-	.byte	1,5,19,9
-	.half	.L235-.L234
-	.byte	1,5,12,9
-	.half	.L236-.L235
+	.half	.L225-.L200
+	.byte	1,5,14,9
+	.half	.L201-.L225
+	.byte	3,2,1,5,13,9
+	.half	.L226-.L201
 	.byte	3,1,1,5,5,9
+	.half	.L227-.L226
+	.byte	3,126,1,5,18,7,9
+	.half	.L228-.L227
+	.byte	3,6,1,9
+	.half	.L229-.L228
+	.byte	3,1,1,5,29,9
+	.half	.L197-.L229
+	.byte	3,125,1,5,24,9
+	.half	.L36-.L197
+	.byte	3,6,1,5,5,9
+	.half	.L230-.L36
+	.byte	3,1,1,5,23,9
+	.half	.L231-.L230
+	.byte	1,5,5,9
+	.half	.L232-.L231
+	.byte	3,1,1,5,22,9
+	.half	.L233-.L232
+	.byte	1,5,20,9
+	.half	.L234-.L233
+	.byte	1,5,10,9
+	.half	.L235-.L234
+	.byte	3,2,1,9
+	.half	.L236-.L235
+	.byte	3,1,1,5,9,9
 	.half	.L237-.L236
+	.byte	3,1,1,5,5,9
+	.half	.L238-.L237
+	.byte	3,1,1,5,9,7,9
+	.half	.L239-.L238
+	.byte	3,2,1,5,26,9
+	.half	.L240-.L239
+	.byte	3,1,1,5,36,9
+	.half	.L241-.L240
+	.byte	3,127,1,5,9,9
+	.half	.L242-.L241
+	.byte	3,2,1,5,26,9
+	.half	.L243-.L242
+	.byte	3,1,1,5,33,9
+	.half	.L244-.L243
+	.byte	3,127,1,5,31,9
+	.half	.L37-.L244
+	.byte	3,8,1,5,10,9
+	.half	.L245-.L37
+	.byte	1,5,14,7,9
+	.half	.L246-.L245
+	.byte	3,3,1,5,13,9
+	.half	.L247-.L246
+	.byte	3,1,1,5,38,9
+	.half	.L248-.L247
+	.byte	3,1,1,5,18,9
+	.half	.L38-.L248
+	.byte	3,8,1,5,5,9
+	.half	.L203-.L38
+	.byte	3,2,1,5,28,9
+	.half	.L249-.L203
+	.byte	1,5,26,9
+	.half	.L250-.L249
+	.byte	1,5,5,9
+	.half	.L251-.L250
+	.byte	3,1,1,5,26,9
+	.half	.L252-.L251
+	.byte	1,5,5,9
+	.half	.L253-.L252
+	.byte	3,1,1,5,33,9
+	.half	.L254-.L253
+	.byte	3,1,1,5,41,9
+	.half	.L255-.L254
+	.byte	1,5,16,9
+	.half	.L256-.L255
+	.byte	1,5,25,9
+	.half	.L257-.L256
+	.byte	3,127,1,5,5,9
+	.half	.L258-.L257
+	.byte	3,2,1,5,22,9
+	.half	.L259-.L258
+	.byte	1,5,5,9
+	.half	.L260-.L259
+	.byte	3,1,1,5,21,9
+	.half	.L261-.L260
+	.byte	1,5,19,9
+	.half	.L262-.L261
+	.byte	1,5,12,9
+	.half	.L263-.L262
+	.byte	3,1,1,5,5,9
+	.half	.L264-.L263
 	.byte	1,5,1,9
-	.half	.L20-.L237
+	.half	.L33-.L264
 	.byte	3,1,1,7,9
-	.half	.L60-.L20
+	.half	.L73-.L33
 	.byte	0,1,1
-.L194:
+.L216:
 	.sdecl	'.debug_ranges',debug,cluster('Firmware_CooperativeInit')
 	.sect	'.debug_ranges'
-.L59:
-	.word	-1,.L47,0,.L60-.L47,0,0
+.L72:
+	.word	-1,.L60,0,.L73-.L60,0,0
 	.sdecl	'.debug_info',debug,cluster('Firmware_CooperativePoll')
 	.sect	'.debug_info'
-.L61:
+.L74:
 	.word	369
 	.half	3
-	.word	.L62
+	.word	.L75
 	.byte	4,1
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L64,.L63
+	.word	.L77,.L76
 	.byte	2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'Firmware_CooperativePoll',0,1,183,1,6,1,1,1
-	.word	.L49,.L124,.L48
+	.byte	'Firmware_CooperativePoll',0,1,236,1,6,1,1,1
+	.word	.L62,.L143,.L61
 	.byte	4
-	.word	.L49,.L124
+	.word	.L62,.L143
 	.byte	5
-	.byte	'now_ms',0,1,185,1,14
-	.word	.L122,.L125
+	.byte	'now_ms',0,1,238,1,14
+	.word	.L141,.L144
 	.byte	5
-	.byte	'outer_period_ms',0,1,186,1,14
-	.word	.L122,.L126
+	.byte	'outer_period_ms',0,1,239,1,14
+	.word	.L141,.L145
 	.byte	5
-	.byte	'telemetry_period_ms',0,1,187,1,14
-	.word	.L122,.L127
+	.byte	'telemetry_period_ms',0,1,240,1,14
+	.word	.L141,.L146
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('Firmware_CooperativePoll')
 	.sect	'.debug_abbrev'
-.L62:
+.L75:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('Firmware_CooperativePoll')
 	.sect	'.debug_line'
-.L63:
-	.word	.L239-.L238
-.L238:
+.L76:
+	.word	.L266-.L265
+.L265:
 	.half	3
-	.word	.L241-.L240
-.L240:
+	.word	.L268-.L267
+.L267:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0,0,0,0,0
-.L241:
+.L268:
 	.byte	5,10,7,0,5,2
-	.word	.L49
-	.byte	3,188,1,1,5,9,9
-	.half	.L242-.L49
+	.word	.L62
+	.byte	3,241,1,1,5,9,9
+	.half	.L269-.L62
 	.byte	3,2,1,5,20,9
-	.half	.L27-.L242
+	.half	.L40-.L269
 	.byte	3,3,1,5,23,9
-	.half	.L243-.L27
+	.half	.L270-.L40
 	.byte	3,1,1,5,29,9
-	.half	.L244-.L243
+	.half	.L271-.L270
 	.byte	3,1,1,5,12,9
-	.half	.L183-.L244
+	.half	.L204-.L271
 	.byte	1,5,21,9
-	.half	.L185-.L183
+	.half	.L206-.L204
 	.byte	3,2,1,5,5,9
-	.half	.L186-.L185
+	.half	.L207-.L206
 	.byte	3,3,1,5,29,7,9
-	.half	.L29-.L186
+	.half	.L42-.L207
 	.byte	3,4,1,5,27,9
-	.half	.L187-.L29
+	.half	.L208-.L42
 	.byte	1,5,5,9
-	.half	.L245-.L187
+	.half	.L272-.L208
 	.byte	1,5,9,7,9
-	.half	.L246-.L245
+	.half	.L273-.L272
 	.byte	3,3,1,5,30,9
-	.half	.L247-.L246
+	.half	.L274-.L273
 	.byte	1,5,22,9
-	.half	.L248-.L247
+	.half	.L275-.L274
 	.byte	3,1,1,5,24,9
-	.half	.L30-.L248
+	.half	.L209-.L275
+	.byte	3,6,1,9
+	.half	.L43-.L209
 	.byte	3,4,1,5,32,9
-	.half	.L249-.L30
+	.half	.L276-.L43
 	.byte	1,5,29,9
-	.half	.L188-.L249
+	.half	.L210-.L276
 	.byte	3,1,1,5,27,9
-	.half	.L250-.L188
+	.half	.L277-.L210
 	.byte	1,5,5,9
-	.half	.L251-.L250
+	.half	.L278-.L277
 	.byte	1,5,9,7,9
-	.half	.L252-.L251
+	.half	.L279-.L278
 	.byte	3,3,1,5,29,9
-	.half	.L253-.L252
+	.half	.L280-.L279
 	.byte	1,5,13,9
-	.half	.L254-.L253
+	.half	.L281-.L280
 	.byte	3,3,1,5,33,9
-	.half	.L255-.L254
+	.half	.L282-.L281
 	.byte	1,5,14,9
-	.half	.L256-.L255
+	.half	.L283-.L282
 	.byte	3,127,1,5,33,9
-	.half	.L257-.L256
+	.half	.L284-.L283
 	.byte	3,1,1,5,29,9
-	.half	.L31-.L257
+	.half	.L44-.L284
 	.byte	3,3,1,5,27,9
-	.half	.L258-.L31
+	.half	.L285-.L44
 	.byte	1,5,5,9
-	.half	.L259-.L258
+	.half	.L286-.L285
 	.byte	1,5,9,7,9
-	.half	.L260-.L259
+	.half	.L287-.L286
 	.byte	3,3,1,5,26,9
-	.half	.L261-.L260
+	.half	.L288-.L287
 	.byte	1,5,34,9
-	.half	.L262-.L261
+	.half	.L289-.L288
 	.byte	3,1,1,5,1,9
-	.half	.L28-.L262
+	.half	.L41-.L289
 	.byte	3,2,1,7,9
-	.half	.L65-.L28
+	.half	.L78-.L41
 	.byte	0,1,1
-.L239:
+.L266:
 	.sdecl	'.debug_ranges',debug,cluster('Firmware_CooperativePoll')
 	.sect	'.debug_ranges'
-.L64:
-	.word	-1,.L49,0,.L65-.L49,0,0
+.L77:
+	.word	-1,.L62,0,.L78-.L62,0,0
 	.sdecl	'.debug_info',debug,cluster('Firmware_CooperativeFocAdcIsr')
 	.sect	'.debug_info'
-.L66:
+.L79:
 	.word	291
 	.half	3
-	.word	.L67
+	.word	.L80
 	.byte	4,1
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L69,.L68
+	.word	.L82,.L81
 	.byte	2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'Firmware_CooperativeFocAdcIsr',0,1,231,1,6,1,1,1
-	.word	.L51,.L128,.L50
+	.byte	'Firmware_CooperativeFocAdcIsr',0,1,162,2,6,1,1,1
+	.word	.L64,.L147,.L63
 	.byte	4
-	.word	.L51,.L128
+	.word	.L64,.L147
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('Firmware_CooperativeFocAdcIsr')
 	.sect	'.debug_abbrev'
-.L67:
+.L80:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('Firmware_CooperativeFocAdcIsr')
 	.sect	'.debug_line'
-.L68:
-	.word	.L264-.L263
-.L263:
+.L81:
+	.word	.L291-.L290
+.L290:
 	.half	3
-	.word	.L266-.L265
-.L265:
+	.word	.L293-.L292
+.L292:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0,0,0,0,0
-.L266:
+.L293:
 	.byte	5,9,7,0,5,2
-	.word	.L51
-	.byte	3,232,1,1,5,5,9
-	.half	.L267-.L51
+	.word	.L64
+	.byte	3,163,2,1,5,5,9
+	.half	.L294-.L64
 	.byte	1,5,35,7,9
-	.half	.L268-.L267
+	.half	.L295-.L294
 	.byte	3,2,1,5,1,9
-	.half	.L33-.L268
+	.half	.L46-.L295
 	.byte	3,2,1,7,9
-	.half	.L70-.L33
+	.half	.L83-.L46
 	.byte	0,1,1
-.L264:
+.L291:
 	.sdecl	'.debug_ranges',debug,cluster('Firmware_CooperativeFocAdcIsr')
 	.sect	'.debug_ranges'
-.L69:
-	.word	-1,.L51,0,.L70-.L51,0,0
+.L82:
+	.word	-1,.L64,0,.L83-.L64,0,0
 	.sdecl	'.debug_info',debug,cluster('ProtocolTransmit')
 	.sect	'.debug_info'
-.L71:
+.L84:
 	.word	342
 	.half	3
-	.word	.L72
+	.word	.L85
 	.byte	4,1
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L74,.L73
+	.word	.L87,.L86
 	.byte	2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'ProtocolTransmit',0,1,26,13
-	.word	.L117
+	.byte	'ProtocolTransmit',0,1,35,13
+	.word	.L136
 	.byte	1,1
-	.word	.L35,.L129,.L34
+	.word	.L48,.L148,.L47
 	.byte	4
-	.byte	'data',0,1,27,20
-	.word	.L130,.L131
+	.byte	'data',0,1,36,20
+	.word	.L149,.L150
 	.byte	4
-	.byte	'length',0,1,28,14
-	.word	.L132,.L133
+	.byte	'length',0,1,37,14
+	.word	.L151,.L152
 	.byte	4
-	.byte	'high_priority',0,1,29,10
-	.word	.L117,.L134
+	.byte	'high_priority',0,1,38,10
+	.word	.L136,.L153
 	.byte	5
-	.word	.L35,.L129
+	.word	.L48,.L148
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('ProtocolTransmit')
 	.sect	'.debug_abbrev'
-.L72:
+.L85:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('ProtocolTransmit')
 	.sect	'.debug_line'
-.L73:
-	.word	.L270-.L269
-.L269:
+.L86:
+	.word	.L297-.L296
+.L296:
 	.half	3
-	.word	.L272-.L271
-.L271:
+	.word	.L299-.L298
+.L298:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0,0,0,0,0
-.L272:
+.L299:
 	.byte	5,47,7,0,5,2
-	.word	.L35
-	.byte	3,30,1,5,5,9
-	.half	.L157-.L35
+	.word	.L48
+	.byte	3,39,1,5,5,9
+	.half	.L176-.L48
 	.byte	1,5,1,9
-	.half	.L2-.L157
+	.half	.L2-.L176
 	.byte	3,1,1,7,9
-	.half	.L75-.L2
+	.half	.L88-.L2
 	.byte	0,1,1
-.L270:
+.L297:
 	.sdecl	'.debug_ranges',debug,cluster('ProtocolTransmit')
 	.sect	'.debug_ranges'
-.L74:
-	.word	-1,.L35,0,.L75-.L35,0,0
+.L87:
+	.word	-1,.L48,0,.L88-.L48,0,0
 	.sdecl	'.debug_info',debug,cluster('PeriodFromRate')
 	.sect	'.debug_info'
-.L76:
+.L89:
 	.word	321
 	.half	3
-	.word	.L77
+	.word	.L90
 	.byte	4,1
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L79,.L78
+	.word	.L92,.L91
 	.byte	2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'PeriodFromRate',0,1,34,17
-	.word	.L122
+	.byte	'PeriodFromRate',0,1,43,17
+	.word	.L141
 	.byte	1,1
-	.word	.L37,.L135,.L36
+	.word	.L50,.L154,.L49
 	.byte	4
-	.byte	'rate_hz',0,1,34,41
-	.word	.L132,.L136
+	.byte	'rate_hz',0,1,43,41
+	.word	.L151,.L155
 	.byte	5
-	.word	.L37,.L135
+	.word	.L50,.L154
 	.byte	6
-	.byte	'period_ms',0,1,36,14
-	.word	.L122,.L137
+	.byte	'period_ms',0,1,45,14
+	.word	.L141,.L156
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('PeriodFromRate')
 	.sect	'.debug_abbrev'
-.L77:
+.L90:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('PeriodFromRate')
 	.sect	'.debug_line'
-.L78:
-	.word	.L274-.L273
-.L273:
+.L91:
+	.word	.L301-.L300
+.L300:
 	.half	3
-	.word	.L276-.L275
-.L275:
+	.word	.L303-.L302
+.L302:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0,0,0,0,0
-.L276:
+.L303:
 	.byte	5,5,7,0,5,2
-	.word	.L37
-	.byte	3,37,1,5,17,7,9
-	.half	.L277-.L37
+	.word	.L50
+	.byte	3,46,1,5,17,7,9
+	.half	.L304-.L50
 	.byte	3,2,1,5,24,9
-	.half	.L3-.L277
+	.half	.L3-.L304
 	.byte	3,2,1,5,44,9
-	.half	.L278-.L3
+	.half	.L305-.L3
 	.byte	1,5,50,9
-	.half	.L279-.L278
+	.half	.L306-.L305
 	.byte	1,5,12,9
-	.half	.L158-.L279
+	.half	.L177-.L306
 	.byte	3,2,1,5,28,7,9
-	.half	.L280-.L158
+	.half	.L307-.L177
 	.byte	1,5,33,9
-	.half	.L281-.L280
+	.half	.L308-.L307
 	.byte	1,5,5,9
-	.half	.L5-.L281
+	.half	.L5-.L308
 	.byte	1,5,1,9
 	.half	.L6-.L5
 	.byte	3,1,1,7,9
-	.half	.L80-.L6
+	.half	.L93-.L6
 	.byte	0,1,1
-.L274:
+.L301:
 	.sdecl	'.debug_ranges',debug,cluster('PeriodFromRate')
 	.sect	'.debug_ranges'
-.L79:
-	.word	-1,.L37,0,.L80-.L37,0,0
+.L92:
+	.word	-1,.L50,0,.L93-.L50,0,0
 	.sdecl	'.debug_info',debug,cluster('UpdateProtocolErrorCount')
 	.sect	'.debug_info'
-.L81:
+.L94:
 	.word	303
 	.half	3
-	.word	.L82
+	.word	.L95
 	.byte	4,1
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L84,.L83
+	.word	.L97,.L96
 	.byte	2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'UpdateProtocolErrorCount',0,1,47,13,1,1
-	.word	.L39,.L138,.L38
+	.byte	'UpdateProtocolErrorCount',0,1,56,13,1,1
+	.word	.L52,.L157,.L51
 	.byte	4
-	.word	.L39,.L138
+	.word	.L52,.L157
 	.byte	5
-	.byte	'total',0,1,49,14
-	.word	.L122,.L139
+	.byte	'total',0,1,58,14
+	.word	.L141,.L158
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('UpdateProtocolErrorCount')
 	.sect	'.debug_abbrev'
-.L82:
+.L95:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('UpdateProtocolErrorCount')
 	.sect	'.debug_line'
-.L83:
-	.word	.L283-.L282
-.L282:
+.L96:
+	.word	.L310-.L309
+.L309:
 	.half	3
-	.word	.L285-.L284
-.L284:
+	.word	.L312-.L311
+.L311:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0,0,0,0,0
-.L285:
+.L312:
 	.byte	5,9,7,0,5,2
-	.word	.L39
-	.byte	3,49,1,5,17,9
-	.half	.L286-.L39
-	.byte	1,5,31,9
-	.half	.L287-.L286
-	.byte	1,5,39,9
-	.half	.L288-.L287
+	.word	.L52
+	.byte	3,58,1,5,17,9
+	.half	.L313-.L52
+	.byte	1,5,9,9
+	.half	.L314-.L313
+	.byte	3,1,1,5,17,9
+	.half	.L315-.L314
 	.byte	1,5,29,9
-	.half	.L159-.L288
-	.byte	1,5,17,9
-	.half	.L289-.L159
-	.byte	3,2,1,5,9,9
-	.half	.L290-.L289
+	.half	.L316-.L315
+	.byte	3,127,1,5,9,9
+	.half	.L317-.L316
+	.byte	3,2,1,5,17,9
+	.half	.L318-.L317
+	.byte	1,5,32,9
+	.half	.L178-.L318
+	.byte	3,127,1,5,17,9
+	.half	.L319-.L178
+	.byte	3,3,1,5,9,9
+	.half	.L320-.L319
 	.byte	1,5,25,7,9
-	.half	.L291-.L290
+	.half	.L321-.L320
 	.byte	1,5,35,9
-	.half	.L160-.L291
+	.half	.L179-.L321
 	.byte	1,5,37,9
-	.half	.L7-.L160
+	.half	.L7-.L179
 	.byte	1,5,5,9
 	.half	.L8-.L7
 	.byte	3,127,1,5,30,9
-	.half	.L292-.L8
+	.half	.L322-.L8
+	.byte	1,5,9,9
+	.half	.L323-.L322
+	.byte	3,3,1,5,17,9
+	.half	.L324-.L323
+	.byte	1,5,31,9
+	.half	.L325-.L324
+	.byte	1,5,9,9
+	.half	.L326-.L325
+	.byte	1,5,13,7,9
+	.half	.L327-.L326
+	.byte	3,1,1,9
+	.half	.L328-.L327
+	.byte	3,1,1,5,25,9
+	.half	.L9-.L328
+	.byte	1,5,33,9
+	.half	.L329-.L9
+	.byte	1,5,5,9
+	.half	.L10-.L329
+	.byte	3,125,1,5,32,9
+	.half	.L330-.L10
+	.byte	1,5,9,9
+	.half	.L331-.L330
+	.byte	3,5,1,5,17,9
+	.half	.L332-.L331
+	.byte	1,5,34,9
+	.half	.L333-.L332
+	.byte	1,5,9,9
+	.half	.L334-.L333
+	.byte	1,5,13,7,9
+	.half	.L335-.L334
+	.byte	3,1,1,9
+	.half	.L336-.L335
+	.byte	3,1,1,5,25,9
+	.half	.L11-.L336
+	.byte	1,5,33,9
+	.half	.L337-.L11
+	.byte	1,5,5,9
+	.half	.L12-.L337
+	.byte	3,125,1,5,35,9
+	.half	.L338-.L12
+	.byte	1,5,9,9
+	.half	.L339-.L338
+	.byte	3,5,1,5,17,9
+	.half	.L340-.L339
+	.byte	1,5,35,9
+	.half	.L341-.L340
+	.byte	1,5,9,9
+	.half	.L342-.L341
+	.byte	1,5,13,7,9
+	.half	.L343-.L342
+	.byte	3,1,1,9
+	.half	.L344-.L343
+	.byte	3,1,1,5,25,9
+	.half	.L13-.L344
+	.byte	1,5,33,9
+	.half	.L345-.L13
+	.byte	1,5,5,9
+	.half	.L14-.L345
+	.byte	3,125,1,5,36,9
+	.half	.L346-.L14
+	.byte	1,5,9,9
+	.half	.L347-.L346
+	.byte	3,5,1,5,17,9
+	.half	.L348-.L347
+	.byte	1,5,34,9
+	.half	.L349-.L348
+	.byte	1,5,9,9
+	.half	.L350-.L349
+	.byte	1,5,13,7,9
+	.half	.L351-.L350
+	.byte	3,1,1,9
+	.half	.L352-.L351
+	.byte	3,1,1,5,25,9
+	.half	.L15-.L352
+	.byte	1,5,33,9
+	.half	.L353-.L15
+	.byte	1,5,5,9
+	.half	.L16-.L353
+	.byte	3,125,1,5,35,9
+	.half	.L354-.L16
 	.byte	1,5,1,9
-	.half	.L293-.L292
-	.byte	3,2,1,7,9
-	.half	.L85-.L293
+	.half	.L355-.L354
+	.byte	3,4,1,7,9
+	.half	.L98-.L355
 	.byte	0,1,1
-.L283:
+.L310:
 	.sdecl	'.debug_ranges',debug,cluster('UpdateProtocolErrorCount')
 	.sect	'.debug_ranges'
-.L84:
-	.word	-1,.L39,0,.L85-.L39,0,0
+.L97:
+	.word	-1,.L52,0,.L98-.L52,0,0
 	.sdecl	'.debug_info',debug,cluster('ServiceCommands')
 	.sect	'.debug_info'
-.L86:
-	.word	366
+.L99:
+	.word	375
 	.half	3
-	.word	.L87
+	.word	.L100
 	.byte	4,1
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L89,.L88
+	.word	.L102,.L101
 	.byte	2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'ServiceCommands',0,1,55,13,1,1
-	.word	.L41,.L140,.L40
+	.byte	'ServiceCommands',0,1,82,13,1,1
+	.word	.L54,.L159,.L53
 	.byte	4
-	.word	.L41,.L140
+	.word	.L54,.L159
 	.byte	5
-	.byte	'bytes',0,1,57,13
-	.word	.L141,.L142
+	.byte	'bytes',0,1,84,13
+	.word	.L160,.L161
 	.byte	5
-	.byte	'frame',0,1,58,17
-	.word	.L143,.L144
+	.byte	'count',0,1,85,12
+	.word	.L141,.L162
 	.byte	5
-	.byte	'count',0,1,59,12
-	.word	.L122,.L145
+	.byte	'index',0,1,86,12
+	.word	.L141,.L163
 	.byte	5
-	.byte	'index',0,1,60,12
-	.word	.L122,.L146
+	.byte	'chunk',0,1,87,13
+	.word	.L164,.L165
 	.byte	5
-	.byte	'chunk',0,1,61,13
-	.word	.L147,.L148
+	.byte	'received_bytes',0,1,88,10
+	.word	.L136,.L166
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('ServiceCommands')
 	.sect	'.debug_abbrev'
-.L87:
+.L100:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('ServiceCommands')
 	.sect	'.debug_line'
-.L88:
-	.word	.L295-.L294
-.L294:
+.L101:
+	.word	.L357-.L356
+.L356:
 	.half	3
-	.word	.L297-.L296
-.L296:
+	.word	.L359-.L358
+.L358:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0,0,0,0,0
-.L297:
+.L359:
 	.byte	5,13,7,0,5,2
-	.word	.L41
-	.byte	3,54,1,5,16,9
-	.half	.L161-.L41
-	.byte	3,8,1,5,43,9
-	.half	.L162-.L161
+	.word	.L54
+	.byte	3,209,0,1,5,25,9
+	.half	.L180-.L54
+	.byte	3,6,1,5,16,9
+	.half	.L181-.L180
+	.byte	3,9,1,5,43,9
+	.half	.L182-.L181
 	.byte	3,1,1,5,35,9
-	.half	.L10-.L162
+	.half	.L18-.L182
 	.byte	3,3,1,5,42,9
-	.half	.L298-.L10
+	.half	.L360-.L18
 	.byte	1,5,15,9
-	.half	.L163-.L298
+	.half	.L183-.L360
 	.byte	1,5,9,9
-	.half	.L164-.L163
+	.half	.L185-.L183
 	.byte	3,1,1,5,13,7,9
-	.half	.L299-.L164
-	.byte	3,2,1,5,20,9
-	.half	.L11-.L299
-	.byte	3,2,1,5,39,9
-	.half	.L165-.L11
+	.half	.L361-.L185
+	.byte	3,2,1,5,24,9
+	.half	.L19-.L361
+	.byte	3,2,1,5,9,9
+	.half	.L362-.L19
+	.byte	3,1,1,5,44,9
+	.half	.L363-.L362
+	.byte	1,5,27,9
+	.half	.L184-.L363
+	.byte	1,5,9,9
+	.half	.L364-.L184
+	.byte	3,1,1,5,26,9
+	.half	.L365-.L364
+	.byte	1,5,24,9
+	.half	.L366-.L365
+	.byte	1,5,20,9
+	.half	.L367-.L366
+	.byte	3,1,1,5,39,9
+	.half	.L186-.L367
 	.byte	1,5,22,9
-	.half	.L14-.L165
+	.half	.L22-.L186
 	.byte	3,3,1,5,26,9
-	.half	.L300-.L14
+	.half	.L368-.L22
 	.byte	3,1,1,5,22,9
-	.half	.L301-.L300
+	.half	.L369-.L368
 	.byte	3,1,1,5,13,9
-	.half	.L302-.L301
-	.byte	3,125,1,5,39,7,9
-	.half	.L303-.L302
-	.byte	3,5,1,5,50,9
-	.half	.L304-.L303
+	.half	.L370-.L369
+	.byte	3,125,1,5,41,7,9
+	.half	.L371-.L370
+	.byte	3,5,1,5,39,9
+	.half	.L372-.L371
+	.byte	3,1,1,5,50,9
+	.half	.L373-.L372
 	.byte	1,5,41,9
-	.half	.L15-.L304
-	.byte	3,121,1,5,39,9
-	.half	.L13-.L15
+	.half	.L23-.L373
+	.byte	3,120,1,5,39,9
+	.half	.L21-.L23
 	.byte	1,5,10,7,9
-	.half	.L305-.L13
-	.byte	3,121,1,5,18,9
-	.half	.L9-.L305
+	.half	.L374-.L21
+	.byte	3,118,1,5,18,9
+	.half	.L17-.L374
 	.byte	3,127,1,5,43,9
-	.half	.L306-.L9
-	.byte	1,5,29,7,9
-	.half	.L12-.L306
-	.byte	3,19,1,5,1,9
-	.half	.L307-.L12
+	.half	.L375-.L17
+	.byte	1,5,9,7,9
+	.half	.L20-.L375
+	.byte	3,23,1,5,17,9
+	.half	.L376-.L20
+	.byte	1,5,5,9
+	.half	.L377-.L376
+	.byte	1,5,9,7,9
+	.half	.L378-.L377
+	.byte	3,2,1,5,26,9
+	.half	.L379-.L378
+	.byte	1,5,24,9
+	.half	.L380-.L379
+	.byte	1,5,31,9
+	.half	.L381-.L380
+	.byte	1,5,15,9
+	.half	.L24-.L381
+	.byte	3,2,1,5,14,7,9
+	.half	.L382-.L24
+	.byte	3,1,1,5,34,9
+	.half	.L383-.L382
+	.byte	3,2,1,5,39,9
+	.half	.L384-.L383
+	.byte	1,5,37,9
+	.half	.L385-.L384
+	.byte	1,5,15,9
+	.half	.L386-.L385
+	.byte	3,1,1,5,58,9
+	.half	.L387-.L386
+	.byte	3,127,1,5,43,7,9
+	.half	.L388-.L387
+	.byte	3,3,1,5,9,9
+	.half	.L389-.L388
+	.byte	3,1,1,5,26,9
+	.half	.L390-.L389
+	.byte	1,5,24,9
+	.half	.L391-.L390
+	.byte	1,5,29,9
+	.half	.L25-.L391
+	.byte	3,2,1,5,1,9
+	.half	.L392-.L25
 	.byte	3,1,1,7,9
-	.half	.L90-.L307
+	.half	.L103-.L392
 	.byte	0,1,1
-.L295:
+.L357:
 	.sdecl	'.debug_ranges',debug,cluster('ServiceCommands')
 	.sect	'.debug_ranges'
-.L89:
-	.word	-1,.L41,0,.L90-.L41,0,0
+.L102:
+	.word	-1,.L54,0,.L103-.L54,0,0
 	.sdecl	'.debug_info',debug,cluster('ServiceMotor')
 	.sect	'.debug_info'
-.L91:
-	.word	318
+.L104:
+	.word	321
 	.half	3
-	.word	.L92
+	.word	.L105
 	.byte	4,1
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L94,.L93
+	.word	.L107,.L106
 	.byte	2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'ServiceMotor',0,1,86,13,1,1
-	.word	.L43,.L149,.L42
+	.byte	'ServiceMotor',0,1,137,1,13,1,1
+	.word	.L56,.L167,.L55
 	.byte	4
-	.byte	'now_ms',0,1,86,35
-	.word	.L122,.L150
+	.byte	'now_ms',0,1,137,1,35
+	.word	.L141,.L168
 	.byte	5
-	.word	.L43,.L149
+	.word	.L56,.L167
 	.byte	6
-	.byte	'active_faults',0,1,88,14
-	.word	.L122,.L151
+	.byte	'active_faults',0,1,139,1,14
+	.word	.L141,.L169
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('ServiceMotor')
 	.sect	'.debug_abbrev'
-.L92:
+.L105:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3,8,58
 	.byte	15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('ServiceMotor')
 	.sect	'.debug_line'
-.L93:
-	.word	.L309-.L308
-.L308:
+.L106:
+	.word	.L394-.L393
+.L393:
 	.half	3
-	.word	.L311-.L310
-.L310:
+	.word	.L396-.L395
+.L395:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0,0,0,0,0
-.L311:
+.L396:
 	.byte	5,24,7,0,5,2
-	.word	.L43
-	.byte	3,217,0,1,5,33,9
-	.half	.L312-.L43
+	.word	.L56
+	.byte	3,140,1,1,5,33,9
+	.half	.L397-.L56
 	.byte	1,5,46,9
-	.half	.L166-.L312
+	.half	.L187-.L397
 	.byte	3,1,1,5,5,9
-	.half	.L167-.L166
+	.half	.L188-.L187
 	.byte	3,1,1,5,33,7,9
-	.half	.L168-.L167
+	.half	.L189-.L188
 	.byte	3,2,1,5,42,9
-	.half	.L169-.L168
+	.half	.L190-.L189
 	.byte	1,5,38,9
-	.half	.L171-.L169
+	.half	.L192-.L190
 	.byte	3,1,1,5,31,9
-	.half	.L16-.L171
+	.half	.L29-.L192
 	.byte	3,2,1,5,1,9
-	.half	.L313-.L16
+	.half	.L398-.L29
 	.byte	3,1,1,7,9
-	.half	.L95-.L313
+	.half	.L108-.L398
 	.byte	0,1,1
-.L309:
+.L394:
 	.sdecl	'.debug_ranges',debug,cluster('ServiceMotor')
 	.sect	'.debug_ranges'
-.L94:
-	.word	-1,.L43,0,.L95-.L43,0,0
+.L107:
+	.word	-1,.L56,0,.L108-.L56,0,0
 	.sdecl	'.debug_info',debug,cluster('ServiceCalibration')
 	.sect	'.debug_info'
-.L96:
-	.word	299
+.L109:
+	.word	301
 	.half	3
-	.word	.L97
+	.word	.L110
 	.byte	4,1
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L99,.L98
+	.word	.L112,.L111
 	.byte	2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'ServiceCalibration',0,1,100,13,1,1
-	.word	.L45,.L152,.L44
+	.byte	'ServiceCalibration',0,1,151,1,13,1,1
+	.word	.L58,.L170,.L57
 	.byte	4
-	.word	.L45,.L152
+	.word	.L58,.L170
 	.byte	5
-	.byte	'success',0,1,102,10
-	.word	.L117,.L153
+	.byte	'success',0,1,153,1,10
+	.word	.L136,.L171
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('ServiceCalibration')
 	.sect	'.debug_abbrev'
-.L97:
+.L110:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('ServiceCalibration')
 	.sect	'.debug_line'
-.L98:
-	.word	.L315-.L314
-.L314:
+.L111:
+	.word	.L400-.L399
+.L399:
 	.half	3
-	.word	.L317-.L316
-.L316:
+	.word	.L402-.L401
+.L401:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\app\\cooperative_app.c',0,0,0,0,0
-.L317:
+.L402:
 	.byte	5,9,7,0,5,2
-	.word	.L45
-	.byte	3,231,0,1,5,16,9
-	.half	.L318-.L45
+	.word	.L58
+	.byte	3,154,1,1,5,16,9
+	.half	.L403-.L58
 	.byte	1,5,5,9
-	.half	.L319-.L318
+	.half	.L404-.L403
 	.byte	1,5,9,7,9
-	.half	.L320-.L319
+	.half	.L405-.L404
 	.byte	3,2,1,5,34,9
-	.half	.L17-.L320
+	.half	.L30-.L405
 	.byte	3,3,1,5,9,9
-	.half	.L321-.L17
+	.half	.L406-.L30
 	.byte	3,2,1,5,16,9
-	.half	.L322-.L321
+	.half	.L407-.L406
 	.byte	1,5,37,9
-	.half	.L172-.L322
+	.half	.L193-.L407
 	.byte	3,1,1,5,46,9
-	.half	.L323-.L172
+	.half	.L408-.L193
 	.byte	1,5,1,9
-	.half	.L18-.L323
+	.half	.L31-.L408
 	.byte	3,1,1,7,9
-	.half	.L100-.L18
+	.half	.L113-.L31
 	.byte	0,1,1
-.L315:
+.L400:
 	.sdecl	'.debug_ranges',debug,cluster('ServiceCalibration')
 	.sect	'.debug_ranges'
-.L99:
-	.word	-1,.L45,0,.L100-.L45,0,0
+.L112:
+	.word	-1,.L58,0,.L113-.L58,0,0
 	.sdecl	'.debug_info',debug,cluster('g_motor')
 	.sect	'.debug_info'
-.L101:
+.L114:
 	.word	239
 	.half	3
-	.word	.L102
+	.word	.L115
 	.byte	4,1
 	.byte	'../cooperative_app_ads.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1,2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'g_motor',0,9,17,21
-	.word	.L154
+	.byte	'g_motor',0,9,18,21
+	.word	.L172
 	.byte	5,3
 	.word	g_motor
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('g_motor')
 	.sect	'.debug_abbrev'
-.L102:
+.L115:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_info',debug,cluster('g_router')
 	.sect	'.debug_info'
-.L103:
+.L116:
 	.word	240
 	.half	3
-	.word	.L104
+	.word	.L117
 	.byte	4,1
 	.byte	'../cooperative_app_ads.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1,2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'g_router',0,9,18,22
-	.word	.L155
+	.byte	'g_router',0,9,19,22
+	.word	.L173
 	.byte	5,3
 	.word	g_router
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('g_router')
 	.sect	'.debug_abbrev'
-.L104:
+.L117:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_info',debug,cluster('g_parser')
 	.sect	'.debug_info'
-.L105:
+.L118:
 	.word	240
 	.half	3
-	.word	.L106
+	.word	.L119
 	.byte	4,1
 	.byte	'../cooperative_app_ads.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1,2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'g_parser',0,9,19,21
-	.word	.L156
+	.byte	'g_parser',0,9,20,21
+	.word	.L174
 	.byte	5,3
 	.word	g_parser
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('g_parser')
 	.sect	'.debug_abbrev'
-.L106:
+.L119:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
-	.sdecl	'.debug_info',debug,cluster('g_telemetry_sequence')
+	.sdecl	'.debug_info',debug,cluster('g_rx_frame')
 	.sect	'.debug_info'
-.L107:
-	.word	252
+.L120:
+	.word	242
 	.half	3
-	.word	.L108
+	.word	.L121
 	.byte	4,1
 	.byte	'../cooperative_app_ads.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1,2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'g_telemetry_sequence',0,9,20,16
-	.word	.L147
+	.byte	'g_rx_frame',0,9,26,20
+	.word	.L175
+	.byte	5,3
+	.word	g_rx_frame
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('g_rx_frame')
+	.sect	'.debug_abbrev'
+.L121:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_info',debug,cluster('g_telemetry_sequence')
+	.sect	'.debug_info'
+.L122:
+	.word	252
+	.half	3
+	.word	.L123
+	.byte	4,1
+	.byte	'../cooperative_app_ads.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L65
+	.byte	3
+	.byte	'g_telemetry_sequence',0,9,27,16
+	.word	.L164
 	.byte	5,3
 	.word	g_telemetry_sequence
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('g_telemetry_sequence')
 	.sect	'.debug_abbrev'
-.L108:
+.L123:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_info',debug,cluster('g_last_outer_loop_ms')
 	.sect	'.debug_info'
-.L109:
+.L124:
 	.word	252
 	.half	3
-	.word	.L110
+	.word	.L125
 	.byte	4,1
 	.byte	'../cooperative_app_ads.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1,2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'g_last_outer_loop_ms',0,9,21,17
-	.word	.L122
+	.byte	'g_last_outer_loop_ms',0,9,28,17
+	.word	.L141
 	.byte	5,3
 	.word	g_last_outer_loop_ms
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('g_last_outer_loop_ms')
 	.sect	'.debug_abbrev'
-.L110:
+.L125:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_info',debug,cluster('g_last_telemetry_ms')
 	.sect	'.debug_info'
-.L111:
+.L126:
 	.word	251
 	.half	3
-	.word	.L112
+	.word	.L127
 	.byte	4,1
 	.byte	'../cooperative_app_ads.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1,2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'g_last_telemetry_ms',0,9,22,17
-	.word	.L122
+	.byte	'g_last_telemetry_ms',0,9,29,17
+	.word	.L141
 	.byte	5,3
 	.word	g_last_telemetry_ms
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('g_last_telemetry_ms')
 	.sect	'.debug_abbrev'
-.L112:
+.L127:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_info',debug,cluster('g_last_health_ms')
 	.sect	'.debug_info'
-.L113:
+.L128:
 	.word	248
 	.half	3
-	.word	.L114
+	.word	.L129
 	.byte	4,1
 	.byte	'../cooperative_app_ads.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1,2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'g_last_health_ms',0,9,23,17
-	.word	.L122
+	.byte	'g_last_health_ms',0,9,30,17
+	.word	.L141
 	.byte	5,3
 	.word	g_last_health_ms
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('g_last_health_ms')
 	.sect	'.debug_abbrev'
-.L114:
+.L129:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
-	.sdecl	'.debug_info',debug,cluster('g_initialized')
+	.sdecl	'.debug_info',debug,cluster('g_last_rx_byte_ms')
 	.sect	'.debug_info'
-.L115:
-	.word	245
+.L130:
+	.word	249
 	.half	3
-	.word	.L116
+	.word	.L131
 	.byte	4,1
 	.byte	'../cooperative_app_ads.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1,2
-	.word	.L52
+	.word	.L65
 	.byte	3
-	.byte	'g_initialized',0,9,24,13
-	.word	.L117
+	.byte	'g_last_rx_byte_ms',0,9,31,17
+	.word	.L141
+	.byte	5,3
+	.word	g_last_rx_byte_ms
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('g_last_rx_byte_ms')
+	.sect	'.debug_abbrev'
+.L131:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_info',debug,cluster('g_rx_byte_seen')
+	.sect	'.debug_info'
+.L132:
+	.word	246
+	.half	3
+	.word	.L133
+	.byte	4,1
+	.byte	'../cooperative_app_ads.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L65
+	.byte	3
+	.byte	'g_rx_byte_seen',0,9,32,13
+	.word	.L136
+	.byte	5,3
+	.word	g_rx_byte_seen
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('g_rx_byte_seen')
+	.sect	'.debug_abbrev'
+.L133:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_info',debug,cluster('g_initialized')
+	.sect	'.debug_info'
+.L134:
+	.word	245
+	.half	3
+	.word	.L135
+	.byte	4,1
+	.byte	'../cooperative_app_ads.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L65
+	.byte	3
+	.byte	'g_initialized',0,9,33,13
+	.word	.L136
 	.byte	5,3
 	.word	g_initialized
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('g_initialized')
 	.sect	'.debug_abbrev'
-.L116:
+.L135:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
 	.sdecl	'.debug_loc',debug,cluster('Firmware_CooperativeFocAdcIsr')
 	.sect	'.debug_loc'
-.L50:
-	.word	-1,.L51,0,.L128-.L51
+.L63:
+	.word	-1,.L64,0,.L147-.L64
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('Firmware_CooperativeInit')
 	.sect	'.debug_loc'
-.L46:
-	.word	-1,.L47,0,.L174-.L47
+.L59:
+	.word	-1,.L60,0,.L195-.L60
 	.half	2
 	.byte	138,0
-	.word	.L174-.L47,.L118-.L47
+	.word	.L195-.L60,.L137-.L60
 	.half	3
 	.byte	138,240,0
-	.word	.L118-.L47,.L118-.L47
+	.word	.L137-.L60,.L137-.L60
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L123:
-	.word	-1,.L47,.L177-.L47,.L178-.L47
+.L142:
+	.word	-1,.L60,.L198-.L60,.L199-.L60
 	.half	1
 	.byte	82
-	.word	.L179-.L47,.L20-.L47
+	.word	.L200-.L60,.L33-.L60
 	.half	1
 	.byte	89
-	.word	.L178-.L47,.L180-.L47
+	.word	.L199-.L60,.L201-.L60
 	.half	1
 	.byte	84
-	.word	.L181-.L47,.L182-.L47
+	.word	.L202-.L60,.L203-.L60
 	.half	1
 	.byte	84
 	.word	0,0
-.L120:
-	.word	-1,.L47,0,.L118-.L47
+.L139:
+	.word	-1,.L60,0,.L137-.L60
 	.half	3
 	.byte	145,144,127
 	.word	0,0
-.L121:
-	.word	-1,.L47,.L175-.L47,.L176-.L47
+.L140:
+	.word	-1,.L60,.L196-.L60,.L197-.L60
 	.half	1
 	.byte	88
-	.word	.L176-.L47,.L23-.L47
+	.word	.L197-.L60,.L36-.L60
 	.half	1
 	.byte	82
-	.word	.L23-.L47,.L118-.L47
+	.word	.L36-.L60,.L137-.L60
 	.half	1
 	.byte	88
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('Firmware_CooperativePoll')
 	.sect	'.debug_loc'
-.L48:
-	.word	-1,.L49,0,.L124-.L49
+.L61:
+	.word	-1,.L62,0,.L143-.L62
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L125:
-	.word	-1,.L49,.L183-.L49,.L184-.L49
+.L144:
+	.word	-1,.L62,.L204-.L62,.L205-.L62
 	.half	1
 	.byte	82
-	.word	.L185-.L49,.L28-.L49
+	.word	.L206-.L62,.L41-.L62
 	.half	1
 	.byte	95
-	.word	.L184-.L49,.L30-.L49
+	.word	.L205-.L62,.L209-.L62
 	.half	1
 	.byte	84
 	.word	0,0
-.L126:
-	.word	-1,.L49,.L186-.L49,.L187-.L49
+.L145:
+	.word	-1,.L62,.L207-.L62,.L208-.L62
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L127:
-	.word	-1,.L49,.L188-.L49,.L31-.L49
+.L146:
+	.word	-1,.L62,.L210-.L62,.L44-.L62
 	.half	1
 	.byte	82
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('PeriodFromRate')
 	.sect	'.debug_loc'
-.L36:
-	.word	-1,.L37,0,.L135-.L37
+.L49:
+	.word	-1,.L50,0,.L154-.L50
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L137:
-	.word	-1,.L37,.L158-.L37,.L135-.L37
+.L156:
+	.word	-1,.L50,.L177-.L50,.L154-.L50
 	.half	1
 	.byte	82
 	.word	0,0
-.L136:
-	.word	-1,.L37,0,.L135-.L37
+.L155:
+	.word	-1,.L50,0,.L154-.L50
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('ProtocolTransmit')
 	.sect	'.debug_loc'
-.L34:
-	.word	-1,.L35,0,.L129-.L35
+.L47:
+	.word	-1,.L48,0,.L148-.L48
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L131:
-	.word	-1,.L35,0,.L157-.L35
+.L150:
+	.word	-1,.L48,0,.L176-.L48
 	.half	1
 	.byte	100
 	.word	0,0
-.L134:
-	.word	-1,.L35,0,.L157-.L35
+.L153:
+	.word	-1,.L48,0,.L176-.L48
 	.half	1
 	.byte	85
 	.word	0,0
-.L133:
-	.word	-1,.L35,0,.L157-.L35
+.L152:
+	.word	-1,.L48,0,.L176-.L48
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('ServiceCalibration')
 	.sect	'.debug_loc'
-.L44:
-	.word	-1,.L45,0,.L152-.L45
+.L57:
+	.word	-1,.L58,0,.L170-.L58
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L153:
-	.word	-1,.L45,.L172-.L45,.L18-.L45
+.L171:
+	.word	-1,.L58,.L193-.L58,.L31-.L58
 	.half	1
 	.byte	82
-	.word	.L173-.L45,.L18-.L45
+	.word	.L194-.L58,.L31-.L58
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('ServiceCommands')
 	.sect	'.debug_loc'
-.L40:
-	.word	-1,.L41,0,.L161-.L41
+.L53:
+	.word	-1,.L54,0,.L180-.L54
 	.half	2
 	.byte	138,0
-	.word	.L161-.L41,.L140-.L41
+	.word	.L180-.L54,.L159-.L54
 	.half	3
-	.byte	138,136,17
-	.word	.L140-.L41,.L140-.L41
+	.byte	138,128,1
+	.word	.L159-.L54,.L159-.L54
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L142:
-	.word	-1,.L41,0,.L140-.L41
+.L161:
+	.word	-1,.L54,0,.L159-.L54
 	.half	3
-	.byte	145,248,110
+	.byte	145,128,127
 	.word	0,0
-.L148:
-	.word	-1,.L41,.L162-.L41,.L140-.L41
-	.half	1
-	.byte	88
-	.word	0,0
-.L145:
-	.word	-1,.L41,.L163-.L41,.L14-.L41
-	.half	1
-	.byte	82
-	.word	.L164-.L41,.L9-.L41
-	.half	1
-	.byte	95
-	.word	0,0
-.L144:
-	.word	-1,.L41,0,.L140-.L41
-	.half	3
-	.byte	145,248,111
-	.word	0,0
-.L146:
-	.word	-1,.L41,.L165-.L41,.L9-.L41
+.L165:
+	.word	-1,.L54,.L182-.L54,.L159-.L54
 	.half	1
 	.byte	89
 	.word	0,0
+.L162:
+	.word	-1,.L54,.L183-.L54,.L184-.L54
+	.half	1
+	.byte	82
+	.word	.L185-.L54,.L17-.L54
+	.half	1
+	.byte	95
+	.word	0,0
+.L163:
+	.word	-1,.L54,.L186-.L54,.L17-.L54
+	.half	1
+	.byte	90
+	.word	0,0
+.L166:
+	.word	-1,.L54,.L181-.L54,.L159-.L54
+	.half	1
+	.byte	88
+	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('ServiceMotor')
 	.sect	'.debug_loc'
-.L42:
-	.word	-1,.L43,0,.L149-.L43
+.L55:
+	.word	-1,.L56,0,.L167-.L56
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L151:
-	.word	-1,.L43,.L167-.L43,.L168-.L43
+.L169:
+	.word	-1,.L56,.L188-.L56,.L189-.L56
 	.half	1
 	.byte	82
-	.word	.L169-.L43,.L170-.L43
+	.word	.L190-.L56,.L191-.L56
 	.half	1
 	.byte	82
-	.word	.L170-.L43,.L171-.L43
+	.word	.L191-.L56,.L192-.L56
 	.half	1
 	.byte	84
 	.word	0,0
-.L150:
-	.word	-1,.L43,0,.L166-.L43
+.L168:
+	.word	-1,.L56,0,.L187-.L56
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('UpdateProtocolErrorCount')
 	.sect	'.debug_loc'
-.L38:
-	.word	-1,.L39,0,.L138-.L39
+.L51:
+	.word	-1,.L52,0,.L157-.L52
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L139:
-	.word	-1,.L39,.L159-.L39,.L160-.L39
+.L158:
+	.word	-1,.L52,.L178-.L52,.L179-.L52
 	.half	1
 	.byte	95
-	.word	.L7-.L39,.L8-.L39
+	.word	.L7-.L52,.L8-.L52
 	.half	1
 	.byte	95
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L324:
+.L409:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
@@ -2408,49 +2902,49 @@ g_initialized:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('ProtocolTransmit')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L324,.L35,.L129-.L35
+	.word	.L409,.L48,.L148-.L48
 	.sdecl	'.debug_frame',debug,cluster('PeriodFromRate')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L324,.L37,.L135-.L37
+	.word	.L409,.L50,.L154-.L50
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('UpdateProtocolErrorCount')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L324,.L39,.L138-.L39
+	.word	.L409,.L52,.L157-.L52
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('ServiceCommands')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L324,.L41,.L140-.L41
+	.word	.L409,.L54,.L159-.L54
 	.byte	4
-	.word	(.L161-.L41)/2
-	.byte	19,136,17,22,26,4,19,138,136,17,4
-	.word	(.L140-.L161)/2
+	.word	(.L180-.L54)/2
+	.byte	19,128,1,22,26,4,19,138,128,1,4
+	.word	(.L159-.L180)/2
 	.byte	19,0,8,26
 	.sdecl	'.debug_frame',debug,cluster('ServiceMotor')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L324,.L43,.L149-.L43
+	.word	.L409,.L56,.L167-.L56
 	.sdecl	'.debug_frame',debug,cluster('ServiceCalibration')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L324,.L45,.L152-.L45
+	.word	.L409,.L58,.L170-.L58
 	.sdecl	'.debug_frame',debug,cluster('Firmware_CooperativeInit')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L324,.L47,.L118-.L47
+	.word	.L409,.L60,.L137-.L60
 	.byte	4
-	.word	(.L174-.L47)/2
+	.word	(.L195-.L60)/2
 	.byte	19,240,0,22,26,4,19,138,240,0,4
-	.word	(.L118-.L174)/2
+	.word	(.L137-.L195)/2
 	.byte	19,0,8,26
 	.sdecl	'.debug_frame',debug,cluster('Firmware_CooperativePoll')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L324,.L49,.L124-.L49
+	.word	.L409,.L62,.L143-.L62
 	.sdecl	'.debug_frame',debug,cluster('Firmware_CooperativeFocAdcIsr')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L324,.L51,.L128-.L51
+	.word	.L409,.L64,.L147-.L64
 	; Module end

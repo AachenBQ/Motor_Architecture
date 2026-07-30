@@ -36,8 +36,8 @@ int main()
 
     open_loop.backend = MOTOR_OPEN_LOOP_SIMPLEFOC;
     open_loop.pole_pairs = 7U;
-    open_loop.bus_voltage_v = 24.0F;
-    open_loop.voltage_limit_v = 2.0F;
+    open_loop.bus_voltage_v = 7.0F;
+    open_loop.voltage_limit_v = 0.3F;
     open_loop.target_velocity_rad_s = 5.0F;
     open_loop.acceleration_rad_s2 = 10.0F;
     open_loop.update_period_ms = 10U;
@@ -47,6 +47,18 @@ int main()
     assert(!Tc375HalStub_GateEnabled());
     assert(Tc375HalStub_PwmEnabled());
     SimpleFocTc375_OpenLoopStep(5.0F);
+    Tc375HalStub_GetPhaseDuty(&duty_a, &duty_b, &duty_c);
+    assert((duty_a != duty_b) || (duty_b != duty_c));
+    assert((duty_a > 0.0F) || (duty_b > 0.0F) || (duty_c > 0.0F));
+    SimpleFocTc375_OpenLoopStop();
+    assert(!Tc375HalStub_GateEnabled());
+    assert(!Tc375HalStub_PwmEnabled());
+
+    /* Restart must reuse the initialized core without losing PWM output. */
+    assert(SimpleFocTc375_OpenLoopStart(&open_loop));
+    assert(!Tc375HalStub_GateEnabled());
+    assert(Tc375HalStub_PwmEnabled());
+    SimpleFocTc375_OpenLoopStep(-5.0F);
     Tc375HalStub_GetPhaseDuty(&duty_a, &duty_b, &duty_c);
     assert((duty_a != duty_b) || (duty_b != duty_c));
     SimpleFocTc375_OpenLoopStop();

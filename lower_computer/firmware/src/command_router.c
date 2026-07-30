@@ -61,6 +61,8 @@ static ProtocolStatus FromMotorResult(MotorResult result)
             return PROTOCOL_HARDWARE_FAULT;
         case MOTOR_RESULT_CAPABILITY_UNAVAILABLE:
             return PROTOCOL_CAPABILITY_UNAVAILABLE;
+        case MOTOR_RESULT_SAFETY_INTERLOCK:
+            return PROTOCOL_SAFETY_INTERLOCK;
         default:
             return PROTOCOL_INVALID_STATE;
     }
@@ -107,6 +109,215 @@ static bool IsSingleMotorPayload(const NativeFrame *request, uint16_t minimum)
            (request->payload[0] == MOTOR_DEVICE_ID);
 }
 
+static void ResetOpenLoopStaging(CommandRouter *router)
+{
+    router->open_loop_staging_active = false;
+    router->open_loop_staging_mask = 0U;
+    router->open_loop_staging_updated_ms = 0U;
+}
+
+static void InvalidateOpenLoopTransferState(CommandRouter *router)
+{
+    ResetOpenLoopStaging(router);
+    router->open_loop_committed_valid = false;
+    router->open_loop_committed_at_ms = 0U;
+}
+
+static void ExpireOpenLoopStaging(
+    CommandRouter *router,
+    uint32_t now_ms)
+{
+    if (router->open_loop_staging_active &&
+        ((uint32_t)(
+             now_ms - router->open_loop_staging_updated_ms) >=
+         COMMAND_ROUTER_OPEN_LOOP_STAGING_TIMEOUT_MS))
+    {
+        ResetOpenLoopStaging(router);
+    }
+}
+
+static ProtocolStatus ApplyOpenLoopConfigPayload(
+    CommandRouter *router,
+    const uint8_t *payload)
+{
+    MotorOpenLoopConfig config;
+
+    if (payload[0] != MOTOR_DEVICE_ID)
+    {
+        return PROTOCOL_INVALID_PAYLOAD;
+    }
+    memset(&config, 0, sizeof(config));
+    config.backend = payload[1];
+    config.pole_pairs = payload[2];
+    config.flags = payload[3];
+    config.bus_voltage_v = ReadF32(&payload[4]);
+    config.voltage_limit_v = ReadF32(&payload[8]);
+    config.target_velocity_rad_s = ReadF32(&payload[12]);
+    config.acceleration_rad_s2 = ReadF32(&payload[16]);
+    config.update_period_ms = ReadU16(&payload[20]);
+    config.startup_delay_ms = ReadU16(&payload[22]);
+    config.max_runtime_ms = ReadU32(&payload[24]);
+    return FromMotorResult(
+        MotorControl_SetOpenLoopConfig(
+            router->motor,
+            &config));
+}
+
+static uint8_t GetHardwareDiagnosticFlags(void)
+{
+    uint8_t flags = 0U;
+
+    if (Tc375Hal_IsPwmEnabled())
+    {
+        flags |= NATIVE_DIAGNOSTIC_HW_PWM_ENABLED;
+    }
+    if (Tc375Hal_IsGateEnabled())
+    {
+        flags |= NATIVE_DIAGNOSTIC_HW_GATE_ENABLED;
+    }
+    if (Tc375Hal_ReadActiveFaults() == 0U)
+    {
+        flags |= NATIVE_DIAGNOSTIC_HW_NFAULT_CLEAR;
+    }
+    if ((MOTOR_POWER_STAGE_SAFETY_READY_MASK &
+         MOTOR_POWER_STAGE_REQUIRED_SAFETY_MASK) ==
+        MOTOR_POWER_STAGE_REQUIRED_SAFETY_MASK)
+    {
+        flags |= NATIVE_DIAGNOSTIC_HW_SAFETY_READY;
+    }
+#if MOTOR_POWER_STAGE_ENABLED
+    flags |= NATIVE_DIAGNOSTIC_HW_POWER_STAGE_BUILD;
+#endif
+#if MOTOR_POWER_STAGE_COMMISSIONING_OVERRIDE
+    flags |= NATIVE_DIAGNOSTIC_HW_OVERRIDE_ACTIVE;
+#endif
+    return flags;
+}
+
+static ProtocolStatus PowerStageRuntimePreflight(CommandRouter *router)
+{
+#if MOTOR_POWER_STAGE_ENABLED
+    MotorControl *motor = router->motor;
+    uint32_t active_faults;
+
+    /*
+     * A start command is accepted only from an electrically quiet state.
+     * This also detects a stale software state left behind by a previous
+     * aborted run before any new gate transition is attempted.
+     */
+    if (Tc375Hal_IsPwmEnabled() || Tc375Hal_IsGateEnabled())
+    {
+        Tc375Hal_SetPwmEnabled(false);
+        (void)Tc375Hal_SetGateEnabled(false);
+        return PROTOCOL_SAFETY_INTERLOCK;
+    }
+
+    active_faults = Tc375Hal_ReadActiveFaults();
+    if (active_faults != 0U)
+    {
+        MotorControl_TripFault(motor, active_faults);
+        return PROTOCOL_HARDWARE_FAULT;
+    }
+
+#if MOTOR_PHASE_CURRENT_SENSE_READY
+    {
+        Tc375PhaseCurrents currents =
+            Tc375Hal_ReadPhaseCurrents();
+        float peak_current;
+
+        if (!currents.sample_valid ||
+            !isfinite(currents.phase_a) ||
+            !isfinite(currents.phase_b) ||
+            !isfinite(currents.phase_c))
+        {
+            MotorControl_TripFault(
+                motor,
+                MOTOR_FAULT_CURRENT_SENSOR);
+            return PROTOCOL_HARDWARE_FAULT;
+        }
+        peak_current = fabsf(currents.phase_a);
+        if (fabsf(currents.phase_b) > peak_current)
+        {
+            peak_current = fabsf(currents.phase_b);
+        }
+        if (fabsf(currents.phase_c) > peak_current)
+        {
+            peak_current = fabsf(currents.phase_c);
+        }
+        if (peak_current > motor->limits.current_a)
+        {
+            MotorControl_TripFault(
+                motor,
+                MOTOR_FAULT_OVERCURRENT);
+            return PROTOCOL_HARDWARE_FAULT;
+        }
+    }
+#endif
+
+#if MOTOR_BUS_VOLTAGE_SENSE_READY
+    {
+        float bus_voltage = Tc375Hal_ReadBusVoltage();
+
+        if (!isfinite(bus_voltage) || (bus_voltage <= 0.0F))
+        {
+            MotorControl_TripFault(
+                motor,
+                MOTOR_FAULT_BUS_VOLTAGE_SENSOR);
+            return PROTOCOL_HARDWARE_FAULT;
+        }
+        if (bus_voltage < motor->limits.bus_min_v)
+        {
+            MotorControl_TripFault(
+                motor,
+                MOTOR_FAULT_UNDERVOLTAGE);
+            return PROTOCOL_HARDWARE_FAULT;
+        }
+        if (bus_voltage > motor->limits.bus_max_v)
+        {
+            MotorControl_TripFault(
+                motor,
+                MOTOR_FAULT_OVERVOLTAGE);
+            return PROTOCOL_HARDWARE_FAULT;
+        }
+        if (fabsf(
+                bus_voltage -
+                motor->open_loop.bus_voltage_v) >
+            MOTOR_POWER_STAGE_BUS_TOLERANCE_V)
+        {
+            return PROTOCOL_SAFETY_INTERLOCK;
+        }
+    }
+#endif
+
+#if MOTOR_POWER_TEMPERATURE_SENSE_READY
+    {
+        float temperature =
+            Tc375Hal_ReadPowerTemperature();
+
+        if (!isfinite(temperature))
+        {
+            MotorControl_TripFault(
+                motor,
+                MOTOR_FAULT_TEMPERATURE_SENSOR);
+            return PROTOCOL_HARDWARE_FAULT;
+        }
+        if (temperature > motor->limits.temperature_max_c)
+        {
+            MotorControl_TripFault(
+                motor,
+                MOTOR_FAULT_OVERTEMPERATURE);
+            return PROTOCOL_HARDWARE_FAULT;
+        }
+    }
+#endif
+
+    return PROTOCOL_OK;
+#else
+    (void)router;
+    return PROTOCOL_OK;
+#endif
+}
+
 void CommandRouter_Init(
     CommandRouter *router,
     MotorControl *motor,
@@ -121,12 +332,18 @@ void CommandRouter_Init(
 
 void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
 {
-    uint8_t detail[40];
+    uint8_t detail[46];
     uint16_t detail_length = 0U;
+    uint32_t now_ms;
+    uint64_t now_ms64;
+    uint32_t heartbeat_age_ms;
+    uint8_t runtime_flags;
     ProtocolStatus status = PROTOCOL_OK;
     MotorResult motor_result;
     MotorPid pid;
+    uint16_t config_crc;
     uint8_t loop;
+    uint8_t start_flags;
     bool broadcast_disable;
 
     router->commands_received++;
@@ -180,7 +397,8 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
             detail[2] = 0x0FU;
             WriteU32(&detail[3], (1UL << 0) | (1UL << 2) |
                                     (1UL << 3) | (1UL << 4) |
-                                    (1UL << 5));
+                                    (1UL << 5) | (1UL << 6) |
+                                    NATIVE_FEATURE_POWER_STAGE_CONFIRMED_START);
             WriteU16(&detail[7], 1000U);
             detail_length = 9U;
             break;
@@ -221,6 +439,11 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
                 router->motor,
                 request->payload[1] != 0U);
             status = FromMotorResult(motor_result);
+            if ((status == PROTOCOL_OK) &&
+                (request->payload[1] != 0U))
+            {
+                ResetOpenLoopStaging(router);
+            }
             break;
 
         case CMD_SET_MODE:
@@ -325,7 +548,12 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
                 status = PROTOCOL_INVALID_PAYLOAD;
                 break;
             }
-            MotorControl_Stop(router->motor, false);
+            MotorControl_StopWithReason(
+                router->motor,
+                false,
+                MOTOR_STOP_REASON_QUICK_STOP_COMMAND);
+            Tc375Hal_SetPwmEnabled(false);
+            (void)Tc375Hal_SetGateEnabled(false);
             break;
 
         case CMD_EMERGENCY_STOP:
@@ -336,16 +564,117 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
                 status = PROTOCOL_INVALID_PAYLOAD;
                 break;
             }
-            MotorControl_Stop(router->motor, true);
-            Tc375Hal_SetGateEnabled(false);
+            MotorControl_StopWithReason(
+                router->motor,
+                true,
+                MOTOR_STOP_REASON_EMERGENCY_COMMAND);
             Tc375Hal_SetPwmEnabled(false);
+            (void)Tc375Hal_SetGateEnabled(false);
             break;
 
         case CMD_GET_DIAGNOSTICS:
-            WriteU32(detail, Tc375Hal_TimeMs());
+            if (request->payload_length > 1U)
+            {
+                status = PROTOCOL_INVALID_PAYLOAD;
+                break;
+            }
+            now_ms = Tc375Hal_TimeMs();
+            heartbeat_age_ms =
+                now_ms - router->motor->last_heartbeat_ms;
+            if (heartbeat_age_ms > 0xFFFFU)
+            {
+                heartbeat_age_ms = 0xFFFFU;
+            }
+            runtime_flags = 0U;
+            if (router->motor->heartbeat_valid)
+            {
+                runtime_flags |= 1U << 0;
+            }
+            if (router->motor->enabled)
+            {
+                runtime_flags |= 1U << 1;
+            }
+            if (router->motor->open_loop_active)
+            {
+                runtime_flags |= 1U << 2;
+            }
+            if (router->motor->open_loop_output_ready)
+            {
+                runtime_flags |= 1U << 3;
+            }
+            WriteU32(detail, now_ms);
             WriteU16(&detail[4], router->protocol_errors);
             WriteU16(&detail[6], (uint16_t)router->motor->faults);
-            detail_length = 8U;
+            WriteU32(&detail[8], router->commands_received);
+            WriteU16(&detail[12], (uint16_t)heartbeat_age_ms);
+            WriteU16(
+                &detail[14],
+                router->motor->heartbeat_lease_ms);
+            detail[16] = (uint8_t)router->motor->state;
+            detail[17] =
+                (uint8_t)router->motor->last_stop_reason;
+            detail[18] = runtime_flags;
+            detail[19] = GetHardwareDiagnosticFlags();
+            WriteU16(
+                &detail[20],
+                Tc375Hal_UartHighPriorityFailures());
+            WriteU16(
+                &detail[22],
+                Tc375Hal_UartTelemetryDrops());
+            detail_length = 24U;
+            if ((request->payload_length == 1U) &&
+                ((request->payload[0] & 0x07U) != 0U))
+            {
+                WriteU16(
+                    &detail[24],
+                    Tc375Hal_UartRxSwFifoOverflows());
+                WriteU16(
+                    &detail[26],
+                    Tc375Hal_UartRxHwFifoOverflows());
+                WriteU16(
+                    &detail[28],
+                    Tc375Hal_UartRxFrameErrors());
+                WriteU16(
+                    &detail[30],
+                    Tc375Hal_UartRxParityErrors());
+                detail_length = 32U;
+            }
+            if ((request->payload_length == 1U) &&
+                ((request->payload[0] & 0x06U) != 0U))
+            {
+                /*
+                 * Parser counters follow the UART error counters so the
+                 * 40-byte response has a stable layout. Legacy hosts request
+                 * both sections with 0x03.
+                 */
+                WriteU16(
+                    &detail[32],
+                    router->parser_crc_errors);
+                WriteU16(
+                    &detail[34],
+                    router->parser_length_errors);
+                WriteU16(
+                    &detail[36],
+                    router->parser_timeout_errors);
+                WriteU16(
+                    &detail[38],
+                    router->parser_resync_events);
+                detail_length = 40U;
+            }
+            if ((request->payload_length == 1U) &&
+                ((request->payload[0] & 0x04U) != 0U))
+            {
+                WriteU16(
+                    &detail[40],
+                    Tc375Hal_UartRxIsrEntries());
+                WriteU16(
+                    &detail[42],
+                    Tc375Hal_UartRxPollDrains());
+                WriteU16(
+                    &detail[44],
+                    Tc375Hal_UartRxPollBytes());
+                detail_length = 46U;
+            }
             break;
 
         case CMD_SET_TELEMETRY_PROFILE:
@@ -383,35 +712,144 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
             break;
 
         case CMD_SET_OPEN_LOOP_CONFIG:
-            if (!IsSingleMotorPayload(request, 28U) ||
-                (request->payload_length != 28U))
+            if (!IsSingleMotorPayload(
+                    request,
+                    COMMAND_ROUTER_OPEN_LOOP_CONFIG_SIZE) ||
+                (request->payload_length !=
+                 COMMAND_ROUTER_OPEN_LOOP_CONFIG_SIZE))
             {
                 status = PROTOCOL_INVALID_PAYLOAD;
                 break;
             }
+            status = ApplyOpenLoopConfigPayload(
+                router,
+                request->payload);
+            if (status == PROTOCOL_OK)
             {
-                MotorOpenLoopConfig config;
-                memset(&config, 0, sizeof(config));
-                config.backend = request->payload[1];
-                config.pole_pairs = request->payload[2];
-                config.flags = request->payload[3];
-                config.bus_voltage_v = ReadF32(&request->payload[4]);
-                config.voltage_limit_v =
-                    ReadF32(&request->payload[8]);
-                config.target_velocity_rad_s =
-                    ReadF32(&request->payload[12]);
-                config.acceleration_rad_s2 =
-                    ReadF32(&request->payload[16]);
-                config.update_period_ms =
-                    ReadU16(&request->payload[20]);
-                config.startup_delay_ms =
-                    ReadU16(&request->payload[22]);
-                config.max_runtime_ms =
-                    ReadU32(&request->payload[24]);
-                status = FromMotorResult(
-                    MotorControl_SetOpenLoopConfig(
-                        router->motor,
-                        &config));
+                InvalidateOpenLoopTransferState(router);
+            }
+            break;
+
+        case CMD_SET_OPEN_LOOP_CONFIG_PART:
+            if (!IsSingleMotorPayload(request, 5U) ||
+                (request->payload_length != 5U) ||
+                (request->payload[2] >=
+                 COMMAND_ROUTER_OPEN_LOOP_FRAGMENT_COUNT))
+            {
+                status = PROTOCOL_INVALID_PAYLOAD;
+                break;
+            }
+            if (router->motor->enabled ||
+                router->motor->open_loop_active)
+            {
+                status = PROTOCOL_INVALID_STATE;
+                break;
+            }
+            now_ms = Tc375Hal_TimeMs();
+            ExpireOpenLoopStaging(router, now_ms);
+            if (!router->open_loop_staging_active ||
+                (router->open_loop_staging_generation !=
+                 request->payload[1]))
+            {
+                memset(
+                    router->open_loop_staging,
+                    0,
+                    sizeof(router->open_loop_staging));
+                router->open_loop_staging_mask = 0U;
+                router->open_loop_staging_generation =
+                    request->payload[1];
+                router->open_loop_staging_active = true;
+            }
+            memcpy(
+                &router->open_loop_staging[
+                    (uint16_t)request->payload[2] *
+                    COMMAND_ROUTER_OPEN_LOOP_FRAGMENT_SIZE],
+                &request->payload[3],
+                COMMAND_ROUTER_OPEN_LOOP_FRAGMENT_SIZE);
+            router->open_loop_staging_mask |=
+                (uint16_t)(1U << request->payload[2]);
+            router->open_loop_staging_updated_ms = now_ms;
+            detail[0] = request->payload[1];
+            detail[1] = request->payload[2];
+            detail_length = 2U;
+            break;
+
+        case CMD_COMMIT_OPEN_LOOP_CONFIG:
+            if (!IsSingleMotorPayload(request, 4U) ||
+                (request->payload_length != 4U))
+            {
+                status = PROTOCOL_INVALID_PAYLOAD;
+                break;
+            }
+            config_crc = ReadU16(&request->payload[2]);
+            now_ms = Tc375Hal_TimeMs();
+            now_ms64 = Tc375Hal_TimeMs64();
+            ExpireOpenLoopStaging(router, now_ms);
+            if (router->open_loop_committed_valid &&
+                ((now_ms64 -
+                  router->open_loop_committed_at_ms) >=
+                 COMMAND_ROUTER_OPEN_LOOP_STAGING_TIMEOUT_MS))
+            {
+                router->open_loop_committed_valid = false;
+                router->open_loop_committed_at_ms = 0ULL;
+            }
+            /*
+             * A successful commit is idempotent. If its ACK was lost, the
+             * host can safely retry the same generation/CRC even though the
+             * staging buffer has already been retired.
+             */
+            if (!router->open_loop_staging_active &&
+                router->open_loop_committed_valid &&
+                (router->open_loop_committed_generation ==
+                 request->payload[1]) &&
+                (router->open_loop_committed_crc == config_crc))
+            {
+                detail[0] = request->payload[1];
+                detail_length = 1U;
+                break;
+            }
+            if (router->motor->enabled ||
+                router->motor->open_loop_active)
+            {
+                status = PROTOCOL_INVALID_STATE;
+                break;
+            }
+            if (!router->open_loop_staging_active ||
+                (router->open_loop_staging_generation !=
+                 request->payload[1]) ||
+                (router->open_loop_staging_mask !=
+                 COMMAND_ROUTER_OPEN_LOOP_FRAGMENT_FULL_MASK))
+            {
+                status = PROTOCOL_INVALID_STATE;
+                break;
+            }
+            if (router->open_loop_staging[0] !=
+                request->payload[0])
+            {
+                status = PROTOCOL_INVALID_PAYLOAD;
+                break;
+            }
+            if (NativeProtocol_Crc16(
+                    router->open_loop_staging,
+                    sizeof(router->open_loop_staging)) !=
+                config_crc)
+            {
+                status = PROTOCOL_INVALID_PAYLOAD;
+                break;
+            }
+            status = ApplyOpenLoopConfigPayload(
+                router,
+                router->open_loop_staging);
+            if (status == PROTOCOL_OK)
+            {
+                ResetOpenLoopStaging(router);
+                router->open_loop_committed_generation =
+                    request->payload[1];
+                router->open_loop_committed_crc = config_crc;
+                router->open_loop_committed_at_ms = now_ms64;
+                router->open_loop_committed_valid = true;
+                detail[0] = request->payload[1];
+                detail_length = 1U;
             }
             break;
 
@@ -452,9 +890,34 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
 
         case CMD_START_OPEN_LOOP:
             if (!IsSingleMotorPayload(request, 1U) ||
-                (request->payload_length != 1U))
+                ((request->payload_length != 1U) &&
+                 (request->payload_length != 2U)))
             {
                 status = PROTOCOL_INVALID_PAYLOAD;
+                break;
+            }
+            start_flags =
+                request->payload_length == 2U
+                    ? request->payload[1]
+                    : 0U;
+            if ((start_flags &
+                 (uint8_t)~NATIVE_START_FLAG_SUPPORTED_MASK) != 0U)
+            {
+                status = PROTOCOL_INVALID_PAYLOAD;
+                break;
+            }
+#if MOTOR_POWER_STAGE_ENABLED
+            if ((request->payload_length != 2U) ||
+                ((start_flags &
+                  NATIVE_START_FLAG_POWER_STAGE_CONFIRMED) == 0U))
+            {
+                status = PROTOCOL_SAFETY_INTERLOCK;
+                break;
+            }
+#endif
+            status = PowerStageRuntimePreflight(router);
+            if (status != PROTOCOL_OK)
+            {
                 break;
             }
 #if MOTOR_CONTROL_HARDWARE_ENABLED
@@ -478,6 +941,10 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
 #else
             status = PROTOCOL_CAPABILITY_UNAVAILABLE;
 #endif
+            if (status == PROTOCOL_OK)
+            {
+                ResetOpenLoopStaging(router);
+            }
             break;
 
         case CMD_GET_BUILD_CONFIG:
@@ -501,7 +968,10 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
             WriteU16(&detail[25], MOTOR_HEARTBEAT_MIN_MS);
             WriteU16(&detail[27], MOTOR_HEARTBEAT_MAX_MS);
             WriteF32(&detail[29], MOTOR_TORQUE_CONSTANT_NM_PER_A);
-            detail_length = 33U;
+            WriteU32(
+                &detail[33],
+                MOTOR_POWER_STAGE_REPORTED_SAFETY_MASK);
+            detail_length = 37U;
             break;
 
         case CMD_SET_LIMITS:
@@ -607,6 +1077,7 @@ void CommandRouter_Handle(CommandRouter *router, const NativeFrame *request)
                 MotorControl_RestoreDefaults(router->motor);
                 router->telemetry_rate_hz = MOTOR_TELEMETRY_HZ;
                 router->telemetry_mask = 0xFFFFFFFFUL;
+                InvalidateOpenLoopTransferState(router);
             }
             break;
 

@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc34388c -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 --no-warnings -o simplefoc_arduino_compat_ads.src cc34388a.ic"
+	.compiler_invocation	"ctc -f cc87128c -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 --no-warnings -o simplefoc_arduino_compat_ads.src cc87128a.ic"
 	.compiler_name		"ctc"
 	;source	'../simplefoc_arduino_compat_ads.cpp'
 
@@ -13,18 +13,18 @@ $TC162
 	
 	.global	_Z6microsv
 ; Function _Z6microsv
-.L44:
+.L42:
 _Z6microsv:	.type	func
 	call	Tc375Hal_TimeUs
-.L594:
+.L585:
 	j	.L2
 .L2:
 	ret
-.L329:
+.L327:
 	
 ___Z6microsv_function_end:
 	.size	_Z6microsv,___Z6microsv_function_end-_Z6microsv
-.L129:
+.L127:
 	; End of function
 	
 	.sdecl	'.text.Arduino._Z6millisv',code,cluster('_Z6millisv')
@@ -33,18 +33,18 @@ ___Z6microsv_function_end:
 	
 	.global	_Z6millisv
 ; Function _Z6millisv
-.L46:
+.L44:
 _Z6millisv:	.type	func
 	call	Tc375Hal_TimeMs
-.L599:
+.L590:
 	j	.L3
 .L3:
 	ret
-.L330:
+.L328:
 	
 ___Z6millisv_function_end:
 	.size	_Z6millisv,___Z6millisv_function_end-_Z6millisv
-.L134:
+.L132:
 	; End of function
 	
 	.sdecl	'.text.Arduino._Z5delaym',code,cluster('_Z5delaym')
@@ -53,33 +53,14 @@ ___Z6millisv_function_end:
 	
 	.global	_Z5delaym
 ; Function _Z5delaym
-.L48:
+.L46:
 _Z5delaym:	.type	func
-	mov	d15,d4
-.L485:
-	call	Tc375Hal_TimeUs
-.L484:
-	mov	d8,d2
-.L487:
-	mov	d0,#1000
-.L488:
-	mul	d15,d0
-.L486:
-	j	.L4
-.L5:
-.L4:
-	call	Tc375Hal_TimeUs
-.L604:
-	sub	d2,d8
-.L605:
-	jlt.u	d2,d15,.L5
-.L606:
 	ret
-.L331:
+.L329:
 	
 ___Z5delaym_function_end:
 	.size	_Z5delaym,___Z5delaym_function_end-_Z5delaym
-.L139:
+.L137:
 	; End of function
 	
 	.sdecl	'.text.Arduino._Z17delayMicrosecondsj',code,cluster('_Z17delayMicrosecondsj')
@@ -88,29 +69,29 @@ ___Z5delaym_function_end:
 	
 	.global	_Z17delayMicrosecondsj
 ; Function _Z17delayMicrosecondsj
-.L50:
+.L48:
 _Z17delayMicrosecondsj:	.type	func
 	mov	d15,d4
-.L490:
+.L481:
 	call	Tc375Hal_TimeUs
-.L489:
+.L480:
 	mov	d8,d2
-.L491:
-	j	.L6
-.L7:
-.L6:
+.L482:
+	j	.L4
+.L5:
+.L4:
 	call	Tc375Hal_TimeUs
-.L611:
+.L599:
 	sub	d2,d8
-.L612:
-	jlt.u	d2,d15,.L7
-.L613:
+.L600:
+	jlt.u	d2,d15,.L5
+.L601:
 	ret
-.L336:
+.L331:
 	
 ___Z17delayMicrosecondsj_function_end:
 	.size	_Z17delayMicrosecondsj,___Z17delayMicrosecondsj_function_end-_Z17delayMicrosecondsj
-.L144:
+.L142:
 	; End of function
 	
 	.sdecl	'.text.Arduino._Z7pinModeii',code,cluster('_Z7pinModeii')
@@ -119,14 +100,14 @@ ___Z17delayMicrosecondsj_function_end:
 	
 	.global	_Z7pinModeii
 ; Function _Z7pinModeii
-.L52:
+.L50:
 _Z7pinModeii:	.type	func
 	ret
-.L339:
+.L335:
 	
 ___Z7pinModeii_function_end:
 	.size	_Z7pinModeii,___Z7pinModeii_function_end-_Z7pinModeii
-.L149:
+.L147:
 	; End of function
 	
 	.sdecl	'.text.Arduino._Z12digitalWriteii',code,cluster('_Z12digitalWriteii')
@@ -135,14 +116,14 @@ ___Z7pinModeii_function_end:
 	
 	.global	_Z12digitalWriteii
 ; Function _Z12digitalWriteii
-.L54:
+.L52:
 _Z12digitalWriteii:	.type	func
 	ret
-.L343:
+.L339:
 	
 ___Z12digitalWriteii_function_end:
 	.size	_Z12digitalWriteii,___Z12digitalWriteii_function_end-_Z12digitalWriteii
-.L154:
+.L152:
 	; End of function
 	
 	.sdecl	'.text.Arduino._Z11digitalReadi',code,cluster('_Z11digitalReadi')
@@ -151,18 +132,18 @@ ___Z12digitalWriteii_function_end:
 	
 	.global	_Z11digitalReadi
 ; Function _Z11digitalReadi
-.L56:
+.L54:
 _Z11digitalReadi:	.type	func
 	mov	d2,#0
-.L626:
-	j	.L8
-.L8:
+.L614:
+	j	.L6
+.L6:
 	ret
-.L346:
+.L342:
 	
 ___Z11digitalReadi_function_end:
 	.size	_Z11digitalReadi,___Z11digitalReadi_function_end-_Z11digitalReadi
-.L159:
+.L157:
 	; End of function
 	
 	.sdecl	'.text.Arduino._Z10analogReadi',code,cluster('_Z10analogReadi')
@@ -171,18 +152,18 @@ ___Z11digitalReadi_function_end:
 	
 	.global	_Z10analogReadi
 ; Function _Z10analogReadi
-.L58:
+.L56:
 _Z10analogReadi:	.type	func
 	mov	d2,#0
-.L631:
-	j	.L9
-.L9:
+.L619:
+	j	.L7
+.L7:
 	ret
-.L348:
+.L344:
 	
 ___Z10analogReadi_function_end:
 	.size	_Z10analogReadi,___Z10analogReadi_function_end-_Z10analogReadi
-.L164:
+.L162:
 	; End of function
 	
 	.sdecl	'.text.Arduino._Z11analogWriteii',code,cluster('_Z11analogWriteii')
@@ -191,14 +172,14 @@ ___Z10analogReadi_function_end:
 	
 	.global	_Z11analogWriteii
 ; Function _Z11analogWriteii
-.L60:
+.L58:
 _Z11analogWriteii:	.type	func
 	ret
-.L350:
+.L346:
 	
 ___Z11analogWriteii_function_end:
 	.size	_Z11analogWriteii,___Z11analogWriteii_function_end-_Z11analogWriteii
-.L169:
+.L167:
 	; End of function
 	
 	.sdecl	'.text.simplefoc_math_overrides._Z4_sinf',code,cluster('_Z4_sinf')
@@ -207,18 +188,18 @@ ___Z11analogWriteii_function_end:
 	
 	.global	_Z4_sinf
 ; Function _Z4_sinf
-.L62:
+.L60:
 _Z4_sinf:	.type	func
 	call	sinf
-.L492:
-	j	.L10
-.L10:
+.L483:
+	j	.L8
+.L8:
 	ret
-.L354:
+.L350:
 	
 ___Z4_sinf_function_end:
 	.size	_Z4_sinf,___Z4_sinf_function_end-_Z4_sinf
-.L174:
+.L172:
 	; End of function
 	
 	.sdecl	'.text.simplefoc_math_overrides._Z4_cosf',code,cluster('_Z4_cosf')
@@ -227,18 +208,18 @@ ___Z4_sinf_function_end:
 	
 	.global	_Z4_cosf
 ; Function _Z4_cosf
-.L64:
+.L62:
 _Z4_cosf:	.type	func
 	call	cosf
-.L493:
-	j	.L11
-.L11:
+.L484:
+	j	.L9
+.L9:
 	ret
-.L356:
+.L352:
 	
 ___Z4_cosf_function_end:
 	.size	_Z4_cosf,___Z4_cosf_function_end-_Z4_cosf
-.L179:
+.L177:
 	; End of function
 	
 	.sdecl	'.text.simplefoc_math_overrides._Z7_sincosfPfS_',code,cluster('_Z7_sincosfPfS_')
@@ -247,31 +228,31 @@ ___Z4_cosf_function_end:
 	
 	.global	_Z7_sincosfPfS_
 ; Function _Z7_sincosfPfS_
-.L66:
+.L64:
 _Z7_sincosfPfS_:	.type	func
 	mov	d15,d4
-.L495:
+.L486:
 	mov.aa	a15,a4
-.L496:
+.L487:
 	mov.aa	a12,a5
-.L497:
+.L488:
 	mov	d4,d15
 	call	_Z4_sinf
-.L494:
+.L485:
 	st.w	[a15],d2
-.L648:
+.L636:
 	mov	d4,d15
-.L498:
+.L489:
 	call	_Z4_cosf
-.L499:
+.L490:
 	st.w	[a12],d2
-.L649:
+.L637:
 	ret
-.L358:
+.L354:
 	
 ___Z7_sincosfPfS__function_end:
 	.size	_Z7_sincosfPfS_,___Z7_sincosfPfS__function_end-_Z7_sincosfPfS_
-.L184:
+.L182:
 	; End of function
 	
 	.sdecl	'.text.simplefoc_math_overrides._Z6_atan2ff',code,cluster('_Z6_atan2ff')
@@ -280,18 +261,18 @@ ___Z7_sincosfPfS__function_end:
 	
 	.global	_Z6_atan2ff
 ; Function _Z6_atan2ff
-.L68:
+.L66:
 _Z6_atan2ff:	.type	func
 	call	atan2f
-.L500:
-	j	.L12
-.L12:
+.L491:
+	j	.L10
+.L10:
 	ret
-.L363:
+.L359:
 	
 ___Z6_atan2ff_function_end:
 	.size	_Z6_atan2ff,___Z6_atan2ff_function_end-_Z6_atan2ff
-.L189:
+.L187:
 	; End of function
 	
 	.sdecl	'.text.simplefoc_math_overrides._Z15_normalizeAnglef',code,cluster('_Z15_normalizeAnglef')
@@ -300,36 +281,36 @@ ___Z6_atan2ff_function_end:
 	
 	.global	_Z15_normalizeAnglef
 ; Function _Z15_normalizeAnglef
-.L70:
+.L68:
 _Z15_normalizeAnglef:	.type	func
 	mov	d5,#4059
 	addih	d5,d5,#16585
 	call	fmodf
-.L501:
+.L492:
 	mov	d15,#0
-.L658:
+.L646:
 	cmp.f	d15,d2,d15
 	and	d15,#6
 	ne	d15,d15,#0
-.L659:
-	jne	d15,#0,.L13
-.L660:
+.L647:
+	jne	d15,#0,.L11
+.L648:
 	mov	d15,#4059
 	addih	d15,d15,#16585
-.L661:
+.L649:
 	add.f	d2,d2,d15
-.L662:
-	j	.L14
+.L650:
+	j	.L12
+.L11:
+.L12:
+	j	.L13
 .L13:
-.L14:
-	j	.L15
-.L15:
 	ret
-.L366:
+.L362:
 	
 ___Z15_normalizeAnglef_function_end:
 	.size	_Z15_normalizeAnglef,___Z15_normalizeAnglef_function_end-_Z15_normalizeAnglef
-.L194:
+.L192:
 	; End of function
 	
 	.sdecl	'.text.simplefoc_math_overrides._Z16_electricalAnglefi',code,cluster('_Z16_electricalAnglefi')
@@ -338,20 +319,20 @@ ___Z15_normalizeAnglef_function_end:
 	
 	.global	_Z16_electricalAnglefi
 ; Function _Z16_electricalAnglefi
-.L72:
+.L70:
 _Z16_electricalAnglefi:	.type	func
 	itof	d15,d5
-.L667:
+.L655:
 	mul.f	d2,d4,d15
-.L668:
-	j	.L16
-.L16:
+.L656:
+	j	.L14
+.L14:
 	ret
-.L369:
+.L365:
 	
 ___Z16_electricalAnglefi_function_end:
 	.size	_Z16_electricalAnglefi,___Z16_electricalAnglefi_function_end-_Z16_electricalAnglefi
-.L199:
+.L197:
 	; End of function
 	
 	.sdecl	'.text.simplefoc_math_overrides._Z11_sqrtApproxf',code,cluster('_Z11_sqrtApproxf')
@@ -360,18 +341,18 @@ ___Z16_electricalAnglefi_function_end:
 	
 	.global	_Z11_sqrtApproxf
 ; Function _Z11_sqrtApproxf
-.L74:
+.L72:
 _Z11_sqrtApproxf:	.type	func
 	call	sqrtf
-.L502:
-	j	.L17
-.L17:
+.L493:
+	j	.L15
+.L15:
 	ret
-.L372:
+.L368:
 	
 ___Z11_sqrtApproxf_function_end:
 	.size	_Z11_sqrtApproxf,___Z11_sqrtApproxf_function_end-_Z11_sqrtApproxf
-.L204:
+.L202:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5PrintD1Ev',code,cluster('_ZN5PrintD1Ev')
@@ -380,47 +361,47 @@ ___Z11_sqrtApproxf_function_end:
 	
 	.global	_ZN5PrintD1Ev
 ; Function _ZN5PrintD1Ev
-.L76:
+.L74:
 _ZN5PrintD1Ev:	.type	func
 	sub.a	a10,#88
-.L503:
+.L494:
 	movh.a	a15,#@his(__curr_eh_stack_entry)
 	lea	a15,[a15]@los(__curr_eh_stack_entry)
 	ld.a	a15,[a15]
-.L677:
+.L665:
 	st.a	[a10],a15
-.L678:
+.L666:
 	movh.a	a15,#@his(__curr_eh_stack_entry)
 	lea	a15,[a15]@los(__curr_eh_stack_entry)
-.L679:
+.L667:
 	lea	a2,[a10]0
-.L680:
+.L668:
 	st.a	[a15],a2
-.L681:
+.L669:
 	mov	d15,#6
-.L682:
+.L670:
 	st.b	[a10]4,d15
-.L683:
+.L671:
 	movh.a	a15,#@his(_ZTV5Print)
 	lea	a15,[a15]@los(_ZTV5Print)
-.L684:
+.L672:
 	lea	a15,[a15]8
-.L685:
+.L673:
 	st.a	[a4],a15
-.L686:
+.L674:
 	movh.a	a15,#@his(__curr_eh_stack_entry)
 	lea	a15,[a15]@los(__curr_eh_stack_entry)
-.L687:
+.L675:
 	ld.a	a2,[a10]
-.L688:
+.L676:
 	st.a	[a15],a2
-.L689:
+.L677:
 	ret
-.L374:
+.L370:
 	
 ___ZN5PrintD1Ev_function_end:
 	.size	_ZN5PrintD1Ev,___ZN5PrintD1Ev_function_end-_ZN5PrintD1Ev
-.L209:
+.L207:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5PrintD0Ev',code,cluster('_ZN5PrintD0Ev')
@@ -429,49 +410,49 @@ ___ZN5PrintD1Ev_function_end:
 	
 	.global	_ZN5PrintD0Ev
 ; Function _ZN5PrintD0Ev
-.L78:
+.L76:
 _ZN5PrintD0Ev:	.type	func
 	sub.a	a10,#88
-.L505:
+.L496:
 	movh.a	a15,#@his(__curr_eh_stack_entry)
 	lea	a15,[a15]@los(__curr_eh_stack_entry)
 	ld.a	a15,[a15]
-.L694:
+.L682:
 	st.a	[a10],a15
-.L695:
+.L683:
 	movh.a	a15,#@his(__curr_eh_stack_entry)
 	lea	a15,[a15]@los(__curr_eh_stack_entry)
-.L696:
+.L684:
 	lea	a2,[a10]0
-.L697:
+.L685:
 	st.a	[a15],a2
-.L698:
+.L686:
 	mov	d15,#6
-.L699:
+.L687:
 	st.b	[a10]4,d15
-.L700:
+.L688:
 	movh.a	a15,#@his(_ZTV5Print)
 	lea	a15,[a15]@los(_ZTV5Print)
-.L701:
+.L689:
 	lea	a15,[a15]8
-.L702:
+.L690:
 	st.a	[a4],a15
-.L703:
+.L691:
 	movh.a	a15,#@his(__curr_eh_stack_entry)
 	lea	a15,[a15]@los(__curr_eh_stack_entry)
-.L704:
+.L692:
 	ld.a	a2,[a10]
-.L705:
+.L693:
 	st.a	[a15],a2
-.L706:
+.L694:
 	call	_ZdlPv
-.L507:
+.L498:
 	ret
-.L377:
+.L373:
 	
 ___ZN5PrintD0Ev_function_end:
 	.size	_ZN5PrintD0Ev,___ZN5PrintD0Ev_function_end-_ZN5PrintD0Ev
-.L214:
+.L212:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5PrintD2Ev',code,cluster('_ZN5PrintD2Ev')
@@ -480,47 +461,47 @@ ___ZN5PrintD0Ev_function_end:
 	
 	.global	_ZN5PrintD2Ev
 ; Function _ZN5PrintD2Ev
-.L80:
+.L78:
 _ZN5PrintD2Ev:	.type	func
 	sub.a	a10,#88
-.L508:
+.L499:
 	movh.a	a15,#@his(__curr_eh_stack_entry)
 	lea	a15,[a15]@los(__curr_eh_stack_entry)
 	ld.a	a15,[a15]
-.L711:
+.L699:
 	st.a	[a10],a15
-.L712:
+.L700:
 	movh.a	a15,#@his(__curr_eh_stack_entry)
 	lea	a15,[a15]@los(__curr_eh_stack_entry)
-.L713:
+.L701:
 	lea	a2,[a10]0
-.L714:
+.L702:
 	st.a	[a15],a2
-.L715:
+.L703:
 	mov	d15,#6
-.L716:
+.L704:
 	st.b	[a10]4,d15
-.L717:
+.L705:
 	movh.a	a15,#@his(_ZTV5Print)
 	lea	a15,[a15]@los(_ZTV5Print)
-.L718:
+.L706:
 	lea	a15,[a15]8
-.L719:
+.L707:
 	st.a	[a4],a15
-.L720:
+.L708:
 	movh.a	a15,#@his(__curr_eh_stack_entry)
 	lea	a15,[a15]@los(__curr_eh_stack_entry)
-.L721:
+.L709:
 	ld.a	a2,[a10]
-.L722:
+.L710:
 	st.a	[a15],a2
-.L723:
+.L711:
 	ret
-.L380:
+.L376:
 	
 ___ZN5PrintD2Ev_function_end:
 	.size	_ZN5PrintD2Ev,___ZN5PrintD2Ev_function_end-_ZN5PrintD2Ev
-.L219:
+.L217:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print5writeEh',code,cluster('_ZN5Print5writeEh')
@@ -529,18 +510,18 @@ ___ZN5PrintD2Ev_function_end:
 	
 	.global	_ZN5Print5writeEh
 ; Function _ZN5Print5writeEh
-.L82:
+.L80:
 _ZN5Print5writeEh:	.type	func
 	mov	d2,#1
-.L728:
-	j	.L18
-.L18:
+.L716:
+	j	.L16
+.L16:
 	ret
-.L383:
+.L379:
 	
 ___ZN5Print5writeEh_function_end:
 	.size	_ZN5Print5writeEh,___ZN5Print5writeEh_function_end-_ZN5Print5writeEh
-.L224:
+.L222:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print5writeEPKhj',code,cluster('_ZN5Print5writeEPKhj')
@@ -549,18 +530,18 @@ ___ZN5Print5writeEh_function_end:
 	
 	.global	_ZN5Print5writeEPKhj
 ; Function _ZN5Print5writeEPKhj
-.L84:
+.L82:
 _ZN5Print5writeEPKhj:	.type	func
 	mov	d2,d4
-.L510:
-	j	.L19
-.L19:
+.L501:
+	j	.L17
+.L17:
 	ret
-.L388:
+.L384:
 	
 ___ZN5Print5writeEPKhj_function_end:
 	.size	_ZN5Print5writeEPKhj,___ZN5Print5writeEPKhj_function_end-_ZN5Print5writeEPKhj
-.L229:
+.L227:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print5printEPKc',code,cluster('_ZN5Print5printEPKc')
@@ -569,55 +550,55 @@ ___ZN5Print5writeEPKhj_function_end:
 	
 	.global	_ZN5Print5printEPKc
 ; Function _ZN5Print5printEPKc
-.L86:
+.L84:
 _ZN5Print5printEPKc:	.type	func
 	mov.aa	a12,a4
-.L511:
+.L502:
 	mov	d8,#0
-.L512:
-	jnz.a	a5,.L20
-.L737:
+.L503:
+	jnz.a	a5,.L18
+.L725:
 	movh.a	a5,#@his(.1.str)
 	lea	a5,[a5]@los(.1.str)
-.L738:
-	j	.L21
-.L20:
-.L21:
+.L726:
+	j	.L19
+.L18:
+.L19:
 	mov.aa	a13,a5
-.L513:
-	j	.L22
-.L23:
+.L504:
+	j	.L20
+.L21:
 	ld.a	a15,[a12]
-.L739:
+.L727:
 	ld.w	d15,[a15]8
-.L740:
+.L728:
 	mov.a	a15,d15
-.L741:
+.L729:
 	ld.b	d15,[a13]0
-.L742:
+.L730:
 	extr.u	d4,d15,#0,#8
 	mov.aa	a4,a12
-.L514:
+.L505:
 	calli	a15
-.L515:
+.L506:
 	add	d8,d2
-.L743:
+.L731:
 	add.a	a13,#1
-.L22:
+.L20:
 	ld.b	d15,[a13]0
-.L744:
-	jne	d15,#0,.L23
-.L745:
+.L732:
+	jne	d15,#0,.L21
+.L733:
 	mov	d2,d8
-.L516:
-	j	.L24
-.L24:
+.L507:
+	j	.L22
+.L22:
 	ret
-.L394:
+.L390:
 	
 ___ZN5Print5printEPKc_function_end:
 	.size	_ZN5Print5printEPKc,___ZN5Print5printEPKc_function_end-_ZN5Print5printEPKc
-.L234:
+.L232:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print5printEPK19__FlashStringHelper',code,cluster('_ZN5Print5printEPK19__FlashStringHelper')
@@ -626,18 +607,18 @@ ___ZN5Print5printEPKc_function_end:
 	
 	.global	_ZN5Print5printEPK19__FlashStringHelper
 ; Function _ZN5Print5printEPK19__FlashStringHelper
-.L88:
+.L86:
 _ZN5Print5printEPK19__FlashStringHelper:	.type	func
 	call	_ZN5Print5printEPKc
-.L517:
-	j	.L25
-.L25:
+.L508:
+	j	.L23
+.L23:
 	ret
-.L401:
+.L397:
 	
 ___ZN5Print5printEPK19__FlashStringHelper_function_end:
 	.size	_ZN5Print5printEPK19__FlashStringHelper,___ZN5Print5printEPK19__FlashStringHelper_function_end-_ZN5Print5printEPK19__FlashStringHelper
-.L239:
+.L237:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print5printEc',code,cluster('_ZN5Print5printEc')
@@ -646,26 +627,26 @@ ___ZN5Print5printEPK19__FlashStringHelper_function_end:
 	
 	.global	_ZN5Print5printEc
 ; Function _ZN5Print5printEc
-.L90:
+.L88:
 _ZN5Print5printEc:	.type	func
 	ld.a	a15,[a4]
-.L754:
+.L742:
 	ld.w	d15,[a15]8
-.L755:
+.L743:
 	mov.a	a15,d15
-.L756:
+.L744:
 	extr.u	d4,d4,#0,#8
-.L518:
+.L509:
 	calli	a15
-.L519:
-	j	.L26
-.L26:
+.L510:
+	j	.L24
+.L24:
 	ret
-.L406:
+.L402:
 	
 ___ZN5Print5printEc_function_end:
 	.size	_ZN5Print5printEc,___ZN5Print5printEc_function_end-_ZN5Print5printEc
-.L244:
+.L242:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print5printEi',code,cluster('_ZN5Print5printEi')
@@ -674,37 +655,37 @@ ___ZN5Print5printEc_function_end:
 	
 	.global	_ZN5Print5printEi
 ; Function _ZN5Print5printEi
-.L92:
+.L90:
 _ZN5Print5printEi:	.type	func
 	sub.a	a10,#24
-.L520:
+.L511:
 	mov.aa	a15,a4
-.L523:
+.L514:
 	st.w	[a10],d4
-.L761:
+.L749:
 	lea	a4,[a10]4
-.L522:
+.L513:
 	mov	d4,#16
-.L521:
+.L512:
 	movh.a	a5,#@his(.2.str)
 	lea	a5,[a5]@los(.2.str)
-.L762:
+.L750:
 	call	snprintf
-.L763:
+.L751:
 	lea	a5,[a10]4
-.L764:
+.L752:
 	mov.aa	a4,a15
-.L524:
+.L515:
 	call	_ZN5Print5printEPKc
-.L525:
-	j	.L27
-.L27:
+.L516:
+	j	.L25
+.L25:
 	ret
-.L411:
+.L407:
 	
 ___ZN5Print5printEi_function_end:
 	.size	_ZN5Print5printEi,___ZN5Print5printEi_function_end-_ZN5Print5printEi
-.L249:
+.L247:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print5printEj',code,cluster('_ZN5Print5printEj')
@@ -713,37 +694,37 @@ ___ZN5Print5printEi_function_end:
 	
 	.global	_ZN5Print5printEj
 ; Function _ZN5Print5printEj
-.L94:
+.L92:
 _ZN5Print5printEj:	.type	func
 	sub.a	a10,#24
-.L526:
+.L517:
 	mov.aa	a15,a4
-.L529:
+.L520:
 	st.w	[a10],d4
-.L769:
+.L757:
 	lea	a4,[a10]4
-.L528:
+.L519:
 	mov	d4,#16
-.L527:
+.L518:
 	movh.a	a5,#@his(.3.str)
 	lea	a5,[a5]@los(.3.str)
-.L770:
+.L758:
 	call	snprintf
-.L771:
+.L759:
 	lea	a5,[a10]4
-.L772:
+.L760:
 	mov.aa	a4,a15
-.L530:
+.L521:
 	call	_ZN5Print5printEPKc
-.L531:
-	j	.L28
-.L28:
+.L522:
+	j	.L26
+.L26:
 	ret
-.L417:
+.L413:
 	
 ___ZN5Print5printEj_function_end:
 	.size	_ZN5Print5printEj,___ZN5Print5printEj_function_end-_ZN5Print5printEj
-.L254:
+.L252:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print5printEl',code,cluster('_ZN5Print5printEl')
@@ -752,37 +733,37 @@ ___ZN5Print5printEj_function_end:
 	
 	.global	_ZN5Print5printEl
 ; Function _ZN5Print5printEl
-.L96:
+.L94:
 _ZN5Print5printEl:	.type	func
 	sub.a	a10,#32
-.L532:
+.L523:
 	mov.aa	a15,a4
-.L535:
+.L526:
 	st.w	[a10],d4
-.L777:
+.L765:
 	lea	a4,[a10]4
-.L534:
+.L525:
 	mov	d4,#24
-.L533:
+.L524:
 	movh.a	a5,#@his(.4.str)
 	lea	a5,[a5]@los(.4.str)
-.L778:
+.L766:
 	call	snprintf
-.L779:
+.L767:
 	lea	a5,[a10]4
-.L780:
+.L768:
 	mov.aa	a4,a15
-.L536:
+.L527:
 	call	_ZN5Print5printEPKc
-.L537:
-	j	.L29
-.L29:
+.L528:
+	j	.L27
+.L27:
 	ret
-.L422:
+.L418:
 	
 ___ZN5Print5printEl_function_end:
 	.size	_ZN5Print5printEl,___ZN5Print5printEl_function_end-_ZN5Print5printEl
-.L259:
+.L257:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print5printEm',code,cluster('_ZN5Print5printEm')
@@ -791,37 +772,37 @@ ___ZN5Print5printEl_function_end:
 	
 	.global	_ZN5Print5printEm
 ; Function _ZN5Print5printEm
-.L98:
+.L96:
 _ZN5Print5printEm:	.type	func
 	sub.a	a10,#32
-.L538:
+.L529:
 	mov.aa	a15,a4
-.L541:
+.L532:
 	st.w	[a10],d4
-.L785:
+.L773:
 	lea	a4,[a10]4
-.L540:
+.L531:
 	mov	d4,#24
-.L539:
+.L530:
 	movh.a	a5,#@his(.5.str)
 	lea	a5,[a5]@los(.5.str)
-.L786:
+.L774:
 	call	snprintf
-.L787:
+.L775:
 	lea	a5,[a10]4
-.L788:
+.L776:
 	mov.aa	a4,a15
-.L542:
+.L533:
 	call	_ZN5Print5printEPKc
-.L543:
-	j	.L30
-.L30:
+.L534:
+	j	.L28
+.L28:
 	ret
-.L429:
+.L425:
 	
 ___ZN5Print5printEm_function_end:
 	.size	_ZN5Print5printEm,___ZN5Print5printEm_function_end-_ZN5Print5printEm
-.L264:
+.L262:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print5printEfi',code,cluster('_ZN5Print5printEfi')
@@ -830,59 +811,59 @@ ___ZN5Print5printEm_function_end:
 	
 	.global	_ZN5Print5printEfi
 ; Function _ZN5Print5printEfi
-.L100:
+.L98:
 _ZN5Print5printEfi:	.type	func
 	sub.a	a10,#64
-.L544:
+.L535:
 	mov.aa	a15,a4
-.L548:
+.L539:
 	mov	d8,d4
-.L549:
-	jge	d5,#0,.L31
-.L793:
+.L540:
+	jge	d5,#0,.L29
+.L781:
 	mov	d5,#0
-.L31:
+.L29:
 	mov	d15,#8
-.L794:
-	jge	d15,d5,.L32
-.L795:
+.L782:
+	jge	d15,d5,.L30
+.L783:
 	mov	d5,#8
-.L32:
+.L30:
 	st.w	[a10],d5
-.L796:
+.L784:
 	lea	a4,[a10]4
-.L547:
+.L538:
 	mov	d4,#8
-.L545:
+.L536:
 	movh.a	a5,#@his(.6.str)
 	lea	a5,[a5]@los(.6.str)
-.L797:
+.L785:
 	call	snprintf
-.L546:
+.L537:
 	st.w	[a10],d8
-.L798:
+.L786:
 	lea	a4,[a10]12
-.L799:
+.L787:
 	mov	d4,#48
-.L800:
+.L788:
 	lea	a5,[a10]4
-.L801:
+.L789:
 	call	snprintf
-.L802:
+.L790:
 	lea	a5,[a10]12
-.L803:
+.L791:
 	mov.aa	a4,a15
-.L550:
+.L541:
 	call	_ZN5Print5printEPKc
-.L551:
-	j	.L33
-.L33:
+.L542:
+	j	.L31
+.L31:
 	ret
-.L434:
+.L430:
 	
 ___ZN5Print5printEfi_function_end:
 	.size	_ZN5Print5printEfi,___ZN5Print5printEfi_function_end-_ZN5Print5printEfi
-.L269:
+.L267:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print7printlnEv',code,cluster('_ZN5Print7printlnEv')
@@ -891,21 +872,21 @@ ___ZN5Print5printEfi_function_end:
 	
 	.global	_ZN5Print7printlnEv
 ; Function _ZN5Print7printlnEv
-.L102:
+.L100:
 _ZN5Print7printlnEv:	.type	func
 	movh.a	a5,#@his(.7.str)
 	lea	a5,[a5]@los(.7.str)
-.L808:
+.L796:
 	call	_ZN5Print5printEPKc
-.L552:
-	j	.L34
-.L34:
+.L543:
+	j	.L32
+.L32:
 	ret
-.L443:
+.L439:
 	
 ___ZN5Print7printlnEv_function_end:
 	.size	_ZN5Print7printlnEv,___ZN5Print7printlnEv_function_end-_ZN5Print7printlnEv
-.L274:
+.L272:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print7printlnEPKc',code,cluster('_ZN5Print7printlnEPKc')
@@ -914,29 +895,29 @@ ___ZN5Print7printlnEv_function_end:
 	
 	.global	_ZN5Print7printlnEPKc
 ; Function _ZN5Print7printlnEPKc
-.L104:
+.L102:
 _ZN5Print7printlnEPKc:	.type	func
 	mov.aa	a15,a4
-.L554:
+.L545:
 	mov.aa	a4,a15
 	call	_ZN5Print5printEPKc
-.L553:
+.L544:
 	mov	d15,d2
-.L813:
+.L801:
 	mov.aa	a4,a15
-.L555:
+.L546:
 	call	_ZN5Print7printlnEv
-.L556:
+.L547:
 	add	d2,d15
-.L814:
-	j	.L35
-.L35:
+.L802:
+	j	.L33
+.L33:
 	ret
-.L446:
+.L442:
 	
 ___ZN5Print7printlnEPKc_function_end:
 	.size	_ZN5Print7printlnEPKc,___ZN5Print7printlnEPKc_function_end-_ZN5Print7printlnEPKc
-.L279:
+.L277:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print7printlnEPK19__FlashStringHelper',code,cluster('_ZN5Print7printlnEPK19__FlashStringHelper')
@@ -945,29 +926,29 @@ ___ZN5Print7printlnEPKc_function_end:
 	
 	.global	_ZN5Print7printlnEPK19__FlashStringHelper
 ; Function _ZN5Print7printlnEPK19__FlashStringHelper
-.L106:
+.L104:
 _ZN5Print7printlnEPK19__FlashStringHelper:	.type	func
 	mov.aa	a15,a4
-.L558:
+.L549:
 	mov.aa	a4,a15
 	call	_ZN5Print5printEPK19__FlashStringHelper
-.L557:
+.L548:
 	mov	d15,d2
-.L819:
+.L807:
 	mov.aa	a4,a15
-.L559:
+.L550:
 	call	_ZN5Print7printlnEv
-.L560:
+.L551:
 	add	d2,d15
-.L820:
-	j	.L36
-.L36:
+.L808:
+	j	.L34
+.L34:
 	ret
-.L450:
+.L446:
 	
 ___ZN5Print7printlnEPK19__FlashStringHelper_function_end:
 	.size	_ZN5Print7printlnEPK19__FlashStringHelper,___ZN5Print7printlnEPK19__FlashStringHelper_function_end-_ZN5Print7printlnEPK19__FlashStringHelper
-.L284:
+.L282:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print7printlnEc',code,cluster('_ZN5Print7printlnEc')
@@ -976,29 +957,29 @@ ___ZN5Print7printlnEPK19__FlashStringHelper_function_end:
 	
 	.global	_ZN5Print7printlnEc
 ; Function _ZN5Print7printlnEc
-.L108:
+.L106:
 _ZN5Print7printlnEc:	.type	func
 	mov.aa	a15,a4
-.L562:
+.L553:
 	mov.aa	a4,a15
 	call	_ZN5Print5printEc
-.L561:
+.L552:
 	mov	d15,d2
-.L825:
+.L813:
 	mov.aa	a4,a15
-.L563:
+.L554:
 	call	_ZN5Print7printlnEv
-.L564:
+.L555:
 	add	d2,d15
-.L826:
-	j	.L37
-.L37:
+.L814:
+	j	.L35
+.L35:
 	ret
-.L454:
+.L450:
 	
 ___ZN5Print7printlnEc_function_end:
 	.size	_ZN5Print7printlnEc,___ZN5Print7printlnEc_function_end-_ZN5Print7printlnEc
-.L289:
+.L287:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print7printlnEi',code,cluster('_ZN5Print7printlnEi')
@@ -1007,29 +988,29 @@ ___ZN5Print7printlnEc_function_end:
 	
 	.global	_ZN5Print7printlnEi
 ; Function _ZN5Print7printlnEi
-.L110:
+.L108:
 _ZN5Print7printlnEi:	.type	func
 	mov.aa	a15,a4
-.L566:
+.L557:
 	mov.aa	a4,a15
 	call	_ZN5Print5printEi
-.L565:
+.L556:
 	mov	d15,d2
-.L831:
+.L819:
 	mov.aa	a4,a15
-.L567:
+.L558:
 	call	_ZN5Print7printlnEv
-.L568:
+.L559:
 	add	d2,d15
-.L832:
-	j	.L38
-.L38:
+.L820:
+	j	.L36
+.L36:
 	ret
-.L458:
+.L454:
 	
 ___ZN5Print7printlnEi_function_end:
 	.size	_ZN5Print7printlnEi,___ZN5Print7printlnEi_function_end-_ZN5Print7printlnEi
-.L294:
+.L292:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print7printlnEj',code,cluster('_ZN5Print7printlnEj')
@@ -1038,29 +1019,29 @@ ___ZN5Print7printlnEi_function_end:
 	
 	.global	_ZN5Print7printlnEj
 ; Function _ZN5Print7printlnEj
-.L112:
+.L110:
 _ZN5Print7printlnEj:	.type	func
 	mov.aa	a15,a4
-.L570:
+.L561:
 	mov.aa	a4,a15
 	call	_ZN5Print5printEj
-.L569:
+.L560:
 	mov	d15,d2
-.L837:
+.L825:
 	mov.aa	a4,a15
-.L571:
+.L562:
 	call	_ZN5Print7printlnEv
-.L572:
+.L563:
 	add	d2,d15
-.L838:
-	j	.L39
-.L39:
+.L826:
+	j	.L37
+.L37:
 	ret
-.L462:
+.L458:
 	
 ___ZN5Print7printlnEj_function_end:
 	.size	_ZN5Print7printlnEj,___ZN5Print7printlnEj_function_end-_ZN5Print7printlnEj
-.L299:
+.L297:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print7printlnEl',code,cluster('_ZN5Print7printlnEl')
@@ -1069,29 +1050,29 @@ ___ZN5Print7printlnEj_function_end:
 	
 	.global	_ZN5Print7printlnEl
 ; Function _ZN5Print7printlnEl
-.L114:
+.L112:
 _ZN5Print7printlnEl:	.type	func
 	mov.aa	a15,a4
-.L574:
+.L565:
 	mov.aa	a4,a15
 	call	_ZN5Print5printEl
-.L573:
+.L564:
 	mov	d15,d2
-.L843:
+.L831:
 	mov.aa	a4,a15
-.L575:
+.L566:
 	call	_ZN5Print7printlnEv
-.L576:
+.L567:
 	add	d2,d15
-.L844:
-	j	.L40
-.L40:
+.L832:
+	j	.L38
+.L38:
 	ret
-.L466:
+.L462:
 	
 ___ZN5Print7printlnEl_function_end:
 	.size	_ZN5Print7printlnEl,___ZN5Print7printlnEl_function_end-_ZN5Print7printlnEl
-.L304:
+.L302:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print7printlnEm',code,cluster('_ZN5Print7printlnEm')
@@ -1100,29 +1081,29 @@ ___ZN5Print7printlnEl_function_end:
 	
 	.global	_ZN5Print7printlnEm
 ; Function _ZN5Print7printlnEm
-.L116:
+.L114:
 _ZN5Print7printlnEm:	.type	func
 	mov.aa	a15,a4
-.L578:
+.L569:
 	mov.aa	a4,a15
 	call	_ZN5Print5printEm
-.L577:
+.L568:
 	mov	d15,d2
-.L849:
+.L837:
 	mov.aa	a4,a15
-.L579:
+.L570:
 	call	_ZN5Print7printlnEv
-.L580:
+.L571:
 	add	d2,d15
-.L850:
-	j	.L41
-.L41:
+.L838:
+	j	.L39
+.L39:
 	ret
-.L470:
+.L466:
 	
 ___ZN5Print7printlnEm_function_end:
 	.size	_ZN5Print7printlnEm,___ZN5Print7printlnEm_function_end-_ZN5Print7printlnEm
-.L309:
+.L307:
 	; End of function
 	
 	.sdecl	'.text.Arduino._ZN5Print7printlnEfi',code,cluster('_ZN5Print7printlnEfi')
@@ -1131,29 +1112,29 @@ ___ZN5Print7printlnEm_function_end:
 	
 	.global	_ZN5Print7printlnEfi
 ; Function _ZN5Print7printlnEfi
-.L118:
+.L116:
 _ZN5Print7printlnEfi:	.type	func
 	mov.aa	a15,a4
-.L582:
+.L573:
 	mov.aa	a4,a15
 	call	_ZN5Print5printEfi
-.L581:
+.L572:
 	mov	d15,d2
-.L855:
+.L843:
 	mov.aa	a4,a15
-.L583:
+.L574:
 	call	_ZN5Print7printlnEv
-.L584:
+.L575:
 	add	d2,d15
-.L856:
-	j	.L42
-.L42:
+.L844:
+	j	.L40
+.L40:
 	ret
-.L474:
+.L470:
 	
 ___ZN5Print7printlnEfi_function_end:
 	.size	_ZN5Print7printlnEfi,___ZN5Print7printlnEfi_function_end-_ZN5Print7printlnEfi
-.L314:
+.L312:
 	; End of function
 	
 	.sdecl	'.text.Arduino.__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5',code,cluster('__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5')
@@ -1162,24 +1143,24 @@ ___ZN5Print7printlnEfi_function_end:
 	
 	.global	__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5
 ; Function __sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5
-.L120:
+.L118:
 __sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5:	.type	func
 	movh.a	a4,#@his(_ZN5PrintD1Ev)
 	lea	a4,[a4]@los(_ZN5PrintD1Ev)
-.L861:
+.L849:
 	movh.a	a5,#@his(Serial)
 	lea	a5,[a5]@los(Serial)
-.L862:
+.L850:
 	movh.a	a6,#@his(__dso_handle)
 	lea	a6,[a6]@los(__dso_handle)
 	call	__cxa_atexit
-.L863:
+.L851:
 	ret
-.L479:
+.L475:
 	
 ____sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5_function_end:
 	.size	__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5,____sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5_function_end-__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5
-.L319:
+.L317:
 	; End of function
 	
 	.sdecl	'.rodata.Arduino._ZTV5Print',data,rom,cluster('_ZTV5Print')
@@ -1261,7 +1242,6 @@ _ZTS5Print:	.type	object
 	.calls	'__INDIRECT__','_ZN5Print5writeEPKhj'
 	.calls	'_Z6microsv','Tc375Hal_TimeUs'
 	.calls	'_Z6millisv','Tc375Hal_TimeMs'
-	.calls	'_Z5delaym','Tc375Hal_TimeUs'
 	.calls	'_Z17delayMicrosecondsj','Tc375Hal_TimeUs'
 	.calls	'_Z4_sinf','sinf'
 	.calls	'_Z4_cosf','cosf'
@@ -1365,18 +1345,18 @@ _ZTS5Print:	.type	object
 	.calls	'__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L122:
+.L120:
 	.word	1648
 	.half	3
-	.word	.L123
+	.word	.L121
 	.byte	4
-.L121:
+.L119:
 	.byte	1
 	.byte	'../simplefoc_arduino_compat_ads.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L124
+	.word	.L122
 	.byte	2
 	.byte	'void',0,3
 	.word	230
@@ -1384,7 +1364,7 @@ _ZTS5Print:	.type	object
 	.byte	'_ZdlPv',0,1,61,49,1,1,1,1,5,1,61,61
 	.word	236
 	.byte	0
-.L353:
+.L349:
 	.byte	6
 	.byte	'float',0,4,4,7
 	.byte	'sinf',0,2,89,14
@@ -1416,20 +1396,20 @@ _ZTS5Print:	.type	object
 	.byte	5,2,236,1,27
 	.word	265
 	.byte	0
-.L340:
+.L336:
 	.byte	6
 	.byte	'int',0,4,5
-.L409:
+.L405:
 	.byte	6
 	.byte	'char',0,1,6,3
 	.word	436
 	.byte	8
 	.word	444
-.L333:
+.L332:
 	.byte	6
 	.byte	'unsigned int',0,4,7,9
 	.word	436
-.L397:
+.L393:
 	.byte	3
 	.word	470
 	.byte	8
@@ -1447,99 +1427,102 @@ _ZTS5Print:	.type	object
 	.byte	'Tc375Hal_TimeMs',0,4,30,17
 	.word	454
 	.byte	1,1,1,1,11
-	.byte	'Tc375Hal_TimeUs',0,4,31,17
+	.byte	'Tc375Hal_TimeUs',0,4,32,17
 	.word	454
 	.byte	1,1,1,1
-.L328:
+.L326:
 	.byte	6
 	.byte	'unsigned long int',0,4,7
-.L360:
+.L356:
 	.byte	3
 	.word	265
 	.byte	9
 	.word	429
 	.byte	3
 	.word	622
-.L481:
+.L477:
 	.byte	12
 	.byte	'Print',0,1,61,8,4,13
 	.byte	'__vptr',0
 	.word	627
 	.byte	4,2,35,0,0,3
 	.word	632
-.L375:
+.L371:
 	.byte	9
 	.word	660
-.L378:
+.L374:
 	.byte	9
 	.word	660
-.L381:
+.L377:
 	.byte	9
 	.word	660
-.L384:
+.L380:
 	.byte	9
 	.word	660
-.L386:
+.L382:
 	.byte	6
 	.byte	'unsigned char',0,1,8
-.L389:
+.L385:
 	.byte	9
 	.word	660
 	.byte	9
 	.word	685
-.L391:
+.L387:
 	.byte	3
 	.word	707
-.L395:
+.L391:
 	.byte	9
 	.word	660
-.L402:
+.L398:
 	.byte	9
 	.word	660
 	.byte	14
 	.byte	'__FlashStringHelper',0,1,46,8,1,9
 	.word	727
-.L404:
+.L400:
 	.byte	3
 	.word	752
-.L407:
+.L403:
 	.byte	9
 	.word	660
-.L412:
+.L408:
 	.byte	9
 	.word	660
-.L415:
+.L411:
 	.byte	15,16
 	.word	436
 	.byte	16,15,0
-.L418:
+.L414:
 	.byte	9
 	.word	660
-.L423:
+.L419:
 	.byte	9
 	.word	660
-.L425:
+.L421:
 	.byte	6
 	.byte	'long int',0,4,5
-.L427:
+.L423:
 	.byte	15,24
 	.word	436
 	.byte	16,23,0
-.L430:
+.L426:
+	.byte	9
+	.word	660
+.L431:
 	.byte	9
 	.word	660
 .L435:
-	.byte	9
-	.word	660
-.L439:
 	.byte	15,8
 	.word	436
 	.byte	16,7,0
-.L441:
+.L437:
 	.byte	15,48
 	.word	436
 	.byte	16,47,0
-.L444:
+.L440:
+	.byte	9
+	.word	660
+.L443:
 	.byte	9
 	.word	660
 .L447:
@@ -1563,11 +1546,8 @@ _ZTS5Print:	.type	object
 .L471:
 	.byte	9
 	.word	660
-.L475:
-	.byte	9
-	.word	660
 	.byte	17
-	.byte	'__cxa_atexit',0,5,124,166,1
+	.byte	'__cxa_atexit',0,5,125,166,1
 	.word	429
 	.byte	1,1,1,18
 	.byte	'__INDIRECT__',0,6,1,1,1,1,1,19,1,3
@@ -1637,7 +1617,7 @@ _ZTS5Print:	.type	object
 	.byte	4,2,35,0,0,12
 	.byte	'__C8',0,1,61,154,1,84,13
 	.byte	'next',0
-	.word	.L585-.L122
+	.word	.L576-.L120
 	.byte	4,2,35,0,13
 	.byte	'kind',0
 	.word	685
@@ -1645,16 +1625,16 @@ _ZTS5Print:	.type	object
 	.byte	'variant',0
 	.word	1280
 	.byte	76,2,35,8,0
-.L585:
+.L576:
 	.byte	3
 	.word	1348
 	.byte	22
-	.byte	'__curr_eh_stack_entry',0,5,124,208,1
+	.byte	'__curr_eh_stack_entry',0,5,125,208,1
 	.word	1405
 	.byte	1,1,15,24
 	.word	429
 	.byte	16,5,0
-.L480:
+.L476:
 	.byte	9
 	.word	1443
 	.byte	12
@@ -1669,7 +1649,7 @@ _ZTS5Print:	.type	object
 	.byte	'base',0
 	.word	1457
 	.byte	8,2,35,0,0
-.L482:
+.L478:
 	.byte	9
 	.word	1508
 	.byte	23
@@ -1677,21 +1657,21 @@ _ZTS5Print:	.type	object
 	.byte	24,0,9
 	.word	1552
 	.byte	22
-	.byte	'_ZTVN10__cxxabiv117__class_type_infoE',0,5,132,1,68
+	.byte	'_ZTVN10__cxxabiv117__class_type_infoE',0,5,133,1,68
 	.word	1559
 	.byte	1,1,15,7
 	.word	436
 	.byte	16,6,0
-.L483:
+.L479:
 	.byte	9
 	.word	1613
 	.byte	22
-	.byte	'__dso_handle',0,5,134,1,53
+	.byte	'__dso_handle',0,5,135,1,53
 	.word	236
 	.byte	1,1,0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L123:
+.L121:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,59,0,3,8,0,0,3,15,0,73,19,0,0,4,46,1,3,8,58,15,59,15,57
 	.byte	15,54,15,39,12,63,12,60,12,0,0,5,5,0,58,15,59,15,57,15,73,19,0,0,6,36,0,3,8,11,15,62,15,0,0,7,46,1,3,8
 	.byte	58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,8,55,0,73,19,0,0,9,38,0,73,19,0,0,10,24,0,58,15,59
@@ -1703,12 +1683,12 @@ _ZTS5Print:	.type	object
 	.byte	0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L124:
-	.word	.L587-.L586
-.L586:
+.L122:
+	.word	.L578-.L577
+.L577:
 	.half	3
-	.word	.L589-.L588
-.L588:
+	.word	.L580-.L579
+.L579:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'C:\\Infineon\\AURIX-Studio-1.10.32\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\',0,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.h',0,0,0,0
@@ -1720,90 +1700,196 @@ _ZTS5Print:	.type	object
 	.byte	'../simplefoc_arduino_compat_ads.cpp',0,0,0,0
 	.byte	'stddef.h',0,1,0,0
 	.byte	'stdint.h',0,1,0,0,0
-.L589:
-.L587:
+.L580:
+.L578:
 	.sdecl	'.debug_info',debug,cluster('_Z6microsv')
 	.sect	'.debug_info'
-.L125:
+.L123:
 	.word	297
 	.half	3
-	.word	.L126
+	.word	.L124
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L128,.L127
+	.word	.L126,.L125
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_Z6microsv',0,1,131,1,156,1
-	.word	.L328
+	.byte	'_Z6microsv',0,1,132,1,156,1
+	.word	.L326
 	.byte	1,1,1
-	.word	.L44,.L329,.L43
+	.word	.L42,.L327,.L41
 	.byte	4
-	.word	.L44,.L329
+	.word	.L42,.L327
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_Z6microsv')
 	.sect	'.debug_abbrev'
-.L126:
+.L124:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_Z6microsv')
 	.sect	'.debug_line'
-.L127:
-	.word	.L591-.L590
-.L590:
+.L125:
+	.word	.L582-.L581
+.L581:
 	.half	3
-	.word	.L593-.L592
-.L592:
+	.word	.L584-.L583
+.L583:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L593:
+.L584:
 	.byte	5,39,7,0,5,2
-	.word	.L44
-	.byte	3,132,1,1,5,1,9
-	.half	.L594-.L44
+	.word	.L42
+	.byte	3,133,1,1,5,1,9
+	.half	.L585-.L42
 	.byte	1,9
-	.half	.L2-.L594
+	.half	.L2-.L585
 	.byte	3,1,1,7,9
-	.half	.L129-.L2
+	.half	.L127-.L2
 	.byte	0,1,1
-.L591:
+.L582:
 	.sdecl	'.debug_ranges',debug,cluster('_Z6microsv')
 	.sect	'.debug_ranges'
-.L128:
-	.word	-1,.L44,0,.L129-.L44,0,0
+.L126:
+	.word	-1,.L42,0,.L127-.L42,0,0
 	.sdecl	'.debug_info',debug,cluster('_Z6millisv')
 	.sect	'.debug_info'
-.L130:
+.L128:
 	.word	296
 	.half	3
-	.word	.L131
+	.word	.L129
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L133,.L132
+	.word	.L131,.L130
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_Z6millisv',0,1,136,1,15
-	.word	.L328
+	.byte	'_Z6millisv',0,1,137,1,15
+	.word	.L326
 	.byte	1,1,1
-	.word	.L46,.L330,.L45
+	.word	.L44,.L328,.L43
 	.byte	4
-	.word	.L46,.L330
+	.word	.L44,.L328
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_Z6millisv')
 	.sect	'.debug_abbrev'
-.L131:
+.L129:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_Z6millisv')
 	.sect	'.debug_line'
-.L132:
+.L130:
+	.word	.L587-.L586
+.L586:
+	.half	3
+	.word	.L589-.L588
+.L588:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
+.L589:
+	.byte	5,39,7,0,5,2
+	.word	.L44
+	.byte	3,138,1,1,5,1,9
+	.half	.L590-.L44
+	.byte	1,9
+	.half	.L3-.L590
+	.byte	3,1,1,7,9
+	.half	.L132-.L3
+	.byte	0,1,1
+.L587:
+	.sdecl	'.debug_ranges',debug,cluster('_Z6millisv')
+	.sect	'.debug_ranges'
+.L131:
+	.word	-1,.L44,0,.L132-.L44,0,0
+	.sdecl	'.debug_info',debug,cluster('_Z5delaym')
+	.sect	'.debug_info'
+.L133:
+	.word	317
+	.half	3
+	.word	.L134
+	.byte	4,1
+	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L136,.L135
+	.byte	2
+	.word	.L119
+	.byte	3
+	.byte	'_Z5delaym',0,1,142,1,6,1,1,1
+	.word	.L46,.L329,.L45
+	.byte	4
+	.byte	'__4877_26_ms',0,1,142,1,31
+	.word	.L326,.L330
+	.byte	5
+	.word	.L46,.L329
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_Z5delaym')
+	.sect	'.debug_abbrev'
+.L134:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_Z5delaym')
+	.sect	'.debug_line'
+.L135:
+	.word	.L592-.L591
+.L591:
+	.half	3
+	.word	.L594-.L593
+.L593:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
+.L594:
+	.byte	5,1,7,0,5,2
+	.word	.L46
+	.byte	3,157,1,1,7,9
+	.half	.L137-.L46
+	.byte	0,1,1
+.L592:
+	.sdecl	'.debug_ranges',debug,cluster('_Z5delaym')
+	.sect	'.debug_ranges'
+.L136:
+	.word	-1,.L46,0,.L137-.L46,0,0
+	.sdecl	'.debug_info',debug,cluster('_Z17delayMicrosecondsj')
+	.sect	'.debug_info'
+.L138:
+	.word	360
+	.half	3
+	.word	.L139
+	.byte	4,1
+	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L141,.L140
+	.byte	2
+	.word	.L119
+	.byte	3
+	.byte	'_Z17delayMicrosecondsj',0,1,160,1,6,1,1,1
+	.word	.L48,.L331,.L47
+	.byte	4
+	.byte	'__4895_37_us',0,1,160,1,39
+	.word	.L332,.L333
+	.byte	5
+	.word	.L48,.L331
+	.byte	6
+	.byte	'__4897_14_start',0,1,162,1,15
+	.word	.L332,.L334
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_Z17delayMicrosecondsj')
+	.sect	'.debug_abbrev'
+.L139:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_Z17delayMicrosecondsj')
+	.sect	'.debug_line'
+.L140:
 	.word	.L596-.L595
 .L595:
 	.half	3
@@ -1812,1912 +1898,1913 @@ _ZTS5Print:	.type	object
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
 .L598:
-	.byte	5,39,7,0,5,2
-	.word	.L46
-	.byte	3,137,1,1,5,1,9
-	.half	.L599-.L46
-	.byte	1,9
-	.half	.L3-.L599
-	.byte	3,1,1,7,9
-	.half	.L134-.L3
-	.byte	0,1,1
-.L596:
-	.sdecl	'.debug_ranges',debug,cluster('_Z6millisv')
-	.sect	'.debug_ranges'
-.L133:
-	.word	-1,.L46,0,.L134-.L46,0,0
-	.sdecl	'.debug_info',debug,cluster('_Z5delaym')
-	.sect	'.debug_info'
-.L135:
-	.word	378
-	.half	3
-	.word	.L136
-	.byte	4,1
-	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
-	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
-	.byte	12,1
-	.word	.L138,.L137
-	.byte	2
-	.word	.L121
-	.byte	3
-	.byte	'_Z5delaym',0,1,141,1,6,1,1,1
-	.word	.L48,.L331,.L47
-	.byte	4
-	.byte	'__4866_26_ms',0,1,141,1,31
-	.word	.L328,.L332
-	.byte	5
-	.word	.L48,.L331
-	.byte	6
-	.byte	'__4868_14_start',0,1,143,1,15
-	.word	.L333,.L334
-	.byte	6
-	.byte	'__4869_14_wait_us',0,1,144,1,15
-	.word	.L333,.L335
-	.byte	0,0,0
-	.sdecl	'.debug_abbrev',debug,cluster('_Z5delaym')
-	.sect	'.debug_abbrev'
-.L136:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
-	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
-	.sdecl	'.debug_line',debug,cluster('_Z5delaym')
-	.sect	'.debug_line'
-.L137:
-	.word	.L601-.L600
-.L600:
-	.half	3
-	.word	.L603-.L602
-.L602:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L603:
 	.byte	5,6,7,0,5,2
 	.word	.L48
-	.byte	3,140,1,1,5,35,9
-	.half	.L485-.L48
-	.byte	3,2,1,5,17,9
-	.half	.L484-.L485
-	.byte	1,5,48,9
-	.half	.L487-.L484
-	.byte	3,1,1,5,46,9
-	.half	.L488-.L487
-	.byte	1,5,79,9
-	.half	.L486-.L488
-	.byte	3,1,1,5,36,9
-	.half	.L4-.L486
-	.byte	1,5,40,9
-	.half	.L604-.L4
-	.byte	1,5,79,9
-	.half	.L605-.L604
-	.byte	1,5,1,7,9
-	.half	.L606-.L605
-	.byte	3,3,1,7,9
-	.half	.L139-.L606
-	.byte	0,1,1
-.L601:
-	.sdecl	'.debug_ranges',debug,cluster('_Z5delaym')
-	.sect	'.debug_ranges'
-.L138:
-	.word	-1,.L48,0,.L139-.L48,0,0
-	.sdecl	'.debug_info',debug,cluster('_Z17delayMicrosecondsj')
-	.sect	'.debug_info'
-.L140:
-	.word	360
-	.half	3
-	.word	.L141
-	.byte	4,1
-	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
-	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
-	.byte	12,1
-	.word	.L143,.L142
-	.byte	2
-	.word	.L121
-	.byte	3
-	.byte	'_Z17delayMicrosecondsj',0,1,150,1,6,1,1,1
-	.word	.L50,.L336,.L49
-	.byte	4
-	.byte	'__4875_37_us',0,1,150,1,39
-	.word	.L333,.L337
-	.byte	5
-	.word	.L50,.L336
-	.byte	6
-	.byte	'__4877_14_start',0,1,152,1,15
-	.word	.L333,.L338
-	.byte	0,0,0
-	.sdecl	'.debug_abbrev',debug,cluster('_Z17delayMicrosecondsj')
-	.sect	'.debug_abbrev'
-.L141:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
-	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
-	.sdecl	'.debug_line',debug,cluster('_Z17delayMicrosecondsj')
-	.sect	'.debug_line'
-.L142:
-	.word	.L608-.L607
-.L607:
-	.half	3
-	.word	.L610-.L609
-.L609:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L610:
-	.byte	5,6,7,0,5,2
-	.word	.L50
-	.byte	3,149,1,1,5,66,9
-	.half	.L490-.L50
+	.byte	3,159,1,1,5,66,9
+	.half	.L481-.L48
 	.byte	3,2,1,5,48,9
-	.half	.L489-.L490
+	.half	.L480-.L481
 	.byte	1,5,74,9
-	.half	.L491-.L489
+	.half	.L482-.L480
 	.byte	3,1,1,5,36,9
-	.half	.L6-.L491
+	.half	.L4-.L482
 	.byte	1,5,40,9
-	.half	.L611-.L6
+	.half	.L599-.L4
 	.byte	1,5,74,9
-	.half	.L612-.L611
+	.half	.L600-.L599
 	.byte	1,5,1,7,9
-	.half	.L613-.L612
+	.half	.L601-.L600
 	.byte	3,3,1,7,9
-	.half	.L144-.L613
+	.half	.L142-.L601
 	.byte	0,1,1
-.L608:
+.L596:
 	.sdecl	'.debug_ranges',debug,cluster('_Z17delayMicrosecondsj')
 	.sect	'.debug_ranges'
-.L143:
-	.word	-1,.L50,0,.L144-.L50,0,0
+.L141:
+	.word	-1,.L48,0,.L142-.L48,0,0
 	.sdecl	'.debug_info',debug,cluster('_Z7pinModeii')
 	.sect	'.debug_info'
-.L145:
+.L143:
 	.word	349
 	.half	3
-	.word	.L146
+	.word	.L144
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L148,.L147
+	.word	.L146,.L145
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_Z7pinModeii',0,1,158,1,6,1,1,1
-	.word	.L52,.L339,.L51
+	.byte	'_Z7pinModeii',0,1,168,1,6,1,1,1
+	.word	.L50,.L335,.L49
 	.byte	4
-	.byte	'__4883_18_pin',0,1,158,1,24
-	.word	.L340,.L341
+	.byte	'__4903_18_pin',0,1,168,1,24
+	.word	.L336,.L337
 	.byte	4
-	.byte	'__4883_27_mode',0,1,158,1,44
-	.word	.L340,.L342
+	.byte	'__4903_27_mode',0,1,168,1,44
+	.word	.L336,.L338
 	.byte	5
-	.word	.L52,.L339
+	.word	.L50,.L335
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_Z7pinModeii')
 	.sect	'.debug_abbrev'
-.L146:
+.L144:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_Z7pinModeii')
 	.sect	'.debug_line'
-.L147:
-	.word	.L615-.L614
-.L614:
+.L145:
+	.word	.L603-.L602
+.L602:
 	.half	3
-	.word	.L617-.L616
-.L616:
+	.word	.L605-.L604
+.L604:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L617:
+.L605:
 	.byte	5,1,7,0,5,2
-	.word	.L52
-	.byte	3,161,1,1,7,9
-	.half	.L149-.L52
+	.word	.L50
+	.byte	3,171,1,1,7,9
+	.half	.L147-.L50
 	.byte	0,1,1
-.L615:
+.L603:
 	.sdecl	'.debug_ranges',debug,cluster('_Z7pinModeii')
 	.sect	'.debug_ranges'
-.L148:
-	.word	-1,.L52,0,.L149-.L52,0,0
+.L146:
+	.word	-1,.L50,0,.L147-.L50,0,0
 	.sdecl	'.debug_info',debug,cluster('_Z12digitalWriteii')
 	.sect	'.debug_info'
-.L150:
+.L148:
 	.word	356
 	.half	3
-	.word	.L151
+	.word	.L149
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L153,.L152
+	.word	.L151,.L150
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_Z12digitalWriteii',0,1,164,1,6,1,1,1
-	.word	.L54,.L343,.L53
+	.byte	'_Z12digitalWriteii',0,1,174,1,6,1,1,1
+	.word	.L52,.L339,.L51
 	.byte	4
-	.byte	'__4889_23_pin',0,1,164,1,30
-	.word	.L340,.L344
+	.byte	'__4909_23_pin',0,1,174,1,30
+	.word	.L336,.L340
 	.byte	4
-	.byte	'__4889_32_value',0,1,164,1,50
-	.word	.L340,.L345
+	.byte	'__4909_32_value',0,1,174,1,50
+	.word	.L336,.L341
 	.byte	5
-	.word	.L54,.L343
+	.word	.L52,.L339
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_Z12digitalWriteii')
 	.sect	'.debug_abbrev'
-.L151:
+.L149:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_Z12digitalWriteii')
 	.sect	'.debug_line'
-.L152:
-	.word	.L619-.L618
-.L618:
+.L150:
+	.word	.L607-.L606
+.L606:
 	.half	3
-	.word	.L621-.L620
-.L620:
+	.word	.L609-.L608
+.L608:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L621:
+.L609:
 	.byte	5,1,7,0,5,2
-	.word	.L54
-	.byte	3,167,1,1,7,9
-	.half	.L154-.L54
+	.word	.L52
+	.byte	3,177,1,1,7,9
+	.half	.L152-.L52
 	.byte	0,1,1
-.L619:
+.L607:
 	.sdecl	'.debug_ranges',debug,cluster('_Z12digitalWriteii')
 	.sect	'.debug_ranges'
-.L153:
-	.word	-1,.L54,0,.L154-.L54,0,0
+.L151:
+	.word	-1,.L52,0,.L152-.L52,0,0
 	.sdecl	'.debug_info',debug,cluster('_Z11digitalReadi')
 	.sect	'.debug_info'
-.L155:
+.L153:
 	.word	329
 	.half	3
-	.word	.L156
+	.word	.L154
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L158,.L157
+	.word	.L156,.L155
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_Z11digitalReadi',0,1,170,1,5
-	.word	.L340
+	.byte	'_Z11digitalReadi',0,1,180,1,5
+	.word	.L336
 	.byte	1,1,1
-	.word	.L56,.L346,.L55
+	.word	.L54,.L342,.L53
 	.byte	4
-	.byte	'__4895_21_pin',0,1,170,1,27
-	.word	.L340,.L347
+	.byte	'__4915_21_pin',0,1,180,1,27
+	.word	.L336,.L343
 	.byte	5
-	.word	.L56,.L346
+	.word	.L54,.L342
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_Z11digitalReadi')
 	.sect	'.debug_abbrev'
-.L156:
+.L154:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_Z11digitalReadi')
 	.sect	'.debug_line'
-.L157:
-	.word	.L623-.L622
-.L622:
+.L155:
+	.word	.L611-.L610
+.L610:
 	.half	3
-	.word	.L625-.L624
-.L624:
+	.word	.L613-.L612
+.L612:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L625:
+.L613:
 	.byte	5,8,7,0,5,2
-	.word	.L56
-	.byte	3,172,1,1,5,1,9
-	.half	.L626-.L56
+	.word	.L54
+	.byte	3,182,1,1,5,1,9
+	.half	.L614-.L54
 	.byte	1,9
-	.half	.L8-.L626
+	.half	.L6-.L614
 	.byte	3,1,1,7,9
-	.half	.L159-.L8
+	.half	.L157-.L6
 	.byte	0,1,1
-.L623:
+.L611:
 	.sdecl	'.debug_ranges',debug,cluster('_Z11digitalReadi')
 	.sect	'.debug_ranges'
-.L158:
-	.word	-1,.L56,0,.L159-.L56,0,0
+.L156:
+	.word	-1,.L54,0,.L157-.L54,0,0
 	.sdecl	'.debug_info',debug,cluster('_Z10analogReadi')
 	.sect	'.debug_info'
-.L160:
+.L158:
 	.word	328
 	.half	3
-	.word	.L161
+	.word	.L159
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L163,.L162
+	.word	.L161,.L160
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_Z10analogReadi',0,1,176,1,5
-	.word	.L340
+	.byte	'_Z10analogReadi',0,1,186,1,5
+	.word	.L336
 	.byte	1,1,1
-	.word	.L58,.L348,.L57
+	.word	.L56,.L344,.L55
 	.byte	4
-	.byte	'__4901_20_pin',0,1,176,1,26
-	.word	.L340,.L349
+	.byte	'__4921_20_pin',0,1,186,1,26
+	.word	.L336,.L345
 	.byte	5
-	.word	.L58,.L348
+	.word	.L56,.L344
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_Z10analogReadi')
 	.sect	'.debug_abbrev'
-.L161:
+.L159:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_Z10analogReadi')
 	.sect	'.debug_line'
-.L162:
-	.word	.L628-.L627
-.L627:
+.L160:
+	.word	.L616-.L615
+.L615:
 	.half	3
-	.word	.L630-.L629
-.L629:
+	.word	.L618-.L617
+.L617:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L630:
+.L618:
 	.byte	5,8,7,0,5,2
-	.word	.L58
-	.byte	3,178,1,1,5,1,9
-	.half	.L631-.L58
+	.word	.L56
+	.byte	3,188,1,1,5,1,9
+	.half	.L619-.L56
 	.byte	1,9
-	.half	.L9-.L631
+	.half	.L7-.L619
 	.byte	3,1,1,7,9
-	.half	.L164-.L9
+	.half	.L162-.L7
 	.byte	0,1,1
-.L628:
+.L616:
 	.sdecl	'.debug_ranges',debug,cluster('_Z10analogReadi')
 	.sect	'.debug_ranges'
-.L163:
-	.word	-1,.L58,0,.L164-.L58,0,0
+.L161:
+	.word	-1,.L56,0,.L162-.L56,0,0
 	.sdecl	'.debug_info',debug,cluster('_Z11analogWriteii')
 	.sect	'.debug_info'
-.L165:
+.L163:
 	.word	355
 	.half	3
-	.word	.L166
+	.word	.L164
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L168,.L167
+	.word	.L166,.L165
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_Z11analogWriteii',0,1,182,1,6,1,1,1
-	.word	.L60,.L350,.L59
+	.byte	'_Z11analogWriteii',0,1,192,1,6,1,1,1
+	.word	.L58,.L346,.L57
 	.byte	4
-	.byte	'__4907_22_pin',0,1,182,1,29
-	.word	.L340,.L351
+	.byte	'__4927_22_pin',0,1,192,1,29
+	.word	.L336,.L347
 	.byte	4
-	.byte	'__4907_31_value',0,1,182,1,49
-	.word	.L340,.L352
+	.byte	'__4927_31_value',0,1,192,1,49
+	.word	.L336,.L348
 	.byte	5
-	.word	.L60,.L350
+	.word	.L58,.L346
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_Z11analogWriteii')
 	.sect	'.debug_abbrev'
-.L166:
+.L164:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_Z11analogWriteii')
 	.sect	'.debug_line'
-.L167:
+.L165:
+	.word	.L621-.L620
+.L620:
+	.half	3
+	.word	.L623-.L622
+.L622:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
+.L623:
+	.byte	5,1,7,0,5,2
+	.word	.L58
+	.byte	3,195,1,1,7,9
+	.half	.L167-.L58
+	.byte	0,1,1
+.L621:
+	.sdecl	'.debug_ranges',debug,cluster('_Z11analogWriteii')
+	.sect	'.debug_ranges'
+.L166:
+	.word	-1,.L58,0,.L167-.L58,0,0
+	.sdecl	'.debug_info',debug,cluster('_Z4_sinf')
+	.sect	'.debug_info'
+.L168:
+	.word	338
+	.half	3
+	.word	.L169
+	.byte	4,1
+	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L171,.L170
+	.byte	2
+	.word	.L119
+	.byte	3
+	.byte	'_Z4_sinf',0,1,3,7
+	.word	.L349
+	.byte	1,1,1
+	.word	.L60,.L350,.L59
+	.byte	4
+	.byte	'__5070_18_angle',0,1,3,23
+	.word	.L349,.L351
+	.byte	5
+	.word	.L60,.L350
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_Z4_sinf')
+	.sect	'.debug_abbrev'
+.L169:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_Z4_sinf')
+	.sect	'.debug_line'
+.L170:
+	.word	.L625-.L624
+.L624:
+	.half	3
+	.word	.L627-.L626
+.L626:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0,0,0,0,0
+.L627:
+	.byte	5,13,7,0,5,2
+	.word	.L60
+	.byte	3,4,1,5,1,9
+	.half	.L483-.L60
+	.byte	1,9
+	.half	.L8-.L483
+	.byte	3,1,1,7,9
+	.half	.L172-.L8
+	.byte	0,1,1
+.L625:
+	.sdecl	'.debug_ranges',debug,cluster('_Z4_sinf')
+	.sect	'.debug_ranges'
+.L171:
+	.word	-1,.L60,0,.L172-.L60,0,0
+	.sdecl	'.debug_info',debug,cluster('_Z4_cosf')
+	.sect	'.debug_info'
+.L173:
+	.word	338
+	.half	3
+	.word	.L174
+	.byte	4,1
+	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L176,.L175
+	.byte	2
+	.word	.L119
+	.byte	3
+	.byte	'_Z4_cosf',0,1,8,7
+	.word	.L349
+	.byte	1,1,1
+	.word	.L62,.L352,.L61
+	.byte	4
+	.byte	'__5075_18_angle',0,1,8,23
+	.word	.L349,.L353
+	.byte	5
+	.word	.L62,.L352
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_Z4_cosf')
+	.sect	'.debug_abbrev'
+.L174:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_Z4_cosf')
+	.sect	'.debug_line'
+.L175:
+	.word	.L629-.L628
+.L628:
+	.half	3
+	.word	.L631-.L630
+.L630:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0,0,0,0,0
+.L631:
+	.byte	5,13,7,0,5,2
+	.word	.L62
+	.byte	3,9,1,5,1,9
+	.half	.L484-.L62
+	.byte	1,9
+	.half	.L9-.L484
+	.byte	3,1,1,7,9
+	.half	.L177-.L9
+	.byte	0,1,1
+.L629:
+	.sdecl	'.debug_ranges',debug,cluster('_Z4_cosf')
+	.sect	'.debug_ranges'
+.L176:
+	.word	-1,.L62,0,.L177-.L62,0,0
+	.sdecl	'.debug_info',debug,cluster('_Z7_sincosfPfS_')
+	.sect	'.debug_info'
+.L178:
+	.word	397
+	.half	3
+	.word	.L179
+	.byte	4,1
+	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L181,.L180
+	.byte	2
+	.word	.L119
+	.byte	3
+	.byte	'_Z7_sincosfPfS_',0,1,13,6,1,1,1
+	.word	.L64,.L354,.L63
+	.byte	4
+	.byte	'__5080_20_angle',0,1,13,29
+	.word	.L349,.L355
+	.byte	4
+	.byte	'__5080_34_sine',0,1,13,54
+	.word	.L356,.L357
+	.byte	4
+	.byte	'__5080_47_cosine',0,1,13,78
+	.word	.L356,.L358
+	.byte	5
+	.word	.L64,.L354
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_Z7_sincosfPfS_')
+	.sect	'.debug_abbrev'
+.L179:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_Z7_sincosfPfS_')
+	.sect	'.debug_line'
+.L180:
 	.word	.L633-.L632
 .L632:
 	.half	3
 	.word	.L635-.L634
 .L634:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
+	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0,0,0,0,0
 .L635:
-	.byte	5,1,7,0,5,2
-	.word	.L60
-	.byte	3,185,1,1,7,9
-	.half	.L169-.L60
+	.byte	5,6,7,0,5,2
+	.word	.L64
+	.byte	3,12,1,5,31,9
+	.half	.L488-.L64
+	.byte	3,2,1,5,19,9
+	.half	.L485-.L488
+	.byte	1,5,33,9
+	.half	.L636-.L485
+	.byte	3,1,1,5,21,9
+	.half	.L490-.L636
+	.byte	1,5,1,9
+	.half	.L637-.L490
+	.byte	3,1,1,7,9
+	.half	.L182-.L637
 	.byte	0,1,1
 .L633:
-	.sdecl	'.debug_ranges',debug,cluster('_Z11analogWriteii')
-	.sect	'.debug_ranges'
-.L168:
-	.word	-1,.L60,0,.L169-.L60,0,0
-	.sdecl	'.debug_info',debug,cluster('_Z4_sinf')
-	.sect	'.debug_info'
-.L170:
-	.word	338
-	.half	3
-	.word	.L171
-	.byte	4,1
-	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0
-	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
-	.byte	12,1
-	.word	.L173,.L172
-	.byte	2
-	.word	.L121
-	.byte	3
-	.byte	'_Z4_sinf',0,1,3,7
-	.word	.L353
-	.byte	1,1,1
-	.word	.L62,.L354,.L61
-	.byte	4
-	.byte	'__5050_18_angle',0,1,3,23
-	.word	.L353,.L355
-	.byte	5
-	.word	.L62,.L354
-	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('_Z4_sinf')
-	.sect	'.debug_abbrev'
-.L171:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
-	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('_Z4_sinf')
-	.sect	'.debug_line'
-.L172:
-	.word	.L637-.L636
-.L636:
-	.half	3
-	.word	.L639-.L638
-.L638:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0,0,0,0,0
-.L639:
-	.byte	5,13,7,0,5,2
-	.word	.L62
-	.byte	3,4,1,5,1,9
-	.half	.L492-.L62
-	.byte	1,9
-	.half	.L10-.L492
-	.byte	3,1,1,7,9
-	.half	.L174-.L10
-	.byte	0,1,1
-.L637:
-	.sdecl	'.debug_ranges',debug,cluster('_Z4_sinf')
-	.sect	'.debug_ranges'
-.L173:
-	.word	-1,.L62,0,.L174-.L62,0,0
-	.sdecl	'.debug_info',debug,cluster('_Z4_cosf')
-	.sect	'.debug_info'
-.L175:
-	.word	338
-	.half	3
-	.word	.L176
-	.byte	4,1
-	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0
-	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
-	.byte	12,1
-	.word	.L178,.L177
-	.byte	2
-	.word	.L121
-	.byte	3
-	.byte	'_Z4_cosf',0,1,8,7
-	.word	.L353
-	.byte	1,1,1
-	.word	.L64,.L356,.L63
-	.byte	4
-	.byte	'__5055_18_angle',0,1,8,23
-	.word	.L353,.L357
-	.byte	5
-	.word	.L64,.L356
-	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('_Z4_cosf')
-	.sect	'.debug_abbrev'
-.L176:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
-	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('_Z4_cosf')
-	.sect	'.debug_line'
-.L177:
-	.word	.L641-.L640
-.L640:
-	.half	3
-	.word	.L643-.L642
-.L642:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0,0,0,0,0
-.L643:
-	.byte	5,13,7,0,5,2
-	.word	.L64
-	.byte	3,9,1,5,1,9
-	.half	.L493-.L64
-	.byte	1,9
-	.half	.L11-.L493
-	.byte	3,1,1,7,9
-	.half	.L179-.L11
-	.byte	0,1,1
-.L641:
-	.sdecl	'.debug_ranges',debug,cluster('_Z4_cosf')
-	.sect	'.debug_ranges'
-.L178:
-	.word	-1,.L64,0,.L179-.L64,0,0
-	.sdecl	'.debug_info',debug,cluster('_Z7_sincosfPfS_')
-	.sect	'.debug_info'
-.L180:
-	.word	397
-	.half	3
-	.word	.L181
-	.byte	4,1
-	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0
-	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
-	.byte	12,1
-	.word	.L183,.L182
-	.byte	2
-	.word	.L121
-	.byte	3
-	.byte	'_Z7_sincosfPfS_',0,1,13,6,1,1,1
-	.word	.L66,.L358,.L65
-	.byte	4
-	.byte	'__5060_20_angle',0,1,13,29
-	.word	.L353,.L359
-	.byte	4
-	.byte	'__5060_34_sine',0,1,13,54
-	.word	.L360,.L361
-	.byte	4
-	.byte	'__5060_47_cosine',0,1,13,78
-	.word	.L360,.L362
-	.byte	5
-	.word	.L66,.L358
-	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('_Z7_sincosfPfS_')
-	.sect	'.debug_abbrev'
-.L181:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('_Z7_sincosfPfS_')
-	.sect	'.debug_line'
-.L182:
-	.word	.L645-.L644
-.L644:
-	.half	3
-	.word	.L647-.L646
-.L646:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0,0,0,0,0
-.L647:
-	.byte	5,6,7,0,5,2
-	.word	.L66
-	.byte	3,12,1,5,31,9
-	.half	.L497-.L66
-	.byte	3,2,1,5,19,9
-	.half	.L494-.L497
-	.byte	1,5,33,9
-	.half	.L648-.L494
-	.byte	3,1,1,5,21,9
-	.half	.L499-.L648
-	.byte	1,5,1,9
-	.half	.L649-.L499
-	.byte	3,1,1,7,9
-	.half	.L184-.L649
-	.byte	0,1,1
-.L645:
 	.sdecl	'.debug_ranges',debug,cluster('_Z7_sincosfPfS_')
 	.sect	'.debug_ranges'
-.L183:
-	.word	-1,.L66,0,.L184-.L66,0,0
+.L181:
+	.word	-1,.L64,0,.L182-.L64,0,0
 	.sdecl	'.debug_info',debug,cluster('_Z6_atan2ff')
 	.sect	'.debug_info'
-.L185:
+.L183:
 	.word	361
 	.half	3
-	.word	.L186
+	.word	.L184
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L188,.L187
+	.word	.L186,.L185
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
 	.byte	'_Z6_atan2ff',0,1,19,7
-	.word	.L353
+	.word	.L349
 	.byte	1,1,1
-	.word	.L68,.L363,.L67
+	.word	.L66,.L359,.L65
 	.byte	4
-	.byte	'__5066_20_y',0,1,19,26
-	.word	.L353,.L364
+	.byte	'__5086_20_y',0,1,19,26
+	.word	.L349,.L360
 	.byte	4
-	.byte	'__5066_29_x',0,1,19,46
-	.word	.L353,.L365
+	.byte	'__5086_29_x',0,1,19,46
+	.word	.L349,.L361
 	.byte	5
-	.word	.L68,.L363
+	.word	.L66,.L359
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_Z6_atan2ff')
 	.sect	'.debug_abbrev'
-.L186:
+.L184:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_Z6_atan2ff')
 	.sect	'.debug_line'
-.L187:
-	.word	.L651-.L650
-.L650:
+.L185:
+	.word	.L639-.L638
+.L638:
 	.half	3
-	.word	.L653-.L652
-.L652:
+	.word	.L641-.L640
+.L640:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0,0,0,0,0
-.L653:
+.L641:
 	.byte	5,28,7,0,5,2
-	.word	.L68
+	.word	.L66
 	.byte	3,20,1,5,1,9
-	.half	.L500-.L68
+	.half	.L491-.L66
 	.byte	1,9
-	.half	.L12-.L500
+	.half	.L10-.L491
 	.byte	3,1,1,7,9
-	.half	.L189-.L12
+	.half	.L187-.L10
 	.byte	0,1,1
-.L651:
+.L639:
 	.sdecl	'.debug_ranges',debug,cluster('_Z6_atan2ff')
 	.sect	'.debug_ranges'
-.L188:
-	.word	-1,.L68,0,.L189-.L68,0,0
+.L186:
+	.word	-1,.L66,0,.L187-.L66,0,0
 	.sdecl	'.debug_info',debug,cluster('_Z15_normalizeAnglef')
 	.sect	'.debug_info'
-.L190:
+.L188:
 	.word	384
 	.half	3
-	.word	.L191
+	.word	.L189
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L193,.L192
+	.word	.L191,.L190
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
 	.byte	'_Z15_normalizeAnglef',0,1,24,7
-	.word	.L353
+	.word	.L349
 	.byte	1,1,1
-	.word	.L70,.L366,.L69
+	.word	.L68,.L362,.L67
 	.byte	4
-	.byte	'__5071_29_angle',0,1,24,35
-	.word	.L353,.L367
+	.byte	'__5091_29_angle',0,1,24,35
+	.word	.L349,.L363
 	.byte	5
-	.word	.L70,.L366
+	.word	.L68,.L362
 	.byte	6
-	.byte	'__5073_11_normalized',0,1,26,12
-	.word	.L353,.L368
+	.byte	'__5093_11_normalized',0,1,26,12
+	.word	.L349,.L364
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_Z15_normalizeAnglef')
 	.sect	'.debug_abbrev'
-.L191:
+.L189:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_Z15_normalizeAnglef')
 	.sect	'.debug_line'
-.L192:
-	.word	.L655-.L654
-.L654:
+.L190:
+	.word	.L643-.L642
+.L642:
 	.half	3
-	.word	.L657-.L656
-.L656:
+	.word	.L645-.L644
+.L644:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0,0,0,0,0
-.L657:
+.L645:
 	.byte	5,82,7,0,5,2
-	.word	.L70
+	.word	.L68
 	.byte	3,25,1,5,34,9
-	.half	.L501-.L70
+	.half	.L492-.L68
 	.byte	3,1,1,5,30,9
-	.half	.L658-.L501
+	.half	.L646-.L492
 	.byte	1,5,8,9
-	.half	.L659-.L658
+	.half	.L647-.L646
 	.byte	1,5,91,7,9
-	.half	.L660-.L659
+	.half	.L648-.L647
 	.byte	1,5,88,9
-	.half	.L661-.L660
+	.half	.L649-.L648
 	.byte	1,5,64,9
-	.half	.L662-.L661
+	.half	.L650-.L649
 	.byte	1,5,1,9
-	.half	.L14-.L662
+	.half	.L12-.L650
 	.byte	1,9
-	.half	.L15-.L14
+	.half	.L13-.L12
 	.byte	3,1,1,7,9
-	.half	.L194-.L15
+	.half	.L192-.L13
 	.byte	0,1,1
-.L655:
+.L643:
 	.sdecl	'.debug_ranges',debug,cluster('_Z15_normalizeAnglef')
 	.sect	'.debug_ranges'
-.L193:
-	.word	-1,.L70,0,.L194-.L70,0,0
+.L191:
+	.word	-1,.L68,0,.L192-.L68,0,0
 	.sdecl	'.debug_info',debug,cluster('_Z16_electricalAnglefi')
 	.sect	'.debug_info'
-.L195:
+.L193:
 	.word	391
 	.half	3
-	.word	.L196
+	.word	.L194
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L198,.L197
+	.word	.L196,.L195
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
 	.byte	'_Z16_electricalAnglefi',0,1,30,7
-	.word	.L353
+	.word	.L349
 	.byte	1,1,1
-	.word	.L72,.L369,.L71
+	.word	.L70,.L365,.L69
 	.byte	4
-	.byte	'__5077_30_shaft_angle',0,1,30,37
-	.word	.L353,.L370
+	.byte	'__5097_30_shaft_angle',0,1,30,37
+	.word	.L349,.L366
 	.byte	4
-	.byte	'__5077_47_pole_pairs',0,1,30,65
-	.word	.L340,.L371
+	.byte	'__5097_47_pole_pairs',0,1,30,65
+	.word	.L336,.L367
 	.byte	5
-	.word	.L72,.L369
+	.word	.L70,.L365
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_Z16_electricalAnglefi')
 	.sect	'.debug_abbrev'
-.L196:
+.L194:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_Z16_electricalAnglefi')
 	.sect	'.debug_line'
-.L197:
-	.word	.L664-.L663
-.L663:
+.L195:
+	.word	.L652-.L651
+.L651:
 	.half	3
-	.word	.L666-.L665
-.L665:
+	.word	.L654-.L653
+.L653:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0,0,0,0,0
-.L666:
+.L654:
 	.byte	5,33,7,0,5,2
-	.word	.L72
+	.word	.L70
 	.byte	3,31,1,5,30,9
-	.half	.L667-.L72
+	.half	.L655-.L70
 	.byte	1,5,1,9
-	.half	.L668-.L667
+	.half	.L656-.L655
 	.byte	1,9
-	.half	.L16-.L668
+	.half	.L14-.L656
 	.byte	3,1,1,7,9
-	.half	.L199-.L16
+	.half	.L197-.L14
 	.byte	0,1,1
-.L664:
+.L652:
 	.sdecl	'.debug_ranges',debug,cluster('_Z16_electricalAnglefi')
 	.sect	'.debug_ranges'
-.L198:
-	.word	-1,.L72,0,.L199-.L72,0,0
+.L196:
+	.word	-1,.L70,0,.L197-.L70,0,0
 	.sdecl	'.debug_info',debug,cluster('_Z11_sqrtApproxf')
 	.sect	'.debug_info'
-.L200:
+.L198:
 	.word	346
 	.half	3
-	.word	.L201
+	.word	.L199
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L203,.L202
+	.word	.L201,.L200
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
 	.byte	'_Z11_sqrtApproxf',0,1,35,7
-	.word	.L353
+	.word	.L349
 	.byte	1,1,1
-	.word	.L74,.L372,.L73
+	.word	.L72,.L368,.L71
 	.byte	4
-	.byte	'__5082_25_value',0,1,35,31
-	.word	.L353,.L373
+	.byte	'__5102_25_value',0,1,35,31
+	.word	.L349,.L369
 	.byte	5
-	.word	.L74,.L372
+	.word	.L72,.L368
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_Z11_sqrtApproxf')
 	.sect	'.debug_abbrev'
-.L201:
+.L199:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_Z11_sqrtApproxf')
 	.sect	'.debug_line'
-.L202:
-	.word	.L670-.L669
-.L669:
+.L200:
+	.word	.L658-.L657
+.L657:
 	.half	3
-	.word	.L672-.L671
-.L671:
+	.word	.L660-.L659
+.L659:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/simplefoc_math_overrides.cpp',0,0,0,0,0
-.L672:
+.L660:
 	.byte	5,14,7,0,5,2
-	.word	.L74
+	.word	.L72
 	.byte	3,36,1,5,1,9
-	.half	.L502-.L74
+	.half	.L493-.L72
 	.byte	1,9
-	.half	.L17-.L502
+	.half	.L15-.L493
 	.byte	3,1,1,7,9
-	.half	.L204-.L17
+	.half	.L202-.L15
 	.byte	0,1,1
-.L670:
+.L658:
 	.sdecl	'.debug_ranges',debug,cluster('_Z11_sqrtApproxf')
 	.sect	'.debug_ranges'
-.L203:
-	.word	-1,.L74,0,.L204-.L74,0,0
+.L201:
+	.word	-1,.L72,0,.L202-.L72,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5PrintD1Ev')
 	.sect	'.debug_info'
-.L205:
+.L203:
 	.word	310
 	.half	3
-	.word	.L206
+	.word	.L204
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.h',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L208,.L207
+	.word	.L206,.L205
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
 	.byte	'_ZN5PrintD1Ev',0,2,1,64,13,1,1,1
-	.word	.L76,.L374,.L75
+	.word	.L74,.L370,.L73
 	.byte	4
 	.byte	'this',0,1,64,48
-	.word	.L375,.L376
+	.word	.L371,.L372
 	.byte	5
-	.word	.L76,.L374
+	.word	.L74,.L370
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5PrintD1Ev')
 	.sect	'.debug_abbrev'
-.L206:
+.L204:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,32,13,58,15,59,15,57,15
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5PrintD1Ev')
 	.sect	'.debug_line'
-.L207:
-	.word	.L674-.L673
-.L673:
+.L205:
+	.word	.L662-.L661
+.L661:
 	.half	3
-	.word	.L676-.L675
-.L675:
+	.word	.L664-.L663
+.L663:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.h',0,0,0,0,0
-.L676:
+.L664:
 	.byte	5,13,7,0,5,2
-	.word	.L76
+	.word	.L74
 	.byte	3,63,1,5,94,9
-	.half	.L503-.L76
+	.half	.L494-.L74
 	.byte	1,5,92,9
-	.half	.L677-.L503
+	.half	.L665-.L494
 	.byte	1,5,117,9
-	.half	.L678-.L677
+	.half	.L666-.L665
 	.byte	1,5,143,1,9
-	.half	.L679-.L678
+	.half	.L667-.L666
 	.byte	1,5,139,1,9
-	.half	.L680-.L679
+	.half	.L668-.L667
 	.byte	1,5,165,1,9
-	.half	.L681-.L680
+	.half	.L669-.L668
 	.byte	1,5,162,1,9
-	.half	.L682-.L681
+	.half	.L670-.L669
 	.byte	1,5,203,1,9
-	.half	.L683-.L682
+	.half	.L671-.L670
 	.byte	1,5,214,1,9
-	.half	.L684-.L683
+	.half	.L672-.L671
 	.byte	1,5,200,1,9
-	.half	.L685-.L684
+	.half	.L673-.L672
 	.byte	1,5,222,1,9
-	.half	.L686-.L685
+	.half	.L674-.L673
 	.byte	1,5,251,1,9
-	.half	.L687-.L686
+	.half	.L675-.L674
 	.byte	1,5,244,1,9
-	.half	.L688-.L687
+	.half	.L676-.L675
 	.byte	1,5,134,2,9
-	.half	.L689-.L688
+	.half	.L677-.L676
 	.byte	1,7,9
-	.half	.L209-.L689
+	.half	.L207-.L677
 	.byte	0,1,1
-.L674:
+.L662:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5PrintD1Ev')
 	.sect	'.debug_ranges'
-.L208:
-	.word	-1,.L76,0,.L209-.L76,0,0
+.L206:
+	.word	-1,.L74,0,.L207-.L74,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5PrintD0Ev')
 	.sect	'.debug_info'
-.L210:
+.L208:
 	.word	311
 	.half	3
-	.word	.L211
+	.word	.L209
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.h',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L213,.L212
+	.word	.L211,.L210
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
 	.byte	'_ZN5PrintD0Ev',0,2,1,64,148,2,1,1,1
-	.word	.L78,.L377,.L77
+	.word	.L76,.L373,.L75
 	.byte	4
 	.byte	'this',0,1,64,14
-	.word	.L378,.L379
+	.word	.L374,.L375
 	.byte	5
-	.word	.L78,.L377
+	.word	.L76,.L373
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5PrintD0Ev')
 	.sect	'.debug_abbrev'
-.L211:
+.L209:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,32,13,58,15,59,15,57,15
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5PrintD0Ev')
 	.sect	'.debug_line'
-.L212:
-	.word	.L691-.L690
-.L690:
+.L210:
+	.word	.L679-.L678
+.L678:
 	.half	3
-	.word	.L693-.L692
-.L692:
+	.word	.L681-.L680
+.L680:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.h',0,0,0,0,0
-.L693:
+.L681:
 	.byte	5,148,2,7,0,5,2
-	.word	.L78
+	.word	.L76
 	.byte	3,63,1,5,71,9
-	.half	.L505-.L78
+	.half	.L496-.L76
 	.byte	1,5,69,9
-	.half	.L694-.L505
+	.half	.L682-.L496
 	.byte	1,5,97,9
-	.half	.L695-.L694
+	.half	.L683-.L682
 	.byte	1,5,123,9
-	.half	.L696-.L695
+	.half	.L684-.L683
 	.byte	1,5,119,9
-	.half	.L697-.L696
+	.half	.L685-.L684
 	.byte	1,5,149,1,9
-	.half	.L698-.L697
+	.half	.L686-.L685
 	.byte	1,5,146,1,9
-	.half	.L699-.L698
+	.half	.L687-.L686
 	.byte	1,5,191,1,9
-	.half	.L700-.L699
+	.half	.L688-.L687
 	.byte	1,5,202,1,9
-	.half	.L701-.L700
+	.half	.L689-.L688
 	.byte	1,5,188,1,9
-	.half	.L702-.L701
+	.half	.L690-.L689
 	.byte	1,5,212,1,9
-	.half	.L703-.L702
+	.half	.L691-.L690
 	.byte	1,5,241,1,9
-	.half	.L704-.L703
+	.half	.L692-.L691
 	.byte	1,5,234,1,9
-	.half	.L705-.L704
+	.half	.L693-.L692
 	.byte	1,5,131,2,9
-	.half	.L706-.L705
+	.half	.L694-.L693
 	.byte	1,5,148,2,9
-	.half	.L507-.L706
+	.half	.L498-.L694
 	.byte	1,7,9
-	.half	.L214-.L507
+	.half	.L212-.L498
 	.byte	0,1,1
-.L691:
+.L679:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5PrintD0Ev')
 	.sect	'.debug_ranges'
-.L213:
-	.word	-1,.L78,0,.L214-.L78,0,0
+.L211:
+	.word	-1,.L76,0,.L212-.L76,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5PrintD2Ev')
 	.sect	'.debug_info'
-.L215:
+.L213:
 	.word	310
 	.half	3
-	.word	.L216
+	.word	.L214
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.h',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L218,.L217
+	.word	.L216,.L215
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
 	.byte	'_ZN5PrintD2Ev',0,2,1,64,1,1,1,1
-	.word	.L80,.L380,.L79
+	.word	.L78,.L376,.L77
 	.byte	4
 	.byte	'this',0,1,64,36
-	.word	.L381,.L382
+	.word	.L377,.L378
 	.byte	5
-	.word	.L80,.L380
+	.word	.L78,.L376
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5PrintD2Ev')
 	.sect	'.debug_abbrev'
-.L216:
+.L214:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,32,13,58,15,59,15,57,15
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5PrintD2Ev')
 	.sect	'.debug_line'
-.L217:
-	.word	.L708-.L707
-.L707:
+.L215:
+	.word	.L696-.L695
+.L695:
 	.half	3
-	.word	.L710-.L709
-.L709:
+	.word	.L698-.L697
+.L697:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.h',0,0,0,0,0
-.L710:
+.L698:
 	.byte	5,1,7,0,5,2
-	.word	.L80
+	.word	.L78
 	.byte	3,63,1,5,93,9
-	.half	.L508-.L80
+	.half	.L499-.L78
 	.byte	1,5,91,9
-	.half	.L711-.L508
+	.half	.L699-.L499
 	.byte	1,5,119,9
-	.half	.L712-.L711
+	.half	.L700-.L699
 	.byte	1,5,145,1,9
-	.half	.L713-.L712
+	.half	.L701-.L700
 	.byte	1,5,141,1,9
-	.half	.L714-.L713
+	.half	.L702-.L701
 	.byte	1,5,171,1,9
-	.half	.L715-.L714
+	.half	.L703-.L702
 	.byte	1,5,168,1,9
-	.half	.L716-.L715
+	.half	.L704-.L703
 	.byte	1,5,213,1,9
-	.half	.L717-.L716
+	.half	.L705-.L704
 	.byte	1,5,224,1,9
-	.half	.L718-.L717
+	.half	.L706-.L705
 	.byte	1,5,210,1,9
-	.half	.L719-.L718
+	.half	.L707-.L706
 	.byte	1,5,234,1,9
-	.half	.L720-.L719
+	.half	.L708-.L707
 	.byte	1,5,135,2,9
-	.half	.L721-.L720
+	.half	.L709-.L708
 	.byte	1,5,128,2,9
-	.half	.L722-.L721
+	.half	.L710-.L709
 	.byte	1,5,146,2,9
-	.half	.L723-.L722
+	.half	.L711-.L710
 	.byte	1,7,9
-	.half	.L219-.L723
+	.half	.L217-.L711
 	.byte	0,1,1
-.L708:
+.L696:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5PrintD2Ev')
 	.sect	'.debug_ranges'
-.L218:
-	.word	-1,.L80,0,.L219-.L80,0,0
+.L216:
+	.word	-1,.L78,0,.L217-.L78,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5Print5writeEh')
 	.sect	'.debug_info'
-.L220:
+.L218:
 	.word	347
 	.half	3
-	.word	.L221
+	.word	.L219
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L223,.L222
+	.word	.L221,.L220
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print5writeEh',0,1,5,8
-	.word	.L333
+	.byte	'_ZN5Print5writeEh',0,1,6,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L82,.L383,.L81
+	.word	.L80,.L379,.L79
 	.byte	4
-	.byte	'this',0,1,5,47
-	.word	.L384,.L385
+	.byte	'this',0,1,6,47
+	.word	.L380,.L381
 	.byte	4
-	.byte	'__4730_29_value',0,1,5,62
-	.word	.L386,.L387
+	.byte	'__4741_29_value',0,1,6,62
+	.word	.L382,.L383
 	.byte	5
-	.word	.L82,.L383
+	.word	.L80,.L379
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print5writeEh')
 	.sect	'.debug_abbrev'
-.L221:
+.L219:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5Print5writeEh')
 	.sect	'.debug_line'
-.L222:
-	.word	.L725-.L724
-.L724:
+.L220:
+	.word	.L713-.L712
+.L712:
 	.half	3
-	.word	.L727-.L726
-.L726:
+	.word	.L715-.L714
+.L714:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L727:
+.L715:
 	.byte	5,8,7,0,5,2
-	.word	.L82
-	.byte	3,7,1,5,1,9
-	.half	.L728-.L82
+	.word	.L80
+	.byte	3,8,1,5,1,9
+	.half	.L716-.L80
 	.byte	1,9
-	.half	.L18-.L728
+	.half	.L16-.L716
 	.byte	3,1,1,7,9
-	.half	.L224-.L18
+	.half	.L222-.L16
 	.byte	0,1,1
-.L725:
+.L713:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print5writeEh')
 	.sect	'.debug_ranges'
-.L223:
-	.word	-1,.L82,0,.L224-.L82,0,0
+.L221:
+	.word	-1,.L80,0,.L222-.L80,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5Print5writeEPKhj')
 	.sect	'.debug_info'
-.L225:
+.L223:
 	.word	378
 	.half	3
-	.word	.L226
+	.word	.L224
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L228,.L227
+	.word	.L226,.L225
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print5writeEPKhj',0,1,11,8
-	.word	.L333
+	.byte	'_ZN5Print5writeEPKhj',0,1,12,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L84,.L388,.L83
+	.word	.L82,.L384,.L81
 	.byte	4
-	.byte	'this',0,1,11,50
-	.word	.L389,.L390
+	.byte	'this',0,1,12,50
+	.word	.L385,.L386
 	.byte	4
-	.byte	'__4736_36_buffer',0,1,11,72
-	.word	.L391,.L392
+	.byte	'__4747_36_buffer',0,1,12,72
+	.word	.L387,.L388
 	.byte	4
-	.byte	'__4736_51_size',0,1,11,98
-	.word	.L333,.L393
+	.byte	'__4747_51_size',0,1,12,98
+	.word	.L332,.L389
 	.byte	5
-	.word	.L84,.L388
+	.word	.L82,.L384
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print5writeEPKhj')
 	.sect	'.debug_abbrev'
-.L226:
+.L224:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5Print5writeEPKhj')
 	.sect	'.debug_line'
-.L227:
-	.word	.L730-.L729
-.L729:
+.L225:
+	.word	.L718-.L717
+.L717:
 	.half	3
-	.word	.L732-.L731
-.L731:
+	.word	.L720-.L719
+.L719:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L732:
+.L720:
 	.byte	5,1,7,0,5,2
-	.word	.L84
-	.byte	3,13,1,9
-	.half	.L19-.L84
+	.word	.L82
+	.byte	3,14,1,9
+	.half	.L17-.L82
 	.byte	3,1,1,7,9
-	.half	.L229-.L19
+	.half	.L227-.L17
 	.byte	0,1,1
-.L730:
+.L718:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print5writeEPKhj')
 	.sect	'.debug_ranges'
-.L228:
-	.word	-1,.L84,0,.L229-.L84,0,0
+.L226:
+	.word	-1,.L82,0,.L227-.L82,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5Print5printEPKc')
 	.sect	'.debug_info'
-.L230:
+.L228:
 	.word	407
 	.half	3
-	.word	.L231
+	.word	.L229
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L233,.L232
+	.word	.L231,.L230
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print5printEPKc',0,1,17,8
-	.word	.L333
+	.byte	'_ZN5Print5printEPKc',0,1,18,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L86,.L394,.L85
+	.word	.L84,.L390,.L83
 	.byte	4
-	.byte	'this',0,1,17,49
-	.word	.L395,.L396
+	.byte	'this',0,1,18,49
+	.word	.L391,.L392
 	.byte	4
-	.byte	'__4742_33_value',0,1,17,68
-	.word	.L397,.L398
+	.byte	'__4753_33_value',0,1,18,68
+	.word	.L393,.L394
 	.byte	5
-	.word	.L86,.L394
+	.word	.L84,.L390
 	.byte	6
-	.byte	'__4744_17_cursor',0,1,19,18
-	.word	.L397,.L399
+	.byte	'__4755_17_cursor',0,1,20,18
+	.word	.L393,.L395
 	.byte	6
-	.byte	'__4745_12_count',0,1,20,13
-	.word	.L333,.L400
+	.byte	'__4756_12_count',0,1,21,13
+	.word	.L332,.L396
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print5printEPKc')
 	.sect	'.debug_abbrev'
-.L231:
+.L229:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5Print5printEPKc')
 	.sect	'.debug_line'
-.L232:
-	.word	.L734-.L733
-.L733:
+.L230:
+	.word	.L722-.L721
+.L721:
 	.half	3
-	.word	.L736-.L735
-.L735:
+	.word	.L724-.L723
+.L723:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L736:
+.L724:
 	.byte	5,8,7,0,5,2
-	.word	.L86
-	.byte	3,16,1,5,29,9
-	.half	.L511-.L86
+	.word	.L84
+	.byte	3,17,1,5,29,9
+	.half	.L502-.L84
 	.byte	3,3,1,5,21,9
-	.half	.L512-.L511
+	.half	.L503-.L502
 	.byte	3,127,1,5,77,7,9
-	.half	.L737-.L512
+	.half	.L725-.L503
 	.byte	1,5,81,9
-	.half	.L738-.L737
+	.half	.L726-.L725
 	.byte	1,5,18,9
-	.half	.L21-.L738
+	.half	.L19-.L726
 	.byte	1,5,39,9
-	.half	.L513-.L21
+	.half	.L504-.L19
 	.byte	3,2,1,5,78,9
-	.half	.L23-.L513
+	.half	.L21-.L504
 	.byte	3,2,1,5,71,9
-	.half	.L739-.L23
+	.half	.L727-.L21
 	.byte	1,5,22,9
-	.half	.L740-.L739
+	.half	.L728-.L727
 	.byte	1,5,112,9
-	.half	.L741-.L740
+	.half	.L729-.L728
 	.byte	1,5,102,9
-	.half	.L742-.L741
+	.half	.L730-.L729
 	.byte	1,5,17,9
-	.half	.L515-.L742
+	.half	.L506-.L730
 	.byte	1,5,1,9
-	.half	.L743-.L515
+	.half	.L731-.L506
 	.byte	3,1,1,5,15,9
-	.half	.L22-.L743
+	.half	.L20-.L731
 	.byte	3,125,1,5,39,9
-	.half	.L744-.L22
+	.half	.L732-.L20
 	.byte	1,5,1,7,9
-	.half	.L745-.L744
+	.half	.L733-.L732
 	.byte	3,5,1,9
-	.half	.L24-.L745
+	.half	.L22-.L733
 	.byte	3,1,1,7,9
-	.half	.L234-.L24
+	.half	.L232-.L22
 	.byte	0,1,1
-.L734:
+.L722:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print5printEPKc')
 	.sect	'.debug_ranges'
-.L233:
-	.word	-1,.L86,0,.L234-.L86,0,0
+.L231:
+	.word	-1,.L84,0,.L232-.L84,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5Print5printEPK19__FlashStringHelper')
 	.sect	'.debug_info'
-.L235:
+.L233:
 	.word	369
 	.half	3
-	.word	.L236
+	.word	.L234
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L238,.L237
+	.word	.L236,.L235
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print5printEPK19__FlashStringHelper',0,1,29,8
-	.word	.L333
+	.byte	'_ZN5Print5printEPK19__FlashStringHelper',0,1,30,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L88,.L401,.L87
+	.word	.L86,.L397,.L85
 	.byte	4
-	.byte	'this',0,1,29,69
-	.word	.L402,.L403
+	.byte	'this',0,1,30,69
+	.word	.L398,.L399
 	.byte	4
-	.byte	'__4754_48_value',0,1,29,110
-	.word	.L404,.L405
+	.byte	'__4765_48_value',0,1,30,110
+	.word	.L400,.L401
 	.byte	5
-	.word	.L88,.L401
+	.word	.L86,.L397
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print5printEPK19__FlashStringHelper')
 	.sect	'.debug_abbrev'
-.L236:
+.L234:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5Print5printEPK19__FlashStringHelper')
 	.sect	'.debug_line'
-.L237:
-	.word	.L747-.L746
-.L746:
+.L235:
+	.word	.L735-.L734
+.L734:
 	.half	3
-	.word	.L749-.L748
-.L748:
+	.word	.L737-.L736
+.L736:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L749:
+.L737:
 	.byte	5,35,7,0,5,2
-	.word	.L88
-	.byte	3,30,1,5,1,9
-	.half	.L517-.L88
+	.word	.L86
+	.byte	3,31,1,5,1,9
+	.half	.L508-.L86
 	.byte	1,9
-	.half	.L25-.L517
+	.half	.L23-.L508
 	.byte	3,1,1,7,9
-	.half	.L239-.L25
+	.half	.L237-.L23
 	.byte	0,1,1
-.L747:
+.L735:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print5printEPK19__FlashStringHelper')
 	.sect	'.debug_ranges'
-.L238:
-	.word	-1,.L88,0,.L239-.L88,0,0
+.L236:
+	.word	-1,.L86,0,.L237-.L86,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5Print5printEc')
 	.sect	'.debug_info'
-.L240:
+.L238:
 	.word	347
 	.half	3
-	.word	.L241
+	.word	.L239
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L243,.L242
+	.word	.L241,.L240
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print5printEc',0,1,34,8
-	.word	.L333
+	.byte	'_ZN5Print5printEc',0,1,35,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L90,.L406,.L89
+	.word	.L88,.L402,.L87
 	.byte	4
-	.byte	'this',0,1,34,47
-	.word	.L407,.L408
+	.byte	'this',0,1,35,47
+	.word	.L403,.L404
 	.byte	4
-	.byte	'__4759_26_value',0,1,34,59
-	.word	.L409,.L410
+	.byte	'__4770_26_value',0,1,35,59
+	.word	.L405,.L406
 	.byte	5
-	.word	.L90,.L406
+	.word	.L88,.L402
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print5printEc')
 	.sect	'.debug_abbrev'
-.L241:
+.L239:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5Print5printEc')
 	.sect	'.debug_line'
-.L242:
-	.word	.L751-.L750
-.L750:
+.L240:
+	.word	.L739-.L738
+.L738:
 	.half	3
-	.word	.L753-.L752
-.L752:
+	.word	.L741-.L740
+.L740:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L753:
+.L741:
 	.byte	5,65,7,0,5,2
-	.word	.L90
-	.byte	3,35,1,5,58,9
-	.half	.L754-.L90
+	.word	.L88
+	.byte	3,36,1,5,58,9
+	.half	.L742-.L88
 	.byte	1,5,9,9
-	.half	.L755-.L754
+	.half	.L743-.L742
 	.byte	1,5,89,9
-	.half	.L756-.L755
+	.half	.L744-.L743
 	.byte	1,5,1,9
-	.half	.L519-.L756
+	.half	.L510-.L744
 	.byte	1,9
-	.half	.L26-.L519
+	.half	.L24-.L510
 	.byte	3,1,1,7,9
-	.half	.L244-.L26
+	.half	.L242-.L24
 	.byte	0,1,1
-.L751:
+.L739:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print5printEc')
 	.sect	'.debug_ranges'
-.L243:
-	.word	-1,.L90,0,.L244-.L90,0,0
+.L241:
+	.word	-1,.L88,0,.L242-.L88,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5Print5printEi')
 	.sect	'.debug_info'
-.L245:
+.L243:
 	.word	377
 	.half	3
-	.word	.L246
+	.word	.L244
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L248,.L247
+	.word	.L246,.L245
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print5printEi',0,1,39,8
-	.word	.L333
+	.byte	'_ZN5Print5printEi',0,1,40,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L92,.L411,.L91
+	.word	.L90,.L407,.L89
 	.byte	4
-	.byte	'this',0,1,39,47
-	.word	.L412,.L413
+	.byte	'this',0,1,40,47
+	.word	.L408,.L409
 	.byte	4
-	.byte	'__4764_25_value',0,1,39,58
-	.word	.L340,.L414
+	.byte	'__4775_25_value',0,1,40,58
+	.word	.L336,.L410
 	.byte	5
-	.word	.L92,.L411
+	.word	.L90,.L407
 	.byte	6
-	.byte	'__4766_10_buffer',0,1,41,11
-	.word	.L415,.L416
+	.byte	'__4777_10_buffer',0,1,42,11
+	.word	.L411,.L412
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print5printEi')
 	.sect	'.debug_abbrev'
-.L246:
+.L244:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5Print5printEi')
 	.sect	'.debug_line'
-.L247:
-	.word	.L758-.L757
-.L757:
+.L245:
+	.word	.L746-.L745
+.L745:
 	.half	3
-	.word	.L760-.L759
-.L759:
+	.word	.L748-.L747
+.L747:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L760:
+.L748:
 	.byte	5,8,7,0,5,2
-	.word	.L92
-	.byte	3,38,1,5,57,9
-	.half	.L523-.L92
+	.word	.L90
+	.byte	3,39,1,5,57,9
+	.half	.L514-.L90
 	.byte	3,3,1,5,11,9
-	.half	.L761-.L523
+	.half	.L749-.L514
 	.byte	1,5,30,9
-	.half	.L522-.L761
+	.half	.L513-.L749
 	.byte	1,5,50,9
-	.half	.L521-.L522
+	.half	.L512-.L513
 	.byte	1,5,36,9
-	.half	.L762-.L521
+	.half	.L750-.L512
 	.byte	1,5,50,9
-	.half	.L763-.L762
+	.half	.L751-.L750
 	.byte	3,1,1,5,35,9
-	.half	.L764-.L763
+	.half	.L752-.L751
 	.byte	1,5,1,9
-	.half	.L525-.L764
+	.half	.L516-.L752
 	.byte	1,9
-	.half	.L27-.L525
+	.half	.L25-.L516
 	.byte	3,1,1,7,9
-	.half	.L249-.L27
+	.half	.L247-.L25
 	.byte	0,1,1
-.L758:
+.L746:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print5printEi')
 	.sect	'.debug_ranges'
-.L248:
-	.word	-1,.L92,0,.L249-.L92,0,0
+.L246:
+	.word	-1,.L90,0,.L247-.L90,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5Print5printEj')
 	.sect	'.debug_info'
-.L250:
+.L248:
 	.word	377
 	.half	3
-	.word	.L251
+	.word	.L249
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L253,.L252
+	.word	.L251,.L250
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print5printEj',0,1,46,8
-	.word	.L333
+	.byte	'_ZN5Print5printEj',0,1,47,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L94,.L417,.L93
+	.word	.L92,.L413,.L91
 	.byte	4
-	.byte	'this',0,1,46,47
-	.word	.L418,.L419
+	.byte	'this',0,1,47,47
+	.word	.L414,.L415
 	.byte	4
-	.byte	'__4771_34_value',0,1,46,63
-	.word	.L333,.L420
+	.byte	'__4782_34_value',0,1,47,63
+	.word	.L332,.L416
 	.byte	5
-	.word	.L94,.L417
+	.word	.L92,.L413
 	.byte	6
-	.byte	'__4773_10_buffer',0,1,48,11
-	.word	.L415,.L421
+	.byte	'__4784_10_buffer',0,1,49,11
+	.word	.L411,.L417
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print5printEj')
 	.sect	'.debug_abbrev'
-.L251:
+.L249:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5Print5printEj')
 	.sect	'.debug_line'
-.L252:
-	.word	.L766-.L765
-.L765:
+.L250:
+	.word	.L754-.L753
+.L753:
 	.half	3
-	.word	.L768-.L767
-.L767:
+	.word	.L756-.L755
+.L755:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L768:
+.L756:
 	.byte	5,8,7,0,5,2
-	.word	.L94
-	.byte	3,45,1,5,57,9
-	.half	.L529-.L94
+	.word	.L92
+	.byte	3,46,1,5,57,9
+	.half	.L520-.L92
 	.byte	3,3,1,5,11,9
-	.half	.L769-.L529
+	.half	.L757-.L520
 	.byte	1,5,30,9
-	.half	.L528-.L769
+	.half	.L519-.L757
 	.byte	1,5,50,9
-	.half	.L527-.L528
+	.half	.L518-.L519
 	.byte	1,5,36,9
-	.half	.L770-.L527
+	.half	.L758-.L518
 	.byte	1,5,50,9
-	.half	.L771-.L770
+	.half	.L759-.L758
 	.byte	3,1,1,5,35,9
-	.half	.L772-.L771
+	.half	.L760-.L759
 	.byte	1,5,1,9
-	.half	.L531-.L772
+	.half	.L522-.L760
 	.byte	1,9
-	.half	.L28-.L531
+	.half	.L26-.L522
 	.byte	3,1,1,7,9
-	.half	.L254-.L28
+	.half	.L252-.L26
 	.byte	0,1,1
-.L766:
+.L754:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print5printEj')
 	.sect	'.debug_ranges'
-.L253:
-	.word	-1,.L94,0,.L254-.L94,0,0
+.L251:
+	.word	-1,.L92,0,.L252-.L92,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5Print5printEl')
 	.sect	'.debug_info'
-.L255:
+.L253:
 	.word	377
 	.half	3
-	.word	.L256
+	.word	.L254
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L258,.L257
+	.word	.L256,.L255
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print5printEl',0,1,53,8
-	.word	.L333
+	.byte	'_ZN5Print5printEl',0,1,54,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L96,.L422,.L95
+	.word	.L94,.L418,.L93
 	.byte	4
-	.byte	'this',0,1,53,47
-	.word	.L423,.L424
+	.byte	'this',0,1,54,47
+	.word	.L419,.L420
 	.byte	4
-	.byte	'__4778_26_value',0,1,53,59
-	.word	.L425,.L426
+	.byte	'__4789_26_value',0,1,54,59
+	.word	.L421,.L422
 	.byte	5
-	.word	.L96,.L422
+	.word	.L94,.L418
 	.byte	6
-	.byte	'__4780_10_buffer',0,1,55,11
-	.word	.L427,.L428
+	.byte	'__4791_10_buffer',0,1,56,11
+	.word	.L423,.L424
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print5printEl')
 	.sect	'.debug_abbrev'
-.L256:
+.L254:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5Print5printEl')
 	.sect	'.debug_line'
-.L257:
-	.word	.L774-.L773
-.L773:
+.L255:
+	.word	.L762-.L761
+.L761:
 	.half	3
-	.word	.L776-.L775
-.L775:
+	.word	.L764-.L763
+.L763:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L776:
+.L764:
 	.byte	5,8,7,0,5,2
-	.word	.L96
-	.byte	3,52,1,5,58,9
-	.half	.L535-.L96
+	.word	.L94
+	.byte	3,53,1,5,58,9
+	.half	.L526-.L94
 	.byte	3,3,1,5,11,9
-	.half	.L777-.L535
+	.half	.L765-.L526
 	.byte	1,5,30,9
-	.half	.L534-.L777
+	.half	.L525-.L765
 	.byte	1,5,50,9
-	.half	.L533-.L534
+	.half	.L524-.L525
 	.byte	1,5,36,9
-	.half	.L778-.L533
+	.half	.L766-.L524
 	.byte	1,5,50,9
-	.half	.L779-.L778
+	.half	.L767-.L766
 	.byte	3,1,1,5,35,9
-	.half	.L780-.L779
+	.half	.L768-.L767
 	.byte	1,5,1,9
-	.half	.L537-.L780
+	.half	.L528-.L768
 	.byte	1,9
-	.half	.L29-.L537
+	.half	.L27-.L528
 	.byte	3,1,1,7,9
-	.half	.L259-.L29
+	.half	.L257-.L27
 	.byte	0,1,1
-.L774:
+.L762:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print5printEl')
 	.sect	'.debug_ranges'
-.L258:
-	.word	-1,.L96,0,.L259-.L96,0,0
+.L256:
+	.word	-1,.L94,0,.L257-.L94,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5Print5printEm')
 	.sect	'.debug_info'
-.L260:
+.L258:
 	.word	377
 	.half	3
-	.word	.L261
+	.word	.L259
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L263,.L262
+	.word	.L261,.L260
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print5printEm',0,1,60,8
-	.word	.L333
+	.byte	'_ZN5Print5printEm',0,1,61,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L98,.L429,.L97
+	.word	.L96,.L425,.L95
 	.byte	4
-	.byte	'this',0,1,60,47
-	.word	.L430,.L431
+	.byte	'this',0,1,61,47
+	.word	.L426,.L427
 	.byte	4
-	.byte	'__4785_35_value',0,1,60,68
-	.word	.L328,.L432
+	.byte	'__4796_35_value',0,1,61,68
+	.word	.L326,.L428
 	.byte	5
-	.word	.L98,.L429
+	.word	.L96,.L425
 	.byte	6
-	.byte	'__4787_10_buffer',0,1,62,11
-	.word	.L427,.L433
+	.byte	'__4798_10_buffer',0,1,63,11
+	.word	.L423,.L429
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print5printEm')
 	.sect	'.debug_abbrev'
-.L261:
+.L259:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5Print5printEm')
 	.sect	'.debug_line'
-.L262:
-	.word	.L782-.L781
-.L781:
+.L260:
+	.word	.L770-.L769
+.L769:
 	.half	3
-	.word	.L784-.L783
-.L783:
+	.word	.L772-.L771
+.L771:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L784:
+.L772:
 	.byte	5,8,7,0,5,2
-	.word	.L98
-	.byte	3,59,1,5,58,9
-	.half	.L541-.L98
+	.word	.L96
+	.byte	3,60,1,5,58,9
+	.half	.L532-.L96
 	.byte	3,3,1,5,11,9
-	.half	.L785-.L541
+	.half	.L773-.L532
 	.byte	1,5,30,9
-	.half	.L540-.L785
+	.half	.L531-.L773
 	.byte	1,5,50,9
-	.half	.L539-.L540
+	.half	.L530-.L531
 	.byte	1,5,36,9
-	.half	.L786-.L539
+	.half	.L774-.L530
 	.byte	1,5,50,9
-	.half	.L787-.L786
+	.half	.L775-.L774
 	.byte	3,1,1,5,35,9
-	.half	.L788-.L787
+	.half	.L776-.L775
 	.byte	1,5,1,9
-	.half	.L543-.L788
+	.half	.L534-.L776
 	.byte	1,9
-	.half	.L30-.L543
+	.half	.L28-.L534
 	.byte	3,1,1,7,9
-	.half	.L264-.L30
+	.half	.L262-.L28
 	.byte	0,1,1
-.L782:
+.L770:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print5printEm')
 	.sect	'.debug_ranges'
-.L263:
-	.word	-1,.L98,0,.L264-.L98,0,0
+.L261:
+	.word	-1,.L96,0,.L262-.L96,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5Print5printEfi')
 	.sect	'.debug_info'
-.L265:
+.L263:
 	.word	436
 	.half	3
-	.word	.L266
+	.word	.L264
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L268,.L267
+	.word	.L266,.L265
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print5printEfi',0,1,67,8
-	.word	.L333
+	.byte	'_ZN5Print5printEfi',0,1,68,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L100,.L434,.L99
+	.word	.L98,.L430,.L97
 	.byte	4
-	.byte	'this',0,1,67,48
-	.word	.L435,.L436
+	.byte	'this',0,1,68,48
+	.word	.L431,.L432
 	.byte	4
-	.byte	'__4792_27_value',0,1,67,61
-	.word	.L353,.L437
+	.byte	'__4803_27_value',0,1,68,61
+	.word	.L349,.L433
 	.byte	4
-	.byte	'__4792_38_digits',0,1,67,83
-	.word	.L340,.L438
+	.byte	'__4803_38_digits',0,1,68,83
+	.word	.L336,.L434
 	.byte	5
-	.word	.L100,.L434
+	.word	.L98,.L430
 	.byte	6
-	.byte	'__4794_10_format',0,1,69,11
-	.word	.L439,.L440
+	.byte	'__4805_10_format',0,1,70,11
+	.word	.L435,.L436
 	.byte	6
-	.byte	'__4795_10_buffer',0,1,70,11
-	.word	.L441,.L442
+	.byte	'__4806_10_buffer',0,1,71,11
+	.word	.L437,.L438
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print5printEfi')
 	.sect	'.debug_abbrev'
-.L266:
+.L264:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5Print5printEfi')
 	.sect	'.debug_line'
-.L267:
-	.word	.L790-.L789
-.L789:
+.L265:
+	.word	.L778-.L777
+.L777:
 	.half	3
-	.word	.L792-.L791
-.L791:
+	.word	.L780-.L779
+.L779:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L792:
+.L780:
 	.byte	5,8,7,0,5,2
-	.word	.L100
-	.byte	3,194,0,1,5,1,9
-	.half	.L549-.L100
+	.word	.L98
+	.byte	3,195,0,1,5,1,9
+	.half	.L540-.L98
 	.byte	3,4,1,5,18,7,9
-	.half	.L793-.L549
+	.half	.L781-.L540
 	.byte	3,2,1,5,24,9
-	.half	.L31-.L793
+	.half	.L29-.L781
 	.byte	3,2,1,5,1,9
-	.half	.L794-.L31
+	.half	.L782-.L29
 	.byte	1,5,18,7,9
-	.half	.L795-.L794
+	.half	.L783-.L782
 	.byte	3,2,1,5,60,9
-	.half	.L32-.L795
+	.half	.L30-.L783
 	.byte	3,2,1,5,11,9
-	.half	.L796-.L32
+	.half	.L784-.L30
 	.byte	1,5,30,9
-	.half	.L547-.L796
+	.half	.L538-.L784
 	.byte	1,5,49,9
-	.half	.L545-.L547
+	.half	.L536-.L538
 	.byte	1,5,35,9
-	.half	.L797-.L545
+	.half	.L785-.L536
 	.byte	1,5,80,9
-	.half	.L546-.L797
+	.half	.L537-.L785
 	.byte	3,1,1,5,11,9
-	.half	.L798-.L546
+	.half	.L786-.L537
 	.byte	1,5,30,9
-	.half	.L799-.L798
+	.half	.L787-.L786
 	.byte	1,5,51,9
-	.half	.L800-.L799
+	.half	.L788-.L787
 	.byte	1,5,36,9
-	.half	.L801-.L800
+	.half	.L789-.L788
 	.byte	1,5,50,9
-	.half	.L802-.L801
+	.half	.L790-.L789
 	.byte	3,1,1,5,35,9
-	.half	.L803-.L802
+	.half	.L791-.L790
 	.byte	1,5,1,9
-	.half	.L551-.L803
+	.half	.L542-.L791
 	.byte	1,9
-	.half	.L33-.L551
+	.half	.L31-.L542
 	.byte	3,1,1,7,9
-	.half	.L269-.L33
+	.half	.L267-.L31
 	.byte	0,1,1
-.L790:
+.L778:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print5printEfi')
 	.sect	'.debug_ranges'
-.L268:
-	.word	-1,.L100,0,.L269-.L100,0,0
+.L266:
+	.word	-1,.L98,0,.L267-.L98,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEv')
 	.sect	'.debug_info'
-.L270:
+.L268:
 	.word	321
 	.half	3
-	.word	.L271
+	.word	.L269
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L273,.L272
+	.word	.L271,.L270
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print7printlnEv',0,1,84,8
-	.word	.L333
+	.byte	'_ZN5Print7printlnEv',0,1,85,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L102,.L443,.L101
+	.word	.L100,.L439,.L99
 	.byte	4
-	.byte	'this',0,1,84,49
-	.word	.L444,.L445
+	.byte	'this',0,1,85,49
+	.word	.L440,.L441
 	.byte	5
-	.word	.L102,.L443
+	.word	.L100,.L439
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEv')
 	.sect	'.debug_abbrev'
-.L271:
+.L269:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEv')
 	.sect	'.debug_line'
-.L272:
-	.word	.L805-.L804
-.L804:
+.L270:
+	.word	.L793-.L792
+.L792:
 	.half	3
-	.word	.L807-.L806
-.L806:
+	.word	.L795-.L794
+.L794:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L807:
+.L795:
 	.byte	5,49,7,0,5,2
-	.word	.L102
-	.byte	3,213,0,1,5,35,9
-	.half	.L808-.L102
+	.word	.L100
+	.byte	3,214,0,1,5,35,9
+	.half	.L796-.L100
 	.byte	1,5,1,9
-	.half	.L552-.L808
+	.half	.L543-.L796
 	.byte	1,9
-	.half	.L34-.L552
+	.half	.L32-.L543
 	.byte	3,1,1,7,9
-	.half	.L274-.L34
+	.half	.L272-.L32
 	.byte	0,1,1
-.L805:
+.L793:
 	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEv')
 	.sect	'.debug_ranges'
-.L273:
-	.word	-1,.L102,0,.L274-.L102,0,0
+.L271:
+	.word	-1,.L100,0,.L272-.L100,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEPKc')
 	.sect	'.debug_info'
-.L275:
+.L273:
 	.word	351
 	.half	3
-	.word	.L276
+	.word	.L274
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L278,.L277
+	.word	.L276,.L275
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print7printlnEPKc',0,1,89,8
-	.word	.L333
+	.byte	'_ZN5Print7printlnEPKc',0,1,90,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L104,.L446,.L103
+	.word	.L102,.L442,.L101
 	.byte	4
-	.byte	'this',0,1,89,51
-	.word	.L447,.L448
+	.byte	'this',0,1,90,51
+	.word	.L443,.L444
 	.byte	4
-	.byte	'__4814_35_value',0,1,89,70
-	.word	.L397,.L449
+	.byte	'__4825_35_value',0,1,90,70
+	.word	.L393,.L445
 	.byte	5
-	.word	.L104,.L446
+	.word	.L102,.L442
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEPKc')
 	.sect	'.debug_abbrev'
-.L276:
+.L274:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEPKc')
 	.sect	'.debug_line'
-.L277:
+.L275:
+	.word	.L798-.L797
+.L797:
+	.half	3
+	.word	.L800-.L799
+.L799:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
+.L800:
+	.byte	5,8,7,0,5,2
+	.word	.L102
+	.byte	3,217,0,1,5,35,9
+	.half	.L545-.L102
+	.byte	3,2,1,5,53,9
+	.half	.L544-.L545
+	.byte	1,5,76,9
+	.half	.L801-.L544
+	.byte	1,5,53,9
+	.half	.L547-.L801
+	.byte	1,5,1,9
+	.half	.L802-.L547
+	.byte	1,9
+	.half	.L33-.L802
+	.byte	3,1,1,7,9
+	.half	.L277-.L33
+	.byte	0,1,1
+.L798:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEPKc')
+	.sect	'.debug_ranges'
+.L276:
+	.word	-1,.L102,0,.L277-.L102,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEPK19__FlashStringHelper')
+	.sect	'.debug_info'
+.L278:
+	.word	371
+	.half	3
+	.word	.L279
+	.byte	4,1
+	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L281,.L280
+	.byte	2
+	.word	.L119
+	.byte	3
+	.byte	'_ZN5Print7printlnEPK19__FlashStringHelper',0,1,95,8
+	.word	.L332
+	.byte	1,1,1
+	.word	.L104,.L446,.L103
+	.byte	4
+	.byte	'this',0,1,95,71
+	.word	.L447,.L448
+	.byte	4
+	.byte	'__4830_50_value',0,1,95,112
+	.word	.L400,.L449
+	.byte	5
+	.word	.L104,.L446
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEPK19__FlashStringHelper')
+	.sect	'.debug_abbrev'
+.L279:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEPK19__FlashStringHelper')
+	.sect	'.debug_line'
+.L280:
+	.word	.L804-.L803
+.L803:
+	.half	3
+	.word	.L806-.L805
+.L805:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
+.L806:
+	.byte	5,8,7,0,5,2
+	.word	.L104
+	.byte	3,222,0,1,5,55,9
+	.half	.L549-.L104
+	.byte	3,2,1,5,73,9
+	.half	.L548-.L549
+	.byte	1,5,96,9
+	.half	.L807-.L548
+	.byte	1,5,73,9
+	.half	.L551-.L807
+	.byte	1,5,1,9
+	.half	.L808-.L551
+	.byte	1,9
+	.half	.L34-.L808
+	.byte	3,1,1,7,9
+	.half	.L282-.L34
+	.byte	0,1,1
+.L804:
+	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEPK19__FlashStringHelper')
+	.sect	'.debug_ranges'
+.L281:
+	.word	-1,.L104,0,.L282-.L104,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEc')
+	.sect	'.debug_info'
+.L283:
+	.word	349
+	.half	3
+	.word	.L284
+	.byte	4,1
+	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L286,.L285
+	.byte	2
+	.word	.L119
+	.byte	3
+	.byte	'_ZN5Print7printlnEc',0,1,100,8
+	.word	.L332
+	.byte	1,1,1
+	.word	.L106,.L450,.L105
+	.byte	4
+	.byte	'this',0,1,100,49
+	.word	.L451,.L452
+	.byte	4
+	.byte	'__4835_28_value',0,1,100,61
+	.word	.L405,.L453
+	.byte	5
+	.word	.L106,.L450
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEc')
+	.sect	'.debug_abbrev'
+.L284:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEc')
+	.sect	'.debug_line'
+.L285:
 	.word	.L810-.L809
 .L809:
 	.half	3
@@ -3727,63 +3814,63 @@ _ZTS5Print:	.type	object
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
 .L812:
 	.byte	5,8,7,0,5,2
-	.word	.L104
-	.byte	3,216,0,1,5,35,9
-	.half	.L554-.L104
-	.byte	3,2,1,5,53,9
-	.half	.L553-.L554
-	.byte	1,5,76,9
-	.half	.L813-.L553
-	.byte	1,5,53,9
-	.half	.L556-.L813
+	.word	.L106
+	.byte	3,227,0,1,5,33,9
+	.half	.L553-.L106
+	.byte	3,2,1,5,51,9
+	.half	.L552-.L553
+	.byte	1,5,74,9
+	.half	.L813-.L552
+	.byte	1,5,51,9
+	.half	.L555-.L813
 	.byte	1,5,1,9
-	.half	.L814-.L556
+	.half	.L814-.L555
 	.byte	1,9
 	.half	.L35-.L814
 	.byte	3,1,1,7,9
-	.half	.L279-.L35
+	.half	.L287-.L35
 	.byte	0,1,1
 .L810:
-	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEPKc')
+	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEc')
 	.sect	'.debug_ranges'
-.L278:
-	.word	-1,.L104,0,.L279-.L104,0,0
-	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEPK19__FlashStringHelper')
+.L286:
+	.word	-1,.L106,0,.L287-.L106,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEi')
 	.sect	'.debug_info'
-.L280:
-	.word	371
+.L288:
+	.word	349
 	.half	3
-	.word	.L281
+	.word	.L289
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L283,.L282
+	.word	.L291,.L290
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print7printlnEPK19__FlashStringHelper',0,1,94,8
-	.word	.L333
+	.byte	'_ZN5Print7printlnEi',0,1,105,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L106,.L450,.L105
+	.word	.L108,.L454,.L107
 	.byte	4
-	.byte	'this',0,1,94,71
-	.word	.L451,.L452
+	.byte	'this',0,1,105,49
+	.word	.L455,.L456
 	.byte	4
-	.byte	'__4819_50_value',0,1,94,112
-	.word	.L404,.L453
+	.byte	'__4840_27_value',0,1,105,60
+	.word	.L336,.L457
 	.byte	5
-	.word	.L106,.L450
+	.word	.L108,.L454
 	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEPK19__FlashStringHelper')
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEi')
 	.sect	'.debug_abbrev'
-.L281:
+.L289:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEPK19__FlashStringHelper')
+	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEi')
 	.sect	'.debug_line'
-.L282:
+.L290:
 	.word	.L816-.L815
 .L815:
 	.half	3
@@ -3793,63 +3880,63 @@ _ZTS5Print:	.type	object
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
 .L818:
 	.byte	5,8,7,0,5,2
-	.word	.L106
-	.byte	3,221,0,1,5,55,9
-	.half	.L558-.L106
-	.byte	3,2,1,5,73,9
-	.half	.L557-.L558
-	.byte	1,5,96,9
-	.half	.L819-.L557
-	.byte	1,5,73,9
-	.half	.L560-.L819
+	.word	.L108
+	.byte	3,232,0,1,5,33,9
+	.half	.L557-.L108
+	.byte	3,2,1,5,51,9
+	.half	.L556-.L557
+	.byte	1,5,74,9
+	.half	.L819-.L556
+	.byte	1,5,51,9
+	.half	.L559-.L819
 	.byte	1,5,1,9
-	.half	.L820-.L560
+	.half	.L820-.L559
 	.byte	1,9
 	.half	.L36-.L820
 	.byte	3,1,1,7,9
-	.half	.L284-.L36
+	.half	.L292-.L36
 	.byte	0,1,1
 .L816:
-	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEPK19__FlashStringHelper')
+	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEi')
 	.sect	'.debug_ranges'
-.L283:
-	.word	-1,.L106,0,.L284-.L106,0,0
-	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEc')
+.L291:
+	.word	-1,.L108,0,.L292-.L108,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEj')
 	.sect	'.debug_info'
-.L285:
+.L293:
 	.word	349
 	.half	3
-	.word	.L286
+	.word	.L294
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L288,.L287
+	.word	.L296,.L295
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print7printlnEc',0,1,99,8
-	.word	.L333
+	.byte	'_ZN5Print7printlnEj',0,1,110,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L108,.L454,.L107
+	.word	.L110,.L458,.L109
 	.byte	4
-	.byte	'this',0,1,99,49
-	.word	.L455,.L456
+	.byte	'this',0,1,110,49
+	.word	.L459,.L460
 	.byte	4
-	.byte	'__4824_28_value',0,1,99,61
-	.word	.L409,.L457
+	.byte	'__4845_36_value',0,1,110,65
+	.word	.L332,.L461
 	.byte	5
-	.word	.L108,.L454
+	.word	.L110,.L458
 	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEc')
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEj')
 	.sect	'.debug_abbrev'
-.L286:
+.L294:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEc')
+	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEj')
 	.sect	'.debug_line'
-.L287:
+.L295:
 	.word	.L822-.L821
 .L821:
 	.half	3
@@ -3859,63 +3946,63 @@ _ZTS5Print:	.type	object
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
 .L824:
 	.byte	5,8,7,0,5,2
-	.word	.L108
-	.byte	3,226,0,1,5,33,9
-	.half	.L562-.L108
+	.word	.L110
+	.byte	3,237,0,1,5,33,9
+	.half	.L561-.L110
 	.byte	3,2,1,5,51,9
-	.half	.L561-.L562
+	.half	.L560-.L561
 	.byte	1,5,74,9
-	.half	.L825-.L561
+	.half	.L825-.L560
 	.byte	1,5,51,9
-	.half	.L564-.L825
+	.half	.L563-.L825
 	.byte	1,5,1,9
-	.half	.L826-.L564
+	.half	.L826-.L563
 	.byte	1,9
 	.half	.L37-.L826
 	.byte	3,1,1,7,9
-	.half	.L289-.L37
+	.half	.L297-.L37
 	.byte	0,1,1
 .L822:
-	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEc')
+	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEj')
 	.sect	'.debug_ranges'
-.L288:
-	.word	-1,.L108,0,.L289-.L108,0,0
-	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEi')
+.L296:
+	.word	-1,.L110,0,.L297-.L110,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEl')
 	.sect	'.debug_info'
-.L290:
+.L298:
 	.word	349
 	.half	3
-	.word	.L291
+	.word	.L299
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L293,.L292
+	.word	.L301,.L300
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print7printlnEi',0,1,104,8
-	.word	.L333
+	.byte	'_ZN5Print7printlnEl',0,1,115,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L110,.L458,.L109
+	.word	.L112,.L462,.L111
 	.byte	4
-	.byte	'this',0,1,104,49
-	.word	.L459,.L460
+	.byte	'this',0,1,115,49
+	.word	.L463,.L464
 	.byte	4
-	.byte	'__4829_27_value',0,1,104,60
-	.word	.L340,.L461
+	.byte	'__4850_28_value',0,1,115,61
+	.word	.L421,.L465
 	.byte	5
-	.word	.L110,.L458
+	.word	.L112,.L462
 	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEi')
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEl')
 	.sect	'.debug_abbrev'
-.L291:
+.L299:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEi')
+	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEl')
 	.sect	'.debug_line'
-.L292:
+.L300:
 	.word	.L828-.L827
 .L827:
 	.half	3
@@ -3925,63 +4012,63 @@ _ZTS5Print:	.type	object
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
 .L830:
 	.byte	5,8,7,0,5,2
-	.word	.L110
-	.byte	3,231,0,1,5,33,9
-	.half	.L566-.L110
+	.word	.L112
+	.byte	3,242,0,1,5,33,9
+	.half	.L565-.L112
 	.byte	3,2,1,5,51,9
-	.half	.L565-.L566
+	.half	.L564-.L565
 	.byte	1,5,74,9
-	.half	.L831-.L565
+	.half	.L831-.L564
 	.byte	1,5,51,9
-	.half	.L568-.L831
+	.half	.L567-.L831
 	.byte	1,5,1,9
-	.half	.L832-.L568
+	.half	.L832-.L567
 	.byte	1,9
 	.half	.L38-.L832
 	.byte	3,1,1,7,9
-	.half	.L294-.L38
+	.half	.L302-.L38
 	.byte	0,1,1
 .L828:
-	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEi')
+	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEl')
 	.sect	'.debug_ranges'
-.L293:
-	.word	-1,.L110,0,.L294-.L110,0,0
-	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEj')
+.L301:
+	.word	-1,.L112,0,.L302-.L112,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEm')
 	.sect	'.debug_info'
-.L295:
+.L303:
 	.word	349
 	.half	3
-	.word	.L296
+	.word	.L304
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L298,.L297
+	.word	.L306,.L305
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print7printlnEj',0,1,109,8
-	.word	.L333
+	.byte	'_ZN5Print7printlnEm',0,1,120,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L112,.L462,.L111
+	.word	.L114,.L466,.L113
 	.byte	4
-	.byte	'this',0,1,109,49
-	.word	.L463,.L464
+	.byte	'this',0,1,120,49
+	.word	.L467,.L468
 	.byte	4
-	.byte	'__4834_36_value',0,1,109,65
-	.word	.L333,.L465
+	.byte	'__4855_37_value',0,1,120,70
+	.word	.L326,.L469
 	.byte	5
-	.word	.L112,.L462
+	.word	.L114,.L466
 	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEj')
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEm')
 	.sect	'.debug_abbrev'
-.L296:
+.L304:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEj')
+	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEm')
 	.sect	'.debug_line'
-.L297:
+.L305:
 	.word	.L834-.L833
 .L833:
 	.half	3
@@ -3991,63 +4078,66 @@ _ZTS5Print:	.type	object
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
 .L836:
 	.byte	5,8,7,0,5,2
-	.word	.L112
-	.byte	3,236,0,1,5,33,9
-	.half	.L570-.L112
+	.word	.L114
+	.byte	3,247,0,1,5,33,9
+	.half	.L569-.L114
 	.byte	3,2,1,5,51,9
-	.half	.L569-.L570
+	.half	.L568-.L569
 	.byte	1,5,74,9
-	.half	.L837-.L569
+	.half	.L837-.L568
 	.byte	1,5,51,9
-	.half	.L572-.L837
+	.half	.L571-.L837
 	.byte	1,5,1,9
-	.half	.L838-.L572
+	.half	.L838-.L571
 	.byte	1,9
 	.half	.L39-.L838
 	.byte	3,1,1,7,9
-	.half	.L299-.L39
+	.half	.L307-.L39
 	.byte	0,1,1
 .L834:
-	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEj')
+	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEm')
 	.sect	'.debug_ranges'
-.L298:
-	.word	-1,.L112,0,.L299-.L112,0,0
-	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEl')
+.L306:
+	.word	-1,.L114,0,.L307-.L114,0,0
+	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEfi')
 	.sect	'.debug_info'
-.L300:
-	.word	349
+.L308:
+	.word	379
 	.half	3
-	.word	.L301
+	.word	.L309
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L303,.L302
+	.word	.L311,.L310
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print7printlnEl',0,1,114,8
-	.word	.L333
+	.byte	'_ZN5Print7printlnEfi',0,1,125,8
+	.word	.L332
 	.byte	1,1,1
-	.word	.L114,.L466,.L113
+	.word	.L116,.L470,.L115
 	.byte	4
-	.byte	'this',0,1,114,49
-	.word	.L467,.L468
+	.byte	'this',0,1,125,50
+	.word	.L471,.L472
 	.byte	4
-	.byte	'__4839_28_value',0,1,114,61
-	.word	.L425,.L469
+	.byte	'__4860_29_value',0,1,125,63
+	.word	.L349,.L473
+	.byte	4
+	.byte	'__4860_40_digits',0,1,125,85
+	.word	.L336,.L474
 	.byte	5
-	.word	.L114,.L466
+	.word	.L116,.L470
 	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEl')
+	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEfi')
 	.sect	'.debug_abbrev'
-.L301:
+.L309:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEl')
+	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEfi')
 	.sect	'.debug_line'
-.L302:
+.L310:
 	.word	.L840-.L839
 .L839:
 	.half	3
@@ -4057,63 +4147,55 @@ _ZTS5Print:	.type	object
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
 .L842:
 	.byte	5,8,7,0,5,2
-	.word	.L114
-	.byte	3,241,0,1,5,33,9
-	.half	.L574-.L114
-	.byte	3,2,1,5,51,9
-	.half	.L573-.L574
-	.byte	1,5,74,9
-	.half	.L843-.L573
-	.byte	1,5,51,9
-	.half	.L576-.L843
+	.word	.L116
+	.byte	3,252,0,1,5,51,9
+	.half	.L573-.L116
+	.byte	3,2,1,5,70,9
+	.half	.L572-.L573
+	.byte	1,5,93,9
+	.half	.L843-.L572
+	.byte	1,5,70,9
+	.half	.L575-.L843
 	.byte	1,5,1,9
-	.half	.L844-.L576
+	.half	.L844-.L575
 	.byte	1,9
 	.half	.L40-.L844
 	.byte	3,1,1,7,9
-	.half	.L304-.L40
+	.half	.L312-.L40
 	.byte	0,1,1
 .L840:
-	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEl')
+	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEfi')
 	.sect	'.debug_ranges'
-.L303:
-	.word	-1,.L114,0,.L304-.L114,0,0
-	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEm')
+.L311:
+	.word	-1,.L116,0,.L312-.L116,0,0
+	.sdecl	'.debug_info',debug,cluster('__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5')
 	.sect	'.debug_info'
-.L305:
-	.word	349
+.L313:
+	.word	334
 	.half	3
-	.word	.L306
+	.word	.L314
 	.byte	4,1
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L308,.L307
+	.word	.L316,.L315
 	.byte	2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZN5Print7printlnEm',0,1,119,8
-	.word	.L333
-	.byte	1,1,1
-	.word	.L116,.L470,.L115
+	.byte	'__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5',0,1,128,1,8,1,1,1
+	.word	.L118,.L475,.L117
 	.byte	4
-	.byte	'this',0,1,119,49
-	.word	.L471,.L472
-	.byte	4
-	.byte	'__4844_37_value',0,1,119,70
-	.word	.L328,.L473
-	.byte	5
-	.word	.L116,.L470
+	.word	.L118,.L475
 	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEm')
+	.sdecl	'.debug_abbrev',debug,cluster('__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5')
 	.sect	'.debug_abbrev'
-.L306:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
-	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEm')
+.L314:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5')
 	.sect	'.debug_line'
-.L307:
+.L315:
 	.word	.L846-.L845
 .L845:
 	.half	3
@@ -4122,153 +4204,49 @@ _ZTS5Print:	.type	object
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
 .L848:
-	.byte	5,8,7,0,5,2
-	.word	.L116
-	.byte	3,246,0,1,5,33,9
-	.half	.L578-.L116
-	.byte	3,2,1,5,51,9
-	.half	.L577-.L578
-	.byte	1,5,74,9
-	.half	.L849-.L577
-	.byte	1,5,51,9
-	.half	.L580-.L849
-	.byte	1,5,1,9
-	.half	.L850-.L580
-	.byte	1,9
-	.half	.L41-.L850
-	.byte	3,1,1,7,9
-	.half	.L309-.L41
+	.byte	5,14,7,0,5,2
+	.word	.L118
+	.byte	3,129,1,1,5,40,9
+	.half	.L849-.L118
+	.byte	1,5,52,9
+	.half	.L850-.L849
+	.byte	1,5,69,9
+	.half	.L851-.L850
+	.byte	1,7,9
+	.half	.L317-.L851
 	.byte	0,1,1
 .L846:
-	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEm')
-	.sect	'.debug_ranges'
-.L308:
-	.word	-1,.L116,0,.L309-.L116,0,0
-	.sdecl	'.debug_info',debug,cluster('_ZN5Print7printlnEfi')
-	.sect	'.debug_info'
-.L310:
-	.word	379
-	.half	3
-	.word	.L311
-	.byte	4,1
-	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
-	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
-	.byte	12,1
-	.word	.L313,.L312
-	.byte	2
-	.word	.L121
-	.byte	3
-	.byte	'_ZN5Print7printlnEfi',0,1,124,8
-	.word	.L333
-	.byte	1,1,1
-	.word	.L118,.L474,.L117
-	.byte	4
-	.byte	'this',0,1,124,50
-	.word	.L475,.L476
-	.byte	4
-	.byte	'__4849_29_value',0,1,124,63
-	.word	.L353,.L477
-	.byte	4
-	.byte	'__4849_40_digits',0,1,124,85
-	.word	.L340,.L478
-	.byte	5
-	.word	.L118,.L474
-	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('_ZN5Print7printlnEfi')
-	.sect	'.debug_abbrev'
-.L311:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
-	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('_ZN5Print7printlnEfi')
-	.sect	'.debug_line'
-.L312:
-	.word	.L852-.L851
-.L851:
-	.half	3
-	.word	.L854-.L853
-.L853:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L854:
-	.byte	5,8,7,0,5,2
-	.word	.L118
-	.byte	3,251,0,1,5,51,9
-	.half	.L582-.L118
-	.byte	3,2,1,5,70,9
-	.half	.L581-.L582
-	.byte	1,5,93,9
-	.half	.L855-.L581
-	.byte	1,5,70,9
-	.half	.L584-.L855
-	.byte	1,5,1,9
-	.half	.L856-.L584
-	.byte	1,9
-	.half	.L42-.L856
-	.byte	3,1,1,7,9
-	.half	.L314-.L42
-	.byte	0,1,1
-.L852:
-	.sdecl	'.debug_ranges',debug,cluster('_ZN5Print7printlnEfi')
-	.sect	'.debug_ranges'
-.L313:
-	.word	-1,.L118,0,.L314-.L118,0,0
-	.sdecl	'.debug_info',debug,cluster('__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5')
-	.sect	'.debug_info'
-.L315:
-	.word	333
-	.half	3
-	.word	.L316
-	.byte	4,1
-	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0
-	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
-	.byte	12,1
-	.word	.L318,.L317
-	.byte	2
-	.word	.L121
-	.byte	3
-	.byte	'__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5',0,1,127,8,1,1,1
-	.word	.L120,.L479,.L119
-	.byte	4
-	.word	.L120,.L479
-	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5')
-	.sect	'.debug_abbrev'
-.L316:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5')
-	.sect	'.debug_line'
-.L317:
-	.word	.L858-.L857
-.L857:
-	.half	3
-	.word	.L860-.L859
-.L859:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'../../../simplefoc_port/arduino_compat/Arduino.cpp',0,0,0,0,0
-.L860:
-	.byte	5,14,7,0,5,2
-	.word	.L120
-	.byte	3,128,1,1,5,40,9
-	.half	.L861-.L120
-	.byte	1,5,52,9
-	.half	.L862-.L861
-	.byte	1,5,69,9
-	.half	.L863-.L862
-	.byte	1,7,9
-	.half	.L319-.L863
-	.byte	0,1,1
-.L858:
 	.sdecl	'.debug_ranges',debug,cluster('__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5')
 	.sect	'.debug_ranges'
-.L318:
-	.word	-1,.L120,0,.L319-.L120,0,0
+.L316:
+	.word	-1,.L118,0,.L317-.L118,0,0
 	.sdecl	'.debug_info',debug,cluster('_ZTV5Print')
 	.sect	'.debug_info'
-.L320:
+.L318:
 	.word	255
+	.half	3
+	.word	.L319
+	.byte	4,1
+	.byte	'../simplefoc_arduino_compat_ads.cpp',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1,2
+	.word	.L119
+	.byte	3
+	.byte	'_ZTV5Print',0,5,137,1,11
+	.word	.L476
+	.byte	1,5,3
+	.word	_ZTV5Print
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('_ZTV5Print')
+	.sect	'.debug_abbrev'
+.L319:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('Serial')
+	.sect	'.debug_info'
+.L320:
+	.word	251
 	.half	3
 	.word	.L321
 	.byte	4,1
@@ -4276,22 +4254,22 @@ _ZTS5Print:	.type	object
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1,2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZTV5Print',0,5,136,1,11
-	.word	.L480
+	.byte	'Serial',0,5,130,1,14
+	.word	.L477
 	.byte	1,5,3
-	.word	_ZTV5Print
+	.word	Serial
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('_ZTV5Print')
+	.sdecl	'.debug_abbrev',debug,cluster('Serial')
 	.sect	'.debug_abbrev'
 .L321:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('Serial')
+	.sdecl	'.debug_info',debug,cluster('_ZTI5Print')
 	.sect	'.debug_info'
 .L322:
-	.word	251
+	.word	255
 	.half	3
 	.word	.L323
 	.byte	4,1
@@ -4299,19 +4277,19 @@ _ZTS5Print:	.type	object
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1,2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'Serial',0,5,129,1,14
-	.word	.L481
+	.byte	'_ZTI5Print',0,5,132,1,32
+	.word	.L478
 	.byte	1,5,3
-	.word	Serial
+	.word	_ZTI5Print
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('Serial')
+	.sdecl	'.debug_abbrev',debug,cluster('_ZTI5Print')
 	.sect	'.debug_abbrev'
 .L323:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('_ZTI5Print')
+	.sdecl	'.debug_info',debug,cluster('_ZTS5Print')
 	.sect	'.debug_info'
 .L324:
 	.word	255
@@ -4322,66 +4300,158 @@ _ZTS5Print:	.type	object
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1,2
-	.word	.L121
+	.word	.L119
 	.byte	3
-	.byte	'_ZTI5Print',0,5,131,1,32
-	.word	.L482
-	.byte	1,5,3
-	.word	_ZTI5Print
-	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('_ZTI5Print')
-	.sect	'.debug_abbrev'
-.L325:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
-	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('_ZTS5Print')
-	.sect	'.debug_info'
-.L326:
-	.word	255
-	.half	3
-	.word	.L327
-	.byte	4,1
-	.byte	'../simplefoc_arduino_compat_ads.cpp',0
-	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
-	.byte	12,1,2
-	.word	.L121
-	.byte	3
-	.byte	'_ZTS5Print',0,5,131,1,116
-	.word	.L483
+	.byte	'_ZTS5Print',0,5,132,1,116
+	.word	.L479
 	.byte	1,5,3
 	.word	_ZTS5Print
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('_ZTS5Print')
 	.sect	'.debug_abbrev'
-.L327:
+.L325:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	.sdecl	'.debug_loc',debug,cluster('_Z10analogReadi')
 	.sect	'.debug_loc'
-.L57:
-	.word	-1,.L58,0,.L348-.L58
+.L55:
+	.word	-1,.L56,0,.L344-.L56
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L349:
-	.word	-1,.L58,0,.L348-.L58
+.L345:
+	.word	-1,.L56,0,.L344-.L56
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_Z11_sqrtApproxf')
 	.sect	'.debug_loc'
-.L73:
-	.word	-1,.L74,0,.L372-.L74
+.L71:
+	.word	-1,.L72,0,.L368-.L72
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L373:
-	.word	-1,.L74,0,.L502-.L74
+.L369:
+	.word	-1,.L72,0,.L493-.L72
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_Z11analogWriteii')
+	.sect	'.debug_loc'
+.L57:
+	.word	-1,.L58,0,.L346-.L58
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L347:
+	.word	-1,.L58,0,.L346-.L58
+	.half	1
+	.byte	84
+	.word	0,0
+.L348:
+	.word	-1,.L58,0,.L346-.L58
+	.half	1
+	.byte	85
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_Z11digitalReadi')
+	.sect	'.debug_loc'
+.L53:
+	.word	-1,.L54,0,.L342-.L54
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L343:
+	.word	-1,.L54,0,.L342-.L54
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_Z12digitalWriteii')
+	.sect	'.debug_loc'
+.L51:
+	.word	-1,.L52,0,.L339-.L52
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L340:
+	.word	-1,.L52,0,.L339-.L52
+	.half	1
+	.byte	84
+	.word	0,0
+.L341:
+	.word	-1,.L52,0,.L339-.L52
+	.half	1
+	.byte	85
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_Z15_normalizeAnglef')
+	.sect	'.debug_loc'
+.L67:
+	.word	-1,.L68,0,.L362-.L68
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L363:
+	.word	-1,.L68,0,.L492-.L68
+	.half	1
+	.byte	84
+	.word	0,0
+.L364:
+	.word	-1,.L68,.L492-.L68,.L362-.L68
+	.half	1
+	.byte	82
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_Z16_electricalAnglefi')
+	.sect	'.debug_loc'
+.L69:
+	.word	-1,.L70,0,.L365-.L70
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L366:
+	.word	-1,.L70,0,.L365-.L70
+	.half	1
+	.byte	84
+	.word	0,0
+.L367:
+	.word	-1,.L70,0,.L365-.L70
+	.half	1
+	.byte	85
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_Z17delayMicrosecondsj')
+	.sect	'.debug_loc'
+.L47:
+	.word	-1,.L48,0,.L331-.L48
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L333:
+	.word	-1,.L48,0,.L480-.L48
+	.half	1
+	.byte	84
+	.word	.L481-.L48,.L331-.L48
+	.half	1
+	.byte	95
+	.word	0,0
+.L334:
+	.word	-1,.L48,.L480-.L48,.L4-.L48
+	.half	1
+	.byte	82
+	.word	.L482-.L48,.L331-.L48
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_Z4_cosf')
+	.sect	'.debug_loc'
+.L61:
+	.word	-1,.L62,0,.L352-.L62
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L353:
+	.word	-1,.L62,0,.L484-.L62
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_Z4_sinf')
 	.sect	'.debug_loc'
 .L59:
 	.word	-1,.L60,0,.L350-.L60
@@ -4389,554 +4459,400 @@ _ZTS5Print:	.type	object
 	.byte	138,0
 	.word	0,0
 .L351:
-	.word	-1,.L60,0,.L350-.L60
-	.half	1
-	.byte	84
-	.word	0,0
-.L352:
-	.word	-1,.L60,0,.L350-.L60
-	.half	1
-	.byte	85
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('_Z11digitalReadi')
-	.sect	'.debug_loc'
-.L55:
-	.word	-1,.L56,0,.L346-.L56
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L347:
-	.word	-1,.L56,0,.L346-.L56
-	.half	1
-	.byte	84
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('_Z12digitalWriteii')
-	.sect	'.debug_loc'
-.L53:
-	.word	-1,.L54,0,.L343-.L54
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L344:
-	.word	-1,.L54,0,.L343-.L54
-	.half	1
-	.byte	84
-	.word	0,0
-.L345:
-	.word	-1,.L54,0,.L343-.L54
-	.half	1
-	.byte	85
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('_Z15_normalizeAnglef')
-	.sect	'.debug_loc'
-.L69:
-	.word	-1,.L70,0,.L366-.L70
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L367:
-	.word	-1,.L70,0,.L501-.L70
-	.half	1
-	.byte	84
-	.word	0,0
-.L368:
-	.word	-1,.L70,.L501-.L70,.L366-.L70
-	.half	1
-	.byte	82
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('_Z16_electricalAnglefi')
-	.sect	'.debug_loc'
-.L71:
-	.word	-1,.L72,0,.L369-.L72
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L370:
-	.word	-1,.L72,0,.L369-.L72
-	.half	1
-	.byte	84
-	.word	0,0
-.L371:
-	.word	-1,.L72,0,.L369-.L72
-	.half	1
-	.byte	85
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('_Z17delayMicrosecondsj')
-	.sect	'.debug_loc'
-.L49:
-	.word	-1,.L50,0,.L336-.L50
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L337:
-	.word	-1,.L50,0,.L489-.L50
-	.half	1
-	.byte	84
-	.word	.L490-.L50,.L336-.L50
-	.half	1
-	.byte	95
-	.word	0,0
-.L338:
-	.word	-1,.L50,.L489-.L50,.L6-.L50
-	.half	1
-	.byte	82
-	.word	.L491-.L50,.L336-.L50
-	.half	1
-	.byte	88
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('_Z4_cosf')
-	.sect	'.debug_loc'
-.L63:
-	.word	-1,.L64,0,.L356-.L64
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L357:
-	.word	-1,.L64,0,.L493-.L64
-	.half	1
-	.byte	84
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('_Z4_sinf')
-	.sect	'.debug_loc'
-.L61:
-	.word	-1,.L62,0,.L354-.L62
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L355:
-	.word	-1,.L62,0,.L492-.L62
+	.word	-1,.L60,0,.L483-.L60
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_Z5delaym')
 	.sect	'.debug_loc'
-.L47:
-	.word	-1,.L48,0,.L331-.L48
+.L45:
+	.word	-1,.L46,0,.L329-.L46
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L332:
-	.word	-1,.L48,0,.L484-.L48
+.L330:
+	.word	-1,.L46,0,.L329-.L46
 	.half	1
 	.byte	84
-	.word	.L485-.L48,.L486-.L48
-	.half	1
-	.byte	95
-	.word	0,0
-.L334:
-	.word	-1,.L48,.L484-.L48,.L4-.L48
-	.half	1
-	.byte	82
-	.word	.L487-.L48,.L331-.L48
-	.half	1
-	.byte	88
-	.word	0,0
-.L335:
-	.word	-1,.L48,.L488-.L48,.L331-.L48
-	.half	1
-	.byte	95
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_Z6_atan2ff')
 	.sect	'.debug_loc'
-.L67:
-	.word	-1,.L68,0,.L363-.L68
+.L65:
+	.word	-1,.L66,0,.L359-.L66
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L364:
-	.word	-1,.L68,0,.L500-.L68
+.L360:
+	.word	-1,.L66,0,.L491-.L66
 	.half	1
 	.byte	84
 	.word	0,0
-.L365:
-	.word	-1,.L68,0,.L500-.L68
+.L361:
+	.word	-1,.L66,0,.L491-.L66
 	.half	1
 	.byte	85
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_Z6microsv')
 	.sect	'.debug_loc'
-.L43:
-	.word	-1,.L44,0,.L329-.L44
+.L41:
+	.word	-1,.L42,0,.L327-.L42
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_Z6millisv')
 	.sect	'.debug_loc'
-.L45:
-	.word	-1,.L46,0,.L330-.L46
+.L43:
+	.word	-1,.L44,0,.L328-.L44
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_Z7_sincosfPfS_')
 	.sect	'.debug_loc'
-.L65:
-	.word	-1,.L66,0,.L358-.L66
+.L63:
+	.word	-1,.L64,0,.L354-.L64
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L359:
-	.word	-1,.L66,0,.L494-.L66
+.L355:
+	.word	-1,.L64,0,.L485-.L64
 	.half	1
 	.byte	84
-	.word	.L495-.L66,.L358-.L66
+	.word	.L486-.L64,.L354-.L64
 	.half	1
 	.byte	95
-	.word	.L498-.L66,.L499-.L66
+	.word	.L489-.L64,.L490-.L64
 	.half	1
 	.byte	84
 	.word	0,0
-.L361:
-	.word	-1,.L66,0,.L494-.L66
+.L357:
+	.word	-1,.L64,0,.L485-.L64
 	.half	1
 	.byte	100
-	.word	.L496-.L66,.L358-.L66
+	.word	.L487-.L64,.L354-.L64
 	.half	1
 	.byte	111
 	.word	0,0
-.L362:
-	.word	-1,.L66,0,.L494-.L66
+.L358:
+	.word	-1,.L64,0,.L485-.L64
 	.half	1
 	.byte	101
-	.word	.L497-.L66,.L358-.L66
+	.word	.L488-.L64,.L354-.L64
 	.half	1
 	.byte	108
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_Z7pinModeii')
 	.sect	'.debug_loc'
-.L51:
-	.word	-1,.L52,0,.L339-.L52
+.L49:
+	.word	-1,.L50,0,.L335-.L50
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L341:
-	.word	-1,.L52,0,.L339-.L52
+.L337:
+	.word	-1,.L50,0,.L335-.L50
 	.half	1
 	.byte	84
 	.word	0,0
-.L342:
-	.word	-1,.L52,0,.L339-.L52
+.L338:
+	.word	-1,.L50,0,.L335-.L50
 	.half	1
 	.byte	85
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print5printEPK19__FlashStringHelper')
 	.sect	'.debug_loc'
-.L87:
-	.word	-1,.L88,0,.L401-.L88
+.L85:
+	.word	-1,.L86,0,.L397-.L86
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L405:
-	.word	-1,.L88,0,.L517-.L88
+.L401:
+	.word	-1,.L86,0,.L508-.L86
 	.half	1
 	.byte	101
 	.word	0,0
-.L403:
-	.word	-1,.L88,0,.L517-.L88
+.L399:
+	.word	-1,.L86,0,.L508-.L86
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print5printEPKc')
 	.sect	'.debug_loc'
-.L85:
-	.word	-1,.L86,0,.L394-.L86
+.L83:
+	.word	-1,.L84,0,.L390-.L84
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L398:
-	.word	-1,.L86,0,.L23-.L86
+.L394:
+	.word	-1,.L84,0,.L21-.L84
 	.half	1
 	.byte	101
 	.word	0,0
-.L399:
-	.word	-1,.L86,.L513-.L86,.L394-.L86
+.L395:
+	.word	-1,.L84,.L504-.L84,.L390-.L84
 	.half	1
 	.byte	109
 	.word	0,0
-.L400:
-	.word	-1,.L86,.L512-.L86,.L394-.L86
+.L396:
+	.word	-1,.L84,.L503-.L84,.L390-.L84
 	.half	1
 	.byte	88
-	.word	.L516-.L86,.L394-.L86
+	.word	.L507-.L84,.L390-.L84
 	.half	1
 	.byte	82
 	.word	0,0
-.L396:
-	.word	-1,.L86,0,.L23-.L86
+.L392:
+	.word	-1,.L84,0,.L21-.L84
 	.half	1
 	.byte	100
-	.word	.L511-.L86,.L394-.L86
+	.word	.L502-.L84,.L390-.L84
 	.half	1
 	.byte	108
-	.word	.L514-.L86,.L515-.L86
+	.word	.L505-.L84,.L506-.L84
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print5printEc')
 	.sect	'.debug_loc'
-.L89:
-	.word	-1,.L90,0,.L406-.L90
+.L87:
+	.word	-1,.L88,0,.L402-.L88
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L410:
-	.word	-1,.L90,0,.L518-.L90
+.L406:
+	.word	-1,.L88,0,.L509-.L88
 	.half	1
 	.byte	84
 	.word	0,0
-.L408:
-	.word	-1,.L90,0,.L519-.L90
+.L404:
+	.word	-1,.L88,0,.L510-.L88
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print5printEfi')
 	.sect	'.debug_loc'
-.L99:
-	.word	-1,.L100,0,.L544-.L100
+.L97:
+	.word	-1,.L98,0,.L535-.L98
 	.half	2
 	.byte	138,0
-	.word	.L544-.L100,.L434-.L100
+	.word	.L535-.L98,.L430-.L98
 	.half	3
 	.byte	138,192,0
-	.word	.L434-.L100,.L434-.L100
+	.word	.L430-.L98,.L430-.L98
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L437:
-	.word	-1,.L100,0,.L545-.L100
+.L433:
+	.word	-1,.L98,0,.L536-.L98
 	.half	1
 	.byte	84
-	.word	.L549-.L100,.L434-.L100
+	.word	.L540-.L98,.L430-.L98
 	.half	1
 	.byte	88
 	.word	0,0
-.L438:
-	.word	-1,.L100,0,.L546-.L100
+.L434:
+	.word	-1,.L98,0,.L537-.L98
 	.half	1
 	.byte	85
 	.word	0,0
-.L440:
-	.word	-1,.L100,0,.L434-.L100
+.L436:
+	.word	-1,.L98,0,.L430-.L98
 	.half	2
 	.byte	145,68
 	.word	0,0
-.L442:
-	.word	-1,.L100,0,.L434-.L100
+.L438:
+	.word	-1,.L98,0,.L430-.L98
 	.half	2
 	.byte	145,76
 	.word	0,0
-.L436:
-	.word	-1,.L100,0,.L547-.L100
+.L432:
+	.word	-1,.L98,0,.L538-.L98
 	.half	1
 	.byte	100
-	.word	.L548-.L100,.L434-.L100
+	.word	.L539-.L98,.L430-.L98
 	.half	1
 	.byte	111
-	.word	.L550-.L100,.L551-.L100
+	.word	.L541-.L98,.L542-.L98
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print5printEi')
 	.sect	'.debug_loc'
-.L91:
-	.word	-1,.L92,0,.L520-.L92
+.L89:
+	.word	-1,.L90,0,.L511-.L90
 	.half	2
 	.byte	138,0
-	.word	.L520-.L92,.L411-.L92
+	.word	.L511-.L90,.L407-.L90
 	.half	2
 	.byte	138,24
-	.word	.L411-.L92,.L411-.L92
+	.word	.L407-.L90,.L407-.L90
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L414:
-	.word	-1,.L92,0,.L521-.L92
+.L410:
+	.word	-1,.L90,0,.L512-.L90
 	.half	1
 	.byte	84
 	.word	0,0
-.L416:
-	.word	-1,.L92,0,.L411-.L92
+.L412:
+	.word	-1,.L90,0,.L407-.L90
 	.half	2
 	.byte	145,108
 	.word	0,0
-.L413:
-	.word	-1,.L92,0,.L522-.L92
+.L409:
+	.word	-1,.L90,0,.L513-.L90
 	.half	1
 	.byte	100
-	.word	.L523-.L92,.L411-.L92
+	.word	.L514-.L90,.L407-.L90
 	.half	1
 	.byte	111
-	.word	.L524-.L92,.L525-.L92
+	.word	.L515-.L90,.L516-.L90
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print5printEj')
 	.sect	'.debug_loc'
-.L93:
-	.word	-1,.L94,0,.L526-.L94
+.L91:
+	.word	-1,.L92,0,.L517-.L92
 	.half	2
 	.byte	138,0
-	.word	.L526-.L94,.L417-.L94
+	.word	.L517-.L92,.L413-.L92
 	.half	2
 	.byte	138,24
-	.word	.L417-.L94,.L417-.L94
+	.word	.L413-.L92,.L413-.L92
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L420:
-	.word	-1,.L94,0,.L527-.L94
+.L416:
+	.word	-1,.L92,0,.L518-.L92
 	.half	1
 	.byte	84
 	.word	0,0
-.L421:
-	.word	-1,.L94,0,.L417-.L94
+.L417:
+	.word	-1,.L92,0,.L413-.L92
 	.half	2
 	.byte	145,108
 	.word	0,0
-.L419:
-	.word	-1,.L94,0,.L528-.L94
+.L415:
+	.word	-1,.L92,0,.L519-.L92
 	.half	1
 	.byte	100
-	.word	.L529-.L94,.L417-.L94
+	.word	.L520-.L92,.L413-.L92
 	.half	1
 	.byte	111
-	.word	.L530-.L94,.L531-.L94
+	.word	.L521-.L92,.L522-.L92
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print5printEl')
 	.sect	'.debug_loc'
-.L95:
-	.word	-1,.L96,0,.L532-.L96
+.L93:
+	.word	-1,.L94,0,.L523-.L94
 	.half	2
 	.byte	138,0
-	.word	.L532-.L96,.L422-.L96
+	.word	.L523-.L94,.L418-.L94
 	.half	2
 	.byte	138,32
-	.word	.L422-.L96,.L422-.L96
+	.word	.L418-.L94,.L418-.L94
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L426:
-	.word	-1,.L96,0,.L533-.L96
+.L422:
+	.word	-1,.L94,0,.L524-.L94
 	.half	1
 	.byte	84
 	.word	0,0
-.L428:
-	.word	-1,.L96,0,.L422-.L96
+.L424:
+	.word	-1,.L94,0,.L418-.L94
 	.half	2
 	.byte	145,100
 	.word	0,0
-.L424:
-	.word	-1,.L96,0,.L534-.L96
+.L420:
+	.word	-1,.L94,0,.L525-.L94
 	.half	1
 	.byte	100
-	.word	.L535-.L96,.L422-.L96
+	.word	.L526-.L94,.L418-.L94
 	.half	1
 	.byte	111
-	.word	.L536-.L96,.L537-.L96
+	.word	.L527-.L94,.L528-.L94
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print5printEm')
 	.sect	'.debug_loc'
-.L97:
-	.word	-1,.L98,0,.L538-.L98
+.L95:
+	.word	-1,.L96,0,.L529-.L96
 	.half	2
 	.byte	138,0
-	.word	.L538-.L98,.L429-.L98
+	.word	.L529-.L96,.L425-.L96
 	.half	2
 	.byte	138,32
-	.word	.L429-.L98,.L429-.L98
+	.word	.L425-.L96,.L425-.L96
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L432:
-	.word	-1,.L98,0,.L539-.L98
+.L428:
+	.word	-1,.L96,0,.L530-.L96
 	.half	1
 	.byte	84
 	.word	0,0
-.L433:
-	.word	-1,.L98,0,.L429-.L98
+.L429:
+	.word	-1,.L96,0,.L425-.L96
 	.half	2
 	.byte	145,100
 	.word	0,0
-.L431:
-	.word	-1,.L98,0,.L540-.L98
+.L427:
+	.word	-1,.L96,0,.L531-.L96
 	.half	1
 	.byte	100
-	.word	.L541-.L98,.L429-.L98
+	.word	.L532-.L96,.L425-.L96
 	.half	1
 	.byte	111
-	.word	.L542-.L98,.L543-.L98
+	.word	.L533-.L96,.L534-.L96
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print5writeEPKhj')
 	.sect	'.debug_loc'
-.L83:
-	.word	-1,.L84,0,.L388-.L84
+.L81:
+	.word	-1,.L82,0,.L384-.L82
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L392:
-	.word	-1,.L84,0,.L388-.L84
+.L388:
+	.word	-1,.L82,0,.L384-.L82
 	.half	1
 	.byte	101
 	.word	0,0
-.L393:
-	.word	-1,.L84,0,.L388-.L84
+.L389:
+	.word	-1,.L82,0,.L384-.L82
 	.half	1
 	.byte	84
-	.word	.L510-.L84,.L388-.L84
+	.word	.L501-.L82,.L384-.L82
 	.half	1
 	.byte	82
 	.word	0,0
-.L390:
-	.word	-1,.L84,0,.L388-.L84
+.L386:
+	.word	-1,.L82,0,.L384-.L82
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print5writeEh')
 	.sect	'.debug_loc'
-.L81:
-	.word	-1,.L82,0,.L383-.L82
+.L79:
+	.word	-1,.L80,0,.L379-.L80
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L387:
-	.word	-1,.L82,0,.L383-.L82
+.L383:
+	.word	-1,.L80,0,.L379-.L80
 	.half	1
 	.byte	84
 	.word	0,0
-.L385:
-	.word	-1,.L82,0,.L383-.L82
+.L381:
+	.word	-1,.L80,0,.L379-.L80
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEPK19__FlashStringHelper')
-	.sect	'.debug_loc'
-.L105:
-	.word	-1,.L106,0,.L450-.L106
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L453:
-	.word	-1,.L106,0,.L557-.L106
-	.half	1
-	.byte	101
-	.word	0,0
-.L452:
-	.word	-1,.L106,0,.L557-.L106
-	.half	1
-	.byte	100
-	.word	.L558-.L106,.L450-.L106
-	.half	1
-	.byte	111
-	.word	.L559-.L106,.L560-.L106
-	.half	1
-	.byte	100
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEPKc')
 	.sect	'.debug_loc'
 .L103:
 	.word	-1,.L104,0,.L446-.L104
@@ -4944,142 +4860,68 @@ _ZTS5Print:	.type	object
 	.byte	138,0
 	.word	0,0
 .L449:
-	.word	-1,.L104,0,.L553-.L104
+	.word	-1,.L104,0,.L548-.L104
 	.half	1
 	.byte	101
 	.word	0,0
 .L448:
-	.word	-1,.L104,0,.L553-.L104
+	.word	-1,.L104,0,.L548-.L104
 	.half	1
 	.byte	100
-	.word	.L554-.L104,.L446-.L104
+	.word	.L549-.L104,.L446-.L104
 	.half	1
 	.byte	111
-	.word	.L555-.L104,.L556-.L104
+	.word	.L550-.L104,.L551-.L104
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEPKc')
+	.sect	'.debug_loc'
+.L101:
+	.word	-1,.L102,0,.L442-.L102
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L445:
+	.word	-1,.L102,0,.L544-.L102
+	.half	1
+	.byte	101
+	.word	0,0
+.L444:
+	.word	-1,.L102,0,.L544-.L102
+	.half	1
+	.byte	100
+	.word	.L545-.L102,.L442-.L102
+	.half	1
+	.byte	111
+	.word	.L546-.L102,.L547-.L102
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEc')
 	.sect	'.debug_loc'
-.L107:
-	.word	-1,.L108,0,.L454-.L108
+.L105:
+	.word	-1,.L106,0,.L450-.L106
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L457:
-	.word	-1,.L108,0,.L561-.L108
+.L453:
+	.word	-1,.L106,0,.L552-.L106
 	.half	1
 	.byte	84
 	.word	0,0
-.L456:
-	.word	-1,.L108,0,.L561-.L108
+.L452:
+	.word	-1,.L106,0,.L552-.L106
 	.half	1
 	.byte	100
-	.word	.L562-.L108,.L454-.L108
+	.word	.L553-.L106,.L450-.L106
 	.half	1
 	.byte	111
-	.word	.L563-.L108,.L564-.L108
+	.word	.L554-.L106,.L555-.L106
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEfi')
-	.sect	'.debug_loc'
-.L117:
-	.word	-1,.L118,0,.L474-.L118
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L477:
-	.word	-1,.L118,0,.L581-.L118
-	.half	1
-	.byte	84
-	.word	0,0
-.L478:
-	.word	-1,.L118,0,.L581-.L118
-	.half	1
-	.byte	85
-	.word	0,0
-.L476:
-	.word	-1,.L118,0,.L581-.L118
-	.half	1
-	.byte	100
-	.word	.L582-.L118,.L474-.L118
-	.half	1
-	.byte	111
-	.word	.L583-.L118,.L584-.L118
-	.half	1
-	.byte	100
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEi')
-	.sect	'.debug_loc'
-.L109:
-	.word	-1,.L110,0,.L458-.L110
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L461:
-	.word	-1,.L110,0,.L565-.L110
-	.half	1
-	.byte	84
-	.word	0,0
-.L460:
-	.word	-1,.L110,0,.L565-.L110
-	.half	1
-	.byte	100
-	.word	.L566-.L110,.L458-.L110
-	.half	1
-	.byte	111
-	.word	.L567-.L110,.L568-.L110
-	.half	1
-	.byte	100
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEj')
-	.sect	'.debug_loc'
-.L111:
-	.word	-1,.L112,0,.L462-.L112
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L465:
-	.word	-1,.L112,0,.L569-.L112
-	.half	1
-	.byte	84
-	.word	0,0
-.L464:
-	.word	-1,.L112,0,.L569-.L112
-	.half	1
-	.byte	100
-	.word	.L570-.L112,.L462-.L112
-	.half	1
-	.byte	111
-	.word	.L571-.L112,.L572-.L112
-	.half	1
-	.byte	100
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEl')
-	.sect	'.debug_loc'
-.L113:
-	.word	-1,.L114,0,.L466-.L114
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L469:
-	.word	-1,.L114,0,.L573-.L114
-	.half	1
-	.byte	84
-	.word	0,0
-.L468:
-	.word	-1,.L114,0,.L573-.L114
-	.half	1
-	.byte	100
-	.word	.L574-.L114,.L466-.L114
-	.half	1
-	.byte	111
-	.word	.L575-.L114,.L576-.L114
-	.half	1
-	.byte	100
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEm')
 	.sect	'.debug_loc'
 .L115:
 	.word	-1,.L116,0,.L470-.L116
@@ -5087,112 +4929,209 @@ _ZTS5Print:	.type	object
 	.byte	138,0
 	.word	0,0
 .L473:
-	.word	-1,.L116,0,.L577-.L116
+	.word	-1,.L116,0,.L572-.L116
 	.half	1
 	.byte	84
 	.word	0,0
+.L474:
+	.word	-1,.L116,0,.L572-.L116
+	.half	1
+	.byte	85
+	.word	0,0
 .L472:
-	.word	-1,.L116,0,.L577-.L116
+	.word	-1,.L116,0,.L572-.L116
 	.half	1
 	.byte	100
-	.word	.L578-.L116,.L470-.L116
+	.word	.L573-.L116,.L470-.L116
 	.half	1
 	.byte	111
-	.word	.L579-.L116,.L580-.L116
+	.word	.L574-.L116,.L575-.L116
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEi')
+	.sect	'.debug_loc'
+.L107:
+	.word	-1,.L108,0,.L454-.L108
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L457:
+	.word	-1,.L108,0,.L556-.L108
+	.half	1
+	.byte	84
+	.word	0,0
+.L456:
+	.word	-1,.L108,0,.L556-.L108
+	.half	1
+	.byte	100
+	.word	.L557-.L108,.L454-.L108
+	.half	1
+	.byte	111
+	.word	.L558-.L108,.L559-.L108
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEj')
+	.sect	'.debug_loc'
+.L109:
+	.word	-1,.L110,0,.L458-.L110
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L461:
+	.word	-1,.L110,0,.L560-.L110
+	.half	1
+	.byte	84
+	.word	0,0
+.L460:
+	.word	-1,.L110,0,.L560-.L110
+	.half	1
+	.byte	100
+	.word	.L561-.L110,.L458-.L110
+	.half	1
+	.byte	111
+	.word	.L562-.L110,.L563-.L110
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEl')
+	.sect	'.debug_loc'
+.L111:
+	.word	-1,.L112,0,.L462-.L112
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L465:
+	.word	-1,.L112,0,.L564-.L112
+	.half	1
+	.byte	84
+	.word	0,0
+.L464:
+	.word	-1,.L112,0,.L564-.L112
+	.half	1
+	.byte	100
+	.word	.L565-.L112,.L462-.L112
+	.half	1
+	.byte	111
+	.word	.L566-.L112,.L567-.L112
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEm')
+	.sect	'.debug_loc'
+.L113:
+	.word	-1,.L114,0,.L466-.L114
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L469:
+	.word	-1,.L114,0,.L568-.L114
+	.half	1
+	.byte	84
+	.word	0,0
+.L468:
+	.word	-1,.L114,0,.L568-.L114
+	.half	1
+	.byte	100
+	.word	.L569-.L114,.L466-.L114
+	.half	1
+	.byte	111
+	.word	.L570-.L114,.L571-.L114
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5Print7printlnEv')
 	.sect	'.debug_loc'
-.L101:
-	.word	-1,.L102,0,.L443-.L102
+.L99:
+	.word	-1,.L100,0,.L439-.L100
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L445:
-	.word	-1,.L102,0,.L552-.L102
+.L441:
+	.word	-1,.L100,0,.L543-.L100
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5PrintD0Ev')
 	.sect	'.debug_loc'
-.L77:
-	.word	-1,.L78,0,.L505-.L78
+.L75:
+	.word	-1,.L76,0,.L496-.L76
 	.half	2
 	.byte	138,0
-	.word	.L505-.L78,.L377-.L78
+	.word	.L496-.L76,.L373-.L76
 	.half	3
 	.byte	138,216,0
-	.word	.L377-.L78,.L377-.L78
+	.word	.L373-.L76,.L373-.L76
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L506:
-	.word	-1,.L78,0,.L377-.L78
+.L497:
+	.word	-1,.L76,0,.L373-.L76
 	.half	3
 	.byte	145,168,127
 	.word	0,0
-.L379:
-	.word	-1,.L78,0,.L507-.L78
+.L375:
+	.word	-1,.L76,0,.L498-.L76
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5PrintD1Ev')
 	.sect	'.debug_loc'
-.L75:
-	.word	-1,.L76,0,.L503-.L76
+.L73:
+	.word	-1,.L74,0,.L494-.L74
 	.half	2
 	.byte	138,0
-	.word	.L503-.L76,.L374-.L76
+	.word	.L494-.L74,.L370-.L74
 	.half	3
 	.byte	138,216,0
-	.word	.L374-.L76,.L374-.L76
+	.word	.L370-.L74,.L370-.L74
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L504:
-	.word	-1,.L76,0,.L374-.L76
+.L495:
+	.word	-1,.L74,0,.L370-.L74
 	.half	3
 	.byte	145,168,127
 	.word	0,0
-.L376:
-	.word	-1,.L76,0,.L374-.L76
+.L372:
+	.word	-1,.L74,0,.L370-.L74
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('_ZN5PrintD2Ev')
 	.sect	'.debug_loc'
-.L79:
-	.word	-1,.L80,0,.L508-.L80
+.L77:
+	.word	-1,.L78,0,.L499-.L78
 	.half	2
 	.byte	138,0
-	.word	.L508-.L80,.L380-.L80
+	.word	.L499-.L78,.L376-.L78
 	.half	3
 	.byte	138,216,0
-	.word	.L380-.L80,.L380-.L80
+	.word	.L376-.L78,.L376-.L78
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L509:
-	.word	-1,.L80,0,.L380-.L80
+.L500:
+	.word	-1,.L78,0,.L376-.L78
 	.half	3
 	.byte	145,168,127
 	.word	0,0
-.L382:
-	.word	-1,.L80,0,.L380-.L80
+.L378:
+	.word	-1,.L78,0,.L376-.L78
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5')
 	.sect	'.debug_loc'
-.L119:
-	.word	-1,.L120,0,.L479-.L120
+.L117:
+	.word	-1,.L118,0,.L475-.L118
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L864:
+.L852:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
@@ -5200,205 +5139,206 @@ _ZTS5Print:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('_Z6microsv')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L44,.L329-.L44
+	.word	.L852,.L42,.L327-.L42
 	.sdecl	'.debug_frame',debug,cluster('_Z6millisv')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L46,.L330-.L46
+	.word	.L852,.L44,.L328-.L44
 	.sdecl	'.debug_frame',debug,cluster('_Z5delaym')
 	.sect	'.debug_frame'
-	.word	12
-	.word	.L864,.L48,.L331-.L48
+	.word	24
+	.word	.L852,.L46,.L329-.L46
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('_Z17delayMicrosecondsj')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L50,.L336-.L50
+	.word	.L852,.L48,.L331-.L48
 	.sdecl	'.debug_frame',debug,cluster('_Z7pinModeii')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L864,.L52,.L339-.L52
+	.word	.L852,.L50,.L335-.L50
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('_Z12digitalWriteii')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L864,.L54,.L343-.L54
+	.word	.L852,.L52,.L339-.L52
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('_Z11digitalReadi')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L864,.L56,.L346-.L56
+	.word	.L852,.L54,.L342-.L54
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('_Z10analogReadi')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L864,.L58,.L348-.L58
+	.word	.L852,.L56,.L344-.L56
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('_Z11analogWriteii')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L864,.L60,.L350-.L60
+	.word	.L852,.L58,.L346-.L58
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('_Z4_sinf')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L62,.L354-.L62
+	.word	.L852,.L60,.L350-.L60
 	.sdecl	'.debug_frame',debug,cluster('_Z4_cosf')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L64,.L356-.L64
+	.word	.L852,.L62,.L352-.L62
 	.sdecl	'.debug_frame',debug,cluster('_Z7_sincosfPfS_')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L66,.L358-.L66
+	.word	.L852,.L64,.L354-.L64
 	.sdecl	'.debug_frame',debug,cluster('_Z6_atan2ff')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L68,.L363-.L68
+	.word	.L852,.L66,.L359-.L66
 	.sdecl	'.debug_frame',debug,cluster('_Z15_normalizeAnglef')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L70,.L366-.L70
+	.word	.L852,.L68,.L362-.L68
 	.sdecl	'.debug_frame',debug,cluster('_Z16_electricalAnglefi')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L864,.L72,.L369-.L72
+	.word	.L852,.L70,.L365-.L70
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('_Z11_sqrtApproxf')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L74,.L372-.L74
+	.word	.L852,.L72,.L368-.L72
 	.sdecl	'.debug_frame',debug,cluster('_ZN5PrintD1Ev')
 	.sect	'.debug_frame'
 	.word	44
-	.word	.L864,.L76,.L374-.L76
+	.word	.L852,.L74,.L370-.L74
 	.byte	8,19,8,21,8,22,8,23,4
-	.word	(.L503-.L76)/2
+	.word	(.L494-.L74)/2
 	.byte	19,216,0,22,26,4,19,138,216,0,4
-	.word	(.L374-.L503)/2
+	.word	(.L370-.L494)/2
 	.byte	19,0,8,26
 	.sdecl	'.debug_frame',debug,cluster('_ZN5PrintD0Ev')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L864,.L78,.L377-.L78
+	.word	.L852,.L76,.L373-.L76
 	.byte	4
-	.word	(.L505-.L78)/2
+	.word	(.L496-.L76)/2
 	.byte	19,216,0,22,26,4,19,138,216,0,4
-	.word	(.L377-.L505)/2
+	.word	(.L373-.L496)/2
 	.byte	19,0,8,26
 	.sdecl	'.debug_frame',debug,cluster('_ZN5PrintD2Ev')
 	.sect	'.debug_frame'
 	.word	44
-	.word	.L864,.L80,.L380-.L80
+	.word	.L852,.L78,.L376-.L78
 	.byte	8,19,8,21,8,22,8,23,4
-	.word	(.L508-.L80)/2
+	.word	(.L499-.L78)/2
 	.byte	19,216,0,22,26,4,19,138,216,0,4
-	.word	(.L380-.L508)/2
+	.word	(.L376-.L499)/2
 	.byte	19,0,8,26
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print5writeEh')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L864,.L82,.L383-.L82
+	.word	.L852,.L80,.L379-.L80
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print5writeEPKhj')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L864,.L84,.L388-.L84
+	.word	.L852,.L82,.L384-.L82
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print5printEPKc')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L86,.L394-.L86
+	.word	.L852,.L84,.L390-.L84
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print5printEPK19__FlashStringHelper')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L88,.L401-.L88
+	.word	.L852,.L86,.L397-.L86
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print5printEc')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L90,.L406-.L90
+	.word	.L852,.L88,.L402-.L88
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print5printEi')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L864,.L92,.L411-.L92
+	.word	.L852,.L90,.L407-.L90
 	.byte	4
-	.word	(.L520-.L92)/2
+	.word	(.L511-.L90)/2
 	.byte	19,24,22,26,3,19,138,24,4
-	.word	(.L411-.L520)/2
+	.word	(.L407-.L511)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print5printEj')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L864,.L94,.L417-.L94
+	.word	.L852,.L92,.L413-.L92
 	.byte	4
-	.word	(.L526-.L94)/2
+	.word	(.L517-.L92)/2
 	.byte	19,24,22,26,3,19,138,24,4
-	.word	(.L417-.L526)/2
+	.word	(.L413-.L517)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print5printEl')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L864,.L96,.L422-.L96
+	.word	.L852,.L94,.L418-.L94
 	.byte	4
-	.word	(.L532-.L96)/2
+	.word	(.L523-.L94)/2
 	.byte	19,32,22,26,3,19,138,32,4
-	.word	(.L422-.L532)/2
+	.word	(.L418-.L523)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print5printEm')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L864,.L98,.L429-.L98
+	.word	.L852,.L96,.L425-.L96
 	.byte	4
-	.word	(.L538-.L98)/2
+	.word	(.L529-.L96)/2
 	.byte	19,32,22,26,3,19,138,32,4
-	.word	(.L429-.L538)/2
+	.word	(.L425-.L529)/2
 	.byte	19,0,8,26,0,0
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print5printEfi')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L864,.L100,.L434-.L100
+	.word	.L852,.L98,.L430-.L98
 	.byte	4
-	.word	(.L544-.L100)/2
+	.word	(.L535-.L98)/2
 	.byte	19,192,0,22,26,4,19,138,192,0,4
-	.word	(.L434-.L544)/2
+	.word	(.L430-.L535)/2
 	.byte	19,0,8,26
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print7printlnEv')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L102,.L443-.L102
+	.word	.L852,.L100,.L439-.L100
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print7printlnEPKc')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L104,.L446-.L104
+	.word	.L852,.L102,.L442-.L102
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print7printlnEPK19__FlashStringHelper')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L106,.L450-.L106
+	.word	.L852,.L104,.L446-.L104
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print7printlnEc')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L108,.L454-.L108
+	.word	.L852,.L106,.L450-.L106
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print7printlnEi')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L110,.L458-.L110
+	.word	.L852,.L108,.L454-.L108
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print7printlnEj')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L112,.L462-.L112
+	.word	.L852,.L110,.L458-.L110
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print7printlnEl')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L114,.L466-.L114
+	.word	.L852,.L112,.L462-.L112
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print7printlnEm')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L116,.L470-.L116
+	.word	.L852,.L114,.L466-.L114
 	.sdecl	'.debug_frame',debug,cluster('_ZN5Print7printlnEfi')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L118,.L474-.L118
+	.word	.L852,.L116,.L470-.L116
 	.sdecl	'.debug_frame',debug,cluster('__sti___32_simplefoc_arduino_compat_ads_cpp_ab6245a5')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L864,.L120,.L479-.L120
+	.word	.L852,.L118,.L475-.L118
 	; Module end

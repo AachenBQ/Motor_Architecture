@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc15220a --dep-file=native_protocol_ads.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 -o native_protocol_ads.src ../native_protocol_ads.c"
+	.compiler_invocation	"ctc -f cc26908a --dep-file=native_protocol_ads.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 -o native_protocol_ads.src ../native_protocol_ads.c"
 	.compiler_name		"ctc"
 	;source	'../native_protocol_ads.c'
 
@@ -12,57 +12,156 @@ $TC162
 	.align	2
 	
 ; Function ReadU16Le
-.L35:
+.L61:
 ReadU16Le:	.type	func
 	ld.bu	d2,[a4]
-.L287:
+.L356:
 	ld.bu	d15,[a4]1
-.L288:
+.L357:
 	sha	d15,d15,#8
-.L289:
+.L358:
 	or	d2,d15
-.L290:
+.L359:
 	j	.L2
 .L2:
 	ret
-.L110:
+.L152:
 	
 __ReadU16Le_function_end:
 	.size	ReadU16Le,__ReadU16Le_function_end-ReadU16Le
-.L74:
+.L109:
 	; End of function
 	
-	.sdecl	'.text.native_protocol.ResetForNextByte',code,cluster('ResetForNextByte')
-	.sect	'.text.native_protocol.ResetForNextByte'
+	.sdecl	'.text.native_protocol.ResetParser',code,cluster('ResetParser')
+	.sect	'.text.native_protocol.ResetParser'
 	.align	2
 	
-; Function ResetForNextByte
-.L37:
-ResetForNextByte:	.type	func
+; Function ResetParser
+.L63:
+ResetParser:	.type	func
 	mov	d15,#0
-.L295:
+.L364:
 	st.h	[a4]2060,d15
-.L296:
+.L365:
 	mov	d15,#0
-.L297:
+.L366:
 	st.h	[a4]2062,d15
-.L298:
-	mov	d15,#170
-.L299:
-	jne	d15,d4,.L3
-.L300:
-	st.b	[a4],d4
-.L301:
-	mov	d15,#1
-.L302:
-	st.h	[a4]2060,d15
-.L3:
+.L367:
 	ret
-.L112:
+.L154:
 	
-__ResetForNextByte_function_end:
-	.size	ResetForNextByte,__ResetForNextByte_function_end-ResetForNextByte
-.L79:
+__ResetParser_function_end:
+	.size	ResetParser,__ResetParser_function_end-ResetParser
+.L114:
+	; End of function
+	
+	.sdecl	'.text.native_protocol.ResyncBufferedBytes',code,cluster('ResyncBufferedBytes')
+	.sect	'.text.native_protocol.ResyncBufferedBytes'
+	.align	2
+	
+; Function ResyncBufferedBytes
+.L65:
+ResyncBufferedBytes:	.type	func
+	mov.aa	a15,a4
+.L161:
+	ld.hu	d0,[a15]2060
+.L162:
+	ld.hu	d15,[a15]2060
+.L372:
+	jlt.u	d15,#3,.L3
+.L373:
+	ld.hu	d15,[a15]2060
+.L163:
+	add	d15,#-1
+.L374:
+	j	.L4
+.L5:
+	addsc.a	a2,a15,d15,#0
+	ld.bu	d1,[a2]-1
+.L375:
+	mov	d2,#170
+.L376:
+	jne	d1,d2,.L6
+.L377:
+	addsc.a	a2,a15,d15,#0
+	ld.bu	d1,[a2]
+.L378:
+	mov	d2,#85
+.L379:
+	jne	d1,d2,.L7
+.L380:
+	add	d0,d15,#-1
+.L381:
+	j	.L8
+.L7:
+.L6:
+	add	d15,#-1
+.L4:
+	jge.u	d15,#2,.L5
+.L8:
+.L3:
+	ld.hu	d15,[a15]2060
+.L382:
+	jge.u	d0,d15,.L9
+.L383:
+	ld.hu	d15,[a15]2060
+.L384:
+	sub	d15,d0
+.L385:
+	st.h	[a15]2060,d15
+.L386:
+	addsc.a	a5,a15,d0,#0
+.L387:
+	ld.hu	d4,[a15]2060
+	mov.aa	a4,a15
+	call	memmove
+.L160:
+	j	.L10
+.L9:
+	ld.hu	d15,[a15]2060
+.L388:
+	jeq	d15,#0,.L11
+.L389:
+	ld.hu	d15,[a15]2060
+.L390:
+	addsc.a	a2,a15,d15,#0
+	ld.bu	d0,[a2]-1
+.L164:
+	mov	d15,#170
+.L391:
+	jne	d15,d0,.L12
+.L392:
+	mov	d15,#170
+.L393:
+	st.b	[a15],d15
+.L394:
+	mov	d15,#1
+.L395:
+	st.h	[a15]2060,d15
+.L396:
+	j	.L13
+.L12:
+.L11:
+	mov	d15,#0
+.L397:
+	st.h	[a15]2060,d15
+.L13:
+.L10:
+	mov	d15,#0
+.L398:
+	st.h	[a15]2062,d15
+.L399:
+	ld.w	d15,[a15]2076
+.L400:
+	add	d15,#1
+	st.w	[a15]2076,d15
+.L401:
+	ret
+.L156:
+	
+__ResyncBufferedBytes_function_end:
+	.size	ResyncBufferedBytes,__ResyncBufferedBytes_function_end-ResyncBufferedBytes
+.L119:
 	; End of function
 	
 	.sdecl	'.text.native_protocol.NativeParser_Init',code,cluster('NativeParser_Init')
@@ -71,19 +170,57 @@ __ResetForNextByte_function_end:
 	
 	.global	NativeParser_Init
 ; Function NativeParser_Init
-.L39:
+.L67:
 NativeParser_Init:	.type	func
 	mov	d4,#0
-.L197:
-	mov	d5,#2072
+.L246:
+	mov	d5,#2080
 	call	memset
-.L115:
+.L165:
 	ret
-.L80:
+.L120:
 	
 __NativeParser_Init_function_end:
 	.size	NativeParser_Init,__NativeParser_Init_function_end-NativeParser_Init
-.L54:
+.L84:
+	; End of function
+	
+	.sdecl	'.text.native_protocol.NativeParser_ExpirePartial',code,cluster('NativeParser_ExpirePartial')
+	.sect	'.text.native_protocol.NativeParser_ExpirePartial'
+	.align	2
+	
+	.global	NativeParser_ExpirePartial
+; Function NativeParser_ExpirePartial
+.L69:
+NativeParser_ExpirePartial:	.type	func
+	jz.a	a4,.L14
+.L251:
+	ld.hu	d15,[a4]2060
+.L252:
+	jne	d15,#0,.L15
+.L14:
+	mov	d2,#0
+.L253:
+	j	.L16
+.L15:
+	ld.w	d15,[a4]2072
+.L254:
+	add	d15,#1
+	st.w	[a4]2072,d15
+.L255:
+	call	ResetParser
+.L166:
+	mov	d2,#1
+.L256:
+	j	.L17
+.L17:
+.L16:
+	ret
+.L124:
+	
+__NativeParser_ExpirePartial_function_end:
+	.size	NativeParser_ExpirePartial,__NativeParser_ExpirePartial_function_end-NativeParser_ExpirePartial
+.L89:
 	; End of function
 	
 	.sdecl	'.text.native_protocol.NativeProtocol_Crc16',code,cluster('NativeProtocol_Crc16')
@@ -92,51 +229,51 @@ __NativeParser_Init_function_end:
 	
 	.global	NativeProtocol_Crc16
 ; Function NativeProtocol_Crc16
-.L41:
+.L71:
 NativeProtocol_Crc16:	.type	func
 	mov.u	d2,#65535
-.L116:
+.L167:
 	mov	d15,#0
-.L118:
-	j	.L4
-.L5:
+.L169:
+	j	.L18
+.L19:
 	addsc.a	a15,a4,d15,#0
 	ld.bu	d0,[a15]
-.L240:
+.L309:
 	xor	d2,d0
-.L241:
+.L310:
 	mov	d0,#0
-.L119:
-	j	.L6
-.L7:
-	jz.t	d2:0,.L8
-.L242:
+.L170:
+	j	.L20
+.L21:
+	jz.t	d2:0,.L22
+.L311:
 	sha	d2,#-1
-.L117:
+.L168:
 	mov.u	d1,#40961
-.L120:
+.L171:
 	xor	d2,d1
-.L243:
-	j	.L9
-.L8:
+.L312:
+	j	.L23
+.L22:
 	sha	d2,#-1
-.L9:
+.L23:
 	add	d0,#1
-.L6:
-	jlt.u	d0,#8,.L7
-.L244:
+.L20:
+	jlt.u	d0,#8,.L21
+.L313:
 	add	d15,#1
-.L4:
-	jlt.u	d15,d4,.L5
-.L245:
-	j	.L10
-.L10:
+.L18:
+	jlt.u	d15,d4,.L19
+.L314:
+	j	.L24
+.L24:
 	ret
-.L94:
+.L136:
 	
 __NativeProtocol_Crc16_function_end:
 	.size	NativeProtocol_Crc16,__NativeProtocol_Crc16_function_end-NativeProtocol_Crc16
-.L64:
+.L99:
 	; End of function
 	
 	.sdecl	'.text.native_protocol.NativeParser_Push',code,cluster('NativeParser_Push')
@@ -145,223 +282,261 @@ __NativeProtocol_Crc16_function_end:
 	
 	.global	NativeParser_Push
 ; Function NativeParser_Push
-.L43:
+.L73:
 NativeParser_Push:	.type	func
 	mov.aa	a12,a4
-.L122:
+.L172:
 	mov	d8,d4
-.L124:
+.L174:
 	mov.aa	a15,a5
-.L125:
+.L175:
+	jz.a	a12,.L25
+.L261:
+	jnz.a	a15,.L26
+.L25:
+	mov	d2,#0
+.L262:
+	j	.L27
+.L26:
 	ld.hu	d15,[a12]2060
-.L202:
-	jne	d15,#0,.L11
-.L203:
+.L263:
+	jne	d15,#0,.L28
+.L264:
 	mov	d15,#170
-.L204:
-	jne	d15,d8,.L12
-.L205:
+.L265:
+	jne	d15,d8,.L29
+.L266:
 	st.b	[a12],d8
-.L206:
+.L267:
 	mov	d15,#1
-.L207:
+.L268:
 	st.h	[a12]2060,d15
-.L12:
+.L29:
 	mov	d2,#0
-.L208:
-	j	.L13
-.L11:
+.L269:
+	j	.L30
+.L28:
 	ld.hu	d15,[a12]2060
-.L209:
-	jne	d15,#1,.L14
-.L210:
+.L270:
+	jne	d15,#1,.L31
+.L271:
 	mov	d15,#85
-.L211:
-	jeq	d15,d8,.L15
-.L212:
+.L272:
+	jeq	d15,d8,.L32
+.L273:
+	mov	d15,#170
+.L274:
+	jeq	d15,d8,.L33
+.L275:
 	mov.aa	a4,a12
-	mov	d4,d8
-	call	ResetForNextByte
-.L121:
+	call	ResetParser
+.L33:
 	mov	d2,#0
-.L213:
-	j	.L16
-.L15:
+.L276:
+	j	.L34
+.L32:
 	mov.aa	a2,a12
-.L127:
+.L176:
 	add.a	a2,#1
-.L123:
+.L173:
 	st.b	[a2],d8
-.L128:
+.L177:
 	ld.hu	d15,[a12]2060
-.L129:
+.L178:
 	add	d15,#1
-.L130:
+.L179:
 	st.h	[a12]2060,d15
-.L131:
+.L180:
 	mov	d2,#0
-.L214:
-	j	.L17
-.L14:
-	ld.hu	d15,[a12]2060
-.L215:
-	addsc.a	a2,a12,d15,#0
-.L216:
-	st.b	[a2],d8
-.L217:
+.L277:
+	j	.L35
+.L31:
 	ld.hu	d0,[a12]2060
-.L218:
-	add	d0,#1
-	st.h	[a12]2060,d0
-.L219:
-	ld.hu	d0,[a12]2060
-.L220:
-	mov	d15,#9
-.L221:
-	jne	d15,d0,.L18
-.L222:
-	mov.aa	a4,a12
-.L223:
-	add.a	a4,#7
-.L132:
-	call	ReadU16Le
-.L126:
-	mov	d15,#2048
-.L224:
-	jge.u	d15,d2,.L19
-.L134:
+.L278:
+	mov	d1,#2059
+.L279:
+	jlt.u	d0,d1,.L36
+.L280:
 	ld.w	d15,[a12]2068
-.L135:
+.L281:
 	add	d15,#1
-.L136:
 	st.w	[a12]2068,d15
-.L225:
+.L282:
 	mov.aa	a4,a12
-.L137:
-	mov	d4,d8
-.L138:
-	call	ResetForNextByte
-.L133:
-	mov	d2,#0
-.L226:
-	j	.L20
-.L19:
-	add	d15,d2,#11
-.L139:
-	st.h	[a12]2062,d15
-.L18:
-	ld.hu	d15,[a12]2062
-.L140:
-	jeq	d15,#0,.L21
-.L141:
+	call	ResyncBufferedBytes
+.L36:
 	ld.hu	d15,[a12]2060
-.L227:
-	ld.hu	d0,[a12]2062
-.L142:
-	jge.u	d15,d0,.L22
-.L21:
-	mov	d2,#0
-.L228:
-	j	.L23
-.L22:
-	ld.hu	d15,[a12]2062
-.L229:
+.L283:
 	addsc.a	a2,a12,d15,#0
-.L143:
+.L284:
+	st.b	[a2],d8
+.L285:
+	ld.hu	d15,[a12]2060
+.L286:
+	add	d15,#1
+	st.h	[a12]2060,d15
+.L287:
+	j	.L37
+.L38:
+	ld.hu	d15,[a12]2060
+.L181:
+	jge.u	d15,#9,.L39
+.L288:
+	mov	d2,#0
+.L289:
+	j	.L40
+.L39:
+	ld.hu	d15,[a12]2062
+.L182:
+	jne	d15,#0,.L41
+.L183:
+	mov.aa	a4,a12
+.L184:
+	add.a	a4,#7
+	call	ReadU16Le
+.L185:
+	mov	d15,#2048
+.L290:
+	jge.u	d15,d2,.L42
+.L187:
+	ld.w	d15,[a12]2068
+.L188:
+	add	d15,#1
+.L189:
+	st.w	[a12]2068,d15
+.L291:
+	mov.aa	a4,a12
+.L190:
+	call	ResyncBufferedBytes
+.L186:
+	ld.hu	d15,[a12]2060
+.L191:
+	jge.u	d15,#9,.L43
+.L292:
+	mov	d2,#0
+.L293:
+	j	.L44
+.L43:
+	j	.L45
+.L42:
+	add	d15,d2,#11
+.L192:
+	st.h	[a12]2062,d15
+.L41:
+	ld.hu	d15,[a12]2060
+.L294:
+	ld.hu	d0,[a12]2062
+.L193:
+	jge.u	d15,d0,.L46
+.L295:
+	mov	d2,#0
+.L296:
+	j	.L47
+.L46:
+	ld.hu	d15,[a12]2062
+.L297:
+	addsc.a	a2,a12,d15,#0
+.L194:
 	lea	a4,[a2]-2
 	call	ReadU16Le
-.L144:
+.L195:
 	mov	d15,d2
-.L146:
+.L197:
 	mov.aa	a4,a12
-.L147:
+.L198:
 	add.a	a4,#2
-.L149:
+.L200:
 	ld.hu	d4,[a12]2062
-.L150:
+.L201:
 	add	d4,#-4
 	call	NativeProtocol_Crc16
-.L145:
-	jeq	d15,d2,.L24
-.L152:
+.L196:
+	jeq	d15,d2,.L48
+.L203:
 	ld.w	d15,[a12]2064
-.L148:
+.L199:
 	add	d15,#1
-.L153:
+.L204:
 	st.w	[a12]2064,d15
-.L230:
+.L298:
 	mov.aa	a4,a12
-.L154:
-	mov	d4,d8
-.L155:
-	call	ResetForNextByte
-.L151:
+.L205:
+	call	ResyncBufferedBytes
+.L202:
+	ld.hu	d15,[a12]2060
+.L206:
+	jge.u	d15,#9,.L49
+.L299:
 	mov	d2,#0
-.L231:
-	j	.L25
-.L24:
+.L300:
+	j	.L50
+.L49:
+	j	.L51
+.L48:
 	ld.bu	d15,[a12]2
-.L157:
+.L208:
 	st.b	[a15],d15
-.L158:
+.L209:
 	ld.bu	d15,[a12]3
-.L159:
+.L210:
 	st.b	[a15]1,d15
-.L160:
+.L211:
 	ld.bu	d15,[a12]4
-.L161:
+.L212:
 	st.b	[a15]2,d15
-.L162:
+.L213:
 	ld.bu	d15,[a12]5
-.L163:
+.L214:
 	st.b	[a15]3,d15
-.L164:
+.L215:
 	ld.bu	d15,[a12]6
-.L165:
+.L216:
 	st.b	[a15]4,d15
-.L166:
+.L217:
 	mov.aa	a4,a12
-.L167:
+.L218:
 	add.a	a4,#7
 	call	ReadU16Le
-.L156:
+.L207:
 	st.h	[a15]6,d2
-.L232:
+.L301:
 	ld.hu	d15,[a15]6
-.L233:
-	jeq	d15,#0,.L26
-.L234:
+.L302:
+	jeq	d15,#0,.L52
+.L303:
 	lea	a4,[a15]8
-.L168:
+.L219:
 	lea	a5,[a12]9
-.L169:
+.L220:
 	ld.hu	d4,[a15]6
 	call	memcpy
-.L26:
-	mov	d15,#0
-.L170:
-	st.h	[a12]2060,d15
-.L171:
-	mov	d15,#0
-.L172:
-	st.h	[a12]2062,d15
-.L173:
+.L52:
+	mov.aa	a4,a12
+.L221:
+	call	ResetParser
+.L222:
 	mov	d2,#1
-.L235:
-	j	.L27
+.L304:
+	j	.L53
+.L51:
+.L45:
+.L37:
+	j	.L38
+.L53:
+.L50:
+.L47:
+.L44:
+.L40:
+.L35:
+.L34:
+.L30:
 .L27:
-.L25:
-.L23:
-.L20:
-.L17:
-.L16:
-.L13:
 	ret
-.L84:
+.L126:
 	
 __NativeParser_Push_function_end:
 	.size	NativeParser_Push,__NativeParser_Push_function_end-NativeParser_Push
-.L59:
+.L94:
 	; End of function
 	
 	.sdecl	'.text.native_protocol.NativeProtocol_Encode',code,cluster('NativeProtocol_Encode')
@@ -370,163 +545,169 @@ __NativeParser_Push_function_end:
 	
 	.global	NativeProtocol_Encode
 ; Function NativeProtocol_Encode
-.L45:
+.L75:
 NativeProtocol_Encode:	.type	func
 	mov.aa	a12,a4
-.L177:
+.L226:
 	mov.aa	a15,a5
-.L178:
+.L227:
 	ld.hu	d15,[a12]6
-.L250:
+.L319:
 	mov	d0,#2048
-.L251:
-	jge.u	d0,d15,.L28
-.L252:
+.L320:
+	jge.u	d0,d15,.L54
+.L321:
 	mov	d2,#0
-.L253:
-	j	.L29
-.L28:
+.L322:
+	j	.L55
+.L54:
 	ld.hu	d15,[a12]6
-.L254:
+.L323:
 	add	d8,d15,#11
-.L180:
-	jge.u	d4,d8,.L30
-.L255:
+.L229:
+	jge.u	d4,d8,.L56
+.L324:
 	mov	d2,#0
-.L256:
-	j	.L31
-.L30:
+.L325:
+	j	.L57
+.L56:
 	mov	d15,#170
-.L257:
+.L326:
 	st.b	[a15],d15
-.L258:
+.L327:
 	mov	d15,#85
-.L259:
+.L328:
 	st.b	[a15]1,d15
-.L260:
+.L329:
 	ld.bu	d15,[a12]
-.L261:
+.L330:
 	st.b	[a15]2,d15
-.L262:
+.L331:
 	ld.bu	d15,[a12]1
-.L263:
+.L332:
 	st.b	[a15]3,d15
-.L264:
+.L333:
 	ld.bu	d15,[a12]2
-.L265:
+.L334:
 	st.b	[a15]4,d15
-.L266:
+.L335:
 	ld.bu	d15,[a12]3
-.L267:
+.L336:
 	st.b	[a15]5,d15
-.L268:
+.L337:
 	ld.bu	d15,[a12]4
-.L269:
+.L338:
 	st.b	[a15]6,d15
-.L270:
+.L339:
 	ld.hu	d15,[a12]6
-.L271:
+.L340:
 	and	d15,#255
-.L272:
+.L341:
 	st.b	[a15]7,d15
-.L273:
+.L342:
 	ld.hu	d15,[a12]6
-.L274:
+.L343:
 	sha	d15,#-8
-.L275:
+.L344:
 	st.b	[a15]8,d15
-.L276:
+.L345:
 	ld.hu	d15,[a12]6
-.L277:
-	jeq	d15,#0,.L32
-.L278:
+.L346:
+	jeq	d15,#0,.L58
+.L347:
 	lea	a4,[a15]9
-.L176:
+.L225:
 	lea	a5,[a12]8
-.L175:
+.L224:
 	ld.hu	d4,[a12]6
-.L174:
+.L223:
 	call	memcpy
-.L32:
+.L58:
 	mov.aa	a4,a15
-.L181:
+.L230:
 	add.a	a4,#2
-.L179:
+.L228:
 	ld.hu	d4,[a12]6
-.L279:
+.L348:
 	add	d4,#7
 	call	NativeProtocol_Crc16
-.L182:
+.L231:
 	ld.hu	d15,[a12]6
-.L184:
+.L233:
 	addsc.a	a2,a15,d15,#0
-.L185:
+.L234:
 	and	d15,d2,#255
-.L280:
+.L349:
 	st.b	[a2]9,d15
-.L281:
+.L350:
 	ld.hu	d15,[a12]6
-.L186:
+.L235:
 	addsc.a	a15,a15,d15,#0
-.L187:
+.L236:
 	sha	d2,#-8
-.L183:
+.L232:
 	st.b	[a15]10,d2
-.L282:
+.L351:
 	mov	d2,d8
-.L188:
-	j	.L33
-.L33:
-.L31:
-.L29:
+.L237:
+	j	.L59
+.L59:
+.L57:
+.L55:
 	ret
-.L102:
+.L144:
 	
 __NativeProtocol_Encode_function_end:
 	.size	NativeProtocol_Encode,__NativeProtocol_Encode_function_end-NativeProtocol_Encode
-.L69:
+.L104:
 	; End of function
 	
+	.calls	'ResyncBufferedBytes','memmove'
 	.calls	'NativeParser_Init','memset'
-	.calls	'NativeParser_Push','ResetForNextByte'
+	.calls	'NativeParser_ExpirePartial','ResetParser'
+	.calls	'NativeParser_Push','ResetParser'
+	.calls	'NativeParser_Push','ResyncBufferedBytes'
 	.calls	'NativeParser_Push','ReadU16Le'
 	.calls	'NativeParser_Push','NativeProtocol_Crc16'
 	.calls	'NativeParser_Push','memcpy'
 	.calls	'NativeProtocol_Encode','memcpy'
 	.calls	'NativeProtocol_Encode','NativeProtocol_Crc16'
 	.calls	'ReadU16Le','',0
-	.calls	'ResetForNextByte','',0
+	.calls	'ResetParser','',0
+	.calls	'ResyncBufferedBytes','',0
 	.calls	'NativeParser_Init','',0
+	.calls	'NativeParser_ExpirePartial','',0
 	.calls	'NativeProtocol_Crc16','',0
 	.calls	'NativeParser_Push','',0
 	.extern	memcpy
+	.extern	memmove
 	.extern	memset
 	.calls	'NativeProtocol_Encode','',0
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L47:
-	.word	938
+.L77:
+	.word	1032
 	.half	3
-	.word	.L48
+	.word	.L78
 	.byte	4
-.L46:
+.L76:
 	.byte	1
 	.byte	'../native_protocol_ads.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L49
-.L86:
+	.word	.L79
+.L128:
 	.byte	2
 	.byte	'unsigned char',0,1,8,3,139,16
 	.word	219
 	.byte	4,138,16,0
-.L90:
+.L132:
 	.byte	2
 	.byte	'unsigned short int',0,2,7
-.L97:
+.L139:
 	.byte	2
-	.byte	'unsigned int',0,4,7,5,1,77,9,152,16,6
+	.byte	'unsigned int',0,4,7,5,1,79,9,160,16,6
 	.byte	'bytes',0
 	.word	236
 	.byte	139,16,2,35,0,6
@@ -541,15 +722,21 @@ __NativeProtocol_Encode_function_end:
 	.byte	4,3,35,144,16,6
 	.byte	'length_errors',0
 	.word	269
-	.byte	4,3,35,148,16,0
-.L81:
+	.byte	4,3,35,148,16,6
+	.byte	'timeout_errors',0
+	.word	269
+	.byte	4,3,35,152,16,6
+	.byte	'resync_events',0
+	.word	269
+	.byte	4,3,35,156,16,0
+.L121:
 	.byte	7
 	.word	285
-.L83:
+.L123:
 	.byte	2
 	.byte	'_Bool',0,1,2,3,128,16
 	.word	219
-	.byte	4,255,15,0,5,1,66,9,136,16,6
+	.byte	4,255,15,0,5,1,68,9,136,16,6
 	.byte	'version',0
 	.word	219
 	.byte	1,2,35,0,6
@@ -569,72 +756,81 @@ __NativeProtocol_Encode_function_end:
 	.word	247
 	.byte	2,2,35,6,6
 	.byte	'payload',0
-	.word	401
+	.word	450
 	.byte	128,16,2,35,8,0
-.L88:
+.L130:
 	.byte	7
-	.word	412
+	.word	461
 	.byte	8
 	.word	219
-.L95:
+.L137:
 	.byte	7
-	.word	549
+	.word	598
 	.byte	8
-	.word	412
-.L103:
+	.word	461
+.L145:
 	.byte	7
-	.word	559
-.L105:
+	.word	608
+.L147:
 	.byte	7
 	.word	219
 	.byte	9
 	.byte	'void',0,7
-	.word	574
+	.word	623
 	.byte	10
-	.word	580
+	.word	629
 	.byte	8
-	.word	574
+	.word	623
 	.byte	7
-	.word	590
+	.word	639
 	.byte	10
-	.word	595
+	.word	644
 	.byte	11
 	.byte	'memcpy',0,2,53,17
-	.word	580
+	.word	629
 	.byte	1,1,1,1,12,2,53,33
-	.word	585
+	.word	634
 	.byte	12,2,53,56
-	.word	600
+	.word	649
 	.byte	12,2,53,68
+	.word	269
+	.byte	0,11
+	.byte	'memmove',0,2,54,17
+	.word	629
+	.byte	1,1,1,1,12,2,54,33
+	.word	629
+	.byte	12,2,54,47
+	.word	644
+	.byte	12,2,54,50
 	.word	269
 	.byte	0,2
 	.byte	'int',0,4,5,11
 	.byte	'memset',0,2,56,17
-	.word	580
+	.word	629
 	.byte	1,1,1,1,12,2,56,33
-	.word	580
+	.word	629
 	.byte	12,2,56,36
-	.word	649
+	.word	743
 	.byte	12,2,56,41
 	.word	269
 	.byte	0,2
 	.byte	'short int',0,2,5,13
 	.byte	'__wchar_t',0,3,1,1
-	.word	700
+	.word	794
 	.byte	13
 	.byte	'__size_t',0,3,1,1
 	.word	269
 	.byte	13
 	.byte	'__ptrdiff_t',0,3,1,1
-	.word	649
+	.word	743
 	.byte	14,1,7
-	.word	768
+	.word	862
 	.byte	13
 	.byte	'__codeptr',0,3,1,1
-	.word	770
+	.word	864
 	.byte	13
 	.byte	'__intptr_t',0,3,1,1
-	.word	649
+	.word	743
 	.byte	13
 	.byte	'__uintptr_t',0,3,1,1
 	.word	269
@@ -651,27 +847,27 @@ __NativeProtocol_Encode_function_end:
 	.byte	'uint32_t',0,5,254,1,41
 	.word	269
 	.byte	13
-	.byte	'NativeFrame',0,1,75,3
-	.word	412
+	.byte	'NativeFrame',0,1,77,3
+	.word	461
 	.byte	13
-	.byte	'NativeParser',0,1,84,3
+	.byte	'NativeParser',0,1,88,3
 	.word	285
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L48:
+.L78:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,1,1,11,15,73,19,0,0,4,33,0
 	.byte	47,15,0,0,5,19,1,58,15,59,15,57,15,11,15,0,0,6,13,0,3,8,73,19,11,15,56,9,0,0,7,15,0,73,19,0,0,8,38,0,73
 	.byte	19,0,0,9,59,0,3,8,0,0,10,55,0,73,19,0,0,11,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0
 	.byte	0,12,5,0,58,15,59,15,57,15,73,19,0,0,13,22,0,3,8,58,15,59,15,57,15,73,19,0,0,14,21,0,54,15,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L49:
-	.word	.L190-.L189
-.L189:
+.L79:
+	.word	.L239-.L238
+.L238:
 	.half	3
-	.word	.L192-.L191
-.L191:
+	.word	.L241-.L240
+.L240:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'C:\\Infineon\\AURIX-Studio-1.10.32\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\',0,0
 	.byte	'C:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\include\\native_protocol.h',0
@@ -680,978 +876,1256 @@ __NativeProtocol_Encode_function_end:
 	.byte	'../native_protocol_ads.c',0,0,0,0
 	.byte	'stddef.h',0,1,0,0
 	.byte	'stdint.h',0,1,0,0,0
-.L192:
-.L190:
+.L241:
+.L239:
 	.sdecl	'.debug_info',debug,cluster('NativeParser_Init')
 	.sect	'.debug_info'
-.L50:
+.L80:
 	.word	297
 	.half	3
-	.word	.L51
+	.word	.L81
 	.byte	4,1
 	.byte	'..\\..\\..\\src\\native_protocol.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L53,.L52
+	.word	.L83,.L82
 	.byte	2
-	.word	.L46
+	.word	.L76
 	.byte	3
-	.byte	'NativeParser_Init',0,1,21,6,1,1,1
-	.word	.L39,.L80,.L38
+	.byte	'NativeParser_Init',0,1,65,6,1,1,1
+	.word	.L67,.L120,.L66
 	.byte	4
-	.byte	'parser',0,1,21,38
-	.word	.L81,.L82
+	.byte	'parser',0,1,65,38
+	.word	.L121,.L122
 	.byte	5
-	.word	.L39,.L80
+	.word	.L67,.L120
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('NativeParser_Init')
 	.sect	'.debug_abbrev'
-.L51:
+.L81:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('NativeParser_Init')
 	.sect	'.debug_line'
-.L52:
-	.word	.L194-.L193
-.L193:
+.L82:
+	.word	.L243-.L242
+.L242:
 	.half	3
-	.word	.L196-.L195
-.L195:
+	.word	.L245-.L244
+.L244:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\src\\native_protocol.c',0,0,0,0,0
-.L196:
+.L245:
 	.byte	5,20,7,0,5,2
-	.word	.L39
-	.byte	3,22,1,5,23,9
-	.half	.L197-.L39
+	.word	.L67
+	.byte	3,194,0,1,5,23,9
+	.half	.L246-.L67
 	.byte	1,5,1,9
-	.half	.L115-.L197
+	.half	.L165-.L246
 	.byte	3,1,1,7,9
-	.half	.L54-.L115
+	.half	.L84-.L165
 	.byte	0,1,1
-.L194:
+.L243:
 	.sdecl	'.debug_ranges',debug,cluster('NativeParser_Init')
 	.sect	'.debug_ranges'
-.L53:
-	.word	-1,.L39,0,.L54-.L39,0,0
-	.sdecl	'.debug_info',debug,cluster('NativeParser_Push')
+.L83:
+	.word	-1,.L67,0,.L84-.L67,0,0
+	.sdecl	'.debug_info',debug,cluster('NativeParser_ExpirePartial')
 	.sect	'.debug_info'
-.L55:
-	.word	413
+.L85:
+	.word	310
 	.half	3
-	.word	.L56
+	.word	.L86
 	.byte	4,1
 	.byte	'..\\..\\..\\src\\native_protocol.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L58,.L57
+	.word	.L88,.L87
 	.byte	2
-	.word	.L46
+	.word	.L76
 	.byte	3
-	.byte	'NativeParser_Push',0,1,44,6
-	.word	.L83
+	.byte	'NativeParser_ExpirePartial',0,1,70,6
+	.word	.L123
 	.byte	1,1,1
-	.word	.L43,.L84,.L42
+	.word	.L69,.L124,.L68
 	.byte	4
-	.byte	'parser',0,1,44,38
-	.word	.L81,.L85
-	.byte	4
-	.byte	'value',0,1,44,54
-	.word	.L86,.L87
-	.byte	4
-	.byte	'frame',0,1,44,74
-	.word	.L88,.L89
+	.byte	'parser',0,1,70,47
+	.word	.L121,.L125
 	.byte	5
-	.word	.L43,.L84
+	.word	.L69,.L124
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NativeParser_ExpirePartial')
+	.sect	'.debug_abbrev'
+.L86:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NativeParser_ExpirePartial')
+	.sect	'.debug_line'
+.L87:
+	.word	.L248-.L247
+.L247:
+	.half	3
+	.word	.L250-.L249
+.L249:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\native_protocol.c',0,0,0,0,0
+.L250:
+	.byte	5,9,7,0,5,2
+	.word	.L69
+	.byte	3,199,0,1,5,36,7,9
+	.half	.L251-.L69
+	.byte	1,5,43,9
+	.half	.L252-.L251
+	.byte	1,5,16,7,9
+	.half	.L14-.L252
+	.byte	3,2,1,5,9,9
+	.half	.L253-.L14
+	.byte	1,5,11,9
+	.half	.L15-.L253
+	.byte	3,3,1,5,27,9
+	.half	.L254-.L15
+	.byte	1,5,17,9
+	.half	.L255-.L254
+	.byte	3,1,1,5,12,9
+	.half	.L166-.L255
+	.byte	3,1,1,5,5,9
+	.half	.L256-.L166
+	.byte	1,5,1,9
+	.half	.L16-.L256
+	.byte	3,1,1,7,9
+	.half	.L89-.L16
+	.byte	0,1,1
+.L248:
+	.sdecl	'.debug_ranges',debug,cluster('NativeParser_ExpirePartial')
+	.sect	'.debug_ranges'
+.L88:
+	.word	-1,.L69,0,.L89-.L69,0,0
+	.sdecl	'.debug_info',debug,cluster('NativeParser_Push')
+	.sect	'.debug_info'
+.L90:
+	.word	413
+	.half	3
+	.word	.L91
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\native_protocol.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L93,.L92
+	.byte	2
+	.word	.L76
+	.byte	3
+	.byte	'NativeParser_Push',0,1,100,6
+	.word	.L123
+	.byte	1,1,1
+	.word	.L73,.L126,.L72
+	.byte	4
+	.byte	'parser',0,1,100,38
+	.word	.L121,.L127
+	.byte	4
+	.byte	'value',0,1,100,54
+	.word	.L128,.L129
+	.byte	4
+	.byte	'frame',0,1,100,74
+	.word	.L130,.L131
+	.byte	5
+	.word	.L73,.L126
 	.byte	6
-	.byte	'payload_length',0,1,46,14
-	.word	.L90,.L91
+	.byte	'payload_length',0,1,102,14
+	.word	.L132,.L133
 	.byte	6
-	.byte	'received_crc',0,1,47,14
-	.word	.L90,.L92
+	.byte	'received_crc',0,1,103,14
+	.word	.L132,.L134
 	.byte	6
-	.byte	'actual_crc',0,1,48,14
-	.word	.L90,.L93
+	.byte	'actual_crc',0,1,104,14
+	.word	.L132,.L135
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('NativeParser_Push')
 	.sect	'.debug_abbrev'
-.L56:
+.L91:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('NativeParser_Push')
 	.sect	'.debug_line'
-.L57:
-	.word	.L199-.L198
-.L198:
+.L92:
+	.word	.L258-.L257
+.L257:
 	.half	3
-	.word	.L201-.L200
-.L200:
+	.word	.L260-.L259
+.L259:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\src\\native_protocol.c',0,0,0,0,0
-.L201:
+.L260:
 	.byte	5,6,7,0,5,2
-	.word	.L43
-	.byte	3,43,1,5,15,9
-	.half	.L125-.L43
-	.byte	3,6,1,5,5,9
-	.half	.L202-.L125
-	.byte	1,5,22,7,9
-	.half	.L203-.L202
-	.byte	3,2,1,5,9,9
-	.half	.L204-.L203
-	.byte	1,5,30,7,9
-	.half	.L205-.L204
-	.byte	3,2,1,5,28,9
-	.half	.L206-.L205
-	.byte	3,1,1,5,26,9
-	.half	.L207-.L206
-	.byte	1,5,16,9
-	.half	.L12-.L207
-	.byte	3,2,1,5,9,9
-	.half	.L208-.L12
-	.byte	1,5,15,9
-	.half	.L11-.L208
-	.byte	3,2,1,5,5,9
-	.half	.L209-.L11
-	.byte	1,5,22,7,9
-	.half	.L210-.L209
-	.byte	3,2,1,5,9,9
-	.half	.L211-.L210
-	.byte	1,5,38,7,9
-	.half	.L212-.L211
-	.byte	3,2,1,5,20,9
-	.half	.L121-.L212
-	.byte	3,1,1,5,13,9
-	.half	.L213-.L121
-	.byte	1,5,29,9
-	.half	.L15-.L213
-	.byte	3,2,1,5,22,9
-	.half	.L127-.L15
-	.byte	1,5,39,9
-	.half	.L123-.L127
-	.byte	1,5,29,9
-	.half	.L128-.L123
-	.byte	1,5,35,9
-	.half	.L129-.L128
-	.byte	1,5,16,9
-	.half	.L131-.L129
-	.byte	3,1,1,5,9,9
-	.half	.L214-.L131
-	.byte	1,5,25,9
-	.half	.L14-.L214
-	.byte	3,3,1,5,18,9
-	.half	.L215-.L14
-	.byte	1,5,35,9
-	.half	.L216-.L215
-	.byte	1,5,25,9
-	.half	.L217-.L216
-	.byte	1,5,31,9
-	.half	.L218-.L217
-	.byte	1,5,15,9
-	.half	.L219-.L218
-	.byte	3,1,1,5,25,9
-	.half	.L220-.L219
-	.byte	1,5,5,9
-	.half	.L221-.L220
-	.byte	1,5,51,7,9
-	.half	.L222-.L221
-	.byte	3,2,1,5,50,9
-	.half	.L223-.L222
-	.byte	1,5,30,9
-	.half	.L126-.L223
-	.byte	3,1,1,5,9,9
-	.half	.L224-.L126
-	.byte	1,5,19,7,9
-	.half	.L134-.L224
-	.byte	3,2,1,5,34,9
-	.half	.L135-.L134
-	.byte	1,5,38,9
-	.half	.L225-.L135
-	.byte	3,1,1,5,20,9
-	.half	.L133-.L225
-	.byte	3,1,1,5,13,9
-	.half	.L226-.L133
-	.byte	1,5,43,9
-	.half	.L19-.L226
-	.byte	3,2,1,5,26,9
-	.half	.L139-.L19
-	.byte	1,5,16,9
-	.half	.L18-.L139
-	.byte	3,2,1,5,9,9
-	.half	.L140-.L18
-	.byte	1,5,44,7,9
-	.half	.L141-.L140
-	.byte	1,5,59,9
-	.half	.L227-.L141
-	.byte	1,5,51,9
-	.half	.L142-.L227
+	.word	.L73
+	.byte	3,227,0,1,5,9,9
+	.half	.L175-.L73
+	.byte	3,6,1,5,36,7,9
+	.half	.L261-.L175
 	.byte	1,5,16,7,9
-	.half	.L21-.L142
+	.half	.L25-.L261
 	.byte	3,2,1,5,9,9
-	.half	.L228-.L21
-	.byte	1,5,51,9
-	.half	.L22-.L228
-	.byte	3,3,1,5,44,9
-	.half	.L229-.L22
-	.byte	1,5,18,9
-	.half	.L144-.L229
-	.byte	1,5,24,9
-	.half	.L146-.L144
-	.byte	3,2,1,5,23,9
-	.half	.L147-.L146
-	.byte	1,9
-	.half	.L149-.L147
-	.byte	3,1,1,5,34,9
-	.half	.L150-.L149
-	.byte	1,5,5,9
-	.half	.L145-.L150
-	.byte	3,1,1,5,15,7,9
-	.half	.L152-.L145
-	.byte	3,2,1,5,27,9
-	.half	.L148-.L152
-	.byte	1,5,34,9
-	.half	.L230-.L148
-	.byte	3,1,1,5,16,9
-	.half	.L151-.L230
+	.half	.L262-.L25
+	.byte	1,5,15,9
+	.half	.L26-.L262
+	.byte	3,3,1,5,5,9
+	.half	.L263-.L26
+	.byte	1,5,22,7,9
+	.half	.L264-.L263
+	.byte	3,2,1,5,9,9
+	.half	.L265-.L264
+	.byte	1,5,30,7,9
+	.half	.L266-.L265
+	.byte	3,2,1,5,28,9
+	.half	.L267-.L266
+	.byte	3,1,1,5,26,9
+	.half	.L268-.L267
+	.byte	1,5,16,9
+	.half	.L29-.L268
+	.byte	3,2,1,5,9,9
+	.half	.L269-.L29
+	.byte	1,5,15,9
+	.half	.L28-.L269
+	.byte	3,2,1,5,5,9
+	.half	.L270-.L28
+	.byte	1,5,22,7,9
+	.half	.L271-.L270
+	.byte	3,2,1,5,9,9
+	.half	.L272-.L271
+	.byte	1,5,26,7,9
+	.half	.L273-.L272
+	.byte	3,2,1,5,13,9
+	.half	.L274-.L273
+	.byte	1,5,29,7,9
+	.half	.L275-.L274
+	.byte	3,2,1,5,20,9
+	.half	.L33-.L275
+	.byte	3,2,1,5,13,9
+	.half	.L276-.L33
+	.byte	1,5,29,9
+	.half	.L32-.L276
+	.byte	3,2,1,5,22,9
+	.half	.L176-.L32
+	.byte	1,5,39,9
+	.half	.L173-.L176
+	.byte	1,5,29,9
+	.half	.L177-.L173
+	.byte	1,5,35,9
+	.half	.L178-.L177
+	.byte	1,5,16,9
+	.half	.L180-.L178
 	.byte	3,1,1,5,9,9
-	.half	.L231-.L151
-	.byte	1,5,35,9
-	.half	.L24-.L231
-	.byte	3,3,1,5,20,9
-	.half	.L157-.L24
-	.byte	1,5,33,9
-	.half	.L158-.L157
-	.byte	3,1,1,5,18,9
-	.half	.L159-.L158
-	.byte	1,5,34,9
-	.half	.L160-.L159
-	.byte	3,1,1,5,19,9
-	.half	.L161-.L160
-	.byte	1,5,35,9
-	.half	.L162-.L161
-	.byte	3,1,1,5,20,9
-	.half	.L163-.L162
-	.byte	1,5,36,9
-	.half	.L164-.L163
-	.byte	3,1,1,5,21,9
-	.half	.L165-.L164
-	.byte	1,5,54,9
-	.half	.L166-.L165
-	.byte	3,1,1,5,53,9
-	.half	.L167-.L166
-	.byte	1,5,27,9
-	.half	.L156-.L167
-	.byte	1,5,14,9
-	.half	.L232-.L156
-	.byte	3,1,1,5,5,9
-	.half	.L233-.L232
-	.byte	1,5,21,7,9
-	.half	.L234-.L233
-	.byte	3,2,1,5,46,9
-	.half	.L168-.L234
-	.byte	1,5,56,9
-	.half	.L169-.L168
-	.byte	1,5,20,9
-	.half	.L26-.L169
+	.half	.L277-.L180
+	.byte	1,5,15,9
+	.half	.L31-.L277
+	.byte	3,3,1,5,25,9
+	.half	.L278-.L31
+	.byte	1,5,5,9
+	.half	.L279-.L278
+	.byte	1,5,15,7,9
+	.half	.L280-.L279
+	.byte	3,2,1,5,30,9
+	.half	.L281-.L280
+	.byte	1,5,29,9
+	.half	.L282-.L281
+	.byte	3,1,1,5,25,9
+	.half	.L36-.L282
 	.byte	3,2,1,5,18,9
-	.half	.L170-.L26
-	.byte	1,5,24,9
-	.half	.L171-.L170
+	.half	.L283-.L36
+	.byte	1,5,35,9
+	.half	.L284-.L283
+	.byte	1,5,25,9
+	.half	.L285-.L284
+	.byte	1,5,31,9
+	.half	.L286-.L285
+	.byte	1,5,11,9
+	.half	.L287-.L286
+	.byte	3,2,1,5,19,9
+	.half	.L38-.L287
+	.byte	3,2,1,5,9,9
+	.half	.L181-.L38
+	.byte	1,5,20,7,9
+	.half	.L288-.L181
+	.byte	3,2,1,5,13,9
+	.half	.L289-.L288
+	.byte	1,5,19,9
+	.half	.L39-.L289
+	.byte	3,2,1,5,9,9
+	.half	.L182-.L39
+	.byte	1,5,55,7,9
+	.half	.L183-.L182
+	.byte	3,2,1,5,54,9
+	.half	.L184-.L183
+	.byte	1,5,34,9
+	.half	.L185-.L184
+	.byte	3,1,1,5,13,9
+	.half	.L290-.L185
+	.byte	1,5,23,7,9
+	.half	.L187-.L290
+	.byte	3,2,1,5,38,9
+	.half	.L188-.L187
+	.byte	1,5,37,9
+	.half	.L291-.L188
+	.byte	3,1,1,5,27,9
+	.half	.L186-.L291
+	.byte	3,1,1,5,17,9
+	.half	.L191-.L186
+	.byte	1,5,28,7,9
+	.half	.L292-.L191
+	.byte	3,2,1,5,21,9
+	.half	.L293-.L292
+	.byte	1,5,17,9
+	.half	.L43-.L293
+	.byte	3,2,1,5,47,9
+	.half	.L42-.L43
+	.byte	3,2,1,5,30,9
+	.half	.L192-.L42
+	.byte	1,5,19,9
+	.half	.L41-.L192
+	.byte	3,2,1,5,34,9
+	.half	.L294-.L41
+	.byte	1,5,9,9
+	.half	.L193-.L294
+	.byte	1,5,20,7,9
+	.half	.L295-.L193
+	.byte	3,2,1,5,13,9
+	.half	.L296-.L295
+	.byte	1,5,34,9
+	.half	.L46-.L296
+	.byte	3,4,1,5,27,9
+	.half	.L297-.L46
+	.byte	1,5,22,9
+	.half	.L195-.L297
+	.byte	3,127,1,5,28,9
+	.half	.L197-.L195
+	.byte	3,3,1,5,27,9
+	.half	.L198-.L197
+	.byte	1,9
+	.half	.L200-.L198
+	.byte	3,1,1,5,38,9
+	.half	.L201-.L200
+	.byte	1,5,9,9
+	.half	.L196-.L201
+	.byte	3,1,1,5,19,7,9
+	.half	.L203-.L196
+	.byte	3,2,1,5,31,9
+	.half	.L199-.L203
+	.byte	1,5,33,9
+	.half	.L298-.L199
+	.byte	3,1,1,5,23,9
+	.half	.L202-.L298
+	.byte	3,1,1,5,13,9
+	.half	.L206-.L202
+	.byte	1,5,24,7,9
+	.half	.L299-.L206
+	.byte	3,2,1,5,17,9
+	.half	.L300-.L299
+	.byte	1,5,13,9
+	.half	.L49-.L300
+	.byte	3,2,1,5,39,9
+	.half	.L48-.L49
+	.byte	3,3,1,5,24,9
+	.half	.L208-.L48
+	.byte	1,5,37,9
+	.half	.L209-.L208
 	.byte	3,1,1,5,22,9
-	.half	.L172-.L171
-	.byte	1,5,12,9
-	.half	.L173-.L172
-	.byte	3,1,1,5,5,9
-	.half	.L235-.L173
-	.byte	1,5,1,9
-	.half	.L13-.L235
-	.byte	3,1,1,7,9
-	.half	.L59-.L13
+	.half	.L210-.L209
+	.byte	1,5,38,9
+	.half	.L211-.L210
+	.byte	3,1,1,5,23,9
+	.half	.L212-.L211
+	.byte	1,5,39,9
+	.half	.L213-.L212
+	.byte	3,1,1,5,24,9
+	.half	.L214-.L213
+	.byte	1,5,40,9
+	.half	.L215-.L214
+	.byte	3,1,1,5,25,9
+	.half	.L216-.L215
+	.byte	1,5,58,9
+	.half	.L217-.L216
+	.byte	3,1,1,5,57,9
+	.half	.L218-.L217
+	.byte	1,5,31,9
+	.half	.L207-.L218
+	.byte	1,5,18,9
+	.half	.L301-.L207
+	.byte	3,1,1,5,9,9
+	.half	.L302-.L301
+	.byte	1,5,22,7,9
+	.half	.L303-.L302
+	.byte	3,3,1,5,31,9
+	.half	.L219-.L303
+	.byte	3,1,1,5,22,9
+	.half	.L220-.L219
+	.byte	3,1,1,5,21,9
+	.half	.L52-.L220
+	.byte	3,2,1,5,16,9
+	.half	.L222-.L52
+	.byte	3,1,1,5,9,9
+	.half	.L304-.L222
+	.byte	1,5,11,9
+	.half	.L37-.L304
+	.byte	3,72,1,5,1,9
+	.half	.L27-.L37
+	.byte	3,58,1,7,9
+	.half	.L94-.L27
 	.byte	0,1,1
-.L199:
+.L258:
 	.sdecl	'.debug_ranges',debug,cluster('NativeParser_Push')
 	.sect	'.debug_ranges'
-.L58:
-	.word	-1,.L43,0,.L59-.L43,0,0
+.L93:
+	.word	-1,.L73,0,.L94-.L73,0,0
 	.sdecl	'.debug_info',debug,cluster('NativeProtocol_Crc16')
 	.sect	'.debug_info'
-.L60:
+.L95:
 	.word	372
 	.half	3
-	.word	.L61
+	.word	.L96
 	.byte	4,1
 	.byte	'..\\..\\..\\src\\native_protocol.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L63,.L62
+	.word	.L98,.L97
 	.byte	2
-	.word	.L46
+	.word	.L76
 	.byte	3
-	.byte	'NativeProtocol_Crc16',0,1,26,10
-	.word	.L90
+	.byte	'NativeProtocol_Crc16',0,1,82,10
+	.word	.L132
 	.byte	1,1,1
-	.word	.L41,.L94,.L40
+	.word	.L71,.L136,.L70
 	.byte	4
-	.byte	'data',0,1,26,46
-	.word	.L95,.L96
+	.byte	'data',0,1,82,46
+	.word	.L137,.L138
 	.byte	4
-	.byte	'length',0,1,26,59
-	.word	.L97,.L98
+	.byte	'length',0,1,82,59
+	.word	.L139,.L140
 	.byte	5
-	.word	.L41,.L94
+	.word	.L71,.L136
 	.byte	6
-	.byte	'crc',0,1,28,14
-	.word	.L90,.L99
+	.byte	'crc',0,1,84,14
+	.word	.L132,.L141
 	.byte	6
-	.byte	'index',0,1,29,12
-	.word	.L97,.L100
+	.byte	'index',0,1,85,12
+	.word	.L139,.L142
 	.byte	6
-	.byte	'bit',0,1,30,13
-	.word	.L86,.L101
+	.byte	'bit',0,1,86,13
+	.word	.L128,.L143
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('NativeProtocol_Crc16')
 	.sect	'.debug_abbrev'
-.L61:
+.L96:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('NativeProtocol_Crc16')
 	.sect	'.debug_line'
-.L62:
-	.word	.L237-.L236
-.L236:
+.L97:
+	.word	.L306-.L305
+.L305:
 	.half	3
-	.word	.L239-.L238
-.L238:
+	.word	.L308-.L307
+.L307:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\src\\native_protocol.c',0,0,0,0,0
-.L239:
+.L308:
 	.byte	5,18,7,0,5,2
-	.word	.L41
-	.byte	3,27,1,5,16,9
-	.half	.L116-.L41
+	.word	.L71
+	.byte	3,211,0,1,5,16,9
+	.half	.L167-.L71
 	.byte	3,3,1,5,36,9
-	.half	.L118-.L116
+	.half	.L169-.L167
 	.byte	1,5,20,9
-	.half	.L5-.L118
+	.half	.L19-.L169
 	.byte	3,2,1,5,13,9
-	.half	.L240-.L5
+	.half	.L309-.L19
 	.byte	1,5,18,9
-	.half	.L241-.L240
+	.half	.L310-.L309
 	.byte	3,1,1,5,32,9
-	.half	.L119-.L241
+	.half	.L170-.L310
 	.byte	1,5,19,9
-	.half	.L7-.L119
+	.half	.L21-.L170
 	.byte	3,2,1,5,35,7,9
-	.half	.L242-.L7
+	.half	.L311-.L21
 	.byte	3,1,1,5,43,9
-	.half	.L117-.L242
+	.half	.L168-.L311
 	.byte	1,5,41,9
-	.half	.L120-.L117
+	.half	.L171-.L168
 	.byte	1,5,17,9
-	.half	.L243-.L120
+	.half	.L312-.L171
 	.byte	3,1,1,5,34,9
-	.half	.L8-.L243
+	.half	.L22-.L312
 	.byte	1,9
-	.half	.L9-.L8
+	.half	.L23-.L22
 	.byte	3,124,1,5,32,9
-	.half	.L6-.L9
+	.half	.L20-.L23
 	.byte	1,5,38,7,9
-	.half	.L244-.L6
+	.half	.L313-.L20
 	.byte	3,125,1,5,36,9
-	.half	.L4-.L244
+	.half	.L18-.L313
 	.byte	1,5,5,7,9
-	.half	.L245-.L4
+	.half	.L314-.L18
 	.byte	3,10,1,5,1,9
-	.half	.L10-.L245
+	.half	.L24-.L314
 	.byte	3,1,1,7,9
-	.half	.L64-.L10
+	.half	.L99-.L24
 	.byte	0,1,1
-.L237:
+.L306:
 	.sdecl	'.debug_ranges',debug,cluster('NativeProtocol_Crc16')
 	.sect	'.debug_ranges'
-.L63:
-	.word	-1,.L41,0,.L64-.L41,0,0
+.L98:
+	.word	-1,.L71,0,.L99-.L71,0,0
 	.sdecl	'.debug_info',debug,cluster('NativeProtocol_Encode')
 	.sect	'.debug_info'
-.L65:
-	.word	391
+.L100:
+	.word	397
 	.half	3
-	.word	.L66
+	.word	.L101
 	.byte	4,1
 	.byte	'..\\..\\..\\src\\native_protocol.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L68,.L67
+	.word	.L103,.L102
 	.byte	2
-	.word	.L46
+	.word	.L76
 	.byte	3
-	.byte	'NativeProtocol_Encode',0,1,113,8
-	.word	.L97
+	.byte	'NativeProtocol_Encode',0,1,201,1,8
+	.word	.L139
 	.byte	1,1,1
-	.word	.L45,.L102,.L44
+	.word	.L75,.L144,.L74
 	.byte	4
-	.byte	'frame',0,1,114,24
-	.word	.L103,.L104
+	.byte	'frame',0,1,202,1,24
+	.word	.L145,.L146
 	.byte	4
-	.byte	'destination',0,1,115,14
-	.word	.L105,.L106
+	.byte	'destination',0,1,203,1,14
+	.word	.L147,.L148
 	.byte	4
-	.byte	'capacity',0,1,116,12
-	.word	.L97,.L107
+	.byte	'capacity',0,1,204,1,12
+	.word	.L139,.L149
 	.byte	5
-	.word	.L45,.L102
+	.word	.L75,.L144
 	.byte	6
-	.byte	'frame_length',0,1,118,12
-	.word	.L97,.L108
+	.byte	'frame_length',0,1,206,1,12
+	.word	.L139,.L150
 	.byte	6
-	.byte	'crc',0,1,119,14
-	.word	.L90,.L109
+	.byte	'crc',0,1,207,1,14
+	.word	.L132,.L151
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('NativeProtocol_Encode')
 	.sect	'.debug_abbrev'
-.L66:
+.L101:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('NativeProtocol_Encode')
 	.sect	'.debug_line'
-.L67:
-	.word	.L247-.L246
-.L246:
+.L102:
+	.word	.L316-.L315
+.L315:
 	.half	3
-	.word	.L249-.L248
-.L248:
+	.word	.L318-.L317
+.L317:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\src\\native_protocol.c',0,0,0,0,0
-.L249:
+.L318:
 	.byte	5,8,7,0,5,2
-	.word	.L45
-	.byte	3,240,0,1,5,14,9
-	.half	.L178-.L45
+	.word	.L75
+	.byte	3,200,1,1,5,14,9
+	.half	.L227-.L75
 	.byte	3,7,1,5,33,9
-	.half	.L250-.L178
+	.half	.L319-.L227
 	.byte	1,5,5,9
-	.half	.L251-.L250
+	.half	.L320-.L319
 	.byte	1,5,16,7,9
-	.half	.L252-.L251
+	.half	.L321-.L320
 	.byte	3,2,1,5,9,9
-	.half	.L253-.L252
+	.half	.L322-.L321
 	.byte	1,5,31,9
-	.half	.L28-.L253
+	.half	.L54-.L322
 	.byte	3,2,1,5,24,9
-	.half	.L254-.L28
+	.half	.L323-.L54
 	.byte	1,5,5,9
-	.half	.L180-.L254
+	.half	.L229-.L323
 	.byte	3,1,1,5,16,7,9
-	.half	.L255-.L180
+	.half	.L324-.L229
 	.byte	3,2,1,5,9,9
-	.half	.L256-.L255
+	.half	.L325-.L324
 	.byte	1,5,22,9
-	.half	.L30-.L256
+	.half	.L56-.L325
 	.byte	3,3,1,5,20,9
-	.half	.L257-.L30
+	.half	.L326-.L56
 	.byte	1,5,22,9
-	.half	.L258-.L257
+	.half	.L327-.L326
 	.byte	3,1,1,5,20,9
-	.half	.L259-.L258
+	.half	.L328-.L327
 	.byte	1,5,27,9
-	.half	.L260-.L259
+	.half	.L329-.L328
 	.byte	3,1,1,5,20,9
-	.half	.L261-.L260
+	.half	.L330-.L329
 	.byte	1,5,27,9
-	.half	.L262-.L261
+	.half	.L331-.L330
 	.byte	3,1,1,5,20,9
-	.half	.L263-.L262
+	.half	.L332-.L331
 	.byte	1,5,27,9
-	.half	.L264-.L263
+	.half	.L333-.L332
 	.byte	3,1,1,5,20,9
-	.half	.L265-.L264
+	.half	.L334-.L333
 	.byte	1,5,27,9
-	.half	.L266-.L265
+	.half	.L335-.L334
 	.byte	3,1,1,5,20,9
-	.half	.L267-.L266
+	.half	.L336-.L335
 	.byte	1,5,27,9
-	.half	.L268-.L267
+	.half	.L337-.L336
 	.byte	3,1,1,5,20,9
-	.half	.L269-.L268
+	.half	.L338-.L337
 	.byte	1,5,37,9
-	.half	.L270-.L269
+	.half	.L339-.L338
 	.byte	3,1,1,5,54,9
-	.half	.L271-.L270
+	.half	.L340-.L339
 	.byte	1,5,20,9
-	.half	.L272-.L271
+	.half	.L341-.L340
 	.byte	1,5,37,9
-	.half	.L273-.L272
+	.half	.L342-.L341
 	.byte	3,1,1,5,54,9
-	.half	.L274-.L273
+	.half	.L343-.L342
 	.byte	1,5,20,9
-	.half	.L275-.L274
+	.half	.L344-.L343
 	.byte	1,5,14,9
-	.half	.L276-.L275
+	.half	.L345-.L344
 	.byte	3,1,1,5,5,9
-	.half	.L277-.L276
+	.half	.L346-.L345
 	.byte	1,5,28,7,9
-	.half	.L278-.L277
+	.half	.L347-.L346
 	.byte	3,2,1,5,38,9
-	.half	.L176-.L278
+	.half	.L225-.L347
 	.byte	1,5,54,9
-	.half	.L175-.L176
+	.half	.L224-.L225
 	.byte	1,5,45,9
-	.half	.L32-.L175
+	.half	.L58-.L224
 	.byte	3,2,1,5,44,9
-	.half	.L181-.L32
+	.half	.L230-.L58
 	.byte	1,5,59,9
-	.half	.L179-.L181
+	.half	.L228-.L230
 	.byte	1,5,52,9
-	.half	.L279-.L179
+	.half	.L348-.L228
 	.byte	1,5,27,9
-	.half	.L182-.L279
+	.half	.L231-.L348
 	.byte	3,1,1,5,16,9
-	.half	.L184-.L182
+	.half	.L233-.L231
 	.byte	1,5,61,9
-	.half	.L185-.L184
+	.half	.L234-.L233
 	.byte	1,5,45,9
-	.half	.L280-.L185
+	.half	.L349-.L234
 	.byte	1,5,28,9
-	.half	.L281-.L280
+	.half	.L350-.L349
 	.byte	3,1,1,5,16,9
-	.half	.L186-.L281
+	.half	.L235-.L350
 	.byte	1,5,62,9
-	.half	.L187-.L186
+	.half	.L236-.L235
 	.byte	1,5,46,9
-	.half	.L183-.L187
+	.half	.L232-.L236
 	.byte	1,5,5,9
-	.half	.L282-.L183
+	.half	.L351-.L232
 	.byte	3,1,1,5,1,9
-	.half	.L29-.L282
+	.half	.L55-.L351
 	.byte	3,1,1,7,9
-	.half	.L69-.L29
+	.half	.L104-.L55
 	.byte	0,1,1
-.L247:
+.L316:
 	.sdecl	'.debug_ranges',debug,cluster('NativeProtocol_Encode')
 	.sect	'.debug_ranges'
-.L68:
-	.word	-1,.L45,0,.L69-.L45,0,0
+.L103:
+	.word	-1,.L75,0,.L104-.L75,0,0
 	.sdecl	'.debug_info',debug,cluster('ReadU16Le')
 	.sect	'.debug_info'
-.L70:
+.L105:
 	.word	290
 	.half	3
-	.word	.L71
+	.word	.L106
 	.byte	4,1
 	.byte	'..\\..\\..\\src\\native_protocol.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L73,.L72
+	.word	.L108,.L107
 	.byte	2
-	.word	.L46
+	.word	.L76
 	.byte	3
 	.byte	'ReadU16Le',0,1,5,17
-	.word	.L90
+	.word	.L132
 	.byte	1,1
-	.word	.L35,.L110,.L34
+	.word	.L61,.L152,.L60
 	.byte	4
 	.byte	'data',0,1,5,42
-	.word	.L95,.L111
+	.word	.L137,.L153
 	.byte	5
-	.word	.L35,.L110
+	.word	.L61,.L152
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('ReadU16Le')
 	.sect	'.debug_abbrev'
-.L71:
+.L106:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('ReadU16Le')
 	.sect	'.debug_line'
-.L72:
-	.word	.L284-.L283
-.L283:
+.L107:
+	.word	.L353-.L352
+.L352:
 	.half	3
-	.word	.L286-.L285
-.L285:
+	.word	.L355-.L354
+.L354:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\src\\native_protocol.c',0,0,0,0,0
-.L286:
+.L355:
 	.byte	5,26,7,0,5,2
-	.word	.L35
+	.word	.L61
 	.byte	3,6,1,5,47,9
-	.half	.L287-.L35
+	.half	.L356-.L61
 	.byte	1,5,51,9
-	.half	.L288-.L287
+	.half	.L357-.L356
 	.byte	1,5,30,9
-	.half	.L289-.L288
+	.half	.L358-.L357
 	.byte	1,5,5,9
-	.half	.L290-.L289
+	.half	.L359-.L358
 	.byte	1,5,1,9
-	.half	.L2-.L290
+	.half	.L2-.L359
 	.byte	3,1,1,7,9
-	.half	.L74-.L2
+	.half	.L109-.L2
 	.byte	0,1,1
-.L284:
+.L353:
 	.sdecl	'.debug_ranges',debug,cluster('ReadU16Le')
 	.sect	'.debug_ranges'
-.L73:
-	.word	-1,.L35,0,.L74-.L35,0,0
-	.sdecl	'.debug_info',debug,cluster('ResetForNextByte')
+.L108:
+	.word	-1,.L61,0,.L109-.L61,0,0
+	.sdecl	'.debug_info',debug,cluster('ResetParser')
 	.sect	'.debug_info'
-.L75:
-	.word	313
+.L110:
+	.word	290
 	.half	3
-	.word	.L76
+	.word	.L111
 	.byte	4,1
 	.byte	'..\\..\\..\\src\\native_protocol.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
 	.byte	12,1
-	.word	.L78,.L77
+	.word	.L113,.L112
 	.byte	2
-	.word	.L46
+	.word	.L76
 	.byte	3
-	.byte	'ResetForNextByte',0,1,10,13,1,1
-	.word	.L37,.L112,.L36
+	.byte	'ResetParser',0,1,10,13,1,1
+	.word	.L63,.L154,.L62
 	.byte	4
-	.byte	'parser',0,1,10,44
-	.word	.L81,.L113
-	.byte	4
-	.byte	'value',0,1,10,60
-	.word	.L86,.L114
+	.byte	'parser',0,1,10,39
+	.word	.L121,.L155
 	.byte	5
-	.word	.L37,.L112
+	.word	.L63,.L154
 	.byte	0,0
-	.sdecl	'.debug_abbrev',debug,cluster('ResetForNextByte')
+	.sdecl	'.debug_abbrev',debug,cluster('ResetParser')
 	.sect	'.debug_abbrev'
-.L76:
+.L111:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('ResetForNextByte')
+	.sdecl	'.debug_line',debug,cluster('ResetParser')
 	.sect	'.debug_line'
-.L77:
-	.word	.L292-.L291
-.L291:
+.L112:
+	.word	.L361-.L360
+.L360:
 	.half	3
-	.word	.L294-.L293
-.L293:
+	.word	.L363-.L362
+.L362:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'..\\..\\..\\src\\native_protocol.c',0,0,0,0,0
-.L294:
+.L363:
 	.byte	5,20,7,0,5,2
-	.word	.L37
+	.word	.L63
 	.byte	3,11,1,5,18,9
-	.half	.L295-.L37
+	.half	.L364-.L63
 	.byte	1,5,24,9
-	.half	.L296-.L295
+	.half	.L365-.L364
 	.byte	3,1,1,5,22,9
-	.half	.L297-.L296
-	.byte	1,5,18,9
-	.half	.L298-.L297
-	.byte	3,1,1,5,5,9
-	.half	.L299-.L298
-	.byte	1,5,26,7,9
-	.half	.L300-.L299
-	.byte	3,2,1,5,24,9
-	.half	.L301-.L300
-	.byte	3,1,1,5,22,9
-	.half	.L302-.L301
+	.half	.L366-.L365
 	.byte	1,5,1,9
-	.half	.L3-.L302
-	.byte	3,2,1,7,9
-	.half	.L79-.L3
+	.half	.L367-.L366
+	.byte	3,1,1,7,9
+	.half	.L114-.L367
 	.byte	0,1,1
-.L292:
-	.sdecl	'.debug_ranges',debug,cluster('ResetForNextByte')
+.L361:
+	.sdecl	'.debug_ranges',debug,cluster('ResetParser')
 	.sect	'.debug_ranges'
-.L78:
-	.word	-1,.L37,0,.L79-.L37,0,0
-	.sdecl	'.debug_loc',debug,cluster('NativeParser_Init')
+.L113:
+	.word	-1,.L63,0,.L114-.L63,0,0
+	.sdecl	'.debug_info',debug,cluster('ResyncBufferedBytes')
+	.sect	'.debug_info'
+.L115:
+	.word	335
+	.half	3
+	.word	.L116
+	.byte	4,1
+	.byte	'..\\..\\..\\src\\native_protocol.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\TriCore Debug (TASKING)\\',0
+	.byte	12,1
+	.word	.L118,.L117
+	.byte	2
+	.word	.L76
+	.byte	3
+	.byte	'ResyncBufferedBytes',0,1,16,13,1,1
+	.word	.L65,.L156,.L64
+	.byte	4
+	.byte	'parser',0,1,16,47
+	.word	.L121,.L157
+	.byte	5
+	.word	.L65,.L156
+	.byte	6
+	.byte	'index',0,1,18,14
+	.word	.L132,.L158
+	.byte	6
+	.byte	'start',0,1,19,14
+	.word	.L132,.L159
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ResyncBufferedBytes')
+	.sect	'.debug_abbrev'
+.L116:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3,8,58
+	.byte	15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ResyncBufferedBytes')
+	.sect	'.debug_line'
+.L117:
+	.word	.L369-.L368
+.L368:
+	.half	3
+	.word	.L371-.L370
+.L370:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'..\\..\\..\\src\\native_protocol.c',0,0,0,0,0
+.L371:
+	.byte	5,13,7,0,5,2
+	.word	.L65
+	.byte	3,15,1,5,28,9
+	.half	.L161-.L65
+	.byte	3,3,1,5,15,9
+	.half	.L162-.L161
+	.byte	3,7,1,5,5,9
+	.half	.L372-.L162
+	.byte	1,5,28,7,9
+	.half	.L373-.L372
+	.byte	3,6,1,5,35,9
+	.half	.L163-.L373
+	.byte	1,5,51,9
+	.half	.L374-.L163
+	.byte	1,5,31,9
+	.half	.L5-.L374
+	.byte	3,2,1,5,47,9
+	.half	.L375-.L5
+	.byte	1,5,17,9
+	.half	.L376-.L375
+	.byte	1,5,31,7,9
+	.half	.L377-.L376
+	.byte	3,1,1,5,42,9
+	.half	.L378-.L377
+	.byte	1,5,39,9
+	.half	.L379-.L378
+	.byte	1,5,31,7,9
+	.half	.L380-.L379
+	.byte	3,2,1,5,17,9
+	.half	.L381-.L380
+	.byte	3,1,1,5,53,9
+	.half	.L6-.L381
+	.byte	3,122,1,5,51,9
+	.half	.L4-.L6
+	.byte	1,5,23,7,9
+	.half	.L3-.L4
+	.byte	3,11,1,5,5,9
+	.half	.L382-.L3
+	.byte	1,5,41,7,9
+	.half	.L383-.L382
+	.byte	3,2,1,5,48,9
+	.half	.L384-.L383
+	.byte	1,5,22,9
+	.half	.L385-.L384
+	.byte	1,5,27,9
+	.half	.L386-.L385
+	.byte	3,3,1,5,19,9
+	.half	.L387-.L386
+	.byte	3,1,1,5,56,9
+	.half	.L160-.L387
+	.byte	3,124,1,5,21,9
+	.half	.L9-.L160
+	.byte	3,6,1,5,14,9
+	.half	.L388-.L9
+	.byte	1,5,35,7,9
+	.half	.L389-.L388
+	.byte	3,1,1,5,28,9
+	.half	.L390-.L389
+	.byte	1,5,51,9
+	.half	.L164-.L390
+	.byte	1,5,48,9
+	.half	.L391-.L164
+	.byte	1,5,28,7,9
+	.half	.L392-.L391
+	.byte	3,2,1,5,26,9
+	.half	.L393-.L392
+	.byte	1,5,24,9
+	.half	.L394-.L393
+	.byte	3,1,1,5,22,9
+	.half	.L395-.L394
+	.byte	1,5,33,9
+	.half	.L396-.L395
+	.byte	3,127,1,5,24,9
+	.half	.L11-.L396
+	.byte	3,5,1,5,22,9
+	.half	.L397-.L11
+	.byte	1,5,24,9
+	.half	.L10-.L397
+	.byte	3,2,1,5,22,9
+	.half	.L398-.L10
+	.byte	1,5,11,9
+	.half	.L399-.L398
+	.byte	3,1,1,5,26,9
+	.half	.L400-.L399
+	.byte	1,5,1,9
+	.half	.L401-.L400
+	.byte	3,1,1,7,9
+	.half	.L119-.L401
+	.byte	0,1,1
+.L369:
+	.sdecl	'.debug_ranges',debug,cluster('ResyncBufferedBytes')
+	.sect	'.debug_ranges'
+.L118:
+	.word	-1,.L65,0,.L119-.L65,0,0
+	.sdecl	'.debug_loc',debug,cluster('NativeParser_ExpirePartial')
 	.sect	'.debug_loc'
-.L38:
-	.word	-1,.L39,0,.L80-.L39
+.L68:
+	.word	-1,.L69,0,.L124-.L69
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L82:
-	.word	-1,.L39,0,.L115-.L39
+.L125:
+	.word	-1,.L69,0,.L166-.L69
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NativeParser_Init')
+	.sect	'.debug_loc'
+.L66:
+	.word	-1,.L67,0,.L120-.L67
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L122:
+	.word	-1,.L67,0,.L165-.L67
 	.half	1
 	.byte	100
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('NativeParser_Push')
 	.sect	'.debug_loc'
-.L42:
-	.word	-1,.L43,0,.L84-.L43
+.L72:
+	.word	-1,.L73,0,.L126-.L73
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L93:
-	.word	-1,.L43,.L145-.L43,.L151-.L43
+.L135:
+	.word	-1,.L73,.L196-.L73,.L202-.L73
 	.half	1
 	.byte	82
-	.word	.L24-.L43,.L156-.L43
+	.word	.L48-.L73,.L207-.L73
 	.half	1
 	.byte	82
 	.word	0,0
-.L89:
-	.word	-1,.L43,0,.L121-.L43
+.L131:
+	.word	-1,.L73,0,.L33-.L73
 	.half	1
 	.byte	101
-	.word	.L125-.L43,.L84-.L43
+	.word	.L175-.L73,.L126-.L73
 	.half	1
 	.byte	111
-	.word	.L15-.L43,.L126-.L43
+	.word	.L32-.L73,.L36-.L73
 	.half	1
 	.byte	101
 	.word	0,0
-.L85:
-	.word	-1,.L43,0,.L121-.L43
+.L127:
+	.word	-1,.L73,0,.L33-.L73
 	.half	1
 	.byte	100
-	.word	.L122-.L43,.L123-.L43
+	.word	.L172-.L73,.L173-.L73
 	.half	1
 	.byte	108
-	.word	.L15-.L43,.L127-.L43
+	.word	.L32-.L73,.L176-.L73
 	.half	1
 	.byte	100
-	.word	.L127-.L43,.L14-.L43
+	.word	.L176-.L73,.L31-.L73
 	.half	1
 	.byte	98
-	.word	.L128-.L43,.L129-.L43
+	.word	.L177-.L73,.L178-.L73
 	.half	1
 	.byte	108
-	.word	.L130-.L43,.L131-.L43
+	.word	.L179-.L73,.L180-.L73
 	.half	1
 	.byte	108
-	.word	.L14-.L43,.L126-.L43
+	.word	.L31-.L73,.L36-.L73
 	.half	1
 	.byte	100
-	.word	.L14-.L43,.L132-.L43
+	.word	.L31-.L73,.L181-.L73
 	.half	1
 	.byte	108
-	.word	.L134-.L43,.L135-.L43
+	.word	.L39-.L73,.L182-.L73
 	.half	1
 	.byte	108
-	.word	.L136-.L43,.L137-.L43
+	.word	.L183-.L73,.L184-.L73
 	.half	1
 	.byte	108
-	.word	.L137-.L43,.L133-.L43
+	.word	.L184-.L73,.L185-.L73
 	.half	1
 	.byte	100
-	.word	.L139-.L43,.L140-.L43
+	.word	.L187-.L73,.L188-.L73
 	.half	1
 	.byte	108
-	.word	.L141-.L43,.L142-.L43
+	.word	.L189-.L73,.L190-.L73
 	.half	1
 	.byte	108
-	.word	.L22-.L43,.L143-.L43
-	.half	1
-	.byte	108
-	.word	.L146-.L43,.L147-.L43
-	.half	1
-	.byte	108
-	.word	.L147-.L43,.L145-.L43
+	.word	.L190-.L73,.L186-.L73
 	.half	1
 	.byte	100
-	.word	.L149-.L43,.L150-.L43
+	.word	.L186-.L73,.L191-.L73
 	.half	1
 	.byte	108
-	.word	.L152-.L43,.L148-.L43
+	.word	.L192-.L73,.L193-.L73
 	.half	1
 	.byte	108
-	.word	.L153-.L43,.L154-.L43
+	.word	.L46-.L73,.L194-.L73
 	.half	1
 	.byte	108
-	.word	.L154-.L43,.L151-.L43
+	.word	.L197-.L73,.L198-.L73
+	.half	1
+	.byte	108
+	.word	.L198-.L73,.L196-.L73
 	.half	1
 	.byte	100
-	.word	.L24-.L43,.L157-.L43
+	.word	.L200-.L73,.L201-.L73
 	.half	1
 	.byte	108
-	.word	.L158-.L43,.L159-.L43
+	.word	.L203-.L73,.L199-.L73
 	.half	1
 	.byte	108
-	.word	.L160-.L43,.L161-.L43
+	.word	.L204-.L73,.L205-.L73
 	.half	1
 	.byte	108
-	.word	.L162-.L43,.L163-.L43
-	.half	1
-	.byte	108
-	.word	.L164-.L43,.L165-.L43
-	.half	1
-	.byte	108
-	.word	.L166-.L43,.L167-.L43
-	.half	1
-	.byte	108
-	.word	.L167-.L43,.L156-.L43
+	.word	.L205-.L73,.L202-.L73
 	.half	1
 	.byte	100
-	.word	.L168-.L43,.L169-.L43
+	.word	.L202-.L73,.L206-.L73
 	.half	1
 	.byte	108
-	.word	.L170-.L43,.L171-.L43
+	.word	.L48-.L73,.L208-.L73
 	.half	1
 	.byte	108
-	.word	.L172-.L43,.L173-.L43
+	.word	.L209-.L73,.L210-.L73
 	.half	1
 	.byte	108
+	.word	.L211-.L73,.L212-.L73
+	.half	1
+	.byte	108
+	.word	.L213-.L73,.L214-.L73
+	.half	1
+	.byte	108
+	.word	.L215-.L73,.L216-.L73
+	.half	1
+	.byte	108
+	.word	.L217-.L73,.L218-.L73
+	.half	1
+	.byte	108
+	.word	.L218-.L73,.L207-.L73
+	.half	1
+	.byte	100
+	.word	.L219-.L73,.L220-.L73
+	.half	1
+	.byte	108
+	.word	.L52-.L73,.L221-.L73
+	.half	1
+	.byte	108
+	.word	.L221-.L73,.L222-.L73
+	.half	1
+	.byte	100
 	.word	0,0
-.L91:
-	.word	-1,.L43,.L126-.L43,.L133-.L43
+.L133:
+	.word	-1,.L73,.L185-.L73,.L186-.L73
 	.half	1
 	.byte	82
-	.word	.L19-.L43,.L18-.L43
+	.word	.L42-.L73,.L41-.L73
 	.half	1
 	.byte	82
 	.word	0,0
-.L92:
-	.word	-1,.L43,.L144-.L43,.L145-.L43
+.L134:
+	.word	-1,.L73,.L195-.L73,.L196-.L73
 	.half	1
 	.byte	82
-	.word	.L146-.L43,.L148-.L43
+	.word	.L197-.L73,.L199-.L73
 	.half	1
 	.byte	95
-	.word	.L24-.L43,.L157-.L43
+	.word	.L48-.L73,.L208-.L73
 	.half	1
 	.byte	95
 	.word	0,0
-.L87:
-	.word	-1,.L43,0,.L121-.L43
+.L129:
+	.word	-1,.L73,0,.L33-.L73
 	.half	1
 	.byte	84
-	.word	.L124-.L43,.L84-.L43
+	.word	.L174-.L73,.L126-.L73
 	.half	1
 	.byte	88
-	.word	.L15-.L43,.L126-.L43
-	.half	1
-	.byte	84
-	.word	.L138-.L43,.L133-.L43
-	.half	1
-	.byte	84
-	.word	.L155-.L43,.L151-.L43
+	.word	.L32-.L73,.L36-.L73
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('NativeProtocol_Crc16')
 	.sect	'.debug_loc'
-.L40:
-	.word	-1,.L41,0,.L94-.L41
+.L70:
+	.word	-1,.L71,0,.L136-.L71
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L101:
-	.word	-1,.L41,.L119-.L41,.L4-.L41
+.L143:
+	.word	-1,.L71,.L170-.L71,.L18-.L71
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L99:
-	.word	-1,.L41,.L116-.L41,.L117-.L41
+.L141:
+	.word	-1,.L71,.L167-.L71,.L168-.L71
 	.half	1
 	.byte	82
-	.word	.L120-.L41,.L94-.L41
+	.word	.L171-.L71,.L136-.L71
 	.half	1
 	.byte	82
 	.word	0,0
-.L96:
-	.word	-1,.L41,0,.L94-.L41
+.L138:
+	.word	-1,.L71,0,.L136-.L71
 	.half	1
 	.byte	100
 	.word	0,0
-.L100:
-	.word	-1,.L41,.L118-.L41,.L94-.L41
+.L142:
+	.word	-1,.L71,.L169-.L71,.L136-.L71
 	.half	1
 	.byte	95
 	.word	0,0
-.L98:
-	.word	-1,.L41,0,.L94-.L41
+.L140:
+	.word	-1,.L71,0,.L136-.L71
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('NativeProtocol_Encode')
 	.sect	'.debug_loc'
-.L44:
-	.word	-1,.L45,0,.L102-.L45
+.L74:
+	.word	-1,.L75,0,.L144-.L75
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L107:
-	.word	-1,.L45,0,.L174-.L45
+.L149:
+	.word	-1,.L75,0,.L223-.L75
 	.half	1
 	.byte	84
 	.word	0,0
-.L109:
-	.word	-1,.L45,.L182-.L45,.L183-.L45
+.L151:
+	.word	-1,.L75,.L231-.L75,.L232-.L75
 	.half	1
 	.byte	82
 	.word	0,0
-.L106:
-	.word	-1,.L45,0,.L175-.L45
+.L148:
+	.word	-1,.L75,0,.L224-.L75
 	.half	1
 	.byte	101
-	.word	.L178-.L45,.L179-.L45
+	.word	.L227-.L75,.L228-.L75
 	.half	1
 	.byte	111
-	.word	.L181-.L45,.L182-.L45
+	.word	.L230-.L75,.L231-.L75
 	.half	1
 	.byte	100
-	.word	.L184-.L45,.L185-.L45
+	.word	.L233-.L75,.L234-.L75
 	.half	1
 	.byte	111
-	.word	.L186-.L45,.L187-.L45
+	.word	.L235-.L75,.L236-.L75
 	.half	1
 	.byte	111
 	.word	0,0
-.L104:
-	.word	-1,.L45,0,.L176-.L45
+.L146:
+	.word	-1,.L75,0,.L225-.L75
 	.half	1
 	.byte	100
-	.word	.L177-.L45,.L102-.L45
+	.word	.L226-.L75,.L144-.L75
 	.half	1
 	.byte	108
 	.word	0,0
-.L108:
-	.word	-1,.L45,.L180-.L45,.L29-.L45
+.L150:
+	.word	-1,.L75,.L229-.L75,.L55-.L75
 	.half	1
 	.byte	88
-	.word	.L188-.L45,.L29-.L45
+	.word	.L237-.L75,.L55-.L75
 	.half	1
 	.byte	82
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('ReadU16Le')
 	.sect	'.debug_loc'
-.L34:
-	.word	-1,.L35,0,.L110-.L35
+.L60:
+	.word	-1,.L61,0,.L152-.L61
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L111:
-	.word	-1,.L35,0,.L110-.L35
+.L153:
+	.word	-1,.L61,0,.L152-.L61
 	.half	1
 	.byte	100
 	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('ResetForNextByte')
+	.sdecl	'.debug_loc',debug,cluster('ResetParser')
 	.sect	'.debug_loc'
-.L36:
-	.word	-1,.L37,0,.L112-.L37
+.L62:
+	.word	-1,.L63,0,.L154-.L63
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L113:
-	.word	-1,.L37,0,.L112-.L37
+.L155:
+	.word	-1,.L63,0,.L154-.L63
 	.half	1
 	.byte	100
 	.word	0,0
-.L114:
-	.word	-1,.L37,0,.L112-.L37
+	.sdecl	'.debug_loc',debug,cluster('ResyncBufferedBytes')
+	.sect	'.debug_loc'
+.L64:
+	.word	-1,.L65,0,.L156-.L65
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L158:
+	.word	-1,.L65,.L163-.L65,.L3-.L65
 	.half	1
-	.byte	84
+	.byte	95
+	.word	0,0
+.L157:
+	.word	-1,.L65,0,.L160-.L65
+	.half	1
+	.byte	100
+	.word	.L161-.L65,.L156-.L65
+	.half	1
+	.byte	111
+	.word	.L9-.L65,.L10-.L65
+	.half	1
+	.byte	100
+	.word	0,0
+.L159:
+	.word	-1,.L65,.L162-.L65,.L160-.L65
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L9-.L65,.L164-.L65
+	.half	5
+	.byte	144,32,157,32,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L303:
+.L402:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
@@ -1659,28 +2133,36 @@ __NativeProtocol_Encode_function_end:
 	.sdecl	'.debug_frame',debug,cluster('ReadU16Le')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L303,.L35,.L110-.L35
+	.word	.L402,.L61,.L152-.L61
 	.byte	8,18,8,19,8,21,8,22,8,23,0,0
-	.sdecl	'.debug_frame',debug,cluster('ResetForNextByte')
+	.sdecl	'.debug_frame',debug,cluster('ResetParser')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L303,.L37,.L112-.L37
+	.word	.L402,.L63,.L154-.L63
 	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('ResyncBufferedBytes')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L402,.L65,.L156-.L65
 	.sdecl	'.debug_frame',debug,cluster('NativeParser_Init')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L303,.L39,.L80-.L39
+	.word	.L402,.L67,.L120-.L67
+	.sdecl	'.debug_frame',debug,cluster('NativeParser_ExpirePartial')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L402,.L69,.L124-.L69
 	.sdecl	'.debug_frame',debug,cluster('NativeProtocol_Crc16')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L303,.L41,.L94-.L41
+	.word	.L402,.L71,.L136-.L71
 	.byte	8,18,8,19,8,21,8,22,8,23,0,0
 	.sdecl	'.debug_frame',debug,cluster('NativeParser_Push')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L303,.L43,.L84-.L43
+	.word	.L402,.L73,.L126-.L73
 	.sdecl	'.debug_frame',debug,cluster('NativeProtocol_Encode')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L303,.L45,.L102-.L45
+	.word	.L402,.L75,.L144-.L75
 	; Module end

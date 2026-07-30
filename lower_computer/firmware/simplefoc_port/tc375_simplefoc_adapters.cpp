@@ -52,28 +52,76 @@ Tc375BldcDriver::Tc375BldcDriver()
 
 int Tc375BldcDriver::init()
 {
+    /*
+     * Initialization is always fail-closed. BLDCMotor::init() calls enable()
+     * internally before its stabilization delays; initialization_inhibit_
+     * prevents that call from releasing the real gate driver.
+     */
+    Tc375Hal_SetPwmEnabled(false);
+    Tc375Hal_SetPhaseDuty(0.0F, 0.0F, 0.0F);
+    (void)Tc375Hal_SetGateEnabled(false);
+    output_enabled_ = false;
     initialized = Tc375Hal_MotorPeripheralsInit();
-    disable();
+    if (!initialized)
+    {
+        disable();
+    }
     return initialized ? 1 : 0;
 }
 
 void Tc375BldcDriver::enable()
 {
+    /*
+     * Never expose stale compare values while changing gate state. A real
+     * inverter is enabled in the strict order gate-ready -> PWM; the
+     * control-board-only build deliberately keeps the gate inhibited while
+     * allowing the MCU TOUT pins to run.
+     */
+    output_enabled_ = false;
+    Tc375Hal_SetPwmEnabled(false);
+    Tc375Hal_SetPhaseDuty(0.0F, 0.0F, 0.0F);
+    (void)Tc375Hal_SetGateEnabled(false);
+
 #if MOTOR_CONTROL_HARDWARE_ENABLED
-    Tc375Hal_SetPwmEnabled(true);
+    if (initialization_inhibit_ || !initialized)
+    {
+        return;
+    }
+
 #if MOTOR_POWER_STAGE_ENABLED
-    Tc375Hal_SetGateEnabled(true);
+    if ((Tc375Hal_ReadActiveFaults() != 0U) ||
+        !Tc375Hal_SetGateEnabled(true) ||
+        !Tc375Hal_IsGateEnabled() ||
+        (Tc375Hal_ReadActiveFaults() != 0U))
+    {
+        disable();
+        return;
+    }
 #else
-    Tc375Hal_SetGateEnabled(false);
+    /* Compile-time gate lock: SetGateEnabled(true) must never be requested. */
+    if (Tc375Hal_IsGateEnabled())
+    {
+        disable();
+        return;
+    }
 #endif
+
+    Tc375Hal_SetPwmEnabled(true);
+    if (!Tc375Hal_IsPwmEnabled())
+    {
+        disable();
+        return;
+    }
+    output_enabled_ = true;
 #endif
 }
 
 void Tc375BldcDriver::disable()
 {
-    Tc375Hal_SetPhaseDuty(0.0F, 0.0F, 0.0F);
+    output_enabled_ = false;
     Tc375Hal_SetPwmEnabled(false);
-    Tc375Hal_SetGateEnabled(false);
+    Tc375Hal_SetPhaseDuty(0.0F, 0.0F, 0.0F);
+    (void)Tc375Hal_SetGateEnabled(false);
 }
 
 void Tc375BldcDriver::setPwm(float ua, float ub, float uc)
@@ -82,6 +130,11 @@ void Tc375BldcDriver::setPwm(float ua, float ub, float uc)
     dc_b = ClampDuty(ub, voltage_power_supply, voltage_limit);
     dc_c = ClampDuty(uc, voltage_power_supply, voltage_limit);
 #if MOTOR_CONTROL_HARDWARE_ENABLED
+    if (!output_enabled_)
+    {
+        Tc375Hal_SetPhaseDuty(0.0F, 0.0F, 0.0F);
+        return;
+    }
     Tc375Hal_SetPhaseDuty(dc_a, dc_b, dc_c);
 #else
     Tc375Hal_SetPhaseDuty(0.0F, 0.0F, 0.0F);
@@ -98,11 +151,33 @@ void Tc375BldcDriver::setPhaseState(
         (sb == PhaseState::PHASE_ON) &&
         (sc == PhaseState::PHASE_ON);
 #if MOTOR_CONTROL_HARDWARE_ENABLED
-    Tc375Hal_SetPwmEnabled(all_on);
+    Tc375Hal_SetPwmEnabled(all_on && output_enabled_);
 #else
     (void)all_on;
     Tc375Hal_SetPwmEnabled(false);
 #endif
+}
+
+void Tc375BldcDriver::setInitializationInhibit(bool inhibited)
+{
+    initialization_inhibit_ = inhibited;
+    if (inhibited)
+    {
+        disable();
+    }
+}
+
+bool Tc375BldcDriver::isOutputEnabled() const
+{
+    return
+        output_enabled_ &&
+        Tc375Hal_IsPwmEnabled()
+#if MOTOR_POWER_STAGE_ENABLED
+        && Tc375Hal_IsGateEnabled()
+#else
+        && !Tc375Hal_IsGateEnabled()
+#endif
+        ;
 }
 
 void Tc375Encoder::init()

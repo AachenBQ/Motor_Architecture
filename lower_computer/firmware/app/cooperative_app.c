@@ -12,15 +12,24 @@
 
 #define COOPERATIVE_UART_CHUNK_SIZE       128U
 #define COOPERATIVE_MAX_RX_CHUNKS         16U
+#define COOPERATIVE_UART_INTERBYTE_TIMEOUT_MS 100U
 #define COOPERATIVE_HEALTH_PERIOD_MS      10U
 
 static MotorControl g_motor;
 static CommandRouter g_router;
 static NativeParser g_parser;
+/*
+ * NativeFrame contains a 2048-byte payload. Keeping it out of
+ * ServiceCommands() prevents the cooperative task from overflowing CPU0's
+ * user stack while command handlers add their own call frames.
+ */
+static NativeFrame g_rx_frame;
 static uint8_t g_telemetry_sequence;
 static uint32_t g_last_outer_loop_ms;
 static uint32_t g_last_telemetry_ms;
 static uint32_t g_last_health_ms;
+static uint32_t g_last_rx_byte_ms;
+static bool g_rx_byte_seen;
 static bool g_initialized;
 
 static bool ProtocolTransmit(
@@ -47,19 +56,44 @@ static uint32_t PeriodFromRate(uint16_t rate_hz)
 static void UpdateProtocolErrorCount(void)
 {
     uint32_t total =
-        g_parser.crc_errors + g_parser.length_errors;
+        g_parser.crc_errors +
+        g_parser.length_errors +
+        g_parser.timeout_errors;
     g_router.protocol_errors =
         total > 0xFFFFU ? 0xFFFFU : (uint16_t)total;
+    g_router.parser_crc_errors =
+        g_parser.crc_errors > 0xFFFFU
+            ? 0xFFFFU
+            : (uint16_t)g_parser.crc_errors;
+    g_router.parser_length_errors =
+        g_parser.length_errors > 0xFFFFU
+            ? 0xFFFFU
+            : (uint16_t)g_parser.length_errors;
+    g_router.parser_timeout_errors =
+        g_parser.timeout_errors > 0xFFFFU
+            ? 0xFFFFU
+            : (uint16_t)g_parser.timeout_errors;
+    g_router.parser_resync_events =
+        g_parser.resync_events > 0xFFFFU
+            ? 0xFFFFU
+            : (uint16_t)g_parser.resync_events;
 }
 
 static void ServiceCommands(void)
 {
     uint8_t bytes[COOPERATIVE_UART_CHUNK_SIZE];
-    NativeFrame frame;
     size_t count;
     size_t index;
     uint8_t chunk;
+    bool received_bytes = false;
 
+    /*
+     * Drain bytes that are already waiting before applying the inter-byte
+     * timeout. The ASCLIN ISR/USB-UART path may split a longer frame into
+     * several chunks. Expiring the old prefix before reading an already
+     * queued suffix makes valid commands such as the 39-byte open-loop
+     * configuration frame impossible to complete.
+     */
     for (chunk = 0U;
          chunk < COOPERATIVE_MAX_RX_CHUNKS;
          ++chunk)
@@ -69,16 +103,33 @@ static void ServiceCommands(void)
         {
             break;
         }
+        received_bytes = true;
+        g_last_rx_byte_ms = Tc375Hal_TimeMs();
+        g_rx_byte_seen = true;
         for (index = 0U; index < count; ++index)
         {
             if (NativeParser_Push(
                     &g_parser,
                     bytes[index],
-                    &frame))
+                    &g_rx_frame))
             {
-                CommandRouter_Handle(&g_router, &frame);
+                UpdateProtocolErrorCount();
+                CommandRouter_Handle(&g_router, &g_rx_frame);
             }
         }
+    }
+    if (g_parser.used == 0U)
+    {
+        g_rx_byte_seen = false;
+    }
+    else if (!received_bytes &&
+             g_rx_byte_seen &&
+             ((uint32_t)(
+                  Tc375Hal_TimeMs() - g_last_rx_byte_ms) >=
+              COOPERATIVE_UART_INTERBYTE_TIMEOUT_MS))
+    {
+        (void)NativeParser_ExpirePartial(&g_parser);
+        g_rx_byte_seen = false;
     }
     UpdateProtocolErrorCount();
 }
@@ -140,6 +191,8 @@ bool Firmware_CooperativeInit(void)
     }
 
     NativeParser_Init(&g_parser);
+    g_last_rx_byte_ms = now_ms;
+    g_rx_byte_seen = false;
     CommandRouter_Init(
         &g_router,
         &g_motor,
@@ -207,6 +260,12 @@ void Firmware_CooperativePoll(void)
     {
         g_last_outer_loop_ms = now_ms;
         ServiceMotor(now_ms);
+        /*
+         * Bytes can arrive while SimpleFOC executes. Service them again
+         * before queuing telemetry so heartbeats and command responses keep
+         * priority during an open-loop run.
+         */
+        ServiceCommands();
     }
 
     telemetry_period_ms =

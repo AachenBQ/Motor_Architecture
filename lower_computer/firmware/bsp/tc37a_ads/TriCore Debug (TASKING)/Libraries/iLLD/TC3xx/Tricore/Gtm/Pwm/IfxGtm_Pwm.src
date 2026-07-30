@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc31312a --dep-file=Libraries/iLLD/TC3xx/Tricore/Gtm/Pwm/IfxGtm_Pwm.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 -o Libraries/iLLD/TC3xx/Tricore/Gtm/Pwm/IfxGtm_Pwm.src ../Libraries/iLLD/TC3xx/Tricore/Gtm/Pwm/IfxGtm_Pwm.c"
+	.compiler_invocation	"ctc -f cc94256a --dep-file=Libraries/iLLD/TC3xx/Tricore/Gtm/Pwm/IfxGtm_Pwm.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc37x -D__CPU_TC37X__ --core=tc1.6.2 --fp-model=+float -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Configurations -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Sfr\\\\TC37x -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Pwm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Trig -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\BQ\\\\Documents\\\\motor_control\\\\lower_computer\\\\firmware\\\\bsp\\\\tc37a_ads\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC37x -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 -o Libraries/iLLD/TC3xx/Tricore/Gtm/Pwm/IfxGtm_Pwm.src ../Libraries/iLLD/TC3xx/Tricore/Gtm/Pwm/IfxGtm_Pwm.c"
 	.compiler_name		"ctc"
 	;source	'../Libraries/iLLD/TC3xx/Tricore/Gtm/Pwm/IfxGtm_Pwm.c'
 
@@ -54958,6 +54958,14 @@ __IfxGtm_Pwm_startChannelOutputs_function_end:
 	.half	2
 	.byte	145,112
 	.word	0,0
+.L1037:
+	.word	-1,.L398,.L1450-.L398,.L42-.L398
+	.half	1
+	.byte	101
+	.word	.L43-.L398,.L40-.L398
+	.half	1
+	.byte	101
+	.word	0,0
 .L1093:
 	.word	-1,.L398,.L1474-.L398,.L57-.L398
 	.half	1
@@ -54973,14 +54981,6 @@ __IfxGtm_Pwm_startChannelOutputs_function_end:
 	.word	.L50-.L398,.L1081-.L398
 	.half	1
 	.byte	111
-	.word	0,0
-.L1037:
-	.word	-1,.L398,.L1450-.L398,.L42-.L398
-	.half	1
-	.byte	101
-	.word	.L43-.L398,.L40-.L398
-	.half	1
-	.byte	101
 	.word	0,0
 .L1317:
 	.word	0,0
@@ -55135,13 +55135,13 @@ __IfxGtm_Pwm_startChannelOutputs_function_end:
 	.word	0,0
 .L1044:
 	.word	0,0
-.L1328:
-	.word	-1,.L398,.L1533-.L398,.L107-.L398
+.L1321:
+	.word	-1,.L398,.L1528-.L398,.L102-.L398
 	.half	1
 	.byte	95
 	.word	0,0
-.L1321:
-	.word	-1,.L398,.L1528-.L398,.L102-.L398
+.L1328:
+	.word	-1,.L398,.L1533-.L398,.L107-.L398
 	.half	1
 	.byte	95
 	.word	0,0
@@ -55406,13 +55406,13 @@ __IfxGtm_Pwm_startChannelOutputs_function_end:
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L628:
-	.word	-1,.L404,.L627-.L404,.L1570-.L404
+.L626:
+	.word	-1,.L404,.L615-.L404,.L627-.L404
 	.half	1
 	.byte	95
 	.word	0,0
-.L626:
-	.word	-1,.L404,.L615-.L404,.L627-.L404
+.L628:
+	.word	-1,.L404,.L627-.L404,.L1570-.L404
 	.half	1
 	.byte	95
 	.word	0,0
@@ -55474,8 +55474,8 @@ __IfxGtm_Pwm_startChannelOutputs_function_end:
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L661:
-	.word	-1,.L408,.L660-.L408,.L209-.L408
+.L659:
+	.word	-1,.L408,.L658-.L408,.L1593-.L408
 	.half	1
 	.byte	95
 	.word	0,0
@@ -55484,8 +55484,8 @@ __IfxGtm_Pwm_startChannelOutputs_function_end:
 	.half	1
 	.byte	95
 	.word	0,0
-.L659:
-	.word	-1,.L408,.L658-.L408,.L1593-.L408
+.L661:
+	.word	-1,.L408,.L660-.L408,.L209-.L408
 	.half	1
 	.byte	95
 	.word	0,0
@@ -55590,13 +55590,13 @@ __IfxGtm_Pwm_startChannelOutputs_function_end:
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L640:
-	.word	-1,.L406,.L635-.L406,.L641-.L406
+.L642:
+	.word	-1,.L406,.L641-.L406,.L1579-.L406
 	.half	1
 	.byte	95
 	.word	0,0
-.L642:
-	.word	-1,.L406,.L641-.L406,.L1579-.L406
+.L640:
+	.word	-1,.L406,.L635-.L406,.L641-.L406
 	.half	1
 	.byte	95
 	.word	0,0
@@ -55658,8 +55658,8 @@ __IfxGtm_Pwm_startChannelOutputs_function_end:
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L676:
-	.word	-1,.L410,.L675-.L410,.L226-.L410
+.L680:
+	.word	-1,.L410,.L679-.L410,.L235-.L410
 	.half	1
 	.byte	95
 	.word	0,0
@@ -55668,13 +55668,13 @@ __IfxGtm_Pwm_startChannelOutputs_function_end:
 	.half	1
 	.byte	95
 	.word	0,0
-.L678:
-	.word	-1,.L410,.L677-.L410,.L1608-.L410
+.L676:
+	.word	-1,.L410,.L675-.L410,.L226-.L410
 	.half	1
 	.byte	95
 	.word	0,0
-.L680:
-	.word	-1,.L410,.L679-.L410,.L235-.L410
+.L678:
+	.word	-1,.L410,.L677-.L410,.L1608-.L410
 	.half	1
 	.byte	95
 	.word	0,0
@@ -56256,13 +56256,13 @@ __IfxGtm_Pwm_startChannelOutputs_function_end:
 	.half	1
 	.byte	111
 	.word	0,0
-.L959:
-	.word	-1,.L434,.L1773-.L434,.L1774-.L434
+.L947:
+	.word	-1,.L434,.L1763-.L434,.L1764-.L434
 	.half	1
 	.byte	111
 	.word	0,0
-.L947:
-	.word	-1,.L434,.L1763-.L434,.L1764-.L434
+.L959:
+	.word	-1,.L434,.L1773-.L434,.L1774-.L434
 	.half	1
 	.byte	111
 	.word	0,0
@@ -56283,13 +56283,13 @@ __IfxGtm_Pwm_startChannelOutputs_function_end:
 	.half	1
 	.byte	81
 	.word	0,0
-.L960:
-	.word	-1,.L434,.L1775-.L434,.L361-.L434
+.L948:
+	.word	-1,.L434,.L1765-.L434,.L362-.L434
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L948:
-	.word	-1,.L434,.L1765-.L434,.L362-.L434
+.L960:
+	.word	-1,.L434,.L1775-.L434,.L361-.L434
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
@@ -56575,15 +56575,15 @@ __IfxGtm_Pwm_startChannelOutputs_function_end:
 	.half	1
 	.byte	82
 	.word	0,0
-.L729:
-	.word	-1,.L414,.L1639-.L414,.L1640-.L414
-	.half	1
-	.byte	98
-	.word	0,0
 .L727:
 	.word	-1,.L414,.L1636-.L414,.L1638-.L414
 	.half	1
 	.byte	100
+	.word	0,0
+.L729:
+	.word	-1,.L414,.L1639-.L414,.L1640-.L414
+	.half	1
+	.byte	98
 	.word	0,0
 .L737:
 	.word	-1,.L414,.L1662-.L414,.L1663-.L414

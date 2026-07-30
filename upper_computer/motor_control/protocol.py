@@ -20,6 +20,31 @@ HEADER_STRUCT = struct.Struct("<2sBBBBBH")
 HEADER_SIZE = HEADER_STRUCT.size
 CRC_SIZE = 2
 MAX_PAYLOAD = 2048
+FEATURE_FRAGMENTED_OPEN_LOOP_CONFIG = 1 << 6
+START_FLAG_POWER_STAGE_CONFIRMED = 1 << 0
+
+POWER_STAGE_SAFETY_CURRENT = 1 << 0
+POWER_STAGE_SAFETY_BUS_VOLTAGE = 1 << 1
+POWER_STAGE_SAFETY_TEMPERATURE = 1 << 2
+POWER_STAGE_SAFETY_WATCHDOG = 1 << 3
+POWER_STAGE_SAFETY_PHYSICAL_ESTOP = 1 << 4
+POWER_STAGE_SAFETY_EXTERNAL_CURRENT_LIMIT = 1 << 5
+POWER_STAGE_SAFETY_NFAULT_MONITOR = 1 << 6
+POWER_STAGE_SAFETY_HEARTBEAT = 1 << 7
+POWER_STAGE_SAFETY_SAFE_OUTPUT = 1 << 8
+POWER_STAGE_REQUIRED_SAFETY_MASK = 0x01FF
+POWER_STAGE_COMMISSIONING_OVERRIDE = 1 << 31
+POWER_STAGE_COMMISSIONING_MAX_VOLTAGE_V = 0.10
+POWER_STAGE_COMMISSIONING_MAX_SPEED_RAD_S = 1.0
+POWER_STAGE_COMMISSIONING_MAX_ACCEL_RAD_S2 = 1.0
+POWER_STAGE_COMMISSIONING_MAX_RUNTIME_MS = 1000
+
+HARDWARE_FLAG_PWM_ENABLED = 1 << 0
+HARDWARE_FLAG_GATE_ENABLED = 1 << 1
+HARDWARE_FLAG_NFAULT_CLEAR = 1 << 2
+HARDWARE_FLAG_SAFETY_READY = 1 << 3
+HARDWARE_FLAG_POWER_STAGE_BUILD = 1 << 4
+HARDWARE_FLAG_COMMISSIONING_OVERRIDE = 1 << 5
 
 
 class Command(IntEnum):
@@ -53,6 +78,8 @@ class Command(IntEnum):
     GET_OPEN_LOOP_CONFIG = 0x27
     START_OPEN_LOOP = 0x28
     GET_BUILD_CONFIG = 0x29
+    SET_OPEN_LOOP_CONFIG_PART = 0x2A
+    COMMIT_OPEN_LOOP_CONFIG = 0x2B
     TELEMETRY = 0x80
     FAULT_EVENT = 0x81
     ACK = 0xF0
@@ -83,6 +110,17 @@ class CalibrationType(IntEnum):
     ENCODER_OFFSET = 2
     ENCODER_DIRECTION = 3
     ZERO_POSITION = 4
+
+
+class StopReason(IntEnum):
+    NONE = 0
+    DISABLE_COMMAND = 1
+    CONTROLLED_COMMAND = 2
+    QUICK_STOP_COMMAND = 3
+    EMERGENCY_COMMAND = 4
+    HEARTBEAT_TIMEOUT = 5
+    OPEN_LOOP_RUNTIME = 6
+    FAULT = 7
 
 
 MODE_LABELS = {
@@ -220,12 +258,109 @@ class OpenLoopConfig(_ValueObject):
         self.max_runtime_ms = int(max_runtime_ms)
 
 
+class Diagnostics(_ValueObject):
+    __slots__ = (
+        "uptime_ms",
+        "protocol_errors",
+        "fault_bits",
+        "commands_received",
+        "heartbeat_age_ms",
+        "heartbeat_lease_ms",
+        "motor_state",
+        "last_stop_reason",
+        "runtime_flags",
+        "hardware_flags",
+        "tx_high_priority_failures",
+        "telemetry_drops",
+        "rx_sw_fifo_overflows",
+        "rx_hw_fifo_overflows",
+        "rx_frame_errors",
+        "rx_parity_errors",
+        "parser_crc_errors",
+        "parser_length_errors",
+        "parser_timeout_errors",
+        "parser_resync_events",
+        "rx_isr_entries",
+        "rx_poll_drains",
+        "rx_poll_bytes",
+    )
+
+    def __init__(
+        self,
+        uptime_ms,
+        protocol_errors,
+        fault_bits,
+        commands_received=0,
+        heartbeat_age_ms=0xFFFF,
+        heartbeat_lease_ms=0,
+        motor_state=0,
+        last_stop_reason=0,
+        runtime_flags=0,
+        hardware_flags=0,
+        tx_high_priority_failures=0,
+        telemetry_drops=0,
+        rx_sw_fifo_overflows=0,
+        rx_hw_fifo_overflows=0,
+        rx_frame_errors=0,
+        rx_parity_errors=0,
+        parser_crc_errors=0,
+        parser_length_errors=0,
+        parser_timeout_errors=0,
+        parser_resync_events=0,
+        rx_isr_entries=0,
+        rx_poll_drains=0,
+        rx_poll_bytes=0,
+    ):
+        self.uptime_ms = int(uptime_ms)
+        self.protocol_errors = int(protocol_errors)
+        self.fault_bits = int(fault_bits)
+        self.commands_received = int(commands_received)
+        self.heartbeat_age_ms = int(heartbeat_age_ms)
+        self.heartbeat_lease_ms = int(heartbeat_lease_ms)
+        self.motor_state = int(motor_state)
+        self.last_stop_reason = int(last_stop_reason)
+        self.runtime_flags = int(runtime_flags)
+        self.hardware_flags = int(hardware_flags)
+        self.tx_high_priority_failures = int(
+            tx_high_priority_failures
+        )
+        self.telemetry_drops = int(telemetry_drops)
+        self.rx_sw_fifo_overflows = int(rx_sw_fifo_overflows)
+        self.rx_hw_fifo_overflows = int(rx_hw_fifo_overflows)
+        self.rx_frame_errors = int(rx_frame_errors)
+        self.rx_parity_errors = int(rx_parity_errors)
+        self.parser_crc_errors = int(parser_crc_errors)
+        self.parser_length_errors = int(parser_length_errors)
+        self.parser_timeout_errors = int(parser_timeout_errors)
+        self.parser_resync_events = int(parser_resync_events)
+        self.rx_isr_entries = int(rx_isr_entries)
+        self.rx_poll_drains = int(rx_poll_drains)
+        self.rx_poll_bytes = int(rx_poll_bytes)
+
+
 TELEMETRY_STRUCT = struct.Struct("<BfffffH")
 LIMITS_STRUCT = struct.Struct("<Bffffffff")
 TELEMETRY_PROFILE_STRUCT = struct.Struct("<HI")
 OPEN_LOOP_CONFIG_STRUCT = struct.Struct("<BBBBffffHHI")
+OPEN_LOOP_CONFIG_FRAGMENT_STRUCT = struct.Struct("<BBB2s")
+OPEN_LOOP_CONFIG_COMMIT_STRUCT = struct.Struct("<BBH")
+OPEN_LOOP_CONFIG_FRAGMENT_SIZE = 2
+OPEN_LOOP_CONFIG_FRAGMENT_COUNT = 14
 LEGACY_BUILD_CONFIG_STRUCT = struct.Struct("<BBBBIIIIHHHHf")
-BUILD_CONFIG_STRUCT = struct.Struct("<BBBBBIIIIHHHHf")
+LAYERED_BUILD_CONFIG_STRUCT = struct.Struct("<BBBBBIIIIHHHHf")
+BUILD_CONFIG_STRUCT = struct.Struct("<BBBBBIIIIHHHHfI")
+LEGACY_DIAGNOSTICS_STRUCT = struct.Struct("<IHH")
+DIAGNOSTICS_FORMAT = "<IHHIHHBBBBHH"
+DIAGNOSTICS_STRUCT = struct.Struct(DIAGNOSTICS_FORMAT)
+UART_DIAGNOSTICS_STRUCT = struct.Struct(
+    DIAGNOSTICS_FORMAT + "HHHH"
+)
+EXTENDED_DIAGNOSTICS_STRUCT = struct.Struct(
+    DIAGNOSTICS_FORMAT + "HHHHHHHH"
+)
+RX_SCHEDULER_DIAGNOSTICS_STRUCT = struct.Struct(
+    DIAGNOSTICS_FORMAT + "HHHHHHHHHHH"
+)
 
 
 def crc16_modbus(data: Union[bytes, bytearray, memoryview]) -> int:
@@ -392,6 +527,25 @@ def pack_heartbeat(host_time_ms: int, lease_ms: int = 750) -> bytes:
     return struct.pack("<IH", int(host_time_ms) & 0xFFFFFFFF, int(lease_ms))
 
 
+def pack_start_open_loop(
+    motor_id: int,
+    power_stage_enabled: bool = False,
+    power_stage_confirmed: bool = False,
+) -> bytes:
+    if not 1 <= int(motor_id) <= 0xFF:
+        raise ValueError("电机地址必须在 1..255 范围内")
+    if not power_stage_enabled:
+        return bytes((int(motor_id),))
+    if not power_stage_confirmed:
+        raise ValueError("真实功率级启动必须经过明确确认")
+    return bytes(
+        (
+            int(motor_id),
+            START_FLAG_POWER_STAGE_CONFIRMED,
+        )
+    )
+
+
 def pack_calibrate(
     motor_id: int, calibration_type: Union[CalibrationType, int]
 ) -> bytes:
@@ -509,9 +663,131 @@ def unpack_open_loop_config(payload: bytes) -> OpenLoopConfig:
     return OpenLoopConfig(*OPEN_LOOP_CONFIG_STRUCT.unpack(payload))
 
 
+def pack_open_loop_config_fragments(
+    value: OpenLoopConfig,
+    generation: int,
+) -> Tuple[bytes, ...]:
+    if not 0 <= int(generation) <= 0xFF:
+        raise ValueError("开环配置传输代号必须在 0..255 范围内")
+    raw = pack_open_loop_config(value)
+    if len(raw) != (
+        OPEN_LOOP_CONFIG_FRAGMENT_SIZE *
+        OPEN_LOOP_CONFIG_FRAGMENT_COUNT
+    ):
+        raise ValueError("开环配置分片布局不匹配")
+    return tuple(
+        OPEN_LOOP_CONFIG_FRAGMENT_STRUCT.pack(
+            value.motor_id,
+            int(generation),
+            index,
+            raw[
+                index * OPEN_LOOP_CONFIG_FRAGMENT_SIZE:
+                (index + 1) * OPEN_LOOP_CONFIG_FRAGMENT_SIZE
+            ],
+        )
+        for index in range(OPEN_LOOP_CONFIG_FRAGMENT_COUNT)
+    )
+
+
+def unpack_open_loop_config_fragment(
+    payload: bytes,
+) -> Tuple[int, int, int, bytes]:
+    if len(payload) != OPEN_LOOP_CONFIG_FRAGMENT_STRUCT.size:
+        raise ValueError("开环配置分片载荷长度错误")
+    motor_id, generation, index, data = (
+        OPEN_LOOP_CONFIG_FRAGMENT_STRUCT.unpack(payload)
+    )
+    if index >= OPEN_LOOP_CONFIG_FRAGMENT_COUNT:
+        raise ValueError("开环配置分片索引超出范围")
+    return motor_id, generation, index, data
+
+
+def pack_open_loop_config_commit(
+    value: OpenLoopConfig,
+    generation: int,
+) -> bytes:
+    raw = pack_open_loop_config(value)
+    return OPEN_LOOP_CONFIG_COMMIT_STRUCT.pack(
+        value.motor_id,
+        int(generation),
+        crc16_modbus(raw),
+    )
+
+
+def unpack_open_loop_config_commit(
+    payload: bytes,
+) -> Tuple[int, int, int]:
+    if len(payload) != OPEN_LOOP_CONFIG_COMMIT_STRUCT.size:
+        raise ValueError("开环配置提交载荷长度错误")
+    return OPEN_LOOP_CONFIG_COMMIT_STRUCT.unpack(payload)
+
+
+def unpack_diagnostics(payload: bytes) -> Diagnostics:
+    if len(payload) == LEGACY_DIAGNOSTICS_STRUCT.size:
+        return Diagnostics(*LEGACY_DIAGNOSTICS_STRUCT.unpack(payload))
+    accepted_sizes = (
+        DIAGNOSTICS_STRUCT.size,
+        UART_DIAGNOSTICS_STRUCT.size,
+        EXTENDED_DIAGNOSTICS_STRUCT.size,
+        RX_SCHEDULER_DIAGNOSTICS_STRUCT.size,
+    )
+    if len(payload) not in accepted_sizes:
+        raise ValueError(
+            "诊断载荷长度错误：应为 {}、{}、{}、{} 或 {}，实际为 {}".format(
+                LEGACY_DIAGNOSTICS_STRUCT.size,
+                DIAGNOSTICS_STRUCT.size,
+                UART_DIAGNOSTICS_STRUCT.size,
+                EXTENDED_DIAGNOSTICS_STRUCT.size,
+                RX_SCHEDULER_DIAGNOSTICS_STRUCT.size,
+                len(payload),
+            )
+        )
+    if len(payload) == DIAGNOSTICS_STRUCT.size:
+        values = DIAGNOSTICS_STRUCT.unpack(payload)
+    elif len(payload) == UART_DIAGNOSTICS_STRUCT.size:
+        values = UART_DIAGNOSTICS_STRUCT.unpack(payload)
+    elif len(payload) == EXTENDED_DIAGNOSTICS_STRUCT.size:
+        values = EXTENDED_DIAGNOSTICS_STRUCT.unpack(payload)
+    else:
+        values = RX_SCHEDULER_DIAGNOSTICS_STRUCT.unpack(payload)
+    extended = list(values[12:])
+    extended.extend([0] * (11 - len(extended)))
+    return Diagnostics(
+        values[0],
+        values[1],
+        values[2],
+        values[3],
+        values[4],
+        values[5],
+        values[6],
+        values[7],
+        values[8],
+        values[9],
+        values[10],
+        values[11],
+        *extended,
+    )
+
+
 def unpack_build_config(
     payload: bytes,
-) -> Tuple[int, int, int, int, int, int, int, int, int, int, int, int, int, float]:
+) -> Tuple[
+    int,
+    int,
+    int,
+    int,
+    int,
+    int,
+    int,
+    int,
+    int,
+    int,
+    int,
+    int,
+    int,
+    float,
+    int,
+]:
     if len(payload) == LEGACY_BUILD_CONFIG_STRUCT.size:
         legacy = LEGACY_BUILD_CONFIG_STRUCT.unpack(payload)
         (
@@ -544,11 +820,15 @@ def unpack_build_config(
             heartbeat_min_ms,
             heartbeat_max_ms,
             torque_constant,
+            0,
         )
+    if len(payload) == LAYERED_BUILD_CONFIG_STRUCT.size:
+        return LAYERED_BUILD_CONFIG_STRUCT.unpack(payload) + (0,)
     if len(payload) != BUILD_CONFIG_STRUCT.size:
         raise ValueError(
-            "固件构建配置载荷长度错误：应为 {}（或兼容长度 {}），实际为 {}".format(
+            "固件构建配置载荷长度错误：应为 {}（或兼容长度 {}、{}），实际为 {}".format(
                 BUILD_CONFIG_STRUCT.size,
+                LAYERED_BUILD_CONFIG_STRUCT.size,
                 LEGACY_BUILD_CONFIG_STRUCT.size,
                 len(payload),
             )

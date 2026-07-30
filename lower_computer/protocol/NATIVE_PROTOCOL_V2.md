@@ -58,8 +58,10 @@ AA 55 | VER | FLAGS | DEVICE | CMD | SEQ | LEN:u16 | PAYLOAD | CRC16:u16
 | `GET_TELEMETRY_PROFILE` | `25` | 无；ACK detail 返回 `rate_hz:u16, signal_mask:u32` |
 | `SET_OPEN_LOOP_CONFIG` | `26` | 见第 9 节；仅停止状态可写 |
 | `GET_OPEN_LOOP_CONFIG` | `27` | `motor:u8` |
-| `START_OPEN_LOOP` | `28` | `motor:u8` |
+| `START_OPEN_LOOP` | `28` | `motor:u8[, start_flags:u8]`；见第 9 节 |
 | `GET_BUILD_CONFIG` | `29` | 无；返回只读编译配置 |
+| `SET_OPEN_LOOP_CONFIG_PART` | `2A` | 见 9.1；固定 5 字节，整帧 16 字节 |
+| `COMMIT_OPEN_LOOP_CONFIG` | `2B` | 见 9.1；固定 4 字节，整帧 15 字节 |
 | `TELEMETRY` | `80` | MCU 主动发送 |
 | `FAULT_EVENT` | `81` | MCU 主动发送 |
 | `ACK` | `F0` | 应答 |
@@ -123,6 +125,7 @@ original_cmd:u8 | error_code:u8 | detail...
 | 9 | `STORAGE_ERROR` |
 | 10 | `HARDWARE_FAULT` |
 | 11 | `CAPABILITY_UNAVAILABLE` |
+| 12 | `SAFETY_INTERLOCK` |
 
 每个请求必须在 100 ms 内 ACK/ERROR。校准、保存等耗时命令先返回
 `accepted`，最终结果通过 `FAULT_EVENT` 或后续状态查询返回。
@@ -158,6 +161,11 @@ MVP：
 - `backend_mask = 0x01`
 - FPGA reserved flag = 1
 - FPGA control available flag = 0
+- `feature_flags bit6 = 1` 表示支持 9.1 的开环配置分片写入；
+  bit6 为 0 时设备只提供兼容命令 `0x26`。由于本项目已经观察到长帧接收
+  不稳定，当前 Motor Studio 不静默回退，而是提示烧录支持分片的新固件。
+- `feature_flags bit7 = 1` 表示支持带 `start_flags` 的 `0x28`。真实功率级
+  固件必须报告此能力；否则上位机不得尝试启动。
 
 ## 7. Limits Payload
 
@@ -214,8 +222,26 @@ max_runtime_ms:u32
 - 达到 `max_runtime_ms`、心跳超时、限值越界或驱动故障时自动撤销输出。
 - `CONTROLLED_STOP` 按 `acceleration_rad_s2` 斜坡降到零；
   `QUICK_STOP` 立即撤销 PWM；`EMERGENCY_STOP` 立即撤销 PWM 和 gate。
-- 固件硬上限不能由上位机提高：母线 60 V、电压限幅 6 V、
-  速度绝对值 100 rad/s、最长运行 600 s。
+- 固件通用硬上限不能由上位机提高：母线 10 V、电压限幅 2 V、
+  速度绝对值 100 rad/s、最长运行 600 s。真实功率级编译还会收紧为：
+  母线 8–10 V、电压限幅 0.3 V、速度绝对值 5 rad/s、加速度
+  10 rad/s²、启动延时至少 500 ms、最长运行 3000 ms。
+
+`START_OPEN_LOOP (0x28)` 支持以下两种 payload：
+
+```text
+motor:u8
+start_flags:u8        // 可选；bit0 = power_stage_confirmed
+```
+
+- 控制板/PWM 示波器模式继续接受旧的单字节 payload；
+- `MOTOR_POWER_STAGE_ENABLED=1` 时 payload 必须为 2 字节且 bit0 必须置位，
+  缺少确认返回 `SAFETY_INTERLOCK`；
+- 未定义的 flag 位必须为 0，否则返回 `INVALID_PAYLOAD`；
+- bit0 只证明操作者对本次启动做了明确确认，不会绕过心跳、故障、参数、
+  测量值、硬件静止状态或编译期安全门禁；
+- 功率级启动前若 PWM 或 gate 已处于开启状态，固件先将两者关闭并返回
+  `SAFETY_INTERLOCK`，不在不确定状态下继续启动。
 
 `GET_BUILD_CONFIG` ACK detail：
 
@@ -234,12 +260,196 @@ heartbeat_default_ms:u16
 heartbeat_min_ms:u16
 heartbeat_max_ms:u16
 torque_constant_nm_per_a:f32
+safety_mask:u32
 ```
 
-当前 detail 长度为 33 字节。上位机仍兼容旧版 32 字节
+当前 detail 长度为 37 字节，`safety_mask` 位定义如下：
+
+| bit | 安全层 |
+|---:|---|
+| 0 | 三相电流采样和极性已验证 |
+| 1 | 母线电压采样已验证 |
+| 2 | 功率温度采样已验证 |
+| 3 | CPU watchdog 已验证 |
+| 4 | 物理急停已验证 |
+| 5 | 外部硬件限流已验证 |
+| 6 | gate/nFAULT 监测已验证 |
+| 7 | 心跳失能链路已验证 |
+| 8 | PWM/gate 安全输出路径已验证 |
+| 31 | commissioning override 编译开关处于开启状态 |
+
+完整功率级安全掩码为 `0x000001FF`。bit31 只是醒目的试运行标志，不能替代
+bit0–8 中缺失的安全层。上位机仍兼容旧版 32/33 字节
 `real_hardware_enabled` 格式，并把旧字段同时映射为控制硬件和功率硬件状态。
 这些字段来自编译期宏，只读显示；PWM/ADC/ISR 频率和两个硬件输出开关不能
-在线修改。串口连接只表示控制器通信连通，不代表功率硬件已经连接或可用。
+在线修改。串口连接只表示控制器通信连通，不代表功率硬件已经连接或可用；
+真实功率级模式缺少 `safety_mask` 时，上位机必须拒绝启动。
+
+### 9.1 开环配置分片写入（`0x2A` / `0x2B`）
+
+旧命令 `SET_OPEN_LOOP_CONFIG (0x26)` 的 28 字节 payload 会形成 39 字节
+UART 帧。在部分 ASCLIN 接收路径中，长帧更容易暴露 FIFO 服务延迟，因此
+支持分片能力的设备使用以下两阶段传输。该机制不会改变第 9 节的配置布局，
+只是把完全相同的 28 字节原始 payload 分成 14 片传输。
+
+`SET_OPEN_LOOP_CONFIG_PART (0x2A)` 请求 payload 固定为 5 字节：
+
+```text
+motor:u8             // 固定 0x01
+generation:u8        // 本次传输代号，0–255 循环
+fragment_index:u8    // 0–13
+data:u8[2]           // 原 28 字节 payload 的 [index*2 : index*2+2]
+```
+
+包括帧头和 CRC 的总长度固定为 16 字节。注意，`data` 的第 0 片仍包含原
+payload 的 `motor` 字节；外层 `motor` 用于在写 staging 前校验设备，两者
+不可省略或重排。
+
+成功 ACK：
+
+```text
+original_cmd=0x2A | status=0 | generation:u8 | fragment_index:u8
+```
+
+同一 `generation + fragment_index` 可以重复发送，MCU 必须覆盖相同的两个
+字节并再次 ACK，使 ACK 丢失后的重试保持幂等。收到不同 `generation` 的
+首个合法分片时，MCU 清空旧 staging 和接收位图并开始新一代传输。电机已
+使能或开环正在运行时返回 `INVALID_STATE`；长度、设备或索引错误返回
+`INVALID_PAYLOAD`。staging 从最后一个合法分片开始保留 5000 ms；超时后
+在处理下一条分片或提交命令时清空，防止未完成传输长期占用旧状态。
+
+全部 14 片得到 ACK 后，上位机发送 `COMMIT_OPEN_LOOP_CONFIG (0x2B)`。
+请求 payload 固定为 4 字节：
+
+```text
+motor:u8             // 固定 0x01
+generation:u8        // 必须与 staging 一致
+config_crc16:u16     // 对重组后的原始 28 字节计算 CRC16/MODBUS
+```
+
+包括帧头和 CRC 的总长度固定为 15 字节。这里的 `config_crc16` 是 payload
+级完整性校验；外层帧仍有自己的 CRC16，两者都必须正确。
+
+提交成功 ACK：
+
+```text
+original_cmd=0x2B | status=0 | generation:u8
+```
+
+提交按以下顺序原子执行：
+
+1. 检查电机处于停止/失能状态、代号一致且 14 位接收位图完整；
+2. 对 staging 的 28 字节计算 CRC 并与 `config_crc16` 比较；
+3. 按第 9 节布局解析并执行全部范围检查；
+4. 只有所有检查通过才一次性替换活动配置；任何错误都不得部分修改配置。
+
+缺片、无活动 staging 或 generation 不一致返回 `INVALID_STATE`；payload
+CRC 错误返回 `INVALID_PAYLOAD`；解析后的参数超限返回相应状态码。失败时
+保留同一代 staging，允许补齐缺片或修正 CRC 后再次提交。接收端还必须
+记住最近一次成功提交的 `generation + config_crc16`，对完全相同的重复
+`0x2B` 返回成功 ACK，避免“配置已应用但提交 ACK 丢失”造成主机误判。
+该幂等缓存保留 5000 ms；成功执行兼容命令 `0x26` 或恢复默认配置后，
+接收端立即清除这份提交缓存。缓存年龄使用 64 位单调毫秒计数，过期检查后
+立即撤销 valid 标志，不能因 32 位毫秒计数回绕重新生效。
+
+当前 Motor Studio 的发送策略：
+
+- 一次只发送一片，并等待 ACK 中的命令、SEQ、generation 和 index 都匹配
+  后才发送下一片；
+- 每片或提交等待 400 ms，超时后重发相同 payload（SEQ 可更新），最多
+  尝试 3 次；
+- 任一步返回 ERROR、ACK 内容不匹配或连续 3 次无应答时中止本代传输，
+  且绝不发送 `START_OPEN_LOOP`；
+- 提交 ACK 成功后再按需读取 `0x27` 校验，随后才能发送 `0x28`。
+
+兼容规则：
+
+- `GET_CAPABILITIES.feature_flags bit6 = 1` 时优先使用 `0x2A/0x2B`；
+- bit6 未置位时协议层仍保留完整的 `0x26`，其字段布局保持不变；当前
+  Motor Studio 会拒绝发送已知不稳定的长帧并提示升级固件；
+- 新固件必须继续接受 `0x26`，便于旧上位机工作；
+- `generation` 只用于区分相邻传输，不是持久化版本号，回绕不改变语义。
+
+### 9.2 `GET_DIAGNOSTICS (0x22)` 扩展诊断
+
+空 payload 请求仍返回 24 字节基础诊断，旧固件的 8 字节格式仍被上位机兼容：
+
+```text
+uptime_ms:u32
+protocol_errors:u16
+fault_bits:u16
+commands_received:u32
+heartbeat_age_ms:u16
+heartbeat_lease_ms:u16
+motor_state:u8
+last_stop_reason:u8
+runtime_flags:u8
+hardware_flags:u8
+tx_high_priority_failures:u16
+telemetry_drops:u16
+```
+
+RXF1 可在请求 payload 中加入 `sections:u8`：
+
+- bit0：在基础诊断后追加 UART RX 诊断（共 32 字节）
+- bit1：追加解析器诊断；该段采用稳定布局并同时包含 bit0 数据（共 40 字节）
+- bit2：追加 RX 服务路径计数；同时包含 bit0/bit1 数据（共 46 字节）
+
+RXF1 上位机请求 `sections=0x07`。原有 `sections=0x03` 响应仍严格保持
+40 字节，旧版固件则会忽略新增请求位并继续返回其支持的长度，因此可以
+双向兼容。
+
+```text
+rx_sw_fifo_overflow_events:u16
+rx_hw_fifo_overflow_events:u16
+rx_frame_error_events:u16
+rx_parity_error_events:u16
+parser_crc_errors:u16
+parser_length_errors:u16
+parser_timeout_errors:u16
+parser_resync_events:u16
+rx_isr_entries:u16
+rx_poll_drains:u16
+rx_poll_bytes:u16
+```
+
+`rx_poll_drains` 或 `rx_poll_bytes` 增长表示主循环从硬件 FIFO 取回了未由
+RX ISR 搬运的字节；它们是中断链路恢复路径的观测量，不代表协议错误。
+
+`runtime_flags`：
+
+- bit0 heartbeat valid
+- bit1 motor enabled
+- bit2 open-loop active
+- bit3 open-loop output ready
+
+`hardware_flags`：
+
+- bit0 PWM 当前已开启
+- bit1 gate 当前已释放
+- bit2 当前未检测到 nFAULT/活动硬件故障
+- bit3 `safety_mask` 的 bit0–8 已全部就绪
+- bit4 当前固件为真实功率级编译
+- bit5 commissioning override 编译开关处于开启状态
+
+`hardware_flags` 是每次查询时读取的运行态，不应由上位机缓存为永久状态。
+安全启动前必须至少确认 bit0/bit1 均为 0、bit2 为 1，并使其与 `0x29`
+报告的编译配置一致。bit5 置位时 bit3 可能仍为 0，这是试运行警告而不是
+“安全已完成”。
+
+`last_stop_reason`：
+
+- `0` 无/正在运行
+- `1` 失能命令
+- `2` 受控停止
+- `3` 快速停止
+- `4` 紧急停止
+- `5` 心跳超时
+- `6` 开环最长运行时间到期
+- `7` 硬件或软件故障
+
+发送端为高优先级 ACK/ERROR 预留 UART TX FIFO；FIFO 接近满载时优先丢弃
+遥测帧。两个计数器用于区分“ACK 无法发送”和“为保护 ACK 主动丢弃遥测”。
 
 ## 10. Telemetry v2
 
@@ -281,7 +491,8 @@ status:u16
 
 ## 12. 软件停止与保护
 
-- 上位机主动断开前发送 `QUICK_STOP`。
+- 上位机主动断开前发送 `QUICK_STOP`。下位机在处理该命令并生成 ACK 前，
+  必须已经把 PWM 和 gate 都拉回安全状态；不能等下一次控制循环。
 - 上位机正常关闭前发送广播 `EMERGENCY_STOP`。
 - 上位机检测到过流、过温、母线越界、设备 fault/estop 状态或遥测超时后，
   按配置发送受控停止、快速停止或急停，并停止发送心跳。

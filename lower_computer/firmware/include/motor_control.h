@@ -50,8 +50,21 @@ typedef enum
     MOTOR_RESULT_NOT_CALIBRATED,
     MOTOR_RESULT_HEARTBEAT_REQUIRED,
     MOTOR_RESULT_HARDWARE_FAULT,
-    MOTOR_RESULT_CAPABILITY_UNAVAILABLE
+    MOTOR_RESULT_CAPABILITY_UNAVAILABLE,
+    MOTOR_RESULT_SAFETY_INTERLOCK
 } MotorResult;
+
+typedef enum
+{
+    MOTOR_STOP_REASON_NONE = 0,
+    MOTOR_STOP_REASON_DISABLE_COMMAND = 1,
+    MOTOR_STOP_REASON_CONTROLLED_COMMAND = 2,
+    MOTOR_STOP_REASON_QUICK_STOP_COMMAND = 3,
+    MOTOR_STOP_REASON_EMERGENCY_COMMAND = 4,
+    MOTOR_STOP_REASON_HEARTBEAT_TIMEOUT = 5,
+    MOTOR_STOP_REASON_OPEN_LOOP_RUNTIME = 6,
+    MOTOR_STOP_REASON_FAULT = 7
+} MotorStopReason;
 
 enum
 {
@@ -62,7 +75,10 @@ enum
     MOTOR_FAULT_ENCODER = 1UL << 4,
     MOTOR_FAULT_GATE_DRIVER = 1UL << 5,
     MOTOR_FAULT_DEADLINE = 1UL << 6,
-    MOTOR_FAULT_COMM_TIMEOUT = 1UL << 8
+    MOTOR_FAULT_CURRENT_SENSOR = 1UL << 7,
+    MOTOR_FAULT_COMM_TIMEOUT = 1UL << 8,
+    MOTOR_FAULT_BUS_VOLTAGE_SENSOR = 1UL << 9,
+    MOTOR_FAULT_TEMPERATURE_SENSOR = 1UL << 10
 };
 
 typedef struct
@@ -119,6 +135,7 @@ typedef struct
     bool heartbeat_valid;
     uint32_t last_heartbeat_ms;
     uint16_t heartbeat_lease_ms;
+    MotorStopReason last_stop_reason;
     uint32_t faults;
     uint8_t calibration_type;
     bool open_loop_active;
@@ -182,6 +199,10 @@ MotorResult MotorControl_StartCalibration(
 void MotorControl_FinishCalibration(MotorControl *motor, bool success);
 MotorResult MotorControl_ClearFault(MotorControl *motor, uint32_t active_faults);
 void MotorControl_Stop(MotorControl *motor, bool emergency);
+void MotorControl_StopWithReason(
+    MotorControl *motor,
+    bool emergency,
+    MotorStopReason reason);
 void MotorControl_TripFault(MotorControl *motor, uint32_t fault);
 void MotorControl_UpdateTelemetry(
     MotorControl *motor,

@@ -1,5 +1,6 @@
 #include "Arduino.h"
 
+#include "project_config.h"
 #include "tc375_hal.h"
 
 size_t Print::write(uint8_t value)
@@ -140,11 +141,20 @@ unsigned long millis(void)
 
 void delay(unsigned long ms)
 {
+#if MOTOR_POWER_STAGE_ENABLED
     uint32_t start = Tc375Hal_TimeUs();
     uint32_t wait_us = (uint32_t)(ms * 1000UL);
     while ((uint32_t)(Tc375Hal_TimeUs() - start) < wait_us)
     {
     }
+#else
+    /*
+     * SimpleFOC uses two 500 ms stabilization waits in BLDCMotor::init().
+     * They are unnecessary when the power stage is compile-time locked and
+     * would otherwise delay the first protocol response after a board reset.
+     */
+    (void)ms;
+#endif
 }
 
 void delayMicroseconds(unsigned int us)

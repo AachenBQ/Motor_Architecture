@@ -122,6 +122,10 @@ Cpu0_Main.o :	..\..\..\include\firmware_runtime.h
 ..\..\..\include\firmware_runtime.h :
 Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.32\tools\Compilers\Tasking_1.1r8\ctc\include\stdbool.h"
 "C:\Infineon\AURIX-Studio-1.10.32\tools\Compilers\Tasking_1.1r8\ctc\include\stdbool.h" :
+Cpu0_Main.o :	..\project_config.h
+..\project_config.h :
+Cpu0_Main.o :	..\..\..\config\project_config.h
+..\..\..\config\project_config.h :
 Cpu0_Main.o :	"C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\Libraries\\Service\\CpuGeneric\\SysSe\\Bsp\Bsp.h"
 "C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\Libraries\\Service\\CpuGeneric\\SysSe\\Bsp\Bsp.h" :
 Cpu0_Main.o :	"C:\\Users\\BQ\\Documents\\motor_control\\lower_computer\\firmware\\bsp\\tc37a_ads\\Libraries\\iLLD\\TC3xx\\Tricore\Src\Std\IfxSrc.h"

@@ -13,6 +13,18 @@ extern "C" {
 #define NATIVE_PROTOCOL_MAX_PAYLOAD 2048U
 #define NATIVE_PROTOCOL_MAX_FRAME (9U + NATIVE_PROTOCOL_MAX_PAYLOAD + 2U)
 
+#define NATIVE_FEATURE_POWER_STAGE_CONFIRMED_START (1UL << 7)
+#define NATIVE_START_FLAG_POWER_STAGE_CONFIRMED    (1U << 0)
+#define NATIVE_START_FLAG_SUPPORTED_MASK \
+    NATIVE_START_FLAG_POWER_STAGE_CONFIRMED
+
+#define NATIVE_DIAGNOSTIC_HW_PWM_ENABLED          (1U << 0)
+#define NATIVE_DIAGNOSTIC_HW_GATE_ENABLED         (1U << 1)
+#define NATIVE_DIAGNOSTIC_HW_NFAULT_CLEAR         (1U << 2)
+#define NATIVE_DIAGNOSTIC_HW_SAFETY_READY         (1U << 3)
+#define NATIVE_DIAGNOSTIC_HW_POWER_STAGE_BUILD    (1U << 4)
+#define NATIVE_DIAGNOSTIC_HW_OVERRIDE_ACTIVE      (1U << 5)
+
 typedef enum
 {
     CMD_PING = 0x01,
@@ -41,6 +53,8 @@ typedef enum
     CMD_GET_OPEN_LOOP_CONFIG = 0x27,
     CMD_START_OPEN_LOOP = 0x28,
     CMD_GET_BUILD_CONFIG = 0x29,
+    CMD_SET_OPEN_LOOP_CONFIG_PART = 0x2A,
+    CMD_COMMIT_OPEN_LOOP_CONFIG = 0x2B,
     CMD_TELEMETRY = 0x80,
     CMD_FAULT_EVENT = 0x81,
     CMD_ACK = 0xF0,
@@ -60,7 +74,8 @@ typedef enum
     PROTOCOL_BUSY = 8,
     PROTOCOL_STORAGE_ERROR = 9,
     PROTOCOL_HARDWARE_FAULT = 10,
-    PROTOCOL_CAPABILITY_UNAVAILABLE = 11
+    PROTOCOL_CAPABILITY_UNAVAILABLE = 11,
+    PROTOCOL_SAFETY_INTERLOCK = 12
 } ProtocolStatus;
 
 typedef struct
@@ -81,9 +96,12 @@ typedef struct
     uint16_t expected;
     uint32_t crc_errors;
     uint32_t length_errors;
+    uint32_t timeout_errors;
+    uint32_t resync_events;
 } NativeParser;
 
 void NativeParser_Init(NativeParser *parser);
+bool NativeParser_ExpirePartial(NativeParser *parser);
 bool NativeParser_Push(NativeParser *parser, uint8_t value, NativeFrame *frame);
 uint16_t NativeProtocol_Crc16(const uint8_t *data, size_t length);
 size_t NativeProtocol_Encode(

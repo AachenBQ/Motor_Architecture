@@ -13,11 +13,27 @@ from .protocol import (
     ControlMode,
     Frame,
     FrameParser,
+    FEATURE_FRAGMENTED_OPEN_LOOP_CONFIG,
+    HARDWARE_FLAG_COMMISSIONING_OVERRIDE,
+    HARDWARE_FLAG_GATE_ENABLED,
+    HARDWARE_FLAG_NFAULT_CLEAR,
+    HARDWARE_FLAG_POWER_STAGE_BUILD,
+    HARDWARE_FLAG_PWM_ENABLED,
+    HARDWARE_FLAG_SAFETY_READY,
+    OPEN_LOOP_CONFIG_FRAGMENT_COUNT,
     OpenLoopBackend,
     OpenLoopConfig,
     PidLoop,
+    POWER_STAGE_COMMISSIONING_MAX_ACCEL_RAD_S2,
+    POWER_STAGE_COMMISSIONING_MAX_RUNTIME_MS,
+    POWER_STAGE_COMMISSIONING_MAX_SPEED_RAD_S,
+    POWER_STAGE_COMMISSIONING_MAX_VOLTAGE_V,
+    POWER_STAGE_COMMISSIONING_OVERRIDE,
+    POWER_STAGE_REQUIRED_SAFETY_MASK,
+    START_FLAG_POWER_STAGE_CONFIRMED,
     Telemetry,
     VERSION,
+    crc16_modbus,
     encode_frame,
     pack_telemetry,
     pack_open_loop_config,
@@ -25,10 +41,18 @@ from .protocol import (
     unpack_pid,
     unpack_target,
     unpack_open_loop_config,
+    unpack_open_loop_config_commit,
+    unpack_open_loop_config_fragment,
 )
 
 
 EventKind = str
+
+
+class _SimulatedProtocolError(ValueError):
+    def __init__(self, status: int, message: str) -> None:
+        super().__init__(message)
+        self.status = int(status)
 
 
 class LinkEvent:
@@ -61,6 +85,7 @@ class _MotorState:
         "open_loop_active",
         "open_loop_velocity",
         "open_loop_started",
+        "last_stop_reason",
     )
 
     def __init__(self):
@@ -69,7 +94,7 @@ class _MotorState:
         self.target = 0.0
         self.speed = 0.0
         self.current = 0.0
-        self.voltage = 48.0
+        self.voltage = 7.0
         self.temperature = 28.0
         self.position = 0.0
         self.status = 0
@@ -82,14 +107,14 @@ class _MotorState:
         self.faults = 0
         self.last_heartbeat = time.monotonic()
         self.lease_ms = 750
-        self.limits = (20.0, 2.0, 100.0, -1000.0, 1000.0, 18.0, 60.0, 80.0)
+        self.limits = (0.3, 0.03, 100.0, -1000.0, 1000.0, 5.0, 8.0, 80.0)
         self.open_loop_config = OpenLoopConfig(
             1,
             OpenLoopBackend.SIMPLEFOC,
             7,
             0,
-            24.0,
-            2.0,
+            7.0,
+            0.3,
             5.0,
             10.0,
             10,
@@ -99,6 +124,45 @@ class _MotorState:
         self.open_loop_active = False
         self.open_loop_velocity = 0.0
         self.open_loop_started = 0.0
+        self.last_stop_reason = 0
+
+
+def _validate_simulated_open_loop_config(
+    config: OpenLoopConfig,
+    motor: _MotorState,
+) -> None:
+    finite_values = (
+        config.bus_voltage_v,
+        config.voltage_limit_v,
+        config.target_velocity_rad_s,
+        config.acceleration_rad_s2,
+    )
+    if (
+        config.flags != 0
+        or not 1 <= config.pole_pairs <= 64
+        or (
+            config.backend is OpenLoopBackend.SIMPLEFOC
+            and config.pole_pairs != 7
+        )
+        or not all(math.isfinite(value) for value in finite_values)
+        or not 0.0 < config.bus_voltage_v <= 8.0
+        or not 0.0 < config.voltage_limit_v
+        <= config.bus_voltage_v
+        or config.voltage_limit_v > 2.0
+        or abs(config.target_velocity_rad_s) > 100.0
+        or abs(config.target_velocity_rad_s) > motor.limits[2]
+        or not 0.01 <= config.acceleration_rad_s2 <= 10000.0
+        or not 1 <= config.update_period_ms <= 100
+        or not 0 <= config.startup_delay_ms <= 5000
+        or not 1000 <= config.max_runtime_ms <= 600000
+        or not motor.limits[5]
+        <= config.bus_voltage_v
+        <= motor.limits[6]
+    ):
+        raise _SimulatedProtocolError(
+            5,
+            "open-loop config exceeds firmware limits",
+        )
 
 
 class ControllerLink:
@@ -114,6 +178,11 @@ class ControllerLink:
         self._thread = None  # type: Optional[threading.Thread]
         self._connected = False
         self.mode = None  # type: Optional[str]
+        self.tx_queued_packets = 0
+        self.tx_queued_bytes = 0
+        self.tx_written_packets = 0
+        self.tx_written_bytes = 0
+        self.tx_write_failures = 0
 
     @property
     def connected(self) -> bool:
@@ -156,6 +225,11 @@ class ControllerLink:
         self._stop.clear()
         self._connected = False
         self.mode = mode
+        self.tx_queued_packets = 0
+        self.tx_queued_bytes = 0
+        self.tx_written_packets = 0
+        self.tx_written_bytes = 0
+        self.tx_write_failures = 0
         while not self._tx.empty():
             try:
                 self._tx.get_nowait()
@@ -166,8 +240,44 @@ class ControllerLink:
         if not self._connected:
             raise RuntimeError("控制器尚未连接")
         packet = bytes(data)
-        self._tx.put(packet)
-        self._emit("tx_quiet" if quiet else "tx", packet)
+        self._tx.put((packet, bool(quiet)))
+        self.tx_queued_packets += 1
+        self.tx_queued_bytes += len(packet)
+
+    def _record_tx_written(
+        self,
+        packet: bytes,
+        quiet: bool,
+        transport: str,
+    ) -> None:
+        self.tx_written_packets += 1
+        self.tx_written_bytes += len(packet)
+        self._emit(
+            "tx_written",
+            {
+                "packet": packet,
+                "written": len(packet),
+                "quiet": bool(quiet),
+                "transport": transport,
+            },
+        )
+
+    def _record_tx_failure(
+        self,
+        packet: bytes,
+        written: int,
+        message: str,
+    ) -> None:
+        self.tx_write_failures += 1
+        self._emit(
+            "tx_write_error",
+            {
+                "packet": packet,
+                "requested": len(packet),
+                "written": int(written),
+                "message": str(message),
+            },
+        )
 
     def disconnect(self) -> None:
         self._stop.set()
@@ -194,22 +304,48 @@ class ControllerLink:
                 import serial  # type: ignore[import-not-found]
             except ImportError as exc:
                 raise RuntimeError("未安装 pyserial，请先执行：pip install pyserial") from exc
-            serial_port = serial.Serial(
-                port=port,
-                baudrate=baudrate,
-                bytesize=serial.EIGHTBITS,
-                parity=serial.PARITY_NONE,
-                stopbits=serial.STOPBITS_ONE,
-                timeout=0.02,
-                write_timeout=0.5,
-            )
+            # Configure DTR/RTS before opening. Some USB-UART adapters wire
+            # either signal to board reset; pyserial defaults could
+            # otherwise restart the MCU during the first connection.
+            serial_port = serial.Serial()
+            serial_port.port = port
+            serial_port.baudrate = baudrate
+            serial_port.bytesize = serial.EIGHTBITS
+            serial_port.parity = serial.PARITY_NONE
+            serial_port.stopbits = serial.STOPBITS_ONE
+            serial_port.timeout = 0.02
+            serial_port.write_timeout = 0.5
+            serial_port.dtr = False
+            serial_port.rts = False
+            serial_port.open()
             self._connected = True
             self._emit("connected", f"{port} @ {baudrate}")
             while not self._stop.is_set():
                 try:
                     while True:
-                        packet = self._tx.get_nowait()
-                        serial_port.write(packet)
+                        packet, quiet = self._tx.get_nowait()
+                        try:
+                            written = serial_port.write(packet)
+                        except Exception as exc:
+                            self._record_tx_failure(packet, 0, str(exc))
+                            raise
+                        if written is None:
+                            written = 0
+                        if int(written) != len(packet):
+                            message = (
+                                "串口短写：请求 {} B，实际写入 {} B"
+                            ).format(len(packet), int(written))
+                            self._record_tx_failure(
+                                packet,
+                                int(written),
+                                message,
+                            )
+                            raise IOError(message)
+                        self._record_tx_written(
+                            packet,
+                            quiet,
+                            "serial",
+                        )
                 except queue.Empty:
                     pass
 
@@ -240,7 +376,17 @@ class ControllerLink:
             "signal_mask": 0x1F,
             "started_at": last_update,
             "protocol_errors": 0,
+            "commands_received": 0,
             "saved": None,
+            "open_loop_staging": {},
+            "open_loop_committed": {},
+            "rx_isr_entries": 0,
+            "rx_poll_drains": 0,
+            "rx_poll_bytes": 0,
+            "control_hardware_enabled": True,
+            "power_stage_enabled": False,
+            "simplefoc_enabled": True,
+            "safety_mask": POWER_STAGE_REQUIRED_SAFETY_MASK,
         }  # type: Dict[str, Any]
         self._connected = True
         self._emit("connected", "TC375 单电机仿真设备")
@@ -252,7 +398,19 @@ class ControllerLink:
 
                 try:
                     while True:
-                        packet = self._tx.get_nowait()
+                        packet, quiet = self._tx.get_nowait()
+                        self._record_tx_written(
+                            packet,
+                            quiet,
+                            "simulator",
+                        )
+                        simulator_config["rx_poll_drains"] = (
+                            int(simulator_config["rx_poll_drains"]) + 1
+                        ) & 0xFFFF
+                        simulator_config["rx_poll_bytes"] = (
+                            int(simulator_config["rx_poll_bytes"])
+                            + len(packet)
+                        ) & 0xFFFF
                         for frame in parser.feed(packet):
                             simulator_config["protocol_errors"] = parser.crc_errors
                             responses = self._handle_simulated_command(
@@ -275,6 +433,7 @@ class ControllerLink:
                         motor.open_loop_active = False
                         motor.open_loop_velocity = 0.0
                         motor.faults |= 1 << 8
+                        motor.last_stop_reason = 5
                     motor.status = 0
                     if motor.enabled:
                         motor.status |= 1 << 0
@@ -340,6 +499,7 @@ class ControllerLink:
                     motor.open_loop_active = False
                     motor.target = 0.0
                     motor.open_loop_velocity = 0.0
+                    motor.last_stop_reason = 6
                 elif elapsed_ms >= motor.open_loop_config.startup_delay_ms:
                     maximum_step = (
                         motor.open_loop_config.acceleration_rad_s2 * dt
@@ -363,7 +523,10 @@ class ControllerLink:
         motor.current += rng.uniform(-0.01, 0.01)
         thermal_target = 28.0 + motor.current * 5.0
         motor.temperature += (thermal_target - motor.temperature) * min(1.0, dt / 8.0)
-        motor.voltage = 48.0 - motor.current * 0.09
+        motor.voltage = max(
+            0.0,
+            motor.open_loop_config.bus_voltage_v - motor.current * 0.09,
+        )
 
     @staticmethod
     def _handle_simulated_command(
@@ -373,6 +536,9 @@ class ControllerLink:
     ) -> List[Frame]:
         status = 0
         detail = b""
+        simulator_config["commands_received"] = (
+            int(simulator_config.get("commands_received", 0)) + 1
+        )
         try:
             if frame.version != VERSION:
                 raise ValueError("unsupported protocol version")
@@ -394,7 +560,8 @@ class ControllerLink:
             elif command is Command.GET_CAPABILITIES:
                 feature_flags = (
                     (1 << 0) | (1 << 2) | (1 << 3) |
-                    (1 << 4) | (1 << 5)
+                    (1 << 4) | (1 << 5) |
+                    FEATURE_FRAGMENTED_OPEN_LOOP_CONFIG
                 )
                 detail = struct.pack("<BBBIH", 1, 0x01, 0x0F, feature_flags, 1000)
             elif command is Command.HEARTBEAT:
@@ -410,15 +577,24 @@ class ControllerLink:
                     for motor in motors.values():
                         motor.enabled = False
                         motor.target = 0.0
+                        motor.open_loop_active = False
+                        motor.open_loop_velocity = 0.0
+                        motor.last_stop_reason = 1
                 else:
                     motor = motors[motor_id]
                     if enabled and motor.mode is ControlMode.OPEN_LOOP_SPEED:
                         raise ValueError("open loop requires START_OPEN_LOOP")
                     motor.enabled = enabled
+                    if enabled:
+                        simulator_config["open_loop_staging"].pop(
+                            motor_id,
+                            None,
+                        )
                     if not enabled:
                         motor.target = 0.0
                         motor.open_loop_active = False
                         motor.open_loop_velocity = 0.0
+                        motor.last_stop_reason = 1
             elif command is Command.SET_MODE:
                 motor_id, mode = struct.unpack("<BB", frame.payload)
                 if ControlMode(mode) is ControlMode.OPEN_LOOP_SPEED:
@@ -492,13 +668,13 @@ class ControllerLink:
                         PidLoop.POSITION: (2.00, 0.00, 0.02),
                     }
                     motor.limits = (
-                        20.0,
-                        2.0,
+                        0.3,
+                        0.03,
                         100.0,
                         -1000.0,
                         1000.0,
-                        18.0,
-                        60.0,
+                        5.0,
+                        8.0,
                         80.0,
                     )
                     motor.open_loop_config = OpenLoopConfig(
@@ -506,8 +682,8 @@ class ControllerLink:
                         OpenLoopBackend.SIMPLEFOC,
                         7,
                         0,
-                        24.0,
-                        2.0,
+                        7.0,
+                        0.3,
                         5.0,
                         10.0,
                         10,
@@ -516,12 +692,17 @@ class ControllerLink:
                     )
                 simulator_config["telemetry_rate_hz"] = 20
                 simulator_config["signal_mask"] = 0x1F
+                simulator_config["open_loop_staging"].clear()
+                simulator_config["open_loop_committed"].clear()
             elif command in (Command.CONTROLLED_STOP, Command.QUICK_STOP):
                 motor_id = frame.payload[0]
                 motors[motor_id].target = 0.0
                 motors[motor_id].enabled = False
                 motors[motor_id].open_loop_active = False
                 motors[motor_id].open_loop_velocity = 0.0
+                motors[motor_id].last_stop_reason = (
+                    2 if command is Command.CONTROLLED_STOP else 3
+                )
             elif command is Command.EMERGENCY_STOP:
                 selected = frame.payload[0] if frame.payload else 0xFF
                 for motor_id, motor in motors.items():
@@ -530,6 +711,7 @@ class ControllerLink:
                         motor.target = 0.0
                         motor.open_loop_active = False
                         motor.open_loop_velocity = 0.0
+                        motor.last_stop_reason = 4
             elif command is Command.GET_PID:
                 motor_id = frame.payload[0]
                 loop = PidLoop(
@@ -538,17 +720,102 @@ class ControllerLink:
                 kp, ki, kd = motors[motor_id].pid_values[loop]
                 detail = struct.pack("<Bfff", int(loop), kp, ki, kd)
             elif command is Command.GET_DIAGNOSTICS:
-                fault_bits = motors[1].faults if 1 in motors else 0
-                detail = struct.pack(
-                    "<IHH",
+                motor = motors.get(1)
+                now = time.monotonic()
+                fault_bits = motor.faults if motor is not None else 0
+                heartbeat_age_ms = (
+                    min(
+                        0xFFFF,
+                        int((now - motor.last_heartbeat) * 1000.0),
+                    )
+                    if motor is not None
+                    else 0xFFFF
+                )
+                heartbeat_lease_ms = (
+                    motor.lease_ms if motor is not None else 0
+                )
+                runtime_flags = 0
+                if (
+                    motor is not None
+                    and heartbeat_age_ms <= motor.lease_ms
+                ):
+                    runtime_flags |= 1 << 0
+                if motor is not None and motor.enabled:
+                    runtime_flags |= 1 << 1
+                if motor is not None and motor.open_loop_active:
+                    runtime_flags |= 1 << 2
+                hardware_flags = HARDWARE_FLAG_NFAULT_CLEAR
+                safety_mask = int(simulator_config["safety_mask"])
+                power_stage_enabled = bool(
+                    simulator_config["power_stage_enabled"]
+                )
+                if motor is not None and motor.enabled:
+                    hardware_flags |= HARDWARE_FLAG_PWM_ENABLED
+                    if power_stage_enabled:
+                        hardware_flags |= HARDWARE_FLAG_GATE_ENABLED
+                if (
+                    safety_mask & POWER_STAGE_REQUIRED_SAFETY_MASK
+                ) == POWER_STAGE_REQUIRED_SAFETY_MASK:
+                    hardware_flags |= HARDWARE_FLAG_SAFETY_READY
+                if power_stage_enabled:
+                    hardware_flags |= HARDWARE_FLAG_POWER_STAGE_BUILD
+                if safety_mask & POWER_STAGE_COMMISSIONING_OVERRIDE:
+                    hardware_flags |= (
+                        HARDWARE_FLAG_COMMISSIONING_OVERRIDE
+                    )
+                motor_state = (
+                    6
+                    if fault_bits
+                    else (4 if motor is not None and motor.enabled else 1)
+                )
+                diagnostic_values = [
                     int(
-                        (time.monotonic() - simulator_config["started_at"])
+                        (now - simulator_config["started_at"])
                         * 1000
                     )
                     & 0xFFFFFFFF,
                     int(simulator_config["protocol_errors"]) & 0xFFFF,
                     fault_bits,
-                )
+                    int(simulator_config["commands_received"])
+                    & 0xFFFFFFFF,
+                    heartbeat_age_ms,
+                    heartbeat_lease_ms,
+                    motor_state,
+                    motor.last_stop_reason if motor is not None else 0,
+                    runtime_flags,
+                    hardware_flags,
+                    0,
+                    0,
+                ]
+                sections = frame.payload[0] if frame.payload else 0
+                if sections & 0x04:
+                    detail = struct.pack(
+                        "<IHHIHHBBBBHHHHHHHHHHHHH",
+                        *(
+                            diagnostic_values
+                            + [0] * 8
+                            + [
+                                int(simulator_config["rx_isr_entries"]),
+                                int(simulator_config["rx_poll_drains"]),
+                                int(simulator_config["rx_poll_bytes"]),
+                            ]
+                        )
+                    )
+                elif sections & 0x02:
+                    detail = struct.pack(
+                        "<IHHIHHBBBBHHHHHHHHHH",
+                        *(diagnostic_values + [0] * 8)
+                    )
+                elif sections & 0x01:
+                    detail = struct.pack(
+                        "<IHHIHHBBBBHHHHHH",
+                        *(diagnostic_values + [0] * 4)
+                    )
+                else:
+                    detail = struct.pack(
+                        "<IHHIHHBBBBHH",
+                        *diagnostic_values
+                    )
             elif command is Command.SET_TELEMETRY_PROFILE:
                 rate_hz, signal_mask = struct.unpack("<HI", frame.payload)
                 if not 1 <= rate_hz <= 1000:
@@ -567,26 +834,175 @@ class ControllerLink:
                 config = unpack_open_loop_config(frame.payload)
                 motor = motors[config.motor_id]
                 if motor.enabled or motor.open_loop_active:
-                    raise ValueError("open-loop config cannot change while running")
-                if (
-                    config.bus_voltage_v > 60.0
-                    or config.voltage_limit_v > 6.0
-                    or abs(config.target_velocity_rad_s) > 100.0
-                    or abs(config.target_velocity_rad_s) > motor.limits[2]
-                    or not motor.limits[5]
-                    <= config.bus_voltage_v
-                    <= motor.limits[6]
-                ):
-                    raise ValueError("open-loop config exceeds safety limits")
+                    raise _SimulatedProtocolError(
+                        4,
+                        "open-loop config cannot change while running",
+                    )
+                _validate_simulated_open_loop_config(config, motor)
                 motor.open_loop_config = config
+                simulator_config["open_loop_staging"].pop(
+                    config.motor_id,
+                    None,
+                )
+                simulator_config["open_loop_committed"].pop(
+                    config.motor_id,
+                    None,
+                )
+            elif command is Command.SET_OPEN_LOOP_CONFIG_PART:
+                motor_id, generation, index, data = (
+                    unpack_open_loop_config_fragment(frame.payload)
+                )
+                motor = motors[motor_id]
+                if motor.enabled or motor.open_loop_active:
+                    raise _SimulatedProtocolError(
+                        4,
+                        "open-loop config cannot change while running"
+                    )
+                staging = simulator_config["open_loop_staging"]
+                transfer = staging.get(motor_id)
+                now = time.monotonic()
+                if (
+                    transfer is not None
+                    and now - transfer.get("updated_at", now) >= 5.0
+                ):
+                    del staging[motor_id]
+                    transfer = None
+                if (
+                    transfer is None
+                    or transfer["generation"] != generation
+                ):
+                    transfer = {
+                        "generation": generation,
+                        "parts": {},
+                        "updated_at": now,
+                    }
+                    staging[motor_id] = transfer
+                transfer["parts"][index] = data
+                transfer["updated_at"] = now
+                detail = bytes((generation, index))
+            elif command is Command.COMMIT_OPEN_LOOP_CONFIG:
+                motor_id, generation, expected_crc = (
+                    unpack_open_loop_config_commit(frame.payload)
+                )
+                motor = motors[motor_id]
+                staging = simulator_config["open_loop_staging"]
+                transfer = staging.get(motor_id)
+                now = time.monotonic()
+                if (
+                    transfer is not None
+                    and now - transfer.get("updated_at", now) >= 5.0
+                ):
+                    del staging[motor_id]
+                    transfer = None
+                committed = simulator_config["open_loop_committed"]
+                committed_value = committed.get(motor_id)
+                if (
+                    committed_value is not None
+                    and now - committed_value[2] >= 5.0
+                ):
+                    del committed[motor_id]
+                    committed_value = None
+                if (
+                    transfer is None
+                    and committed_value is not None
+                    and committed_value[:2]
+                    == (generation, expected_crc)
+                    and now - committed_value[2] < 5.0
+                ):
+                    detail = bytes((generation,))
+                else:
+                    if motor.enabled or motor.open_loop_active:
+                        raise _SimulatedProtocolError(
+                            4,
+                            "open-loop config cannot change while running"
+                        )
+                    if (
+                        transfer is None
+                        or transfer["generation"] != generation
+                        or len(transfer["parts"]) !=
+                        OPEN_LOOP_CONFIG_FRAGMENT_COUNT
+                    ):
+                        raise _SimulatedProtocolError(
+                            4,
+                            "open-loop config fragments incomplete"
+                        )
+                    raw_config = b"".join(
+                        transfer["parts"][index]
+                        for index in range(
+                            OPEN_LOOP_CONFIG_FRAGMENT_COUNT
+                        )
+                    )
+                    if crc16_modbus(raw_config) != expected_crc:
+                        raise ValueError(
+                            "open-loop config fragment CRC mismatch"
+                        )
+                    config = unpack_open_loop_config(raw_config)
+                    if config.motor_id != motor_id:
+                        raise ValueError("open-loop config motor mismatch")
+                    _validate_simulated_open_loop_config(config, motor)
+                    motor.open_loop_config = config
+                    committed[motor_id] = (
+                        generation,
+                        expected_crc,
+                        now,
+                    )
+                    del staging[motor_id]
+                    detail = bytes((generation,))
             elif command is Command.GET_OPEN_LOOP_CONFIG:
                 motor_id = frame.payload[0]
                 detail = pack_open_loop_config(
                     motors[motor_id].open_loop_config
                 )
             elif command is Command.START_OPEN_LOOP:
+                power_stage_enabled = bool(
+                    simulator_config["power_stage_enabled"]
+                )
+                expected_length = 2 if power_stage_enabled else 1
+                if len(frame.payload) != expected_length:
+                    raise _SimulatedProtocolError(
+                        4,
+                        "open-loop start confirmation is invalid",
+                    )
                 motor_id = frame.payload[0]
                 motor = motors[motor_id]
+                safety_mask = int(simulator_config["safety_mask"])
+                if power_stage_enabled:
+                    if not (
+                        frame.payload[1]
+                        & START_FLAG_POWER_STAGE_CONFIRMED
+                    ):
+                        raise _SimulatedProtocolError(
+                            4,
+                            "power-stage confirmation is required",
+                        )
+                    missing_safety = (
+                        POWER_STAGE_REQUIRED_SAFETY_MASK
+                        & ~safety_mask
+                    )
+                    commissioning_override = bool(
+                        safety_mask
+                        & POWER_STAGE_COMMISSIONING_OVERRIDE
+                    )
+                    if missing_safety and not commissioning_override:
+                        raise _SimulatedProtocolError(
+                            10,
+                            "power-stage safety readiness is incomplete",
+                        )
+                    config = motor.open_loop_config
+                    if commissioning_override and missing_safety and (
+                        config.voltage_limit_v
+                        > POWER_STAGE_COMMISSIONING_MAX_VOLTAGE_V
+                        or abs(config.target_velocity_rad_s)
+                        > POWER_STAGE_COMMISSIONING_MAX_SPEED_RAD_S
+                        or config.acceleration_rad_s2
+                        > POWER_STAGE_COMMISSIONING_MAX_ACCEL_RAD_S2
+                        or config.max_runtime_ms
+                        > POWER_STAGE_COMMISSIONING_MAX_RUNTIME_MS
+                    ):
+                        raise _SimulatedProtocolError(
+                            5,
+                            "commissioning parameters are not conservative",
+                        )
                 heartbeat_valid = (
                     time.monotonic() - motor.last_heartbeat
                 ) * 1000.0 <= motor.lease_ms
@@ -598,13 +1014,18 @@ class ControllerLink:
                 motor.open_loop_started = time.monotonic()
                 motor.open_loop_active = True
                 motor.enabled = True
+                motor.last_stop_reason = 0
+                simulator_config["open_loop_staging"].pop(
+                    motor_id,
+                    None,
+                )
             elif command is Command.GET_BUILD_CONFIG:
                 detail = struct.pack(
-                    "<BBBBBIIIIHHHHf",
+                    "<BBBBBIIIIHHHHfI",
                     1,
-                    1,
-                    0,
-                    1,
+                    int(bool(simulator_config["control_hardware_enabled"])),
+                    int(bool(simulator_config["power_stage_enabled"])),
+                    int(bool(simulator_config["simplefoc_enabled"])),
                     7,
                     10000,
                     20000,
@@ -615,9 +1036,12 @@ class ControllerLink:
                     300,
                     5000,
                     0.10,
+                    int(simulator_config["safety_mask"]),
                 )
             else:
                 status = 1
+        except _SimulatedProtocolError as exc:
+            status = exc.status
         except (ValueError, KeyError, struct.error, IndexError):
             status = 2
 

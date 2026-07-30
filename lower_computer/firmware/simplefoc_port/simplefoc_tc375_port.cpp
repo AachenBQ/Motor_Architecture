@@ -17,15 +17,19 @@
  * tests may emit TOUT waveforms while the DRV8313 remains disabled.
  */
 
+static bool g_current_sense_ready;
+
 #if MOTOR_USE_SIMPLEFOC
 static BLDCMotor g_foc_motor(MOTOR_POLE_PAIRS);
 static Tc375BldcDriver g_driver;
 static Tc375CurrentSense g_current_sense;
 static Tc375Encoder g_sensor;
 static bool g_simplefoc_bound;
+static bool g_simplefoc_core_initialized;
 static bool g_simplefoc_open_loop;
 #if MOTOR_POWER_STAGE_ENABLED
 static bool g_closed_loop_initialized;
+static bool g_closed_loop_running;
 #endif
 
 static float ClampPositive(float value, float fallback)
@@ -65,6 +69,53 @@ static void ConfigureSimpleFoc(const MotorControl *motor)
     g_foc_motor.torque_controller = TorqueControlType::foc_current;
 }
 
+static bool InitializeSimpleFocCoreSafely(void)
+{
+    bool driver_initialized;
+    bool motor_initialized = false;
+
+    if (g_simplefoc_core_initialized)
+    {
+        return true;
+    }
+    if (!g_simplefoc_bound)
+    {
+        return false;
+    }
+
+    /*
+     * BLDCMotor::init() calls driver->enable() before two stabilization
+     * delays. Keep that internal enable call inhibited so a real inverter can
+     * never sit energized while initialization blocks for roughly one second.
+     */
+    SimpleFocTc375_ForceSafeState();
+    g_driver.setInitializationInhibit(true);
+    driver_initialized = g_driver.init() != 0;
+    if (driver_initialized)
+    {
+        motor_initialized = g_foc_motor.init() != 0;
+    }
+
+    if (motor_initialized)
+    {
+        g_foc_motor.disable();
+    }
+    else
+    {
+        g_driver.disable();
+    }
+    g_driver.setInitializationInhibit(false);
+
+    if (!driver_initialized || !motor_initialized)
+    {
+        SimpleFocTc375_ForceSafeState();
+        return false;
+    }
+
+    g_simplefoc_core_initialized = true;
+    return true;
+}
+
 #if MOTOR_POWER_STAGE_ENABLED
 static MotionControlType ToSimpleFocMode(MotorMode mode)
 {
@@ -82,22 +133,59 @@ static MotionControlType ToSimpleFocMode(MotorMode mode)
 
 static bool PrepareClosedLoop(void)
 {
+#if !MOTOR_PHASE_CURRENT_SENSE_READY || \
+    !MOTOR_ENCODER_SENSE_READY || \
+    !MOTOR_CLOSED_LOOP_CONTROL_READY
+    /*
+     * A build may use the commissioning override for open-loop bring-up, but
+     * closed-loop FOC remains unavailable until every feedback path has
+     * explicit implementation evidence.
+     */
+    return false;
+#else
+    bool foc_initialized;
+
     if (g_closed_loop_initialized)
     {
         return true;
     }
+    SimpleFocTc375_ForceSafeState();
     g_sensor.init();
-    if (!g_driver.init() ||
-        !g_current_sense.init() ||
+    if (!g_current_sense_ready)
+    {
+        g_current_sense_ready =
+            g_current_sense.init() != 0;
+    }
+    if (!g_current_sense_ready ||
         !g_sensor.isValid() ||
-        !g_foc_motor.init() ||
-        !g_foc_motor.initFOC())
+        !InitializeSimpleFocCoreSafely())
+    {
+        SimpleFocTc375_ForceSafeState();
+        return false;
+    }
+
+    /*
+     * Sensor alignment requires an energized motor. Gate validation is
+     * therefore completed before PWM is admitted, and every failure returns
+     * through the same fail-closed path.
+     */
+    g_foc_motor.enable();
+    if (!g_driver.isOutputEnabled())
+    {
+        g_foc_motor.disable();
+        SimpleFocTc375_ForceSafeState();
+        return false;
+    }
+    foc_initialized = g_foc_motor.initFOC() != 0;
+    g_foc_motor.disable();
+    SimpleFocTc375_ForceSafeState();
+    if (!foc_initialized)
     {
         return false;
     }
-    g_foc_motor.disable();
     g_closed_loop_initialized = true;
     return true;
+#endif
 }
 #endif
 #endif
@@ -125,12 +213,67 @@ static float ClampUnit(float value)
 }
 #endif
 
+#if MOTOR_CONTROL_HARDWARE_ENABLED
+static bool EnableHardwareOutputSafely(void)
+{
+    /*
+     * Start from an unambiguous safe state. On real power hardware the HAL
+     * must positively confirm gate READY before PWM can be admitted.
+     */
+    Tc375Hal_SetPwmEnabled(false);
+    Tc375Hal_SetPhaseDuty(0.0F, 0.0F, 0.0F);
+    (void)Tc375Hal_SetGateEnabled(false);
+
+#if MOTOR_POWER_STAGE_ENABLED
+    if ((Tc375Hal_ReadActiveFaults() != 0U) ||
+        !Tc375Hal_SetGateEnabled(true) ||
+        !Tc375Hal_IsGateEnabled() ||
+        (Tc375Hal_ReadActiveFaults() != 0U))
+    {
+        SimpleFocTc375_ForceSafeState();
+        return false;
+    }
+#else
+    /*
+     * Control-board commissioning intentionally leaves the physical gate
+     * inhibited while allowing the three MCU TOUT signals to be observed.
+     */
+    if (Tc375Hal_IsGateEnabled())
+    {
+        SimpleFocTc375_ForceSafeState();
+        return false;
+    }
+#endif
+
+    Tc375Hal_SetPwmEnabled(true);
+    if (!Tc375Hal_IsPwmEnabled())
+    {
+        SimpleFocTc375_ForceSafeState();
+        return false;
+    }
+    return true;
+}
+#endif
+
+#if MOTOR_POWER_STAGE_ENABLED && MOTOR_PHASE_CURRENT_SENSE_READY
+static bool PhaseCurrentExceedsLimit(
+    const Tc375PhaseCurrents *currents,
+    float limit_a)
+{
+    return
+        (fabsf(currents->phase_a) > limit_a) ||
+        (fabsf(currents->phase_b) > limit_a) ||
+        (fabsf(currents->phase_c) > limit_a);
+}
+#endif
+
 bool SimpleFocTc375_Init(MotorControl *motor)
 {
-    Tc375Hal_SetGateEnabled(false);
-    Tc375Hal_SetPwmEnabled(false);
+    SimpleFocTc375_ForceSafeState();
+    g_current_sense_ready = false;
     if (!Tc375Hal_MotorPeripheralsInit())
     {
+        SimpleFocTc375_ForceSafeState();
         return false;
     }
 #if MOTOR_USE_SIMPLEFOC
@@ -140,34 +283,109 @@ bool SimpleFocTc375_Init(MotorControl *motor)
     g_current_sense.linkDriver(&g_driver);
     g_foc_motor.linkCurrentSense(&g_current_sense);
     g_simplefoc_bound = true;
-#if MOTOR_POWER_STAGE_ENABLED
-    if (!g_driver.init() || !g_current_sense.init())
+
+    /*
+     * Complete BLDCMotor::init() at boot with its internal driver enable
+     * inhibited. The first runtime start is then non-blocking and cannot
+     * consume the heartbeat lease before the gate is validated.
+     */
+    if (!InitializeSimpleFocCoreSafely())
     {
         SimpleFocTc375_ForceSafeState();
         return false;
     }
-    g_foc_motor.disable();
+
+#if MOTOR_POWER_STAGE_ENABLED && MOTOR_PHASE_CURRENT_SENSE_READY
+    g_current_sense_ready =
+        g_current_sense.init() != 0;
+    if (!g_current_sense_ready)
+    {
+        SimpleFocTc375_ForceSafeState();
+        return false;
+    }
 #endif
+    g_foc_motor.disable();
 #else
     (void)motor;
 #endif
+    SimpleFocTc375_ForceSafeState();
     return true;
 }
 
 void SimpleFocTc375_AdcPwmIsr(MotorControl *motor)
 {
-    Tc375PhaseCurrents currents = Tc375Hal_ReadPhaseCurrents();
+    Tc375PhaseCurrents currents;
+
     if (motor->open_loop_active)
     {
+#if MOTOR_POWER_STAGE_ENABLED && MOTOR_PHASE_CURRENT_SENSE_READY
+        if (g_current_sense_ready)
+        {
+            currents = Tc375Hal_ReadPhaseCurrents();
+            if (!currents.sample_valid)
+            {
+                MotorControl_TripFault(
+                    motor,
+                    MOTOR_FAULT_CURRENT_SENSOR);
+                SimpleFocTc375_ForceSafeState();
+                return;
+            }
+            if (PhaseCurrentExceedsLimit(
+                    &currents,
+                    motor->limits.current_a))
+            {
+                MotorControl_TripFault(
+                    motor,
+                    MOTOR_FAULT_OVERCURRENT);
+                SimpleFocTc375_ForceSafeState();
+            }
+        }
+#endif
         return;
     }
-    if (!currents.sample_valid || !motor->enabled)
+
+    if (!motor->enabled)
     {
-        Tc375Hal_SetPwmEnabled(false);
+        SimpleFocTc375_ForceSafeState();
         return;
     }
+
+#if MOTOR_POWER_STAGE_ENABLED && MOTOR_PHASE_CURRENT_SENSE_READY
+    if (!g_current_sense_ready)
+    {
+        MotorControl_TripFault(
+            motor,
+            MOTOR_FAULT_CURRENT_SENSOR);
+        SimpleFocTc375_ForceSafeState();
+        return;
+    }
+    currents = Tc375Hal_ReadPhaseCurrents();
+    if (!currents.sample_valid)
+    {
+        MotorControl_TripFault(
+            motor,
+            MOTOR_FAULT_CURRENT_SENSOR);
+        SimpleFocTc375_ForceSafeState();
+        return;
+    }
+    if (PhaseCurrentExceedsLimit(
+            &currents,
+            motor->limits.current_a))
+    {
+        MotorControl_TripFault(
+            motor,
+            MOTOR_FAULT_OVERCURRENT);
+        SimpleFocTc375_ForceSafeState();
+        return;
+    }
+#else
+    currents = Tc375Hal_ReadPhaseCurrents();
+    (void)currents;
+#endif
+
 #if MOTOR_USE_SIMPLEFOC && MOTOR_POWER_STAGE_ENABLED
-    if (g_simplefoc_bound)
+    if (g_simplefoc_bound &&
+        g_driver.isOutputEnabled())
     {
         g_foc_motor.loopFOC();
     }
@@ -231,14 +449,38 @@ void SimpleFocTc375_OuterLoop(MotorControl *motor)
             ConfigureSimpleFoc(motor);
             g_foc_motor.updateMotionControlType(
                 ToSimpleFocMode(motor->mode));
-            g_foc_motor.enable();
-            g_foc_motor.move(
-                motor->mode == MOTOR_MODE_TORQUE
-                    ? motor->target /
-                      MOTOR_TORQUE_CONSTANT_NM_PER_A
-                    : motor->target);
-            g_foc_motor.loopFOC();
+            if (!g_closed_loop_running)
+            {
+                g_foc_motor.enable();
+                if (!g_driver.isOutputEnabled())
+                {
+                    MotorControl_TripFault(
+                        motor,
+                        MOTOR_FAULT_GATE_DRIVER);
+                    g_foc_motor.disable();
+                    SimpleFocTc375_ForceSafeState();
+                }
+                else
+                {
+                    g_closed_loop_running = true;
+                }
+            }
+            if (g_closed_loop_running)
+            {
+                g_foc_motor.move(
+                    motor->mode == MOTOR_MODE_TORQUE
+                        ? motor->target /
+                          MOTOR_TORQUE_CONSTANT_NM_PER_A
+                        : motor->target);
+                g_foc_motor.loopFOC();
+            }
         }
+    }
+    else if (g_closed_loop_running)
+    {
+        g_foc_motor.disable();
+        g_closed_loop_running = false;
+        SimpleFocTc375_ForceSafeState();
     }
 #endif
     if (!encoder.valid &&
@@ -249,15 +491,29 @@ void SimpleFocTc375_OuterLoop(MotorControl *motor)
         SimpleFocTc375_ForceSafeState();
     }
 
-#if MOTOR_USE_SIMPLEFOC && MOTOR_POWER_STAGE_ENABLED
+#if MOTOR_USE_SIMPLEFOC && \
+    MOTOR_POWER_STAGE_ENABLED && \
+    MOTOR_PHASE_CURRENT_SENSE_READY
     telemetry.iq_current_a = g_foc_motor.current.q;
 #else
     telemetry.iq_current_a = 0.0F;
 #endif
 
     telemetry.speed_rad_s = encoder.velocity_rad_s;
+#if MOTOR_BUS_VOLTAGE_SENSE_READY
     telemetry.bus_voltage_v = Tc375Hal_ReadBusVoltage();
+#else
+    /*
+     * Zero means "not available" to MotorControl_UpdateTelemetry(), avoiding
+     * false voltage trips from placeholder HAL constants.
+     */
+    telemetry.bus_voltage_v = 0.0F;
+#endif
+#if MOTOR_POWER_TEMPERATURE_SENSE_READY
     telemetry.temperature_c = Tc375Hal_ReadPowerTemperature();
+#else
+    telemetry.temperature_c = 0.0F;
+#endif
     telemetry.position_rad = encoder.multi_turn_angle_rad;
     telemetry.status = encoder.valid ? (uint16_t)(1U << 7) : 0U;
     MotorControl_UpdateTelemetry(motor, &telemetry);
@@ -271,6 +527,12 @@ bool SimpleFocTc375_RunCalibration(unsigned int calibration_type)
     {
         return false;
     }
+    if (g_closed_loop_running)
+    {
+        g_foc_motor.disable();
+        g_closed_loop_running = false;
+    }
+    SimpleFocTc375_ForceSafeState();
     g_closed_loop_initialized = false;
     return PrepareClosedLoop();
 #else
@@ -280,9 +542,9 @@ bool SimpleFocTc375_RunCalibration(unsigned int calibration_type)
 
 void SimpleFocTc375_ForceSafeState(void)
 {
-    Tc375Hal_SetPhaseDuty(0.0F, 0.0F, 0.0F);
     Tc375Hal_SetPwmEnabled(false);
-    Tc375Hal_SetGateEnabled(false);
+    Tc375Hal_SetPhaseDuty(0.0F, 0.0F, 0.0F);
+    (void)Tc375Hal_SetGateEnabled(false);
 }
 
 bool SimpleFocTc375_OpenLoopInit(float bus_voltage_v, float voltage_limit_v)
@@ -299,7 +561,13 @@ bool SimpleFocTc375_OpenLoopInit(float bus_voltage_v, float voltage_limit_v)
     }
 
     g_driver.voltage_power_supply = bus_voltage;
-    g_driver.voltage_limit = voltage_limit;
+    /*
+     * The driver converts absolute phase voltages to duty cycle using the
+     * full DC bus. Keep the requested open-loop voltage limit on the motor;
+     * applying it to the driver as well moves the SinePWM common mode close
+     * to 0% duty instead of centering it around 50%.
+     */
+    g_driver.voltage_limit = bus_voltage;
 
     g_foc_motor.controller = MotionControlType::velocity_openloop;
     g_foc_motor.torque_controller = TorqueControlType::voltage;
@@ -313,8 +581,17 @@ bool SimpleFocTc375_OpenLoopInit(float bus_voltage_v, float voltage_limit_v)
     g_simplefoc_open_loop = false;
     g_direct_sine_open_loop = false;
 
-    if (!g_driver.init() || !g_foc_motor.init())
+    if (!InitializeSimpleFocCoreSafely())
     {
+        SimpleFocTc375_ForceSafeState();
+        return false;
+    }
+
+    g_foc_motor.enable();
+    if (!g_driver.isOutputEnabled() ||
+        (Tc375Hal_ReadActiveFaults() != 0U))
+    {
+        g_foc_motor.disable();
         SimpleFocTc375_ForceSafeState();
         return false;
     }
@@ -350,14 +627,13 @@ bool SimpleFocTc375_OpenLoopStart(
         }
         g_direct_sine_electrical_angle = 0.0F;
         g_direct_sine_last_us = Tc375Hal_TimeUs();
-        g_direct_sine_open_loop = true;
-        Tc375Hal_SetPwmEnabled(true);
-        Tc375Hal_SetGateEnabled(true);
-        if (Tc375Hal_ReadActiveFaults() != 0U)
+        if (!EnableHardwareOutputSafely() ||
+            (Tc375Hal_ReadActiveFaults() != 0U))
         {
             SimpleFocTc375_OpenLoopStop();
             return false;
         }
+        g_direct_sine_open_loop = true;
         return true;
 #else
         return false;
@@ -399,6 +675,17 @@ void SimpleFocTc375_OpenLoopStep(float target_velocity_rad_s)
         {
             g_direct_sine_electrical_angle += two_pi;
         }
+        if (!Tc375Hal_IsPwmEnabled()
+#if MOTOR_POWER_STAGE_ENABLED
+            || !Tc375Hal_IsGateEnabled()
+#else
+            || Tc375Hal_IsGateEnabled()
+#endif
+            )
+        {
+            SimpleFocTc375_OpenLoopStop();
+            return;
+        }
         Tc375Hal_SetPhaseDuty(
             ClampUnit(
                 0.5F + amplitude *
@@ -418,7 +705,9 @@ void SimpleFocTc375_OpenLoopStep(float target_velocity_rad_s)
     }
 #endif
 #if MOTOR_USE_SIMPLEFOC
-    if (!g_simplefoc_open_loop || !g_simplefoc_bound)
+    if (!g_simplefoc_open_loop ||
+        !g_simplefoc_bound ||
+        !g_driver.isOutputEnabled())
     {
         return;
     }

@@ -13,6 +13,21 @@ python -m motor_control
 
 Windows 也可以双击 `run.bat`。如果只使用仿真模式，界面无需 `pyserial` 也能运行；安装 `pyserial` 后才可枚举和连接真实串口。
 
+## Codex 联调接口
+
+上位机启动后会创建仅限本机访问的安全调试桥，使 Codex 可以在不争抢串口的
+情况下读取状态、日志、最近遥测和设备诊断，也可以执行失能、快速停止和紧急
+停止。修改参数、使能或启动开环需要用户在界面点击“Codex：只读”进行 10 分钟
+授权；真实功率级启用时还需要命令显式确认。
+
+完整命令和安全说明见 [Codex 接入说明](CODEX_DEBUG.md)。例如：
+
+```powershell
+python -m motor_control.codex_client status
+python -m motor_control.codex_client diagnostics
+python -m motor_control.codex_client logs --limit 100
+```
+
 如果电脑上已经安装 Python 3.6，可以直接使用现有环境；项目没有使用
 `from __future__ import annotations`、内置泛型或 `dataclasses` 等新版本限定功能。
 
@@ -26,7 +41,9 @@ Windows 也可以双击 `run.bat`。如果只使用仿真模式，界面无需 `
 “开环调试参数”可在线配置直接三相正弦或 SimpleFOC 开环、极对数、母线
 电压、电压限幅、初始速度、加速度、更新周期、启动延时和最长运行时间。
 除目标速度外，开环参数必须先停止再修改；运行中在主界面选择“开环速度”
-即可实时调速。当前默认选择 SimpleFOC。PWM/ADC/ISR 频率、
+即可实时调速。参数写入使用 14 个 16 字节短帧和一个 15 字节原子提交帧，
+逐片确认并自动重试，避免旧 `0x26` 的 39 字节长帧在弱接收链路上丢失。
+当前默认选择 SimpleFOC。PWM/ADC/ISR 频率、
 `MOTOR_CONTROL_HARDWARE_ENABLED`、`MOTOR_POWER_STAGE_ENABLED` 和
 `MOTOR_USE_SIMPLEFOC` 属于编译期安全参数，只读显示，不能在线修改。
 
@@ -59,6 +76,13 @@ tests/
 
 ```powershell
 python -m unittest discover -v
+```
+
+烧录支持分片协议的固件后，还可在不使能、不启动 PWM 的情况下通过运行中的
+上位机执行真实串口压力测试：
+
+```powershell
+python -m motor_control.codex_client communication-test --iterations 20
 ```
 
 ## 接入实际控制器

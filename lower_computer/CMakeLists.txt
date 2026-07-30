@@ -115,6 +115,29 @@ if(LOWER_BUILD_TESTS)
     target_link_libraries(lower_core_test PRIVATE lower_core)
     add_test(NAME lower_core_test COMMAND lower_core_test)
 
+    add_executable(
+        lower_command_router_test
+        tests/test_command_router.c
+        firmware/src/command_router.c
+        tests/host/tc375_hal_stub.c
+    )
+    target_include_directories(
+        lower_command_router_test
+        PRIVATE
+            firmware/config
+            firmware/include
+            tests/host
+    )
+    target_link_libraries(
+        lower_command_router_test
+        PRIVATE
+            lower_core
+    )
+    add_test(
+        NAME lower_command_router_test
+        COMMAND lower_command_router_test
+    )
+
     add_executable(lower_firmware_smoke tests/test_firmware_smoke.cpp)
     target_link_libraries(lower_firmware_smoke PRIVATE lower_firmware_host)
     add_test(NAME lower_firmware_smoke COMMAND lower_firmware_smoke)
